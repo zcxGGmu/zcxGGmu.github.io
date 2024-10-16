@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 前言 kernel: 4.14\narch: ARM64\nirq_chip: GICv2\n本文重点分析 Linux 中断子系统，中断是处理器用于异步处理外围设备请求的一种机制，可以说中断处理是操作系统管理外围设备的基石，此外系统调度、核间交互等都离不开中断，它的重要性不言而喻。来一张分层图：\n">
+<title>Linux Interrupt Handle_1</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/linux-interrupt-handle_1/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux Interrupt Handle_1">
+<meta property='og:description' content="0 前言 kernel: 4.14\narch: ARM64\nirq_chip: GICv2\n本文重点分析 Linux 中断子系统，中断是处理器用于异步处理外围设备请求的一种机制，可以说中断处理是操作系统管理外围设备的基石，此外系统调度、核间交互等都离不开中断，它的重要性不言而喻。来一张分层图：\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/linux-interrupt-handle_1/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-16T18:14:17&#43;08:00'/><meta property='article:modified_time' content='2024-10-16T18:14:17&#43;08:00'/>
+<meta name="twitter:title" content="Linux Interrupt Handle_1">
+<meta name="twitter:description" content="0 前言 kernel: 4.14\narch: ARM64\nirq_chip: GICv2\n本文重点分析 Linux 中断子系统，中断是处理器用于异步处理外围设备请求的一种机制，可以说中断处理是操作系统管理外围设备的基石，此外系统调度、核间交互等都离不开中断，它的重要性不言而喻。来一张分层图：\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-gic驱动分析">1.1 GIC驱动分析</a>
+      <ol>
+        <li><a href="#设备信息添加">设备信息添加</a></li>
+        <li><a href="#驱动流程分析">驱动流程分析</a></li>
+        <li><a href="#数据结构分析">数据结构分析</a></li>
+        <li><a href="#关于irq-domain">关于IRQ domain</a></li>
+      </ol>
+    </li>
+    <li><a href="#12-架构相关代码">1.2 架构相关代码</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-数据结构分析">2.1 数据结构分析</a></li>
+    <li><a href="#22-中断框架分析">2.2 中断框架分析</a>
+      <ol>
+        <li><a href="#中断注册">中断注册</a></li>
+        <li><a href="#中断处理">中断处理</a>
+          <ol>
+            <li><a href="#中断线程化处理">中断线程化处理</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#23-总结">2.3 总结</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux-interrupt-handle_1/">Linux Interrupt Handle_1</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-16</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 17 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-前言">0 前言
+</h1><blockquote>
+<p><strong>kernel: 4.14</strong></p>
+<p><strong>arch: ARM64</strong></p>
+<p><strong>irq_chip: GICv2</strong></p>
+</blockquote>
+<p>本文重点分析 Linux 中断子系统，中断是处理器用于异步处理外围设备请求的一种机制，可以说中断处理是操作系统管理外围设备的基石，此外系统调度、核间交互等都离不开中断，它的重要性不言而喻。来一张分层图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202311101950700.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>**硬件层：**最下层为硬件连接层，对应的是具体的外设与SoC的物理连接，中断信号是从外设到中断控制器，由中断控制器统一管理，再路由到处理器上；</li>
+<li>**硬件相关层：**这个层包括两部分代码，一部分是架构相关的，比如ARM64处理器处理中断相关，另一部分是中断控制器的驱动代码；</li>
+<li>**通用层：**这部分也可以认为是框架层，是硬件无关层，这部分代码在所有硬件平台上是通用的；</li>
+<li>**用户层：**这部分也就是中断的使用者了，主要是各类设备驱动，通过中断相关接口来进行申请和注册，最终在外设触发中断时，进行相应的回调处理；</li>
+</ul>
+<p>本文不会详细分析GICv2的硬件原理，因为不同架构的中断控制器实现都不太一样，但这些 <code>irq_chip</code> 接入 Linux内核后关于中断初始化、中断处理流程的框架是相同的。之前看了关于 riscv AIA Linux support 的一组PATCH，对其中相当多的接口不理解，所以想<strong>通过本文搞清楚 Linux 中断框架，将框架和 <code>irq_chip</code> 相关的代码分离开来。</strong></p>
+<h1 id="1-硬件相关层">1 硬件相关层
+</h1><h2 id="11-gic驱动分析">1.1 GIC驱动分析
+</h2><h3 id="设备信息添加">设备信息添加
+</h3><p>ARM平台的设备信息，都是通过<code>Device Tree</code>设备树来添加，设备树信息放置在<code>arch/arm64/boot/dts/</code>下：</p>
+<p>下图就是一个中断控制器的设备树信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// /arch/arm64/boot/dts/arm/foundation-v8.dts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nl">gic</span><span class="p">:</span> <span class="n">interrupt</span><span class="o">-</span><span class="n">controller</span><span class="err">@</span><span class="mi">2</span><span class="n">c001000</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">compatible</span> <span class="o">=</span> <span class="s">&#34;arm,cortex-a15-gic&#34;</span><span class="p">,</span> <span class="s">&#34;arm,cortex-a9-gic&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="cp">#interrupt-cells = &lt;3&gt;;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>		<span class="cp">#address-cells = &lt;2&gt;;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>		<span class="n">interrupt</span><span class="o">-</span><span class="n">controller</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">reg</span> <span class="o">=</span> <span class="o">&lt;</span><span class="mh">0x0</span> <span class="mh">0x2c001000</span> <span class="mi">0</span> <span class="mh">0x1000</span><span class="o">&gt;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		      <span class="o">&lt;</span><span class="mh">0x0</span> <span class="mh">0x2c002000</span> <span class="mi">0</span> <span class="mh">0x2000</span><span class="o">&gt;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		      <span class="o">&lt;</span><span class="mh">0x0</span> <span class="mh">0x2c004000</span> <span class="mi">0</span> <span class="mh">0x2000</span><span class="o">&gt;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		      <span class="o">&lt;</span><span class="mh">0x0</span> <span class="mh">0x2c006000</span> <span class="mi">0</span> <span class="mh">0x2000</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">interrupts</span> <span class="o">=</span> <span class="o">&lt;</span><span class="mi">1</span> <span class="mi">9</span> <span class="mh">0xf04</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>**<code>compatible</code>字段：**用于与具体的驱动来进行匹配，比如图片中 <code>arm, cortex-a15-gic</code> ，可以根据这个名字去匹配对应的驱动程序；</li>
+<li>**<code>interrupt-cells</code>字段：**用于指定编码一个中断源所需要的单元个数，这个值为3。比如在外设在设备树中添加中断信号时，通常能看到类似 <code>interrupts = &lt;0 23 4&gt;;</code>的信息，第一个单元0，表示的是中断类型（<code>1：PPI，0：SPI</code>），第二个单元 23 表示的是中断号，第三个单元 4 表示的是中断触发的类型；</li>
+<li>**<code>interrupt-controller</code>字段：**表示该设备是一个中断控制器，外设可以连接在该中断控制器上；</li>
+<li>**<code>reg</code>字段：**描述中断控制器的地址信息以及地址范围，比如图片中分别制定了 <code>GIC Distributor（GICD）</code>和<code>GIC CPU Interface（GICC）</code>的地址信息；</li>
+<li>关于设备数的各个字段含义，详细可以参考<code>Documentation/devicetree/bindings</code>下的对应信息；</li>
+</ul>
+<p>设备树的信息，是怎么添加到系统中的呢？ <code>Device Tree</code> 最终会编译成 <code>dtb</code> 文件，并通过 Uboot 传递给内核，在内核启动后会将 <code>dtb</code> 文件解析成 <code>device_node</code> 结构。关于设备树的相关知识，本文先不展开，后续再找机会补充。来一张图，先简要介绍下关键路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">start_kernel</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="n">setup_arch</span>
+</span></span><span class="line"><span class="cl">    	<span class="o">+-&gt;</span> <span class="n">unflatten_device_stree</span> <span class="c1">//解析dtb文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    		<span class="o">+-&gt;</span> <span class="n">unflatten_dt_nodes</span>
+</span></span><span class="line"><span class="cl">    			<span class="o">+-&gt;</span> <span class="n">populate_node</span>
+</span></span><span class="line"><span class="cl">    				<span class="o">+-&gt;</span> <span class="n">unflatten_dt_alloc</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设备树的节点信息，最终会变成<code>device_node</code>结构，在内存中维持一个树状结构。<strong>设备与驱动，会根据<code>compatible</code> 字段进行匹配 。</strong></p>
+<h3 id="驱动流程分析">驱动流程分析
+</h3><p>GIC驱动的执行流程如下图所示：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202005/1771657-20200531111308070-739998455.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>关于链接脚本<code>vmlinux.lds</code>，脚本中定义了一个 <code>__irqchip_of_table</code> 段，该段用于存放中断控制器信息，用于最终来匹配设备；</li>
+<li>在GIC驱动程序中，使用 <code>IRQCHIP_DECLARE</code> 宏来声明结构信息，包括 <code>compatible</code> 字段和回调函数，该宏会将这个结构放置到 <code>__irqchip_of_table</code> 段中；</li>
+<li>在内核启动初始化中断的函数中，<code>of_irq_init</code> 函数会去查找设备节点信息，该函数的传入参数就是<code>__irqchip_of_table</code> 段，由于 <code>IRQCHIP_DECLARE</code> 已经将信息填充好了，<code>of_irq_init</code> 函数会根据<code>arm,gic-400</code> 去查找对应的设备节点，并获取设备的信息。中断控制器也存在级联的情况，<code>of_irq_init</code> 函数中也处理了这种情况；</li>
+<li><code>or_irq_init</code> 函数中，最终会回调<code>IRQCHIP_DECLARE</code>声明的回调函数，也就是<code>gic_of_init</code>，而这个函数就是<strong>GIC驱动的初始化入口函数</strong>了；</li>
+</ul>
+<p>GIC的工作，本质上是由中断信号来驱动，因此**驱动本身的工作就是完成各类信息的初始化，**注册好相应的回调函数，以便能在信号到来之时去执行；</p>
+<blockquote>
+<ol>
+<li>
+<p><code>set_smp_process_call</code> 设置 <code>__smp_cross_call</code> 函数指向 <code>gic_raise_softirq</code>，本质上就是通过软件来触发GIC的 <code>SGI中断</code> ，用于核间交互；</p>
+</li>
+<li>
+<p><code>cpuhp_setup_state_nocalls</code> 函数，设置好CPU进行热插拔时GIC的回调函数，以便在CPU热插拔时做相应处理；</p>
+</li>
+<li>
+<p><code>set_handle_irq</code> 函数的设置很关键，它将全局函数指针 <code>handle_arch_irq</code> 指向了 <code>gic_handle_irq</code>，而处理器在进入中断异常时，会跳转到 <code>handle_arch_irq</code> 执行，所以，可以认为它就是中断处理的入口函数了；</p>
+</li>
+</ol>
+</blockquote>
+<p>驱动中完成了各类函数的注册，此外还完成了 <code>irq_chip</code>, <code>irq_domain</code> 等结构体的初始化，这些结构在下文会进一步分析。最后，完成GIC硬件模块的初始化设置，以及电源管理相关的注册等工作；</p>
+<p>我们可以看到，<code>gic_*</code> 作为前缀的函数都是和特定的GIC中断控制器相关的，如果换作RISC-V架构，这些函数就会被替换为 <code>plic_*/aplic_*</code> 等等。</p>
+<h3 id="数据结构分析">数据结构分析
+</h3><p><strong>各数据结构的依赖关系如下图：</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202005/1771657-20200531111554895-528341955.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>GIC驱动中，使用 <code>struct gic_chip_data</code> 结构体来描述GIC控制器的信息，整个驱动都是围绕着该结构体的初始化，<strong>驱动中将函数指针都初始化好，实际的工作是由中断信号触发，也就是在中断来临的时候去进行回调。</strong></p>
+<ul>
+<li><code>struct irq_chip</code> 结构，描述的是中断控制器的底层操作函数集，这些函数集最终完成对控制器硬件的操作</li>
+<li><code>struct irq_domain</code>结构，用于硬件中断号和Linux IRQ中断号（virq，虚拟中断号）之间的映射；</li>
+</ul>
+<p>还是上一下具体的数据结构代码吧，关键注释如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span><span class="lnt">97
+</span><span class="lnt">98
+</span><span class="lnt">99
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">irq_chip</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">device</span>	<span class="o">*</span><span class="n">parent_device</span><span class="p">;</span>     <span class="c1">//指向父设备
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">char</span>	<span class="o">*</span><span class="n">name</span><span class="p">;</span>      <span class="c1">//  /proc/interrupts中显示的名字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="nf">int</span>	<span class="p">(</span><span class="o">*</span><span class="n">irq_startup</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>  <span class="c1">//启动中断，如果设置成NULL，则默认为enable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_shutdown</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>     <span class="c1">//关闭中断，如果设置成NULL，则默认为disable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_enable</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>   <span class="c1">//中断使能，如果设置成NULL，则默认为chip-&gt;unmask
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_disable</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>  <span class="c1">//中断禁止
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_ack</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>  <span class="c1">//开始新的中断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_mask</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span> <span class="c1">//中断源屏蔽
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_mask_ack</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span> <span class="c1">//应答并屏蔽中断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_unmask</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>   <span class="c1">//解除中断屏蔽
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_eoi</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>  <span class="c1">//中断处理结束后调用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_set_affinity</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">cpumask</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">force</span><span class="p">);</span> <span class="c1">//在SMP中设置CPU亲和力
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_retrigger</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>    <span class="c1">//重新发送中断到CPU
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_set_type</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">flow_type</span><span class="p">);</span> <span class="c1">//设置中断触发类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_set_wake</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">on</span><span class="p">);</span>    <span class="c1">//使能/禁止电源管理中的唤醒功能
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_bus_lock</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span> <span class="c1">//慢速芯片总线上的锁
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_bus_sync_unlock</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>  <span class="c1">//同步释放慢速总线芯片的锁
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_cpu_online</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_cpu_offline</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_suspend</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_resume</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_pm_shutdown</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_calc_mask</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_print_chip</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">struct</span> <span class="n">seq_file</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_request_resources</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_release_resources</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_compose_msi_msg</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">struct</span> <span class="n">msi_msg</span> <span class="o">*</span><span class="n">msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_write_msi_msg</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">struct</span> <span class="n">msi_msg</span> <span class="o">*</span><span class="n">msg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_get_irqchip_state</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">enum</span> <span class="n">irqchip_irq_state</span> <span class="n">which</span><span class="p">,</span> <span class="kt">bool</span> <span class="o">*</span><span class="n">state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_set_irqchip_state</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">enum</span> <span class="n">irqchip_irq_state</span> <span class="n">which</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>		<span class="p">(</span><span class="o">*</span><span class="n">irq_set_vcpu_affinity</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">vcpu_info</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">ipi_send_single</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">cpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span>		<span class="p">(</span><span class="o">*</span><span class="n">ipi_send_mask</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">cpumask</span> <span class="o">*</span><span class="n">dest</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">long</span>	<span class="n">flags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">irq_domain</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">list_head</span> <span class="n">link</span><span class="p">;</span>  <span class="c1">//用于添加到全局链表irq_domain_list中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>   <span class="c1">//IRQ domain的名字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">const</span> <span class="k">struct</span> <span class="n">irq_domain_ops</span> <span class="o">*</span><span class="n">ops</span><span class="p">;</span>   <span class="c1">//IRQ domain映射操作函数集
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="o">*</span><span class="n">host_data</span><span class="p">;</span>    <span class="c1">//在GIC驱动中，指向了irq_gic_data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">flags</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">mapcount</span><span class="p">;</span>  <span class="c1">//映射中断的个数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Optional data */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">fwnode_handle</span> <span class="o">*</span><span class="n">fwnode</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">enum</span> <span class="n">irq_domain_bus_token</span> <span class="n">bus_token</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">irq_domain_chip_generic</span> <span class="o">*</span><span class="n">gc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef	CONFIG_IRQ_DOMAIN_HIERARCHY
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">parent</span><span class="p">;</span>  <span class="c1">//支持级联的话，指向父设备
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_GENERIC_IRQ_DEBUGFS
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="k">struct</span> <span class="n">dentry</span>		<span class="o">*</span><span class="n">debugfs_file</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* reverse map data. The linear map gets appended to the irq_domain */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">irq_hw_number_t</span> <span class="n">hwirq_max</span><span class="p">;</span>  <span class="c1">//IRQ domain支持中断数量的最大值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">revmap_direct_max_irq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">revmap_size</span><span class="p">;</span>   <span class="c1">//线性映射的大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">struct</span> <span class="n">radix_tree_root</span> <span class="n">revmap_tree</span><span class="p">;</span> <span class="c1">//Radix Tree映射的根节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">linear_revmap</span><span class="p">[];</span>   <span class="c1">//线性映射用到的查找表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">irq_domain_ops</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">match</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="k">struct</span> <span class="n">device_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		     <span class="k">enum</span> <span class="n">irq_domain_bus_token</span> <span class="n">bus_token</span><span class="p">);</span>      <span class="c1">// 用于中断控制器设备与IRQ domain的匹配
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">select</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="k">struct</span> <span class="n">irq_fwspec</span> <span class="o">*</span><span class="n">fwspec</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		      <span class="k">enum</span> <span class="n">irq_domain_bus_token</span> <span class="n">bus_token</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">map</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">virq</span><span class="p">,</span> <span class="kt">irq_hw_number_t</span> <span class="n">hw</span><span class="p">);</span>    <span class="c1">//用于硬件中断号与Linux中断号的映射
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">unmap</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">virq</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">xlate</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="k">struct</span> <span class="n">device_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		     <span class="k">const</span> <span class="n">u32</span> <span class="o">*</span><span class="n">intspec</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">intsize</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		     <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">out_hwirq</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n">out_type</span><span class="p">);</span>     <span class="c1">//通过device_node，解析硬件中断号和触发方式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef	CONFIG_IRQ_DOMAIN_HIERARCHY
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="cm">/* extended V2 interfaces to support hierarchy irq_domains */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">alloc</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">virq</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		     <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">nr_irqs</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">free</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">virq</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		     <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">nr_irqs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">activate</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">irq_data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">deactivate</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="k">struct</span> <span class="n">irq_data</span> <span class="o">*</span><span class="n">irq_data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">translate</span><span class="p">)(</span><span class="k">struct</span> <span class="n">irq_domain</span> <span class="o">*</span><span class="n">d</span><span class="p">,</span> <span class="k">struct</span> <span class="n">irq_fwspec</span> <span class="o">*</span><span class="n">fwspec</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			 <span class="kt">unsigned</span> <span class="kt">long</span> <span class="o">*</span><span class="n">out_hwirq</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n">out_type</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="关于irq-domain">关于IRQ domain
+</h3><p>IRQ domain用于将硬件的中断号，转换成Linux系统中的中断号（<code>virtual irq, virq</code>），来张图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202005/1771657-20200531111647851-1005315068.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>每个中断控制器都对应一个IRQ Domain；</li>
+<li>中断控制器驱动通过 <code>irq_domain_add_*()</code> 接口来创建 IRQ Domain；</li>
+<li>IRQ Domain支持三种映射方式：linear map（线性映射），tree map（树映射），no map（不映射）
+<ul>
+<li><code>linear map</code>: 维护固定大小的表，索引是硬件中断号，如果硬件中断最大数量固定，并且数值不大，可以选择线性映射；</li>
+<li><code>tree map</code>: 硬件中断号可能很大，可以选择树映射；</li>
+<li><code>no map</code>: 硬件中断号直接就是Linux的中断号；</li>
+</ul>
+</li>
+</ul>
+<p>三种映射的方式如下图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202005/1771657-20200531111718514-879227841.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>图中描述了三个中断控制器，对应到三种不同的映射方式。各个控制器的硬件中断号可以一样，最终在Linux内核中映射的中断号是唯一的。</p>
+<h2 id="12-架构相关代码">1.2 架构相关代码
+</h2><p>中断也是异常模式的一种，当<strong>外设触发中断</strong>时，处理器会切换到特定的异常模式进行处理，而这部分代码都是架构相关的。ARM64的代码位于 <code>arch/arm64/kernel/entry.S</code>。</p>
+<p>ARM64 处理器有四个异常级别 Exception Level：0~3，<code>EL0</code> 对应用户态程序，<code>EL1</code> 对应操作系统内核态，<code>EL2</code>对应Hypervisor，<code>EL3</code> 对应Secure Monitor。</p>
+<p>当异常触发时，处理器进行模式切换，并且跳转到异常向量表开始执行，针对中断异常，最终会跳转到<code>irq_handler</code> 中。代码比较简单，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Interrupt handling.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl">	<span class="p">.</span><span class="n">macro</span>	<span class="n">irq_handler</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ldr_l</span>	<span class="n">x1</span><span class="p">,</span> <span class="n">handle_arch_irq</span> <span class="c1">//之前GIC驱动注册好的gic_handle_irq
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">mov</span>	<span class="n">x0</span><span class="p">,</span> <span class="n">sp</span>
+</span></span><span class="line"><span class="cl">	<span class="n">irq_stack_entry</span>
+</span></span><span class="line"><span class="cl">	<span class="n">blr</span>	<span class="n">x1</span>
+</span></span><span class="line"><span class="cl">	<span class="n">irq_stack_exit</span>
+</span></span><span class="line"><span class="cl">	<span class="p">.</span><span class="n">endm</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>内核整个中断处理流程为：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202005/1771657-20200531111755704-1231972965.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>中断触发，处理器去异常向量表找到对应的入口，比如EL0的中断跳转到 <code>el0_irq</code> 处，EL1 则跳转到 <code>el1_irq</code>处。在GIC驱动中，会调用 <code>set_handle_irq</code> 接口来设置 <code>handle_arch_irq</code> 的函数指针，让它指向<code>gic_handle_irq</code>，因此中断触发的时候会跳转到 <code>gic_handle_irq</code> 处执行；</p>
+<ul>
+<li><code>gic_handle_irq</code> 函数处理时，分为两种情况，一种是外设触发的中断，硬件中断号在 <code>16 ~ 1020</code> 之间，一种是软件触发的中断，用于处理器之间的交互，硬件中断号在16以内；</li>
+<li>外设触发中断后，根据 <code>irq domain</code> 去查找对应的Linux IRQ中断号，进而得到中断描述符<code>irq_desc</code>，最终也就能调用到外设的中断处理函数了。</li>
+</ul>
+<p><code>GIC/Arch</code> 相关的介绍就此打住，接下来是Linux内核的通用中断处理框架。</p>
+<h1 id="2-通用框架层">2 通用框架层
+</h1><p>上一章主要讲了底层硬件GIC驱动，以及Arch-Specific的中断代码，本文将研究下<strong>通用的中断处理的过程</strong>，属于硬件无关层。下面的内容将围绕两个问题：</p>
+<ol>
+<li><strong>用户是怎么使用中断的（<code>中断注册</code>）？</strong></li>
+<li><strong>外设触发中断信号时，最终是怎么调用到中断handler的（<code>中断处理</code>）？</strong></li>
+</ol>
+<h2 id="21-数据结构分析">2.1 数据结构分析
+</h2><p>先来看一下总的数据结构，核心是围绕着 <code>struct irq_desc</code> 来展开：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202006/1771657-20200605223624401-1747243848.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>Linux内核的中断处理，围绕着中断描述符结构 <code>struct irq_desc</code> 展开，内核提供了两种<strong>中断描述符组织形式</strong>：</p>
+<blockquote>
+<ol>
+<li>打开 <code>CONFIG_SPARSE_IRQ</code> 宏（中断编号不连续），中断描述符以 <code>radix-tree </code> 来组织，用户在初始化时进行动态分配，然后再插入 <code>radix-tree</code> 中；</li>
+<li>关闭 <code>CONFIG_SPARSE_IRQ</code> 宏（中断编号连续），中断描述符以数组的形式组织，并且已经分配好；</li>
+<li>不管哪种形式，最终都可以通过 <code>linux irq</code> 号来找到对应的中断描述符；</li>
+</ol>
+</blockquote>
+<p>图的左侧灰色部分，上一章已经介绍过，主要**在中断控制器驱动中进行初始化设置，**包括各个结构中函数指针的指向等，其中 <code>struct irq_chip</code> 用于对中断控制器的硬件操作，<code>struct irq_domain</code> 与中断控制器对应，完成的工作是硬件中断号到 <code>Linux irq</code> 的映射。</p>
+<p>图的上侧灰色部分，<strong>中断描述符的创建</strong>（这里指 <code>CONFIG_SPARSE_IRQ</code> ），主要在获取设备中断信息的过程中完成的，从而让设备树中的中断能与具体的中断描述符 <code>irq_desc</code> 匹配，在后文的<strong>中断注册</strong>中会介绍。</p>
+<p>图中剩余部分，在设备申请注册中断的过程中进行设置，比如 <code>struct irqaction</code> 中 <code>handler</code> 的设置，这个用于<strong>指向我们设备驱动程序中的中断处理函数</strong>了。</p>
+<p>中断的处理主要有以下几个<strong>核心功能模块</strong>：</p>
+<blockquote>
+<ol>
+<li>硬件中断号到 <code>Linux irq</code> 中断号的映射，并创建好 <code>irq_desc</code> 中断描述符；</li>
+<li>中断注册时，先获取设备的中断号，根据中断号找到对应的 <code>irq_desc</code> ，并将设备的中断处理函数添加到 <code>irq_desc</code> 中；</li>
+<li>设备触发中断信号时，根据硬件中断号得到 <code>Linux irq</code> 中断号，找到对应的 <code>irq_desc</code> ，最终调用到设备的中断处理函数。</li>
+</ol>
+</blockquote>
+<p>以上功能模块构成了Linux中断框架的核心部分，下面详细分析。</p>
+<h2 id="22-中断框架分析">2.2 中断框架分析
+</h2><h3 id="中断注册">中断注册
+</h3><p>首先思考一个问题: <em><strong>用户是怎么使用中断的？</strong></em></p>
+<ul>
+<li>熟悉设备驱动的同学应该都清楚，经常会在驱动程序中调用 <code>request_irq()</code> 接口或者<code>request_threaded_irq()</code> 接口来注册设备的中断处理函数；</li>
+<li><code>request_irq()/request_threaded_irq</code> 接口中，都需要用到 <code>irq</code>，也就是中断号，那么这个中断号是从哪里来的呢？它是 <code>Linux irq</code>，它又是如何映射到具体的硬件设备的中断号的呢？</li>
+</ul>
+<p>似乎有些跑题了，但实际上在用户进行**中断注册之前内核必然会进行一些基本的设置。**这样就来到了Linux中断框架中一个重要功能模块: <strong>设备硬件中断到 <code>Linux irq</code> 中断号的映射</strong>。</p>
+<hr>
+<blockquote>
+<p><em><strong>为什么需要中断映射？</strong></em></p>
+<ul>
+<li><strong>硬件中断号:</strong> GIC为每一个硬件中断源都分配了一个唯一编号，称为硬件中断号，用于区分不同的中断源。GIC-v3支持的硬件中断类型和分配的硬件中断号范围如下:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nl">SGI</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="nl">PPI</span><span class="p">:</span> <span class="mi">16</span><span class="o">-</span><span class="mi">31</span>
+</span></span><span class="line"><span class="cl"><span class="nl">SPI</span><span class="p">:</span> <span class="mi">21</span><span class="o">-</span><span class="mi">1019</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>软件中断号:</strong> 系统在中断注册和中断处理过程中使用到的中断号。有的地方也称为虚拟中断号。</li>
+</ul>
+<p>为什么要进行中断映射呢？简单来讲，软件可以不需要关注该中断在硬件上是哪个中断来源。简单的SOC内部对中断的管理也比较简单，通常会有一个全局的中断状态寄存器来记录外设中断，这样直接将硬件中断号线性映射到软件中断号即可。但是随着芯片技术的发展，SOC越来越复杂，通常内部会有多个中断控制器（比如GIC interrupt controller, GPIO interrupt controller）, 每一个中断控制器对应多个中断号，而硬件中断号在不同的中断控制器上是会重复编码， 这时仅仅用硬中断号已经不能唯一标识一个外设中断。尤其在多个<strong>中断控制器级联</strong>的情况下，会变得更加复杂。这样对软件编程来讲极不友好，作为软件工程师，我们更愿意集中精力关注软件层面的内容。</p>
+</blockquote>
+<p>中断映射的过程如下图:</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202006/1771657-20200605222653356-1874117507.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<blockquote>
+<ul>
+<li>硬件设备的中断信息都在设备树 <code>device tree</code> 中进行了描述，在系统启动过程中，这些信息都已经加载到内存中并得到了解析；</li>
+<li>驱动中通常会使用 <code>platform_get_irq</code> 或 <code>irq_of_parse_and_map</code> 接口，去根据设备树的信息去创建映射关系（硬件中断号到<code>linux irq</code>中断号映射）；</li>
+</ul>
+</blockquote>
+<p>之前提到过 <code>struct irq_domain</code> 用于完成映射工作，因此在 <code>irq_create_fwspec_mapping</code> 接口中，会先去找到匹配的 <code>irq domain</code>，再去回调该 <code>irq domain</code> 中的函数集 (<code>irq_domain_ops</code>)，通常 <code>irq domain</code> 都是在中断控制器驱动中初始化的，以 <code>ARM GICv2</code> 为例，最终回调到 <code>gic_irq_domain_hierarchy_ops</code> 中的函数；</p>
+<p>如果已经创建好了映射，那么可以直接进行返回 <code>linux irq</code> 中断号了，否则的话需要 <code>irq_domain_alloc_irqs</code>来创建映射关系。<code>irq_domain_alloc_irqs</code> 完成两个工作:</p>
+<ol>
+<li>针对 <code>linux irq</code> 中断号创建一个 <code>irq_desc</code> 中断描述符；</li>
+<li>调用 <code>domain-&gt;ops-&gt;alloc</code> 函数来完成映射，在 <code>ARM GICv2</code> 驱动中对应 <code>gic_irq_domain_alloc</code> 函数，这个函数很关键，所以下文重点介绍一下。</li>
+</ol>
+<p><strong><code>gic_irq_domain_alloc</code> 函数如下:</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202006/1771657-20200605222839660-1799351554.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li><code>gic_irq_domain_translate</code>：负责解析出设备树中描述的中断号和中断触发类型（边缘触发、电平触发等）；</li>
+<li><code>gic_irq_domain_map</code>：将硬件中断号和linux软中断号绑定到一个结构中，也就完成了映射，此外还绑定了<code>irq_desc</code> 结构中的其他字段，**最重要的是设置了 <code>irq_desc-&gt;handle_irq</code> 的函数指针，这个最终是中断响应时往上执行的入口，**这个是关键，下文讲述中断处理过程时还会提到；</li>
+<li>根据硬件中断号的范围设置 <code>irq_desc-&gt;handle_irq</code> 的指针，共享中断入口为 <code>handle_fasteoi_irq</code>，私有中断入口为 <code>handle_percpu_devid_irq</code>；</li>
+</ul>
+<p>上述函数执行完成后，完成了两大工作：</p>
+<blockquote>
+<ol>
+<li><strong>硬件中断号与Linux中断号完成映射，并为Linux中断号创建了<code>irq_desc</code>中断描述符；</strong></li>
+<li><strong>数据结构的绑定及初始化，关键的地方是设置了中断处理执行流程的入口；</strong></li>
+</ol>
+</blockquote>
+<hr>
+<p>内核已经完成了基本的设置，即为中断注册做好了充分准备，我们现在可以<strong>正式开启中断注册的流程</strong>了：</p>
+<p>设备驱动中，获取到了 <code>irq</code> 中断号后，通常就会采用 <code>request_irq/request_threaded_irq</code> 来注册中断，其中<code>request_irq</code> 用于注册普通处理的中断，<code>request_threaded_irq</code> 用于注册线程化处理的中断。在讲具体的注册流程前，先看一下主要的中断标志位：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cp">#define IRQF_SHARED		0x00000080              </span><span class="c1">//多个设备共享一个中断号，需要外设硬件支持
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_PROBE_SHARED	0x00000100              </span><span class="c1">//中断处理程序允许sharing mismatch发生
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define __IRQF_TIMER		0x00000200              </span><span class="c1">//时钟中断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_PERCPU		0x00000400              </span><span class="c1">//属于特定CPU的中断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_NOBALANCING	0x00000800              </span><span class="c1">//禁止在CPU之间进行中断均衡处理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_IRQPOLL		0x00001000              </span><span class="c1">//中断被用作轮训
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_ONESHOT		0x00002000              </span><span class="c1">//一次性触发的中断，不能嵌套，1）在硬件中断处理完成后才能打开中断；2）在中断线程化中保持关闭状态，直到该中断源上的所有thread_fn函数都执行完
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_NO_SUSPEND		0x00004000              </span><span class="c1">//系统休眠唤醒操作中，不关闭该中断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_FORCE_RESUME	0x00008000              </span><span class="c1">//系统唤醒过程中必须强制打开该中断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_NO_THREAD		0x00010000              </span><span class="c1">//禁止中断线程化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_EARLY_RESUME	0x00020000              </span><span class="c1">//系统唤醒过程中在syscore阶段resume，而不用等到设备resume阶段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define IRQF_COND_SUSPEND	0x00040000              </span><span class="c1">//与NO_SUSPEND的用户共享中断时，执行本设备的中断处理函数
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>中断注册流程</strong>如下图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202006/1771657-20200605223042609-247616444.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li><code>request_irq</code> 也是调用 <code>request_threaded_irq</code>，只是在传参的时候，线程处理函数 <code>thread_fn</code> 函数设置成 NULL；</li>
+<li>由于在硬件中断号和Linux中断号完成映射后，<code>irq_desc</code> 已经创建好，可以通过 <code>irq_to_desc</code> 接口去获取对应的 <code>irq_desc</code>；</li>
+<li>创建 <code>irqaction</code>，并初始化该结构体中的各个字段，其中包括传入的中断处理函数赋值给对应的字段；</li>
+<li><code>__setup_irq</code> 用于完成中断的相关设置，包括中断线程化的处理：
+<ul>
+<li>中断线程化用于减少系统关中断的时间，增强系统的实时性；</li>
+<li>ARM64 默认开启了 <code>CONFIG_IRQ_FORCED_THREADING</code>，引导参数传入 <code>threadirqs</code> 时，则除了<code>IRQF_NO_THREAD</code>外的中断，其他的都将强制线程化处理；</li>
+<li>中断线程化会为每个中断都创建一个内核线程，如果中断进行共享，对应<code>irqaction</code>将连接成链表，每个<code>irqaction</code> 都有 <code>thread_mask </code>位图字段，当所有共享中断都处理完成后才能 <code>unmask</code> 中断，解除中断屏蔽；</li>
+</ul>
+</li>
+</ul>
+<h3 id="中断处理">中断处理
+</h3><p>当完成中断的注册后，所有结构的组织关系都已经建立好，剩下的工作就是当设备中断信号来临时，进行中断的处理工作。回顾下 <code>Arch-specific</code> 的中断处理流程：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202006/1771657-20200605223246669-1755658498.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>中断收到之后，首先会跳转到异常向量表的入口处，进而逐级进行回调处理，最终调用到 <code>generic_handle_irq</code>来进行中断处理。<code>generic_handle_irq</code>处理如下图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202006/1771657-20200605223306409-238446169.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>
+<p><code>generic_handle_irq</code> 函数最终会调用到 <code>desc-&gt;handle_irq()</code>，这个也就是对应到上文中在建立映射关系的过程中，调用 <code>irq_domain_set_info</code> 函数，设置好了函数指针，也就是 <code>handle_fasteoi_irq</code> 和<code>handle_percpu_devid_irq</code>，下面看这两个函数：</p>
+<blockquote>
+<ul>
+<li>**<code>handle_fasteoi_irq</code>：**处理共享中断，并且遍历 <code>irqaction</code> 链表，逐个调用 <code>action-&gt;handler()</code>函数，这个函数正是设备驱动程序调用<code>request_irq/request_threaded_irq</code>接口注册的中断处理函数，此外如果中断线程化处理的话，还会调用<code>__irq_wake_thread()</code>唤醒内核线程；</li>
+<li>**<code>handle_percpu_devid_irq</code>：**处理per-CPU中断处理，在这个过程中会分别调用中断控制器的处理函数进行硬件操作，该函数同样也会调用 <code>action-&gt;handler()</code> 来进行中断处理；</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="中断线程化处理">中断线程化处理
+</h4><p>中断线程化处理后的唤醒流程 <code>__handle_irq_event_percpu-&gt;__irq_wake_thread</code>：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1771657/202006/1771657-20200605223341892-243579938.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li><strong>中断线程初始化：</strong><code>irq_thread</code> 内核线程，将根据是否为强制中断线程化对函数指针 <code>handler_fn</code> 进行初始化，以便后续进行调用。</li>
+<li><strong>中断线程执行：</strong><code>irq_thread</code> 内核线程将在 <code>while(!irq_wait_for_interrupt)</code> 循环中进行中断的处理，当满足条件时，执行<code>handler_fn</code>，在该函数中最终调用 <code>action-&gt;thread_fn</code>，也就是完成了中断的处理；</li>
+<li><strong>中断线程唤醒条件判定：</strong><code>irq_wait_for_interrupt</code> 函数，将会判断中断线程的唤醒条件，如果满足了，则将当前任务设置成<code>TASK_RUNNING</code> 状态，并返回 0，这样就能执行中断的处理，否则就调用 <code>schedule()</code> 进行调度，让出CPU，并将任务设置成 <code>TASK_INTERRUPTIBLE</code> 可中断睡眠状态；</li>
+</ul>
+<h2 id="23-总结">2.3 总结
+</h2><p>中断的处理，总体来说可以分为<strong>两部分</strong>来看：</p>
+<ol>
+<li>**<em>自顶向下：<em><strong>围绕 <code>irq_desc</code> 中断描述符建立好连接关系，这个过程就包括：中断源信息的解析（设备树），硬件中断号到Linux中断号的映射、<code>irq_desc</code> 结构的分配及初始化（内部各个结构的组织关系）、中断的注册（填充 <code>irq_desc</code> 结构，包括handler处理函数）等，总而言之，就是</strong>完成静态关系创建，为中断处理做好准备；</em></em></li>
+<li>***自底向上：***当外设触发中断信号时，中断控制器接收到信号并发送到处理器，此时处理器进行异常模式切换，并逐步从处理器架构相关代码逐级回调。如果涉及到中断线程化，则还需要进行中断内核线程的唤醒操作，最终完成中断处理函数的执行。</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>
