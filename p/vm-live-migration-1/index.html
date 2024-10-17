@@ -267,81 +267,88 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#11-热迁移性能指标">1.1 热迁移性能指标</a></li>
-    <li><a href="#12-热迁移应用场景">1.2 热迁移应用场景</a></li>
-    <li><a href="#13-两种主流的热迁移算法">1.3 两种主流的热迁移算法</a>
+    <li><a href="#0-资料">0 资料</a></li>
+    <li><a href="#1-虚拟化热迁移技术概述">1 虚拟化热迁移技术概述</a>
       <ol>
-        <li><a href="#预拷贝热迁移算法-pre_copy">预拷贝热迁移算法: pre_copy</a></li>
-        <li><a href="#后拷贝热迁移算法-post_copy">后拷贝热迁移算法: post_copy</a></li>
-      </ol>
-    </li>
-  </ol>
-
-  <ol>
-    <li><a href="#21-qemu在kvm中的应用">2.1 QEMU在KVM中的应用</a>
-      <ol>
-        <li><a href="#qemu多线程事件驱动模型">QEMU多线程事件驱动模型</a>
+        <li><a href="#11-热迁移性能指标">1.1 热迁移性能指标</a></li>
+        <li><a href="#12-热迁移应用场景">1.2 热迁移应用场景</a></li>
+        <li><a href="#13-两种主流的热迁移算法">1.3 两种主流的热迁移算法</a>
           <ol>
-            <li><a href="#qemu事件驱动">QEMU事件驱动</a></li>
-            <li><a href="#qemu多线程">QEMU多线程</a></li>
-          </ol>
-        </li>
-        <li><a href="#客户机代码的执行">客户机代码的执行</a></li>
-      </ol>
-    </li>
-    <li><a href="#22-cpu虚拟化">2.2 CPU虚拟化</a>
-      <ol>
-        <li><a href="#intel的vt-x技术">Intel的VT-x技术</a></li>
-        <li><a href="#kvm-cpu虚拟化实现">KVM: CPU虚拟化实现</a>
-          <ol>
-            <li><a href="#kvm用户接口">KVM用户接口</a></li>
-            <li><a href="#kvm虚拟机的创建和运行">KVM虚拟机的创建和运行</a></li>
-          </ol>
-        </li>
-        <li><a href="#kvm-cpu热迁移">KVM: CPU热迁移</a></li>
-      </ol>
-    </li>
-    <li><a href="#23-内存虚拟化">2.3 内存虚拟化</a>
-      <ol>
-        <li><a href="#intel的ept技术">Intel的EPT技术</a></li>
-        <li><a href="#kvm-内存虚拟化实现">KVM: 内存虚拟化实现</a>
-          <ol>
-            <li><a href="#qemu内存模型">QEMU内存模型</a></li>
-            <li><a href="#ept页表的构建">EPT页表的构建</a></li>
-          </ol>
-        </li>
-        <li><a href="#kvm-内存热迁移">KVM: 内存热迁移</a></li>
-      </ol>
-    </li>
-    <li><a href="#24-io虚拟化">2.4 IO虚拟化</a>
-      <ol>
-        <li><a href="#io全虚拟化">IO全虚拟化</a></li>
-        <li><a href="#io半虚拟化">IO半虚拟化</a></li>
-        <li><a href="#kvm-io热迁移">KVM: IO热迁移</a></li>
-      </ol>
-    </li>
-  </ol>
-
-  <ol>
-    <li><a href="#31-kvm热迁移的内容">3.1 KVM热迁移的内容</a>
-      <ol>
-        <li><a href="#cpu热迁移">CPU热迁移</a></li>
-        <li><a href="#内存热迁移">内存热迁移</a></li>
-        <li><a href="#io设备的迁移">IO设备的迁移</a>
-          <ol>
-            <li><a href="#磁盘的迁移">磁盘的迁移</a></li>
-            <li><a href="#网络的迁移">网络的迁移</a></li>
+            <li><a href="#预拷贝热迁移算法-pre_copy">预拷贝热迁移算法: pre_copy</a></li>
+            <li><a href="#后拷贝热迁移算法-post_copy">后拷贝热迁移算法: post_copy</a></li>
           </ol>
         </li>
       </ol>
     </li>
-    <li><a href="#32-kvm热迁移的具体实现">3.2 KVM热迁移的具体实现</a>
+    <li><a href="#2-基于x86的kvm虚拟化技术">2 基于x86的KVM虚拟化技术</a>
       <ol>
-        <li><a href="#kvm热迁移流程">KVM热迁移流程</a></li>
-        <li><a href="#重要数据结构">重要数据结构</a></li>
-        <li><a href="#脏页位图">脏页位图</a></li>
-        <li><a href="#迭代预拷贝阶段">迭代预拷贝阶段</a></li>
-        <li><a href="#停机拷贝阶段">停机拷贝阶段</a></li>
+        <li><a href="#21-qemu在kvm中的应用">2.1 QEMU在KVM中的应用</a>
+          <ol>
+            <li><a href="#qemu多线程事件驱动模型">QEMU多线程事件驱动模型</a>
+              <ol>
+                <li><a href="#qemu事件驱动">QEMU事件驱动</a></li>
+                <li><a href="#qemu多线程">QEMU多线程</a></li>
+              </ol>
+            </li>
+            <li><a href="#客户机代码的执行">客户机代码的执行</a></li>
+          </ol>
+        </li>
+        <li><a href="#22-cpu虚拟化">2.2 CPU虚拟化</a>
+          <ol>
+            <li><a href="#intel的vt-x技术">Intel的VT-x技术</a></li>
+            <li><a href="#kvm-cpu虚拟化实现">KVM: CPU虚拟化实现</a>
+              <ol>
+                <li><a href="#kvm用户接口">KVM用户接口</a></li>
+                <li><a href="#kvm虚拟机的创建和运行">KVM虚拟机的创建和运行</a></li>
+              </ol>
+            </li>
+            <li><a href="#kvm-cpu热迁移">KVM: CPU热迁移</a></li>
+          </ol>
+        </li>
+        <li><a href="#23-内存虚拟化">2.3 内存虚拟化</a>
+          <ol>
+            <li><a href="#intel的ept技术">Intel的EPT技术</a></li>
+            <li><a href="#kvm-内存虚拟化实现">KVM: 内存虚拟化实现</a>
+              <ol>
+                <li><a href="#qemu内存模型">QEMU内存模型</a></li>
+                <li><a href="#ept页表的构建">EPT页表的构建</a></li>
+              </ol>
+            </li>
+            <li><a href="#kvm-内存热迁移">KVM: 内存热迁移</a></li>
+          </ol>
+        </li>
+        <li><a href="#24-io虚拟化">2.4 IO虚拟化</a>
+          <ol>
+            <li><a href="#io全虚拟化">IO全虚拟化</a></li>
+            <li><a href="#io半虚拟化">IO半虚拟化</a></li>
+            <li><a href="#kvm-io热迁移">KVM: IO热迁移</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#3-kvm虚拟机热迁移实现">3 KVM虚拟机热迁移实现</a>
+      <ol>
+        <li><a href="#31-kvm热迁移的内容">3.1 KVM热迁移的内容</a>
+          <ol>
+            <li><a href="#cpu热迁移">CPU热迁移</a></li>
+            <li><a href="#内存热迁移">内存热迁移</a></li>
+            <li><a href="#io设备的迁移">IO设备的迁移</a>
+              <ol>
+                <li><a href="#磁盘的迁移">磁盘的迁移</a></li>
+                <li><a href="#网络的迁移">网络的迁移</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#32-kvm热迁移的具体实现">3.2 KVM热迁移的具体实现</a>
+          <ol>
+            <li><a href="#kvm热迁移流程">KVM热迁移流程</a></li>
+            <li><a href="#重要数据结构">重要数据结构</a></li>
+            <li><a href="#脏页位图">脏页位图</a></li>
+            <li><a href="#迭代预拷贝阶段">迭代预拷贝阶段</a></li>
+            <li><a href="#停机拷贝阶段">停机拷贝阶段</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>

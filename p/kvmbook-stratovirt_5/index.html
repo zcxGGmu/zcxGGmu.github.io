@@ -267,106 +267,117 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#31-cpu子系统">3.1 CPU子系统</a></li>
-    <li><a href="#32-内存子系统">3.2 内存子系统</a>
+    <li><a href="#0-参考">0 参考</a></li>
+    <li><a href="#1-stratovirt概述">1 StratoVirt概述</a></li>
+    <li><a href="#2-发展背景">2 发展背景</a></li>
+    <li><a href="#3-stratovirt架构设计">3 StratoVirt架构设计</a>
       <ol>
-        <li><a href="#相关概念">相关概念</a></li>
-        <li><a href="#虚拟机物理内存初始化">虚拟机物理内存初始化</a></li>
-      </ol>
-    </li>
-    <li><a href="#33-io子系统">3.3 I/O子系统</a>
-      <ol>
-        <li><a href="#完全设备模拟-串口">完全设备模拟: 串口</a></li>
-        <li><a href="#半虚拟化模拟-磁盘">半虚拟化模拟: 磁盘</a></li>
-      </ol>
-    </li>
-  </ol>
-
-  <ol>
-    <li><a href="#41-总体介绍">4.1 总体介绍</a></li>
-    <li><a href="#42-kvm模型">4.2 KVM模型</a>
-      <ol>
-        <li><a href="#step1-定义汇编指令">step1: 定义汇编指令</a></li>
-        <li><a href="#step2-打开kvm模块并创建虚拟机">step2: 打开KVM模块并创建虚拟机</a></li>
-        <li><a href="#step3-初始化虚拟机内存">step3: 初始化虚拟机内存</a></li>
-        <li><a href="#step4-创建并初始化虚拟机和vcpu">step4: 创建并初始化虚拟机和vCPU</a></li>
-        <li><a href="#step5-处理vcpu退出事件">step5: 处理vCPU退出事件</a></li>
-      </ol>
-    </li>
-    <li><a href="#43-内存模型">4.3 内存模型</a>
-      <ol>
-        <li><a href="#地址空间布局">地址空间布局</a></li>
-        <li><a href="#内存地址映射管理">内存地址映射管理</a></li>
-        <li><a href="#内存访问管理">内存访问管理</a></li>
-        <li><a href="#错误处理">错误处理</a></li>
-      </ol>
-    </li>
-    <li><a href="#44-cpu模型">4.4 CPU模型</a>
-      <ol>
-        <li><a href="#cpu基本结构的抽象">CPU基本结构的抽象</a>
+        <li><a href="#31-cpu子系统">3.1 CPU子系统</a></li>
+        <li><a href="#32-内存子系统">3.2 内存子系统</a>
           <ol>
-            <li><a href="#vcpu初始化">vCPU初始化</a></li>
-            <li><a href="#vcpu同步">vCPU同步</a></li>
-            <li><a href="#vcpu运行">vCPU运行</a></li>
+            <li><a href="#相关概念">相关概念</a></li>
+            <li><a href="#虚拟机物理内存初始化">虚拟机物理内存初始化</a></li>
           </ol>
         </li>
-        <li><a href="#cpu并发运行多个任务">CPU并发运行多个任务</a></li>
-      </ol>
-    </li>
-    <li><a href="#45-bootloader实现">4.5 BootLoader实现</a>
-      <ol>
-        <li><a href="#内核文件读入内存">内核文件读入内存</a></li>
-        <li><a href="#linux内核引导流程">Linux内核引导流程</a></li>
-        <li><a href="#配置zero-page">配置Zero Page</a></li>
-        <li><a href="#配置mptable">配置MPtable</a></li>
-        <li><a href="#配置initrdkernel和内核命令行">配置Initrd、Kernel和内核命令行</a></li>
-        <li><a href="#进入保护模式">进入保护模式</a></li>
-      </ol>
-    </li>
-    <li><a href="#46-串口实现">4.6 串口实现</a></li>
-    <li><a href="#47-epoll实现">4.7 Epoll实现</a>
-      <ol>
-        <li>
+        <li><a href="#33-io子系统">3.3 I/O子系统</a>
           <ol>
-            <li><a href="#epoll框架简单封装">Epoll框架简单封装</a></li>
-            <li><a href="#串行设备处理集成epoll机制">串行设备处理集成Epoll机制</a></li>
+            <li><a href="#完全设备模拟-串口">完全设备模拟: 串口</a></li>
+            <li><a href="#半虚拟化模拟-磁盘">半虚拟化模拟: 磁盘</a></li>
           </ol>
         </li>
       </ol>
     </li>
-    <li><a href="#todo-48-鲲鹏平台支持-aarch64">//TODO: 4.8 鲲鹏平台支持: AArch64</a>
+    <li><a href="#4-从零开始构建stratovirt">4 从零开始构建StratoVirt</a>
       <ol>
-        <li><a href="#中断控制器">中断控制器</a></li>
-        <li><a href="#bootloader">BootLoader</a></li>
-        <li><a href="#cpu模型">CPU模型</a></li>
-        <li><a href="#构建设备树">构建设备树</a></li>
+        <li><a href="#41-总体介绍">4.1 总体介绍</a></li>
+        <li><a href="#42-kvm模型">4.2 KVM模型</a>
+          <ol>
+            <li><a href="#step1-定义汇编指令">step1: 定义汇编指令</a></li>
+            <li><a href="#step2-打开kvm模块并创建虚拟机">step2: 打开KVM模块并创建虚拟机</a></li>
+            <li><a href="#step3-初始化虚拟机内存">step3: 初始化虚拟机内存</a></li>
+            <li><a href="#step4-创建并初始化虚拟机和vcpu">step4: 创建并初始化虚拟机和vCPU</a></li>
+            <li><a href="#step5-处理vcpu退出事件">step5: 处理vCPU退出事件</a></li>
+          </ol>
+        </li>
+        <li><a href="#43-内存模型">4.3 内存模型</a>
+          <ol>
+            <li><a href="#地址空间布局">地址空间布局</a></li>
+            <li><a href="#内存地址映射管理">内存地址映射管理</a></li>
+            <li><a href="#内存访问管理">内存访问管理</a></li>
+            <li><a href="#错误处理">错误处理</a></li>
+          </ol>
+        </li>
+        <li><a href="#44-cpu模型">4.4 CPU模型</a>
+          <ol>
+            <li><a href="#cpu基本结构的抽象">CPU基本结构的抽象</a>
+              <ol>
+                <li><a href="#vcpu初始化">vCPU初始化</a></li>
+                <li><a href="#vcpu同步">vCPU同步</a></li>
+                <li><a href="#vcpu运行">vCPU运行</a></li>
+              </ol>
+            </li>
+            <li><a href="#cpu并发运行多个任务">CPU并发运行多个任务</a></li>
+          </ol>
+        </li>
+        <li><a href="#45-bootloader实现">4.5 BootLoader实现</a>
+          <ol>
+            <li><a href="#内核文件读入内存">内核文件读入内存</a></li>
+            <li><a href="#linux内核引导流程">Linux内核引导流程</a></li>
+            <li><a href="#配置zero-page">配置Zero Page</a></li>
+            <li><a href="#配置mptable">配置MPtable</a></li>
+            <li><a href="#配置initrdkernel和内核命令行">配置Initrd、Kernel和内核命令行</a></li>
+            <li><a href="#进入保护模式">进入保护模式</a></li>
+          </ol>
+        </li>
+        <li><a href="#46-串口实现">4.6 串口实现</a></li>
+        <li><a href="#47-epoll实现">4.7 Epoll实现</a>
+          <ol>
+            <li>
+              <ol>
+                <li><a href="#epoll框架简单封装">Epoll框架简单封装</a></li>
+                <li><a href="#串行设备处理集成epoll机制">串行设备处理集成Epoll机制</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#todo-48-鲲鹏平台支持-aarch64">//TODO: 4.8 鲲鹏平台支持: AArch64</a>
+          <ol>
+            <li><a href="#中断控制器">中断控制器</a></li>
+            <li><a href="#bootloader">BootLoader</a></li>
+            <li><a href="#cpu模型">CPU模型</a></li>
+            <li><a href="#构建设备树">构建设备树</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
-  </ol>
-
-  <ol>
-    <li><a href="#51-架构设计">5.1 架构设计</a>
+    <li><a href="#5-mini_stratovirt_edu简介">5 mini_stratovirt_edu简介</a>
       <ol>
-        <li><a href="#kvm模块">KVM模块</a></li>
-        <li><a href="#内存模块">内存模块</a></li>
-        <li><a href="#cpu模块">CPU模块</a></li>
-        <li><a href="#bootloader模块">BootLoader模块</a></li>
-        <li><a href="#设备模块">设备模块</a></li>
-        <li><a href="#todo-aarch64架构额外支持">//TODO: AArch64架构额外支持</a></li>
-        <li><a href="#总结">总结</a></li>
+        <li><a href="#51-架构设计">5.1 架构设计</a>
+          <ol>
+            <li><a href="#kvm模块">KVM模块</a></li>
+            <li><a href="#内存模块">内存模块</a></li>
+            <li><a href="#cpu模块">CPU模块</a></li>
+            <li><a href="#bootloader模块">BootLoader模块</a></li>
+            <li><a href="#设备模块">设备模块</a></li>
+            <li><a href="#todo-aarch64架构额外支持">//TODO: AArch64架构额外支持</a></li>
+            <li><a href="#总结">总结</a></li>
+          </ol>
+        </li>
+        <li><a href="#52-使用指南">5.2 使用指南</a>
+          <ol>
+            <li><a href="#软硬件要求">软硬件要求</a></li>
+            <li><a href="#具体安装过程">具体安装过程</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
-    <li><a href="#52-使用指南">5.2 使用指南</a>
+    <li><a href="#6-总结">6 总结</a></li>
+    <li><a href="#7-todo开发流程">7 //TODO：开发流程</a>
       <ol>
-        <li><a href="#软硬件要求">软硬件要求</a></li>
-        <li><a href="#具体安装过程">具体安装过程</a></li>
+        <li><a href="#71-在qemu-arm系统上运行">7.1 在QEMU ARM系统上运行</a></li>
+        <li><a href="#72-依次测试下各commit">7.2 依次测试下各commit</a></li>
       </ol>
     </li>
-  </ol>
-
-  <ol>
-    <li><a href="#71-在qemu-arm系统上运行">7.1 在QEMU ARM系统上运行</a></li>
-    <li><a href="#72-依次测试下各commit">7.2 依次测试下各commit</a></li>
   </ol>
 </nav>
         </div>

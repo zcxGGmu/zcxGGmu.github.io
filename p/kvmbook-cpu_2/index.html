@@ -267,81 +267,89 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#11-敏感非特权指令的处理">1.1 敏感非特权指令的处理</a>
+    <li><a href="#1-概述">1 概述</a>
       <ol>
-        <li><a href="#敏感指令特权指令与敏感非特权指令">敏感指令、特权指令与敏感非特权指令</a></li>
-        <li><a href="#敏感非特权指令的软件解决方案">敏感非特权指令的软件解决方案</a></li>
-        <li><a href="#敏感非特权指令的硬件解决方案">敏感非特权指令的硬件解决方案</a></li>
-      </ol>
-    </li>
-    <li><a href="#12-虚拟机上下文切换">1.2 虚拟机上下文切换</a></li>
-    <li><a href="#13-中断虚拟化">1.3 中断虚拟化</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#21-vmx操作模式">2.1 VMX操作模式</a></li>
-    <li><a href="#22-vmcs">2.2 VMCS</a>
-      <ol>
-        <li><a href="#vmcs操作指令">VMCS操作指令</a></li>
-        <li><a href="#vmcs结构">VMCS结构</a></li>
-      </ol>
-    </li>
-    <li><a href="#23-picapic">2.3 PIC/APIC</a>
-      <ol>
-        <li><a href="#pic">PIC</a></li>
-        <li><a href="#apic">APIC</a></li>
-        <li><a href="#msi">MSI</a></li>
-        <li><a href="#irq--gsi--vector--pin">IRQ &amp; GSI &amp; Vector &amp; Pin</a></li>
-      </ol>
-    </li>
-    <li><a href="#24-intel-vt-x中断虚拟化">2.4 Intel VT-x中断虚拟化</a>
-      <ol>
-        <li><a href="#传统中断虚拟化">传统中断虚拟化</a></li>
-        <li><a href="#apicv支持的中断虚拟化">APICv支持的中断虚拟化</a>
+        <li><a href="#11-敏感非特权指令的处理">1.1 敏感非特权指令的处理</a>
           <ol>
-            <li><a href="#虚拟apic访问">虚拟APIC访问</a></li>
-            <li><a href="#虚拟中断递交">虚拟中断递交</a></li>
+            <li><a href="#敏感指令特权指令与敏感非特权指令">敏感指令、特权指令与敏感非特权指令</a></li>
+            <li><a href="#敏感非特权指令的软件解决方案">敏感非特权指令的软件解决方案</a></li>
+            <li><a href="#敏感非特权指令的硬件解决方案">敏感非特权指令的硬件解决方案</a></li>
+          </ol>
+        </li>
+        <li><a href="#12-虚拟机上下文切换">1.2 虚拟机上下文切换</a></li>
+        <li><a href="#13-中断虚拟化">1.3 中断虚拟化</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-intel-vt-x硬件辅助虚拟化">2 Intel VT-x硬件辅助虚拟化</a>
+      <ol>
+        <li><a href="#21-vmx操作模式">2.1 VMX操作模式</a></li>
+        <li><a href="#22-vmcs">2.2 VMCS</a>
+          <ol>
+            <li><a href="#vmcs操作指令">VMCS操作指令</a></li>
+            <li><a href="#vmcs结构">VMCS结构</a></li>
+          </ol>
+        </li>
+        <li><a href="#23-picapic">2.3 PIC/APIC</a>
+          <ol>
+            <li><a href="#pic">PIC</a></li>
+            <li><a href="#apic">APIC</a></li>
+            <li><a href="#msi">MSI</a></li>
+            <li><a href="#irq--gsi--vector--pin">IRQ &amp; GSI &amp; Vector &amp; Pin</a></li>
+          </ol>
+        </li>
+        <li><a href="#24-intel-vt-x中断虚拟化">2.4 Intel VT-x中断虚拟化</a>
+          <ol>
+            <li><a href="#传统中断虚拟化">传统中断虚拟化</a></li>
+            <li><a href="#apicv支持的中断虚拟化">APICv支持的中断虚拟化</a>
+              <ol>
+                <li><a href="#虚拟apic访问">虚拟APIC访问</a></li>
+                <li><a href="#虚拟中断递交">虚拟中断递交</a></li>
+              </ol>
+            </li>
           </ol>
         </li>
       </ol>
     </li>
-  </ol>
-
-  <ol>
-    <li><a href="#31-kvm模块初始化">3.1 KVM模块初始化</a></li>
-    <li><a href="#32-虚拟机创建">3.2 虚拟机创建</a></li>
-    <li><a href="#33-vcpu创建">3.3 vCPU创建</a></li>
-    <li><a href="#34-vcpu运行">3.4 vCPU运行</a></li>
-    <li><a href="#35-实验-cpu虚拟化实例">3.5 实验: CPU虚拟化实例</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#41-picioapic模拟">4.1 PIC/IOAPIC模拟</a>
+    <li><a href="#3-qemukvm-cpu虚拟化实现">3 QEMU/KVM CPU虚拟化实现</a>
       <ol>
-        <li><a href="#pic模拟">PIC模拟</a></li>
-        <li><a href="#ioapic模拟">IOAPIC模拟</a></li>
-        <li><a href="#lapic模拟">LAPIC模拟</a></li>
+        <li><a href="#31-kvm模块初始化">3.1 KVM模块初始化</a></li>
+        <li><a href="#32-虚拟机创建">3.2 虚拟机创建</a></li>
+        <li><a href="#33-vcpu创建">3.3 vCPU创建</a></li>
+        <li><a href="#34-vcpu运行">3.4 vCPU运行</a></li>
+        <li><a href="#35-实验-cpu虚拟化实例">3.5 实验: CPU虚拟化实例</a></li>
       </ol>
     </li>
-    <li><a href="#42-pci设备中断">4.2 PCI设备中断</a>
+    <li><a href="#4-qemukvm-中断虚拟化实现">4 QEMU/KVM 中断虚拟化实现</a>
       <ol>
-        <li><a href="#pci设备中断原理">PCI设备中断原理</a></li>
-        <li><a href="#pci设备中断模拟"><strong>PCI设备中断模拟</strong></a></li>
+        <li><a href="#41-picioapic模拟">4.1 PIC/IOAPIC模拟</a>
+          <ol>
+            <li><a href="#pic模拟">PIC模拟</a></li>
+            <li><a href="#ioapic模拟">IOAPIC模拟</a></li>
+            <li><a href="#lapic模拟">LAPIC模拟</a></li>
+          </ol>
+        </li>
+        <li><a href="#42-pci设备中断">4.2 PCI设备中断</a>
+          <ol>
+            <li><a href="#pci设备中断原理">PCI设备中断原理</a></li>
+            <li><a href="#pci设备中断模拟"><strong>PCI设备中断模拟</strong></a></li>
+          </ol>
+        </li>
+        <li><a href="#43--qemukvm中断路由">4.3  QEMU/KVM中断路由</a>
+          <ol>
+            <li><a href="#qemu中断路由">QEMU中断路由</a></li>
+            <li><a href="#kvm中断路由">KVM中断路由</a></li>
+          </ol>
+        </li>
+        <li><a href="#44-虚拟中断注入">4.4 虚拟中断注入</a></li>
+        <li><a href="#45-实验-e1000网卡中断虚拟化">4.5 实验: e1000网卡中断虚拟化</a>
+          <ol>
+            <li><a href="#实验概述">实验概述</a></li>
+            <li><a href="#e1000网卡中断传送流程">e1000网卡中断传送流程</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
-    <li><a href="#43--qemukvm中断路由">4.3  QEMU/KVM中断路由</a>
-      <ol>
-        <li><a href="#qemu中断路由">QEMU中断路由</a></li>
-        <li><a href="#kvm中断路由">KVM中断路由</a></li>
-      </ol>
-    </li>
-    <li><a href="#44-虚拟中断注入">4.4 虚拟中断注入</a></li>
-    <li><a href="#45-实验-e1000网卡中断虚拟化">4.5 实验: e1000网卡中断虚拟化</a>
-      <ol>
-        <li><a href="#实验概述">实验概述</a></li>
-        <li><a href="#e1000网卡中断传送流程">e1000网卡中断传送流程</a></li>
-      </ol>
-    </li>
+    <li><a href="#5-todo-giantvm-cpu虚拟化">5 //TODO: GiantVM CPU虚拟化</a></li>
   </ol>
 </nav>
         </div>

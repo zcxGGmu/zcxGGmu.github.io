@@ -267,48 +267,55 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#21-谈谈页表">2.1 谈谈页表</a></li>
-    <li><a href="#22-内存虚拟化的纯软件实现-影子页表">2.2 内存虚拟化的纯软件实现: 影子页表</a></li>
-    <li><a href="#23-内存虚拟化的硬件支持-扩展页表">2.3 内存虚拟化的硬件支持: 扩展页表</a></li>
-    <li><a href="#24-todo-扩展页表与影子页表的结合-敏捷页表">2.4 //TODO 扩展页表与影子页表的结合: 敏捷页表</a></li>
-    <li><a href="#25-todo-内存的半虚拟化-直接页表映射与内存气球">2.5 //TODO 内存的半虚拟化: 直接页表映射与内存气球</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#31-qemu内存数据结构">3.1 QEMU内存数据结构</a>
+    <li><a href="#1-概述">1 概述</a></li>
+    <li><a href="#2-内存虚拟化的实现">2 内存虚拟化的实现</a>
       <ol>
-        <li><a href="#虚拟物理内存分配">&ldquo;虚拟&quot;物理内存分配</a></li>
-        <li><a href="#支持虚拟物理内存访问回调函数">支持&quot;虚拟&quot;物理内存访问回调函数</a>
-          <ol>
-            <li><a href="#实体mr">实体MR</a></li>
-            <li><a href="#容器mr别名mr">容器MR/别名MR</a></li>
-          </ol>
-        </li>
-        <li><a href="#顶层数据结构addressspace">顶层数据结构AddressSpace</a></li>
-        <li><a href="#从树状结构到线性结构">从树状结构到线性结构</a></li>
-        <li><a href="#客户机物理内存地址的分派">客户机物理内存地址的分派</a></li>
-        <li><a href="#实验-打印memoryregion树">实验: 打印MemoryRegion树</a></li>
+        <li><a href="#21-谈谈页表">2.1 谈谈页表</a></li>
+        <li><a href="#22-内存虚拟化的纯软件实现-影子页表">2.2 内存虚拟化的纯软件实现: 影子页表</a></li>
+        <li><a href="#23-内存虚拟化的硬件支持-扩展页表">2.3 内存虚拟化的硬件支持: 扩展页表</a></li>
+        <li><a href="#24-todo-扩展页表与影子页表的结合-敏捷页表">2.4 //TODO 扩展页表与影子页表的结合: 敏捷页表</a></li>
+        <li><a href="#25-todo-内存的半虚拟化-直接页表映射与内存气球">2.5 //TODO 内存的半虚拟化: 直接页表映射与内存气球</a></li>
       </ol>
     </li>
-    <li><a href="#33-kvm内存数据结构">3.3 KVM内存数据结构</a>
+    <li><a href="#3-qemukvm分析">3 QEMU/KVM分析</a>
       <ol>
-        <li><a href="#接收qemu的内存注册">接收QEMU的内存注册</a></li>
-        <li><a href="#创建vcpu的虚拟mmu">创建vCPU的虚拟MMU</a>
+        <li><a href="#31-qemu内存数据结构">3.1 QEMU内存数据结构</a>
           <ol>
-            <li><a href="#mmu创建流程">MMU创建流程</a></li>
-            <li><a href="#ept基地址设置流程">EPT基地址设置流程</a></li>
+            <li><a href="#虚拟物理内存分配">&ldquo;虚拟&quot;物理内存分配</a></li>
+            <li><a href="#支持虚拟物理内存访问回调函数">支持&quot;虚拟&quot;物理内存访问回调函数</a>
+              <ol>
+                <li><a href="#实体mr">实体MR</a></li>
+                <li><a href="#容器mr别名mr">容器MR/别名MR</a></li>
+              </ol>
+            </li>
+            <li><a href="#顶层数据结构addressspace">顶层数据结构AddressSpace</a></li>
+            <li><a href="#从树状结构到线性结构">从树状结构到线性结构</a></li>
+            <li><a href="#客户机物理内存地址的分派">客户机物理内存地址的分派</a></li>
+            <li><a href="#实验-打印memoryregion树">实验: 打印MemoryRegion树</a></li>
           </ol>
         </li>
-        <li><a href="#ept的建立">EPT的建立</a></li>
-        <li><a href="#实验-将gva翻译为hpa">实验: 将GVA翻译为HPA</a>
+        <li><a href="#33-kvm内存数据结构">3.3 KVM内存数据结构</a>
           <ol>
-            <li><a href="#实验概述">实验概述</a></li>
-            <li><a href="#客户机中的地址转换-gva到gpa">客户机中的地址转换: GVA到GPA</a></li>
-            <li><a href="#kvm中的地址转换-gpa到hpa">KVM中的地址转换: GPA到HPA</a></li>
+            <li><a href="#接收qemu的内存注册">接收QEMU的内存注册</a></li>
+            <li><a href="#创建vcpu的虚拟mmu">创建vCPU的虚拟MMU</a>
+              <ol>
+                <li><a href="#mmu创建流程">MMU创建流程</a></li>
+                <li><a href="#ept基地址设置流程">EPT基地址设置流程</a></li>
+              </ol>
+            </li>
+            <li><a href="#ept的建立">EPT的建立</a></li>
+            <li><a href="#实验-将gva翻译为hpa">实验: 将GVA翻译为HPA</a>
+              <ol>
+                <li><a href="#实验概述">实验概述</a></li>
+                <li><a href="#客户机中的地址转换-gva到gpa">客户机中的地址转换: GVA到GPA</a></li>
+                <li><a href="#kvm中的地址转换-gpa到hpa">KVM中的地址转换: GPA到HPA</a></li>
+              </ol>
+            </li>
           </ol>
         </li>
       </ol>
     </li>
+    <li><a href="#4-todo-giantvm内存虚拟化">4 //TODO: GiantVM内存虚拟化</a></li>
   </ol>
 </nav>
         </div>

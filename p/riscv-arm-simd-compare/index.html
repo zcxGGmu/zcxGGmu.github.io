@@ -267,56 +267,63 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#11-risc-v-v-vector-extension">1.1 RISC-V &ldquo;V&rdquo; Vector Extension</a>
+    <li><a href="#0-资料">0 资料</a></li>
+    <li><a href="#1-arm与risc-v向量扩展对比">1 ARM与RISC-V向量扩展对比</a>
       <ol>
-        <li><a href="#vector-extension-programmers-model">Vector Extension Programmer’s Model</a></li>
-        <li><a href="#mstatus-vector上下文状态">mstatus: Vector上下文状态</a></li>
-        <li><a href="#vsstatus-vector上下文状态">vsstatus: Vector上下文状态</a></li>
-        <li><a href="#vstart-vector-start-index-csr">vstart: Vector Start Index CSR</a></li>
-        <li><a href="#exception-handling">Exception Handling</a>
+        <li><a href="#11-risc-v-v-vector-extension">1.1 RISC-V &ldquo;V&rdquo; Vector Extension</a>
           <ol>
-            <li><a href="#precise-vector-traps">Precise vector traps</a></li>
-            <li><a href="#imprecise-vector-traps">Imprecise vector traps</a></li>
+            <li><a href="#vector-extension-programmers-model">Vector Extension Programmer’s Model</a></li>
+            <li><a href="#mstatus-vector上下文状态">mstatus: Vector上下文状态</a></li>
+            <li><a href="#vsstatus-vector上下文状态">vsstatus: Vector上下文状态</a></li>
+            <li><a href="#vstart-vector-start-index-csr">vstart: Vector Start Index CSR</a></li>
+            <li><a href="#exception-handling">Exception Handling</a>
+              <ol>
+                <li><a href="#precise-vector-traps">Precise vector traps</a></li>
+                <li><a href="#imprecise-vector-traps">Imprecise vector traps</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#todo-12-arm-scalable-vector-extension">//TODO: 1.2 ARM Scalable Vector Extension</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-risc-v-vector内核支持">2 RISC-V Vector内核支持</a>
+      <ol>
+        <li><a href="#21-lazy-saverestore">2.1 Lazy save/restore</a>
+          <ol>
+            <li><a href="#non-virtualization">non-virtualization</a>
+              <ol>
+                <li><a href="#vector-trap处理">vector trap处理</a></li>
+                <li><a href="#当前的lazy还不够">当前的Lazy还不够</a></li>
+              </ol>
+            </li>
+            <li><a href="#virtualization">virtualization</a>
+              <ol>
+                <li><a href="#vector_context保存恢复">vector_context保存/恢复</a></li>
+                <li><a href="#guest发生vector_trap处理">guest发生vector_trap处理</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#22-delayed-update-strategy">2.2 *Delayed update strategy</a>
+          <ol>
+            <li><a href="#non-virtualization-1">non-virtualization</a></li>
+            <li><a href="#virtualization-1">virtualization</a></li>
           </ol>
         </li>
       </ol>
     </li>
-    <li><a href="#todo-12-arm-scalable-vector-extension">//TODO: 1.2 ARM Scalable Vector Extension</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#21-lazy-saverestore">2.1 Lazy save/restore</a>
+    <li><a href="#3-armv8-fpsimdsve内核支持">3 ARMv8 FPSIMD/SVE内核支持</a>
       <ol>
-        <li><a href="#non-virtualization">non-virtualization</a>
+        <li><a href="#31-linux-arm引入的fpsimd状态跟踪机制">3.1 Linux-ARM引入的FPSIMD状态跟踪机制</a></li>
+        <li><a href="#32-针对虚拟化场景的优化">3.2 针对虚拟化场景的优化</a>
           <ol>
-            <li><a href="#vector-trap处理">vector trap处理</a></li>
-            <li><a href="#当前的lazy还不够">当前的Lazy还不够</a></li>
-          </ol>
-        </li>
-        <li><a href="#virtualization">virtualization</a>
-          <ol>
-            <li><a href="#vector_context保存恢复">vector_context保存/恢复</a></li>
-            <li><a href="#guest发生vector_trap处理">guest发生vector_trap处理</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#22-delayed-update-strategy">2.2 *Delayed update strategy</a>
-      <ol>
-        <li><a href="#non-virtualization-1">non-virtualization</a></li>
-        <li><a href="#virtualization-1">virtualization</a></li>
-      </ol>
-    </li>
-  </ol>
-
-  <ol>
-    <li><a href="#31-linux-arm引入的fpsimd状态跟踪机制">3.1 Linux-ARM引入的FPSIMD状态跟踪机制</a></li>
-    <li><a href="#32-针对虚拟化场景的优化">3.2 针对虚拟化场景的优化</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#linux-kvm-arm">Linux KVM-ARM</a></li>
-            <li><a href="#fpsimdsve虚拟化框架分析">fpsimd/sve虚拟化框架分析</a></li>
+            <li>
+              <ol>
+                <li><a href="#linux-kvm-arm">Linux KVM-ARM</a></li>
+                <li><a href="#fpsimdsve虚拟化框架分析">fpsimd/sve虚拟化框架分析</a></li>
+              </ol>
+            </li>
           </ol>
         </li>
       </ol>
