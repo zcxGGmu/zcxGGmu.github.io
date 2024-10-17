@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 资料 【原创】（一）Linux进程调度器-基础 - LoyenWang - 博客园 (cnblogs.com)\n【原创】（三）Linux进程调度器-进程切换 - LoyenWang - 博客园 (cnblogs.com)\n进程调度 - 知乎 (zhihu.com)\n">
+<title>Linux Task Schedule</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/linux-task-schedule/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux Task Schedule">
+<meta property='og:description' content="0 资料 【原创】（一）Linux进程调度器-基础 - LoyenWang - 博客园 (cnblogs.com)\n【原创】（三）Linux进程调度器-进程切换 - LoyenWang - 博客园 (cnblogs.com)\n进程调度 - 知乎 (zhihu.com)\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/linux-task-schedule/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T09:59:38&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T09:59:38&#43;08:00'/>
+<meta name="twitter:title" content="Linux Task Schedule">
+<meta name="twitter:description" content="0 资料 【原创】（一）Linux进程调度器-基础 - LoyenWang - 博客园 (cnblogs.com)\n【原创】（三）Linux进程调度器-进程切换 - LoyenWang - 博客园 (cnblogs.com)\n进程调度 - 知乎 (zhihu.com)\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-进程线程的统一抽象-task_struct">1.1 进程/线程的统一抽象: task_struct</a>
+      <ol>
+        <li><a href="#关于task_struct">关于task_struct</a></li>
+        <li><a href="#从进程线程创建角度来看task_struct">从进程/线程创建角度来看task_struct</a></li>
+        <li><a href="#进程线程状态">进程/线程状态</a></li>
+      </ol>
+    </li>
+    <li><a href="#12-调度器-scheduler">1.2 调度器: scheduler</a></li>
+    <li><a href="#13-运行队列-runqueue">1.3 运行队列: runqueue</a></li>
+    <li><a href="#14-任务分组-task_group">1.4 任务分组: task_group</a></li>
+    <li><a href="#15-调度程序-schedule">1.5 调度程序: schedule/&hellip;</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-用户抢占">2.1 用户抢占</a>
+      <ol>
+        <li><a href="#抢占触发点条件设置">抢占触发点/条件设置</a></li>
+        <li><a href="#抢占执行点">抢占执行点</a></li>
+      </ol>
+    </li>
+    <li><a href="#22-内核抢占">2.2 内核抢占</a>
+      <ol>
+        <li><a href="#preempt_count">preempt_count</a></li>
+        <li><a href="#抢占触发点条件设置-1">抢占触发点/条件设置</a></li>
+        <li><a href="#抢占执行点-1">抢占执行点</a></li>
+      </ol>
+    </li>
+    <li><a href="#23-进程上下文切换">2.3 进程上下文切换</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux-task-schedule/">Linux Task Schedule</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 15 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-资料">0 资料
+</h1><p><a class="link" href="https://www.cnblogs.com/LoyenWang/p/12249106.html"  target="_blank" rel="noopener"
+    >【原创】（一）Linux进程调度器-基础 - LoyenWang - 博客园 (cnblogs.com)</a></p>
+<p><a class="link" href="https://www.cnblogs.com/LoyenWang/p/12386281.html"  target="_blank" rel="noopener"
+    >【原创】（三）Linux进程调度器-进程切换 - LoyenWang - 博客园 (cnblogs.com)</a></p>
+<p><a class="link" href="https://www.zhihu.com/column/c_1523702194322370560"  target="_blank" rel="noopener"
+    >进程调度 - 知乎 (zhihu.com)</a></p>
+<p>[内核抢占机制(preempt)-CSDN博客](<a class="link" href="https://blog.csdn.net/u014426028/article/details/106927601#:~:text="  target="_blank" rel="noopener"
+    >https://blog.csdn.net/u014426028/article/details/106927601#:~:text=</a>内核抢占指用户程序在执行系统调用期间可以被抢占，该进程暂时挂起，使新唤醒的高优先级进程能够运行。,这种抢占并非可以在内核中任意位置都能安全进行，比如在临界区中的代码就不能发生抢占。 临界区是指同一时间内不可以有超过一个进程在其中执行的指令序列。)</p>
+<p><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc7/source/include/linux/sched.h#L746"  target="_blank" rel="noopener"
+    >sched.h - include/linux/sched.h - Linux source code (v6.7-rc7) - Bootlin</a></p>
+<h1 id="1-linux进程线程的抽象模型">1 Linux进程/线程的抽象模型
+</h1><h2 id="11-进程线程的统一抽象-task_struct">1.1 进程/线程的统一抽象: task_struct
+</h2><h3 id="关于task_struct">关于task_struct
+</h3><p>任何教科书上都会这样写：进程是资源分配的最小单位，而线程是CPU调度的的最小单位。</p>
+<ul>
+<li>**对于进程而言：**进程不仅包括可执行程序的代码段，还包括一系列的资源，比如：打开的文件、内存、CPU时间、信号量、多个执行线程流等等。进程不仅提供了一个线程资源容器，还负责线程调度工作；</li>
+<li>**对于线程而言：**线程是程序的执行实体，相比于进程，线程更真实地呈现在CPU上，CPU上各寄存器保存的值支撑了程序控制流的执行。其中 <code>thread_struct</code> 保存的是最核心的CPU寄存器内容，其和特定架构相关；</li>
+</ul>
+<p>但在Linux内核中，两者均使用 <code>task_struct</code> 进行抽象，给人一种进程和线程相同的错觉。在之前学习的 <code>rCore</code> 实现中，进程/线程模型有着比较清晰的数据结构上的层次感：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">ProcessControlBlock</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// immutable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">pid</span>: <span class="nc">PidHandle</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// mutable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">inner</span>: <span class="nc">UPSafeCell</span><span class="o">&lt;</span><span class="n">ProcessControlBlockInner</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">ProcessControlBlockInner</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">is_zombie</span>: <span class="kt">bool</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">memory_set</span>: <span class="nc">MemorySet</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">parent</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="n">Weak</span><span class="o">&lt;</span><span class="n">ProcessControlBlock</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">children</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Arc</span><span class="o">&lt;</span><span class="n">ProcessControlBlock</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">exit_code</span>: <span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">fd_table</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">Option</span><span class="o">&lt;</span><span class="n">Arc</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Send</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Sync</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">signals</span>: <span class="nc">SignalFlags</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">tasks</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">Option</span><span class="o">&lt;</span><span class="n">Arc</span><span class="o">&lt;</span><span class="n">TaskControlBlock</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">task_res_allocator</span>: <span class="nc">RecycleAllocator</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="c1">// 其他同步互斥相关资源
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到，进程控制块中通过 <code>tasks</code> 保存着全部线程资源。</p>
+<p>但 Linux 进程/线程模型与之有很大的区别。那么，进程和线程在 <code>task_struct</code> 结构体中是否有标识上的不同？实际上，在struct task_struct中并没有明确的标识（枚举类型），区分该task是线程还是进程，不过<strong>可以通过pid和tgid简单判断当前task是哪种类型。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">task_struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">pid_t</span> <span class="n">pid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">pid_t</span> <span class="n">tgid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="o">*</span><span class="n">group_leader</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>pid</strong>用于标识不同进程和线程；</li>
+<li><strong>tgid</strong>用于标识线程组id，在同一进程中的所有线程具有同一tgid。tgid值等于进程第一个线程（主线程）的pid值。接着以CLONE_THREAD来调用clone建立的线程，都具有同样的tgid。也就是说，对于没有创建线程的进程(只包含一个主线程)来说，这个 pid 就是进程的 PID，tgid 和 pid 是相同的。</li>
+<li><strong>group_leader</strong> 线程组中的主线程的task_struct指针。</li>
+</ul>
+<blockquote>
+<p>那么除了tgid和group_leadr是进程/线程的区别外，还有什么其他的区别么？</p>
+<p>进程还是线程的创建都是由父进程/父线程调用系统调用接口实现的。创建的主要工作实际上就是创建task_strcut结构体，并将该对象添加至工作队列中去。而线程和进程在创建时，通过CLONE_THREAD flag的不同，而选择不同的方式共享父进程/父线程的资源，从而造成在用户空间所看到的进程和线程的不同。</p>
+</blockquote>
+<h3 id="从进程线程创建角度来看task_struct">从进程/线程创建角度来看task_struct
+</h3><p>无论以何种方式创建线程/进程在Linux kernel最终都是调用do_fork接口（定义在kernel/fork.c）</p>
+<p>其函数原型为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">do_fork</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">clone_flags</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">stack_start</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">stack_size</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">__user</span> <span class="o">*</span><span class="n">parent_tidptr</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">__user</span> <span class="o">*</span><span class="n">child_tidptr</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>clone_flags是一个标志集合，用来指定控制复制过程的一些属性。最低字节指定了在子进程终止时被发给父进程的信号号码。其余的高位字节保存了各种常数。</li>
+<li>stack_start是用户状态下栈的起始地址。</li>
+<li>stack_size是用户状态下栈的大小。</li>
+<li>arent_tidptr和child_tidptr是指向用户空间中地址的两个指针，分别指向父子进程的PID。</li>
+</ul>
+<p>do_fork的代码流程图如下所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312261605388.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>上面流程特别判断了是否是vfork，该接口是vfork接口call下来，在子进程没有执行完前，父进程处于阻塞态。一般用于子进程直接调用execv时使用。因为子进程不需要copy父进程的资源从而减少do_fork时的消耗，不过由于fork增加了写时复制机制，vfork也很少使用。这些不是这篇介绍的重点。</p>
+<p>那么拿掉vfork的过程，do_fork主要做了三件事：</p>
+<ol>
+<li><strong>copy_process</strong></li>
+<li><strong>确定PID</strong></li>
+<li><strong>wake_up_new_task</strong></li>
+</ol>
+<p>wake_up_new_task即是将新创建的线程/进程添加至调度程序的队列中。do_fork主要的一部分工作集中在copy_process中，线程与进程之间的区别也是在该接口中体现，接口的代码流程图如下所示：</p>
+<img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312261605186.png" alt="img" style="zoom:67%;" />
+<p>当上层以pthread_create接口call到kernel时，clone_flag是有CLONE_PTHREAD标识。但CLONE_PTHREAD标识只在最后一个步骤（设置各个ID、进程关系）时体现：（current为当前进程/线程的task_struct结构体 ，p为新创建的结构体对象）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">clone_flags</span> <span class="o">&amp;</span> <span class="n">CLONE_THREAD</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">-&gt;</span><span class="n">group_leader</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">group_leader</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">-&gt;</span><span class="n">tgid</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">tgid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">-&gt;</span><span class="n">group_leader</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="o">-&gt;</span><span class="n">tgid</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">pid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>那么，以我们的理解来看，线程会共享信号、共享虚拟地址空间&hellip;又以什么体现呢？去glibc查询了pthread_create的实现，当call到kernel时的clone_flag如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">clone_flags</span> <span class="o">=</span> <span class="p">(</span><span class="n">CLONE_VM</span> <span class="o">|</span> <span class="n">CLONE_FS</span> <span class="o">|</span> <span class="n">CLONE_FILES</span> <span class="o">|</span> <span class="n">CLONE_SYSVSEM</span>
+</span></span><span class="line"><span class="cl">			   <span class="o">|</span> <span class="n">CLONE_SIGHAND</span> <span class="o">|</span> <span class="n">CLONE_THREAD</span>
+</span></span><span class="line"><span class="cl">			   <span class="o">|</span> <span class="n">CLONE_SETTLS</span> <span class="o">|</span> <span class="n">CLONE_PARENT_SETTID</span>
+</span></span><span class="line"><span class="cl">			   <span class="o">|</span> <span class="n">CLONE_CHILD_CLEARTID</span>
+</span></span><span class="line"><span class="cl">			   <span class="o">|</span> <span class="mi">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>所以在创建线程时，clone_flags有其他许多项共同构成，才让我们看出来最终线程与进程间的不同。这些flag主要体现在【分享/复制进程各个部分中】步骤。</p>
+<p>这些CLONE_abc的使用方法相似。在这些形如copy_abc的接口中，通过判断该flag标识，决定对内核子系统资源是与父进程/线程公用还是新创建出来。可参考下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312261601074.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>一开始父进程和子进程对于res_abc指向同一个内容（通过dup_task_struct接口实现，子进程完全copy父进程），然后经过copy_abc程序，当有CLONE_abc标识时，父进程会共享资源，同时res_abc的引用计数+1，当!CLONE_abc时，会创建一个res_abc的副本。</p>
+<p>又去glibc查询了fork的clone_flags：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">CLONE_CHILD_SETTID</span> <span class="o">|</span> <span class="n">CLONE_CHILD_CLEARTID</span> <span class="o">|</span> <span class="n">SIGCHLD</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>那么线程创建就比进程多CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SYSVSEM | CLONE_SIGHAND | CLONE_THREAD，从这些宏的字面意义上看，子线程会与父线程共享虚拟地址空间、文件、信号等。</p>
+<p>每个flag的实现原理基本一致，上文已讨论过，这里仅对具体的哪些资源造成了影响进行分析。</p>
+<ul>
+<li>CLONE_VM 为虚拟地址空间：所以子线程会共享父线程的虚拟地址空间（通过struct mm_struct *mm指向实例描述）,active_mm当用户线程切换至内核线程时使用，这里不详述。</li>
+<li>CLONE_FS struct fs_struct *fs 进程当前目录及工作目录；</li>
+<li>CLONE_SIGHAND struct sighand_struct *sighand 信号及信号处理函数</li>
+</ul>
+<h3 id="进程线程状态">进程/线程状态
+</h3><p><code>task_struct</code>结构很复杂，下边只针对与调度相关的某些字段进行介绍：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">task_struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* ... */</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 进程状态 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">volatile</span> <span class="kt">long</span>			<span class="n">state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 调度优先级相关，策略相关 */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>				<span class="n">prio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>				<span class="n">static_prio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span>				<span class="n">normal_prio</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">rt_priority</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span>			<span class="n">policy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 调度类，调度实体相关，任务组相关等 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="k">struct</span> <span class="n">sched_class</span>	<span class="o">*</span><span class="n">sched_class</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">sched_entity</span>		<span class="n">se</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">sched_rt_entity</span>		<span class="n">rt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_CGROUP_SCHED
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="k">struct</span> <span class="n">task_group</span>		<span class="o">*</span><span class="n">sched_task_group</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="k">struct</span> <span class="n">sched_dl_entity</span>		<span class="n">dl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 进程之间的关系相关 */</span>
+</span></span><span class="line"><span class="cl">    	<span class="cm">/* Real parent process: */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">task_struct</span> <span class="n">__rcu</span>	<span class="o">*</span><span class="n">real_parent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Recipient of SIGCHLD, wait4() reports: */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">task_struct</span> <span class="n">__rcu</span>	<span class="o">*</span><span class="n">parent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * Children/sibling form the list of natural children:
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">children</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">list_head</span>		<span class="n">sibling</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">task_struct</span>		<span class="o">*</span><span class="n">group_leader</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* CPU-specific state of this task: */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">thread_struct</span>		<span class="kr">thread</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>下图中左侧为操作系统中通俗的进程三状态模型，右侧为Linux对应的进程状态切换。每一个标志描述了进程的当前状态，这些状态都是互斥的：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200201170358218-1930669459.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<blockquote>
+<p>注意：Linux中的<code>就绪态</code>和<code>运行态</code>对应的都是<code>TASK_RUNNING</code>标志位，<code>就绪态</code>表示进程正处在队列中，尚未被调度；<code>运行态</code>则表示进程正在CPU上运行；</p>
+</blockquote>
+<p>内核中主要的状态字段定义如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* Used in tsk-&gt;state: */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define TASK_RUNNING			0x0000
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define TASK_INTERRUPTIBLE		0x0001
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define TASK_UNINTERRUPTIBLE		0x0002
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//...
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="12-调度器-scheduler">1.2 调度器: scheduler
+</h2><blockquote>
+<p>后文中将不再区分进程/线程，而采用统一的 “进程” 来描述。因为Linux内核使用 <code>task_struct</code> 对两者在数据结构上进行了统一，但两者在引用资源的方式上有所不同。</p>
+</blockquote>
+<p>所谓调度，就是按照某种调度的算法，从进程的就绪队列中选取进程分配CPU，主要是协调对CPU等的资源使用。进程调度的目标是最大限度利用CPU时间。内核默认提供了5个调度器，Linux内核使用 <code>struct sched_class</code> 来对调度器进行抽象：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200201170552968-1185293225.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<ol>
+<li><code>Stop调度器， stop_sched_class</code>：优先级最高的调度类，可以抢占其他所有进程，不能被其他进程抢占；</li>
+<li><code>Deadline调度器， dl_sched_class</code>：使用红黑树，把进程按照绝对截止期限进行排序，选择最小进程进行调度运行；</li>
+<li><code>RT调度器， rt_sched_class</code>：实时调度器，为每个优先级维护一个队列；</li>
+<li><code>CFS调度器， cfs_sched_class</code>：完全公平调度器，采用完全公平调度算法，引入虚拟运行时间概念；</li>
+<li><code>IDLE-Task调度器， idle_sched_class</code>：空闲调度器，每个CPU都会有一个idle线程，当没有其他进程可以调度时，调度运行idle线程；</li>
+</ol>
+<p>Linux内核提供了一些调度策略供用户程序来选择调度器，其中 <code>Stop调度器</code> 和 <code>IDLE-Task调度器</code> ，仅由内核使用，用户无法进行选择：</p>
+<ul>
+<li><code>SCHED_DEADLINE</code>：限期进程调度策略，使task选择 <code>Deadline调度器</code> 来调度运行；</li>
+<li><code>SCHED_RR</code>：实时进程调度策略，时间片轮转，进程用完时间片后加入优先级对应运行队列的尾部，把CPU让给同优先级的其他进程；</li>
+<li><code>SCHED_FIFO</code>：实时进程调度策略，先进先出调度没有时间片，没有更高优先级的情况下，只能等待主动让出CPU；</li>
+<li><code>SCHED_NORMAL</code>：普通进程调度策略，使task选择 <code>CFS调度器</code> 来调度运行；</li>
+<li><code>SCHED_BATCH</code>：普通进程调度策略，批量处理，使task选择 <code>CFS调度器 </code>来调度运行；</li>
+<li><code>SCHED_IDLE</code>：普通进程调度策略，使task以最低优先级选择 <code>CFS调度器</code> 来调度运行；</li>
+</ul>
+<h2 id="13-运行队列-runqueue">1.3 运行队列: runqueue
+</h2><p>每个CPU都有一个运行队列，每个调度器都作用于运行队列。分配给CPU的task，作为调度实体加入到运行队列中。task首次运行时，如果可能，尽量将它加入到父task所在的运行队列中（分配给相同的CPU，缓存affinity会更高，性能会有改善）；</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200201170629353-2136884130.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>Linux内核使用 <code>struct rq</code> 结构来描述运行队列，关键字段如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * This is the main, per-CPU runqueue data structure.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Locking rule: those places that want to lock multiple runqueues
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * (such as the load balancing or the thread migration code), lock
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * acquire operations must be ordered by ascending &amp;runqueue.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">rq</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* runqueue lock: */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">raw_spinlock_t</span> <span class="n">lock</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * nr_running and cpu_load should be in the same cacheline because
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * remote CPUs use both these fields when doing load calculation.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">nr_running</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 三个调度队列：CFS调度，RT调度，DL调度 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">cfs_rq</span> <span class="n">cfs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rt_rq</span> <span class="n">rt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">dl_rq</span> <span class="n">dl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* stop指向迁移内核线程， idle指向空闲内核线程 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">task_struct</span> <span class="o">*</span><span class="n">curr</span><span class="p">,</span> <span class="o">*</span><span class="n">idle</span><span class="p">,</span> <span class="o">*</span><span class="n">stop</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* ... */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>    
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="14-任务分组-task_group">1.4 任务分组: task_group
+</h2><p>利用任务分组的机制，可以设置或限制任务组对CPU的利用率，比如将某些任务限制在某个区间内，从而不去影响其他任务的执行效率。引入<code>task_group</code> 后，调度器的调度对象不仅仅是进程了，Linux内核抽象出了 <code>sched_entity/sched_rt_entity/sched_dl_entity</code> 描述调度实体，调度实体可以是进程或 <code>task_group</code>。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200201170652689-605326625.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>Linux内核使用数据结构 <code>struct task_group </code> 来描述任务组，任务组在每个CPU上都会维护一个 <code>CFS调度实体、CFS运行队列，RT调度实体，RT运行队列</code> 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* task group related information */</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">task_group</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* ... */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 为每个CPU都分配一个CFS调度实体和CFS运行队列 */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_FAIR_GROUP_SCHED
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="cm">/* schedulable entities of this group on each cpu */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">sched_entity</span> <span class="o">**</span><span class="n">se</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* runqueue &#34;owned&#34; by this group on each cpu */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">cfs_rq</span> <span class="o">**</span><span class="n">cfs_rq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">shares</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 为每个CPU都分配一个RT调度实体和RT运行队列 */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_RT_GROUP_SCHED
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="k">struct</span> <span class="n">sched_rt_entity</span> <span class="o">**</span><span class="n">rt_se</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rt_rq</span> <span class="o">**</span><span class="n">rt_rq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rt_bandwidth</span> <span class="n">rt_bandwidth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* task_group之间的组织关系 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rcu_head</span> <span class="n">rcu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">list_head</span> <span class="n">list</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">task_group</span> <span class="o">*</span><span class="n">parent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">list_head</span> <span class="n">siblings</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">list_head</span> <span class="n">children</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* ... */</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="15-调度程序-schedule">1.5 调度程序: schedule/&hellip;
+</h2><h1 id="2-进程线程调度">2 进程/线程调度
+</h1><p>根据进程是否自愿放弃cpu，调度方式可分为<strong>主动调度和抢占调度</strong>两类，它们的区别如下：</p>
+<ul>
+<li>
+<p>**主动调度：**进程需要等待IO、锁等资源，而主动放弃cpu；</p>
+</li>
+<li>
+<p>**抢占调度：**进程由于时间片用完，或被优先级更高的进程抢占，而被强制剥夺cpu；</p>
+</li>
+</ul>
+<p>内核中那些由于等待资源而需要阻塞的场景，会直接调用 <code>schedule()</code> 执行实际的调度流程。而其它需要调度的场景一般都只是设置一个TIF_NEED_RESCHED标志，并在<strong>下一个抢占点到来时</strong>才执行实际的抢占操作。</p>
+<p>在支持内核抢占之前，只有在系统调用返回用户态之前，或者中断返回用户态之前才能执行抢占操作。而在支持内核抢占以后，即使在内核执行路径中也允许抢占，因此内核支持了更多的抢占点。</p>
+<p><code>task_struct</code> 结构体的首个字段放置的正是 <code>struct thread_info</code>，<code>struct thread_info</code>结构体中 <code>flag</code> 字段就可用于设置<code>TIF_NEED_RESCHED</code>，此外该结构体中的 <code>preempt_count</code> 也与抢占相关。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">task_struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_THREAD_INFO_IN_TASK
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * For reasons of header soup (see current_thread_info()), this
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * must be the first element of task_struct.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">thread_info</span>		<span class="n">thread_info</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>        <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * low level task data that entry.S needs immediate access to.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">thread_info</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">long</span>		<span class="n">flags</span><span class="p">;</span>		<span class="cm">/* low level flags */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">mm_segment_t</span>		<span class="n">addr_limit</span><span class="p">;</span>	<span class="cm">/* address limit */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_ARM64_SW_TTBR0_PAN
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="n">u64</span>			<span class="n">ttbr0</span><span class="p">;</span>		<span class="cm">/* saved TTBR0_EL1 */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="kt">int</span>			<span class="n">preempt_count</span><span class="p">;</span>	<span class="cm">/* 0 =&gt; preemptable, &lt;0 =&gt; bug */</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;asm/current.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define current_thread_info() ((struct thread_info *)current)   </span><span class="c1">//通过该宏可以直接获取thread_info的信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#endif
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="21-用户抢占">2.1 用户抢占
+</h2><blockquote>
+<p>在抢占触发前，进程处于用户态，触发条件通常为：执行系统调用或时钟中断。</p>
+</blockquote>
+<p>内核即将返回用户空间的时候，如果need resched标志被设置，会导致schedule()被调用，此时就会发生用户抢占。在内核返回用户空间的时候，它知道自己是安全的。所以，内核无论是在从中断处理程序还是在系统调用后返回，都会检查need resched标志。如果它被设置了，那么，内核会选择一个其他 (更合适的) 进程投入运行。</p>
+<h3 id="抢占触发点条件设置">抢占触发点/条件设置
+</h3><p>看看具体哪些函数过程中，设置了 <code>TIF_NEED_RESCHED</code> 标志吧：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200229212204811-1734127314.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h3 id="抢占执行点">抢占执行点
+</h3><p>具体来说，在用户态执行抢占在以下几种情况：</p>
+<ul>
+<li>异常处理 (系统调用) 后返回到用户态；</li>
+<li>中断处理后返回到用户态；</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200229212235516-1038164597.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<ul>
+<li>用户程序在执行过程中，遇到异常或中断后，将会跳到 <code>ENTRY(vectors)</code> 向量表处开始执行；</li>
+<li>返回用户空间时进行标志位判断，设置了 <code>TIF_NEED_RESCHED</code> 则需要进行调度切换；</li>
+</ul>
+<h2 id="22-内核抢占">2.2 内核抢占
+</h2><blockquote>
+<p>当进程位于内核空间时，有一个更高优先级的任务出现时，如果当前内核允许抢占，则可以将当前任务挂起，执行优先级更高的进程。内核抢占对实时性有帮助。</p>
+</blockquote>
+<p><em><strong>为什么Linux kernel需要内核抢占？</strong></em></p>
+<p>内核抢占在一定程度上减少了对某种事件的响应延迟，这也是内核抢占被引入的目的。之前的内核中，除了显示调用系统调度器的某些点，内核其他地方是不允许中重新调度的，如果内核在做一些比较复杂的工作，就会造成某些急于处理的事得不到及时响应。针对内核抢占其实本质上也是对当前进程而言（不知道这么描述是否合适），因为内核是为用户程序提供服务，换言之，其本身不会主动的去执行某个动作。这里内核抢占，重点在于用户程序请求内核服务时，CPU切换到内核态在执行某个系统服务期间，被抢占。</p>
+<p>当然，即使支持内核抢占，也不是什么时候都可以的，还是要考虑对临界区的保护。类似于多处理器架构，如果进程A陷入到内核模式访问某个临界资源，而在访问期间，进程B也要访问临界区，如果这种抢占被允许，那么就发生了临界区被重入。所以，在访问临界资源时需要禁止内核抢占，在出临界区则要开启内核抢占。</p>
+<h3 id="preempt_count">preempt_count
+</h3><p>禁止内核抢占的情况列出如下：</p>
+<p>（1）内核执行****中断处理例程*<em><strong>时不允许内核抢占，中断返回时再执行内核抢占。
+（2）当内核执行</strong></em>*软中断或tasklet*<em><strong>时，禁止内核抢占，软中断返回时再执行内核抢占。
+（3）在</strong>临界区</em>*禁止内核抢占，临界区保护函数通过抢占计数宏控制抢占，计数大于0，表示禁止内核抢占。</p>
+<p>为保证Linux内核在以上情况下不会被抢占，抢占式内核使用了一个变量preempt_ count，称为内核抢占锁。这一变量被设置在进程的PCB结构task_struct中。每当内核要进入以上几种状态时，变量preempt_count就加1，指示内核不允许抢占。每当内核从以上几种状态退出时，变量preempt_ count就减1，同时进行可抢占的判断与调度。抢占式Linux内核的修改主要有两点：</p>
+<ul>
+<li>**对中断的入口代码和返回代码进行修改。**在中断的入口内核抢占锁preempt_count加1，以禁止内核抢占；在中断的返回处，内核抢占锁preempt_count减1，使内核有可能被抢占。</li>
+<li>**重新定义了自旋锁、读、写锁，**在锁操作时增加了对preempt count变量的操作。在对这些锁进行加锁操作时preemptcount变量加1，以禁止内核抢占；在释放锁时preemptcount变量减1，并在内核的抢占条件满足且需要重新调度时进行抢占调度。</li>
+</ul>
+<hr>
+<p><a class="link" href="https://zhuanlan.zhihu.com/p/673428998"  target="_blank" rel="noopener"
+    >【进程】preempt_count解析 - 知乎 (zhihu.com)</a></p>
+<p>Linux内核中使用 <code>struct thread_info</code> 中的 <code>preempt_count</code> 字段来控制内核抢占：</p>
+<ul>
+<li><code>preempt_count</code> 的低8位用于控制抢占，当大于0时表示不可抢占，等于0表示可抢占；
+<ul>
+<li><code>preempt_enable()</code> 会将 <code>preempt_count</code> 值减1，并判断是否需要进行调度，在条件满足时进行切换；</li>
+<li><code>preempt_disable()</code> 会将 <code>preempt_count</code> 值加1；</li>
+</ul>
+</li>
+</ul>
+<p>此外，<code>preemt_count</code> 字段还用于判断进程处于各类上下文以及开关控制等，如图：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200229212328079-449160131.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h3 id="抢占触发点条件设置-1">抢占触发点/条件设置
+</h3><ul>
+<li>在内核中抢占触发点，也是设置 <code>struct thread_info</code> 的 <code>flag</code> 字段，设置 <code>TIF_NEED_RESCHED</code> 表明需要请求重新调度；</li>
+<li>抢占触发点的几种情况，在用户抢占中已经分析过，不管是用户抢占还是内核抢占，触发点都是一致的；</li>
+</ul>
+<h3 id="抢占执行点-1">抢占执行点
+</h3><p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200229212309761-334760914.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>总体而言，内核抢占执行点可以归属于两大类：</p>
+<ul>
+<li>中断执行完毕后进行抢占调度；</li>
+<li>主动调用<code>preemp_enable</code>或<code>schedule</code>等接口的地方进行抢占调度；</li>
+</ul>
+<h2 id="23-进程上下文切换">2.3 进程上下文切换
+</h2><p>进程上下文切换的入口就是 <code>__schedule()</code>，分析也围绕这函数展开。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200229212346352-1357028476.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>主要的逻辑：</p>
+<ul>
+<li>根据CPU获取运行队列，进而得到运行队列当前的<code>task</code>，也就是切换前的<code>prev</code>;</li>
+<li>根据<code>prev</code>的状态进行处理，比如<code>pending</code>信号的处理等，如果该任务是一个<code>worker线程</code>还需要将其睡眠，并唤醒同CPU上的另一个<code>worker线程</code>;</li>
+<li>根据调度类来选择需要切换过去的下一个<code>task</code>，也就是<code>next</code>；</li>
+<li><code>context_switch</code>完成进程的切换；</li>
+</ul>
+<hr>
+<p><code>context_switch()</code> 的调用分析如下：</p>
+<p><img src="https://img2018.cnblogs.com/blog/1771657/202002/1771657-20200229212409378-167088356.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>核心的逻辑有两部分：</p>
+<ul>
+<li><code>进程的地址空间切换</code>：切换的时候要判断切入的进程是否为内核线程
+<ul>
+<li>所有的用户进程都共用一个内核地址空间，而拥有不同的用户地址空间；</li>
+<li>内核线程本身没有用户地址空间。在进程在切换的过程中就需要对这些因素来考虑，涉及到页表的切换，以及<code>cache/tlb</code>的刷新等操作。</li>
+</ul>
+</li>
+<li><code>寄存器的切换</code>：包括CPU的通用寄存器切换、浮点寄存器切换，以及ARM处理器相关的其他一些寄存器的切换；</li>
+</ul>
+<p>实际上进程的切换，带来的开销不仅是页表切换和硬件上下文的切换，还包含了<code>Cache/TLB</code>刷新后带来的<code>miss</code>的开销。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

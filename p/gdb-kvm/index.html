@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 参考 QEMU+GDB调试linux内核驱动 - 知乎 (zhihu.com)\n构建riscv两层qemu的步骤 | Sherlock&rsquo;s blog (wangzhou.github.io)\n用 QEMU/Spike+KVM 运行 RISC-V Host/Guest Linux - 泰晓科技 (tinylab.org)\nriscv KVM虚拟化分析 | Sherlock&rsquo;s blog (wangzhou.github.io)\n">
+<title>GDB KVM</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/gdb-kvm/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="GDB KVM">
+<meta property='og:description' content="0 参考 QEMU+GDB调试linux内核驱动 - 知乎 (zhihu.com)\n构建riscv两层qemu的步骤 | Sherlock&rsquo;s blog (wangzhou.github.io)\n用 QEMU/Spike+KVM 运行 RISC-V Host/Guest Linux - 泰晓科技 (tinylab.org)\nriscv KVM虚拟化分析 | Sherlock&rsquo;s blog (wangzhou.github.io)\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/gdb-kvm/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T09:49:48&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T09:49:48&#43;08:00'/>
+<meta name="twitter:title" content="GDB KVM">
+<meta name="twitter:description" content="0 参考 QEMU+GDB调试linux内核驱动 - 知乎 (zhihu.com)\n构建riscv两层qemu的步骤 | Sherlock&rsquo;s blog (wangzhou.github.io)\n用 QEMU/Spike+KVM 运行 RISC-V Host/Guest Linux - 泰晓科技 (tinylab.org)\nriscv KVM虚拟化分析 | Sherlock&rsquo;s blog (wangzhou.github.io)\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#21-在主机环境中完成的工作">2.1 在主机环境中完成的工作</a>
+      <ol>
+        <li><a href="#qemu编译安装">qemu编译安装</a></li>
+        <li><a href="#内核编译">内核编译</a></li>
+        <li><a href="#buildroot编译">buildroot编译</a></li>
+      </ol>
+    </li>
+    <li><a href="#22-从主机运行脚本">2.2 从主机运行脚本</a>
+      <ol>
+        <li><a href="#第一层qemu的脚本">第一层qemu的脚本</a></li>
+        <li><a href="#error-第二层qemu的脚本">//error: 第二层qemu的脚本</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/gdb-kvm/">GDB KVM</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-参考">0 参考
+</h1><p><a class="link" href="https://zhuanlan.zhihu.com/p/615578858"  target="_blank" rel="noopener"
+    >QEMU+GDB调试linux内核驱动 - 知乎 (zhihu.com)</a></p>
+<p><a class="link" href="https://wangzhou.github.io/%e6%9e%84%e5%bb%bariscv%e4%b8%a4%e5%b1%82qemu%e7%9a%84%e6%ad%a5%e9%aa%a4/"  target="_blank" rel="noopener"
+    >构建riscv两层qemu的步骤 | Sherlock&rsquo;s blog (wangzhou.github.io)</a></p>
+<p><a class="link" href="https://tinylab.org/riscv-kvm-qemu-spike-linux-usage/"  target="_blank" rel="noopener"
+    >用 QEMU/Spike+KVM 运行 RISC-V Host/Guest Linux - 泰晓科技 (tinylab.org)</a></p>
+<p><a class="link" href="https://wangzhou.github.io/riscv-KVM%e8%99%9a%e6%8b%9f%e5%8c%96%e5%88%86%e6%9e%90/"  target="_blank" rel="noopener"
+    >riscv KVM虚拟化分析 | Sherlock&rsquo;s blog (wangzhou.github.io)</a></p>
+<p><a class="link" href="https://www.yuque.com/weixin-37430058/klw1dv/mlktwrvemh1t7kvx"  target="_blank" rel="noopener"
+    >无标题文档 (yuque.com)</a></p>
+<h1 id="1-qemugdb调试内核驱动">1 QEMU/GDB调试内核驱动
+</h1><h1 id="2-riscv两层qemu环境配置">2 riscv两层qemu环境配置
+</h1><p>可以构建一个两层qemu的环境来调试问题，第一层qemu启动的时候打开qemu的虚拟化扩展，这个可以作为一个支持虚拟化扩展的riscv硬件平台，第二层qemu启动的时候 打开kvm支持。</p>
+<blockquote>
+<p>注意，第二层qemu的编译比较有意思，因为qemu编译需要依赖很多动态库，我用的都是交叉编译编译riscv的程序，所以，需要先交叉编译qemu依赖的动态库，然后再交叉编译qemu，太麻烦了。我们这里用编译buildroot的方式一同编译小文件系统里的qemu, buildroot编译qemu的时候就会一同编译qemu依赖的各种库, 这样编译出的host文件系统里就带了qemu。</p>
+</blockquote>
+<h2 id="21-在主机环境中完成的工作">2.1 在主机环境中完成的工作
+</h2><p>具体流程如下：</p>
+<ul>
+<li>qemu的编译安装</li>
+<li>编译第一层qemu运行的内核，需要开启linux内核的kvm模块</li>
+<li>编译根文件系统（如果想在第一层qemu启动后的环境中直接运行qemu，需要编译buildroot时一同编译qemu）</li>
+</ul>
+<h3 id="qemu编译安装">qemu编译安装
+</h3><p>创建工作目录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir riscv64-kvm
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> riscv64-kvm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载qemu源码：</p>
+<p><a class="link" href="https://mirrors.aliyun.com/blfs/conglomeration/qemu/"  target="_blank" rel="noopener"
+    >blfs-conglomeration-qemu安装包下载_开源镜像站-阿里云 (aliyun.com)</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://download.qemu.org/qemu-8.0.0.tar.xz
+</span></span><span class="line"><span class="cl">tar xvJf qemu-8.0.0.tar.xz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> qemu-8.0.0/
+</span></span><span class="line"><span class="cl">mkdir build
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> build
+</span></span><span class="line"><span class="cl">../configure --enable-kvm --enable-virtfs --target-list<span class="o">=</span>riscv64-linux-user,riscv64-softmmu <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--prefix<span class="o">=</span>/opt/software/toolchain/qemu
+</span></span><span class="line"><span class="cl">make -j<span class="sb">`</span>nproc<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">sudo make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>其中的 ：</p>
+<ul>
+<li>
+<p><code>--target-list</code> 为将要生成的目标平台：</p>
+</li>
+<li>
+<p><code>riscv-64-linux-user</code> 为用户模式，可以运行基于riscv指令集编译的程序文件</p>
+</li>
+<li>
+<p><code>softmmu</code> 为系统模式，可以运行基于riscv指令集编译的linux镜像；</p>
+</li>
+<li>
+<p><code>--enable-kvm</code> 为把kvm编译进qemu里；</p>
+</li>
+<li>
+<p><code>--enable-virtfs</code> 为qemu使用共享文件夹的参数</p>
+</li>
+<li>
+<p>使用此选项需要安装一些依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install libcap-ng-dev libcap-dev libcap-ng-utils libattr1 libattr1-dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</blockquote>
+<p>验证安装是否成功：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">qemu-system-riscv64 --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>若输出qemu版本信息则安装成功。</p>
+<h3 id="内核编译">内核编译
+</h3><p>下载内核源码：</p>
+<p><a class="link" href="https://mirrors.aliyun.com/linux-kernel/?spm=a2c6h.13651104.d-4003.5.72a570149KivWf"  target="_blank" rel="noopener"
+    >linux-kernel安装包下载_开源镜像站-阿里云 (aliyun.com)</a></p>
+<p>这里下载的是5.19内核。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone https://github.com/kvm-riscv/linux.git 
+</span></span><span class="line"><span class="cl"><span class="c1"># wget https://mirrors.aliyun.com/linux-kernel/v5.x/linux-5.19.tar.xz</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># tar xvJf linux-5.19.tar.xz</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着，创建编译目录并配置处理器架构和交叉编译器等环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ARCH</span><span class="o">=</span>riscv
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CROSS_COMPILE</span><span class="o">=</span>riscv64-linux-gnu-
+</span></span><span class="line"><span class="cl">mkdir build-riscv64
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着，通过 menuconfig 配置内核选项。在配置之前，需要注意最新版 Linux 内核默认关闭 RISC-V SBI 相关选项，需要通过以下命令手动配置开启，相关讨论参见该 issue，具体细节参见 <a class="link" href="https://zhuanlan.zhihu.com/p/539390400"  target="_blank" rel="noopener"
+    >Linux kernel 配置修改 - 知乎 (zhihu.com)</a>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># change options of kernel compiling to generate build-riscv64/.config (output dir)</span>
+</span></span><span class="line"><span class="cl">make -C linux-5.19 <span class="nv">O</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/build-riscv64 menuconfig 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后一个环节就是编译了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make -C linux-5.19 <span class="nv">O</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/build-riscv64  -j<span class="sb">`</span>nproc<span class="sb">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译完，咱们获得了两个重要的二进制文件：</p>
+<ul>
+<li>内核映像：<code>build-riscv64/arch/riscv/boot/Image</code></li>
+<li>KVM 内核模块：<code>build-riscv64/arch/riscv/kvm/kvm.ko</code></li>
+</ul>
+<h3 id="buildroot编译">buildroot编译
+</h3><p>这一层的qemu我们可以用一种更便捷的方法，用编译buildroot的方式一同编译根文件系统里的qemu, buildroot编译qemu的时候就会一同编译qemu依赖的各种库, 这样编译出的根文件系统里就带了qemu。</p>
+<p>首先下载buildroot工具：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone https://github.com/buildroot/buildroot.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> buildroot
+</span></span><span class="line"><span class="cl">make menuconfig
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>选择RISC-V架构：</p>
+<p><code>Target options  ---&gt;  Target Architecture （i386）---&gt;  (x) RISCV</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312041334764.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2023-09-01_131109.png"
+	
+	
+></p>
+<hr>
+<p>选择ext文件系统：</p>
+<p><code>Filesystem images ---&gt; [*] ext2/3/4 root filesystem</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312041335497.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2023-09-01_131351.png"
+	
+	
+></p>
+<p>下方的 <code>exact size</code> 可以调整ext文件系统大小配置，默认为60M，这里需要调整到500M以上，因为需要编译qemu文件进去</p>
+<hr>
+<p>buildroot配置qemu</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">BR2_TOOLCHAIN_BUILDROOT_GLIBC</span><span class="o">=</span>y <span class="c1"># Toolchain -&gt; C library (&lt;choice&gt; [=y]) glibc</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BR2_USE_WCHAR</span><span class="o">=</span>y <span class="c1"># BR2_TOOLCHAIN_USES_GLIBC=y</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BR2_PACKAGE_QEMU</span><span class="o">=</span>y <span class="c1"># QEMU</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BR2_TARGET_ROOTFS_CPIO</span><span class="o">=</span>y <span class="c1"># cpio the root filesystem (for use as an initial RAM filesystem) </span>
+</span></span><span class="line"><span class="cl"><span class="nv">BR2_TARGET_ROOTFS_CPIO_GZIP</span><span class="o">=</span>y
+</span></span><span class="line"><span class="cl">Prompt: gzip                                                                                                                                                                            
+</span></span><span class="line"><span class="cl">  │   Location:                                                                                                                                                                                           
+</span></span><span class="line"><span class="cl">  │     -&gt; Filesystem images                                                                                                                                                                              
+</span></span><span class="line"><span class="cl">  │ <span class="o">(</span>1<span class="o">)</span>   -&gt; cpio the root filesystem <span class="o">(</span><span class="k">for</span> use as an initial RAM filesystem<span class="o">)</span> <span class="o">(</span>BR2_TARGET_ROOTFS_CPIO <span class="o">[=</span>n<span class="o">])</span>                                                                                              
+</span></span><span class="line"><span class="cl">  │         -&gt; Compression method <span class="o">(</span>&lt;choice&gt; <span class="o">[=</span>n<span class="o">])</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在可视化页面按/ 即可进入搜索模式，在搜索模式分别输入上述参数：</p>
+<img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312041336099.png" alt="截图 2023-09-22 14-55-44.png" style="zoom: 33%;" />
+<img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312041337819.png" alt="截图 2023-09-22 14-55-54.png" style="zoom:33%;" />
+<hr>
+<p>全部开启后保存退出</p>
+<p><code>make -j</code> 编译，完成后在output/images目录下得到rootfs.ext2，将它复制到工作目录。<strong>这里编译的qemu版本为8.1.0</strong>。</p>
+<p>第二层qemu运行的内核，就使用第一次编译的内核即可。</p>
+<h2 id="22-从主机运行脚本">2.2 从主机运行脚本
+</h2><h3 id="第一层qemu的脚本">第一层qemu的脚本
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">sudo qemu-system-riscv64 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-M virt <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-cpu <span class="s1">&#39;rv64,h=true&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-m 2G <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-kernel Image <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-append <span class="s2">&#34;rootwait root=/dev/vda ro&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-drive <span class="nv">file</span><span class="o">=</span>rootfs.ext2,format<span class="o">=</span>raw,id<span class="o">=</span>hd0 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-device virtio-blk-device,drive<span class="o">=</span>hd0 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-nographic <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-virtfs local,path<span class="o">=</span>/home/wx/Documents/shared,mount_tag<span class="o">=</span>host0,security_model<span class="o">=</span>passthrough,id<span class="o">=</span>host0 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-netdev user,id<span class="o">=</span>net0 -device virtio-net-device,netdev<span class="o">=</span>net0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>qemu7.0.0之前的版本使用-cpu rv64,x-h=true能使CPU虚拟化扩展，在qemu v7.0.0以及之后的版本使用-cpu rv64,h=true能使CPU虚拟化扩展</strong></p>
+</blockquote>
+<p>执行上述命令启动QEMU后，root账号登录Linux系统，然后执行 <code>mount</code> 命令挂载宿主机目录，用于文件共享：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p /mnt/shared
+</span></span><span class="line"><span class="cl">mount -t 9p -o <span class="nv">trans</span><span class="o">=</span>virtio,version<span class="o">=</span>9p2000.L host0 /mnt/shared
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="error-第二层qemu的脚本">//error: 第二层qemu的脚本
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">/usr/bin/qemu-system-riscv64 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-M virt --enable-kvm <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-cpu rv64 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-m 256m  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-kernel ./Image <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-append <span class="s2">&#34;rootwait root=/dev/vda ro&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-drive <span class="nv">file</span><span class="o">=</span>rootfs.ext2,format<span class="o">=</span>raw,id<span class="o">=</span>hd0 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-device virtio-blk-device,drive<span class="o">=</span>hd0 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-nographic 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>error =&gt; qemu-system-riscv64: Unable to read ISA_EXT KVM register ssaia, error -1</p>
+</blockquote>
+<ul>
+<li><code>-cpu</code> 未支持 AIA</li>
+<li><code>-machine</code> 位置添加 AIA</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

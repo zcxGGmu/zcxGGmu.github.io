@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 问题 ez4yunfeng2/riscv-kvm-demo (github.com) 1 参与linux/kvm-riscv 填写email/name：\nkvm-riscv Info Page (infradead.org)； linux-riscv Info Page (infradead.org)； 后续，用上述email发送邮件至 kvm-riscv-join@lists.infradead.org，邮件内容仅添加纯文本的 subscribe，标题可以不用写。\n">
+<title>Riscv Upstream Work</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/riscv-upstream-work/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Riscv Upstream Work">
+<meta property='og:description' content="0 问题 ez4yunfeng2/riscv-kvm-demo (github.com) 1 参与linux/kvm-riscv 填写email/name：\nkvm-riscv Info Page (infradead.org)； linux-riscv Info Page (infradead.org)； 后续，用上述email发送邮件至 kvm-riscv-join@lists.infradead.org，邮件内容仅添加纯文本的 subscribe，标题可以不用写。\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/riscv-upstream-work/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T09:50:37&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T09:50:37&#43;08:00'/>
+<meta name="twitter:title" content="Riscv Upstream Work">
+<meta name="twitter:description" content="0 问题 ez4yunfeng2/riscv-kvm-demo (github.com) 1 参与linux/kvm-riscv 填写email/name：\nkvm-riscv Info Page (infradead.org)； linux-riscv Info Page (infradead.org)； 后续，用上述email发送邮件至 kvm-riscv-join@lists.infradead.org，邮件内容仅添加纯文本的 subscribe，标题可以不用写。\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#please-subscribe-by-email-instead">Please subscribe by email instead:</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-准备工作">2.1 准备工作</a></li>
+    <li><a href="#22-寻找软柿子">2.2 寻找软柿子</a></li>
+    <li><a href="#23-制作patch">2.3 制作PATCH</a>
+      <ol>
+        <li><a href="#修改错误制作补丁">修改错误，制作补丁</a></li>
+        <li><a href="#正确的patch">正确的PATCH</a></li>
+      </ol>
+    </li>
+    <li><a href="#24-发送patch">2.4 发送PATCH</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-如何参与开源项目">3.1 如何参与开源项目？</a>
+      <ol>
+        <li><a href="#寻找一个合适的开源项目">寻找一个合适的开源项目</a></li>
+        <li><a href="#寻找贡献点">寻找贡献点</a></li>
+      </ol>
+    </li>
+    <li><a href="#32-如何提交pr">3.2 如何提交PR？</a>
+      <ol>
+        <li><a href="#step-1-fork项目仓库">step-1: Fork项目仓库</a></li>
+        <li><a href="#step-2-克隆项目仓库到本地">step-2: 克隆项目仓库到本地</a></li>
+        <li><a href="#step-3-更新本地分支代码">step-3: 更新本地分支代码</a></li>
+        <li><a href="#step-4-写代码">step-4: 写代码</a></li>
+        <li><a href="#step-5-addcommitpush">step-5: add/commit/push</a></li>
+        <li><a href="#step-6-开一个pr">step-6: 开一个PR</a></li>
+        <li><a href="#step-7-pr合入">step-7: PR合入</a></li>
+      </ol>
+    </li>
+    <li><a href="#33-提交pr可能遇到的问题">3.3 提交PR可能遇到的问题</a>
+      <ol>
+        <li><a href="#q1-基于reviewer的意见更新pr">Q1: 基于Reviewer的意见更新PR</a></li>
+        <li><a href="#q2-合并多且混乱的commits">Q2: 合并多且混乱的Commits</a></li>
+        <li><a href="#q3-解决pr冲突">Q3: 解决PR冲突</a>
+          <ol>
+            <li><a href="#在线解决冲突">在线解决冲突</a></li>
+            <li><a href="#本地解决冲突">本地解决冲突</a></li>
+          </ol>
+        </li>
+        <li><a href="#q4-ci检查不过">Q4: CI检查不过</a>
+          <ol>
+            <li><a href="#commit-message问题修复">commit-message问题修复</a></li>
+            <li><a href="#dcosign问题修复">DCO(sign)问题修复</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#41-perf-nev">4.1 perf-nev</a></li>
+    <li><a href="#42-thunderbird">4.2 Thunderbird</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/riscv-upstream-work/">Riscv Upstream Work</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 24 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-问题">0 问题
+</h1><ul>
+<li><a class="link" href="https://github.com/ez4yunfeng2/riscv-kvm-demo"  target="_blank" rel="noopener"
+    >ez4yunfeng2/riscv-kvm-demo (github.com)</a></li>
+</ul>
+<h1 id="1-参与linuxkvm-riscv">1 参与linux/kvm-riscv
+</h1><ol>
+<li>
+<p>填写email/name：</p>
+<ul>
+<li><a class="link" href="https://lists.infradead.org/mailman/listinfo/kvm-riscv"  target="_blank" rel="noopener"
+    >kvm-riscv Info Page (infradead.org)</a>；</li>
+<li><a class="link" href="https://lists.infradead.org/mailman/listinfo/linux-riscv"  target="_blank" rel="noopener"
+    >linux-riscv Info Page (infradead.org)</a>；</li>
+</ul>
+</li>
+<li>
+<p>后续，用上述email发送邮件至 <code>kvm-riscv-join@lists.infradead.org</code>，邮件内容仅添加纯文本的 <code>subscribe</code>，标题可以不用写。</p>
+<blockquote>
+<h3 id="please-subscribe-by-email-instead">Please subscribe by email instead:
+</h3><p>Due to abuse, the web-based subscription has been disabled. You can join by sending email to the list&rsquo;s <code>-join</code> address instead.</p>
+<p>It looks like you were trying to subscribe to <code>linux-riscv@lists.infradead.org</code>.</p>
+<p>In that case you should be able to subscribe by sending a <strong>PLAIN TEXT</strong> (not HTML) mail containing only the single word <code>subscribe</code> to <strong><a class="link" href="mailto:linux-riscv-join@lists.infradead.org" >linux-riscv-join@lists.infradead.org</a></strong>.</p>
+<p>It must be plain text, and it must go to the <code>-join</code> address, not to the list itself.</p>
+</blockquote>
+</li>
+<li>
+<p>稍后，你将收到一封确认订阅的邮件，简单回复或进入link确认：</p>
+<ul>
+<li><a class="link" href="https://lists.infradead.org/mailman/confirm/linux-riscv/3f1504a42fcd5bad8006f0172716f2fa2c03ff09"  target="_blank" rel="noopener"
+    >Confirm subscription request (infradead.org)</a></li>
+<li><a class="link" href="http://lists.infradead.org/mailman/confirm/linux-riscv"  target="_blank" rel="noopener"
+    >Subscription request confirmed (infradead.org)</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// /MAINTAINERS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">RISC</span><span class="o">-</span><span class="n">V</span> <span class="n">ARCHITECTURE</span>
+</span></span><span class="line"><span class="cl"><span class="nl">M</span><span class="p">:</span>	<span class="n">Paul</span> <span class="n">Walmsley</span> <span class="o">&lt;</span><span class="n">paul</span><span class="p">.</span><span class="n">walmsley</span><span class="err">@</span><span class="n">sifive</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nl">M</span><span class="p">:</span>	<span class="n">Palmer</span> <span class="n">Dabbelt</span> <span class="o">&lt;</span><span class="n">palmer</span><span class="err">@</span><span class="n">dabbelt</span><span class="p">.</span><span class="n">com</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nl">M</span><span class="p">:</span>	<span class="n">Albert</span> <span class="n">Ou</span> <span class="o">&lt;</span><span class="n">aou</span><span class="err">@</span><span class="n">eecs</span><span class="p">.</span><span class="n">berkeley</span><span class="p">.</span><span class="n">edu</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nl">L</span><span class="p">:</span>	<span class="n">linux</span><span class="o">-</span><span class="n">riscv</span><span class="err">@</span><span class="n">lists</span><span class="p">.</span><span class="n">infradead</span><span class="p">.</span><span class="n">org</span>
+</span></span><span class="line"><span class="cl"><span class="nl">S</span><span class="p">:</span>	<span class="n">Supported</span>
+</span></span><span class="line"><span class="cl"><span class="nl">Q</span><span class="p">:</span>	<span class="nl">https</span><span class="p">:</span><span class="c1">//patchwork.kernel.org/project/linux-riscv/list/
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">C</span><span class="p">:</span>	<span class="nl">irc</span><span class="p">:</span><span class="c1">//irc.libera.chat/riscv
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">P</span><span class="p">:</span>	<span class="n">Documentation</span><span class="o">/</span><span class="n">arch</span><span class="o">/</span><span class="n">riscv</span><span class="o">/</span><span class="n">patch</span><span class="o">-</span><span class="n">acceptance</span><span class="p">.</span><span class="n">rst</span>
+</span></span><span class="line"><span class="cl"><span class="nl">T</span><span class="p">:</span>	<span class="n">git</span> <span class="nl">git</span><span class="p">:</span><span class="c1">//git.kernel.org/pub/scm/linux/kernel/git/riscv/linux.git
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">F</span><span class="p">:</span>	<span class="n">arch</span><span class="o">/</span><span class="n">riscv</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="nl">N</span><span class="p">:</span>	<span class="n">riscv</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">KERNEL</span> <span class="n">VIRTUAL</span> <span class="n">MACHINE</span> <span class="n">FOR</span> <span class="n">RISC</span><span class="o">-</span><span class="nf">V</span> <span class="p">(</span><span class="n">KVM</span><span class="o">/</span><span class="n">riscv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nl">M</span><span class="p">:</span>	<span class="n">Anup</span> <span class="n">Patel</span> <span class="o">&lt;</span><span class="n">anup</span><span class="err">@</span><span class="n">brainfault</span><span class="p">.</span><span class="n">org</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nl">R</span><span class="p">:</span>	<span class="n">Atish</span> <span class="n">Patra</span> <span class="o">&lt;</span><span class="n">atishp</span><span class="err">@</span><span class="n">atishpatra</span><span class="p">.</span><span class="n">org</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nl">L</span><span class="p">:</span>	<span class="n">kvm</span><span class="err">@</span><span class="n">vger</span><span class="p">.</span><span class="n">kernel</span><span class="p">.</span><span class="n">org</span>
+</span></span><span class="line"><span class="cl"><span class="nl">L</span><span class="p">:</span>	<span class="n">kvm</span><span class="o">-</span><span class="n">riscv</span><span class="err">@</span><span class="n">lists</span><span class="p">.</span><span class="n">infradead</span><span class="p">.</span><span class="n">org</span>
+</span></span><span class="line"><span class="cl"><span class="nl">L</span><span class="p">:</span>	<span class="n">linux</span><span class="o">-</span><span class="n">riscv</span><span class="err">@</span><span class="n">lists</span><span class="p">.</span><span class="n">infradead</span><span class="p">.</span><span class="n">org</span>
+</span></span><span class="line"><span class="cl"><span class="nl">S</span><span class="p">:</span>	<span class="n">Maintained</span>
+</span></span><span class="line"><span class="cl"><span class="nl">T</span><span class="p">:</span>	<span class="n">git</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/kvm-riscv/linux.git
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">F</span><span class="p">:</span>	<span class="n">arch</span><span class="o">/</span><span class="n">riscv</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="k">asm</span><span class="o">/</span><span class="n">kvm</span><span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="nl">F</span><span class="p">:</span>	<span class="n">arch</span><span class="o">/</span><span class="n">riscv</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">uapi</span><span class="o">/</span><span class="k">asm</span><span class="o">/</span><span class="n">kvm</span><span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="nl">F</span><span class="p">:</span>	<span class="n">arch</span><span class="o">/</span><span class="n">riscv</span><span class="o">/</span><span class="n">kvm</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="nl">F</span><span class="p">:</span>	<span class="n">tools</span><span class="o">/</span><span class="n">testing</span><span class="o">/</span><span class="n">selftests</span><span class="o">/</span><span class="n">kvm</span><span class="cm">/*/riscv/
+</span></span></span><span class="line"><span class="cl"><span class="cm">F:	tools/testing/selftests/kvm/riscv/
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="2-向linux提交patch流程">2 向Linux提交PATCH流程
+</h1><p><a class="link" href="https://www.bilibili.com/video/BV1cK4y1w7eT/?spm_id_from=333.999.0.0&amp;vd_source=e97ae8f8b8ae2ceb4dd6eec6f1e33ee9"  target="_blank" rel="noopener"
+    >RISC-V Linux 内核开发与 Upstream 实践 - 谭老师_哔哩哔哩_bilibili</a></p>
+<p>[向 Linux kernel 社区提交patch补丁步骤总结（已验证成功）_发patch包-CSDN博客](<a class="link" href="https://blog.csdn.net/jcf147/article/details/123719000#:~:text="  target="_blank" rel="noopener"
+    >https://blog.csdn.net/jcf147/article/details/123719000#:~:text=</a>一、详细步骤 1 1.安装git和git send-email yum install git &hellip;,0 warnings。 &hellip; 8 8.测试发送 在正式发送之前，先发给自己测试一下： &hellip; 更多项目)</p>
+<p><a class="link" href="https://zhuanlan.zhihu.com/p/87955006"  target="_blank" rel="noopener"
+    >谢宝友: 手把手教你给Linux内核发patch - 知乎 (zhihu.com)</a></p>
+<p>[<a class="link" href="https://zhuanlan.zhihu.com/p/476648206"  target="_blank" rel="noopener"
+    >linux内核][邮件列表]: 如何给linux kernel 提交 patch - 知乎 (zhihu.com)</a></p>
+<p><a class="link" href="https://zhuanlan.zhihu.com/p/528512418"  target="_blank" rel="noopener"
+    >【学习分享】 记录开源小白的第一次 PR - 知乎 (zhihu.com)</a></p>
+<hr>
+<h2 id="21-准备工作">2.1 准备工作
+</h2><p>在开始工作之前，请准备如下工作：</p>
+<ol>
+<li>
+<p><strong>安装一份Linux</strong></p>
+<p>不论是ubuntu、centos还是其他Linux发行版本，都是可以的。我个人习惯使用ubuntu 22.04版本。</p>
+</li>
+<li>
+<p><strong>安装Git</strong></p>
+<p>默认的Linux发行版，一般都已经安装好git。如果没有，随便找一本git的书都可以。这里不详述。</p>
+</li>
+<li>
+<p><strong>配置git</strong></p>
+<ul>
+<li>
+<p><strong>配置用户名和邮箱</strong></p>
+<p>在配置用户名的时候，请注意社区朋友习惯用英语沟通，也就是名在前，姓在后。这一点会影响社区邮件讨论，因此需要留意。在配置邮箱时，也要注意。社区会将国内某些著名的邮件服务器屏蔽。因此建议你申请一个gmail邮箱。以下是我的配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$git</span> config -l <span class="p">|</span> grep <span class="s2">&#34;user&#34;</span>
+</span></span><span class="line"><span class="cl">user.email<span class="o">=</span>baoyou.xie@linaro.org
+</span></span><span class="line"><span class="cl">user.name<span class="o">=</span>Baoyou Xie
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>配置 sendemail</strong></p>
+<p>你可以手工修改~/.gitconfig，或者git仓库下的.git/config文件，添加 <code>[sendemail]</code> 节。该配置用于指定发送补丁时用到的邮件服务器参数。以下是我的配置，供参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">[</span>sendemail<span class="o">]</span>
+</span></span><span class="line"><span class="cl">      smtp <span class="nv">encryption</span><span class="o">=</span> tls
+</span></span><span class="line"><span class="cl">      smtp <span class="nv">server</span><span class="o">=</span> smtp.gmail.com
+</span></span><span class="line"><span class="cl">      smtp <span class="nv">user</span><span class="o">=</span> baoyou.xie@linaro.org
+</span></span><span class="line"><span class="cl">      smtp <span class="nv">serverport</span><span class="o">=</span> <span class="m">587</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>gmail邮箱的配置比较麻烦，需要按照google的说明，制作证书。配置完成后，请用如下命令，向自己发送一个测试补丁：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git send-email your.patch --to your.mail --cc your.mail
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>下载源码</strong></p>
+<p>首先，请用如下命令，拉取linus维护的Linux主分支代码到本地：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone ssh://git@dev-private.git.linaro.org/zte/kernel.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个过程比较长，请耐心等待。一般情况下，Linux主分支代码不够新，如果你基于这个代码制作补丁，很有可能不会顺利的合入到Maintainer那里，换句话说，Maintainer会将补丁发回给你，要求你重新制作。所以，一般情况下，你需要再用以下命令，添加其他分支，特别是 <code>linux-next</code> 分支。强调一下，你需要习惯基于 <code>linux-next</code> 分支进行工作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git remote add linux-nexthttps://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
+</span></span><span class="line"><span class="cl">git remote add staging https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging.git
+</span></span><span class="line"><span class="cl">git remote add net git://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后用如下命令拉取这三个分支的代码到本地：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git fetch --tags linux-next
+</span></span><span class="line"><span class="cl">git fetch --tags staging
+</span></span><span class="line"><span class="cl">git fetch --tags net
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>有些Maintainer维护了自己的代码分支，那么，你可以在内核源码目录 <code>\MAINTAINERS</code> 文件中，找一下相应文件的维护者，及其git地址。例如，watchdog模块的信息如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">WATCHDOGDEVICE DRIVERS
+</span></span><span class="line"><span class="cl">M:      Wim Van Sebroeck &lt;wim@iguana.be&gt;
+</span></span><span class="line"><span class="cl">R:      Guenter Roeck &lt;linux@roeck-us.net&gt;
+</span></span><span class="line"><span class="cl">L:      linux-watchdog@vger.kernel.org
+</span></span><span class="line"><span class="cl">W:      http://www.linux-watchdog.org/
+</span></span><span class="line"><span class="cl">T:      gitgit://www.linux-watchdog.org/linux-watchdog.git
+</span></span><span class="line"><span class="cl">S:      Maintained
+</span></span><span class="line"><span class="cl">F:      Documentation/devicetree/bindings/watchdog/
+</span></span><span class="line"><span class="cl">F:      Documentation/watchdog/
+</span></span><span class="line"><span class="cl">F:      drivers/watchdog/
+</span></span><span class="line"><span class="cl">F:      include/linux/watchdog.h
+</span></span><span class="line"><span class="cl">F:      include/uapi/linux/watchdog.h
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中，<a class="link" href="https://link.zhihu.com/?target=http%3A//www.linux-watchdog.org/linux-watchdog.git"  target="_blank" rel="noopener"
+    >http://www.linux-watchdog.org/linux-watchdog.git</a> 是其git地址。你可以用如下命令拉取watchdog代码到本地：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git remote add watchdog git://www.linux-watchdog.org/linux-watchdog.git
+</span></span><span class="line"><span class="cl">git fetch --tags watchdog
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当然，这里友情提醒一下，MAINTAINERS里面的信息可能不一定准确，这时候你可能需要借助google，或者问一下社区的朋友，或者直接问一下作者本人。不过，一般情况下，基于 <code>linux-next</code> 分支工作不会有太大的问题。实在有问题再去打扰作者本人。</p>
+</li>
+<li>
+<p><strong>阅读Documentation/SubmittingPatches，这很重要。</strong></p>
+</li>
+<li>
+<p><strong>检出源码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git branch mybranch next-20170807
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个命令表示将 <code>linux-next</code> 分支的20170807这个tag作为本地 <code>mybranch</code> 的基础。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git checkout mybranch
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ol>
+<h2 id="22-寻找软柿子">2.2 寻找软柿子
+</h2><p>如果没有奇遇，大厨一般都是从小工做起的。我们不可能一开始就维护一个重要的模块，或者修复一些非常重要的故障。那么我们应当怎么样入手参与社区？这当然要寻找软柿子了。拿着软柿子做出来的补丁，可以让Maintainer无法拒绝合入你的补丁。当然，这么做主要还是为了在Maintainer那里混个脸熟。否则，以后你发的重要补丁，人家可能不会理你。</p>
+<p><strong>什么样的柿子最软？下面是答案：</strong></p>
+<blockquote>
+<ol>
+<li>消除编译警告。</li>
+<li>编码格式，例如注释里面的单词拼写错误、对齐不规范、代码格式不符合社区要求。</li>
+</ol>
+</blockquote>
+<p>建议是从 <strong>“消除编译警告”</strong> 入手。社区很多大牛，都是这样成长起来的。</p>
+<p>我们平时编译内核，基本上遇不到编译警告。是不是内核非常完美，没有编译警告，非矣！你用下面这个步骤试一下：</p>
+<hr>
+<p>首先，配置内核，选择所有模块：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">make <span class="nv">ARCH</span><span class="o">=</span>arm64 allmodconfig
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>请注意其中 <code>allmodconfig</code>，很有用的配置，我们暂且可以理解为，将所有模块都编译。这样我们就可以查找所有模块中的编译警告了。</p>
+<p>下面这个命令开始编译所有模块：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">make <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">EXTRA_CFLAGS</span><span class="o">=</span><span class="s2">&#34;-Wmissing-declarations -Wmissing-prototypes&#34;</span> <span class="nv">CROSS_COMPILE</span><span class="o">=</span>/toolchains/aarch64-linux-gnu/bin/aarch64-linux-gnu-
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>EXTRA_CFLAGS=&quot;-Wmissing-declarations-Wmissing-prototypes&quot;</strong> 参数表示追踪所有missing-declarations、missing-prototypes类型的警告。</li>
+<li><strong>&ldquo;CROSS_COMPILE=/toolchains/aarch64-linux-gnu/bin/aarch64-linux-gnu-&rdquo;</strong> 是指定交叉编译工具链路径，需要根据你的实际情况修改。当然，如果是x86架构，则不需要指定此参数。</li>
+</ul>
+<hr>
+<p>在编译的过程中，我们发现如下错误：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">scripts/Makefile.build:311:recipe <span class="k">for</span> target <span class="s1">&#39;drivers/staging/fsl-mc/bus/dpio/qbman-portal.o&#39;</span> failed
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们可以简单的忽略 <code>drivers/staging/fsl-mc/bus/dpio/qbman-portal.c</code> 这个文件。在 <code>drivers/staging/fsl-mc/bus/dpio/Makefile</code> 文件中，发现这个文件的编译依赖于宏 <code>CONFIG_FSL_MC_DPIO</code>。</p>
+<p>于是，我们修改编译命令，以如下命令继续编译：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">make <span class="nv">CONFIG_ACPI_SPCR_TABLE</span><span class="o">=</span>n <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">EXTRA_CFLAGS</span><span class="o">=</span><span class="s2">&#34;-Wmissing-declarations -Wmissing-prototypes&#34;</span> <span class="nv">CROSS_COMPILE</span><span class="o">=</span>/toolchains/aarch64-linux-gnu/bin/aarch64-linux-gnu-
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>请注意该命令中的 <code>CONFIG_ACPI_SPCR_TABLE=n</code>，它强制关闭了 <code>CONFIG_ACPI_SPCR_TABLE</code> 配置。</p>
+<p>当编译完成以后，我们是不是发现有很多警告？特别是在drivers目录下。下面是我在 <code>next-20170807</code> 版本中发现的警告：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"> /dimsum/git/kernel.next/drivers/clk/samsung/clk-s3c2410.c:363:13:warning: no previous prototype <span class="k">for</span> <span class="s1">&#39;s3c2410_common_clk_init&#39;</span><span class="o">[</span>-Wmissing-prototypes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> void__init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">            ^
+</span></span><span class="line"><span class="cl"> CC     drivers/clk/samsung/clk-s3c2412.o
+</span></span><span class="line"><span class="cl">/dimsum/git/kernel.next/drivers/clk/samsung/clk-s3c2412.c:254:13:warning: no previous prototype <span class="k">for</span> <span class="s1">&#39;s3c2412_common_clk_init&#39;</span><span class="o">[</span>-Wmissing-prototypes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> void__init s3c2412_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">            ^
+</span></span><span class="line"><span class="cl"> CC     drivers/clk/samsung/clk-s3c2443.o
+</span></span><span class="line"><span class="cl">/dimsum/git/kernel.next/drivers/clk/samsung/clk-s3c2443.c:388:13:warning: no previous prototype <span class="k">for</span> <span class="s1">&#39;s3c2443_common_clk_init&#39;</span> <span class="o">[</span>-Wmissing-prototypes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> void__init s3c2443_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下一节，我们就基于这几个警告来制作补丁。</p>
+<h2 id="23-制作patch">2.3 制作PATCH
+</h2><h3 id="修改错误制作补丁">修改错误，制作补丁
+</h3><p>要消除这几个警告，当然很简单了。将这几个函数声明为 <code>static</code> 即可。下面是我的修改：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git diff
+</span></span><span class="line"><span class="cl">diff --git a/drivers/clk/samsung/clk-s3c2410.c b/drivers/clk/samsung/clk-s3c2410.c
+</span></span><span class="line"><span class="cl">index e0650c3..8f4fc5a <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">--- a/drivers/clk/samsung/clk-s3c2410.c
+</span></span><span class="line"><span class="cl">+++ b/drivers/clk/samsung/clk-s3c2410.c
+</span></span><span class="line"><span class="cl">@@ -360,7 +360,7 @@ static void __inits3c2410_common_clk_register_fixed_ext<span class="o">(</span>
+</span></span><span class="line"><span class="cl">       samsung_clk_register_alias<span class="o">(</span>ctx, <span class="p">&amp;</span>xti_alias, 1<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">-void __init s3c2410_common_clk_init<span class="o">(</span>structdevice_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">+static void __init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">                                    intcurrent_soc,
+</span></span><span class="line"><span class="cl">                                    void__iomem *base<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">diff --git a/drivers/clk/samsung/clk-s3c2412.c b/drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">index b8340a4..2a2ce06 <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">--- a/drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">+++ b/drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">@@ -251,7 +251,7 @@ static void __init s3c2412_common_clk_register_fixed_ext<span class="o">(</span>
+</span></span><span class="line"><span class="cl">       samsung_clk_register_alias<span class="o">(</span>ctx, <span class="p">&amp;</span>xti_alias, 1<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">-void __init s3c2412_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">+static void __init s3c2412_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">                                    unsigned long ext_f, void __iomem *base<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       struct samsung_clk_provider *ctx<span class="p">;</span>
+</span></span><span class="line"><span class="cl">diff --gita/drivers/clk/samsung/clk-s3c2443.c b/drivers/clk/samsung/clk-s3c2443.c
+</span></span><span class="line"><span class="cl">index abb935c..f0b88bf <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">--- a/drivers/clk/samsung/clk-s3c2443.c
+</span></span><span class="line"><span class="cl">+++ b/drivers/clk/samsung/clk-s3c2443.c
+</span></span><span class="line"><span class="cl">@@ -385,7 +385,7 @@ static void __inits3c2443_common_clk_register_fixed_ext<span class="o">(</span>
+</span></span><span class="line"><span class="cl">                               ARRAY_SIZE<span class="o">(</span>s3c2443_common_frate_clks<span class="o">))</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">-void __init s3c2443_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">+static void __init s3c2443_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">                                    int current_soc,
+</span></span><span class="line"><span class="cl">                                    void __iomem *base<span class="o">)</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再编译一次，警告果然被消除了。原来，社区工作如此简单：）。</p>
+<p>但是请允许我浇一盆冷水！你先试着用下面的命令做一个补丁出来看看：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git add drivers/clk/samsung/clk-s3c2410.c
+</span></span><span class="line"><span class="cl">git add drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">git add drivers/clk/samsung/clk-s3c2443.c
+</span></span><span class="line"><span class="cl">git commit drivers/clk/samsung/
+</span></span><span class="line"><span class="cl"><span class="o">[</span>zxic/67184930591<span class="se">\]</span> this is my <span class="nb">test</span>
+</span></span><span class="line"><span class="cl"><span class="m">3</span> files changed, <span class="m">3</span> insertions<span class="o">(</span>+<span class="o">)</span>, 3deletions<span class="o">(</span>-<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git format-patch -s -v <span class="m">1</span> -1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成的补丁内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cat v1-0001-this-is-my-test.patch
+</span></span><span class="line"><span class="cl">From 493059190e9ca691cf08063ebaf945627a5568c7 Mon Sep <span class="m">17</span> 00:00:00 <span class="m">2001</span>
+</span></span><span class="line"><span class="cl">From: Baoyou Xie&lt;baoyou.xie@linaro.org&gt;
+</span></span><span class="line"><span class="cl">Date: Thu, <span class="m">17</span> Aug <span class="m">2017</span> 19:23:13 +0800
+</span></span><span class="line"><span class="cl">Subject: <span class="o">[</span>PATCH v1<span class="o">]</span> this is my <span class="nb">test</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">Signed-off-by: Baoyou Xie&lt;baoyou.xie@linaro.org&gt;
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl"> drivers/clk/samsung/clk-s3c2410.c <span class="p">|</span> <span class="m">2</span> +-
+</span></span><span class="line"><span class="cl"> drivers/clk/samsung/clk-s3c2412.c <span class="p">|</span> <span class="m">2</span> +-
+</span></span><span class="line"><span class="cl"> drivers/clk/samsung/clk-s3c2443.c <span class="p">|</span> <span class="m">2</span> +-
+</span></span><span class="line"><span class="cl"> 3files changed, <span class="m">3</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">3</span> deletions<span class="o">(</span>-<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">diff --git a/drivers/clk/samsung/clk-s3c2410.c b/drivers/clk/samsung/clk-s3c2410.c
+</span></span><span class="line"><span class="cl">index e0650c3..8f4fc5a <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">--- a/drivers/clk/samsung/clk-s3c2410.c
+</span></span><span class="line"><span class="cl">+++ b/drivers/clk/samsung/clk-s3c2410.c
+</span></span><span class="line"><span class="cl">@@ -360,7 +360,7 @@ static void __init s3c2410_common_clk_register_fixed_ext<span class="o">(</span>
+</span></span><span class="line"><span class="cl">      samsung_clk_register_alias<span class="o">(</span>ctx,<span class="p">&amp;</span>xti_alias, 1<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">-void __init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">+static void __init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">                               int current_soc,
+</span></span><span class="line"><span class="cl">                               void __iomem *base<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">diff --git a/drivers/clk/samsung/clk-s3c2412.c b/drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">index b8340a4..2a2ce06 <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">--- a/drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">+++ b/drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">@@ -251,7 +251,7 @@ static void __inits3c2412_common_clk_register_fixed_ext<span class="o">(</span>
+</span></span><span class="line"><span class="cl">      samsung_clk_register_alias<span class="o">(</span>ctx,<span class="p">&amp;</span>xti_alias, 1<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">-void __init s3c2412_common_clk_init<span class="o">(</span>structdevice_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">+static void __init s3c2412_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">                               unsigned long ext_f, void __iomem *base<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      struct samsung_clk_provider *ctx<span class="p">;</span>
+</span></span><span class="line"><span class="cl">diff --git a/drivers/clk/samsung/clk-s3c2443.c b/drivers/clk/samsung/clk-s3c2443.c
+</span></span><span class="line"><span class="cl">index abb935c..f0b88bf <span class="m">100644</span>
+</span></span><span class="line"><span class="cl">--- a/drivers/clk/samsung/clk-s3c2443.c
+</span></span><span class="line"><span class="cl">+++ b/drivers/clk/samsung/clk-s3c2443.c
+</span></span><span class="line"><span class="cl">@@ -385,7 +385,7 @@ static void __inits3c2443_common_clk_register_fixed_ext<span class="o">(</span>
+</span></span><span class="line"><span class="cl">                           ARRAY_SIZE<span class="o">(</span>s3c2443_common_frate_clks<span class="o">))</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">-void __init s3c2443_common_clk_init<span class="o">(</span>structdevice_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">+static void __init s3c2443_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl">                               int current_soc,
+</span></span><span class="line"><span class="cl">                               void __iomem *base<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">--
+</span></span><span class="line"><span class="cl">2.7.4
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你可以试着用 <code>git send-email v1-0001-this-is-my-test.patch --to baoyou.xie@linaro.org</code> 将补丁发给Maintainer。记得准备好一个盆子，接大家的口水：）</p>
+<p>在制作正确的补丁之前，我们需要这个错误的补丁错在何处：</p>
+<blockquote>
+<ul>
+<li>
+<p>应该将它拆分成三个补丁。</p>
+<p>也许这一点值得商酌，因为这三个文件都是同一个驱动：<code>clk: samsung</code>。也许Maintainer认为它是同一个驱动，做成一个补丁也是可以的。我觉得应该拆分成三个。当然了，应当以Maintainer的意见为准。不同的Maintainer也许会有不同的意见。</p>
+</li>
+<li>
+<p>补丁描述实在太LOW。</p>
+</li>
+<li>
+<p>补丁格式不正确。</p>
+</li>
+<li>
+<p>补丁内容不正确。</p>
+</li>
+</ul>
+</blockquote>
+<p>下一节我们逐个解决这几个问题。但是首先我们应当将补丁回退。使用如下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git reset HEAD~1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="正确的patch">正确的PATCH
+</h3><p>首先需要修改补丁描述。补丁第一行是标题，比较重要。它首先应当是模块名称。但是我们怎么找到 <code>drivers/clk/samsung/clk-s3c2412.c</code>文件属于哪个模块？可以试试下面这个命令，看看 <code>drivers/clk/samsung/clk-s3c2412.c</code> 文件的历史补丁：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@ThinkPad-T440:/dimsum/git/kernel.next# git log drivers/clk/samsung/clk-s3c2412.c
+</span></span><span class="line"><span class="cl">commit 02c952c8f95fd0adf1835704db95215f57cfc8e6
+</span></span><span class="line"><span class="cl">Author:Martin Kaiser &lt;martin@kaiser.cx&gt;
+</span></span><span class="line"><span class="cl">Date:   Wed Jan <span class="m">25</span> 22:42:25 <span class="m">2017</span> +0100
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">clk: samsung:mark s3c...._clk_sleep_init<span class="o">()</span> as __init 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>ok，模块名称是 <code>clk:samsung</code>。下面是我为这个补丁添加的描述，其中第一行是标题：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">clk: samsung: mark symbols static where possible <span class="k">for</span> s3c2410
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">We get <span class="m">1</span> warnings when building kernel <span class="nv">withW</span><span class="o">=</span>1:
+</span></span><span class="line"><span class="cl">/dimsum/git/kernel.next/drivers/clk/samsung/clk-s3c2410.c:363:13:warning: no previous prototype <span class="k">for</span> <span class="s1">&#39;s3c2410_common_clk_init&#39;</span><span class="o">[</span>-Wmissing-prototypes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> void __init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">In fact, this <span class="k">function</span> is only used in thefile in which they are
+</span></span><span class="line"><span class="cl">declared and don<span class="s1">&#39;t need a declaration, but can be made static.
+</span></span></span><span class="line"><span class="cl"><span class="s1">So this patch marks these functions with &#39;</span>static<span class="err">&#39;</span>.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这段描述是我从其他补丁中拷贝出来的，有几下几点需要注意：</p>
+<ul>
+<li>标题中故意添加了“for s3c2410”，以区别于另外两个补丁</li>
+<li>“1 warnings”这个单词中，错误的使用了复数，这是因为复制的原因</li>
+<li>“/dimsum/git/kernel.next/”这个路径名与我的本地路径相关，不应当出现在补丁中</li>
+<li>警告描述超过了80个字符，但是这是一个特例，这里允许超过80字符</li>
+</ul>
+<p>这些问题，如果不处理的话，Maintainer会不高兴的！如果Maintainer表示了不满，而你不修正的话，这个补丁就会被忽略。</p>
+<p>修正后的补丁描述如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">clk: samsung: mark symbols static wherepossible <span class="k">for</span> s3c2410
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">We get <span class="m">1</span> warning when building kernel <span class="nv">withW</span><span class="o">=</span>1:
+</span></span><span class="line"><span class="cl">drivers/clk/samsung/clk-s3c2410.c:363:13:warning: no previous prototype <span class="k">for</span> <span class="s1">&#39;s3c2410_common_clk_init&#39;</span><span class="o">[</span>-Wmissing-prototypes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> void__init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">In fact, this <span class="k">function</span> is only used in thefile in which they are
+</span></span><span class="line"><span class="cl">declared and don<span class="s1">&#39;t need a declaration, but can be made static.
+</span></span></span><span class="line"><span class="cl"><span class="s1">So this patch marks these functions with &#39;</span>static<span class="err">&#39;</span>.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们的补丁描述一定要注意用词，不要出现将“unused”写为“no used”这样的错误。反复使用 <code>git add</code>，<code>git commit</code> 将补丁提交到git仓库。</p>
+<hr>
+<p>终于快成功，是不是想庆祝一下。用 git 命令看看我们刚才提交的三个补丁：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@ThinkPad-T440:/dimsum/git/kernel.next#git log drivers/clk/samsung/
+</span></span><span class="line"><span class="cl">commit0539c5bc17247010d17394b0dc9f788959381c8f
+</span></span><span class="line"><span class="cl">Author: Baoyou Xie&lt;baoyou.xie@linaro.org&gt;
+</span></span><span class="line"><span class="cl">Date:  Thu Aug <span class="m">17</span> 20:43:09 <span class="m">2017</span> +0800
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">   clk: samsung: mark symbols static where possible <span class="k">for</span> s3c2443
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   We get <span class="m">1</span> warning when building kernel with <span class="nv">W</span><span class="o">=</span>1:
+</span></span><span class="line"><span class="cl">   drivers/clk/samsung/clk-s3c2443.c:388:13: warning: no previous prototypefor <span class="s1">&#39;s3c2443_common_clk_init&#39;</span> <span class="o">[</span>-Wmissing-prototypes<span class="o">]</span>
+</span></span><span class="line"><span class="cl">    void __init s3c2443_common_clk_init<span class="o">(</span>struct device_node *np, unsignedlong xti_f,
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   In fact, this <span class="k">function</span> is only used in the file in which they are
+</span></span><span class="line"><span class="cl">   declared and don<span class="s1">&#39;t need a declaration, but can be made static.
+</span></span></span><span class="line"><span class="cl"><span class="s1">   So this patch marks these functions with &#39;</span>static<span class="s1">&#39;.
+</span></span></span><span class="line"><span class="cl"><span class="s1"> 
+</span></span></span><span class="line"><span class="cl"><span class="s1">commitc231d40296b4ee4667e3559e34b00f738cae1e58
+</span></span></span><span class="line"><span class="cl"><span class="s1">Author: Baoyou Xie&lt;baoyou.xie@linaro.org&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">Date:  Thu Aug 17 20:41:38 2017 +0800
+</span></span></span><span class="line"><span class="cl"><span class="s1"> 
+</span></span></span><span class="line"><span class="cl"><span class="s1">   clk: samsung: mark symbols static where possible for s3c2412
+</span></span></span><span class="line"><span class="cl"><span class="s1">   
+</span></span></span><span class="line"><span class="cl"><span class="s1">   We get 1 warning when building kernel with W=1:
+</span></span></span><span class="line"><span class="cl"><span class="s1">   drivers/clk/samsung/clk-s3c2412.c:254:13: warning: no previous prototypefor &#39;</span>s3c2412_common_clk_init<span class="s1">&#39; [-Wmissing-prototypes]
+</span></span></span><span class="line"><span class="cl"><span class="s1">    void __init s3c2412_common_clk_init(struct device_node *np, unsignedlong xti_f,
+</span></span></span><span class="line"><span class="cl"><span class="s1">   
+</span></span></span><span class="line"><span class="cl"><span class="s1">   In fact, this function is only used in the file in which they are
+</span></span></span><span class="line"><span class="cl"><span class="s1">   declared and don&#39;</span>t need a declaration, but can be made static.
+</span></span><span class="line"><span class="cl">   So this patch marks these functions with <span class="s1">&#39;static&#39;</span>.
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">commit ff8ea5ed4947d9a643a216d51f14f6cb87abcb97
+</span></span><span class="line"><span class="cl">Author: Baoyou Xie&lt;baoyou.xie@linaro.org&gt;
+</span></span><span class="line"><span class="cl">Date:  Thu Aug <span class="m">17</span> 20:40:50 <span class="m">2017</span> +0800
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">   clk: samsung: mark symbols static where possible <span class="k">for</span> s3c2410
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>**但是，你发现补丁描述里面还有什么不正确的吗？？**不过Maintainer也许发现不了这个问题，最后这个补丁也可能被接收入内核。</p>
+<p>下面我们生成补丁：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@ThinkPad-T440:/dimsum/git/kernel.next#git format-patch -s -3
+</span></span><span class="line"><span class="cl">0001-clk-samsung-mark-symbols-static-where-possible-for-s.patch
+</span></span><span class="line"><span class="cl">0002-clk-samsung-mark-symbols-static-where-possible-for-s.patch
+</span></span><span class="line"><span class="cl">0003-clk-samsung-mark-symbols-static-where-possible-for-s.patch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>实际上，我们的补丁仍然是错误的。在发送补丁前，我们需要用脚本检查一下补丁：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@ThinkPad-T440:/dimsum/git/kernel.next#./scripts/checkpatch.pl 000*
+</span></span><span class="line"><span class="cl">---------------------------------------------------------------
+</span></span><span class="line"><span class="cl">0001-clk-samsung-mark-symbols-static-where-possible-for-s.patch
+</span></span><span class="line"><span class="cl">---------------------------------------------------------------
+</span></span><span class="line"><span class="cl">WARNING: Possible unwrapped commit description <span class="o">(</span>prefer a maximum <span class="m">75</span> chars per line<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#9:</span>
+</span></span><span class="line"><span class="cl"> void__init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">WARNING: line over <span class="m">80</span> characters
+</span></span><span class="line"><span class="cl"><span class="c1">#29: FILE:drivers/clk/samsung/clk-s3c2410.c:363:</span>
+</span></span><span class="line"><span class="cl">+static void __init s3c2410_common_clk_init<span class="o">(</span>struct device_node *np, unsigned long xti_f,
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">total: <span class="m">0</span> errors, <span class="m">2</span> warnings, <span class="m">8</span> lineschecked 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>请留意输出警告，其中第一个警告是说我们的描述中，有过长的语句。前面已经提到，这个警告可以忽略。但是第二个警告提示我们代码行超过80个字符了。这是不能忽略的警告，必须处理。</p>
+<p>使用 <code>git reset HEAD~3</code> 命令将三个补丁回退。重新修改代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="n">__init</span> <span class="nf">s3c2410_common_clk_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">device_node</span> <span class="o">*</span><span class="n">np</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">xti_f</span><span class="p">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="n">__init</span>
+</span></span><span class="line"><span class="cl"><span class="nf">s3c2410_common_clk_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">device_node</span> <span class="o">*</span><span class="n">np</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">xti_f</span><span class="p">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重新提交补丁，并用 <code>git format-patch</code> 命令生成补丁。</p>
+<h2 id="24-发送patch">2.4 发送PATCH
+</h2><p>生成正确的补丁后，请再次用<strong>checkpatch.pl</strong>检查补丁正确性。确保无误后，可以准备将它发送给Maintainer了。但是应该将补丁发给谁？这可以用<strong>get_maintainer.pl</strong>来查看：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">root@ThinkPad-T440:/dimsum/git/kernel.next#./scripts/get_maintainer.pl 000*
+</span></span><span class="line"><span class="cl">Kukjin Kim &lt;kgene@kernel.org&gt;<span class="o">(</span>maintainer:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Krzysztof Kozlowski &lt;krzk@kernel.org&gt;<span class="o">(</span>maintainer:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Sylwester Nawrocki&lt;s.nawrocki@samsung.com&gt; <span class="o">(</span>supporter:SAMSUNG SOC CLOCK DRIVERS<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Tomasz Figa &lt;tomasz.figa@gmail.com&gt;<span class="o">(</span>supporter:SAMSUNG SOC CLOCK DRIVERS<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Chanwoo Choi &lt;cw00.choi@samsung.com&gt;<span class="o">(</span>supporter:SAMSUNG SOC CLOCK DRIVERS<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Michael Turquette&lt;mturquette@baylibre.com&gt; <span class="o">(</span>maintainer:COMMON CLK FRAMEWORK<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Stephen Boyd &lt;sboyd@codeaurora.org&gt;<span class="o">(</span>maintainer:COMMON CLK FRAMEWORK<span class="o">)</span>
+</span></span><span class="line"><span class="cl">linux-arm-kernel@lists.infradead.org<span class="o">(</span>moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES<span class="o">)</span>
+</span></span><span class="line"><span class="cl">linux-samsung-soc@vger.kernel.org <span class="o">(</span>moderatedlist:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES<span class="o">)</span>
+</span></span><span class="line"><span class="cl">linux-clk@vger.kernel.org <span class="o">(</span>open list:COMMONCLK FRAMEWORK<span class="o">)</span>
+</span></span><span class="line"><span class="cl">linux-kernel@vger.kernel.org <span class="o">(</span>open list<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来，可以用 <code>git send-email</code> 命令发送补丁了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git send-email 000* --tokgene@kernel.org,krzk@kernel.org,s.nawrocki@samsung.com,tomasz.figa@gmail.com,cw00.choi@samsung.com,mturquette@baylibre.com,sboyd@codeaurora.org--cc linux-arm-kernel@lists.infradead.org,linux-samsung-soc@vger.kernel.org,linux-clk@vger.kernel.org,linux-kernel@vger.kernel.org
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意，哪些人应当作为邮件接收者，哪些人应当作为抄送者。在本例中，补丁是属于实验性质的，可以不抄送给邮件列表帐户。</p>
+<blockquote>
+<p><strong>提醒</strong>：你应当将补丁先发给自己，检查无误后再发出去。如果你有朋友在社区有较高的威望，也可以抄送给他，必要的时候，也许他能给你一些帮助。这有助于将补丁顺利的合入社区。</p>
+<p><strong>重要提醒</strong>：本文讲述的，主要是实验性质的补丁，用于打开社区大门。真正重要的补丁，可能需要经过反复修改，才能合入社区。我知道有一些补丁，超过两年时间都没能合入社区，因为总是有需要完善的地方，也许还涉及一些社区政治：）</p>
+</blockquote>
+<h1 id="3-如何在github上规范的提交pr">3 如何在github上规范的提交PR
+</h1><p><a class="link" href="https://zhuanlan.zhihu.com/p/584834288"  target="_blank" rel="noopener"
+    >如何在 Github 上规范的提交 PR（图文详解） - 知乎 (zhihu.com)</a></p>
+<p><a class="link" href="https://cloud.tencent.com/developer/article/1999727"  target="_blank" rel="noopener"
+    >如何在github上提交PR(Pull Request)-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<p><a class="link" href="https://www.danielhu.cn/open-a-pr-in-github/"  target="_blank" rel="noopener"
+    >如何参与开源项目 - 细说 GitHub 上的 PR 全过程 - 胡涛的个人网站 | Seven Coffee Cups (danielhu.cn)</a></p>
+<p><a class="link" href="https://www.bilibili.com/video/BV1r3411F7kn/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&amp;vd_source=e97ae8f8b8ae2ceb4dd6eec6f1e33ee9"  target="_blank" rel="noopener"
+    >Git工作流和核心原理 | GitHub基本操作 | VS Code里使用Git和关联GitHub_哔哩哔哩_bilibili</a></p>
+<p><a class="link" href="https://www.bilibili.com/video/BV1RC411W7UE/?spm_id_from=333.788.top_right_bar_window_custom_collection.content.click&amp;vd_source=e97ae8f8b8ae2ceb4dd6eec6f1e33ee9"  target="_blank" rel="noopener"
+    >给学完Git，还不会用GitHub的朋友们_哔哩哔哩_bilibili</a></p>
+<hr>
+<h2 id="31-如何参与开源项目">3.1 如何参与开源项目？
+</h2><h3 id="寻找一个合适的开源项目">寻找一个合适的开源项目
+</h3><p>如果你就只是想开始参与开源，暂时还不知道该参与哪个社区，那么我有几个小建议：</p>
+<ol>
+<li><strong>不要从特别成熟的项目开始</strong>。比如现在去参与 Kubernetes 社区，一方面由于贡献者太多，很难抢到一个入门级的 issue 来开始第一个 PR；另外一方面也由于贡献者太多，你的声音会被淹没，社区维护者并不在意多你一个或者少你一个（当然可能没有人会承认，但是你不得不信），如果你提个 PR 都遇到了各种问题还不能自己独立解决，那么很可能你的 PR 会直接超时关闭，没有人在意你是不是有一个好的参与体验；</li>
+<li><strong>不要从特别小的项目开始</strong>。这就不需要我解释了吧？很早期的开源项目可能面临着非常多的问题，比如代码不规范、协作流程不规范、重构频繁且不是 issue 驱动的，让外部参与者无所适从……</li>
+<li><strong>选择知名开源软件基金会的孵化项目</strong>，这类项目一方面不是特别成熟，所以对新贡献者友好；另一方面也不会特别不成熟，不至于给人很差的参与体验，比如 <strong>Apache 基金会、Linux 基金会、CNCF 等</strong>。</li>
+</ol>
+<h3 id="寻找贡献点">寻找贡献点
+</h3><p>开源项目的参与方式很多，最典型的方式是提交一个特性开发或者 bug 修复相关的 PR，但是其实文档完善、测试用例完善、bug 反馈等等也都是非常有价值的贡献。不过本文还是从需要提 PR 的贡献点开始上手，以 DevStream 项目为例（其他项目也一样），在项目 GitHub 代码库首页都会有一个 <a class="link" href="https://github.com/devstream-io/devstream/issues"  target="_blank" rel="noopener"
+    >Issues 入口</a>，这里会记录项目目前已知的 bug、proposal(可以理解成新需求)、计划补充的文档、亟需完善的 UT 等等，如下图：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/dtm-issues.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>在 Issues 里我们一般可以找到一个“good first issue”标签标记的 issues，点击这个标签可以进一步直接筛选出所有的 good first issues，这是社区专门留给新贡献者的相对简单的入门级 issues：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/dtm-good-first-issues.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>没错，从这里开始，浏览一下这些 good first issues，看下有没有你感兴趣的而且还没被分配的 issue，然后在下面留言，等待项目管理员分配任务后就可以开始编码了，就像这样：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/dtm-assign.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>如图所示，如果一个 issue 还没有被认领，这时候你上去留个言，等待管理员会将这个任务分配给你，接着你就可以开始开发了。</p>
+<h2 id="32-如何提交pr">3.2 如何提交PR？
+</h2><p>一般开源项目代码库根目录都会有一个 CONTRIBUTING.md 或者其他类似名字的文档来介绍如何开始贡献。在 <a class="link" href="https://github.com/devstream-io/devstream/blob/main/CONTRIBUTING.md"  target="_blank" rel="noopener"
+    >DevStream 的 Contributing</a> 文档里我们放了一个 <a class="link" href="https://github.com/devstream-io/devstream/blob/main/docs/development/development-workflow.md"  target="_blank" rel="noopener"
+    >Development Workflow</a>，其实就是 PR 工作流的介绍，不过今天，我要更详细地聊聊 PR 工作流。</p>
+<h3 id="step-1-fork项目仓库">step-1: Fork项目仓库
+</h3><p>GitHub 上的项目都有一个 Fork 按钮，我们需要先将开源项目 fork 到自己的账号下，以 DevStream 为例：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/fork.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>点一下 Fork 按钮，然后回到自己账号下，可以找到 fork 到的项目了：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/fork-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这个项目在你自己的账号下，也就意味着你有任意修改的权限了。我们后面要做的事情，就是将代码变更提到自己 fork 出来的代码库里，然后再通过 Pull Request 的方式将 commits 合入上游项目。</p>
+<h3 id="step-2-克隆项目仓库到本地">step-2: 克隆项目仓库到本地
+</h3><p>对于任意一个开源项目，流程几乎都是一样的。我直接写了一些命令，大家可以复制粘贴直接执行。当然，命令里的一些变量还是需要根据你自己的实际需求修改，比如对于 DevStream 项目，我们可以先这样配置几个<strong>环境变量：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WORKING_PATH</span><span class="o">=</span><span class="s2">&#34;~/gocode&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">USER</span><span class="o">=</span><span class="s2">&#34;daniel-hutao&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PROJECT</span><span class="o">=</span><span class="s2">&#34;devstream&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ORG</span><span class="o">=</span><span class="s2">&#34;devstream-io&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>同理对于 DevLake，这里的命令就变成了这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WORKING_PATH</span><span class="o">=</span><span class="s2">&#34;~/gocode&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">USER</span><span class="o">=</span><span class="s2">&#34;daniel-hutao&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PROJECT</span><span class="o">=</span><span class="s2">&#34;incubator-devlake&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ORG</span><span class="o">=</span><span class="s2">&#34;apache&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>记得 USER 改成你的 GitHub 用户名，WORKING_PATH 当然也可以灵活配置，你想把代码放到哪里，就写对应路径。</p>
+<hr>
+<p>接着就是几行通用的命令来完成 clone 等操作了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p <span class="si">${</span><span class="nv">WORKING_PATH</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="si">${</span><span class="nv">WORKING_PATH</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># You can also use the url: git@github.com:${USER}/${PROJECT}.git</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># if your ssh configuration is proper</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">PROJECT</span><span class="si">}</span>.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="si">${</span><span class="nv">PROJECT</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git remote add upstream https://github.com/<span class="si">${</span><span class="nv">ORG</span><span class="si">}</span>/<span class="si">${</span><span class="nv">PROJECT</span><span class="si">}</span>.git
+</span></span><span class="line"><span class="cl"><span class="c1"># Never push to upstream locally</span>
+</span></span><span class="line"><span class="cl">git remote set-url --push upstream no_push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你配置好了 ssh 方式来 clone 代码，当然，git clone 命令用的 url 可以改成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git@github.com:<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">PROJECT</span><span class="si">}</span>.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完成这一步后，我们在本地执行 <code>git remote -v</code>，看到的 remote 信息应该是这样的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">origin	git@github.com:daniel-hutao/devstream.git <span class="o">(</span>fetch<span class="o">)</span>
+</span></span><span class="line"><span class="cl">origin	git@github.com:daniel-hutao/devstream.git <span class="o">(</span>push<span class="o">)</span>
+</span></span><span class="line"><span class="cl">upstream	https://github.com/devstream-io/devstream <span class="o">(</span>fetch<span class="o">)</span>
+</span></span><span class="line"><span class="cl">upstream	no_push <span class="o">(</span>push<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>记住啰，你本地的代码变更永远只提交到 origin，然后通过 origin 提交 Pull Request 到 upstream。</p>
+<h3 id="step-3-更新本地分支代码">step-3: 更新本地分支代码
+</h3><p>如果你刚刚完成 fork 和 clone 操作，那么你本地的代码肯定是新的。但是“刚刚”只存在一次，**接着每一次准备开始写代码之前，你都需要确认本地分支的代码是新的，**因为基于老代码开发你会陷入无限的冲突困境之中。你需要做以下两件事：</p>
+<ul>
+<li>
+<p><strong>更新本地的 main 分支代码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git fetch upstream
+</span></span><span class="line"><span class="cl">git checkout main
+</span></span><span class="line"><span class="cl">git rebase upstream/main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当然，我不建议你直接在 main 分支写代码，虽然你的第一个 PR 从 main 提交完全没有问题，但是如果你需要同时提交2个 PR 呢？总之建议新增一个 <code>feat-xxx</code> 或者 <code>fix-xxx</code> 等更可读的分支来完成开发工作。</p>
+</li>
+<li>
+<p><strong>创建分支</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git checkout -b feat-xxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样，我们就得到了一个和上游 main 分支代码一样的特性分支 feat-xxx 了，接着可以开始愉快地写代码啦！</p>
+</li>
+</ul>
+<h3 id="step-4-写代码">step-4: 写代码
+</h3><p>改代码吧！</p>
+<h3 id="step-5-addcommitpush">step-5: add/commit/push
+</h3><p>通用的流程如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git add &lt;file&gt;
+</span></span><span class="line"><span class="cl">git commit -s -m <span class="s2">&#34;some description here&#34;</span>
+</span></span><span class="line"><span class="cl">git push origin feat-xxx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Counting objects: 80, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">Delta compression using up to <span class="m">10</span> threads.
+</span></span><span class="line"><span class="cl">Compressing objects: 100% <span class="o">(</span>74/74<span class="o">)</span>, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">Writing objects: 100% <span class="o">(</span>80/80<span class="o">)</span>, 13.78 KiB <span class="p">|</span> 4.59 MiB/s, <span class="k">done</span>.
+</span></span><span class="line"><span class="cl">Total <span class="m">80</span> <span class="o">(</span>delta 55<span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta 0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">remote: Resolving deltas: 100% <span class="o">(</span>55/55<span class="o">)</span>, completed with <span class="m">31</span> <span class="nb">local</span> objects.
+</span></span><span class="line"><span class="cl">remote: 
+</span></span><span class="line"><span class="cl">remote: Create a pull request <span class="k">for</span> <span class="s1">&#39;feat-1&#39;</span> on GitHub by visiting:
+</span></span><span class="line"><span class="cl">remote:      https://github.com/daniel-hutao/devstream/pull/new/feat-1
+</span></span><span class="line"><span class="cl">remote: 
+</span></span><span class="line"><span class="cl">To github.com:daniel-hutao/devstream.git
+</span></span><span class="line"><span class="cl"> * <span class="o">[</span>new branch<span class="o">]</span>      feat-1 -&gt; feat-1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当然，这里大家需要理解这几个命令和参数的含义，灵活调整。比如你也可以用 <code>git add --all</code> 完成 add 步骤，在 push 的时候也可以加 <code>-f</code> 参数，用来强制覆盖远程分支（假如已经存在，但是 commits 记录不合你意）。但是请记得 <code>git commit</code> 的 <code>-s</code> 参数一定要加哦！</p>
+<p>到这里，本地 commits 就推送到远程了。</p>
+<h3 id="step-6-开一个pr">step-6: 开一个PR
+</h3><p>在完成 push 操作后，我们打开 GitHub，可以看到一个黄色的提示框，告诉我们可以开一个 Pull Request 了：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/pushed.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>如果你没有看到这个框，也可以直接切换到 feat-1 分支，然后点击下方的“Contribute”按钮来开启一个 PR，或者直接点 Issues 边上的 Pull requests 进入对应页面。Pull Request 格式默认是这样的：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/pr.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这里我们需要填写一个合适的标题（默认和 commit message 一样），然后按照模板填写 PR 描述。PR 模板其实在每个开源项目里都不太一样，我们需要仔细阅读上面的内容，避免犯低级错误。</p>
+<p>比如 DevStream 的模板里目前分为4个部分：</p>
+<ol>
+<li><strong>Pre-Checklist</strong>：这里列了3个前置检查项，提醒 PR 提交者要先阅读 Contributing 文档，然后代码要有完善的注释或者文档，尽可能添加测试用例等；</li>
+<li><strong>Description</strong>：这里填写的是 PR 的描述信息，也就是介绍你的 PR 内容的，你可以在这里描述这个 PR 解决了什么问题等；</li>
+<li><strong>Related Issues</strong>：记得吗？我们在开始写代码之前其实是需要认领 issue 的，这里要填写的也就是对应 issue 的 id，假如你领的 issue 链接是 <a class="link" href="https://github.com/devstream-io/devstream/issues/796"  target="_blank" rel="noopener"
+    >https://github.com/devstream-io/devstream/issues/796</a>，并且这个 issue 通过你这个 PR 的修改后就完成了，可以关闭了，这时候可以在 Related Issues 下面写“<strong>close #796</strong>”；</li>
+<li><strong>New Behavior</strong>：代码修改后绝大多数情况下是需要进行测试的，这时候我们可以在这里粘贴测试结果截图，这样 reviewers 就能够知道你的代码已经通过测试，功能符合预期，这样可以减少 review 工作量，快速合入。</li>
+</ol>
+<p>这个模板并不复杂，我们直接对着填写就行。像这样：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/pr-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>然后点击右下角 <code>Create pull request</code> 就完成了一个 PR 的创建了。不过我这里不能去点这个按钮，我用来演示的修改内容没有意义，不能合入上游代码库。不过我还是想给你看下 PR 创建出来后的效果，我们以 <a class="link" href="https://github.com/devstream-io/devstream/pull/655"  target="_blank" rel="noopener"
+    >pr655</a> 为例吧。</p>
+<p>这是上个月我提的一个 PR，基本和模板格式一致。除了模板的内容，可能你已经注意到这里多了一个 Test 小节，没错，模板不是死的，模板只是为了降低沟通成本，你完全可以适当调整，只要结果是“往更清晰的方向走”的。我这里通过 Test 部分添加了本地详细测试结果记录，告诉 reviewers 我已经在本地充分测试了，请放心合入。</p>
+<p>提交了 PR 之后，我们就可以在 PR 列表里找到自己的 PR 了，这时候还需要注意 ci 检查是不是全部能够通过，假如失败了，需要及时修复。以 DevStream 为例，ci 检查项大致如下：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/ci.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<h3 id="step-7-pr合入">step-7: PR合入
+</h3><p>如果你的 PR 很完美，毫无争议，那么过不了太长时间，项目管理员会直接合入你的 PR，那么你这个 PR 的生命周期也就到此结束了。</p>
+<p>但是，没错，这里有个“但是”，但是往往第一次 PR 不会那么顺利，我们接下来就详细介绍一下可能经常遇到的一些问题和对应的解决办法。</p>
+<h2 id="33-提交pr可能遇到的问题">3.3 提交PR可能遇到的问题
+</h2><p>多数情况下，提交一个 PR 后是不会被马上合入的，reviewers 可能会提出各种修改意见，或者我们的 PR 本身存在一些规范性问题，或者 ci 检查就直接报错了，怎么解决呢？继续往下看吧。</p>
+<h3 id="q1-基于reviewer的意见更新pr">Q1: 基于Reviewer的意见更新PR
+</h3><p>很多时候，我们提交了一个 PR 后，还需要继续追加 commit，比如提交后发现代码还有点问题，想再改改，或者 reviewers 提了一些修改意见，我们需要更新代码。</p>
+<p>一般我们遵守一个约定：</p>
+<ul>
+<li>在 review 开始之前，更新代码尽量不引入新的 commits 记录，也就是能合并就合并，保证 commits 记录清晰且有意义；</li>
+<li>在 review 开始之后，针对 reviewers 的修改意见所产生的新 commit，可以不向前合并，这样能够让二次 review 工作更有针对性。</li>
+</ul>
+<p>不过不同社区要求不一样，可能有的开源项目会**要求一个 PR 里只能包含一个 commit，**大家根据实际场景灵活判断即可。</p>
+<p>说回如何更新 PR，我们只需要在本地继续修改代码，然后通过和第一个 commit 一样的步骤，执行这几个命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git add &lt;file&gt;
+</span></span><span class="line"><span class="cl">git commit -s -m <span class="s2">&#34;some description here&#34;</span>
+</span></span><span class="line"><span class="cl">git push origin feat-xxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这时候别看 push 的是 origin 的 feat-xxx 分支，其实 GitHub 会帮你把新增的 commits 全部追加到一个未合入 PR 里去。没错，你只管不断 push，PR 会自动更新。</p>
+<p>至于如何合并 commits，我们下一小节具体介绍。</p>
+<h3 id="q2-合并多且混乱的commits">Q2: 合并多且混乱的Commits
+</h3><p>很多情况下我们需要去合并 commits，比如你的第一个 commit 里改了100行代码，然后发现少改了1行，这时候又提交了一个 commit，那么第二个 commit 就太 “没意思” 了，我们需要合并一下。</p>
+<p>比如我这里有2个同名的 commits，第二个 commit 其实只改了一个标点：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/2commits.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这时候我们可以通过 rebase 命令来完成2个 commits 的合并：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git rebase -i HEAD~2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行这个命令会进入一个编辑页面，默认是 vim 编辑模式，内容大致如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pick 3114c0f docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">pick 9b7d63b docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Rebase d640931..9b7d63b onto d640931 (2 commands)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Commands:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># p, pick = use commit</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># r, reword = use commit, but edit the commit message</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># e, edit = use commit, but stop for amending</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># s, squash = use commit, but meld into previous commit</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># f, fixup = like &#34;squash&#34;, but discard this commit&#39;s log message</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># x, exec = run command (the rest of the line) using shell</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># d, drop = remove commit</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># These lines can be re-ordered; they are executed from top to bottom.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># If you remove a line here THAT COMMIT WILL BE LOST.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># However, if you remove everything, the rebase will be aborted.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们需要把第二个 pick 改成 s，然后保存退出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pick 3114c0f docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">s 9b7d63b docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着会进入第二个编辑页面：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># This is a combination of 2 commits.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This is the 1st commit message:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Signed-off-by: Daniel Hu &lt;tao.hu@merico.dev&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># This is the commit message #2:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Signed-off-by: Daniel Hu &lt;tao.hu@merico.dev&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Please enter the commit message for your changes. Lines starting</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># with &#39;#&#39; will be ignored, and an empty message aborts the commit.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是用来编辑合并后的 commit message 的，我们直接删掉多余部分，只保留这样几行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Signed-off-by: Daniel Hu &lt;tao.hu@merico.dev&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着同样是 vim 的保存退出操作，这时候可以看到日志：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">[</span>detached HEAD 80f5e57<span class="o">]</span> docs: just <span class="k">for</span> <span class="nb">test</span>
+</span></span><span class="line"><span class="cl"> Date: Wed Jul <span class="m">6</span> 10:28:37 <span class="m">2022</span> +0800
+</span></span><span class="line"><span class="cl"> <span class="m">1</span> file changed, <span class="m">2</span> insertions<span class="o">(</span>+<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Successfully rebased and updated refs/heads/feat-1.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这时候可以通过<code>git log</code>命令查看下 commits 记录是不是符合预期：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/rebase.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>好，我们在本地确认 commits 已经完成合并，这时候就可以继续推送到远程，让 PR 也更新掉：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git push -f origin feat-xxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里需要有一个 <code>-f</code> 参数来强制更新，合并了 commits 本质也是一种冲突，需要刷掉远程旧的 commits 记录。</p>
+<h3 id="q3-解决pr冲突">Q3: 解决PR冲突
+</h3><p>冲突可以在线解决，也可能本地解决，我们逐个来看。</p>
+<h4 id="在线解决冲突">在线解决冲突
+</h4><p>我们要尽可能避免冲突，养成每次写代码前更新本地代码的习惯。不过，冲突不可能完全避免，有时候你的 PR 被阻塞了几天，可能别人改了同一行代码，还抢先被合入了，这时候你的 PR 就出现冲突了，类似这样（同样，此刻我不能真的去上游项目构造冲突，所以下面用于演示的冲突在我在自己的 repo 里）：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>每次看到这个页面都会让人觉得心头一紧。我们点击 <code>Resolve conflicts</code> 按钮，就可以看到具体冲突的内容了：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>可以看到具体冲突的行了，接下来要做的就是解决冲突。我们需要删掉所有的 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>、<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 和 <code>=======</code> 标记，只保留最终想要的内容，如下：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>接着点击右上角的“Mark as Resolved”：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict-3.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>最后点击“Commit merge”：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict-4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这样就完成冲突解决了，可以看到产生了一个新的 commit：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict-resolved.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>到这里，冲突就解决掉了。</p>
+<h4 id="本地解决冲突">本地解决冲突
+</h4><p>更多时候，我们需要在本地解决冲突，尤其是冲突太多，太复杂的时候。同样，我们构造一个冲突，这次尝试在本地解决冲突。</p>
+<p>首先，可以在线看一下冲突的内容：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict-10.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>接着我们在本地执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 先切回到 main 分支</span>
+</span></span><span class="line"><span class="cl">git checkout main
+</span></span><span class="line"><span class="cl"><span class="c1"># 拉取上游代码（实际场景肯定是和上游冲突，我们这里的演示环境其实是 origin）</span>
+</span></span><span class="line"><span class="cl">git fetch upstream
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新本地 main（这里也可以用 rebase，但是 reset 不管有没有冲突总是会成功）</span>
+</span></span><span class="line"><span class="cl">git reset --hard upstream/main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>到这里，本地 main 分支就和远程(或者上游) main 分支代码完全一致了，然后我们要做的是将 main 分支的代码合入自己的特性分支，同时解决冲突。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git checkout feat-1
+</span></span><span class="line"><span class="cl">git rebase main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这时候会看到这样的日志：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">First, rewinding head to replay your work on top of it...
+</span></span><span class="line"><span class="cl">Applying: docs: conflict <span class="nb">test</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Using index info to reconstruct a base tree...
+</span></span><span class="line"><span class="cl">M       README.md
+</span></span><span class="line"><span class="cl">Falling back to patching base and 3-way merge...
+</span></span><span class="line"><span class="cl">Auto-merging README.md
+</span></span><span class="line"><span class="cl">CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict in README.md
+</span></span><span class="line"><span class="cl">error: Failed to merge in the changes.
+</span></span><span class="line"><span class="cl">Patch failed at <span class="m">0001</span> docs: conflict <span class="nb">test</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">The copy of the patch that failed is found in: .git/rebase-apply/patch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Resolve all conflicts manually, mark them as resolved with
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;git add/rm &lt;conflicted_files&gt;&#34;</span>, <span class="k">then</span> run <span class="s2">&#34;git rebase --continue&#34;</span>.
+</span></span><span class="line"><span class="cl">You can instead skip this commit: run <span class="s2">&#34;git rebase --skip&#34;</span>.
+</span></span><span class="line"><span class="cl">To abort and get back to the state before <span class="s2">&#34;git rebase&#34;</span>, run <span class="s2">&#34;git rebase --abort&#34;</span>.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们需要解决冲突，直接打开 README.md，找到冲突的地方，直接修改。这里的改法和上一小节介绍的在线解决冲突没有任何区别，我就不赘述了。代码里同样只保留最终内容，然后继续 git 命令走起来：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/conflict-resolved-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>可能此时你并不放心，那就通过<code>git log</code>命令看一下 commits 历史记录吧：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/commits-history.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>这里的“conflict test 2”是我提交到 main 分支的记录，可以看到这个时间比“conflict test 1”还要晚了一些，但是它先合入了。我们在 rebase 操作后，这个记录在前，我们特性分支的“conflict test 1”在后，看起来很和谐，我们继续将这个变更推送到远程，这个命令已经出现很多次了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git push -f origin feat-xxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这时候我们再回到 GitHub 看 PR 的话，可以发现冲突已经解决了，并且没有产生多余的 commit 记录，也就是说这个 PR 的 commit 记录非常干净，好似冲突从来没有出现过：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/1commit.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>至于什么时候可以在线解决冲突，什么时候适合本地解决冲突，就看大家如何看待“<strong>需不需要保留解决冲突的记录</strong>”了，不同社区的理解不一样，可能特别成熟的开源社区会希望使用本地解决冲突方式，因为在线解决冲突产生的这条 merge 记录其实“没营养”。</p>
+<h3 id="q4-ci检查不过">Q4: CI检查不过
+</h3><h4 id="commit-message问题修复">commit-message问题修复
+</h4><p>前面我们提到过 commit message 的规范，但是第一次提交 PR 的时候还是很容易出错，比如 <code>feat: xxx</code> 其实能通过 ci 检查，但是 <code>feat: Xxx</code> 就不行了。假设现在我们不小心提交了一个 PR，但是里面 commit 的 message 不规范，这时候怎么修改呢？</p>
+<p>这个比较简单，直接执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git commit --amend
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这条命令执行后就能进入编辑页面，随意更新 commit message 了。改完之后，继续 push：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git push -f origin feat-xxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样就能更新 PR 里的 commit message 了。</p>
+<h4 id="dcosign问题修复">DCO(sign)问题修复
+</h4><p>相当多的开源项目会要求所有合入的 commits 都包含一行类似这样的记录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">Daniel Hu &lt;tao.hu@merico.dev&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>所以 commit message 看起来会像这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">feat: some description here
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">Signed-off-by: Daniel Hu &lt;tao.hu@merico.dev&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这行信息相当于是对应 commit 的作者签名。要添加这样一行签名当然很简单，我们直接在 <code>git commit</code> 命令后面加一个 <code>-s</code> 参数就可以了，比如 <code>git commit -s -m &quot;some description here&quot;</code> 提交的 commit 就会带上你的签名。</p>
+<p>但是如果如果你第一次提交的 PR 里忘记了在 commits 中添加 Signed-off-by 呢？这时候，如果对应开源项目配置了 <a class="link" href="https://wiki.linuxfoundation.org/dco"  target="_blank" rel="noopener"
+    >DCO 检查</a>，那么你的 PR 就会在 ci 检查中被 “揪出来” 没有正确签名。</p>
+<p>我们同样先构造一个没有加签名的 commit：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/dco.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>如果提了 PR，看到的效果是这样的：</p>
+<p><img src="https://www.danielhu.cn/open-a-pr-in-github/dco-1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>我们看下如何解决，执行以下命令即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git commit -amend -s
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样一个简单的命令，就能直接在最近一个 commit 里加上 Signed-off-by 信息。执行这行命令后会直接进入 commit message 编辑页面，默认如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docs: dco <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Signed-off-by: Daniel Hu &lt;tao.hu@merico.dev&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完成签名后呢？当然是来一个强制 push 了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git push -f origin feat-xxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样，你 PR 中的 DCO 报错就自然修复了。</p>
+<h1 id="4-linuxupstream">4 Linux/upstream
+</h1><h2 id="41-perf-nev">4.1 perf-nev
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># b4 tools</span>
+</span></span><span class="line"><span class="cl">sudo apt install b4 -y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 从lkml上拉取patch</span>
+</span></span><span class="line"><span class="cl">b4 am https://lore.kernel.org/all/20240422080833.8745-1-liangshenlin@eswincomputing.com/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 打patch</span>
+</span></span><span class="line"><span class="cl">git am ./v3_20240422_liangshenlin_perf_kvm_add_kvm_stat_support_on_riscv.mbx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成patch</span>
+</span></span><span class="line"><span class="cl">git format-patch --cover-letter --thread --subject-prefix<span class="o">=</span><span class="s2">&#34;PATCH&#34;</span> --base<span class="o">=</span>auto -
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git clone --depth<span class="o">=</span><span class="m">1</span> -b perf-kvm-stat-v3 https://github.com/zcxGGmu/linux.git -j4
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// perf dependency
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">apt</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">recommends</span> <span class="o">-</span><span class="n">y</span> <span class="n">util</span><span class="o">-</span><span class="n">linux</span> <span class="n">haveged</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span> <span class="n">systemd</span> <span class="n">kmod</span> <span class="n">initramfs</span><span class="o">-</span><span class="n">tools</span> <span class="n">conntrack</span> <span class="n">ebtables</span> <span class="n">ethtool</span> <span class="n">iproute2</span> <span class="n">iptables</span> <span class="n">mount</span> <span class="n">socat</span> <span class="n">ifupdown</span> <span class="n">iputils</span><span class="o">-</span><span class="n">ping</span> <span class="n">vim</span> <span class="n">dhcpcd5</span> <span class="n">neofetch</span> <span class="n">sudo</span> <span class="n">chrony</span> <span class="n">python</span><span class="o">-</span><span class="n">devel</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>
+</span></span><span class="line"><span class="cl"><span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">pkgconf</span> <span class="n">libzstd</span><span class="o">-</span><span class="n">dev</span> <span class="n">libtraceevent</span><span class="o">-</span><span class="n">dev</span> <span class="n">libelf</span><span class="o">-</span><span class="n">dev</span> <span class="n">libslang2</span><span class="o">-</span><span class="n">dev</span> <span class="n">elfutils</span> <span class="n">libdebuginfod</span><span class="o">-</span><span class="n">dev</span> <span class="n">systemtap</span><span class="o">-</span><span class="n">sdt</span><span class="o">-</span><span class="n">dev</span> <span class="n">libdw</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcapstone</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcap</span><span class="o">-</span><span class="n">dev</span> <span class="n">libaudit</span><span class="o">-</span><span class="n">dev</span> <span class="n">libpython3</span><span class="o">-</span><span class="n">dev</span> <span class="n">libnuma</span><span class="o">-</span><span class="n">dev</span> <span class="n">libbabeltrace</span><span class="o">-</span><span class="n">dev</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">libpfm4</span><span class="o">-</span><span class="n">dev</span> <span class="n">libperl</span><span class="o">-</span><span class="n">dev</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// perf install
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">make</span> <span class="n">VF</span><span class="o">=</span><span class="mi">1</span> <span class="n">NO_LIBBPF</span><span class="o">=</span><span class="mi">1</span> <span class="n">install</span> <span class="o">-</span><span class="n">j4</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// qemu dependency
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">apt</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="n">wget</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">bc</span> <span class="n">cpio</span> <span class="n">make</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">git</span> <span class="n">libglib2</span><span class="mf">.0</span><span class="o">-</span><span class="n">dev</span> <span class="n">libfdt</span><span class="o">-</span><span class="n">dev</span> <span class="n">libpixman</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">dev</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">libncurses</span><span class="o">-</span><span class="n">dev</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">ninja</span><span class="o">-</span><span class="n">build</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// qemu compile
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">wget</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//mirrors.aliyun.com/blfs/conglomeration/qemu/qemu-9.0.0.tar.xz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">qemu</span><span class="o">-</span><span class="mf">9.0.0</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">xz</span>
+</span></span><span class="line"><span class="cl"><span class="n">cd</span> <span class="n">qemu</span><span class="o">-</span><span class="mf">9.0.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="n">build</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="p">.</span><span class="o">/</span><span class="n">build</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">target</span><span class="o">-</span><span class="n">list</span><span class="o">=</span><span class="s">&#34;riscv64-softmmu&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">make</span> <span class="o">-</span><span class="n">j</span><span class="err">`</span><span class="n">nproc</span><span class="err">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="42-thunderbird">4.2 Thunderbird
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// Colored Diffs
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Owl for Exchange
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// composition =&gt; palin text
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 前言 Kernel版本：4.14 ARM64处理器：Contex-A53，双核 之前的文章中主要分析了中断控制器驱动以及Linux中断框架，本文将重点关注Linux内核针对中断的一些优化设计机制，包括 Top-half/Bottom-half、Softirq、Workqueue 等机制。\n">
+<title>Linux Interrupt Handle_2</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/linux-interrupt-handle_2/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux Interrupt Handle_2">
+<meta property='og:description' content="0 前言 Kernel版本：4.14 ARM64处理器：Contex-A53，双核 之前的文章中主要分析了中断控制器驱动以及Linux中断框架，本文将重点关注Linux内核针对中断的一些优化设计机制，包括 Top-half/Bottom-half、Softirq、Workqueue 等机制。\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/linux-interrupt-handle_2/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T09:52:32&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T09:52:32&#43;08:00'/>
+<meta name="twitter:title" content="Linux Interrupt Handle_2">
+<meta name="twitter:description" content="0 前言 Kernel版本：4.14 ARM64处理器：Contex-A53，双核 之前的文章中主要分析了中断控制器驱动以及Linux中断框架，本文将重点关注Linux内核针对中断的一些优化设计机制，包括 Top-half/Bottom-half、Softirq、Workqueue 等机制。\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-softirq">1.1 softirq</a>
+      <ol>
+        <li><a href="#什么是软中断">什么是软中断</a>
+          <ol>
+            <li><a href="#linux系统中的软中断类型">Linux系统中的软中断类型</a></li>
+            <li><a href="#如何定位软中断cpu使用率过高的问题">如何定位软中断CPU使用率过高的问题？</a></li>
+            <li><a href="#小结">小结</a></li>
+          </ol>
+        </li>
+        <li><a href="#初始化">初始化</a></li>
+        <li><a href="#流程分析">流程分析</a>
+          <ol>
+            <li><a href="#软中断注册">软中断注册</a></li>
+            <li><a href="#软中断执行">软中断执行</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#12-tasklet">1.2 tasklet</a>
+      <ol>
+        <li><a href="#数据结构">数据结构</a></li>
+        <li><a href="#流程分析-1">流程分析</a></li>
+        <li><a href="#接口">接口</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux-interrupt-handle_2/">Linux Interrupt Handle_2</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-前言">0 前言
+</h1><blockquote>
+<ol>
+<li><strong>Kernel版本：4.14</strong></li>
+<li><strong>ARM64处理器：Contex-A53，双核</strong></li>
+</ol>
+</blockquote>
+<p>之前的文章中主要分析了中断控制器驱动以及Linux中断框架，本文将重点关注Linux内核针对中断的一些优化设计机制，包括 <code>Top-half/Bottom-half</code>、<code>Softirq</code>、<code>Workqueue</code> 等机制。</p>
+<h1 id="1-softirqtasklet">1 Softirq/tasklet
+</h1><h2 id="11-softirq">1.1 softirq
+</h2><h3 id="什么是软中断">什么是软中断
+</h3><p>中断请求的处理程序应该要短且快，这样才能减少对正常进程运行调度地影响，而且中断处理程序可能会暂时关闭中断，这时如果中断处理程序执行时间过长，可能在还未执行完中断处理程序前，会丢失当前其他设备的中断请求。</p>
+<p>Linux 系统<strong>为了解决中断处理程序执行过长和中断丢失的问题，将中断过程分成了两个阶段，分别是「上半部和下半部分」</strong>。</p>
+<ul>
+<li><strong>上半部用来快速处理中断</strong>，一般会暂时关闭中断请求，主要负责处理跟硬件紧密相关或者时间敏感的事情。</li>
+<li><strong>下半部用来延迟处理上半部未完成的工作</strong>，一般以「内核线程」的方式运行。</li>
+</ul>
+<p>举一个计算机中的例子，常见的<strong>网卡接收网络包</strong>的例子。</p>
+<blockquote>
+<p>网卡收到网络包后，通过 DMA 方式将接收到的数据写入内存，接着会通过<strong>硬件中断</strong>通知内核有新的数据到了，于是内核就会调用对应的中断处理程序来处理该事件，这个事件的处理也是会分成上半部和下半部。</p>
+<p>上部分要做的事情很少，会先禁止网卡中断，避免频繁硬中断，而降低内核的工作效率。接着，内核会触发一个<strong>软中断</strong>，把一些处理比较耗时且复杂的事情，交给「软中断处理程序」去做，也就是中断的下半部，其主要是需要从内存中找到网络数据，再按照网络协议栈，对网络数据进行逐层解析和处理，最后把数据送给应用程序。</p>
+</blockquote>
+<p>所以，中断处理程序的上部分和下半部可以理解为：</p>
+<ul>
+<li><strong>上半部直接处理硬件请求，也就是硬中断</strong>，主要是负责耗时短的工作，特点是快速执行；</li>
+<li><strong>下半部是由内核触发，也就说软中断</strong>，主要是负责上半部未完成的工作，通常都是耗时比较长的事情，特点是延迟执行；</li>
+</ul>
+<p>还有一个区别，硬中断（上半部）是会打断 CPU 正在执行的任务，然后立即执行中断处理程序，而软中断（下半部）是以内核线程的方式执行，并且每一个 CPU 都对应一个软中断内核线程，名字通常为**「ksoftirqd/CPU 编号」，**比如 0 号 CPU 对应的软中断内核线程的名字是 <code>ksoftirqd/0</code></p>
+<p>不过，软中断不只是包括硬件设备中断处理程序的下半部，一些内核自定义事件也属于软中断，比如内核调度等、RCU 锁（内核里常用的一种锁）等。</p>
+<h4 id="linux系统中的软中断类型">Linux系统中的软中断类型
+</h4><p>在 Linux 系统里，我们可以通过查看 <code>/proc/softirqs</code> 的 内容来知晓「软中断」的运行情况，以及 <code>/proc/interrupts</code> 的 内容来知晓「硬中断」的运行情况。</p>
+<p>接下来，就来简单的解析下 <code>/proc/softirqs</code> 文件的内容，在我服务器上查看到的文件内容如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202311131004018.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>你可以看到，每一个 CPU 都有自己对应的不同类型软中断的<strong>累计运行次数</strong>，有 3 点需要注意下。</p>
+<ul>
+<li>第一点，要注意第一列的内容，它是代表着软中断的类型，在我的系统里，软中断包括了 10 个类型，分别对应不同的工作类型，比如 <code>NET_RX</code> 表示网络接收中断，<code>NET_TX</code> 表示网络发送中断、<code>TIMER</code> 表示定时中断、<code>RCU</code> 表示 RCU 锁中断、<code>SCHED</code> 表示内核调度中断。</li>
+<li>第二点，要注意同一种类型的软中断在不同 CPU 的分布情况，正常情况下，同一种中断在不同 CPU 上的累计次数相差不多，比如我的系统里，<code>NET_RX</code> 在 CPU0 、CPU1、CPU2、CPU3 上的中断次数基本是同一个数量级，相差不多。</li>
+<li>第三点，这些数值是系统运行以来的累计中断次数，数值的大小没什么参考意义，但是系统的<strong>中断次数的变化速率</strong>才是我们要关注的，我们可以使用 <code>watch -d cat /proc/softirqs</code> 命令查看中断次数的变化速率。</li>
+</ul>
+<p>前面提到过，软中断是以内核线程的方式执行的，我们可以用 <code>ps</code> 命令可以查看到，下面这个就是在我的服务器上查到软中断内核线程的结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202311131007467.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>可以发现，内核线程的名字外面都有有中括号，这说明 ps 无法获取它们的命令行参数，所以一般来说，名字在中括号里的都可以认为是内核线程。而且，你可以看到有 4 个 <code>ksoftirqd</code> 内核线程，这是因为我这台服务器的 CPU 是 4 核心的，<strong>每个 CPU 核心都对应着一个内核线程。</strong></p>
+<h4 id="如何定位软中断cpu使用率过高的问题">如何定位软中断CPU使用率过高的问题？
+</h4><p>要想知道当前的系统的软中断情况，我们可以使用 <code>top</code> 命令查看，下面是一台服务器上的 top 的数据：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202311131010334.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>上图中的黄色部分 <code>si</code>，就是 CPU 在软中断上的使用率，而且可以发现，每个 CPU 使用率都不高，两个 CPU 的使用率虽然只有 3% 和 4% 左右，但是都是用在软中断上了。另外，也可以看到 CPU 使用率最高的进程也是软中断 <code>ksoftirqd</code>，因此可以认为此时系统的开销主要来源于软中断。如果要知道是哪种软中断类型导致的，我们可以使用 <code>watch -d cat /proc/softirqs</code> 命令查看每个软中断类型的中断次数的变化速率。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202311131012219.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>一般对于网络 I/O 比较高的 Web 服务器，<code>NET_RX</code> 网络接收中断的变化速率相比其他中断类型快很多。如果发现 <code>NET_RX</code> 网络接收中断次数的变化速率过快，接下来就可以使用 <code>sar -n DEV</code> 查看网卡的网络包接收速率情况，然后分析是哪个网卡有大量的网络包进来。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202311131013623.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>接着，在通过 <code>tcpdump</code> 抓包，分析这些包的来源，如果是非法的地址，可以考虑加防火墙，如果是正常流量，则要考虑硬件升级等。</p>
+<h4 id="小结">小结
+</h4><p>为了避免由于中断处理程序执行时间过长，而影响正常进程的调度，Linux 将中断处理程序分为上半部和下半部：</p>
+<ul>
+<li>上半部 <code>Top Half</code>，对应硬中断，由硬件触发中断，用来快速处理中断；</li>
+<li>下半部 <code>Bottom Half</code>，对应软中断，由内核触发中断，用来异步处理上半部未完成的工作；</li>
+</ul>
+<p>Linux 中的软中断类型包括网络收发、定时、调度、RCU 锁等，可以通过查看 <code>/proc/softirqs</code> 来观察软中断的累计中断次数情况，如果要实时查看中断次数的变化率，可以使用 <code>watch -d cat /proc/softirqs</code> 命令。</p>
+<p>每一个 CPU 都有各自的软中断内核线程，我们还可以用 <code>ps</code> 命令来查看内核线程，一般名字在中括号里面到，都认为是内核线程。</p>
+<p>如果在 <code>top</code> 命令发现，CPU 在软中断上的使用率比较高，而且 CPU 使用率最高的进程也是软中断 ksoftirqd 的时候，这种一般可以认为系统的开销被软中断占据了。</p>
+<p>这时我们就可以分析是哪种软中断类型导致的，一般来说都是因为网络接收软中断导致的，如果是的话，可以用 <code>sar</code> 命令查看是哪个网卡的有大量的网络包接收，再用 <code>tcpdump</code> 抓网络包，做进一步分析该网络包的源头是不是非法地址，如果是就需要考虑防火墙增加规则，如果不是，则考虑硬件升级等。</p>
+<h3 id="初始化">初始化
+</h3><h3 id="流程分析">流程分析
+</h3><h4 id="软中断注册">软中断注册
+</h4><h4 id="软中断执行">软中断执行
+</h4><h5 id="中断处理后">中断处理后
+</h5><h5 id="bottom-half-enable后">Bottom-half Enable后
+</h5><h2 id="12-tasklet">1.2 tasklet
+</h2><h3 id="数据结构">数据结构
+</h3><h3 id="流程分析-1">流程分析
+</h3><h3 id="接口">接口
+</h3><h1 id="2-workqueue">2 Workqueue
+</h1>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

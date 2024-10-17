@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 资料 riscv_vector riscv-v-spec/v-spec.adoc at master · riscv/riscv-v-spec (github.com) [PATCH v10 00/16] riscv: Add vector ISA support - Greentime Hu (kernel.org) ARM与RISC-V的向量扩展比较 - 知乎 (zhihu.com) riscv-v-spec-1.0（矢量指令） 学习理解（1-5 &amp; 18 segment）-CSDN博客 armv8_sve Scalable Vector Extension support for AArch64 Linux — The Linux Kernel documentation [PATCH v5 00/30] ARM Scalable Vector Extension (SVE) - Dave Martin (kernel.org) [PATCH v7 00/27] KVM: arm64: SVE guest support [LWN.net] ARM SVE特性学习 - 知乎 (zhihu.com) Linux 内核使用浮点问题_内核开启硬浮点-CSDN博客 基于armv8的kvm实现分析（四）cpu虚拟化 - 知乎 (zhihu.com) 1 ARM与RISC-V向量扩展对比 ARM SVE和RISC-V Vector特性引入的目的都是针对向量计算，实现指令级别的SIMD高性能运算。本文并不会分析两者在向量运算上的一些异同，比如：执行的向量指令格式有什么区别、提供的寄存器组的区别等，因为这些都是用户态应用程序或者标准库、编译器关注的事情，本文只会讨论一件事：目前Linux Kernel在多核系统上支持这两种特性上有什么区别？\n">
+<title>Riscv Arm Simd Compare</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/riscv-arm-simd-compare/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Riscv Arm Simd Compare">
+<meta property='og:description' content="0 资料 riscv_vector riscv-v-spec/v-spec.adoc at master · riscv/riscv-v-spec (github.com) [PATCH v10 00/16] riscv: Add vector ISA support - Greentime Hu (kernel.org) ARM与RISC-V的向量扩展比较 - 知乎 (zhihu.com) riscv-v-spec-1.0（矢量指令） 学习理解（1-5 &amp; 18 segment）-CSDN博客 armv8_sve Scalable Vector Extension support for AArch64 Linux — The Linux Kernel documentation [PATCH v5 00/30] ARM Scalable Vector Extension (SVE) - Dave Martin (kernel.org) [PATCH v7 00/27] KVM: arm64: SVE guest support [LWN.net] ARM SVE特性学习 - 知乎 (zhihu.com) Linux 内核使用浮点问题_内核开启硬浮点-CSDN博客 基于armv8的kvm实现分析（四）cpu虚拟化 - 知乎 (zhihu.com) 1 ARM与RISC-V向量扩展对比 ARM SVE和RISC-V Vector特性引入的目的都是针对向量计算，实现指令级别的SIMD高性能运算。本文并不会分析两者在向量运算上的一些异同，比如：执行的向量指令格式有什么区别、提供的寄存器组的区别等，因为这些都是用户态应用程序或者标准库、编译器关注的事情，本文只会讨论一件事：目前Linux Kernel在多核系统上支持这两种特性上有什么区别？\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/riscv-arm-simd-compare/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T10:02:03&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T10:02:03&#43;08:00'/>
+<meta name="twitter:title" content="Riscv Arm Simd Compare">
+<meta name="twitter:description" content="0 资料 riscv_vector riscv-v-spec/v-spec.adoc at master · riscv/riscv-v-spec (github.com) [PATCH v10 00/16] riscv: Add vector ISA support - Greentime Hu (kernel.org) ARM与RISC-V的向量扩展比较 - 知乎 (zhihu.com) riscv-v-spec-1.0（矢量指令） 学习理解（1-5 &amp; 18 segment）-CSDN博客 armv8_sve Scalable Vector Extension support for AArch64 Linux — The Linux Kernel documentation [PATCH v5 00/30] ARM Scalable Vector Extension (SVE) - Dave Martin (kernel.org) [PATCH v7 00/27] KVM: arm64: SVE guest support [LWN.net] ARM SVE特性学习 - 知乎 (zhihu.com) Linux 内核使用浮点问题_内核开启硬浮点-CSDN博客 基于armv8的kvm实现分析（四）cpu虚拟化 - 知乎 (zhihu.com) 1 ARM与RISC-V向量扩展对比 ARM SVE和RISC-V Vector特性引入的目的都是针对向量计算，实现指令级别的SIMD高性能运算。本文并不会分析两者在向量运算上的一些异同，比如：执行的向量指令格式有什么区别、提供的寄存器组的区别等，因为这些都是用户态应用程序或者标准库、编译器关注的事情，本文只会讨论一件事：目前Linux Kernel在多核系统上支持这两种特性上有什么区别？\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-risc-v-v-vector-extension">1.1 RISC-V &ldquo;V&rdquo; Vector Extension</a>
+      <ol>
+        <li><a href="#vector-extension-programmers-model">Vector Extension Programmer’s Model</a></li>
+        <li><a href="#mstatus-vector上下文状态">mstatus: Vector上下文状态</a></li>
+        <li><a href="#vsstatus-vector上下文状态">vsstatus: Vector上下文状态</a></li>
+        <li><a href="#vstart-vector-start-index-csr">vstart: Vector Start Index CSR</a></li>
+        <li><a href="#exception-handling">Exception Handling</a>
+          <ol>
+            <li><a href="#precise-vector-traps">Precise vector traps</a></li>
+            <li><a href="#imprecise-vector-traps">Imprecise vector traps</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#todo-12-arm-scalable-vector-extension">//TODO: 1.2 ARM Scalable Vector Extension</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-lazy-saverestore">2.1 Lazy save/restore</a>
+      <ol>
+        <li><a href="#non-virtualization">non-virtualization</a>
+          <ol>
+            <li><a href="#vector-trap处理">vector trap处理</a></li>
+            <li><a href="#当前的lazy还不够">当前的Lazy还不够</a></li>
+          </ol>
+        </li>
+        <li><a href="#virtualization">virtualization</a>
+          <ol>
+            <li><a href="#vector_context保存恢复">vector_context保存/恢复</a></li>
+            <li><a href="#guest发生vector_trap处理">guest发生vector_trap处理</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#22-delayed-update-strategy">2.2 *Delayed update strategy</a>
+      <ol>
+        <li><a href="#non-virtualization-1">non-virtualization</a></li>
+        <li><a href="#virtualization-1">virtualization</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-linux-arm引入的fpsimd状态跟踪机制">3.1 Linux-ARM引入的FPSIMD状态跟踪机制</a></li>
+    <li><a href="#32-针对虚拟化场景的优化">3.2 针对虚拟化场景的优化</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#linux-kvm-arm">Linux KVM-ARM</a></li>
+            <li><a href="#fpsimdsve虚拟化框架分析">fpsimd/sve虚拟化框架分析</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/riscv-arm-simd-compare/">Riscv Arm Simd Compare</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 25 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-资料">0 资料
+</h1><ul>
+<li><strong>riscv_vector</strong>
+<ul>
+<li><a class="link" href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc"  target="_blank" rel="noopener"
+    >riscv-v-spec/v-spec.adoc at master · riscv/riscv-v-spec (github.com)</a></li>
+<li>[<a class="link" href="https://lore.kernel.org/all/cover.1652257230.git.greentime.hu@sifive.com/"  target="_blank" rel="noopener"
+    >PATCH v10 00/16] riscv: Add vector ISA support - Greentime Hu (kernel.org)</a></li>
+<li><a class="link" href="https://zhuanlan.zhihu.com/p/370293866"  target="_blank" rel="noopener"
+    >ARM与RISC-V的向量扩展比较 - 知乎 (zhihu.com)</a></li>
+<li><a class="link" href="https://blog.csdn.net/weixin_43348382/article/details/113736632"  target="_blank" rel="noopener"
+    >riscv-v-spec-1.0（矢量指令） 学习理解（1-5 &amp; 18 segment）-CSDN博客</a></li>
+</ul>
+</li>
+<li><strong>armv8_sve</strong>
+<ul>
+<li><a class="link" href="https://www.kernel.org/doc/html/v5.15/arm64/sve.html"  target="_blank" rel="noopener"
+    >Scalable Vector Extension support for AArch64 Linux — The Linux Kernel documentation</a></li>
+<li>[<a class="link" href="https://lore.kernel.org/all/1509465082-30427-1-git-send-email-Dave.Martin@arm.com/"  target="_blank" rel="noopener"
+    >PATCH v5 00/30] ARM Scalable Vector Extension (SVE) - Dave Martin (kernel.org)</a></li>
+<li>[<a class="link" href="https://lwn.net/ml/linux-arm-kernel/1553864452-15080-1-git-send-email-Dave.Martin@arm.com/"  target="_blank" rel="noopener"
+    >PATCH v7 00/27] KVM: arm64: SVE guest support [LWN.net]</a></li>
+<li><a class="link" href="https://zhuanlan.zhihu.com/p/382429327"  target="_blank" rel="noopener"
+    >ARM SVE特性学习 - 知乎 (zhihu.com)</a></li>
+<li><a class="link" href="https://blog.csdn.net/pen_cil/article/details/105467817"  target="_blank" rel="noopener"
+    >Linux 内核使用浮点问题_内核开启硬浮点-CSDN博客</a></li>
+<li><a class="link" href="https://zhuanlan.zhihu.com/p/530665800"  target="_blank" rel="noopener"
+    >基于armv8的kvm实现分析（四）cpu虚拟化 - 知乎 (zhihu.com)</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="1-arm与risc-v向量扩展对比">1 ARM与RISC-V向量扩展对比
+</h1><p>ARM SVE和RISC-V Vector特性引入的目的都是针对向量计算，实现指令级别的SIMD高性能运算。本文并不会分析两者在向量运算上的一些异同，比如：执行的向量指令格式有什么区别、提供的寄存器组的区别等，因为这些都是用户态应用程序或者标准库、编译器关注的事情，本文只会讨论一件事：<strong>目前Linux Kernel在多核系统上支持这两种特性上有什么区别？</strong></p>
+<p>相应规范如下：</p>
+<ul>
+<li>riscv
+<ul>
+<li><a class="link" href="https://github.com/riscv/riscv-v-spec/blob/master/v-spec.adoc#vector-context-status-in-mstatus"  target="_blank" rel="noopener"
+    >riscv-v-spec/v-spec.adoc at master · riscv/riscv-v-spec (github.com)</a></li>
+</ul>
+</li>
+<li>armv8
+<ul>
+<li><a class="link" href="https://developer.arm.com/documentation/ddi0584/ab/?lang=en"  target="_blank" rel="noopener"
+    >ARM Architecture Reference Manual Supplement - The Scalable Vector Extension (SVE), for ARMv8-A</a></li>
+</ul>
+</li>
+</ul>
+<p>我们只关注部分控制状态寄存器的作用即可。</p>
+<h2 id="11-risc-v-v-vector-extension">1.1 RISC-V &ldquo;V&rdquo; Vector Extension
+</h2><h3 id="vector-extension-programmers-model">Vector Extension Programmer’s Model
+</h3><p>向量扩展向基标量RISC-V ISA中增加了32个向量寄存器(v0-v31)以及7个无特权的CSRS（控制和状态寄存器），分别是vstart、vxsat、vxrm、vcsr、vl、vtype、vlenb。向量寄存器的位宽为固定的VLEN宽度。</p>
+<p>riscv 架构规定了一些只在机器模式下支持的寄存器，机器模式是riscv中硬件线程执行时的最高权限模式。机器模式对内存，I/O和一些对于启动和配置系统来说必要的底层功能有着完全的使用权。通常用户写的程序都在用户模式执行，用户态具有最低级别的权限。当用户程序需要使用一些底层硬件设备或者执行出现了异常又或者外围设备对正在执行的处理器发起了中断请求，那么cpu就会由用户态切换至内核态，也就是切换到机器模式下，将cpu的控制权，转交给内核程序。</p>
+<p>riscv把程序执行时出现的异常，或者外部中断统称为陷阱（陷阱其实很好理解，因为不管是异常还是中断，cpu都会由用户态陷入内核态，这个陷入内核的过程就可以理解成踩入了陷阱里，要经过一些其他的操作，才能爬出陷阱，恢复正常行走）。当遇到陷阱时，首先要将当前的pc保存下来，方便之后进行恢复。然后清空异常指令之前的流水线。接下来根据对应的陷阱类型，切换到对应的程序入口，开始执行内核程序（ 内核程序也是由一条条指令组成的，同样需要在流水线上执行）。等内核程序执行完成后，在重新把cpu的控制权转交给用户程序，从之前保存的pc指针开始重新取指，执行。</p>
+<p>在重新回到riscv规定了一些只支持机器模式相关的寄存器的话题。<code>mstatus</code> 寄存器是机器模式下的状态寄存器，其中 <code>mstatus[10:9]</code> 是向量上下文状态域。</p>
+<blockquote>
+<p>一个进程存储在处理器各寄存器中的中间数据叫做进程的上下文，所以进程的切换实质上就是被中止运行进程与待运行进程上下文的切换</p>
+</blockquote>
+<p><code>mstatus.vs</code> 域同 <code>mstatus.fs</code> 类似。当 <code>mstatus.vs</code> 域被写成0时，试图执行向量指令或者访问向量寄存器均会引发非法指令异常。当<code>mstatus.vs</code> 域被设置为初始状态或者干净的状态，只要执行了相关的指令改变了vpu（vector processor unit）状态，该域就会被改写成dirty的状态。</p>
+<p><code>misa</code> 寄存器用于指示当前处理器的架构特性，该寄存器高两位用于表示当前处理器所支持的架构位数；该寄存器低 26 位用于指示当前处理器所支持的不同模块化指令集。riscv架构文档规定 <code>misa</code> 寄存器可读可写，从而允许处理器可以动态的配置某些特性。<code>misa.v</code> 表示 Vector 扩展指令集域，即使 <code>misa.v</code> 域被清0，<code>mstatus.vs</code> 域也存在。这样设计可以简化 <code>mstatus.vs</code> 的处理。</p>
+<h3 id="mstatus-vector上下文状态">mstatus: Vector上下文状态
+</h3><p>在mstatus[10:9]中添加了一个向量上下文状态字段VS，并在sstatus[10:9]中进行了镜像。它的定义与浮点上下文状态字段FS类似。</p>
+<p>当mstatus.VS设置为Off时，尝试执行任何向量指令或访问向量CSRs都会引发非法指令异常。</p>
+<p>当mstatus.VS设置为Initial或Clean时，执行任何改变向量状态的指令，包括向量CSRs，都将把mstatus.VS更改为Dirty。实现也可以在向量状态没有改变的情况下随时将mstatus.VS从Initial或Clean更改为Dirty。</p>
+<blockquote>
+<p><strong><font color='red'>准确设置mstatus.VS是一种优化方法。软件通常会使用VS来减少上下文切换的开销。</font></strong></p>
+</blockquote>
+<p>如果mstatus.VS是脏的，那么mstatus.SD为1；否则，mstatus.SD根据现有规范进行设置。</p>
+<p>实现可能具有可写的misa.V字段。类似于对浮点单元的处理方式，即使misa.V被清除，mstatus.VS字段仍然可能存在。</p>
+<blockquote>
+<p>在misa.V未设置的情况下，允许存在mstatus.VS，可以实现向量仿真，并简化对于具有可写misa.V的系统中mstatus.VS的处理。</p>
+</blockquote>
+<h3 id="vsstatus-vector上下文状态">vsstatus: Vector上下文状态
+</h3><p>当存在虚拟机扩展时，向vsstatus[10:9]添加一个向量上下文状态字段VS。它的定义类似于浮点上下文状态字段FS。</p>
+<ul>
+<li>当V=1时，vsstatus.VS和mstatus.VS都生效：当任一字段设置为Off时，执行任何向量指令或访问向量CSRs都会引发非法指令异常。</li>
+<li>当V=1且vsstatus.VS和mstatus.VS都未设置为Off时，执行任何改变向量状态的指令，包括向量CSRs，都会将mstatus.VS和vsstatus.VS都改为Dirty。即使向量状态没有改变，实现也可以随时将mstatus.VS或vsstatus.VS从Initial或Clean更改为Dirty。</li>
+<li>如果vsstatus.VS为Dirty，则vsstatus.SD为1；否则，根据现有规范设置vsstatus.SD。</li>
+<li>如果mstatus.VS为Dirty，则mstatus.SD为1；否则，根据现有规范设置mstatus.SD。</li>
+<li>对于具有可写的misa.V字段的实现，即使misa.V被清除，vsstatus.VS字段也可能存在。</li>
+</ul>
+<h3 id="vstart-vector-start-index-csr">vstart: Vector Start Index CSR
+</h3><p>XLEN位宽的可读写vstart CSR指定了向量指令执行的第一个元素的索引，如第Prestart、Active、Inactive、Body和Tail元素定义部分所述。</p>
+<p>通常情况下，vstart只在向量指令发生陷阱时由硬件进行写入，vstart的值表示陷阱发生的元素（可以是同步异常或异步中断），并且在可恢复陷阱处理后应该从该元素处恢复执行。</p>
+<p>所有的向量指令都被定义为从vstart CSR所给出的元素编号开始执行，不会改变目标向量中较早的元素，并且在执行结束时将vstart CSR重置为零。</p>
+<blockquote>
+<p><em><strong>关于元素的定义：</strong></em></p>
+<p>向量指令执行期间的元素索引，可以分成四个没有交集的子集。</p>
+<ul>
+<li><code>prestart elememts</code>：元素索引小于vstart寄存器中的初始值，对应的元素集合。该元素集合不产生异常，也不会更新目的向量寄存器；</li>
+<li><code>active elements</code>：表示在向量指令执行过程中，在向量长度设置范围内，且掩码有效的元素集合。该元素集合可以产生异常并且也可以更新目的向量寄存器；</li>
+<li><code>inactive elements</code>：表示在向量指令执行过程中，在向量长度设置范围内，但是掩码无效的严肃集合。该元素集合不产生异常，vma=0的设置下，不更新目的向量寄存器；vma=1的设置下，被掩码掩蔽的元素将被写1；</li>
+<li><code>tail elemememts</code>：表示在向量执行过程中，超过了向量设置的长度。该元素集合不产生异常，vta=0的设置下，不更新目的向量寄存器；vta=1的设置下，tail元素将被写1。当分组因子LMUL&lt;1时，超过LMAX的元素也纳入tail元素集合中。</li>
+</ul>
+<p>除上述定义的子集外。inactive和active的集合还可以统称body element。该集合在prestart elements之后，在tail elements之前。</p>
+</blockquote>
+<p>vstart为可读可写寄存器，该寄存器规定了一条向量指令中第一个被执行的元素的索引。</p>
+<p>vstart寄存器通常在向量指令执行的过程中产生了陷阱被写入。该寄存器记录了进入陷阱时向量指令操作元素的索引，以便跳出陷阱之后能够继续执行剩下的元素。 所有向量指令都根据vstart中指定的元素索引开始执行。执行的过程保证该索引之前的目的寄存器的元素不被干扰，在执行的末尾，将vstart寄存器的值复位到0。当向量指令产生非法指令异常时，vstart寄存器将不会被改写。所以vstart寄存器被改写，只能是程序执行时出现了可恢复的同步异常，或者外部产生中断的情况。</p>
+<p>**思考：**假如不能通过vstart存储异常时的元素索引，那么在执行向量指令过程中发生的可恢复异常，必须要等到这条向量指令执行完，才能进入异常处理程序。这就要求向量指令必须是原子的，增加了控制复杂度，并且对于一些长延时的指令，比如load，将会导致响应中断的时间特别的长。</p>
+<p>若vstart索引值大于vl的值，说明vstart指向的元素索引已经超过了当前所有元素的范围，该指令不会执行，并且同时会把vstart寄存器复位到0。
+vstart可写的bit位，根据VLMAX确定，在vl部分已经描述过。</p>
+<h3 id="exception-handling">Exception Handling
+</h3><p>在矢量指令的陷阱中（由同步异常或异步中断引起），现有的 <code>*epc</code> CSR会被写入指向陷阱矢量指令的指针，而 <code>vstart</code> CSR则包含陷阱发生时的元素索引。</p>
+<blockquote>
+<p>我们选择添加vstart CSR以允许恢复部分执行的向量指令，以减少中断延迟并简化前进保证。这类似于IBM 3090向量设施中的方案。为了确保没有vstart CSR的前进进展，实现必须保证整个向量指令始终可以原子地完成而不生成陷阱。在存在跨步或分散/聚集操作和需求分页虚拟内存的情况下，这特别难以保证。</p>
+</blockquote>
+<p>异常和中断从广义上来看，都叫做异常。RISC-V 架构规定，在处理器的程序执行过程中，一旦遇到异常发生，则终止当前的程序流，处理器被强行跳转到一个新的 PC 地址。该过程在 RISC-V 的架构中定义为“陷阱(trap)”， 字面含义为“跳入陷阱”，更加准确的意译为“进入异常”。在一条向量指令执行的过程中遇到了陷阱，需要将当前指令pc保存在 <code>*epc</code> 中，并且需要记录当前遇到异常时的元素索引到 vstart，以便退出异常服务程序后能恢复原先执行的程序。</p>
+<p>如果发生异常时，只记录指令的pc指针，没有用vstart记录发生异常时的元素索引，那么需要保证该指令的执行是原子的，这加大了设计控制难度。并且向量指令设计为原子的，在有些long latency的指令执行过程中，会导致中断的响应非常缓慢。(思考假如指令不是原子的，那么出现异常直接被打断，又没有保存被打断时的索引，那么下一次从这一条指令重新开始执行会有什么问题？)</p>
+<p>中断通常是由外设（中断源）产生的，而异常通常是由程序执行过程中遇到的异常。</p>
+<ul>
+<li>因此中断是一种外因，通常不能精确定位到某条指令引起，因为外设发起中断的时间是偶然的，程序执行过程中遇到中断，任何指令都可能碰到，这些倒霉的指令只是一个背锅侠，因此称这种中断为异步异常；</li>
+<li>异常的产生通常是内因，比如某条指令解码的时候出错，或者执行的时候进行了除 0 的操作，这些异常都可以被精确的定位到某一条指令。并且同样的程序执行n遍，都是能复现的。因此称这种异常为同步异常。</li>
+</ul>
+<hr>
+<p>对于异步异常，还可以被细分为**精确异步异常和非精确异步异常。**精确和不精确的区分主要在于进入异常的程序能否精确区分到某条指令的边界</p>
+<ul>
+<li>比如某条指令之前的指令都执行完了，而该条指令之后的指令都没有执行，外部中断就是一种精确异步异常。</li>
+<li>而非精确异步异常是指当前处理器的状态可能是一个很模糊的状态，没法明确的根据一条指令划界。举个例子，比如写存指令，访问存储器需要一定的时间，但是为了流水线高效率的执行，通常写存指令发出去，没等到写的响应有没有正确响应，后续的指令就在继续执行。那么有可能出现等访问完成，发现出现了异常，此时已经过去了很多条指令了，难以精准确的定位到某一条指令。</li>
+</ul>
+<p>异常可能发生在处理器流水线的各个阶段，为了保证处理器按照指令先后顺序处理异常，需要将异常的处理放在 <code>commit</code> 阶段。</p>
+<h4 id="precise-vector-traps">Precise vector traps
+</h4><blockquote>
+<p>我们假设大多数具有需求分页的监管模式环境都需要精确的向量陷阱。</p>
+</blockquote>
+<p>精确的向量陷阱具有如下要求：</p>
+<ul>
+<li>所有比陷阱指令旧的指令都已经完成了 <code>commit</code> 过程；</li>
+<li>所有比陷阱指令新的指令都应该被flush掉，不允许新指令更改处理器的状态；</li>
+<li>陷阱指令中，所有小于vstart元素索引的元素操作都完成了 <code>commit</code>；</li>
+<li>陷阱指令中，所有大于等于vstart元素索引的元素都不会被执行。但是如果操作重新开始该指令，可以将处理器恢复到正确的状态，那么该条约束可以放松；</li>
+</ul>
+<p>举个例子，对于具有幂等性的存储区域进行操作，就可以允许发生trap对应的索引之后的元素改变存储器的状态，而不具有幂等性的存储区域就不能允许大于等于vsart索引的元素更新存储器状态。</p>
+<blockquote>
+<p>幂等性是指多次执行一个操作与执行一次该操作得到的结果相同，该操作就可以说是幂等的。</p>
+</blockquote>
+<p>跳出异常服务程序时，需要从vstart记录的元素索引开始。这是因为比如有些指令源寄存器与目的寄存器有交叠，那么可能vstart之前的源寄存器内容已经被目的寄存器覆盖了，那么重新执行这部分元素，将会得到错误的结果。</p>
+<h4 id="imprecise-vector-traps">Imprecise vector traps
+</h4><p>非精确向量陷阱，spec中写的是比 <code>*epc</code> 新的指令可能已经commit，比 <code>*epc</code> 老的指令有可能还在执行。对这个地方我是有疑问的，因为即使是超标量流水线，也会经历一个inorder-outoforder-inorder的过程，也就是真正commit的时候，指令肯定是会按照程序指令顺序，依次改变处理器状态，怎么会出现比 <code>*epc</code> 老的指令还在执行。鉴于这部分理解的有分叉，我就不多描述了，希望能和大家一起讨论清楚。</p>
+<h2 id="todo-12-arm-scalable-vector-extension">//TODO: 1.2 ARM Scalable Vector Extension
+</h2><h1 id="2-risc-v-vector内核支持">2 RISC-V Vector内核支持
+</h1><p>[<a class="link" href="https://lore.kernel.org/all/cover.1652257230.git.greentime.hu@sifive.com/"  target="_blank" rel="noopener"
+    >PATCH v10 00/16] riscv: Add vector ISA support - Greentime Hu (kernel.org)</a></p>
+<p>[<a class="link" href="https://lore.kernel.org/all/20231220075412.24084-1-andy.chiu@sifive.com/"  target="_blank" rel="noopener"
+    >v6, 00/10] riscv: support kernel-mode Vector - Andy Chiu</a></p>
+<p>该补丁集是基于向量1.0规范实现的，以在riscv Linux内核中添加向量支持。对于这些实现，有一些假设。</p>
+<ol>
+<li>我们假设系统中的所有harts都具有相同的ISA。</li>
+<li>我们在某些方面使用类似浮点单元(FPU)的向量，而不是使用特定IP的向量。</li>
+<li>默认情况下，在内核空间中禁用向量，除非内核使用内核模式的向量kernel_rvv_begin()/kernel_rvv_end()。</li>
+<li>我们通过检测&quot;riscv,isa&quot;来确定是否支持向量。</li>
+</ol>
+<p>我们在struct thread_struct中定义了一个名为 <code>__riscv_v_state</code> 的新结构，用于保存/恢复与向量相关的寄存器。它用于内核空间和用户空间。</p>
+<ul>
+<li>在内核空间中，<code>__riscv_v_state</code> 中的datap指针将被分配用于保存向量寄存器；</li>
+<li>在用户空间中：
+<ul>
+<li>在用户空间的信号处理程序中，datap将指向 <code>__riscv_v_state</code> 数据结构的地址，以在堆栈中保存向量寄存器。我们还为未来的扩展在sigcontext中创建了一个 <code>reserved[]</code> 数组；</li>
+<li>在ptrace中，数据将被放入ubuf中，我们使用 <code>riscv_vr_get()/riscv_vr_set()</code> 从中获取或设置 <code>__riscv_v_state</code> 数据结构，datap指针将被清零，并且向量寄存器将被复制到riscv_v_state结构之后的地址中。</li>
+</ul>
+</li>
+</ul>
+<p>该补丁集还添加了对内核模式向量的支持，使用向量ISA实现了内核XOR，并包括了几个错误修复和代码优化。</p>
+<p>该补丁集已重新基于v5.18-rc6，并通过同时运行多个向量程序进行了测试。它还可以在信号处理程序中获取正确的ucontext_t，并在sigreturn后恢复正确的上下文。它还经过了使用ptrace()系统调用来使用PTRACE_GETREGSET/PTRACE_SETREGSET获取/设置向量寄存器的测试。</p>
+<p>待办事项：</p>
+<ol>
+<li>优化start_thread()中的 <code>__riscv_v_state</code> 分配；</li>
+<li>通过延迟保存/恢复来优化向量上下文切换函数；</li>
+<li>添加AMP支持，以支持具有不同ISA的harts。</li>
+</ol>
+<hr>
+<h2 id="21-lazy-saverestore">2.1 Lazy save/restore
+</h2><p>[<a class="link" href="https://lore.kernel.org/all/20230605110724.21391-1-andy.chiu@sifive.com/"  target="_blank" rel="noopener"
+    >PATCH -next v21 00/27] riscv: Add vector ISA support - Andy Chiu (kernel.org)</a></p>
+<h3 id="non-virtualization">non-virtualization
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">riscv_v_vstate_off</span><span class="p">(</span><span class="k">struct</span> <span class="n">pt_regs</span> <span class="o">*</span><span class="n">regs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">regs</span><span class="o">-&gt;</span><span class="n">status</span> <span class="o">=</span> <span class="p">(</span><span class="n">regs</span><span class="o">-&gt;</span><span class="n">status</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">SR_VS</span><span class="p">)</span> <span class="o">|</span> <span class="n">SR_VS_OFF</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="k">struct</span> <span class="n">linux_binfmt</span> <span class="n">elf_format</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="p">.</span><span class="n">module</span>		<span class="o">=</span> <span class="n">THIS_MODULE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="p">.</span><span class="n">load_binary</span>	<span class="o">=</span> <span class="n">load_elf_binary</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="p">.</span><span class="n">load_shlib</span>	<span class="o">=</span> <span class="n">load_elf_library</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef CONFIG_COREDUMP
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>	<span class="p">.</span><span class="n">core_dump</span>	<span class="o">=</span> <span class="n">elf_core_dump</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="p">.</span><span class="n">min_coredump</span>	<span class="o">=</span> <span class="n">ELF_EXEC_PAGESIZE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">kernel_entry*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> start_kernel
+</span></span></span><span class="line"><span class="cl"><span class="cm">    setup_arch*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     trap_init*
+</span></span></span><span class="line"><span class="cl"><span class="cm">        mm_init
+</span></span></span><span class="line"><span class="cl"><span class="cm">            mem_init*
+</span></span></span><span class="line"><span class="cl"><span class="cm">        init_IRQ*
+</span></span></span><span class="line"><span class="cl"><span class="cm">        time_init*
+</span></span></span><span class="line"><span class="cl"><span class="cm">        rest_init
+</span></span></span><span class="line"><span class="cl"><span class="cm">            kernel_thread
+</span></span></span><span class="line"><span class="cl"><span class="cm">            kernel_thread
+</span></span></span><span class="line"><span class="cl"><span class="cm">            cpu_startup_entry
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">do_execve</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="n">load_elf_binary</span>
+</span></span><span class="line"><span class="cl">		<span class="o">+-&gt;</span><span class="n">begin_new_exec</span>
+</span></span><span class="line"><span class="cl">			<span class="o">+-&gt;</span> <span class="n">flush_thread</span>
+</span></span><span class="line"><span class="cl">				<span class="o">+-&gt;</span> <span class="n">riscv_v_vstate_off</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>内核中实际执行execv()或execve()系统调用的程序是 <code>do_execve()</code>，这个函数先打开目标映像文件，并从目标文件的头部（第一个字节开始）读入若干（当前Linux内核中是128）字节（实际上就是填充ELF文件头），然后调用另一个函数 <code>search_binary_handler()</code>，在此函数里面，它会搜索我们上面提到的Linux支持的可执行文件类型队列，让各种可执行程序的处理程序前来认领和处理。如果类型匹配，则调用 <code>load_binary</code> 函数指针所指向的处理函数来处理目标映像文件。在ELF文件格式中，处理函数是<code>load_elf_binary</code> 函数。</p>
+<hr>
+<h4 id="vector-trap处理">vector trap处理
+</h4><p>[<a class="link" href="https://lore.kernel.org/all/20230605110724.21391-12-andy.chiu@sifive.com/"  target="_blank" rel="noopener"
+    >PATCH -next v21 11/27] riscv: Allocate user&rsquo;s vector context in the first-use trap - Andy Chiu (kernel.org)</a></p>
+<p>向量单元对于所有用户进程默认情况下是禁用的。因此，当一个进程第一次使用向量单元时，它会触发一个陷阱（非法指令），将控制权转移到内核。在接收到陷阱后，内核为该特定用户进程分配一个向量上下文，并开始管理该上下文。从那时起，内核将处理用户进程的向量上下文，使其能够使用向量单元进行向量操作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="o">+</span><span class="n">asmlinkage</span> <span class="n">__visible</span> <span class="n">__trap_section</span> <span class="kt">void</span> <span class="nf">do_trap_insn_illegal</span><span class="p">(</span><span class="k">struct</span> <span class="n">pt_regs</span> <span class="o">*</span><span class="n">regs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="k">if</span> <span class="p">(</span><span class="nf">user_mode</span><span class="p">(</span><span class="n">regs</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="nf">irqentry_enter_from_user_mode</span><span class="p">(</span><span class="n">regs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="nf">local_irq_enable</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">riscv_v_first_use_handler</span><span class="p">(</span><span class="n">regs</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>			<span class="nf">do_trap_error</span><span class="p">(</span><span class="n">regs</span><span class="p">,</span> <span class="n">SIGILL</span><span class="p">,</span> <span class="n">ILL_ILLOPC</span><span class="p">,</span> <span class="n">regs</span><span class="o">-&gt;</span><span class="n">epc</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>				      <span class="s">&#34;Oops - illegal instruction&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="nf">irqentry_exit_to_user_mode</span><span class="p">(</span><span class="n">regs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="kt">irqentry_state_t</span> <span class="n">state</span> <span class="o">=</span> <span class="nf">irqentry_nmi_enter</span><span class="p">(</span><span class="n">regs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="nf">do_trap_error</span><span class="p">(</span><span class="n">regs</span><span class="p">,</span> <span class="n">SIGILL</span><span class="p">,</span> <span class="n">ILL_ILLOPC</span><span class="p">,</span> <span class="n">regs</span><span class="o">-&gt;</span><span class="n">epc</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>			      <span class="s">&#34;Oops - illegal instruction&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="nf">irqentry_nmi_exit</span><span class="p">(</span><span class="n">regs</span><span class="p">,</span> <span class="n">state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">+</span><span class="kt">bool</span> <span class="nf">riscv_v_first_use_handler</span><span class="p">(</span><span class="k">struct</span> <span class="n">pt_regs</span> <span class="o">*</span><span class="n">regs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="n">u32</span> <span class="n">__user</span> <span class="o">*</span><span class="n">epc</span> <span class="o">=</span> <span class="p">(</span><span class="n">u32</span> <span class="n">__user</span> <span class="o">*</span><span class="p">)</span><span class="n">regs</span><span class="o">-&gt;</span><span class="n">epc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="n">u32</span> <span class="n">insn</span> <span class="o">=</span> <span class="p">(</span><span class="n">u32</span><span class="p">)</span><span class="n">regs</span><span class="o">-&gt;</span><span class="n">badaddr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="cm">/* Do not handle if V is not supported, or disabled */</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">ELF_HWCAP</span> <span class="o">&amp;</span> <span class="n">COMPAT_HWCAP_ISA_V</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="cm">/* If V has been enabled then it is not the first-use trap */</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="k">if</span> <span class="p">(</span><span class="nf">riscv_v_vstate_query</span><span class="p">(</span><span class="n">regs</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="cm">/* Get the instruction */</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">insn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="k">if</span> <span class="p">(</span><span class="nf">__get_user</span><span class="p">(</span><span class="n">insn</span><span class="p">,</span> <span class="n">epc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>			<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="cm">/* Filter out non-V instructions */</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">insn_is_vector</span><span class="p">(</span><span class="n">insn</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="cm">/* Sanity check. datap should be null by the time of the first-use trap */</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="nf">WARN_ON</span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="kr">thread</span><span class="p">.</span><span class="n">vstate</span><span class="p">.</span><span class="n">datap</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">+	 * Now we sure that this is a V instruction. And it executes in the
+</span></span></span><span class="line"><span class="cl"><span class="cm">+	 * context where VS has been off. So, try to allocate the user&#39;s V
+</span></span></span><span class="line"><span class="cl"><span class="cm">+	 * context and resume execution.
+</span></span></span><span class="line"><span class="cl"><span class="cm">+	 */</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="k">if</span> <span class="p">(</span><span class="nf">riscv_v_thread_zalloc</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="nf">force_sig</span><span class="p">(</span><span class="n">SIGBUS</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>		<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="nf">riscv_v_vstate_on</span><span class="p">(</span><span class="n">regs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span>	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span><span class="p">}</span>   
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就如同 riscv_vector_spec 中描述的：</p>
+<blockquote>
+<p>Accurate setting of <code>mstatus.VS</code> is an optimization. Software will typically use VS to reduce context-swap overhead.</p>
+</blockquote>
+<p>内核启动默认关闭 <code>mstatus.VS</code>，用户态程序首次执行 vector 指令会触发Trap，这是一个非法指令异常。随后内核会判断该指令是否为vector指令以及是否首次执行，一切确定后则设置 <code>mstatus.VS = INITIAL</code> 并分配vector_context内存，返回用户态后程序就能正常执行vector指令了。</p>
+<p>vector上下文的保存恢复函数为 <code>__switch_to_vector</code>，该函数就在常规的调度控制流中，且与常规的 <code>x0~x31</code> 寄存器保存/恢复流程解耦，分布在不同的函数中。Linux内核将其称之为 “lazy store/restore”，在 <code>vector_store/restore</code> 函数中实际上存在对 <code>mstatus.VS</code> 的判断，这一举动**可以在用户态程序不用vector指令的情况下帮助内核节省下一大笔开销，**具体来说：</p>
+<ul>
+<li>当 <code>mstatus.VS == OFF</code>时：内核不需要保存/恢复vector上下文，因为用户态程序根本没使用过这些vector寄存器组；</li>
+<li>当 <code>mstatus.VS != OFF</code> 时：内核需要保存/恢复vector上下文，表示用户态程序使用了vector寄存器组；</li>
+</ul>
+<p><code>mstatus.VS</code> 提供了一种用户态程序通知内核的硬件机制，触发Trap时相当于告诉内核：“用户确实使用了vector，请内核使能必要的vector工作”。</p>
+<hr>
+<h4 id="当前的lazy还不够">当前的Lazy还不够
+</h4><p>为什么这么说，因为目前的实现在开启 <code>mstatus.VS</code> 之后vector_context的保存/恢复工作似乎无法阻拦了，那么在任何场景下都必须执行这些工作吗？并不是，具体见 <code>3.1</code>。</p>
+<hr>
+<h3 id="virtualization">virtualization
+</h3><p>目前内核对 vector 虚拟化的支持不完善，主要体现在两方面：</p>
+<ul>
+<li>vector_contex的host/guest管理；</li>
+<li>guest侧vector_trap处理；</li>
+</ul>
+<hr>
+<h4 id="vector_context保存恢复">vector_context保存/恢复
+</h4><p>[<a class="link" href="https://lore.kernel.org/all/20230605110724.21391-20-andy.chiu@sifive.com/"  target="_blank" rel="noopener"
+    >PATCH -next v21 19/27] riscv: KVM: Add vector lazy save/restore support - Andy Chiu (kernel.org)</a></p>
+<blockquote>
+<p>为区分不同的执行流，命名如下：</p>
+<ol>
+<li>宿主机内核态vcpu线程：vcpu_host_kernel</li>
+<li>宿主机用户态vcpu线程：vcpu_host_user</li>
+<li>虚拟机内核态vcpu线程：vcpu_guest_kernel</li>
+<li>虚拟机用户态vcpu线程：vcpu_guest_user</li>
+</ol>
+</blockquote>
+<p>在虚拟化模型中，涉及CPU上下文保存恢复的场景有 ( <code>/</code> 左侧为需要保存到内存的执行流状态，右侧为需要恢复到CPU寄存器上的执行流状态)：</p>
+<ul>
+<li>
+<p>host/guest world switch (vcpu线程进入退出)</p>
+<ul>
+<li>
+<p>相关函数：<code>__kvm_riscv_switch_to/__kvm_switch_return</code></p>
+</li>
+<li>
+<p><code>vcpu_host_kernel/vcpu_guest_kernel</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>host对vcpu线程的全局调度</p>
+<ul>
+<li>
+<p>相关函数：<code>vcpu_load/vcpu_put</code></p>
+</li>
+<li>
+<p>对两个vcpu线程的切换，如果被抢占的vcpu线程处于guest-Mode，除了做world switch外还需要做不同vcpu线程的上下文切换：</p>
+<ul>
+<li>step_1：<code>vcpu_guest_kernel/vcpu_host_kernel</code></li>
+<li>step_2：<code>vcpu_host_kernel_prev/vcpu_host_kernel_next</code></li>
+<li>step_3：<code>vcpu_host_kernel/vcpu_guest_kernel</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>退出到host user处理guest异常</p>
+<ul>
+<li>
+<p>相关函数：<code>vcpu_load/vcpu_put</code></p>
+</li>
+<li>
+<p>先做world switch，再做trap return：</p>
+<ul>
+<li>step_1：<code>vcpu_guest_kernel/vcpu_host_kernel</code></li>
+<li>step_2：<code>vcpu_host_kernel/vcpu_host_user</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc6/C/ident/kvm_arch_vcpu_load"  target="_blank" rel="noopener"
+    >https://elixir.bootlin.com/linux/v6.7-rc6/C/ident/kvm_arch_vcpu_load</a></p>
+<p><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc6/C/ident/kvm_arch_vcpu_put"  target="_blank" rel="noopener"
+    >https://elixir.bootlin.com/linux/v6.7-rc6/C/ident/kvm_arch_vcpu_put</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">kvm_arch_vcpu_load</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_host_fp_save</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">host_context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_guest_fp_restore</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">guest_context</span><span class="p">,</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">isa</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_host_vector_save</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">host_context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_guest_vector_restore</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">guest_context</span><span class="p">,</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">isa</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">kvm_arch_vcpu_put</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_guest_fp_save</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">guest_context</span><span class="p">,</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">isa</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_host_fp_restore</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">host_context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_guest_vector_save</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">guest_context</span><span class="p">,</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">isa</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">kvm_riscv_vcpu_host_vector_restore</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">host_context</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>存在的缺陷：</p>
+<ul>
+<li>
+<p>对于 <code>kvm_arch_vcpu_load</code>：</p>
+<ul>
+<li>
+<p><code>kvm_riscv_vcpu_host_fp_save/kvm_riscv_vcpu_host_vector_save</code></p>
+<p>仅检查是否支持f扩展，就直接保存host状态 =&gt; 考虑guest对fp/vector的使用情况，应该延迟保存</p>
+</li>
+<li>
+<p><code>kvm_riscv_vcpu_guest_fp_restore/kvm_riscv_vcpu_guest_vector_restore</code></p>
+<p>仅检查 <code>vsstatus.FS != SR_FS_OFF</code> 和 <code>vsstatus.VS != SR_VS_OFF </code>，说明guest已允许float/vector指令的执行，直接恢复guest状态</p>
+<ul>
+<li>如果条件判断为guest禁用了float/vector_trap，恢复其上下文完全没有问题；但考虑这样一种情况：host没使用过float/vector指令，当前pCPU的float/vector寄存器仅为guest所用，guest此时完全不需要执行本次恢复工作。</li>
+<li>如果条件判断为guest启用了float/vector_trap，那么之前的host状态完全没必须要保存；</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>put 操作同理</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="guest发生vector_trap处理">guest发生vector_trap处理
+</h4><h2 id="22-delayed-update-strategy">2.2 *Delayed update strategy
+</h2><h3 id="non-virtualization-1">non-virtualization
+</h3><blockquote>
+<p>见3.1</p>
+</blockquote>
+<h3 id="virtualization-1">virtualization
+</h3><ul>
+<li><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc6/source/arch/arm64/kvm/hyp/include/hyp/switch.h#L299"  target="_blank" rel="noopener"
+    >switch.h - arch/arm64/kvm/hyp/include/hyp/switch.h - Linux source code (v6.7-rc6) - Bootlin</a></li>
+<li><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc6/C/ident/FP_STATE_GUEST_OWNED"  target="_blank" rel="noopener"
+    >https://elixir.bootlin.com/linux/v6.7-rc6/C/ident/FP_STATE_GUEST_OWNED</a></li>
+</ul>
+<h1 id="3-armv8-fpsimdsve内核支持">3 ARMv8 FPSIMD/SVE内核支持
+</h1><h2 id="31-linux-arm引入的fpsimd状态跟踪机制">3.1 Linux-ARM引入的FPSIMD状态跟踪机制
+</h2><p><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc6/source/arch/arm64/kernel/fpsimd.c"  target="_blank" rel="noopener"
+    >fpsimd.c - arch/arm64/kernel/fpsimd.c - Linux source code (v6.7-rc6) - Bootlin</a></p>
+<p>（注意：在本讨论中，关于FPSIMD的陈述同样适用于SVE。）</p>
+<p>为了减少不必要地保存和恢复FPSIMD状态的次数，我们需要跟踪两件事情：</p>
+<ul>
+<li>对于每个任务，我们需要记住最后一个将任务的FPSIMD状态加载到其FPSIMD寄存器中的CPU是哪一个；</li>
+<li>对于每个CPU，我们需要记住最近加载到其FPSIMD寄存器中的用户态FPSIMD状态属于哪个任务，或者在此期间是否已被用于执行内核模式NEON操作。</li>
+</ul>
+<p>对于（a），我们向thread_struct添加了一个fpsimd_cpu字段，每当状态被加载到CPU上时，该字段会更新为当前CPU的ID。对于（b），我们添加了每个CPU的变量 <code>fpsimd_last_state</code>，其中包含最近加载到CPU上的任务的用户空间FPSIMD状态的地址，如果在此之后执行了内核模式NEON，则为NULL。</p>
+<p>有了这个设置，我们在任务切换时就不再需要立即恢复下一个FPSIMD状态。相反，我们可以将这个检查推迟到用户空间的恢复阶段，在这个阶段我们验证CPU的 <code>fpsimd_last_state</code> 和任务的 <code>fpsimd_cpu</code> 是否仍然保持同步。如果是这种情况，我们可以省略FPSIMD的恢复操作。</p>
+<p>作为一种优化，我们使用线程信息标志 <code>TIF_FOREIGN_FPSTATE</code> 来指示当前任务的用户态FPSIMD状态是否存在于寄存器中。除非当前CPU的FPSIMD寄存器当前包含当前任务的最新用户态FPSIMD状态，否则设置该标志。如果任务表现为虚拟机监视器（VMM），则由KVM管理，KVM将清除该标志以指示vcpu的FPSIMD状态当前加载在CPU上，以便在FPSIMD感知的软中断触发时保存状态。在vcpu_put()时，KVM将保存vcpu的FP状态并标记寄存器状态为无效。</p>
+<p>为了允许softirq处理程序使用FPSIMD，<code>kernel_neon_begin()</code> 可能会在softirq上下文中将任务的FPSIMD上下文保存回task_struct。
+为了防止这与任务上下文中的FPSIMD状态的操作竞争，并因此破坏状态，有必要使用 <code>{，__}get_cpu_fpsimd_context()</code> 保护对任务的fpsimd_state或TIF_FOREIGN_FPSTATE标志的任何操作。这仍将允许softirq运行，但防止它们使用FPSIMD。</p>
+<p>对于某个任务，其序列可能如下所示：</p>
+<ul>
+<li>**任务被调度：**如果任务的fpsimd_cpu字段包含当前CPU的ID，且CPU的 <code>fpsimd_last_state</code> per-cpu变量指向任务的fpsimd_state，TIF_FOREIGN_FPSTATE标志位被清除，否则被设置；</li>
+<li>**任务返回到用户空间：**如果设置了TIF_FOREIGN_FPSTATE标志，任务的用户空间FPSIMD状态将从内存复制到寄存器中，任务的fpsimd_cpu字段将设置为当前CPU的ID，当前CPU的 <code>fpsimd_last_state</code> 指针将设置为该任务的fpsimd_state，并清除TIF_FOREIGN_FPSTATE标志；</li>
+<li>**该任务执行一个普通的系统调用：**当返回到用户空间时，TIF_FOREIGN_FPSTATE标志仍将被清除，因此不会恢复FPSIMD状态；</li>
+<li>**该任务执行一个系统调用，该系统调用执行一些NEON指令：**在此之前，调用 <code>kernel_neon_begin()</code> 函数，将任务的FPSIMD寄存器内容复制到内存中，清除fpsimd_last_state每CPU变量，并设置TIF_FOREIGN_FPSTATE标志；</li>
+<li>**在调用kernel_neon_end()之后，任务被抢占：**由于我们还没有从第二个系统调用中返回，TIF_FOREIGN_FPSTATE仍然被设置，因此FPSIMD寄存器中的内容不会被保存到内存中，而是被丢弃。</li>
+</ul>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312201753572.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="fpsimd_reduce_switch_times.drawio"
+	
+	
+></p>
+<ol>
+<li>
+<p><strong>task0首次被调度：</strong></p>
+<blockquote>
+<p>判断是否保持同步
+* task0-&gt;fpsimd_cpu ?= pCPU0;
+* fpsimd_last_state ?= task0;
+=&gt;
+TIF_FOREIGN_FPSTATE = true;</p>
+</blockquote>
+</li>
+<li>
+<p><strong>task0返回用户态：</strong></p>
+<blockquote>
+<p>* 判断TIF_FOREIGN_FPSTATE，这里为TRUE，
+那就恢复FPSIMD状态到寄存器上；
+* task0-&gt;fpsimd_cpu = pCPU0;
+* fpsimd_last_state = task0;
+* TIF_FOREIGN_FPSTATE = false;</p>
+</blockquote>
+</li>
+<li>
+<p><strong>task0在用户态主动或被动地让出CPU控制权：</strong></p>
+<blockquote>
+<p>注意：并不是被另一个task抢占，这种情况也比较常见，而且假设在task0等待期间pCPU0处于闲置状态，即pCPU0并没有装载其它task的上下文。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>task0再次被调度运行，目标CPU仍然为pCPU0：</strong></p>
+<blockquote>
+<p>还是判断和1）相同的两个变量，看是否同步，此时：
+task0-&gt;fpsimd_cpu = pCPU0；
+fpsimd_last_state = task0;
+=&gt; TIF_FOREIGN_FPSTATE = false;</p>
+</blockquote>
+</li>
+<li>
+<p><strong>task0再次返回用户态：</strong></p>
+<blockquote>
+<p>task0再次被调度运行，目标CPU仍然为pCPU0：</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="32-针对虚拟化场景的优化">3.2 针对虚拟化场景的优化
+</h2><h4 id="linux-kvm-arm">Linux KVM-ARM
+</h4><h5 id="patch">PATCH
+</h5><p>[<a class="link" href="https://lore.kernel.org/all/20221115094640.112848-1-broonie@kernel.org/"  target="_blank" rel="noopener"
+    >PATCH v5 0/8] arm64/sve: Clean up KVM integration and optimise syscalls - Mark Brown (kernel.org)</a></p>
+<p>该补丁系列试图澄清在支持SVE系统中跟踪哪组浮点寄存器的保存情况，特别是与KVM相关的情况，并利用这种澄清结果来提高用户空间使用SVE的简单系统调用的性能。</p>
+<p>目前，我们通过为当前任务使用的TIF_SVE标志来跟踪活动的寄存器状态，该标志还控制用户空间是否能使用SVE，这在一定程度上是相对简单的，但对于KVM来说稍微复杂一些，因为我们可能在寄存器中加载了客户机状态。这导致KVM在客户机运行时修改VMM任务的TIF_SVE，这并没有完全有助于使事情易于理解。为了使事情更清晰，该系列对此进行了更改，除了TIF_SVE之外，我们还明确跟踪了当前保存在任务结构体中的寄存器类型以及在保存时应该保存的寄存器类型。</p>
+<blockquote>
+<p>因此，TIF_SVE仅控制用户空间是否可以无需陷阱地使用SVE，对于KVM客户机而言，它没有功能，我们可以从KVM中删除管理它的代码。</p>
+</blockquote>
+<p>通过添加单独的跟踪，重新设计的工作开始进行，同时还添加了在查看分离的状态之前对状态进行验证的检查。此举的目标是将重复性更高的部分拆分出来，并更容易调试可能出现的任何问题。</p>
+<p>在单独跟踪状态后，我们开始优化使用SVE的系统调用的性能。目前，每个系统调用都会为用户空间禁用SVE，这意味着下一个SVE指令需要再次陷入EL1，刷新SVE寄存器，并为EL0重新启用SVE，从而为混合使用SVE和系统调用的任务创建了开销。借助上述的重新设计，我们通过在不需要从内存重新加载状态时保持SVE启用，来消除对直接返回用户空间的简单系统调用的开销，这意味着如果系统调用不阻塞，我们避免了下一次使用SVE时陷入EL1的开销。</p>
+<p>该系列还包括一个相关的补丁，简化了 <code>fpsimd_bind_state_to_cpu()</code> 的接口，减少了该函数接受的大量参数。不管有没有这个系列的影响，这已经是一个问题，但该系列进一步放放大了这个问题，如果这种方法对大家都可以接受，我们可以在更多地方使用该结构体。为了避免用户可见的改进被代码清理所拖延，此补丁被放在最后。</p>
+<hr>
+<p>[<a class="link" href="https://lore.kernel.org/all/20220610092838.1205755-5-maz@kernel.org/#r"  target="_blank" rel="noopener"
+    >PATCH v2 04/19] KVM: arm64: Move FP state ownership from flag to a tristate - Marc Zyngier (kernel.org)</a></p>
+<p>KVM FP代码使用一对标志来表示三种状态：</p>
+<ul>
+<li>设置FP_ENABLED：客户机拥有FP状态</li>
+<li>设置FP_HOST：主机拥有FP状态</li>
+<li>清除FP_ENABLED和FP_HOST：没有任何人拥有FP状态</li>
+</ul>
+<p>同时设置两个标志是非法状态，但没有任何地方会检查这种状态&hellip;</p>
+<p>事实证明，这对标志并不是一个好的匹配方式，如果我们将其改为更简单的三态，并且每个状态都有一个实际反映状态的名称，那会更好：</p>
+<ul>
+<li>FP_STATE_FREE（空闲状态）</li>
+<li>FP_STATE_HOST_OWNED（主机拥有状态）</li>
+<li>FP_STATE_GUEST_OWNED（客户机拥有状态）</li>
+</ul>
+<p>删除这两个标志，并改为使用枚举来表示这三种状态。这样可以减少令人困惑的代码，并减少忘记清除两个标志中的一个而导致进入未知领域的风险。</p>
+<hr>
+<h4 id="fpsimdsve虚拟化框架分析">fpsimd/sve虚拟化框架分析
+</h4><p><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc7/C/ident/kvm_hyp_handle_fpsimd"  target="_blank" rel="noopener"
+    >https://elixir.bootlin.com/linux/v6.7-rc7/C/ident/kvm_hyp_handle_fpsimd</a></p>
+<p>在armv8中，fp和sve复用一套寄存器，可以看到在函数中针对sve的处理为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* SVE exposed to guest */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define GUEST_HAS_SVE		__vcpu_single_flag(cflags, BIT(0))
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define vcpu_has_sve(vcpu) (system_supports_sve() &amp;&amp;			\
+</span></span></span><span class="line"><span class="cl"><span class="cp">			    vcpu_get_flag(vcpu, GUEST_HAS_SVE))
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">bool</span> <span class="nf">kvm_hyp_handle_fpsimd</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">u64</span> <span class="o">*</span><span class="n">exit_code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">sve_guest</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u8</span> <span class="n">esr_ec</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u64</span> <span class="n">reg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">system_supports_fpsimd</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">sve_guest</span> <span class="o">=</span> <span class="nf">vcpu_has_sve</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">esr_ec</span> <span class="o">=</span> <span class="nf">kvm_vcpu_trap_get_class</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Only handle traps the vCPU can support here: */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="p">(</span><span class="n">esr_ec</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nl">ESR_ELx_EC_FP_ASIMD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nl">ESR_ELx_EC_SVE</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">sve_guest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Valid trap.  Switch the context: */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* First disable enough traps to allow us to update the registers */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Write out the host state if it&#39;s in the registers */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">==</span> <span class="n">FP_STATE_HOST_OWNED</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">__fpsimd_save_state</span><span class="p">(</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">host_fpsimd_state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Restore the guest state */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">sve_guest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">__hyp_sve_restore_guest</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">__fpsimd_restore_state</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">ctxt</span><span class="p">.</span><span class="n">fp_regs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">=</span> <span class="n">FP_STATE_GUEST_OWNED</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到，在arm中guest首次访问fp/sve被定义为不同类型的异常，因为当硬件支持SVE时fp/sve复用一套寄存器组，各自对恢复上下文的处理方式得到了统一：</p>
+<ul>
+<li><code>ESR_ELx_EC_FP_ASIMD</code>
+<ul>
+<li><code>sve_guest == true</code>：恢复至SVE寄存器组的低bit；</li>
+<li><code>sve_guest == false</code>：guest不支持sve，恢复至传统的fp_regs；</li>
+</ul>
+</li>
+<li><code>ESR_ELx_EC_SVE</code>
+<ul>
+<li><code>sve_guest == true</code>：恢复至SVE寄存器组的完整bit；</li>
+<li><code>sve_guest == false</code>：Invalid Trap!!!</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>疑问：riscv支持vector扩展时，是否和fp复用一套寄存器？</p>
+<p>这关系到vector_guest启用时，恢复哪些寄存器组，涉及到代码结构的设计。</p>
+</blockquote>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* Check whether the FP regs are owned by the guest */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="nf">guest_owns_fp_regs</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">==</span> <span class="n">FP_STATE_GUEST_OWNED</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

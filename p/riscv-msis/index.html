@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 参考 RISC-V Is Getting MSIs! – Stephen Marz\nsgmarz/riscv_msi: Message Signaled Interrupts for RISC-V (github.com)\nAIA草案手册是由约翰·豪泽（John Hauser）编写的，可以在此处找到：https://github.com/riscv/riscv-aia。\n">
+<title>Riscv MSIs</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/riscv-msis/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Riscv MSIs">
+<meta property='og:description' content="0 参考 RISC-V Is Getting MSIs! – Stephen Marz\nsgmarz/riscv_msi: Message Signaled Interrupts for RISC-V (github.com)\nAIA草案手册是由约翰·豪泽（John Hauser）编写的，可以在此处找到：https://github.com/riscv/riscv-aia。\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/riscv-msis/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T09:51:39&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T09:51:39&#43;08:00'/>
+<meta name="twitter:title" content="Riscv MSIs">
+<meta name="twitter:description" content="0 参考 RISC-V Is Getting MSIs! – Stephen Marz\nsgmarz/riscv_msi: Message Signaled Interrupts for RISC-V (github.com)\nAIA草案手册是由约翰·豪泽（John Hauser）编写的，可以在此处找到：https://github.com/riscv/riscv-aia。\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#21-中断文件的mmio地址">2.1 中断文件的MMIO地址</a></li>
+    <li><a href="#22-通过发送消息来触发一个中断">2.2 通过发送消息来触发一个中断</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-新增的寄存器">3.1 新增的寄存器</a></li>
+    <li><a href="#32-使能imsic">3.2 使能IMSIC</a></li>
+    <li><a href="#33-中断优先级">3.3 中断优先级</a></li>
+    <li><a href="#34-使能信号">3.4 使能信号</a></li>
+    <li><a href="#35-挂起信号">3.5 挂起信号</a></li>
+    <li><a href="#36-测试">3.6 测试</a></li>
+    <li><a href="#37-信号traps">3.7 信号Traps</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/riscv-msis/">Riscv MSIs</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 8 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-参考">0 参考
+</h1><p><a class="link" href="https://blog.stephenmarz.com/2022/06/30/msi/"  target="_blank" rel="noopener"
+    >RISC-V Is Getting MSIs! – Stephen Marz</a></p>
+<p><a class="link" href="https://github.com/sgmarz/riscv_msi"  target="_blank" rel="noopener"
+    >sgmarz/riscv_msi: Message Signaled Interrupts for RISC-V (github.com)</a></p>
+<p>AIA草案手册是由约翰·豪泽（John Hauser）编写的，可以在此处找到：https://github.com/riscv/riscv-aia。</p>
+<h1 id="1-概述">1 概述
+</h1><p>消息信号中断是一种在没有专用中断请求引脚（IRQ）的情况下发出中断信号的方法。MSI在PCI总线上是最常见的用途之一，PCI规范定义了MSI和MSI-X标准。其优势包括：</p>
+<ul>
+<li>减少设备与CPU或中断控制器之间的直接线路数量；</li>
+<li>通过设计强制使用带内信号来提高信号传输性能；</li>
+<li>改善虚拟化环境中的宿主/客户端信号传输。</li>
+</ul>
+<p>该代码是用Rust编写的RV32I版本。最初我是为RV64GC编写的，但我写的其他所有内容也都是为RV64GC编写的，所以我认为我应该扩展和拓宽自己的视野。</p>
+<h1 id="2-msi中断">2 MSI中断
+</h1><p>一个MSI是由一个 “消息” 触发的，这个术语是指 “内存写入”。实际上，我们可以通过简单地解引用一个MMIO指针来触发一个消息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Note that 0xdeadbeef is not really a valid message.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// The AIA specifies messages 1 through 2047 are valid due to the number of registers
+</span></span></span><span class="line"><span class="cl"><span class="c1">// available. But, the following is just an example. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xdeadbeef</span><span class="p">;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// QEMU&#39;s &#39;virt&#39; machine attaches the M-mode IMSIC for HART 0 to 0x2400_0000
+</span></span></span><span class="line"><span class="cl"><span class="c1">// The AIA specifies that this must be a word, a double word will cause a trap. 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">write_volatile</span><span class="p">(</span><span class="mh">0x2400_0000</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="o">*</span><span class="k">mut</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="21-中断文件的mmio地址">2.1 中断文件的MMIO地址
+</h2><p>上面的代码将写入到 MMIO 地址 <code>0x2400_0000</code> ，这是QEMU的 <code>virt</code> 机器连接到 HART 0 的M模式IMSIC的位置。HART 0 的S模式IMSIC将连接到 <code>0x2800_0000</code> 。每个HART相隔一页，意味着HART 1的M模式IMSIC位于 <code>0x2400_1000</code>，而S模式IMSIC位于 <code>0x2800_1000</code>。</p>
+<p>对于许多嵌入式系统来说，这些值可以来自规范或包含扁平设备树（FDT）的开放固件（OF）包。下面是QEMU的 <code>virt FDT</code> 的纯文本示例。对于这个代码仓，我硬编码了MMIO地址，而不是读取设备树。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">imsics</span><span class="o">@</span><span class="mi">24000000</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">phandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x09</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">riscv</span><span class="p">,</span><span class="n">ipi</span><span class="o">-</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x01</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">riscv</span><span class="p">,</span><span class="n">num</span><span class="o">-</span><span class="n">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0xff</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x24000000</span><span class="w"> </span><span class="mh">0x00</span><span class="w"> </span><span class="mh">0x4000</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">interrupts</span><span class="o">-</span><span class="n">extended</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="mh">0x08</span><span class="w"> </span><span class="mh">0x0b</span><span class="w"> </span><span class="mh">0x06</span><span class="w"> </span><span class="mh">0x0b</span><span class="w"> </span><span class="mh">0x04</span><span class="w"> </span><span class="mh">0x0b</span><span class="w"> </span><span class="mh">0x02</span><span class="w"> </span><span class="mh">0x0b</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">msi</span><span class="o">-</span><span class="n">controller</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">interrupt</span><span class="o">-</span><span class="n">controller</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">compatible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;riscv,imsics&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>标准化设备树格式的组织可以在此处找到：https://www.devicetree.org/</p>
+<p>关于Linux中的设备树的更多信息可以在此处找到：https://www.kernel.org/doc/html/latest/devicetree/usage-model.html</p>
+<p>IMSICs最近被添加到QEMU的virt机器中，因此您可能需要克隆和构建自己的QEMU。QEMU的存储库可以在此处找到：https://github.com/qemu。</p>
+<h2 id="22-通过发送消息来触发一个中断">2.2 通过发送消息来触发一个中断
+</h2><p>设备将一个字写入特定的MMIO地址后，中断被触发。这意味着设备不需要连接到IRQ控制器（如RISC-V的平台级中断控制器或PLIC）的线路。只要设备可以进行内存写入，它就可以触发中断。</p>
+<p>尽管触发消息如此简单，但我们需要一种机制来启用和优先处理这些消息。在某些情况下，我们可能不想获取某些消息。这就是IMSIC的作用所在。</p>
+<h1 id="3-imsic">3 IMSIC
+</h1><p>为了支持MSIs，某些设备需要能够接收内存写入并将其转换为中断。此外，该设备还需要提供一种机制来启用/禁用和优先处理中断，就像常规的中断控制器一样。这是通过传入的MSI控制器（IMSIC）设备来实现的。</p>
+<blockquote>
+<p>高级中断架构（AIA）手册仍在进行中，已经进行了一些重大更改，删除或添加了CSR或其他相关信息。因此，一些代码和表可能已经过时。</p>
+</blockquote>
+<p>IMSIC的寄存器机制由几个控制和状态寄存器（CSR）以及通过选择机制可访问的内部寄存器组成。</p>
+<h2 id="31-新增的寄存器">3.1 新增的寄存器
+</h2><p>AIA 在M模式和S模式之间定义了几个新的CSR（控制和状态寄存器）。以下是AIA所定义的新寄存器：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Register Name</th>
+          <th style="text-align: left">Register Number</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">MISELECT</td>
+          <td style="text-align: left">0x350</td>
+          <td style="text-align: left">Machine register select</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">SISELECT</td>
+          <td style="text-align: left">0x150</td>
+          <td style="text-align: left">Supervisor register select</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MIREG</td>
+          <td style="text-align: left">0x351</td>
+          <td style="text-align: left">A R/W view of the selected register in MISELECT</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">SIREG</td>
+          <td style="text-align: left">0x151</td>
+          <td style="text-align: left">A R/W view of the selected register in SISELECT</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MTOPI</td>
+          <td style="text-align: left">0xFB0</td>
+          <td style="text-align: left">Machine top-level interrupt</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">STOPI</td>
+          <td style="text-align: left">0xDB0</td>
+          <td style="text-align: left">Supervisor top-level interrupt</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MTOPEI</td>
+          <td style="text-align: left">0x35C</td>
+          <td style="text-align: left">Machine top-level external interrupt (requires IMSIC)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">STOPEI</td>
+          <td style="text-align: left">0x15C</td>
+          <td style="text-align: left">Supervisor top-level external interrupt (requires IMSIC)</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><code>MISELECT</code> 和 <code>MIREG</code> 允许我们通过将其编号写入 <code>MISELECT</code> 寄存器来选择寄存器。然后，<code>MIREG</code> 将表示所选寄存器。例如，如果我们从 <code>MIREG</code> 读取，我们将从所选寄存器读取，如果我们向 <code>MIREG</code> 写入，我们将向所选寄存器写入。</p>
+<p>有四个可选择的寄存器。这些寄存器有M/S模式版本。例如，如果我们写入 <code>SISELECT</code> ，我们将访问相应寄存器的S模式版本。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Register Name</th>
+          <th style="text-align: left">MISELECT/SISELECT</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">EIDELIVERY</td>
+          <td style="text-align: left">0x70</td>
+          <td style="text-align: left">External Interrupt Delivery Register</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">EITHRESHOLD</td>
+          <td style="text-align: left">0x72</td>
+          <td style="text-align: left">External Interrupt Threshold Register</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">EIP0 through EIP63</td>
+          <td style="text-align: left">0x80 through 0xBF</td>
+          <td style="text-align: left">External Interrupt Pending Registers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">EIE0 through EIE63</td>
+          <td style="text-align: left">0xC0 through 0xFF</td>
+          <td style="text-align: left">External Interrupt Enable Registers</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><code>MISELECT/SISELECT</code> 可选择的寄存器，并可通过 <code>MIREG/SIREG</code> 进行读写。</p>
+<hr>
+<p>首先，我们需要做的第一件事是使能IMSIC本身。这是通过一个名为 “使能中断传递” 的寄存器 <code>EIDELIVERY</code> 完成的。该寄存器可以包含三个值之一：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Value</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Interrupt delivery is disabled</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Interrupt delivery is enabled</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">0x4000_0000</td>
+          <td style="text-align: left">Optional interrupt delivery via a PLIC or APLIC</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="32-使能imsic">3.2 使能IMSIC
+</h2><p>因此，我们需要将 1（使中断传递可用）写入 <code>EIDELIVERY</code> 寄存器中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// First, enable the interrupt file 
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 0 = disabled 
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 1 = enabled 
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 0x4000_0000 = use PLIC instead 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MISELECT</span><span class="p">,</span><span class="w"> </span><span class="no">EIDELIVERY</span><span class="p">);</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MIREG</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="33-中断优先级">3.3 中断优先级
+</h2><p><code>EITHRESHOLD</code> 寄存器保存了一个中断优先级阈值，只优先级更高的中断才能被响应。例如，如果一个中断的优先级值低于 <code>EITHRESHOLD</code> 中的值（值低这说明优先级更高），它将被“响应”或解屏蔽。否则，它将被屏蔽，无法被响应。例如，<code>EITHRESHOLD</code> 为 5 只允许消息1、2、3和4被响应。注意，消息 0 被保留为 “无消息” 的意义。</p>
+<blockquote>
+<p>由于较高的阈值打开了更多的消息，因此具有较低编号的消息具有较高的优先级。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Set the interrupt threshold.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 0 = enable all interrupts
+</span></span></span><span class="line"><span class="cl"><span class="c1">// P = enable &lt; P only
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MISELECT</span><span class="p">,</span><span class="w"> </span><span class="no">EITHRESHOLD</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Only hear 1, 2, 3, and 4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MIREG</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>AIA规范中使用消息本身作为优先级。因此，消息1的优先级为1，而消息1、2、3、4的优先级为1、2、3、4。这更方便，因为我们可以直接控制消息。然而，由于每个消息号都有关联的启用和挂起位，因此最高编号的中断存在限制。规范的最大总消息数为 <code>32×64-1=2,047</code>（我们减去1以去除0作为有效消息）。</p>
+<h2 id="34-使能信号">3.4 使能信号
+</h2><p><code>EIE</code> 寄存器将控制消息的启用或禁用。对于RV64，这些寄存器的宽度为64位，但仍占用两个相邻的寄存器编号。因此，对于RV64，只能选择偶数编号的寄存器（例如，EIE0、EIE2、EIE4，&hellip;，EIE62）。如果尝试选择奇数编号的EIE，将会触发无效指令陷阱。尽管文档中明确说明这是期望的行为，但我花了很多时间才弄清楚这一点。对于RV32，<code>EIE</code> 寄存器仅为32位，EIE0到EIE63都是可选的。</p>
+<p><code>EIE</code> 寄存器是一个位集。如果相应消息的位为 1，则未屏蔽且已启用，否则被屏蔽且已禁用。对于RV64，消息0到63都位于 <code>EIE0[63:0]</code> 中。位表示消息。我们可以使用以下公式确定RV64要选择的寄存器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Enable a message number for machine mode (RV64)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">imsic_m_enable</span><span class="p">(</span><span class="n">which</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">eiebyte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">EIE0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">bit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MISELECT</span><span class="p">,</span><span class="w"> </span><span class="n">eiebyte</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imsic_read</span><span class="p">(</span><span class="no">MIREG</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MIREG</span><span class="p">,</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bit</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>RV32的行为基本相同，唯一不同的是我们不需要将其乘以2来进行缩放。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Enable a message number for machine mode (RV32)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">imsic_m_enable</span><span class="p">(</span><span class="n">which</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">eiebyte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">EIE0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">bit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MISELECT</span><span class="p">,</span><span class="w"> </span><span class="n">eiebyte</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imsic_read</span><span class="p">(</span><span class="no">MIREG</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MIREG</span><span class="p">,</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bit</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用上述代码，我们现在可以启用我们想要响应的消息。以下示例启用了2、4和10号消息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">imsic_m_enable</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">imsic_m_enable</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">imsic_m_enable</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="35-挂起信号">3.5 挂起信号
+</h2><p><code>EIP</code> 寄存器的行为与 <code>EIE</code> 寄存器完全相同，只是其中的某一位为1表示特定的消息处于挂起状态，即已发送带有该消息编号的写操作到IMSIC。</p>
+<p><code>EIP</code> 寄存器可读写。通过从中读取，我们可以确定哪些消息处于挂起状态。通过向其写入，我们可以通过将 1 写入相应的消息位来<strong>手动触发中断消息。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Trigger a message by writing to EIP for Machine mode in RV64
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">imsic_m_trigger</span><span class="p">(</span><span class="n">which</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">eipbyte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">EIP0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">bit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MISELECT</span><span class="p">,</span><span class="w"> </span><span class="n">eipbyte</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imsic_read</span><span class="p">(</span><span class="no">MIREG</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">imsic_write</span><span class="p">(</span><span class="no">MIREG</span><span class="p">,</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bit</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="36-测试">3.6 测试
+</h2><p>既然我们可以启用传递以及单独的消息，我们可以通过以下两种方式触发它们：</p>
+<ul>
+<li>将消息直接写入MMIO地址；</li>
+<li>将相应消息的中断挂起位设置为1。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">unsafe</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// We are required to write only 32 bits.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="c1">// Write the message directly to MMIO to trigger
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">write_volatile</span><span class="p">(</span><span class="mh">0x2400_0000</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="o">*</span><span class="k">mut</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Set the EIP bit to trigger
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">imsic_m_trigger</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="37-信号traps">3.7 信号Traps
+</h2><p>每当一个未屏蔽的消息发送到一个启用的IMSIC时，它将作为外部中断传递到指定的HART。对于M模式的IMSIC，这将作为异步原因 <code>11</code> 传递，而对于S模式的IMSIC，这将作为异步原因 <code>9</code> 传递。</p>
+<p>当我们接收到由于消息传递而引发的中断时，我们需要通过从 <code>MTOPEI</code> 或 <code>STOPEI</code> 寄存器中读取来 “弹出” 顶级待处理中断，具体取决于特权模式。这将为我们提供一个值，其中位 <code>26:16</code> 包含消息编号和位 <code>10:0</code> 包含中断优先级。</p>
+<blockquote>
+<p>是的，消息编号和消息优先级是相同的数字，因此我们可以选择任意一个。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Pop the top pending message
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">imsic_m_pop</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kt">u32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">ret</span>: <span class="kt">u32</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">unsafe</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 0x35C is the MTOPEI CSR.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="fm">asm!</span><span class="p">(</span><span class="s">&#34;csrrw {retval}, 0x35C, zero&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">retval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span><span class="w"> </span><span class="n">ret</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Message number starts at bit 16
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">16</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>我的编译器不支持此规范中的CSR名称，因此我使用了CSR编号。这就是为什么你看到的是 <code>0x35C</code> 而不是 <code>mtopei</code>，但它们表示的是同样的意思。</p>
+<p>当我们从 <code>MTOPEI</code> 寄存器（0x35C）读取时，它将给出最高优先级消息的消息编号。上面代码片段中的 <code>csrrw</code> 指令将原子地将CSR的值读入返回寄存器，然后将值零存储到CSR中。</p>
+<p>当我们将零写入 <code>MTOPEI</code> 寄存器（0x35C）时，我们告诉IMSIC我们正在 “声明” 我们正在处理最顶层的消息，这将清除相应消息编号的 <code>EIP</code> 位。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// Handle an IMSIC trap. Called from `trap::rust_trap`
+</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">imsic_m_handle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">msgnum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imsic_m_pop</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">msgnum</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Spurious message (MTOPEI returned 0)&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mi">2</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;First test triggered by MMIO write successful!&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mi">4</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Second test triggered by EIP successful!&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Unknown msi #</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>第 0 条消息无效，因为当我们从 <code>MTOPEI</code> 中弹出时，0表示 “无中断”。</p>
+<h1 id="4-测例输出">4 测例输出
+</h1><p>如果您使用新的QEMU运行仓库，成功测试后应该会看到以下内容。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312111006215.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231211100658059"
+	
+	
+></p>
+<h1 id="5-结论">5 结论
+</h1><p>在本篇文章中，我们看到了为支持 RISC-V 的新寄存器添加了对即将到来的MSI控制器（IMSIC）的支持。我们还启用了IMSIC传送、单个消息，并处理了发送消息的两种方式：**通过MMIO直接发送或通过设置相应的EIP位。**最后，我们处理了来自陷阱的中断。</p>
+<p>AIA手册的第二部分包括新的高级平台级中断控制器（APLIC）。我们将研究这个系统，并编写驱动程序来开始研究这个新的APLIC如何使用电线或消息进行信号传递。</p>
+<p>在APLIC之后，我们将为PCI设备编写驱动程序，并使用它来发送MSI-X消息。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

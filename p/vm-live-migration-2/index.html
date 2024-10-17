@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 资料 KVM虚拟机热迁移优化策略研究 - 中国知网 (cnki.net) KVM虚拟机热迁移算法分析及优化 - 中国知网 (cnki.net) QEMU/KVM源码解析与应用-李强编著-微信读书 (qq.com) x86 kvm和qemu虚拟化介绍-腾讯云开发者社区-腾讯云 (tencent.com) qemu live migration代码分析-腾讯云开发者社区-腾讯云 (tencent.com) 1 热迁移用法和基本原理 1.1 热迁移使用 虚拟化环境下的热迁移指的是在**虚拟机运行的过程中透明地从源宿主机迁移到目的宿主机，**热迁移的好处是很明显的，QEMU/KVM很早就支持热迁移了。早期的QEMU热迁移仅支持内存热迁移，也就是迁移前后的虚拟机使用一个共享存储，现在的QEMU热迁移已经支持存储的热迁移了。\n">
+<title>Vm Live Migration 2</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/vm-live-migration-2/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Vm Live Migration 2">
+<meta property='og:description' content="0 资料 KVM虚拟机热迁移优化策略研究 - 中国知网 (cnki.net) KVM虚拟机热迁移算法分析及优化 - 中国知网 (cnki.net) QEMU/KVM源码解析与应用-李强编著-微信读书 (qq.com) x86 kvm和qemu虚拟化介绍-腾讯云开发者社区-腾讯云 (tencent.com) qemu live migration代码分析-腾讯云开发者社区-腾讯云 (tencent.com) 1 热迁移用法和基本原理 1.1 热迁移使用 虚拟化环境下的热迁移指的是在**虚拟机运行的过程中透明地从源宿主机迁移到目的宿主机，**热迁移的好处是很明显的，QEMU/KVM很早就支持热迁移了。早期的QEMU热迁移仅支持内存热迁移，也就是迁移前后的虚拟机使用一个共享存储，现在的QEMU热迁移已经支持存储的热迁移了。\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/vm-live-migration-2/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T09:58:09&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T09:58:09&#43;08:00'/>
+<meta name="twitter:title" content="Vm Live Migration 2">
+<meta name="twitter:description" content="0 资料 KVM虚拟机热迁移优化策略研究 - 中国知网 (cnki.net) KVM虚拟机热迁移算法分析及优化 - 中国知网 (cnki.net) QEMU/KVM源码解析与应用-李强编著-微信读书 (qq.com) x86 kvm和qemu虚拟化介绍-腾讯云开发者社区-腾讯云 (tencent.com) qemu live migration代码分析-腾讯云开发者社区-腾讯云 (tencent.com) 1 热迁移用法和基本原理 1.1 热迁移使用 虚拟化环境下的热迁移指的是在**虚拟机运行的过程中透明地从源宿主机迁移到目的宿主机，**热迁移的好处是很明显的，QEMU/KVM很早就支持热迁移了。早期的QEMU热迁移仅支持内存热迁移，也就是迁移前后的虚拟机使用一个共享存储，现在的QEMU热迁移已经支持存储的热迁移了。\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-热迁移使用">1.1 热迁移使用</a></li>
+    <li><a href="#12-热迁移整体概述">1.2 热迁移整体概述</a></li>
+    <li><a href="#13-基本原理">1.3 基本原理</a>
+      <ol>
+        <li><a href="#数据结构">数据结构</a></li>
+        <li><a href="#pre_copy">pre_copy</a></li>
+        <li><a href="#post_copy">post_copy</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/vm-live-migration-2/">Vm Live Migration 2</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 9 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-资料">0 资料
+</h1><ul>
+<li><a class="link" href="https://kns.cnki.net/kcms2/article/abstract?v=ipUboLYjcOXEHBN0AlEk_KKXSUxnt10wQMFI85wTMherf27eA0kpd4CogdsiGR6Oh0yCY6E0cbCbPOEcQkcBeqIe_AGtiV2QadH6UpDqaa4jPWxgZWFBI2_8X4rlM1m4iz_VGKy452BPKrX_PHNW0w==&amp;uniplatform=NZKPT&amp;language=CHS"  target="_blank" rel="noopener"
+    >KVM虚拟机热迁移优化策略研究 - 中国知网 (cnki.net)</a></li>
+<li><a class="link" href="https://kns.cnki.net/kcms2/article/abstract?v=ipUboLYjcOUCpMbra6pvsVq6vfUC3xSaczpcxkC7iD14FlMzTjVq81horFHho8-VUXQklynIDqCKm31k1YH4pJys3obPPGAaTsRQGS9M6j9QHWcNiUy6prYUoUROzDYxaWW9pBB9WVwabbyUB2SC_3inSINdJyKrHHF9O1Dx8fY=&amp;uniplatform=NZKPT&amp;language=CHS"  target="_blank" rel="noopener"
+    >KVM虚拟机热迁移算法分析及优化 - 中国知网 (cnki.net)</a></li>
+<li><a class="link" href="https://weread.qq.com/web/reader/ec132be07263ffc1ec1dc10ka1d32a6022aa1d0c6e83eb4"  target="_blank" rel="noopener"
+    >QEMU/KVM源码解析与应用-李强编著-微信读书 (qq.com)</a></li>
+<li><a class="link" href="https://cloud.tencent.com/developer/article/1792349"  target="_blank" rel="noopener"
+    >x86 kvm和qemu虚拟化介绍-腾讯云开发者社区-腾讯云 (tencent.com)</a></li>
+<li><a class="link" href="https://cloud.tencent.com/developer/article/1792351"  target="_blank" rel="noopener"
+    >qemu live migration代码分析-腾讯云开发者社区-腾讯云 (tencent.com)</a></li>
+</ul>
+<h1 id="1-热迁移用法和基本原理">1 热迁移用法和基本原理
+</h1><h2 id="11-热迁移使用">1.1 热迁移使用
+</h2><p>虚拟化环境下的热迁移指的是在**虚拟机运行的过程中透明地从源宿主机迁移到目的宿主机，**热迁移的好处是很明显的，QEMU/KVM很早就支持热迁移了。早期的QEMU热迁移仅支持内存热迁移，也就是迁移前后的虚拟机使用一个共享存储，现在的QEMU热迁移已经支持存储的热迁移了。</p>
+<p>首先来看热迁移是怎么使用的。一般来说需要迁移的虚拟机所在的源宿主机（src）和目的宿主机（dst）需要能够同时访问虚拟机镜像，为了简单起见，这里只在两台宿主机上使用同一个虚拟机镜像。</p>
+<ul>
+<li>
+<p>在src启动一个虚拟机vm1：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312270938903.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231227093855811"
+	
+	
+></p>
+</li>
+<li>
+<p>在dst启动另一个虚拟机vm2：</p>
+<p><img src="C:/Users/26896/AppData/Roaming/Typora/typora-user-images/image-20231227093939350.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231227093939350"
+	
+	
+></p>
+</li>
+<li>
+<p>在vm1的monitor里面输入：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312270943211.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231227094356189"
+	
+	
+></p>
+</li>
+</ul>
+<p>隔了十几秒可以看到，vm2已经成为了vm1的状态，vm1则处于stop状态。</p>
+<blockquote>
+<p>总结一下：</p>
+<p>src启动qemu-kvm增加参数-incoming tcp:0:6666</p>
+<p>dst进去qemu monitor执行migrate tcp:$ip:6666，可以用info migrate查看信息</p>
+<p>如果是post copy执行migrate_set_capability postcopy-ram on，然后执行migrate_start_postcopy</p>
+<p>openstack环境nova-compute通过libvirt操作qemu，可以用virsh qemu-monitor-command  domain−−hmpcommand执行</p>
+</blockquote>
+<h2 id="12-热迁移整体概述">1.2 热迁移整体概述
+</h2><p>在热迁移过程中，Guest OS完全无感，其运行的任务，在快速迁移过后能继续运行。</p>
+<p>首先，对于Guest OS从一个VM迁移到其他VM，涉及到对register配置，dirty cache，runtime context等数据的迁移。</p>
+<p>如下图Guest OS1从VM1到VM2迁移过程：</p>
+<img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312270943255.png" alt="img" style="zoom:67%;" />
+<p>先由qemu monitor发起live migration，PC1的QEMU进程执行precopy，对源Guest OS的register，dirty cache bitmap，runtime context进行备份，创建传输channel，包括RDMA, tcp socket（网络），unix socket（进程间），exec stdin/stdout（进程间），fd（虚拟文件）等类型。迁移过程中 dirty page bitmap由QEMU copy，send，recv，restore，SRC和DST的QEMU进程间负责交互。</p>
+<hr>
+<p>qemu中有两个概念 <code>save_vm</code> 和 <code>load_vm</code>，migration和snaptshot等都用到。</p>
+<ul>
+<li><code>save_vm</code> 把qemu cpu state，mem，device state保存在一个fd，这个fd可以本地文件也可以是socket等；</li>
+<li><code>load_vm</code> 正好相反，把保存的信息恢复到虚拟机；</li>
+</ul>
+<p>热迁移就是在dst启动一个虚拟机，把src虚拟机的发送过来的状态都恢复到对应位置。因为mem比较大，发送时间长，根据发送时机不同分为<code>pre_copy</code> 和 <code>post_copy</code> 。</p>
+<ul>
+<li><code>pre_copy</code> 先发送mem，达到一定阈值，停止src虚拟机运行，发送cpu state和device state，dst收到，然后运行；</li>
+<li><code>post_copy</code> 先发送cpu state和device state，停止src虚拟机运行，dst标志page都无效，开始运行，qemu捕捉pagefault，然后从src请求page，src把page加入发送队列，dst等到这个page通知内核处理pagefualt然后继续运行。</li>
+</ul>
+<p><code>postcopy</code> 模式src背后还是一直默默给dst发送page的，只是dst等不着了一些page时插个队，优先发送要的page。总体来说，live migration状态多，线程多 (数据传递加保护，同步)，和kvm交互多 (log dirty page和userfault)，容易出错，可优化地方多。</p>
+<h2 id="13-基本原理">1.3 基本原理
+</h2><p>热迁移要处理的内容氛围三部分：cpu state, ram和device state。</p>
+<ul>
+<li>cpu就一堆register和stack什么，VMCS定义的那些状态；</li>
+<li>ram是大头，包括ROM，PCI mem和DIMM等，要求按page访问的；</li>
+<li>device就多了，有寄存器，队列等，千差万别，肯定得自己实现save和load函数，然后register给migration流程。</li>
+</ul>
+<h3 id="数据结构">数据结构
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">SaveStateEntry</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">QTAILQ_ENTRY</span><span class="p">(</span><span class="n">SaveStateEntry</span><span class="p">)</span> <span class="n">entry</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">idstr</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">instance_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">alias_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">version_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* version id read from the stream */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">load_version_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">section_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* section id read from the stream */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">load_section_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">SaveVMHandlers</span> <span class="o">*</span><span class="n">ops</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">VMStateDescription</span> <span class="o">*</span><span class="n">vmsd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">CompatEntry</span> <span class="o">*</span><span class="n">compat</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">is_ram</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">SaveStateEntry</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">SaveState</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">QTAILQ_HEAD</span><span class="p">(,</span> <span class="n">SaveStateEntry</span><span class="p">)</span> <span class="n">handlers</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">global_section_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="n">target_page_bits</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">SaveState</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="n">SaveState</span> <span class="n">savevm_state</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">handlers</span> <span class="o">=</span> <span class="nf">QTAILQ_HEAD_INITIALIZER</span><span class="p">(</span><span class="n">savevm_state</span><span class="p">.</span><span class="n">handlers</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">global_section_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">SaveVMHandlers</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* This runs inside the iothread lock.  */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">SaveStateHandler</span> <span class="o">*</span><span class="n">save_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">save_cleanup</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">save_live_complete_postcopy</span><span class="p">)(</span><span class="n">QEMUFile</span> <span class="o">*</span><span class="n">f</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">save_live_complete_precopy</span><span class="p">)(</span><span class="n">QEMUFile</span> <span class="o">*</span><span class="n">f</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* This runs both outside and inside the iothread lock.  */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">is_active</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">has_postcopy</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* is_active_iterate
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * If it is not NULL then qemu_savevm_state_iterate will skip iteration if
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * it returns false. For example, it is needed for only-postcopy-states,
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * which needs to be handled by qemu_savevm_state_setup and
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * qemu_savevm_state_pending, but do not need iterations until not in
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * postcopy stage.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">is_active_iterate</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* This runs outside the iothread lock in the migration case, and
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * within the lock in the savevm case.  The callback had better only
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * use data that is local to the migration thread or protected
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * by other locks.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">save_live_iterate</span><span class="p">)(</span><span class="n">QEMUFile</span> <span class="o">*</span><span class="n">f</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* This runs outside the iothread lock!  */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">save_setup</span><span class="p">)(</span><span class="n">QEMUFile</span> <span class="o">*</span><span class="n">f</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">save_live_pending</span><span class="p">)(</span><span class="n">QEMUFile</span> <span class="o">*</span><span class="n">f</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                              <span class="kt">uint64_t</span> <span class="n">threshold_size</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                              <span class="kt">uint64_t</span> <span class="o">*</span><span class="n">res_precopy_only</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                              <span class="kt">uint64_t</span> <span class="o">*</span><span class="n">res_compatible</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                              <span class="kt">uint64_t</span> <span class="o">*</span><span class="n">res_postcopy_only</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Note for save_live_pending:
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * - res_precopy_only is for data which must be migrated in precopy phase
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *     or in stopped state, in other words - before target vm start
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * - res_compatible is for data which may be migrated in any phase
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * - res_postcopy_only is for data which must be migrated in postcopy phase
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *     or in stopped state, in other words - after source vm stop
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * Sum of res_postcopy_only, res_compatible and res_postcopy_only is the
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * whole amount of pending data.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">LoadStateHandler</span> <span class="o">*</span><span class="n">load_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">load_setup</span><span class="p">)(</span><span class="n">QEMUFile</span> <span class="o">*</span><span class="n">f</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">load_cleanup</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">SaveVMHandlers</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="n">SaveVMHandlers</span> <span class="n">savevm_ram_handlers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">save_setup</span> <span class="o">=</span> <span class="n">ram_save_setup</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">save_live_iterate</span> <span class="o">=</span> <span class="n">ram_save_iterate</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">save_live_complete_postcopy</span> <span class="o">=</span> <span class="n">ram_save_complete</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">save_live_complete_precopy</span> <span class="o">=</span> <span class="n">ram_save_complete</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">has_postcopy</span> <span class="o">=</span> <span class="n">ram_has_postcopy</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">save_live_pending</span> <span class="o">=</span> <span class="n">ram_save_pending</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">load_state</span> <span class="o">=</span> <span class="n">ram_load</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">save_cleanup</span> <span class="o">=</span> <span class="n">ram_save_cleanup</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">load_setup</span> <span class="o">=</span> <span class="n">ram_load_setup</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">load_cleanup</span> <span class="o">=</span> <span class="n">ram_load_cleanup</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">ram_mig_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">qemu_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">XBZRLE</span><span class="p">.</span><span class="n">lock</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">register_savevm_live</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="s">&#34;ram&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">savevm_ram_handlers</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ram_state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">VMStateField</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">err_hint</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">size_t</span> <span class="n">offset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">size_t</span> <span class="n">start</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">size_t</span> <span class="n">num_offset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">size_t</span> <span class="n">size_offset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">VMStateInfo</span> <span class="o">*</span><span class="n">info</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">enum</span> <span class="n">VMStateFlags</span> <span class="n">flags</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">VMStateDescription</span> <span class="o">*</span><span class="n">vmsd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">version_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">field_exists</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">version_id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">VMStateDescription</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">unmigratable</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">version_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">minimum_version_id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">minimum_version_id_old</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MigrationPriority</span> <span class="n">priority</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LoadStateHandler</span> <span class="o">*</span><span class="n">load_state_old</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pre_load</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">post_load</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">version_id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pre_save</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">needed</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">VMStateField</span> <span class="o">*</span><span class="n">fields</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">VMStateDescription</span> <span class="o">**</span><span class="n">subsections</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="k">const</span> <span class="n">VMStateDescription</span> <span class="n">vmstate_e1000</span><span class="err">；</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">e1000_class_init</span><span class="p">(</span><span class="n">ObjectClass</span> <span class="o">*</span><span class="n">klass</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dc</span><span class="o">-&gt;</span><span class="n">vmsd</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">vmstate_e1000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">vmstate_register_with_alias_id</span><span class="p">(</span><span class="n">DeviceState</span> <span class="o">*</span><span class="n">dev</span><span class="p">,</span> <span class="kt">int</span> <span class="n">instance_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="k">const</span> <span class="n">VMStateDescription</span> <span class="o">*</span><span class="n">vmsd</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="kt">void</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">alias_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="kt">int</span> <span class="n">required_for_version</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="n">Error</span> <span class="o">**</span><span class="n">errp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* Returns: 0 on success, -1 on failure */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">int</span> <span class="nf">vmstate_register</span><span class="p">(</span><span class="n">DeviceState</span> <span class="o">*</span><span class="n">dev</span><span class="p">,</span> <span class="kt">int</span> <span class="n">instance_id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="k">const</span> <span class="n">VMStateDescription</span> <span class="o">*</span><span class="n">vmsd</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nf">vmstate_register_with_alias_id</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">instance_id</span><span class="p">,</span> <span class="n">vmsd</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                          <span class="n">opaque</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中，全局变量 <code>savevm_state</code> 是链表，ram和device把实现的save和load函数放在链表节点上，迁移时遍历链表执行一遍就OK了。但ram和device不同之处在于，ram用 <code>SaveVMHandlers</code> 结构，device用 <code>VMStateDescription</code> 结构，<code>VMStateDescription</code> 可以嵌套，实现基本数据类型的save和load操作。</p>
+<h3 id="pre_copy">pre_copy
+</h3><p><code>pre_copy</code> 先处理ram，开始标志所有ram为dirty page，循环发送ram，同时CPU在执行写ram，每次循环从kvm获取CPU写过的ram，直到达到一个条件，停止CPU，发送剩下的ram，再发送CPU和device state。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">migrate_fd_connect</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>   
+</span></span><span class="line"><span class="cl">	<span class="c1">//创建cleanup bh用于migration结束时，结束时触发执行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">s</span><span class="o">-&gt;</span><span class="n">cleanup_bh</span> <span class="o">=</span> <span class="nf">qemu_bh_new</span><span class="p">(</span><span class="n">migrate_fd_cleanup</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//创建migration工作线程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">qemu_thread_create</span><span class="p">(</span><span class="n">migration_thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">migration_thread</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_savevm_state_setup</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ram_save_setup</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ram_init_all</span><span class="o">-&gt;</span><span class="n">ram_init_bitmaps</span>
+</span></span><span class="line"><span class="cl">                          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">ram_list_init_bitmaps</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">memory_global_dirty_log_start</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">migration_bitmap_sync</span><span class="o">-&gt;</span><span class="n">kvm_physical_sync_dirty_bitmap</span>
+</span></span><span class="line"><span class="cl">                          <span class="p">}</span>              
+</span></span><span class="line"><span class="cl">            <span class="err">创建线程</span><span class="n">compress_threads_save_setup</span>
+</span></span><span class="line"><span class="cl">         <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">qemu_savevm_state_pending</span><span class="o">-&gt;</span><span class="n">ram_save_pending</span><span class="o">-&gt;</span><span class="n">migration_bitmap_sync</span>
+</span></span><span class="line"><span class="cl">        <span class="n">migration_iteration_run</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">             <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">threshhold</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">qemu_savevm_state_iterate</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">ram_save_iterate</span><span class="o">-&gt;</span><span class="n">ram_find_and_save_block</span>
+</span></span><span class="line"><span class="cl">              <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">qemu_savevm_state_complete_precopy</span><span class="o">-&gt;</span><span class="n">ram_save_complete</span>
+</span></span><span class="line"><span class="cl">                  <span class="c1">//其它设备状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                  <span class="n">vmstate_save_state</span>
+</span></span><span class="line"><span class="cl">               
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">migration_iteration_finish</span><span class="o">-&gt;</span><span class="nf">qemu_bh_schedule</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">cleanup_bh</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">migrate_fd_cleanup</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_savevm_state_cleanup</span><span class="o">-&gt;</span><span class="n">ran_save_cleanup</span>
+</span></span><span class="line"><span class="cl">    <span class="err">停止线程</span> <span class="n">migration_thread</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">process_incoming_migration_co</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_loadvm_state</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">qemu_loadvm_state_setup</span><span class="o">-&gt;</span><span class="n">ram_load_setup</span><span class="o">-&gt;</span><span class="n">compress_threads_load_setup</span>
+</span></span><span class="line"><span class="cl">          <span class="c1">//创建线程do_data_decompress和compress_threads_save_setup对应
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="n">vmstate_load_state</span>
+</span></span><span class="line"><span class="cl">          <span class="n">qemu_loadvm_state_main</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">               <span class="k">case</span><span class="o">:</span>    <span class="n">qemu_loadvm_section_start_full</span><span class="o">-&gt;</span><span class="n">vmstate_load_state</span>
+</span></span><span class="line"><span class="cl">               <span class="k">case</span><span class="o">:</span>    <span class="n">qemu_loadvm_section_part_end</span><span class="o">-&gt;</span><span class="n">vmstate_load_state</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="n">qemu_loadvm_state_cleanup</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">process_incoming_migration_bh</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="post_copy">post_copy
+</h3><p>为什么需要 <code>postcopy</code>，因为 <code>pre_copy</code> 有可能无法收敛，虚拟机运行的飞快，不断产生dirty page，fd比较慢发送不完，无法达到预定的条件。<code>postcopy</code> 就是先发送cpu和device state，停止执行，再慢慢发送ram，如果dst发现少page，再从src请求这个page。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">migrate_fd_connect</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>   
+</span></span><span class="line"><span class="cl">    <span class="c1">//创建cleanup bh用于migration结束时，结束时触发执行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">s</span><span class="o">-&gt;</span><span class="n">cleanup_bh</span> <span class="o">=</span> <span class="nf">qemu_bh_new</span><span class="p">(</span><span class="n">migrate_fd_cleanup</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/****************************************/</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//如果是postcopy，创建收到page请求处理的线程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">open_return_path_on_source</span><span class="o">-&gt;</span><span class="nf">qemu_thread_create</span><span class="p">(</span><span class="n">source_return_path_thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/***************************************/</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//创建migration工作线程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">qemu_thread_create</span><span class="p">(</span><span class="n">migration_thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">migration_thread</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/******************************/</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_savevm_send_open_return_path</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_savevm_send_ping</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_savevm_send_postcopy_advise</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/******************************/</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_savevm_state_setup</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ram_save_setup</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ram_init_all</span><span class="o">-&gt;</span><span class="n">ram_init_bitmaps</span>
+</span></span><span class="line"><span class="cl">                          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">ram_list_init_bitmaps</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">memory_global_dirty_log_start</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">migration_bitmap_sync</span><span class="o">-&gt;</span><span class="n">kvm_physical_sync_dirty_bitmap</span>
+</span></span><span class="line"><span class="cl">                          <span class="p">}</span>              
+</span></span><span class="line"><span class="cl">            <span class="err">创建线程</span><span class="n">compress_threads_save_setup</span>
+</span></span><span class="line"><span class="cl">         <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">qemu_savevm_state_pending</span><span class="o">-&gt;</span><span class="n">ram_save_pending</span><span class="o">-&gt;</span><span class="n">migration_bitmap_sync</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">migration_iteration_run</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">             <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">threshhold</span><span class="o">&amp;!</span><span class="n">post_copy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="cm">/******************************/</span>
+</span></span><span class="line"><span class="cl">                 <span class="k">if</span> <span class="p">(</span><span class="nf">postcopy_start</span><span class="p">()</span><span class="o">&amp;&amp;</span><span class="n">first</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                     <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                 <span class="cm">/*****************************/</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">qemu_savevm_state_iterate</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">ram_save_iterate</span>
+</span></span><span class="line"><span class="cl">              <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">migration_completion</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">{</span>   
+</span></span><span class="line"><span class="cl">                  	  <span class="k">if</span> <span class="n">pre_copy</span>
+</span></span><span class="line"><span class="cl">                          <span class="n">qemu_savevm_state_complete_precopy</span><span class="o">-&gt;</span><span class="n">ram_save_complete</span>
+</span></span><span class="line"><span class="cl">                          <span class="c1">//其它设备状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                          <span class="n">vmstate_save_state</span>
+</span></span><span class="line"><span class="cl">                      <span class="cm">/******************************/</span>
+</span></span><span class="line"><span class="cl">                      <span class="k">else</span> <span class="k">if</span> <span class="n">post_copy</span>
+</span></span><span class="line"><span class="cl">                          <span class="n">qemu_savevm_state_complete_postcopy</span><span class="o">-&gt;-&gt;</span><span class="n">ram_save_complete</span>
+</span></span><span class="line"><span class="cl">                      <span class="cm">/******************************/</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">migration_iteration_finish</span><span class="o">-&gt;</span><span class="nf">qemu_bh_schedule</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">cleanup_bh</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">migrate_fd_cleanup</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_savevm_state_cleanup</span><span class="o">-&gt;</span><span class="n">ran_save_cleanup</span>
+</span></span><span class="line"><span class="cl">    <span class="err">停止线程</span> <span class="n">migration_thread</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">process_incoming_migration_co</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_loadvm_state</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">qemu_loadvm_state_setup</span><span class="o">-&gt;</span><span class="n">ram_load_setup</span><span class="o">-&gt;</span><span class="n">compress_threads_load_setup</span>
+</span></span><span class="line"><span class="cl">          <span class="c1">//创建线程do_data_decompress和compress_threads_save_setup对应
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="n">vmstate_load_state</span>
+</span></span><span class="line"><span class="cl">          <span class="n">qemu_loadvm_state_main</span>
+</span></span><span class="line"><span class="cl">          <span class="p">{</span>
+</span></span><span class="line"><span class="cl">               <span class="k">case</span><span class="o">:</span>    <span class="n">qemu_loadvm_section_start_full</span><span class="o">-&gt;</span><span class="n">vmstate_load_state</span>
+</span></span><span class="line"><span class="cl">               <span class="k">case</span><span class="o">:</span>    <span class="n">qemu_loadvm_section_part_end</span><span class="o">-&gt;</span><span class="n">vmstate_load_state</span>
+</span></span><span class="line"><span class="cl">               <span class="cm">/******************************/</span>
+</span></span><span class="line"><span class="cl">               <span class="c1">//只有post_copy才执行这个case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="k">case</span><span class="o">:</span>    <span class="n">loadvm_process_command</span>
+</span></span><span class="line"><span class="cl">               <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">case</span><span class="o">:</span>    <span class="n">loadvm_handle_cmd_packaged</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1">//这儿递归了，只执行前两个case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="n">qemu_loadvm_state_main</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">case</span><span class="o">:</span>    <span class="n">loadvm_postcopy_handle_advise</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//用于接收请求返回的page
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="k">case</span><span class="o">:</span>    <span class="n">loadvm_postcopy_handle_listen</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1">//从kernel接收pagefault，然后发送src请求page
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="nf">qemu_thread_create</span><span class="p">(</span><span class="n">postcopy_ram_fault_thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1">///接收src给的page
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="nf">qemu_thread_create</span><span class="p">(</span><span class="n">postcopy_ram_listen_thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">case</span><span class="o">:</span>    <span class="n">loadvm_postcopy_handle_run</span><span class="o">-&gt;</span><span class="n">loadvm_postcopy_handle_run_bh</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//src启动发送page thread，src修改page然后停止，dst cpu执行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="k">case</span><span class="o">:</span>    <span class="n">loadvm_postcopy_ram_handle_discard</span>
+</span></span><span class="line"><span class="cl">               <span class="p">}</span>
+</span></span><span class="line"><span class="cl">               <span class="cm">/******************************/</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="n">qemu_loadvm_state_cleanup</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">process_incoming_migration_bh</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">postcopy_ram_listen_thread</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">//只执行前两个case 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">qemu_loadvm_state_main</span>
+</span></span><span class="line"><span class="cl">    <span class="n">qemu_loadvm_state_cleanup</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p><code>post_copy</code> 相比 <code>pre_copy</code> 多了如下过程：</p>
+<p><code>src</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">source_return_path_thread</span>
+</span></span><span class="line"><span class="cl"><span class="n">qemu_savevm_send_open_return_path</span>
+</span></span><span class="line"><span class="cl"><span class="n">qemu_savevm_send_ping</span>
+</span></span><span class="line"><span class="cl"><span class="n">qemu_savevm_send_postcopy_advise</span>
+</span></span><span class="line"><span class="cl"><span class="n">postcopy_start</span>
+</span></span><span class="line"><span class="cl"><span class="n">qemu_savevm_state_complete_postcopy</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>dst</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">loadvm_process_command和src同步</span><span class="err">，</span><span class="n">src告诉dst进入那一个步骤</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="nf">postcopy_ram_fault_thread</span><span class="p">(</span><span class="err">利用了</span><span class="n">USERFAULT机制让qemu知道了pagefault</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">migrate_send_rp_req_pages</span>
+</span></span><span class="line"><span class="cl"><span class="n">postcopy_ram_listen_thread</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//恢复ram，通过userfaultfd通知内核pagefault处理完成，还有其它fd通知共享内存的其它进程等流程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ram_load</span><span class="o">-&gt;</span><span class="n">ram_load_postcopy</span><span class="o">-&gt;</span><span class="n">postcopy_place_page</span><span class="o">-&gt;</span><span class="n">qemu_ufd_copy_ioctl</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>pre_copy</code> 有可能无法收敛，达到一定时间就失败了，无法收敛是由于CPU dirty page产生过快，有人就想着让CPU执行慢一点；</li>
+<li><code>post_copy</code> 的问题是一些情况是失败了无法恢复，pre_copy迁移失败，在src节点上照样可以恢复执行，而post_copy在dst上修改了状态，无法再同步给src，失败就恢复不了了。</li>
+</ul>
+<h1 id="todo-2-热迁移流程分析">//TODO: 2 热迁移流程分析
+</h1><h1 id="3-热迁移中的脏页同步">3 热迁移中的脏页同步
+</h1><h1 id="4-热迁移中的相关参数控制">4 热迁移中的相关参数控制
+</h1>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

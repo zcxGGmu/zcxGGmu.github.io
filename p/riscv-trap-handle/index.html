@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Before RISC-V AIA &hellip;\n1 RISC-V 异常与中断 1.1 基本概念与分类 在RISC-V标准中，将**异常(exception)定义为当前CPU运行时遇到的与指令有关的不寻常情况，而使用中断(interrupt)定义为因为外部异步信号而引起的让控制流脱离当前CPU的事件。而陷阱(trap)**表示的则是，由异常或者中断引起的控制权转移到陷阱处理程序的过程。\n">
+<title>Riscv Trap Handle</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/riscv-trap-handle/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Riscv Trap Handle">
+<meta property='og:description' content="Before RISC-V AIA &hellip;\n1 RISC-V 异常与中断 1.1 基本概念与分类 在RISC-V标准中，将**异常(exception)定义为当前CPU运行时遇到的与指令有关的不寻常情况，而使用中断(interrupt)定义为因为外部异步信号而引起的让控制流脱离当前CPU的事件。而陷阱(trap)**表示的则是，由异常或者中断引起的控制权转移到陷阱处理程序的过程。\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/riscv-trap-handle/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T10:03:29&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T10:03:29&#43;08:00'/>
+<meta name="twitter:title" content="Riscv Trap Handle">
+<meta name="twitter:description" content="Before RISC-V AIA &hellip;\n1 RISC-V 异常与中断 1.1 基本概念与分类 在RISC-V标准中，将**异常(exception)定义为当前CPU运行时遇到的与指令有关的不寻常情况，而使用中断(interrupt)定义为因为外部异步信号而引起的让控制流脱离当前CPU的事件。而陷阱(trap)**表示的则是，由异常或者中断引起的控制权转移到陷阱处理程序的过程。\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-基本概念与分类">1.1 基本概念与分类</a></li>
+    <li><a href="#12-陷阱的委派">1.2 陷阱的委派</a></li>
+    <li><a href="#13-csrs">1.3 CSRs</a>
+      <ol>
+        <li><a href="#sstatus">sstatus</a></li>
+        <li><a href="#stvec">stvec</a></li>
+        <li><a href="#sipsie">sip/sie</a>
+          <ol>
+            <li><a href="#中断被呈递到何种特权级下处理">中断被呈递到何种特权级下处理？</a></li>
+            <li><a href="#响应中断的时机">响应中断的时机</a></li>
+            <li><a href="#外部中断claimcomplete机制">外部中断、claim/complete机制</a></li>
+            <li><a href="#软中断和定时器中断">软中断和定时器中断</a></li>
+          </ol>
+        </li>
+        <li><a href="#sscratch">sscratch</a></li>
+        <li><a href="#sepc">sepc</a></li>
+        <li><a href="#scause">scause</a></li>
+        <li><a href="#stval">stval</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/riscv-trap-handle/">Riscv Trap Handle</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 19 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Before RISC-V AIA &hellip;</p>
+<h1 id="1-risc-v-异常与中断">1 RISC-V 异常与中断
+</h1><h2 id="11-基本概念与分类">1.1 基本概念与分类
+</h2><p>在RISC-V标准中，将**异常(exception)<strong>定义为当前CPU运行时遇到的与指令有关的不寻常情况，而使用</strong>中断(interrupt)<strong>定义为因为外部异步信号而引起的让控制流脱离当前CPU的事件。而</strong>陷阱(trap)**表示的则是，由异常或者中断引起的控制权转移到陷阱处理程序的过程。</p>
+<p>中断也可以进一步细分为两种情况，一种是本地中断，一种是全局中断。本地中断包括软件中断和定时器中断，它们由CLINT (Core-Local Interruptor, 核心本地中断器) 来控制；另一种是外部设备引起的中断，也被称为全局中断，它们由PLIC (Platform-Level Interrupt Controller,平台级中断控制器) 来控制。PLIC、CLINT和RISC-V Core的连接逻辑示意图如下：</p>
+<p><img src="/p/riscv-trap-handle/index.assets/core_clint_plic.png"
+	width="852"
+	height="721"
+	srcset="/p/riscv-trap-handle/index.assets/core_clint_plic_hu12785955072320980460.png 480w, /p/riscv-trap-handle/index.assets/core_clint_plic_hu7278144653543285376.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="118"
+		data-flex-basis="283px"
+	
+></p>
+<p>而无论是异常还是中断，它们所导致的<strong>硬件陷阱流程</strong>都是一样的，具体来说有两个大动作：</p>
+<blockquote>
+<ol>
+<li>改变控制流</li>
+</ol>
+<p>将PC的值保存在sepc中，然后将stvec中保存的陷阱处理函数地址放入PC。</p>
+<ol start="2">
+<li>更新CSRs的值</li>
+</ol>
+<p>包括：<code>sstatus/stval/scause</code></p>
+</blockquote>
+<p>当我们说一个 <strong>X-Mode 的异常</strong>时 (X可以是U/S/M任何一种模式)，我们指的本质上是当异常发生时 CPU 正工作在 X-Mode。而 <strong>X-Mode 的中断</strong>我们指的是，PLIC触发了一个必须由 X-Mode 响应的中断，CPU并不一定需要正在工作在此模式下。</p>
+<p>时钟中断作为一种特例，在RISC-V处理器中被硬连线为一个M-Mode的中断，这也就是说它必须由M模式下的 interrupt handler 响应，当然这是后话，我们会在后面重提。</p>
+<h2 id="12-陷阱的委派">1.2 陷阱的委派
+</h2><p>事实上，在RISC-V的标准定义中，所有陷阱默认都是由机器模式(M-mode)来处理的。然而，在支持操作系统的设备上往往都实现了监管者模式 (S-Mode)，如果按照默认模式发生中断则应该首先陷入 M-Mode 下的中断处理程序，然后触发一个S-Mode 下的中断再 mret 回 S-Mode 下处理，这个过程过于繁琐且需要程序员自己实现，所以：</p>
+<p>RISC-V标准为了应对这种情况提出了陷阱委派机制。也就是说在M-Mode下可以配置寄存器，从而使得S-Mode下的所有陷阱都被S-Mode下的陷阱处理函数自动接管。有两个寄存器，<code>medeleg/mideleg</code>，分别用来<strong>管理异常和中断的委派。</strong></p>
+<p>首先是 <code>medeleg</code> 寄存器，它的示意图如下所示，当要把特定的异常委托给S-Mode时，只需要将 <code>mcause</code> 寄存器中对应数值位置的比特位置 1 即可，参考下面的表格。比如当把系统调用委托给S-Mode时，因为它对应的Exception Code是 8，那么只需要将此寄存器中第 8 位置为 1 即可。</p>
+<p><img src="/p/riscv-trap-handle/index.assets/riscv_ecode.png"
+	width="429"
+	height="667"
+	srcset="/p/riscv-trap-handle/index.assets/riscv_ecode_hu2276639625215783387.png 480w, /p/riscv-trap-handle/index.assets/riscv_ecode_hu11360498154303842485.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="64"
+		data-flex-basis="154px"
+	
+></p>
+<p>注意，M-Mode下发生异常，即使它被托管到S-Mode，这个异常也不会被移交给S-Mode去处理，而是在M-Mode完成处理。这也就是RISC-V规范中所说的：Traps never transition from a more-privileged mode to a less-privileged mode(陷阱从不会从高优先级移交到低优先级)但是如果是发生在S-Mode下的异常，就会被S-Mode直接接管，不会再上交到M-Mode了，这被称为：traps may be taken horizontally(中断可以被水平接管)。</p>
+<p>但是，如果一个属于S-Mode的中断从M-Mode委托给S-Mode（比方我们后面要看到的外部中断），这个中断在M-Mode下就会被屏蔽掉，一定要等到进入S-Mode时才会被处理。负责管理中断委派的是 <code>mideleg</code> 寄存器。</p>
+<blockquote>
+<p>这里有一些点值得澄清：在实现时，无论是在 qemu 还是在真正的 Verilog 实现中，所谓 <code>mideleg</code> 寄存器中M态下的本地中断（包括时钟中断和软中断）都是被硬连线直接连接到0的，所以委派时赋值全赋值为1只是出于方便，并不能真的把M-Mode下的本地中断交给S-Mode处理。**唯一可以被委派到 S-Mode 的中断是外部中断 MEI，**外部中断一旦被委派到 S-Mode，PLIC 就只会触发 S-Mode 下的中断挂起位 sip.SEIP了，我们在后面会看到更多细节。（注意，这里 M-Mode 下的本地中断在实现时不能实现委派是 SiFive_Unleashed 这块RISC-V平台的实现特例，具体情况要具体分析，也许以后电路设计不同了，结论就会有所改变，但在这里是成立的）。</p>
+</blockquote>
+<p>所以其实时钟中断和软中断默认情况下都是M-Mode中断，这是由硬件实现决定的，可能你会问那么 <code>STI/SSI</code> 还有什么意义呢，反正它们也不会被触发。事实上，<strong>它们被触发的唯一可能场景就是在M-Mode下的中断处理程序中被置位，然后通过mret回到S-Mode下再处理</strong>。</p>
+<h2 id="13-csrs">1.3 CSRs
+</h2><h3 id="sstatus">sstatus
+</h3><p><code>sstatus</code> 寄存器的全称是 supervisor status register，顾名思义，它是用来反映S-Mode下处理器的工作状态的。当执行RV64时，<code>sstatus</code> 寄存器的示意图如下所示：</p>
+<p><img src="/p/riscv-trap-handle/index.assets/sstatus.png"
+	width="1193"
+	height="297"
+	srcset="/p/riscv-trap-handle/index.assets/sstatus_hu5471243338596524964.png 480w, /p/riscv-trap-handle/index.assets/sstatus_hu18084149043102850572.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="401"
+		data-flex-basis="964px"
+	
+></p>
+<p>在 <code>sstatus</code> 中与异常和中断有关的位有 <code>SPP/SIE/SPIE</code>，下面一个一个来看。</p>
+<ul>
+<li>
+<p><em><strong>SPP</strong></em></p>
+<p>SPP记录的是在进入S-Mode之前处理器的特权级别，为0表示陷阱源自用户模式(U-Mode)，为1表示其他模式。当执行一个陷阱时，SPP会由硬件自动根据当前处理器所处的状态自动设置为0或者1。当执行SRET指令从陷阱中返回时，如果SPP位为0，那么处理器将会返回U-Mode，为1则会返回S-Mode，最后无论如何，SPP都被设置为0。</p>
+</li>
+<li>
+<p><em><strong>SIE</strong></em></p>
+<p>SIE位是S-Mode下中断的总开关，就像是一个总电闸。如果SIE位置为0，那么无论在S-Mode下发生什么中断，处理器都不会响应。但是如果当前处理器运行在U-Mode，那么这一位不论是0还是1，S-Mode下的中断都是默认打开的。也就是说在任何时候S-Mode都有权因为自己的中断而抢占位于U-Mode下的处理器，这一点要格外注意。想想定时器中断而导致的CPU调度，事实上这种设计是非常合理的。</p>
+<blockquote>
+<p><strong>所以SIE位是S-Mode下的总开关，而不是任何情况下的总开关，真正完全负责禁用或者启用特定中断的位，都在 sie 寄存器中</strong>，下面再详细解释。</p>
+</blockquote>
+</li>
+<li>
+<p><em><strong>SPIE</strong></em></p>
+<p>SPIE位记录的是在进入S-Mode之前S-Mode中断是否开启。当进入陷阱时，硬件会自动将SIE位放置到SPIE位上，相当于起到了记录原先SIE值的作用，并最后将SIE置为0，表明硬件不希望在处理一个陷阱的同时被其他中断所打扰，也就是从硬件的实现逻辑上来说不支持嵌套中断(即便如此，我们还是可以手动打开SIE位以支持嵌套中断)。当使用SRET指令从S-Mode返回时，SPIE的值会重新放置到SIE位上来恢复原先的值，并且将SPIE的值置为1。</p>
+</li>
+</ul>
+<p>关于RISC-V中位于不同特权模式下的响应问题，标准中有进一步的说明：</p>
+<p>当一个处理器在特权模式 <code>x(x = U/S/M)</code> 运行时，xIE 控制着对应模式下的中断总开关。**对于更低优先级的中断来说，是默认全部禁用的，而对于更高优先级的中断来说是默认全部打开的。**这意味着在任何时候高优先级都拥有着对处理器的抢占权，而低优先级则被强行剥夺打断高优先级的权力。</p>
+<p>那么用户难道对这种机制无能为力，只能任凭高优先级随意打断低优先级模式吗？其实也不是，标准上说可以通过禁用某种特定的中断，使得对应的中断发生时，低优先级的运行不受影响，这是通过设置 <code>mie/sie</code> 寄存器实现的。(Higher-privilege-level code can use separate per-interrupt enable bits to disable selected higher-privilege-mode interrupts before ceding control to a lower-privilege mode.)</p>
+<p>另外，RISC-V在硬件层面上来说不支持陷阱的嵌套，硬件只假设最理想的情况，即：<strong>发生陷阱-&gt;处理它(在此期间完全不发生其他陷阱)-&gt;恢复到原先状态。</strong></p>
+<h3 id="stvec">stvec
+</h3><p><code>stvec</code> 寄存器的全称是 supervisor trap vector base address register(S态陷阱向量基址寄存器，stvec)，它的示意图如下：</p>
+<p><img src="/p/riscv-trap-handle/index.assets/stvec.png"
+	width="1425"
+	height="129"
+	srcset="/p/riscv-trap-handle/index.assets/stvec_hu1535761407666972822.png 480w, /p/riscv-trap-handle/index.assets/stvec_hu7631526643785473951.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1104"
+		data-flex-basis="2651px"
+	
+></p>
+<p>可以看到stvec寄存器分为两个域，分别是BASE域和MODE域：</p>
+<ul>
+<li>
+<p><em><strong>MODE 域</strong></em></p>
+<p>在RISC-V标准的定义中，MODE域可能的取值有如下三种：、</p>
+<p><img src="/p/riscv-trap-handle/index.assets/stvec_MODE.png"
+	width="930"
+	height="261"
+	srcset="/p/riscv-trap-handle/index.assets/stvec_MODE_hu267191434450890305.png 480w, /p/riscv-trap-handle/index.assets/stvec_MODE_hu15890301224537916771.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="356"
+		data-flex-basis="855px"
+	
+></p>
+<p>可以看到，MODE 域的取值影响了发生陷阱时要跳转到的地址。之前我们为了描述的方便，一般简单地说 <code>stvec</code> 中存放着中断处理程序的地址，发生陷阱时会直接跳转到。但其实 <code>stvec</code> 寄存器中不仅仅是中断处理程序的地址，还存放着 MODE 域的值。</p>
+<blockquote>
+<ul>
+<li>当BASE域为0时，所有的陷阱全部跳转到BASE地址指向的程序入口；</li>
+<li>当BASE域为1时，同步陷阱 (指因为指令而引起的异常) 还是会跳转到BASE地址处，而非同步陷阱 (指由外部信号引起的中断) 则会跳转到 <code>BASE + 4*cause</code> 的地方，这里手册上举了一个例子：如果我们将MODE设置为Vectored 状态，同时触发了一个 S-Mode 定时器中断 (中断号为5)，则程序会跳转到 <code>BASE + 4*5 = BASE + 0x14</code> 的位置。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><em><strong>BASE 域</strong></em></p>
+<p>BASE域存放着一个基地址，在 Direct/Vectored 模式下的同步陷阱情况下，它都指向中断处理程序的地址 (这里的地址可以是虚拟地址，也可以是物理地址)。</p>
+<p>在Vectored模式的非同步陷阱的情况下，比如由外部中断引起的陷阱时，它是中断服务程序的基址，加上一个特定偏移量之后才可以对应到对应的中断处理程序。</p>
+<p>另外，BASE域有额外的限制因素，它必须是 4 字节对齐的 (4-byte aligned)。内核实现时，代码中需要添加：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="p">.</span><span class="n">align</span> <span class="mi">4</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是为了让代码文件按照4字节对齐，从而满足了 <code>stvec</code> 寄存器的写入需求。</p>
+</li>
+</ul>
+<h3 id="sipsie">sip/sie
+</h3><p><code>sip/sie</code> 这两个寄存器与中断的处理密切相关，在手册对应的部分不仅有关于这两个寄存器的说明。而且还有大量有关中断机制的细节描述，接下来的各个小段都是从RISC-V标准中阅读得到的总结，在此做一个详细记录。</p>
+<p><code>sip/sie</code> 都是处理器与中断有关的寄存器，它们合称 (Supervisor Interrupt Registers，S-Mode 中断寄存器)，<code>sip</code> 专门用来记载挂起的中断位，<code>sie</code> 专门用来记载使能的中断位，它们的示意图如下：</p>
+<p><img src="/p/riscv-trap-handle/index.assets/sip_sie_rv64.png"
+	width="1157"
+	height="466"
+	srcset="/p/riscv-trap-handle/index.assets/sip_sie_rv64_hu6525830594911747185.png 480w, /p/riscv-trap-handle/index.assets/sip_sie_rv64_hu13894340745190693765.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="248"
+		data-flex-basis="595px"
+	
+></p>
+<p>在RV-64标准中，这两个寄存器都是64位大小的。 标准中断只占据了这两个寄存器的低16位(15:0)，更高的位都被保存下来以作为扩展用途。和 <code>medeleg/mideleg</code> 寄存器的用法差不多，<strong>将中断号对应的位在这两个寄存器中置位</strong>即可，如下图所示：</p>
+<p><img src="/p/riscv-trap-handle/index.assets/sip_sie_15_0.png"
+	width="627"
+	height="299"
+	srcset="/p/riscv-trap-handle/index.assets/sip_sie_15_0_hu17214122920619431732.png 480w, /p/riscv-trap-handle/index.assets/sip_sie_15_0_hu1846709259102548870.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="209"
+		data-flex-basis="503px"
+	
+></p>
+<p>如果我们想<strong>触发一个 S-Mode 下的软件中断，因为它的异常编号是1，则只需要在sip中将第 1 位设置为 1 即可，</strong><code>sie</code> 寄存器的使用方法也是一样的，它表示的是对应编号的中断是否使能。</p>
+<h4 id="中断被呈递到何种特权级下处理">中断被呈递到何种特权级下处理？
+</h4><p>这是一个非常重要的话题，在RISC-V处理器中的三种特权模式来回切换让人眼花缭乱，而它们又与对应模式下的中断紧密联系在一起，再加上我们上面说的陷阱委托机制，让整个RISC-V架构的陷阱与特权模式对应关系非常混乱。幸好，RISC-V标准中明确说明了中断应该被放在哪种特权模式下处理的对应原则：</p>
+<ul>
+<li><strong>当下述条件全部满足时，中断一定要在M-Mode下处理：</strong>
+<ul>
+<li>当前特权级别a为 M-Mode 且 mstatus中的 MIE 打开，或当前特权级别低于 M-Mode<font color='red'>（中断总开关打开）</font></li>
+<li><code>mip/mie</code> 中的第 i 位都被设置为 1 <font color='red'>(表明中断待处理且使能位打开) </font></li>
+<li><code>mideleg</code> 寄存器存在，且第 i 位没有被设置 <font color='red'>（中断没有委托给S Mode）</font></li>
+</ul>
+</li>
+</ul>
+<p>所以，如果内核使用了陷阱委托机制，这里彻底将外部中断的第三个条件破坏了。</p>
+<ul>
+<li><strong>当下述条件同时满足时，中断一定要在S-Mode下处理：</strong>
+<ul>
+<li>当前特权级别为S-Mode且sstatus中的SIE打开，或当前特权级别低于S-Mode <font color='red'>(中断总开关打开)</font></li>
+<li><code>sip/sie</code> 中的第 i 位都被设置为 1 <font color='red'>(表明中断待处理且使能位打开)</font></li>
+</ul>
+</li>
+</ul>
+<h4 id="响应中断的时机">响应中断的时机
+</h4><p>在RISC-V标准中有关sip和sie寄存器的介绍中，手册中有这样一段话：</p>
+<blockquote>
+<p>These conditions for an interrupt trap to occur must be evaluated in a bounded amount of time
+from when an interrupt becomes, or ceases to be, pending in sip, and must also be evaluated
+immediately following the execution of an SRET instruction or an explicit write to a CSR on which
+these interrupt trap conditions expressly depend (including sip, sie and sstatus).</p>
+</blockquote>
+<p>译：这些中断陷阱发生的条件(指上述5.1节中的条件)，必须在一个中断在sip中被置位或清除后的一段时间内得到检测。 并且在紧跟着SRET指令之后，或对CSR寄存器中与中断陷阱条件有关的寄存器(包括sie、sip、sstatus)进行<strong>显式写入之后立即检测。</strong></p>
+<p>这就是标准中有关<strong>中断检测时机</strong>的描述，具体的实现可能和芯片的微体系结构有关，但现在我们可以假定在上述动作完成之后，就会进入中断的条件检测，而一旦条件满足就开始响应中断。</p>
+<h4 id="外部中断claimcomplete机制">外部中断、claim/complete机制
+</h4><p><code>sip</code> 寄存器中的每一位在实现时，可以是可读可写的，也可以是只读的，也就是说这里RISC-V标准并没有对 <code>sip</code> 寄存器的读写性加以严格的约束。但是后面标准中提到，如果 <code>sip</code> 寄存器中的位可写，那么清除某个特定中断的操作就是向它的对应位写入 0 即可。但如果 <code>sip</code> 寄存器是只读的，那么必须提供其他机制来实现对 <code>sip</code> 对应位的清零，具体怎么实现则要看微处理器的具体构成和实现。**注意，这里所说的只读 (read-only) 只是说，我们不能用指令的形式去有效地清除对应的pending bit，但绝非没有硬件电路能去改变它，**我们下面就会看到是怎么做的了。</p>
+<p>对应的，<code>sie</code> 作为 <code>sip</code> 对应的使能位，如果一个中断可以被挂起，那么它对应的 <code>sie</code> 位一定是可写的。但如果对应的位在 <code>sip</code> 中没有对应，那么 <code>sie</code> 对应的位就不能写入，而是只读的 0 (read-only zero)。</p>
+<p>上述寄存器中负责控制外部中断的位有 <code>sip.SEIP/sie.SEIE</code> 这两个位，在一般的处理器中 <code>sip.SEIP</code> 就会被实现为只读的 (read-only)，它的清除与置位操作一般会直接交给特定平台的中断控制器来做。在 SiFive Unleashed 开发板上，处理外部中断的就是 PLIC 这个负责管理全局外部中断的 IP 核。CPU核心只需要对 <code>sip.SEIP</code> 进行读取即可知道是否有外部中断挂起。</p>
+<p>这里我们直接顺势对 PLIC 和中断处理流程做出延伸，打开 SiFive 的开发板手册，找到关于 Interrupts 一章的概述。我们可以看到这一章的开头就对开发板的 PLIC 做出了描述：</p>
+<blockquote>
+<p>Global interrupts, by contrast, are routed through a Platform-Level Interrupt Controller (PLIC),
+which can direct interrupts to any hart in the system via the external interrupt. Decoupling global
+interrupts from the hart(s) allows the design of the PLIC to be tailored to the platform, permitting
+a broad range of attributes like the number of interrupts and the prioritization and routing
+schemes.</p>
+</blockquote>
+<p>(译：相比之下，全局中断通过平台级中断控制器(PLIC)进行路由，PLIC可以通过外部中断将中断引导到系统中的任何hart。将全局中断与hart解耦，可以根据平台定制PLIC的设计，允许广泛的属性，如中断数量、优先级和路由方案)。</p>
+<p>所以其实 PLIC 这样的中断控制器的引入是为了更加灵活地对外部中断进行管理，使得开发板有更好的适应性与可裁剪性。就像本科时我们学过的微机原理，8059A也就是8086的中断控制器一样，可以对外部中断进行更好的管理，在我们的SiFive 开发板上一共支持53个13大类外部设备中断，它们预留的ID范围如下图所示。这么多的中断其实都属于外部中断，但是它们在RISC-V的CPU中其实只有一个 <code>sip.SEIP/sie.SEIE</code> 两个位对应。所以，我们也不得不用一个强大的PLIC核心去细化和丰富对外部设备中断的管理过程。</p>
+<p><img src="/p/riscv-trap-handle/index.assets/SiFive_PLIC_ID.png"
+	width="329"
+	height="438"
+	srcset="/p/riscv-trap-handle/index.assets/SiFive_PLIC_ID_hu18280465315752992734.png 480w, /p/riscv-trap-handle/index.assets/SiFive_PLIC_ID_hu12919317365251778579.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="75"
+		data-flex-basis="180px"
+	
+></p>
+<p>在更加深入地对中断进行介绍之前，我们还要对PLIC的 <strong>claim/completion 机制</strong>进行解释。让我们回顾一下PLIC与RISC-V核心之间的连接关系，一个PLIC本质上连接了多个RISC-V核心。当一个外部设备发出中断请求时，经过PLIC中的Interrupt Gateways的信号转换等操作，其实PLIC会将这个中断转发给多个核心(前提是对应核心中 <code>sie</code> 寄存器中对应位是打开的)，这个操作叫做 interrupt notification，本质是PLIC将对应核心 <code>sip</code> 寄存器中的对应位置位。</p>
+<p>这个 notification 操作在简单系统的硬件实现中，是通过将PLIC核心中的 PIE 位硬连线到对应的 <code>sip.SEIP</code> 寄存器位来实现的，而在复杂的系统中是通过复杂的片上路由网络实现的。在外部中断全部被委派到S-Mode的条件下，它只会导致多个核心中的 <code>sip.SEIP</code> 位置位 (The notification only appear in lower-privilege xip registers if external interrupts have been delegated to the lower-privilege modes, quoted from PLIC doc)。根据我们之前总结的触发中断的条件，多个核心或早或晚会这个对挂起的中断进行响应。那么，多个核心之间其实就已经有了对中断响应的竞争。</p>
+<p><img src="/p/riscv-trap-handle/index.assets/PLIC.png"
+	width="981"
+	height="668"
+	srcset="/p/riscv-trap-handle/index.assets/PLIC_hu6425746541214660632.png 480w, /p/riscv-trap-handle/index.assets/PLIC_hu9543283552623087350.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="352px"
+	
+></p>
+<p>一个核心如何对 interrupt notification 进行响应呢？这个操作我们叫做 claim 操作，本质就是一个简单的对claim/complete 寄存器的读操作，claim/complete 寄存器会保存一个当前未被处理且具有最高优先级的中断的 ID 号。CPU读取 claim/complete 寄存器就可以获得这个 ID 号，同时也就完成了对此中断的 claim 操作，回到内核中就可以匹配对应的中断处理程序 (interrupt handler) 进行对应的处理。在 <code>drivers/irqchip/irq-sifive-plic.c</code> 中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Handling an interrupt is a two-step process: first you claim the interrupt
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * by reading the claim register, then you complete the interrupt by writing
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * that source ID back to the same claim register.  This automatically enables
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * and disables the interrupt, so there&#39;s nothing else to do.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">plic_handle_irq</span><span class="p">(</span><span class="k">struct</span> <span class="n">irq_desc</span> <span class="o">*</span><span class="n">desc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">while</span> <span class="p">((</span><span class="n">hwirq</span> <span class="o">=</span> <span class="nf">readl</span><span class="p">(</span><span class="n">claim</span><span class="p">)))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">err</span> <span class="o">=</span> <span class="nf">generic_handle_domain_irq</span><span class="p">(</span><span class="n">handler</span><span class="o">-&gt;</span><span class="n">priv</span><span class="o">-&gt;</span><span class="n">irqdomain</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">						    <span class="n">hwirq</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">unlikely</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">pr_warn_ratelimited</span><span class="p">(</span><span class="s">&#34;can&#39;t find mapping for hwirq %lu</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">					<span class="n">hwirq</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当一个中断的 notification 被 claim 后 (也就是 <code>claim/complete</code> 寄存器被读取后)，PLIC 核心会自动清除掉对应中断源在PLIC 中的挂起位 (clear down the corresponding source’s IP bit)，表示这个中断已经被处理了。</p>
+<p>当一个高优先级的中断被处理之后，低优先级中断可能又会补上，所以PLIC中的PIE位可能还是不会被清零，这也就导致了多个核心中的 <code>sip.SEIP</code> 位其实还是没有被清 0 。也就是说，在一个多核平台上，可能同时发生的，需要被处理的中断不止一个。这时，它们可能会被其他核心响应。即使是在一个核心内部，PLIC标准上也建议，在 interrupt handler 返回前可以查看一下核心自己的 <code>sip.SEIP</code> 位是否还为1，如果还是1，就可以跳过恢复现场的步骤，直接 claim 下一个中断并服务吧，节省时间 ！</p>
+<p>最后，如果一个核心 claim 时已经没有中断要处理了 (有可能是没有竞争过其他核心，也有可能是确实没有中断要处理)，读取PLIC中的 <code>claim/complete</code> 寄存器就会返回0，进而回到 OS 内核后什么也不做，这在上面的代码中也有对应。实际上，中断ID为 0 在标准中对应的含义就是：“无需响应的中断”。</p>
+<p>现在一个核心 claim 了一个中断并将其服务完毕，它就会进行一个 complete 操作，这个操作和 claim 操作很像，只是完全相反——它是向 <code>claim/complete</code> 寄存器写入它刚刚完成服务的中断ID号，这个ID号会被转发给 Gateways，进而Gateways 会再次开始对对应ID号的中断进行转发。在没有完成 complete 操作之前，Gateways 是不会转发同样ID号的中断给PLIC核心的，所以在完成complete操作之前这种中断也就不会被处理。</p>
+<blockquote>
+<p><font color='red'><strong>最后梳理一下这个过程：</strong></font></p>
+<ol>
+<li>外部设备发起一个中断给PLIC中的Gateways，Gateways负责将中断信号进行转换并转发给PLIC核心，这个过程中会涉及Priority、Threshold等等一系列的判断 (详见上面的电路)，最终会体现在PLIC核心的 EIP 位上；</li>
+<li>EIP 位一旦被置 1，会直接导致多个核心上的 <code>sip.SEIP</code> 位被置 1。进而导致多个打开此中断的CPU核心开始竞争claim 这个中断，没有竞争过其他核心时会得到中断ID为 0，进而不响应，这个过程叫做 claim 操作；</li>
+<li>响应最早的核心成功开始服务这个中断，并在服务完成之后将中断ID号再次写入 <code>claim/completion</code> 寄存器，这个过程叫做 complete 操作；</li>
+<li>这个 complete 操作会被转发到 Gateways，进而再次开启对这种中断的转发。</li>
+</ol>
+</blockquote>
+<h4 id="软中断和定时器中断">软中断和定时器中断
+</h4><p>注意力再次回到 <code>sip/sie</code> 寄存器中，除了 <code>sip.SEIP</code> 只读位用来反映外部中断以外，还有 <code>sip.SSIP/sip.STIP</code> 位来分别反映软中断和时钟中断。在开发板的手册中，这两者都属于本地中断，都交由 <strong>CLINT(核心本地中断器)</strong> 来管理。</p>
+<p><img src="/p/riscv-trap-handle/index.assets/sip_sie_15_0-1698908502906-10.png"
+	width="627"
+	height="299"
+	srcset="/p/riscv-trap-handle/index.assets/sip_sie_15_0-1698908502906-10_hu17214122920619431732.png 480w, /p/riscv-trap-handle/index.assets/sip_sie_15_0-1698908502906-10_hu1846709259102548870.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="209"
+		data-flex-basis="503px"
+	
+></p>
+<blockquote>
+<p><em><strong>时钟中断</strong></em></p>
+</blockquote>
+<p><code>sip.STIP/sie.STIE</code> 位分别用来管理时钟中断的挂起和使能，时钟中断在内核中主要是用来做CPU调度的。也就是我们常说的时间片轮转调度算法 (Round-Robin, RR)，一个进程经过一段时间之后会自动让出CPU的使用权，让其他进程进行执行。</p>
+<p><code>sip.STIP</code> 位也非常特殊，和 <code>sip.SEIP</code> 一样，一旦被实现就只能是只读的 (read-only)，只能被执行环境 (execution environment) 所设置和清除。这里所谓的执行环境指的就是操作系统里的中断服务程序。</p>
+<p>之前，我们就简单提过**时钟中断是被 CLINT 硬连线为一个 M-Mode 中断的，**并且这个中断不能被委派到 S-Mode，所以时钟中断怎么也轮不到内核去处理，它真的得由硬件机制去触发。这里就非常巧妙了，目前简单给出一个结论：**内核中 M-Mode 下的时钟中断的 interrupt handler 会使用汇编代码主动触发一个 S-Mode 下的软中断，从而将时钟中断的处理权移交给位于 S-Mode 下的操作系统，操作系统处理完时钟中断之后会将这个软中断清除以表明完成了对时钟中断的处理。**所以，其实内核借用了 S-Mode 下的软中断去完成对时钟中断的响应，这是因为操作系统往往要借助时钟中断来完成一些功能，而这些功能属于 S-Mode 下的操作系统的一些概念 (比如CPU调度、sigalarm等)，所以其实将原本位于 M-Mode 下的时钟中断移交给 S-Mode 非常自然。</p>
+<blockquote>
+<p><em><strong>软中断</strong></em></p>
+</blockquote>
+<p>软中断则与 <code>sip.SSIP/sie.SSIE</code> 有关，与前两者不同，它既可以由指令读写，也可以由 CLINT 来控制。**软件中断是通过指令来触发的，具体是写入 CLINT 中的 msip 寄存器。**这个寄存器有 32 位，高 31 位全部被硬连线到 0，最低位则直接映射到 <code>mip.MSIP</code> 位。软件中断在硬件实现中，根据示意图分析，应该也是像时钟中断一样，被强制硬连线到M-Mode下。软中断一般用于多个处理器核心之间的通信，各个核心都可以通过指令触发另外核心的软件中断。</p>
+<p>至此，我们将 <code>sip/sie</code> 寄存器讲解的差不多了，并顺带介绍了大量有关外部中断、时钟中断和软件中断的处理流程和细节。在实际实现RISC-V核心时，并不一定要实现上述的所有中断类型，当某种中断类型没有被实现时，它对应的 <code>sip/sie</code> 寄存器的对应域会被硬连线到 0 。</p>
+<p>最后，当这三种中断同时发生时，它们的相对优先级是 <code>SEI &gt; STI &gt; SSI</code>。</p>
+<h3 id="sscratch">sscratch
+</h3><p><code>sscratch</code> 寄存器的设计是RISC-V中一个非常巧妙的机制，这个寄存器中存放着一个 (虚拟) 地址。当在执行用户代码时，这个地址指向的是一块保存当前程序上下文 (其实就是寄存器组内容，context) 的一块内存区域，可以将其称做陷阱帧<code>trapframe</code>。</p>
+<p>当CPU处理陷阱的时候，PC会被设置为 <code>stvec</code> 寄存器的值，进而陷入一段过渡程序，在这段程序的开头就会将 <code>sscratch</code>寄存器和 <code>a0</code> 寄存器进行交换，这一方面将 <code>a0</code> 的值保存在了 <code>sscratch</code> 寄存器中，同时 <code>a0</code> 指向了 <code>trapframe</code> 的开始地址，这样进而就可以通过 <code>a0</code> 寄存器寻址将所有寄存器的值保存在 <code>trapframe</code> 里，妙绝！</p>
+<h3 id="sepc">sepc
+</h3><p><code>sepc</code> 寄存器，一言以蔽之就是记录陷阱陷入到 S-Mode 时发生陷阱的指令的虚拟地址，它在执行陷阱时会记录下被中断的指令的虚拟地址，除了刚才说的陷阱场景之外，硬件不会主动改变 sepc 的值。但是 spec 寄存器可以被指令写入，如果执行系统调用的话，内核会将返回地址 +4 并赋给 <code>sepc</code>，这表明系统调用会返回 ecall 的下一条指令继续执行。</p>
+<h3 id="scause">scause
+</h3><p><img src="/p/riscv-trap-handle/index.assets/scause.png"
+	width="1122"
+	height="132"
+	srcset="/p/riscv-trap-handle/index.assets/scause_hu15317989320834712412.png 480w, /p/riscv-trap-handle/index.assets/scause_hu16429487224502960722.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="850"
+		data-flex-basis="2040px"
+	
+></p>
+<p><code>scause</code> 寄存器在执行陷阱时由硬件自动记录下导致本次陷阱的原因，其中 interrupt 位表示本次陷阱的原因是否为中断(我们上面说过，陷阱是动作，而中断和异常是导致陷阱的原因)。而 Exception Code 则表示细分的原因，对应关系如下表，可以看到scause还是有很多可扩展的异常号没有被使用的：</p>
+<p><img src="/p/riscv-trap-handle/index.assets/riscv_ecode-1698909631064-13.png"
+	width="429"
+	height="667"
+	srcset="/p/riscv-trap-handle/index.assets/riscv_ecode-1698909631064-13_hu2276639625215783387.png 480w, /p/riscv-trap-handle/index.assets/riscv_ecode-1698909631064-13_hu11360498154303842485.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="64"
+		data-flex-basis="154px"
+	
+></p>
+<p>在内核的具体实现中，我们会根据 <code>scause</code> 中记录的异常号实现对陷阱“分门别类”的处理。和 <code>sepc</code> 一样，<code>scause</code> 也支持使用指令写入，但是一般不这么做。</p>
+<h3 id="stval">stval
+</h3><p><code>stval</code> 寄存器的全称是 Supervisor Trap Value Register，这个寄存器专门用来存放与陷阱有关的其他信息，目的是帮助操作系统或其他软件更快确定和完成陷阱的处理。手册上相关的叙述显得有些晦涩，这里简单地做一个总结：</p>
+<p>首先，<code>stval</code> 寄存器中存储的值可以是零值或者是非零值，对于大部分未经硬件平台定义的陷阱情况而言，<code>stval</code> 并不会存储与这些陷阱有关的信息，这时候 <code>stval</code> 就会存储零，本质上 <code>stval</code> 没有存储什么有效信息。**存储非零值的情况又分为两种，一种是因为内存访问非法，一种则是因为指令本身非法，**下面详细说说：</p>
+<blockquote>
+<ul>
+<li>
+<p>内存访问非法</p>
+<p>这种情况包括硬件断点 (Hardware Breakpoints)、地址未对齐 (address misaligned)、访问故障 (access-fault，可能是没有权限等)、缺页故障 (page-fault) 等情况。当这种情况发生时，<code>stval</code> 会存储出错位置的虚拟地址。比如缺页故障发生时，<code>stval</code> 就会记录到底是对哪个虚拟地址的访问导致了本次缺页故障，内核就可以根据此信息去加载页面进入内存。</p>
+</li>
+<li>
+<p>指令执行非法</p>
+<p>当执行的指令非法时，<code>stval</code> 会将这条指令的一部分位记录下来。illegal instruction, 异常号为 2。</p>
+</li>
+</ul>
+</blockquote>
+<h1 id="2-clintplic">2 CLINT/PLIC
+</h1><p><a class="link" href="https://github.com/riscv/riscv-plic-spec"  target="_blank" rel="noopener"
+    >riscv/riscv-plic-spec: PLIC Specification (github.com)</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>

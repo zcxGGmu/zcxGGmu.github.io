@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="0 资料 SVE spec 3.1 Exception model fpsimd.c - arch/arm64/kvm/fpsimd.c - Linux source code (v6.7-rc6) - Bootlin https://elixir.bootlin.com/linux/v6.7-rc7/C/ident/kvm_hyp_handle_fpsimd 1 ARMv8 SVE异常模型 1.1 ARMv8的硬件虚拟化支持 armv8在虚拟化扩展中提供了敏感指令和异常的捕获功能，可以通过配置hypervisor控制寄存器 hcr_el2 实现，它将vm执行的敏感指令或异常路由到EL2中，hypervisor捕获到相关异常后可为其模拟相关功能。其中 hcr_el2 寄存器的定义如下：\n">
+<title>Arm Sve Kvm Support</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/arm-sve-kvm-support/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Arm Sve Kvm Support">
+<meta property='og:description' content="0 资料 SVE spec 3.1 Exception model fpsimd.c - arch/arm64/kvm/fpsimd.c - Linux source code (v6.7-rc6) - Bootlin https://elixir.bootlin.com/linux/v6.7-rc7/C/ident/kvm_hyp_handle_fpsimd 1 ARMv8 SVE异常模型 1.1 ARMv8的硬件虚拟化支持 armv8在虚拟化扩展中提供了敏感指令和异常的捕获功能，可以通过配置hypervisor控制寄存器 hcr_el2 实现，它将vm执行的敏感指令或异常路由到EL2中，hypervisor捕获到相关异常后可为其模拟相关功能。其中 hcr_el2 寄存器的定义如下：\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/arm-sve-kvm-support/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-17T10:02:30&#43;08:00'/><meta property='article:modified_time' content='2024-10-17T10:02:30&#43;08:00'/>
+<meta name="twitter:title" content="Arm Sve Kvm Support">
+<meta name="twitter:description" content="0 资料 SVE spec 3.1 Exception model fpsimd.c - arch/arm64/kvm/fpsimd.c - Linux source code (v6.7-rc6) - Bootlin https://elixir.bootlin.com/linux/v6.7-rc7/C/ident/kvm_hyp_handle_fpsimd 1 ARMv8 SVE异常模型 1.1 ARMv8的硬件虚拟化支持 armv8在虚拟化扩展中提供了敏感指令和异常的捕获功能，可以通过配置hypervisor控制寄存器 hcr_el2 实现，它将vm执行的敏感指令或异常路由到EL2中，hypervisor捕获到相关异常后可为其模拟相关功能。其中 hcr_el2 寄存器的定义如下：\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-armv8的硬件虚拟化支持">1.1 ARMv8的硬件虚拟化支持</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#关于vhe特性支持">关于VHE特性支持</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#12-cpacr_el1">1.2 CPACR_EL1</a>
+      <ol>
+        <li><a href="#fpen">FPEN</a></li>
+        <li><a href="#zen">ZEN</a></li>
+        <li><a href="#mrsmsr-cpacr_el1">MRS/MSR CPACR_EL1</a></li>
+      </ol>
+    </li>
+    <li><a href="#13-cptr_el2">1.3 CPTR_EL2</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-数据结构">2.1 数据结构</a></li>
+    <li><a href="#22-框架分析">2.2 框架分析</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/arm-sve-kvm-support/">Arm Sve Kvm Support</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 12 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0-资料">0 资料
+</h1><ul>
+<li>SVE spec 3.1 Exception model</li>
+<li><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc6/source/arch/arm64/kvm/fpsimd.c"  target="_blank" rel="noopener"
+    >fpsimd.c - arch/arm64/kvm/fpsimd.c - Linux source code (v6.7-rc6) - Bootlin</a></li>
+<li><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc7/C/ident/kvm_hyp_handle_fpsimd"  target="_blank" rel="noopener"
+    >https://elixir.bootlin.com/linux/v6.7-rc7/C/ident/kvm_hyp_handle_fpsimd</a></li>
+</ul>
+<h1 id="1-armv8-sve异常模型">1 ARMv8 SVE异常模型
+</h1><h2 id="11-armv8的硬件虚拟化支持">1.1 ARMv8的硬件虚拟化支持
+</h2><p>armv8在虚拟化扩展中提供了敏感指令和异常的捕获功能，可以通过配置hypervisor控制寄存器 <code>hcr_el2</code> 实现，它将vm执行的敏感指令或异常路由到EL2中，hypervisor捕获到相关异常后可为其模拟相关功能。其中 <code>hcr_el2</code> 寄存器的定义如下：</p>
+<p><img src="https://pic3.zhimg.com/v2-4493659ce9c4035e11030436c6a12936_b.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>其中：TGE位只有在支持VHE的架构下才有效。当配置该位后所有需要路由到EL1的异常都会被路由到EL2。因此只要设置该位后，不再设置以上这些位，其对应的异常也会被路由到EL2下。</p>
+<h4 id="关于vhe特性支持">关于VHE特性支持
+</h4><blockquote>
+<p>VHE是由HCR_EL2中的两个bits决定的。可以将这两个bits的功能总结如下：</p>
+<ul>
+<li>E2H：控制VHE是否使能（用于访问重定向）</li>
+<li>TGE：VHE使能后，控制EL0是host还是guest (用于异常重定向)</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312251501446.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231225150146421"
+	
+	
+></p>
+<p>通过以上扩展以后，前面的问题看来都已经完美解决了。但是我们再回忆一下type 2 hypervisor的原理，这种方案中hypervisor只是host os的一个组件，由于host os本身就是普通的操作系统（如linux），而其通常被设计为运行在EL1异常等级。</p>
+<p>若将其运行在EL2下，则需要在代码层面做较多改动，如在linux中使用vbar_el1访问异常向量表基地址寄存器，此时需要修改为vbar_el2。更麻烦的是el1下支持两个页表基地址寄存器ttbr0_el1和ttbr1_el1，而在armv8.0的el2异常等级中只包含一个ttbr0_el2寄存器。</p>
+<p>因此为了不修改host os本身的代码，最初type2 hypervisor方案中host os被设计为运行在el1下，而hypervisor作为它的一个模块运行在EL2下，其架构如下：</p>
+<p><img src="https://pic1.zhimg.com/v2-4404e5d656c81d17f81b6e1a558b0244_b.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>此时由于hypervisor和host os位于不同的异常等级，因此它们之间的调用都需要通过异常完成，该流程需要执行上下文的保存和恢复，因此会影响hypervisor的效率。为了解决该问题，arm在armv8.1架构之后增加了vhe特性，从而使得host os不经改动就能运行于EL2中。</p>
+<hr>
+<p>vhe主要是为了支持将host os运行在EL2中，以提高hypervisor和虚拟机之间的切换代价。</p>
+<p>由于os内核（如linux）被设计为访问EL1异常等级下的系统寄存器，因此为了在不修改代码的情况下使其实际访问EL2寄存器，vhe实现了**寄存器重定向功能。**即在使能vhe之后，所有EL1寄存器的访问操作都被硬件转换为对相应EL2寄存器的访问，如OS访问ttbr0_el1寄存器，则会按下图方式被重定向到ttbr0_el2：</p>
+<p><img src="https://pic2.zhimg.com/v2-1f46c20c0ef2dbc6d91c92f9f9ce2e8d_b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>当然这里还有一个问题，hypervisor实际上还是有访问实际el1寄存器的需求，因此vhe也对其做了扩展，当访问实际el1寄存器时，则需要使用新的特殊指令。如需要访问实际的ttbr0_el1时，则可通过下图所示访问ttbr0_el12的方式实现：</p>
+<p><img src="https://pic4.zhimg.com/v2-9c2fce14ad355278791836166f0a9b43_b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>当支持vhe且hcr.tge被设置后，不管hcr_el2.imo/fmo/amo是否被设置，所有EL0和EL1的异常都会被路由到EL2中。有了以上扩展之后，host os就可以不经任何修改，而像运行在EL1中一样运行于EL2中，此时系统架构变为如下形式：</p>
+<p><img src="https://pic3.zhimg.com/v2-7bc5efac080da0fb5502c6491cf0865a_b.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<hr>
+<p>SVE在EL3、EL2和EL1级别上添加了分层陷阱和使能控制。这些控制是通过以下系统寄存器字段来实现的：</p>
+<ul>
+<li>CPTR_EL3.EZ</li>
+<li>CPTR_EL2.TZ, when HCR_EL2.E2H == 0</li>
+<li>CPTR_EL2.ZEN, when HCR_EL2.E2H == 1</li>
+<li>CPACR_EL1.ZEN</li>
+</ul>
+<p>其中，guest os运行在EL1，hypervisor运行在EL2，即 <code>CPACR_EL1</code> 控制了从 guest user/EL0 到 guest os/EL1 的trap，而 <code>CPTR</code> 控制了从 guest os/EL1 到 hypervisor/EL2 的trap。</p>
+<hr>
+<h2 id="12-cpacr_el1">1.2 CPACR_EL1
+</h2><p>作用：控制跟踪、SVE、高级SIMD和浮点功能的访问。</p>
+<p>当在当前安全状态下实施并启用EL2，并且HCR_EL2.{E2H, TGE} == {1, 1}时，该寄存器中的字段对EL0和EL1的执行没有影响。在这种情况下，由CPTR_EL2提供的控制被使用。</p>
+<h3 id="fpen">FPEN
+</h3><p>当执行状态为EL1和EL0的指令访问高级SIMD和浮点寄存器时，会被陷阱捕获。如果EL2被实现并在当前安全状态中启用，且HCR_EL2.TGE为1，则会报告为ESR_ELx.EC值0x00到EL2。如果EL2未启用，则报告为ESR_ELx.EC值0x07到EL1。</p>
+<ul>
+<li>在AArch64状态下，对FPCR、FPSR以及任何SIMD和浮点寄存器V0-V31的访问，包括它们作为D0-D31寄存器或S0-S31寄存器的视图；</li>
+</ul>
+<p>将SVE指令在EL1和EL0的执行转移到EL1，或在当前安全状态下EL2已实现且启用时转移到EL2，此时HCR_EL2.TGE为1。异常使用ESR_ELx.EC值0x07进行报告。</p>
+<p>由于CPACR_EL1.ZEN引发的陷阱具有优先权，优先于由CPACR_EL1.FPEN引发的陷阱。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312251422483.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231225142237455"
+	
+	
+></p>
+<h3 id="zen">ZEN
+</h3><p>将SVE指令和直接访问ZCR_EL1系统寄存器的指令在EL1和EL0执行时陷入EL1，或在当前安全状态下实现和启用EL2时陷入EL2，且HCR_EL2.TGE为1。异常使用ESR_ELx.EC值0x19进行报告。由于CPACR_EL1.ZEN引发的陷阱优先于由CPACR_EL1.FPEN引发的陷阱。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312260837795.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231225142437755"
+	
+	
+></p>
+<h3 id="mrsmsr-cpacr_el1">MRS/MSR CPACR_EL1
+</h3><p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312251430861.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231225143056837"
+	
+	
+></p>
+<p>访问重定向。</p>
+<h2 id="13-cptr_el2">1.3 CPTR_EL2
+</h2><p>作用：控制将对CPACR、CPACR_EL1、跟踪、活动监视器、SVE以及高级SIMD和浮点功能的访问陷入到EL2。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312251427512.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231225142700481"
+	
+	
+></p>
+<ul>
+<li>
+<p>在当前安全状态下，当EL2被启用时，对访问高级SIMD和浮点寄存器的指令在EL2、EL1和EL0的执行陷入到EL2。异常情况使用ESR_ELx.EC值0x07进行报告。</p>
+</li>
+<li>
+<p>在当前安全状态下，将SVE指令在EL2、EL1和EL0级别的执行陷入到EL2。异常使用ESR_ELx.EC值0x07进行报告。</p>
+</li>
+</ul>
+<p>由于CPTR_EL2.ZEN导致的陷阱优先于由CPTR_EL2.FPEN导致的陷阱：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312251438260.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231225143808211"
+	
+	
+></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312260837435.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20231225144354227"
+	
+	
+></p>
+<blockquote>
+<p>疑问：<code>CPTR_EL2.FPEN/ZEN = 0b01</code>，这种配置应用于什么场景？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define CPACR_EL1_FPEN_EL1EN	(BIT(20)) </span><span class="cm">/* enable EL1 access */</span><span class="cp">				</span><span class="c1">//0b01
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define CPACR_EL1_FPEN_EL0EN	(BIT(21)) </span><span class="cm">/* enable EL0 access, if EL1EN set */</span><span class="cp"> </span><span class="c1">//0b11
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define CPACR_EL1_ZEN_EL1EN	(BIT(16)) </span><span class="cm">/* enable EL1 access */</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define CPACR_EL1_ZEN_EL0EN	(BIT(17)) </span><span class="cm">/* enable EL0 access, if EL1EN set */</span><span class="cp">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>允许EL1执行，但禁止EL0执行</p>
+</blockquote>
+<h1 id="2-kvm-fpsimdsve虚拟化支持">2 KVM: FPSIMD/SVE虚拟化支持
+</h1><h2 id="21-数据结构">2.1 数据结构
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">kvm_vcpu_arch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">kvm_cpu_context</span> <span class="n">ctxt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * Guest floating point state
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * The architecture has two main floating point extensions,
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * the original FPSIMD and SVE.  These have overlapping
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * register views, with the FPSIMD V registers occupying the
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * low 128 bits of the SVE Z registers.  When the core
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * floating point code saves the register state of a task it
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * records which view it saved in fp_type.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="o">*</span><span class="n">sve_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">enum</span> <span class="n">fp_type</span> <span class="n">fp_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">sve_max_vl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u64</span> <span class="n">svcr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Values of trap registers for the guest. */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u64</span> <span class="n">hcr_el2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u64</span> <span class="n">cptr_el2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">/* Ownership of the FP regs */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">enum</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FP_STATE_FREE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FP_STATE_HOST_OWNED</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">FP_STATE_GUEST_OWNED</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="n">fp_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">user_fpsimd_state</span> <span class="o">*</span><span class="n">host_fpsimd_state</span><span class="p">;</span>	<span class="cm">/* hyp VA */</span>   <span class="c1">// host_fpsimd_state 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">kvm_cpu_context</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">user_pt_regs</span> <span class="n">regs</span><span class="p">;</span>	<span class="cm">/* sp = sp_el0 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">user_fpsimd_state</span> <span class="n">fp_regs</span><span class="p">;</span>  <span class="c1">// guest_fpsimd_state
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">u64</span> <span class="n">sys_regs</span><span class="p">[</span><span class="n">NR_SYS_REGS</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">__hyp_running_vcpu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">cpu_fp_state</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">user_fpsimd_state</span> <span class="o">*</span><span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="o">*</span><span class="n">sve_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="o">*</span><span class="n">sme_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u64</span> <span class="o">*</span><span class="n">svcr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">sve_vl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">sme_vl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">enum</span> <span class="n">fp_type</span> <span class="o">*</span><span class="n">fp_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">enum</span> <span class="n">fp_type</span> <span class="n">to_save</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312260837919.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="22-框架分析">2.2 框架分析
+</h2><p>相关函数：</p>
+<ul>
+<li><a class="link" href="https://elixir.bootlin.com/linux/v6.7-rc6/source/arch/arm64/kvm/fpsimd.c#L139"  target="_blank" rel="noopener"
+    >fpsimd.c - arch/arm64/kvm/fpsimd.c - Linux source code (v6.7-rc6) - Bootlin</a></li>
+<li></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// arch/arm64/kvm/fpsimd.c 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/* Guest/host FPSIMD coordination helpers */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">kvm_arch_vcpu_run_map_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_arch_vcpu_load_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_arch_vcpu_ctxflush_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_arch_vcpu_ctxsync_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_arch_vcpu_put_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_vcpu_unshare_task_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>代码流程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// vcpu首次运行和再次进入循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">kvm_arch_vcpu_ioctl_run</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="n">vcpu_load</span> <span class="o">-&gt;</span> <span class="n">kvm_vcpu_arch_load</span>
+</span></span><span class="line"><span class="cl">    	<span class="o">+-&gt;</span> <span class="n">kvm_arch_vcpu_load_fp</span>
+</span></span><span class="line"><span class="cl">    		<span class="o">+-&gt;</span> <span class="c1">//goto LOAD_FP	
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">+-&gt;</span> <span class="k">while</span><span class="p">(</span><span class="n">ret</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//kvm第一层循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    	<span class="o">+-&gt;</span> <span class="n">kvm_arch_vcpu_ctxflush_fp</span>
+</span></span><span class="line"><span class="cl">        	<span class="o">+-&gt;</span> <span class="c1">//goto FLUSH_FP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="cm">/* Enter the guest... */</span>
+</span></span><span class="line"><span class="cl">        <span class="o">+-&gt;</span> <span class="n">kvm_arm_vcpu_enter_exit</span>
+</span></span><span class="line"><span class="cl">        	<span class="c1">// arch/arm64/kvm/hyp/vhe/switch.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        	<span class="o">+-&gt;</span> <span class="n">__kvm_vcpu_run_vhe</span>
+</span></span><span class="line"><span class="cl">        		<span class="o">+-&gt;</span> <span class="n">__activate_traps</span>
+</span></span><span class="line"><span class="cl">        			<span class="o">+-&gt;</span> <span class="c1">//AC_TRAPS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        		<span class="o">+-&gt;</span> <span class="k">do</span> <span class="p">{</span>  <span class="c1">//kvm第二层循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>						<span class="cm">/* Jump in the fire! */</span>
+</span></span><span class="line"><span class="cl">						<span class="n">exit_code</span> <span class="o">=</span> <span class="nf">__guest_enter</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">						<span class="cm">/* And we&#39;re baaack! */</span>
+</span></span><span class="line"><span class="cl">					<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nf">fixup_guest_exit</span><span class="p">(</span><span class="n">vcpu</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">exit_code</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">					<span class="o">+-&gt;</span> <span class="n">__guest_enter</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">+-&gt;</span> <span class="n">fixup_guest_exit</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">+-&gt;</span> <span class="n">kvm_hyp_handle_exit</span>
+</span></span><span class="line"><span class="cl">                        	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">                        		[ESR_ELx_EC_SVE]	  = kvm_hyp_handle_fpsimd,
+</span></span></span><span class="line"><span class="cl"><span class="cm">								[ESR_ELx_EC_FP_ASIMD] = kvm_hyp_handle_fpsimd,
+</span></span></span><span class="line"><span class="cl"><span class="cm">                        	*/</span>
+</span></span><span class="line"><span class="cl">                        	<span class="o">+-&gt;</span> <span class="n">kvm_hyp_handle_fpsimd</span> <span class="c1">//guest触发fpsimd/sve_trap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="o">+-&gt;</span> <span class="n">__deactivate_traps</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">+-&gt;</span> <span class="c1">//DEAC_TRAPS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="o">+-&gt;</span> <span class="k">if</span> <span class="p">(</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">==</span> <span class="n">FP_STATE_GUEST_OWNED</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">						<span class="nf">__fpsimd_save_fpexc32</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* Back from guest... */</span>
+</span></span><span class="line"><span class="cl">        <span class="o">+-&gt;</span> <span class="n">kvm_arch_vcpu_ctxsync_fp</span>
+</span></span><span class="line"><span class="cl">        	<span class="o">+-&gt;</span> <span class="c1">//SYNC_FP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">+-&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="nf">handle_exit</span><span class="p">(</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">ret</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="n">vcpu_put</span> <span class="o">-&gt;</span> <span class="n">kvm_vcpu_arch_put</span>
+</span></span><span class="line"><span class="cl">        <span class="o">+-&gt;</span> <span class="n">kvm_arch_vcpu_put_fp</span>
+</span></span><span class="line"><span class="cl">        	<span class="o">+-&gt;</span> <span class="c1">//PUT_FP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        
+</span></span><span class="line"><span class="cl"><span class="c1">//LOAD_FP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Prepare vcpu for saving the host&#39;s FPSIMD state and loading the guest&#39;s.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * The actual loading is done by the FPSIMD access trap taken to hyp.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Here, we just set the correct metadata to indicate that the FPSIMD
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * state in the cpu regs (if any) belongs to current on the host.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="n">kvm_arch_vcpu_load_fp</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">system_supports_fpsimd</span><span class="p">()</span> <span class="o">==</span> <span class="n">TRUE</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="n">fpsimd_kvm_prepare</span>
+</span></span><span class="line"><span class="cl">    	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 	 * We will check TIF_FOREIGN_FPSTATE just before entering the
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 	 * guest in kvm_arch_vcpu_ctxflush_fp() and override this to
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 	 * FP_STATE_FREE if the flag set.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 	 */</span>
+</span></span><span class="line"><span class="cl">       	<span class="o">+-&gt;</span>	<span class="k">if</span> <span class="p">(</span><span class="nf">test_and_clear_thread_flag</span><span class="p">(</span><span class="n">TIF_SVE</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">sve_to_fpsimd</span><span class="p">(</span><span class="n">current</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            	<span class="n">current</span><span class="o">-&gt;</span><span class="kr">thread</span><span class="p">.</span><span class="n">fp_type</span> <span class="o">=</span> <span class="n">FP_STATE_FPSIMD</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">=</span> <span class="n">FP_STATE_HOST_OWNED</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="nf">vcpu_clear_flag</span><span class="p">(</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">HOST_SVE_ENABLED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">read_sysreg</span><span class="p">(</span><span class="n">cpacr_el1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">CPACR_EL1_ZEN_EL0EN</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">vcpu_set_flag</span><span class="p">(</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">HOST_SVE_ENABLED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">+-&gt;</span> <span class="c1">//假设不支持SME
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        
+</span></span><span class="line"><span class="cl"><span class="c1">//FLUSH_FP
+</span></span></span><span class="line"><span class="cl"><span class="c1">//如果进入guest前触发中断，TIF_FOREIGN_FPSTATE被清理掉，当前CPU上实时保存的是一份和host/guest无关的fpsimd状态
+</span></span></span><span class="line"><span class="cl"><span class="c1">//注意，该函数执行前需要preempt_disable()/local_irq_disable()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Called just before entering the guest once we are no longer preemptable
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * and interrupts are disabled. If we have managed to run anything using
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * FP while we were preemptible (such as off the back of an interrupt),
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * then neither the host nor the guest own the FP hardware (and it was the
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * responsibility of the code that used FP to save the existing state).
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_arch_vcpu_ctxflush_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">test_thread_flag</span><span class="p">(</span><span class="n">TIF_FOREIGN_FPSTATE</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">=</span> <span class="n">FP_STATE_FREE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//AC_TRAPS/DEAC_TRAPS
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/* Check whether the FP regs are owned by the guest */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">bool</span> <span class="nf">guest_owns_fp_regs</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">==</span> <span class="n">FP_STATE_GUEST_OWNED</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	进入guest前，检查CPU的fp_state的持有者是否为guest:
+</span></span></span><span class="line"><span class="cl"><span class="cm">	1) 首次进入fp_state持有者为host或free，禁止guest在EL0/EL1执行fpsimd/sve指令
+</span></span></span><span class="line"><span class="cl"><span class="cm">	2) 如果为guest，其支持SVE，则允许guest在EL0/EL1执行fpsimd/sve指令
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="n">__activate_traps</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">val</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="n">CPACR_EL1_ZEN_EL0EN</span> <span class="o">|</span> <span class="n">CPACR_EL1_ZEN_EL1EN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> 	<span class="k">if</span> <span class="p">(</span><span class="nf">guest_owns_fp_regs</span><span class="p">(</span><span class="n">vcpu</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">vcpu_has_sve</span><span class="p">(</span><span class="n">vcpu</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">			<span class="n">val</span> <span class="o">|=</span> <span class="n">CPACR_EL1_ZEN_EL0EN</span> <span class="o">|</span> <span class="n">CPACR_EL1_ZEN_EL1EN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">val</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="n">CPACR_EL1_FPEN_EL0EN</span> <span class="o">|</span> <span class="n">CPACR_EL1_FPEN_EL1EN</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">__activate_traps_fpsimd32</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">__deactivate_traps</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//SYNC_FP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Called just after exiting the guest. If the guest FPSIMD state
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * was loaded, update the host&#39;s context tracking data mark the CPU
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * FPSIMD regs as dirty and belonging to vcpu so that they will be
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * written back if the kernel clobbers them due to kernel-mode NEON
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * before re-entry into the guest.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	在退出客户机后立即调用。如果加载了客户机的FPSIMD状态，更新主机的上下文跟踪数据，
+</span></span></span><span class="line"><span class="cl"><span class="cm">	将CPU的FPSIMD寄存器标记为脏的，并属于虚拟CPU，
+</span></span></span><span class="line"><span class="cl"><span class="cm">	这样如果内核在重新进入客户机之前由于内核模式NEON而破坏它们，它们将被写回。
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_arch_vcpu_ctxsync_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">cpu_fp_state</span> <span class="n">fp_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nf">WARN_ON_ONCE</span><span class="p">(</span><span class="o">!</span><span class="nf">irqs_disabled</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//如果guest作为CPU fpsimd/sve寄存器组持有者，将vcpu-&gt;arch的相关内容全部拉取下来，保存至本地cpu_fp_state
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">==</span> <span class="n">FP_STATE_GUEST_OWNED</span><span class="p">)</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * Currently we do not support SME guests so SVCR is
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * always 0 and we just need a variable to point to.
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 */</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fp_state</span><span class="p">.</span><span class="n">st</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">ctxt</span><span class="p">.</span><span class="n">fp_regs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fp_state</span><span class="p">.</span><span class="n">sve_state</span> <span class="o">=</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">sve_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fp_state</span><span class="p">.</span><span class="n">sve_vl</span> <span class="o">=</span> <span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">sve_max_vl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fp_state</span><span class="p">.</span><span class="n">sme_state</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fp_state</span><span class="p">.</span><span class="n">svcr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">svcr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fp_state</span><span class="p">.</span><span class="n">fp_type</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">vcpu_has_sve</span><span class="p">(</span><span class="n">vcpu</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">			<span class="n">fp_state</span><span class="p">.</span><span class="n">to_save</span> <span class="o">=</span> <span class="n">FP_STATE_SVE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">			<span class="n">fp_state</span><span class="p">.</span><span class="n">to_save</span> <span class="o">=</span> <span class="n">FP_STATE_FPSIMD</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">        <span class="c1">//用本地cpu_fp_state刷新per-cpu变量`fpsimd_last_state`，让其指向最近的上下文 (guest)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">fpsimd_bind_state_to_cpu</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fp_state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">        <span class="c1">//清除TIF_FOREIGN_FPSTATE，该标识用于控制vcpu线程的两种状态(host/guest)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">clear_thread_flag</span><span class="p">(</span><span class="n">TIF_FOREIGN_FPSTATE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>           
+</span></span><span class="line"><span class="cl">                        
+</span></span><span class="line"><span class="cl"><span class="c1">//PUT_FP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Write back the vcpu FPSIMD regs if they are dirty, and invalidate the
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * cpu FPSIMD regs so that they can&#39;t be spuriously reused if this vcpu
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * disappears and another task or vcpu appears that recycles the same
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * struct fpsimd_state.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	如果虚拟中央处理器（vCPU）的浮点/ SIMD 寄存器（FPSIMD regs）已被修改，将其内容写回，
+</span></span></span><span class="line"><span class="cl"><span class="cm">	并使该 CPU 的 FPSIMD 寄存器无效。
+</span></span></span><span class="line"><span class="cl"><span class="cm">	这样做的目的是防止在该 vCPU 消失后，出现另一个任务或 vCPU 并且重新使用相同的 fpsimd_state 结构时发生误用
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">kvm_arch_vcpu_put_fp</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">==</span> <span class="n">FP_STATE_GUEST_OWNED</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">vcpu_has_sve</span><span class="p">(</span><span class="n">vcpu</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">__vcpu_sys_reg</span><span class="p">(</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">ZCR_EL1</span><span class="p">)</span> <span class="o">=</span> <span class="nf">read_sysreg_el1</span><span class="p">(</span><span class="n">SYS_ZCR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="cm">/* Restore the VL that was saved when bound to the CPU */</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">has_vhe</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">sve_cond_update_zcr_vq</span><span class="p">(</span><span class="nf">vcpu_sve_max_vq</span><span class="p">(</span><span class="n">vcpu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">						       <span class="n">SYS_ZCR_EL1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nf">fpsimd_save_and_flush_cpu_state</span><span class="p">();</span> <span class="c1">//??? why not defer to userland
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nf">has_vhe</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nf">system_supports_sve</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * The FPSIMD/SVE state in the CPU has not been touched, and we
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * have SVE (and VHE): CPACR_EL1 (alias CPTR_EL2) has been
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * reset by kvm_reset_cptr_el2() in the Hyp code, disabling SVE
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * for EL0.  To avoid spurious traps, restore the trap state
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * seen by kvm_arch_vcpu_load_fp():
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 */</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">vcpu_get_flag</span><span class="p">(</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">HOST_SVE_ENABLED</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">sysreg_clear_set</span><span class="p">(</span><span class="n">CPACR_EL1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">CPACR_EL1_ZEN_EL0EN</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">sysreg_clear_set</span><span class="p">(</span><span class="n">CPACR_EL1</span><span class="p">,</span> <span class="n">CPACR_EL1_ZEN_EL0EN</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                              
+</span></span><span class="line"><span class="cl"><span class="c1">// guest首次fpsimd/sve_trap陷入hyp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * We trap the first access to the FP/SIMD to save the host context and
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * restore the guest context lazily.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * If FP/SIMD is not implemented, handle the trap and inject an undefined
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * instruction exception to the guest. Similarly for trapped SVE accesses.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">bool</span> <span class="nf">kvm_hyp_handle_fpsimd</span><span class="p">(</span><span class="k">struct</span> <span class="n">kvm_vcpu</span> <span class="o">*</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">u64</span> <span class="o">*</span><span class="n">exit_code</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">sve_guest</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u8</span> <span class="n">esr_ec</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">u64</span> <span class="n">reg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">system_supports_fpsimd</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">sve_guest</span> <span class="o">=</span> <span class="nf">vcpu_has_sve</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">esr_ec</span> <span class="o">=</span> <span class="nf">kvm_vcpu_trap_get_class</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Only handle traps the vCPU can support here: */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="p">(</span><span class="n">esr_ec</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nl">ESR_ELx_EC_FP_ASIMD</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nl">ESR_ELx_EC_SVE</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">sve_guest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Valid trap.  Switch the context: */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* First disable enough traps to allow us to update the registers */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">has_vhe</span><span class="p">()</span> <span class="o">||</span> <span class="nf">has_hvhe</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">reg</span> <span class="o">=</span> <span class="n">CPACR_EL1_FPEN_EL0EN</span> <span class="o">|</span> <span class="n">CPACR_EL1_FPEN_EL1EN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">sve_guest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">reg</span> <span class="o">|=</span> <span class="n">CPACR_EL1_ZEN_EL0EN</span> <span class="o">|</span> <span class="n">CPACR_EL1_ZEN_EL1EN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nf">sysreg_clear_set</span><span class="p">(</span><span class="n">cpacr_el1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">reg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">reg</span> <span class="o">=</span> <span class="n">CPTR_EL2_TFP</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">sve_guest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">reg</span> <span class="o">|=</span> <span class="n">CPTR_EL2_TZ</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nf">sysreg_clear_set</span><span class="p">(</span><span class="n">cptr_el2</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">isb</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Write out the host state if it&#39;s in the registers */</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// host_sve_sate 为什么不保存？
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">==</span> <span class="n">FP_STATE_HOST_OWNED</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">__fpsimd_save_state</span><span class="p">(</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">host_fpsimd_state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Restore the guest state */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">sve_guest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">__hyp_sve_restore_guest</span><span class="p">(</span><span class="n">vcpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">__fpsimd_restore_state</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">ctxt</span><span class="p">.</span><span class="n">fp_regs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Skip restoring fpexc32 for AArch64 guests */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nf">read_sysreg</span><span class="p">(</span><span class="n">hcr_el2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">HCR_RW</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">write_sysreg</span><span class="p">(</span><span class="nf">__vcpu_sys_reg</span><span class="p">(</span><span class="n">vcpu</span><span class="p">,</span> <span class="n">FPEXC32_EL2</span><span class="p">),</span> <span class="n">fpexc32_el2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">vcpu</span><span class="o">-&gt;</span><span class="n">arch</span><span class="p">.</span><span class="n">fp_state</span> <span class="o">=</span> <span class="n">FP_STATE_GUEST_OWNED</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<blockquote>
+<ul>
+<li><em><strong>关于TIF_FOREIGN_FPSTATE在哪些场景下设置、取消、更新？</strong></em></li>
+</ul>
+<p>该标识的作用是：判断当前pCPU上加载的是否为被调度线程的最近用户态上下文，其值为FALSE时可以减少一次上下文的恢复工作。该标识的引入可以将调度执行流中的SIMD恢复工作解耦出来并推迟到返回用户态之前。</p>
+<p>一些情况会影响TIF_FOREIGN_FPSTATE，除了该标识的合法设置方式外（通过两个变量以判断同步情况）。因为除了用户态，内核态也可能使用FPSIMD能力，此时硬件FPSIMD状态的持有者就不再是用户了，用户应该即时保存这部分状态，同时设置TIF_FOREIGN_FPSTATE。</p>
+<hr>
+<ul>
+<li><em><strong>内核态中断/抢占场景下，FPSIMD状态应该如何维护？</strong></em></li>
+</ul>
+<p>调用链：preempt_enable =&gt; _schedule =&gt; context_switch =&gt; __switch_to =&gt; fpsimd_thread_switch</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fpsimd_thread_switch</span><span class="p">(</span><span class="k">struct</span> <span class="n">task_struct</span> <span class="o">*</span><span class="n">next</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">wrong_task</span><span class="p">,</span> <span class="n">wrong_cpu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">system_supports_fpsimd</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nf">__get_cpu_fpsimd_context</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* Save unsaved fpsimd state, if any: */</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">fpsimd_save</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * Fix up TIF_FOREIGN_FPSTATE to correctly describe next&#39;s
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * state.  For kernel threads, FPSIMD registers are never loaded
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * and wrong_task and wrong_cpu will always be true.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">wrong_task</span> <span class="o">=</span> <span class="nf">__this_cpu_read</span><span class="p">(</span><span class="n">fpsimd_last_state</span><span class="p">.</span><span class="n">st</span><span class="p">)</span> <span class="o">!=</span>
+</span></span><span class="line"><span class="cl">					<span class="o">&amp;</span><span class="n">next</span><span class="o">-&gt;</span><span class="kr">thread</span><span class="p">.</span><span class="n">uw</span><span class="p">.</span><span class="n">fpsimd_state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">wrong_cpu</span> <span class="o">=</span> <span class="n">next</span><span class="o">-&gt;</span><span class="kr">thread</span><span class="p">.</span><span class="n">fpsimd_cpu</span> <span class="o">!=</span> <span class="nf">smp_processor_id</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nf">update_tsk_thread_flag</span><span class="p">(</span><span class="n">next</span><span class="p">,</span> <span class="n">TIF_FOREIGN_FPSTATE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			       <span class="n">wrong_task</span> <span class="o">||</span> <span class="n">wrong_cpu</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nf">__put_cpu_fpsimd_context</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<ul>
+<li>
+<p><em><strong>vcpu首次进入guest，guest首次执行FPSIMD指令陷入hypervisor，保存恢复上下文后再次返回guest</strong></em></p>
+</li>
+<li>
+<p><em><strong>guest已持有FPSIMD状态，再次陷入hypervisor，处理后返回guest执行：（陷入原因）</strong></em></p>
+</li>
+<li>
+<p><em><strong>vcpu线程退出，hypervisor处理后直接返回</strong></em></p>
+<ul>
+<li>内层循环</li>
+<li>外层循环</li>
+</ul>
+</li>
+<li>
+<p><em><strong>vcpu线程退出，需要在用户态处理</strong></em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">kvm_arch_vcpu_put_fp</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="n">fpsimd_save_and_flush_cpu_state</span>
+</span></span><span class="line"><span class="cl">    	<span class="o">+-&gt;</span> <span class="nf">fpsimd_save</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    	<span class="o">+-&gt;</span> <span class="nf">fpsimd_flush_cpu_state</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Ensure FPSIMD/SVE storage in memory for the loaded context is up to
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * date with respect to the CPU registers. Note carefully that the
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * current context is the context last bound to the CPU stored in
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * last, if KVM is involved this may be the guest VM context rather
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * than the host thread for the VM pointed to by current. This means
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * that we must always reference the state storage via last rather
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * than via current, if we are saving KVM state then it will have
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * ensured that the type of registers to save is set in last-&gt;to_save.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">fpsimd_save</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="err">这段话大致意思是要确保内存中加载的上下文中的</span><span class="n">FPSIMD</span><span class="o">/</span><span class="n">SVE存储与CPU寄存器的状态是最新的</span><span class="err">。需要注意的是，当前上下文是最后绑定到</span><span class="n">CPU的上下文</span><span class="err">，存储在</span><span class="n">last中</span><span class="err">。如果涉及到</span><span class="n">KVM</span><span class="err">，这可能是指与</span><span class="n">current指向的VM主线程相关的guest</span> <span class="n">VM上下文</span><span class="err">，而不是主机线程的上下文。这意味着我们必须始终通过</span><span class="n">last引用状态存储</span><span class="err">，而不是通过</span><span class="n">current引用</span><span class="err">。如果正在保存</span><span class="n">KVM状态</span><span class="err">，那么</span><span class="n">last</span><span class="o">-&gt;</span><span class="n">to_save中将确保设置要保存的寄存器类型</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Invalidate any task&#39;s FPSIMD state that is present on this cpu.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * The FPSIMD context should be acquired with get_cpu_fpsimd_context()
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * before calling this function.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">fpsimd_flush_cpu_state</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">WARN_ON</span><span class="p">(</span><span class="o">!</span><span class="nf">system_supports_fpsimd</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">__this_cpu_write</span><span class="p">(</span><span class="n">fpsimd_last_state</span><span class="p">.</span><span class="n">st</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * Leaving streaming mode enabled will cause issues for any kernel
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * NEON and leaving streaming mode or ZA enabled may increase power
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * consumption.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">system_supports_sme</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">sme_smstop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nf">set_thread_flag</span><span class="p">(</span><span class="n">TIF_FOREIGN_FPSTATE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">do_notify_resume</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+-&gt;</span> <span class="n">fpsimd_restore_current_state</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Load the userland FPSIMD state of &#39;current&#39; from memory, but only if the
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * FPSIMD state already held in the registers is /not/ the most recent FPSIMD
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * state of &#39;current&#39;.  This is called when we are preparing to return to
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * userspace to ensure that userspace sees a good register state.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fpsimd_restore_current_state</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * TIF_FOREIGN_FPSTATE is set on the init task and copied by
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * arch_dup_task_struct() regardless of whether FP/SIMD is detected.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * Thus user threads can have this set even when FP/SIMD hasn&#39;t been
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * detected.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * When FP/SIMD is detected, begin_new_exec() will set
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * TIF_FOREIGN_FPSTATE via flush_thread() -&gt; fpsimd_flush_thread(),
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * and fpsimd_thread_switch() will set TIF_FOREIGN_FPSTATE when
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * switching tasks. We detect FP/SIMD before we exec the first user
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * process, ensuring this has TIF_FOREIGN_FPSTATE set and
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * do_notify_resume() will call fpsimd_restore_current_state() to
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * install the user FP/SIMD context.
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * When FP/SIMD is not detected, nothing else will clear or set
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * TIF_FOREIGN_FPSTATE prior to the first return to userspace, and
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * we must clear TIF_FOREIGN_FPSTATE to avoid do_notify_resume()
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 * looping forever calling fpsimd_restore_current_state().
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">system_supports_fpsimd</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">clear_thread_flag</span><span class="p">(</span><span class="n">TIF_FOREIGN_FPSTATE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nf">get_cpu_fpsimd_context</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">test_and_clear_thread_flag</span><span class="p">(</span><span class="n">TIF_FOREIGN_FPSTATE</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">task_fpsimd_load</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">fpsimd_bind_task_to_cpu</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nf">put_cpu_fpsimd_context</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><em><strong>vcpu线程被host调度</strong></em></p>
+<p>//TODO</p>
+</li>
+</ul>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>
