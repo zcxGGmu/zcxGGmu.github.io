@@ -7,7 +7,741 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zcxGGmu</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 09:30:16 +0800</lastBuildDate><atom:link href="https://zcxggmu.github.io/categories/llm-from-scratch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Oct 2024 14:34:08 +0800</lastBuildDate><atom:link href="https://zcxggmu.github.io/categories/llm-from-scratch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Openai Use Tutorial Ch3</title>
+        <link>https://zcxggmu.github.io/p/openai-use-tutorial-ch3/</link>
+        <pubDate>Thu, 24 Oct 2024 14:34:08 +0800</pubDate>
+        
+        <guid>https://zcxggmu.github.io/p/openai-use-tutorial-ch3/</guid>
+        <description>&lt;h1 id=&#34;chatgpt使用plus会员api---三者关系&#34;&gt;ChatGPT使用、Plus会员、API - 三者关系
+&lt;/h1&gt;&lt;h2 id=&#34;三者关系总结&#34;&gt;三者关系总结
+&lt;/h2&gt;&lt;p&gt;前文中，我们已经注册了OpenAI账号，所有服务（ChatGPT使用、Plus会员、API）都基于一个OpenAI账号，那么这3个主要的服务都有什么区别呢，我们为什么还有订阅ChatGPT Plus会员与注册ChatGPT API账户的教程呢？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT账号&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ChatGPT账号，是用户访问OpenAI提供的ChatGPT服务所需的基本账户。通过注册一个OpenAI账号，用户可以免费使用ChatGPT的基础功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用基础的ChatGPT对话功能。&lt;/li&gt;
+&lt;li&gt;管理个人信息和设置。&lt;/li&gt;
+&lt;li&gt;查看和管理对话历史记录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT Plus 会员&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ChatGPT Plus 是 OpenAI 提供的付费服务，每月费用为 &lt;strong&gt;20 美元&lt;/strong&gt;。&lt;strong&gt;需用国外虚拟信用卡付款。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;优势&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;优先访问多种模型&lt;/strong&gt;：包括 &lt;strong&gt;OpenAI o1-preview、o1-mini、GPT-4o、GPT-4o mini、GPT-4&lt;/strong&gt;，相比免费用户，Plus 会员有更多模型可用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;更多消息量&lt;/strong&gt;：可获得GPT-4o &lt;strong&gt;5 倍的消息量&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自定义 GPT&lt;/strong&gt;：支持创建和使用自定义的 GPT。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009163426.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;注册ChatGPT API&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：ChatGPT API是一种面向开发者的接口，允许将ChatGPT的语言模型功能集成到自己的应用、网站或服务中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关系&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;独立服务&lt;/strong&gt;：虽然ChatGPT API与个人ChatGPT账号相关联，但它是独立于ChatGPT Plus会员的服务。API的使用和收费方式与个人订阅不同。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注册流程&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;绑定付款的信用卡&lt;/strong&gt;：需先绑定虚拟信用卡充值后API才可被调用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;获取API密钥&lt;/strong&gt;：注册后，开发者可以获取用于调用API的密钥。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计费模式&lt;/strong&gt;：API使用通常基于调用次数或处理的字符数进行计费，与ChatGPT Plus的固定月费不同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用途&lt;/strong&gt;：主要面向开发者和企业，允许在自己的产品或服务中嵌入ChatGPT的功能，例如聊天机器人、内容生成工具等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;总的来说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;基础账号&lt;/strong&gt;：所有服务（ChatGPT使用、Plus会员、API）都基于一个OpenAI账号。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对话使用 vs 开发调用使用&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT账号&lt;/strong&gt;和&lt;strong&gt;ChatGPT Plus会员&lt;/strong&gt;主要面向个人用户，提供直接的对话体验和增强服务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT API&lt;/strong&gt;面向开发者和企业，提供集成和定制化的解决方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;收费模式&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT账号&lt;/strong&gt;免费使用基础功能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT Plus会员&lt;/strong&gt;采用订阅制，提供更优质的个人使用体验。需绑定虚拟信用卡付款。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT API&lt;/strong&gt;采用按使用量计费，适合不同规模的开发需求。需绑定信用卡付款。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;使用场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;个人用户小明&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注册一个ChatGPT账号，免费使用基础对话功能。&lt;/li&gt;
+&lt;li&gt;觉得免费版响应速度慢或模型不够前沿，决定订阅ChatGPT Plus会员，享受更快的响应和优先服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;开发者和大模型应用者小华&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用个人的ChatGPT账号访问ChatGPT的对话功能。&lt;/li&gt;
+&lt;li&gt;为了在自己开发的应用中集成ChatGPT功能，注册ChatGPT API，获取API密钥，并根据使用量支付费用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;主要门槛虚拟信用卡的开通与充值&#34;&gt;主要门槛：虚拟信用卡的开通与充值
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;不支持大陆的付款方式&lt;/strong&gt;：OpenAI不支持中国大陆发行的信用卡、微信或支付宝等常用支付方式，因此中国用户无法通过这些方式，订阅ChatGPT Plus充值ChatGPT API。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;解决方法&lt;/strong&gt;：ChatGPT Plus 的订阅和 &lt;strong&gt;ChatGPT API&lt;/strong&gt; 的调用，都需要通过 &lt;strong&gt;虚拟信用卡&lt;/strong&gt; 的方式来完成。虚拟信用卡是一种可随时开通、随时充值的数字信用卡，在国内是合法合规的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ChatGPT Plus 的订阅，也需要绑定银行卡再付款：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003801678.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Payment Information&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ChatGPT API&lt;/strong&gt;的调用需要先绑定信用卡，充值进OPENAI平台钱后才可以调用API：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313153436642.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Billing Information&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;chatgpt-plus-升级和chatgpt-api充值的准备--开通虚拟信用卡&#34;&gt;ChatGPT Plus 升级和ChatGPT API充值的准备 — 开通虚拟信用卡
+&lt;/h1&gt;&lt;h2 id=&#34;虚拟信用卡开通充值&#34;&gt;虚拟信用卡开通/充值
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;准备工作：科学上网工具打开，准备好全局模式。同时选择美国、欧洲等地区的服务器节点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;注意事项&#34;&gt;注意事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;一号一卡&lt;/strong&gt;：建议每个账号绑定一张独立的虚拟信用卡，避免一张虚拟信用卡绑定多个OPENAI账号导致关联封号。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持自动扣费&lt;/strong&gt;：尽量保持虚拟信用卡的余额充足，以确保每月自动扣费，避免因欠费导致服务中断或账号异常。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里我们手动绑定一卡一号的另外一个好处在于，可以使用相同的虚拟信用卡，进行ChatGPT Plus 升级和ChatGPT API充值。&lt;/p&gt;
+&lt;h3 id=&#34;虚拟信用卡平台推荐vvacard&#34;&gt;虚拟信用卡平台推荐：Vvacard
+&lt;/h3&gt;&lt;p&gt;我们推荐使用国内的虚拟信用卡平台 &lt;strong&gt;Vvacard&lt;/strong&gt;，其大多数信用卡都支持 ChatGPT Plus 的升级，无需科学上网即可使用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Vvacard 官网&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://www.vvacard.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.vvacard.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;注册与充值流程&#34;&gt;注册与充值流程
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;注册账号&lt;/strong&gt;：访问 Vvacard 官网，可以使用国内邮箱注册账号~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313144052307.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Vvacard 注册页面&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;充值平台账户&lt;/strong&gt;：登录后，在主页右上角点击 &lt;strong&gt;“快速充值”&lt;/strong&gt;，选择合适的充值方式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;推荐使用 &lt;strong&gt;支付宝扫码支付&lt;/strong&gt;（需要完成实名认证）。&lt;/li&gt;
+&lt;li&gt;最低充值金额为 &lt;strong&gt;50 美元&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114749.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114838.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击支付宝扫码支付之后，进入支付页面，选择合适的充值金额（最低充值金额是50刀）点击提交：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114908.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114951.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;查看充值状态&lt;/strong&gt;：支付完成后，可在 &lt;strong&gt;“充值记录”&lt;/strong&gt; 页面查看充值状态。若显示 &lt;strong&gt;“已到账”&lt;/strong&gt;，则表示充值成功（现在审核非常迅速，基本上是秒到账）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313145551589.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Vvacard 充值记录&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;开通虚拟信用卡&#34;&gt;开通虚拟信用卡
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;快速开卡&lt;/strong&gt;：在左侧菜单中，选择 &lt;strong&gt;“我的卡片”&lt;/strong&gt; -&amp;gt; &lt;strong&gt;“快速开卡”&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505002601488.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Vvacard 快速开卡&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;填写开卡信息&lt;/strong&gt;：&lt;/p&gt;
+&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/image-20240313151801315.png&#34; alt=&#34;image-20240313151801315&#34;  /&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;卡段&lt;/strong&gt;：因为这是一笔不小的消费，并万一有些卡段不可用了但平台还没有更新，所以我们先去查找，最近有人充值应用的卡段。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zcxggmu.github.io/p/openai-use-tutorial-ch3/index.assets/20241010141444.png&#34;
+	width=&#34;1217&#34;
+	height=&#34;778&#34;
+	srcset=&#34;https://zcxggmu.github.io/p/openai-use-tutorial-ch3/index.assets/20241010141444_hu5964652402903094484.png 480w, https://zcxggmu.github.io/p/openai-use-tutorial-ch3/index.assets/20241010141444_hu5130438352470296814.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;156&#34;
+		data-flex-basis=&#34;375px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;例如，最近可用的有这个卡段，我们开卡的时候就选择它。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010142913.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;充值金额&lt;/strong&gt;：建议填写 &lt;strong&gt;11 美元&lt;/strong&gt;（开卡需扣除约 1 美元手续费，剩余 10 美元用于支付）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;账单地址&lt;/strong&gt;：由于上面的卡段，都是美国的虚拟信用卡，所以账单地址需要填写美国的账单地址。在填写账单地址之前，可以先占个免税州的地址，这样可以每个月便宜2-3美元，没有消费税。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;美国五大免税州&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;特拉华州（Delaware）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;新罕布什尔州（New Hampshire）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;蒙大拿州（Montana）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;俄勒冈州（Oregon）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阿拉斯加州（Alaska）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;如何获取真实的美国地址&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;方法一：Google 地图&lt;/strong&gt;：在 Google 地图上搜索免税州的地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;方法二：租房网站 Zillow&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;访问 &lt;a class=&#34;link&#34; href=&#34;https://www.zillow.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;www.zillow.com&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在搜索框中输入免税州名称（如 “Oregon”）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.vpsdawanjia.com/wp-content/uploads/2023/03/zillow.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;浏览列表，选择一个房源，获取其地址。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009165644.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;gs&#34;&gt;**地址示例**&lt;/span&gt;：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 18454 SW Oakville Ct, Beaverton, OR 97078
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 11139 SW Berlin Ave, Wilsonville, OR 97070
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;gs&#34;&gt;**注意**&lt;/span&gt;：请勿使用示例地址或平台默认地址，以避免因多人使用同一地址而导致关联封号。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/image-20240313151801315.png&#34; alt=&#34;image-20240313151801315&#34;  /&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;确认开卡&lt;/strong&gt;：填写完整信息后，点击 &lt;strong&gt;“开卡”&lt;/strong&gt;。&lt;strong&gt;请务必记录您填写的姓名和账单地址，后续在 ChatGPT Plus 充值时需要完全一致。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;查看卡片信息&lt;/strong&gt;：开卡成功后，可在 &lt;strong&gt;“卡片列表”&lt;/strong&gt; 中查看卡片详情。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003027925.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;卡片详情&#34;
+	
+	
+&gt;
+（第一次开卡应该只有一张卡，这里我开了两张，所以有两个选项）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;充值虚拟信用卡&#34;&gt;充值虚拟信用卡
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;充值金额&lt;/strong&gt;：建议充值 &lt;strong&gt;20 美元&lt;/strong&gt;，用于支付首月 ChatGPT Plus 费用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;充值步骤&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在卡片详情页面，点击 &lt;strong&gt;“充值”&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入充值金额，确认充值。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003159149.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20230505003159149&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;记录卡片信息&lt;/strong&gt;：在卡片详情页面，上访的 &lt;strong&gt;卡号、有效期、安全码&lt;/strong&gt; 等信息，后续在 ChatGPT Plus 升级时会使用到。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;升级-chatgpt-plus&#34;&gt;升级 ChatGPT Plus
+&lt;/h2&gt;&lt;h3 id=&#34;step-1进入升级页面&#34;&gt;Step 1：进入升级页面
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;登录 ChatGPT&lt;/strong&gt;：访问 &lt;a class=&#34;link&#34; href=&#34;https://chat.openai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://chat.openai.com/&lt;/a&gt;，使用您的 OpenAI 账号登录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;开始升级&lt;/strong&gt;：点击左下角的 &lt;strong&gt;“Upgrade to Plus”&lt;/strong&gt; 按钮。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313152026678.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Upgrade to Plus&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-2填写支付信息&#34;&gt;Step 2：填写支付信息
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;确认升级&lt;/strong&gt;：在弹出的窗口中，点击 &lt;strong&gt;“升级至plus”&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009165935.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;填写付款信息&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;信用卡信息&lt;/strong&gt;：输入虚拟信用卡的 &lt;strong&gt;卡号、有效期、安全码&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;账单地址&lt;/strong&gt;：填写与开卡时 &lt;strong&gt;完全一致&lt;/strong&gt; 的姓名和账单地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意事项&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;使用美国 IP 地址&lt;/strong&gt;：建议使用美国代理或 VPN，以提高支付成功率。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;信息一致性&lt;/strong&gt;：姓名和账单地址必须与虚拟信用卡开卡时填写的保持一致。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003801678.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Payment Information&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;完成支付&lt;/strong&gt;：确认信息无误后，点击 &lt;strong&gt;“Subscribe”&lt;/strong&gt; 完成支付。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-3确认升级成功&#34;&gt;Step 3：确认升级成功
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;成功提示&lt;/strong&gt;：顺利订阅则会进入到撒花页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/7dd32f1f22f977f9f3ef8c2c7a3b65c.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Upgrade Success&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;选择 ChatGPT-o1-preview：返回对话页面，现在可以选择使用 ** ChatGPT-o1-preview&lt;/strong&gt; 模型进行对话啦！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009171019.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;每月付费规则&#34;&gt;每月付费规则
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自动扣费&lt;/strong&gt;：首次绑定成功后，系统会在每个计费周期自动从您的虚拟信用卡中扣除月费。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持余额充足&lt;/strong&gt;：所以我们要确保虚拟信用卡中有足够的余额，以避免扣费失败导致服务中断。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;api-调用费用支付&#34;&gt;API 调用费用支付
+&lt;/h3&gt;&lt;p&gt;这里我们手动绑定一卡一号的另外一个好处在于，我们可以使用相同的虚拟信用卡进行账户的API调用费用的支付。对于OpenAI的大模型并不是开源模型，我们调用这些模型是需要支付一定的费用的。具体费用标准和调用方法，我们将在课程中进行详细的讲解。&lt;/p&gt;
+&lt;h2 id=&#34;openai-账户充值与-api-key-获取&#34;&gt;OpenAI 账户充值与 API Key 获取
+&lt;/h2&gt;&lt;p&gt;我们常常听说的API（应用程序编程接口）是不同软件系统之间沟通的桥梁。而在这其中，&lt;strong&gt;API Key&lt;/strong&gt;扮演着至关重要的角色。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;API Key&lt;/strong&gt; 是一串唯一的标识符，用于验证调用者的身份，确保只有授权的用户或应用能够访问特定的API资源。它就像我们的指纹一样独一无二。它的作用就像是一个超级安保系统，能够有身份验证，访问控制等的安全保障。&lt;/p&gt;
+&lt;p&gt;因此，在我们使用OpenAI API时，&lt;strong&gt;API Key&lt;/strong&gt; 会被用于认证每一次的API请求。通过这种方式OpenAI能够精确地知道是谁在使用他们的服务，用了多少，应该收多少费用。&lt;/p&gt;
+&lt;h3 id=&#34;openai-api-key的类型&#34;&gt;OpenAI API Key的类型
+&lt;/h3&gt;&lt;p&gt;OpenAI提供了两种主要类型的API Key，每种类型都有其特定的用途和优势：&lt;/p&gt;
+&lt;h4 id=&#34;1-项目密钥project-keys&#34;&gt;1. 项目密钥（Project Keys）
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;用途&lt;/strong&gt;：仅限于单一项目的访问。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势&lt;/strong&gt;：提升安全性，推荐作为首选。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;管理&lt;/strong&gt;：在生成密钥时，选择具体的项目以获取对应的API Key。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;2-用户密钥user-keys&#34;&gt;2. 用户密钥（User Keys）
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;用途&lt;/strong&gt;：访问用户所加入的所有组织和项目。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：属于遗留密钥，功能较为广泛。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;建议&lt;/strong&gt;：为了最佳的安全实践，强烈建议迁移至项目密钥，尽管当前仍支持用户密钥的使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;安全提示&lt;/strong&gt;：无论使用哪种类型的API Key，都必须妥善保管。切勿与他人分享，或在客户端代码（如浏览器、应用程序）中暴露。生产环境的请求应通过自己的后端服务器进行，API Key应从环境变量或密钥管理服务中安全加载。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;api-key获取流程&#34;&gt;API Key获取流程
+&lt;/h3&gt;&lt;h4 id=&#34;step-1绑定支付方式&#34;&gt;Step 1：绑定支付方式
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;登录开发者平台&lt;/strong&gt;：访问 &lt;a class=&#34;link&#34; href=&#34;https://platform.openai.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://platform.openai.com/&lt;/a&gt;，使用您的 OpenAI 账号登录。
+&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009174507.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;进入 Billing 页面，添加付款方式&lt;/strong&gt;：点击 &lt;code&gt;Settings--&amp;gt;Billing--&amp;gt;Add payment method&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009174850.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;选择账户类型&lt;/strong&gt;：选择 &lt;strong&gt;“Individual”&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313153409332.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Select Individual&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;填写账单信息&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;姓名、地址&lt;/strong&gt;：填写与虚拟信用卡开卡时一致的姓名和地址。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支付方式&lt;/strong&gt;：输入虚拟信用卡的卡号、有效期、安全码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313153436642.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Billing Information&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其中地址填写：&lt;/p&gt;
+&lt;p&gt;例如将地址 &lt;strong&gt;132 Haines Street, Nashua, New Hampshire 03060&lt;/strong&gt; 账单地址字段，可以按照以下方式分配各部分信息：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;字段名称&lt;/th&gt;
+          &lt;th&gt;填写内容&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Country (国家)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;United States (美国)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Address line 1 (地址行 1)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;132 Haines Street&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Address line 2 (地址行 2)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;（可选，若有公寓号、套房号等填写，例如 Apt 5B；如果没有，可留空）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;City (城市)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Nashua&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Postal code (邮政编码)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;03060&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;State, county, province, or region (州、县、省或地区)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;New Hampshire&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009183817.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;500&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;strong&gt;确认绑定&lt;/strong&gt;：完成信息填写后，点击 &lt;strong&gt;“继续”&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;step-2充值-api-额度&#34;&gt;Step 2：充值 API 额度
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;进入充值页面&lt;/strong&gt;：完成信息填写后，点击 &lt;strong&gt;“继续”&lt;/strong&gt;。即跳转过来了，后续也可在在 &lt;strong&gt;“Billing”&lt;/strong&gt; -&amp;gt; &lt;strong&gt;“Overview”&lt;/strong&gt; 页面，点击 &lt;strong&gt;“Add funds”&lt;/strong&gt; 找到。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;选择充值金额&lt;/strong&gt;：首次充值建议从小的开始试水，选择 &lt;strong&gt;5 美元&lt;/strong&gt;，并关闭自动充值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;设置自动充值（可选）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;自动充值&lt;/strong&gt;：您可以设置当余额低于某个阈值时，自动充值至指定金额。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;手动充值&lt;/strong&gt;：若不设置自动充值，需定期检查余额，避免因余额不足影响 API 调用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313155240567.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Add Funds&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;确认支付&lt;/strong&gt;：点击 &lt;strong&gt;“Confirm payment”&lt;/strong&gt;，完成充值。 &lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313155555263.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Select Amount&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;充值成功&lt;/strong&gt;：看到以下页面则表示充值成功。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313155811545.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Payment Success&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;step-3获取-openai-api-key&#34;&gt;Step 3：获取 OpenAI API Key
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;进入 API Keys 页面&lt;/strong&gt;：点击上方菜单中的Dashboard，再点击左侧菜单中的 &lt;strong&gt;“API Keys”&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009191230.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;注意如果出现这一步，说明我们在注册账号的过程中没有验证手机号，请在SMS虚拟手机号平台上购买国外手机号验证 。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/7991ff851166ff0ce5ac8fa6fa12a84.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;7991ff851166ff0ce5ac8fa6fa12a84.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;创建新密钥&lt;/strong&gt;：点击 &lt;strong&gt;“+ Create new secret key”&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010113455.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;命名密钥&lt;/strong&gt;：为您的 API Key 取一个名称，便于管理。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010110001.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;复制密钥&lt;/strong&gt;：创建后，点击 &lt;strong&gt;“Copy”&lt;/strong&gt;，将 API Key 复制并妥善保存&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010115552.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：API Key 只在创建时显示一次，务必保存到安全的地方。如发现密钥泄露，可在此页面删除并重新生成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;到此我们已成功完成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ChatGPT Plus 升级&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI API账户充值&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Key 获取&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Openai Use Tutorial Ch2</title>
         <link>https://zcxggmu.github.io/p/openai-use-tutorial-ch2/</link>
         <pubDate>Thu, 24 Oct 2024 09:30:16 +0800</pubDate>

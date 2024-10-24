@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ChatGPT使用、Plus会员、API - 三者关系 三者关系总结 前文中，我们已经注册了OpenAI账号，所有服务（ChatGPT使用、Plus会员、API）都基于一个OpenAI账号，那么这3个主要的服务都有什么区别呢，我们为什么还有订阅ChatGPT Plus会员与注册ChatGPT API账户的教程呢？\n">
+<title>Openai Use Tutorial Ch3</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/openai-use-tutorial-ch3/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Openai Use Tutorial Ch3">
+<meta property='og:description' content="ChatGPT使用、Plus会员、API - 三者关系 三者关系总结 前文中，我们已经注册了OpenAI账号，所有服务（ChatGPT使用、Plus会员、API）都基于一个OpenAI账号，那么这3个主要的服务都有什么区别呢，我们为什么还有订阅ChatGPT Plus会员与注册ChatGPT API账户的教程呢？\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/openai-use-tutorial-ch3/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='llm' /><meta property='article:tag' content='openai' /><meta property='article:published_time' content='2024-10-24T14:34:08&#43;08:00'/><meta property='article:modified_time' content='2024-10-24T14:34:08&#43;08:00'/>
+<meta name="twitter:title" content="Openai Use Tutorial Ch3">
+<meta name="twitter:description" content="ChatGPT使用、Plus会员、API - 三者关系 三者关系总结 前文中，我们已经注册了OpenAI账号，所有服务（ChatGPT使用、Plus会员、API）都基于一个OpenAI账号，那么这3个主要的服务都有什么区别呢，我们为什么还有订阅ChatGPT Plus会员与注册ChatGPT API账户的教程呢？\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#chatgpt使用plus会员api---三者关系">ChatGPT使用、Plus会员、API - 三者关系</a>
+      <ul>
+        <li><a href="#三者关系总结">三者关系总结</a></li>
+        <li><a href="#主要门槛虚拟信用卡的开通与充值">主要门槛：虚拟信用卡的开通与充值</a></li>
+      </ul>
+    </li>
+    <li><a href="#chatgpt-plus-升级和chatgpt-api充值的准备--开通虚拟信用卡">ChatGPT Plus 升级和ChatGPT API充值的准备 — 开通虚拟信用卡</a>
+      <ul>
+        <li><a href="#虚拟信用卡开通充值">虚拟信用卡开通/充值</a>
+          <ul>
+            <li><a href="#注意事项">注意事项</a></li>
+            <li><a href="#虚拟信用卡平台推荐vvacard">虚拟信用卡平台推荐：Vvacard</a>
+              <ul>
+                <li><a href="#注册与充值流程">注册与充值流程</a></li>
+              </ul>
+            </li>
+            <li><a href="#开通虚拟信用卡">开通虚拟信用卡</a></li>
+            <li><a href="#充值虚拟信用卡">充值虚拟信用卡</a></li>
+          </ul>
+        </li>
+        <li><a href="#升级-chatgpt-plus">升级 ChatGPT Plus</a>
+          <ul>
+            <li><a href="#step-1进入升级页面">Step 1：进入升级页面</a></li>
+            <li><a href="#step-2填写支付信息">Step 2：填写支付信息</a></li>
+            <li><a href="#step-3确认升级成功">Step 3：确认升级成功</a></li>
+            <li><a href="#每月付费规则">每月付费规则</a></li>
+            <li><a href="#api-调用费用支付">API 调用费用支付</a></li>
+          </ul>
+        </li>
+        <li><a href="#openai-账户充值与-api-key-获取">OpenAI 账户充值与 API Key 获取</a>
+          <ul>
+            <li><a href="#openai-api-key的类型">OpenAI API Key的类型</a>
+              <ul>
+                <li><a href="#1-项目密钥project-keys">1. 项目密钥（Project Keys）</a></li>
+                <li><a href="#2-用户密钥user-keys">2. 用户密钥（User Keys）</a></li>
+              </ul>
+            </li>
+            <li><a href="#api-key获取流程">API Key获取流程</a>
+              <ul>
+                <li><a href="#step-1绑定支付方式">Step 1：绑定支付方式</a></li>
+                <li><a href="#step-2充值-api-额度">Step 2：充值 API 额度</a></li>
+                <li><a href="#step-3获取-openai-api-key">Step 3：获取 OpenAI API Key</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/llm-from-scratch/" >
+                Llm-From-Scratch
+            </a>
+        
+            <a href="/categories/openai/" >
+                Openai
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/openai-use-tutorial-ch3/">Openai Use Tutorial Ch3</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-24</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 10 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="chatgpt使用plus会员api---三者关系">ChatGPT使用、Plus会员、API - 三者关系
+</h1><h2 id="三者关系总结">三者关系总结
+</h2><p>前文中，我们已经注册了OpenAI账号，所有服务（ChatGPT使用、Plus会员、API）都基于一个OpenAI账号，那么这3个主要的服务都有什么区别呢，我们为什么还有订阅ChatGPT Plus会员与注册ChatGPT API账户的教程呢？</p>
+<ol>
+<li><strong>ChatGPT账号</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>定义</strong></p>
+<p>ChatGPT账号，是用户访问OpenAI提供的ChatGPT服务所需的基本账户。通过注册一个OpenAI账号，用户可以免费使用ChatGPT的基础功能。</p>
+</li>
+<li>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>使用基础的ChatGPT对话功能。</li>
+<li>管理个人信息和设置。</li>
+<li>查看和管理对话历史记录。</li>
+</ul>
+<ol start="2">
+<li><strong>ChatGPT Plus 会员</strong></li>
+</ol>
+</li>
+<li>
+<p><strong>定义</strong></p>
+<p>ChatGPT Plus 是 OpenAI 提供的付费服务，每月费用为 <strong>20 美元</strong>。<strong>需用国外虚拟信用卡付款。</strong></p>
+</li>
+<li>
+<p><strong>优势</strong>：</p>
+<ol>
+<li><strong>优先访问多种模型</strong>：包括 <strong>OpenAI o1-preview、o1-mini、GPT-4o、GPT-4o mini、GPT-4</strong>，相比免费用户，Plus 会员有更多模型可用。</li>
+<li><strong>更多消息量</strong>：可获得GPT-4o <strong>5 倍的消息量</strong>。</li>
+<li><strong>自定义 GPT</strong>：支持创建和使用自定义的 GPT。</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009163426.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ol start="3">
+<li><strong>注册ChatGPT API</strong></li>
+</ol>
+<ul>
+<li><strong>定义</strong>：ChatGPT API是一种面向开发者的接口，允许将ChatGPT的语言模型功能集成到自己的应用、网站或服务中。</li>
+<li><strong>关系</strong>：
+<ul>
+<li><strong>独立服务</strong>：虽然ChatGPT API与个人ChatGPT账号相关联，但它是独立于ChatGPT Plus会员的服务。API的使用和收费方式与个人订阅不同。</li>
+<li><strong>注册流程</strong>：
+<ul>
+<li><strong>绑定付款的信用卡</strong>：需先绑定虚拟信用卡充值后API才可被调用。</li>
+<li><strong>获取API密钥</strong>：注册后，开发者可以获取用于调用API的密钥。</li>
+<li><strong>计费模式</strong>：API使用通常基于调用次数或处理的字符数进行计费，与ChatGPT Plus的固定月费不同。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>用途</strong>：主要面向开发者和企业，允许在自己的产品或服务中嵌入ChatGPT的功能，例如聊天机器人、内容生成工具等。</li>
+</ul>
+<hr>
+<p>总的来说：</p>
+<ul>
+<li><strong>基础账号</strong>：所有服务（ChatGPT使用、Plus会员、API）都基于一个OpenAI账号。</li>
+<li><strong>对话使用 vs 开发调用使用</strong>：
+<ul>
+<li><strong>ChatGPT账号</strong>和<strong>ChatGPT Plus会员</strong>主要面向个人用户，提供直接的对话体验和增强服务。</li>
+<li><strong>ChatGPT API</strong>面向开发者和企业，提供集成和定制化的解决方案。</li>
+</ul>
+</li>
+<li><strong>收费模式</strong>：
+<ul>
+<li><strong>ChatGPT账号</strong>免费使用基础功能。</li>
+<li><strong>ChatGPT Plus会员</strong>采用订阅制，提供更优质的个人使用体验。需绑定虚拟信用卡付款。</li>
+<li><strong>ChatGPT API</strong>采用按使用量计费，适合不同规模的开发需求。需绑定信用卡付款。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>使用场景：</p>
+<ul>
+<li>
+<p><strong>个人用户小明</strong>：</p>
+<ul>
+<li>注册一个ChatGPT账号，免费使用基础对话功能。</li>
+<li>觉得免费版响应速度慢或模型不够前沿，决定订阅ChatGPT Plus会员，享受更快的响应和优先服务。</li>
+</ul>
+</li>
+<li>
+<p><strong>开发者和大模型应用者小华</strong>：</p>
+<ul>
+<li>使用个人的ChatGPT账号访问ChatGPT的对话功能。</li>
+<li>为了在自己开发的应用中集成ChatGPT功能，注册ChatGPT API，获取API密钥，并根据使用量支付费用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="主要门槛虚拟信用卡的开通与充值">主要门槛：虚拟信用卡的开通与充值
+</h2><p><strong>不支持大陆的付款方式</strong>：OpenAI不支持中国大陆发行的信用卡、微信或支付宝等常用支付方式，因此中国用户无法通过这些方式，订阅ChatGPT Plus充值ChatGPT API。</p>
+<blockquote>
+<p><strong>解决方法</strong>：ChatGPT Plus 的订阅和 <strong>ChatGPT API</strong> 的调用，都需要通过 <strong>虚拟信用卡</strong> 的方式来完成。虚拟信用卡是一种可随时开通、随时充值的数字信用卡，在国内是合法合规的。</p>
+</blockquote>
+<p>ChatGPT Plus 的订阅，也需要绑定银行卡再付款：</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003801678.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Payment Information"
+	
+	
+></p>
+<p><strong>ChatGPT API</strong>的调用需要先绑定信用卡，充值进OPENAI平台钱后才可以调用API：</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313153436642.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Billing Information"
+	
+	
+></p>
+<h1 id="chatgpt-plus-升级和chatgpt-api充值的准备--开通虚拟信用卡">ChatGPT Plus 升级和ChatGPT API充值的准备 — 开通虚拟信用卡
+</h1><h2 id="虚拟信用卡开通充值">虚拟信用卡开通/充值
+</h2><blockquote>
+<p>准备工作：科学上网工具打开，准备好全局模式。同时选择美国、欧洲等地区的服务器节点。</p>
+</blockquote>
+<h3 id="注意事项">注意事项
+</h3><ul>
+<li><strong>一号一卡</strong>：建议每个账号绑定一张独立的虚拟信用卡，避免一张虚拟信用卡绑定多个OPENAI账号导致关联封号。</li>
+<li><strong>保持自动扣费</strong>：尽量保持虚拟信用卡的余额充足，以确保每月自动扣费，避免因欠费导致服务中断或账号异常。</li>
+</ul>
+<p>这里我们手动绑定一卡一号的另外一个好处在于，可以使用相同的虚拟信用卡，进行ChatGPT Plus 升级和ChatGPT API充值。</p>
+<h3 id="虚拟信用卡平台推荐vvacard">虚拟信用卡平台推荐：Vvacard
+</h3><p>我们推荐使用国内的虚拟信用卡平台 <strong>Vvacard</strong>，其大多数信用卡都支持 ChatGPT Plus 的升级，无需科学上网即可使用。</p>
+<ul>
+<li><strong>Vvacard 官网</strong>：<a class="link" href="https://www.vvacard.com/"  target="_blank" rel="noopener"
+    >https://www.vvacard.com/</a></li>
+</ul>
+<h4 id="注册与充值流程">注册与充值流程
+</h4><ol>
+<li>
+<p><strong>注册账号</strong>：访问 Vvacard 官网，可以使用国内邮箱注册账号~</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313144052307.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Vvacard 注册页面"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>充值平台账户</strong>：登录后，在主页右上角点击 <strong>“快速充值”</strong>，选择合适的充值方式。</p>
+<ul>
+<li>推荐使用 <strong>支付宝扫码支付</strong>（需要完成实名认证）。</li>
+<li>最低充值金额为 <strong>50 美元</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114749.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114838.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>点击支付宝扫码支付之后，进入支付页面，选择合适的充值金额（最低充值金额是50刀）点击提交：</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114908.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009114951.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ol start="3">
+<li>
+<p><strong>查看充值状态</strong>：支付完成后，可在 <strong>“充值记录”</strong> 页面查看充值状态。若显示 <strong>“已到账”</strong>，则表示充值成功（现在审核非常迅速，基本上是秒到账）。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313145551589.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Vvacard 充值记录"
+	
+	
+></p>
+</li>
+</ol>
+<h3 id="开通虚拟信用卡">开通虚拟信用卡
+</h3><ol>
+<li>
+<p><strong>快速开卡</strong>：在左侧菜单中，选择 <strong>“我的卡片”</strong> -&gt; <strong>“快速开卡”</strong>。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505002601488.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Vvacard 快速开卡"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>填写开卡信息</strong>：</p>
+<img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/image-20240313151801315.png" alt="image-20240313151801315"  />
+<ul>
+<li>
+<p><strong>卡段</strong>：因为这是一笔不小的消费，并万一有些卡段不可用了但平台还没有更新，所以我们先去查找，最近有人充值应用的卡段。</p>
+<p><img src="/p/openai-use-tutorial-ch3/index.assets/20241010141444.png"
+	width="1217"
+	height="778"
+	srcset="/p/openai-use-tutorial-ch3/index.assets/20241010141444_hu5964652402903094484.png 480w, /p/openai-use-tutorial-ch3/index.assets/20241010141444_hu5130438352470296814.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="156"
+		data-flex-basis="375px"
+	
+></p>
+<p>例如，最近可用的有这个卡段，我们开卡的时候就选择它。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010142913.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>
+<p><strong>充值金额</strong>：建议填写 <strong>11 美元</strong>（开卡需扣除约 1 美元手续费，剩余 10 美元用于支付）。</p>
+</li>
+<li>
+<p><strong>账单地址</strong>：由于上面的卡段，都是美国的虚拟信用卡，所以账单地址需要填写美国的账单地址。在填写账单地址之前，可以先占个免税州的地址，这样可以每个月便宜2-3美元，没有消费税。</p>
+<p><strong>美国五大免税州</strong>：</p>
+<ol>
+<li><strong>特拉华州（Delaware）</strong></li>
+<li><strong>新罕布什尔州（New Hampshire）</strong></li>
+<li><strong>蒙大拿州（Montana）</strong></li>
+<li><strong>俄勒冈州（Oregon）</strong></li>
+<li><strong>阿拉斯加州（Alaska）</strong></li>
+</ol>
+<p><strong>如何获取真实的美国地址</strong>：</p>
+<ul>
+<li>
+<p><strong>方法一：Google 地图</strong>：在 Google 地图上搜索免税州的地址。</p>
+</li>
+<li>
+<p><strong>方法二：租房网站 Zillow</strong>：</p>
+<ol>
+<li>
+<p>访问 <a class="link" href="https://www.zillow.com/"  target="_blank" rel="noopener"
+    >www.zillow.com</a>。</p>
+</li>
+<li>
+<p>在搜索框中输入免税州名称（如 “Oregon”）。</p>
+<p><img src="https://www.vpsdawanjia.com/wp-content/uploads/2023/03/zillow.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+</li>
+<li>
+<p>浏览列表，选择一个房源，获取其地址。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009165644.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"> <span class="gs">**地址示例**</span>：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="k">-</span> 18454 SW Oakville Ct, Beaverton, OR 97078
+</span></span><span class="line"><span class="cl"> <span class="k">-</span> 11139 SW Berlin Ave, Wilsonville, OR 97070
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="gs">**注意**</span>：请勿使用示例地址或平台默认地址，以避免因多人使用同一地址而导致关联封号。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/image-20240313151801315.png" alt="image-20240313151801315"  />
+<ol start="3">
+<li>
+<p><strong>确认开卡</strong>：填写完整信息后，点击 <strong>“开卡”</strong>。<strong>请务必记录您填写的姓名和账单地址，后续在 ChatGPT Plus 充值时需要完全一致。</strong></p>
+</li>
+<li>
+<p><strong>查看卡片信息</strong>：开卡成功后，可在 <strong>“卡片列表”</strong> 中查看卡片详情。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003027925.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="卡片详情"
+	
+	
+>
+（第一次开卡应该只有一张卡，这里我开了两张，所以有两个选项）</p>
+</li>
+</ol>
+<h3 id="充值虚拟信用卡">充值虚拟信用卡
+</h3><ol>
+<li>
+<p><strong>充值金额</strong>：建议充值 <strong>20 美元</strong>，用于支付首月 ChatGPT Plus 费用。</p>
+</li>
+<li>
+<p><strong>充值步骤</strong>：</p>
+<ul>
+<li>
+<p>在卡片详情页面，点击 <strong>“充值”</strong>。</p>
+</li>
+<li>
+<p>输入充值金额，确认充值。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003159149.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20230505003159149"
+	
+	
+></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>记录卡片信息</strong>：在卡片详情页面，上访的 <strong>卡号、有效期、安全码</strong> 等信息，后续在 ChatGPT Plus 升级时会使用到。</p>
+</li>
+</ol>
+<h2 id="升级-chatgpt-plus">升级 ChatGPT Plus
+</h2><h3 id="step-1进入升级页面">Step 1：进入升级页面
+</h3><ol>
+<li>
+<p><strong>登录 ChatGPT</strong>：访问 <a class="link" href="https://chat.openai.com/"  target="_blank" rel="noopener"
+    >https://chat.openai.com/</a>，使用您的 OpenAI 账号登录。</p>
+</li>
+<li>
+<p><strong>开始升级</strong>：点击左下角的 <strong>“Upgrade to Plus”</strong> 按钮。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313152026678.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Upgrade to Plus"
+	
+	
+></p>
+</li>
+</ol>
+<h3 id="step-2填写支付信息">Step 2：填写支付信息
+</h3><ol>
+<li>
+<p><strong>确认升级</strong>：在弹出的窗口中，点击 <strong>“升级至plus”</strong>。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009165935.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>填写付款信息</strong>：</p>
+<ul>
+<li><strong>信用卡信息</strong>：输入虚拟信用卡的 <strong>卡号、有效期、安全码</strong>。</li>
+<li><strong>账单地址</strong>：填写与开卡时 <strong>完全一致</strong> 的姓名和账单地址。</li>
+</ul>
+<p><strong>注意事项</strong>：</p>
+<ul>
+<li><strong>使用美国 IP 地址</strong>：建议使用美国代理或 VPN，以提高支付成功率。</li>
+<li><strong>信息一致性</strong>：姓名和账单地址必须与虚拟信用卡开卡时填写的保持一致。</li>
+</ul>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20230505003801678.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Payment Information"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>完成支付</strong>：确认信息无误后，点击 <strong>“Subscribe”</strong> 完成支付。</p>
+</li>
+</ol>
+<h3 id="step-3确认升级成功">Step 3：确认升级成功
+</h3><ul>
+<li>
+<p><strong>成功提示</strong>：顺利订阅则会进入到撒花页面。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/7dd32f1f22f977f9f3ef8c2c7a3b65c.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Upgrade Success"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>选择 ChatGPT-o1-preview：返回对话页面，现在可以选择使用 ** ChatGPT-o1-preview</strong> 模型进行对话啦！</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009171019.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+</ul>
+<h3 id="每月付费规则">每月付费规则
+</h3><ul>
+<li><strong>自动扣费</strong>：首次绑定成功后，系统会在每个计费周期自动从您的虚拟信用卡中扣除月费。</li>
+<li><strong>保持余额充足</strong>：所以我们要确保虚拟信用卡中有足够的余额，以避免扣费失败导致服务中断。</li>
+</ul>
+<h3 id="api-调用费用支付">API 调用费用支付
+</h3><p>这里我们手动绑定一卡一号的另外一个好处在于，我们可以使用相同的虚拟信用卡进行账户的API调用费用的支付。对于OpenAI的大模型并不是开源模型，我们调用这些模型是需要支付一定的费用的。具体费用标准和调用方法，我们将在课程中进行详细的讲解。</p>
+<h2 id="openai-账户充值与-api-key-获取">OpenAI 账户充值与 API Key 获取
+</h2><p>我们常常听说的API（应用程序编程接口）是不同软件系统之间沟通的桥梁。而在这其中，<strong>API Key</strong>扮演着至关重要的角色。</p>
+<p><strong>API Key</strong> 是一串唯一的标识符，用于验证调用者的身份，确保只有授权的用户或应用能够访问特定的API资源。它就像我们的指纹一样独一无二。它的作用就像是一个超级安保系统，能够有身份验证，访问控制等的安全保障。</p>
+<p>因此，在我们使用OpenAI API时，<strong>API Key</strong> 会被用于认证每一次的API请求。通过这种方式OpenAI能够精确地知道是谁在使用他们的服务，用了多少，应该收多少费用。</p>
+<h3 id="openai-api-key的类型">OpenAI API Key的类型
+</h3><p>OpenAI提供了两种主要类型的API Key，每种类型都有其特定的用途和优势：</p>
+<h4 id="1-项目密钥project-keys">1. 项目密钥（Project Keys）
+</h4><ul>
+<li><strong>用途</strong>：仅限于单一项目的访问。</li>
+<li><strong>优势</strong>：提升安全性，推荐作为首选。</li>
+<li><strong>管理</strong>：在生成密钥时，选择具体的项目以获取对应的API Key。</li>
+</ul>
+<h4 id="2-用户密钥user-keys">2. 用户密钥（User Keys）
+</h4><ul>
+<li><strong>用途</strong>：访问用户所加入的所有组织和项目。</li>
+<li><strong>特点</strong>：属于遗留密钥，功能较为广泛。</li>
+<li><strong>建议</strong>：为了最佳的安全实践，强烈建议迁移至项目密钥，尽管当前仍支持用户密钥的使用。</li>
+</ul>
+<blockquote>
+<p><strong>安全提示</strong>：无论使用哪种类型的API Key，都必须妥善保管。切勿与他人分享，或在客户端代码（如浏览器、应用程序）中暴露。生产环境的请求应通过自己的后端服务器进行，API Key应从环境变量或密钥管理服务中安全加载。</p>
+</blockquote>
+<h3 id="api-key获取流程">API Key获取流程
+</h3><h4 id="step-1绑定支付方式">Step 1：绑定支付方式
+</h4><ol>
+<li>
+<p><strong>登录开发者平台</strong>：访问 <a class="link" href="https://platform.openai.com/"  target="_blank" rel="noopener"
+    >https://platform.openai.com/</a>，使用您的 OpenAI 账号登录。
+<img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009174507.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>进入 Billing 页面，添加付款方式</strong>：点击 <code>Settings--&gt;Billing--&gt;Add payment method</code> 。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009174850.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>选择账户类型</strong>：选择 <strong>“Individual”</strong>。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313153409332.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Select Individual"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>填写账单信息</strong>：</p>
+<ul>
+<li><strong>姓名、地址</strong>：填写与虚拟信用卡开卡时一致的姓名和地址。</li>
+<li><strong>支付方式</strong>：输入虚拟信用卡的卡号、有效期、安全码。</li>
+</ul>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313153436642.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Billing Information"
+	
+	
+></p>
+<p>其中地址填写：</p>
+<p>例如将地址 <strong>132 Haines Street, Nashua, New Hampshire 03060</strong> 账单地址字段，可以按照以下方式分配各部分信息：</p>
+</li>
+</ol>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>字段名称</th>
+          <th>填写内容</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Country (国家)</strong></td>
+          <td>United States (美国)</td>
+      </tr>
+      <tr>
+          <td><strong>Address line 1 (地址行 1)</strong></td>
+          <td>132 Haines Street</td>
+      </tr>
+      <tr>
+          <td><strong>Address line 2 (地址行 2)</strong></td>
+          <td>（可选，若有公寓号、套房号等填写，例如 Apt 5B；如果没有，可留空）</td>
+      </tr>
+      <tr>
+          <td><strong>City (城市)</strong></td>
+          <td>Nashua</td>
+      </tr>
+      <tr>
+          <td><strong>Postal code (邮政编码)</strong></td>
+          <td>03060</td>
+      </tr>
+      <tr>
+          <td><strong>State, county, province, or region (州、县、省或地区)</strong></td>
+          <td>New Hampshire</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009183817.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="500"
+	
+	
+></p>
+<ol start="6">
+<li><strong>确认绑定</strong>：完成信息填写后，点击 <strong>“继续”</strong>。</li>
+</ol>
+<h4 id="step-2充值-api-额度">Step 2：充值 API 额度
+</h4><ol>
+<li>
+<p><strong>进入充值页面</strong>：完成信息填写后，点击 <strong>“继续”</strong>。即跳转过来了，后续也可在在 <strong>“Billing”</strong> -&gt; <strong>“Overview”</strong> 页面，点击 <strong>“Add funds”</strong> 找到。</p>
+</li>
+<li>
+<p><strong>选择充值金额</strong>：首次充值建议从小的开始试水，选择 <strong>5 美元</strong>，并关闭自动充值。</p>
+</li>
+<li>
+<p><strong>设置自动充值（可选）</strong>：</p>
+<ul>
+<li>
+<p><strong>自动充值</strong>：您可以设置当余额低于某个阈值时，自动充值至指定金额。</p>
+</li>
+<li>
+<p><strong>手动充值</strong>：若不设置自动充值，需定期检查余额，避免因余额不足影响 API 调用。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313155240567.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Add Funds"
+	
+	
+></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>确认支付</strong>：点击 <strong>“Confirm payment”</strong>，完成充值。 <img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313155555263.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Select Amount"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>充值成功</strong>：看到以下页面则表示充值成功。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/image-20240313155811545.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Payment Success"
+	
+	
+></p>
+</li>
+</ol>
+<h4 id="step-3获取-openai-api-key">Step 3：获取 OpenAI API Key
+</h4><ol>
+<li>
+<p><strong>进入 API Keys 页面</strong>：点击上方菜单中的Dashboard，再点击左侧菜单中的 <strong>“API Keys”</strong>。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241009191230.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>注意如果出现这一步，说明我们在注册账号的过程中没有验证手机号，请在SMS虚拟手机号平台上购买国外手机号验证 。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/7991ff851166ff0ce5ac8fa6fa12a84.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="7991ff851166ff0ce5ac8fa6fa12a84.png"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>创建新密钥</strong>：点击 <strong>“+ Create new secret key”</strong>。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010113455.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>命名密钥</strong>：为您的 API Key 取一个名称，便于管理。</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010110001.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+<li>
+<p><strong>复制密钥</strong>：创建后，点击 <strong>“Copy”</strong>，将 API Key 复制并妥善保存</p>
+<p><img src="https://typora-photo1220.oss-cn-beijing.aliyuncs.com/DataAnalysis/LingYi/20241010115552.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</li>
+</ol>
+<blockquote>
+<p><strong>注意</strong>：API Key 只在创建时显示一次，务必保存到安全的地方。如发现密钥泄露，可在此页面删除并重新生成。</p>
+</blockquote>
+<hr>
+<p>到此我们已成功完成：</p>
+<ul>
+<li><strong>ChatGPT Plus 升级</strong></li>
+<li><strong>OpenAI API账户充值</strong></li>
+<li><strong>API Key 获取</strong></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/llm/">Llm</a>
+        
+            <a href="/tags/openai/">Openai</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/openai-use-tutorial-ch2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Openai Use Tutorial Ch2</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/openai-use-tutorial-ch1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Openai Use Tutorial Ch1</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>
