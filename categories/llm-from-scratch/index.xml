@@ -7,7 +7,718 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zcxGGmu</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 14:34:08 +0800</lastBuildDate><atom:link href="https://zcxggmu.github.io/categories/llm-from-scratch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 28 Oct 2024 15:59:08 +0800</lastBuildDate><atom:link href="https://zcxggmu.github.io/categories/llm-from-scratch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Llm Agent Intro 01</title>
+        <link>https://zcxggmu.github.io/p/llm-agent-intro-01/</link>
+        <pubDate>Mon, 28 Oct 2024 15:59:08 +0800</pubDate>
+        
+        <guid>https://zcxggmu.github.io/p/llm-agent-intro-01/</guid>
+        <description>&lt;h1 id=&#34;1-大模型应用发展及agent前沿技术趋势&#34;&gt;1 大模型应用发展及Agent前沿技术趋势
+&lt;/h1&gt;&lt;p&gt;自2023年初开始，大模型在国内外引起了极大的关注。实际上，早在2022年底，国外已经对这一技术展开了非常激烈的讨论，而在国内对大模型的普及和认知很大程度上得益于&lt;code&gt;ChatGPT&lt;/code&gt;的问世。这一现象级的对话式应用直接改变了人们对智能应用的既有看法。&lt;/p&gt;
+&lt;p&gt;在此之前，我们已经习惯了&lt;code&gt;智能客服&lt;/code&gt;的机械式回答和&lt;code&gt;智能应用&lt;/code&gt;的频繁出错，所以，当一个能够使用&lt;code&gt;自然语言&lt;/code&gt;（即人类的交流语言）理解情感、解决问题并且能即问即答的应用系统出现时，人们很难相信它背后不是真实的人类，而是一个由人类设计的机器模型。&lt;/p&gt;
+&lt;p&gt;下图中的对话来源于基于&lt;code&gt;GPT-4.0&lt;/code&gt;模型的对话式应用&lt;code&gt;ChatGPT&lt;/code&gt;👇&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240828150834951.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;如上图所示，我们可以用最自然的对话方式让大模型帮助我们处理各种任务、解决问题、学习新知识，甚至在需要时提供安慰。它表现得像是一个无所不知、无所不能的朋友。每当你需要它扮演不同角色时，只需&lt;strong&gt;新建一个对话窗口&lt;/strong&gt;，它便能化身为全新的伙伴。在它出现之前，人工智能的技术领域中无论是机器学习模型还是深度学习模型，它们都需要特定的数据先进行训练才能去执行具体任务，比如机器学习中的分类任务或深度学习的实体识别等。而大模型以其接近人类的交互特性，跨越了这些界限，用&lt;strong&gt;独立的个体&lt;/strong&gt;直接去解决各种类型的问题，并且还表现得很好，直接把人工智能的热度推到了一个新的高度。&lt;/p&gt;
+&lt;p&gt;也正是这样的一种技术上的跨越，业内人会把2023年称为&lt;strong&gt;大模型的元年&lt;/strong&gt;，因为它标志着人工智能迈上了一个新的台阶，而且，属于大模型的时代也才刚刚开始。所以我们作为技术人，肯定不是仅仅做一个“吃瓜群众”，看热闹的同时，更多的精力都在积极跟进大模型的发展，深入理解并掌握其背后的技术演进，以此来不断更新自身的技术视野。&lt;strong&gt;当然，我们要研究的并不是表面的应用&lt;code&gt;ChatGPT&lt;/code&gt;，而是其背后的强力基座模型-&lt;code&gt;GPT&lt;/code&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-大模型应用的快速迭代&#34;&gt;2 大模型应用的快速迭代
+&lt;/h1&gt;&lt;p&gt;比较有意思的是，如果有在2023年起就开始使用&lt;code&gt;ChatGPT&lt;/code&gt;类应用的&lt;strong&gt;非技术岗位&lt;/strong&gt;的小伙伴，大概率都会有这样一些想法：大模型技术一年半以来的技术发展并未带来显著的产品变革，无非是界面美观了一些，功能增加了一些，例如现在支持上传图片、文件和构建插件等。但通过表象应用去看本质，会发现大模型技术的迭代速度是远远快于其他领域的。其快速发展的有两个核心方向：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;大模型自身的能力在不断变强&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;大模型的对话效果在大幅提升&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;两个方向其背后的技术栈迭代，我们可以总结如下图所示 👇 ：&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/02.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;大模型自身的能力在不断变强&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;大模型有两个关键概念：原生能力和涌现能力。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  所谓&lt;strong&gt;原生能力&lt;/strong&gt;，指的是大模型基于特定的神经网络架构，在训练过程中通过不断摄入数据来学习，最终具备解答特定领域问题的能力。这种能力就像是印在大模型“大脑”中的知识，是其能够独立解答问题的基础。就如同我们在大学学习三年后能够解决高等数学问题一样，这种能力是通过学习得来的，我们称之为原生能力。大模型的这种能力的提升在于：随着能获取到的数据量增加，开发者可以基于先前性能表现为其构建更优质的学习数据，结合学习方法的不断迭代优化（技术上称之为预训练技术或微调），大模型的原生能力就可以持续进化。&lt;strong&gt;这种进步的直观表现是模型的理解能力和回答质量的提升。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  其次，我们还会重点关注大模型的&lt;strong&gt;涌现能力&lt;/strong&gt;。这一能力指的是，尽管大模型可能没有直接学习过某些信息，但在与它对话时提供相关信息后，它能够类比和推理出解决方案。这类似于我们在准备高考时做过的“五年高考三年模拟”的题目，尽管高考题目不会与模拟题完全相同，但我们仍可以利用相同的思维模式解决考试试题。大模型的这部分能力提升主要体现在：我们通过给它构造各种函数调用、处理复杂问题的过程示例（Agent能力）等，在预训练或者微调阶段帮助它学习并强化这种能力。这样，大模型就能在其应用的第二个方向上——即实际问题解决中发挥更加重要的作用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;大模型的对话效果在大幅提升&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  大模型的能力毋庸置疑，它在对话过程中能够回答和解决多种不同类型的任务，但存在着两个主要问题：&lt;strong&gt;知识库更新不及时和大模型幻觉问题&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;  首先，关于知识库更新问题，正如我们上面刚刚提到的，大模型是在预训练或者微调阶段获取和学习知识。这意味着，如果某些最新的信息未在训练数据中包含，大模型就无法提供相关答案。例如，如果你问它“今天的天气怎么样？”由于缺乏实时更新的数据，大模型无法给出正确的当前天气状况。&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240828170408714.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  比较有意思的是：大模型的原生能力在不断的提升，它的对话效果好了，回答质量高了，但是我们的需求也变得越来越复杂了。 单纯的对话应用已无法满足需求。这就促使我们进入了大模型应用的第一个阶段——&lt;strong&gt;提示工程&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stage 1： 提示工程&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  虽然大语言模型非常强大，但要有效使用它们并非易事。在开发者急于探索如何像处理传统算法模型那样通过微调快速迭代更新大模型的内部知识时，一篇极具启发性的论文 👉 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2005.14165&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GPT-3 Language Models are Few-Shot Learners&lt;/a&gt; 提出了 &lt;code&gt;In-Context Learning&lt;/code&gt; 的概念。该方法通过向模型提供少量标注的“输入-输出对”示例，在不需要大规模微调的情况下即可显著改善大模型的输出质量。这一发现开启了使用大模型的新方式 👇&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240828172452210.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  当提出问题后，大模型能够以自然语言返回响应，这是生成式人工智能的一大优点。有些任务确实可以通过这种提示工程的方式引导大模型在对话过程中生成正确的回复，但这个过程最大的问题就是需要人工介入，正如上面的例子中涉及到的北京的天气信息：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;city&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Beijing&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;CN&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;timezone&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Asia/Shanghai&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;coordinates&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;latitude&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;39.9042&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;longitude&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;116.4074&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;current&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;temperature&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;unit&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;C&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;humidity&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;pressure&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1012&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;u &amp;#34;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;024-08-28&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;05&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;45&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;00&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;08&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;00&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;    &amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;sunset&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;: &amp;#34;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2024-08-28&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;00&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;08&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;00&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  对于试图将大模型的响应与其他应用程序连接起来的开发人员来说，这就是一场噩梦。开发人员通常使用正则表达式 (Regex) 或提示工程将输出转换为所需的格式，然后才能将其传递到另一个应用程序，也就是说，这个过程中如果不需要人工介入，还想让它自动拿到这些信息，怎么做？&lt;/p&gt;
+&lt;p&gt;  搞过开发的小伙伴对这种JSON数据应该非常熟悉，我们可以调用某个天气平台的API，比如 👉 &lt;a class=&#34;link&#34; href=&#34;https://openweathermap.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenWeather&lt;/a&gt;，输入一个城市的关键词， 就能得到该城市当前的天气信息数据，也就是如上所示的JSON形式，那么这样的信息，如何让大模型自动解析，就进入到了我们探索大模型应用的第二个阶段 - &lt;strong&gt;函数调用&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stage 2：函数调用&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  2023 年 7 月，OpenAI 为其 GPT 模型引入了函数调用功能。大模型发展到现在，所有热门的大模型均已不同的形式让自己具备函数调用能力。通过函数调用，我们可以提供一个用户定义的 JSON 字符串，其中包含&lt;strong&gt;希望从大模型获取的响应结构&lt;/strong&gt;，以及&lt;strong&gt;想要向大模型提出的问题&lt;/strong&gt;。如下图所示，我们从概念上展示了其工作原理：&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/03.png&#34; width=60%&gt;&lt;/div&gt;
+&lt;p&gt;  这里指的&lt;strong&gt;可以调用的函数&lt;/strong&gt;，我们通常称之为 &lt;strong&gt;工具&lt;/strong&gt; ，在这个阶段，我们要做的是描述该工具是用来做什么的，然后让大模型智能地选择输出包含调用这些函数的参数的 JSON 对象。简而言之，它允许：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自主决策：大模型可以智能地选择工具来回答问题。&lt;/li&gt;
+&lt;li&gt;可靠的解析：响应采用 JSON 格式，而不是更典型的类似对话的响应。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  乍一看似乎没什么，但这就是大模型能够连接到外部系统的原因，比如通过具有结构化输入的API，本地的数据库，自己编写的Python代码函数等等。有了这个功能，大模型在应用方面就开启了无限的可能性。比如：&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240828180451679.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  当大模型被赋予函数调用的能力时，它会在每次回答问题之前先检查可以调用哪些工具，并评估用户的问题是否需要调用这些工具。如果需要，它便会调用相应的工具，并根据工具返回的结果来构筑答案。这整个过程都是大模型根据其自主判断的。所以在提升这一，阶段不仅极大地扩展了大模型的应用范围，还在一定程度上解决了知识库更新不及时、无法获取实时信息及其带来的优势。&lt;/p&gt;
+&lt;p&gt;  但是，在函数调用技术阶段趋于成熟的同时，我们仍然发现了另一个非常大的问题：大模型幻觉 👇&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240828181631010.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  大模型直到现在依然普遍存在一个问题：当面对自己不了解的问题时，它们有时会产生不准确甚至荒谬的回答，这就是所谓的&lt;strong&gt;大模型幻觉问题&lt;/strong&gt;。以上图中的例子为例，当大模型被询问关于公司制度的问题时，在没有任何技术手段介入的情况下，理想的回答应该是“我不知道”或“请提供一下你所入职公司的具体制度”等回答，而我们看到的却是大模型错误地从一个HR的角度进行了回复，这就会给用户带来混淆和误导。&lt;/p&gt;
+&lt;p&gt;  在&lt;code&gt;Stage 1：提示工程&lt;/code&gt;中我们提到，大模型可以基于&lt;code&gt;in-context learning&lt;/code&gt;的提示思想，利用提供的背景信息来回答特定问题，直接引发了第一轮大模型应用落地的热潮，主要集中在&lt;strong&gt;本地知识库问答领域&lt;/strong&gt;。因为无论是个人还是企业，都希望大模型能够根据其私有数据——如个人学习资料或公司规章制度等让大模型准确高效地回答问题，充当智能客服、智能助理这样的角色。然而，一个显著的挑战是数据量可能极大，从单个文件到数千G的文件系统不等，而大模型在对话处理上存在输入长度限制，无法将所有数据作为背景信息直接处理。&lt;/p&gt;
+&lt;p&gt;  因此，面对本地知识库问答的挑战，并考虑到大模型的幻觉问题和长度限制问题，出现的解决方案就是：RAG（Retrieval-Augmented Generation），以此进入到了大模型应用的第三个阶段。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stage 3. Retrieval-Augmented Generation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  通过人们不断地对大模型领域的探索，非常多的实验论文能够证明，当为大模型提供一定的上下文信息后，其输出会变得更稳定。那么，将知识库中的信息或掌握的信息先输送给大模型，再由大模型服务用户，就是大家普遍达成共识的一个结论和方法。传统的对话系统、搜索引擎等核心依赖于检索技术，如果将这一检索过程融入大模型应用的构建中，既可以充分利用大模型在内容生成上的能力，也能通过引入的上下文信息显著约束大模型的输出范围和结果，同时还实现了将私有数据融入大模型中的目的，达到了双赢的效果。&lt;/p&gt;
+&lt;p&gt;  所以我们才看到RAG的实现是包括两个阶段的：**检索阶段和生成阶段。**在检索阶段，从知识库中找出与问题最相关的知识，为后续的答案生成提供素材。在生成阶段，RAG会将检索到的知识内容作为输入，与问题一起输入到语言模型中进行生成。这样，生成的答案不仅考虑了问题的语义信息，还考虑了相关私有数据的内容。比如我们《RAG企业级项目实战课》中实现的RAG流程 👇&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/1234.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  RAG技术解决的两个关键的问题是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;如果用户提出的问题，其对应的答案出现在一篇文章中，去知识库中找到一篇与用户输入相关的文章是很容易的，但是我们将检索到的这整篇文章直接放入&lt;code&gt;Prompt&lt;/code&gt;中并不是最优的选择，因为其中一定会包含非常多无关的信息，而无效信息越多，对大模型后续的推理影响越大。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;任何一个大模型都存在最大输入的Token限制，一个流程中可能涉及多次检索，每次检索都会产生相应的上下文，无法容纳如此多的信息。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  但事实上，如上面的流程图所示，大模型在整个RAG架构中占据的比例实际上非常小。我们主要依赖大模型结合背景信息进行推理的能力。在RAG的多个优化阶段中，检索策略的作用更为重要。此外，RAG的实际应用场景相对有限，无论是哪种形式的问答系统，都还未能达到我们所期望的通用人工智能（AGI）的水平。因此，&lt;strong&gt;现阶段进入到了&lt;code&gt;AI Agent&lt;/code&gt;的全面爆发，这项技术直接体现的是我们正在向期望的更复杂、更全面的技术方向发展。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;那什么是通用人工智能？为什么AI Agent 能够做到通用人工智呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;3-ai-agent-应用爆发&#34;&gt;3 AI Agent 应用爆发
+&lt;/h1&gt;&lt;p&gt;  人工智能技术领域&lt;strong&gt;迄今为止唯一开发成功的人工智能类型是狭义人工智能（Artificial Narrow Intelligence，ANI），也称弱人工智能&lt;/strong&gt;。它指的是在执行特定任务或一组密切相关的任务的人工智能系统。 ANI 并不复制人类智能，而是在有限的参数和上下文范围内模拟人类行为。例如图像生成和识别、自然语言处理、计算机视觉等。自动驾驶汽车中的人工智能系统、推荐引擎、Siri、Google Assistant 和 Alexa 都是狭义人工智能的形式。狭义人工智能取得了重大突破很大程度上归功于机器学习和深度学习的进步，由自然语言处理 (NLP) 提供支持，使其能够理解和处理人类语言。例如，人工智能系统现在在医学中用于高精度诊断癌症和其他疾病。&lt;/p&gt;
+&lt;p&gt;  而我们现在期望做到的通用人工智能（AGI），是指&lt;strong&gt;具有相当于或超越人类能力的人工智能。它涵盖跨不同领域学习、理解和应用知识的能力。AGI也被称为强人工智能。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  所以能够感受到，我们现阶段做到的人工智能和通用人工智能之间存在根本区别。像&lt;code&gt;ChatGPT&lt;/code&gt;这样的应用虽然掀起了新一轮的热潮，但本质上是它们也只是在做“预测”，通过大量数据的训练以达到生成准确响应的目的，但缺乏目标、身份或主动决策的概念。所以它们也只是复杂的文本生成器，没有目的或方向感。我们还没有完全做到AGI，因为现有的每个人工智能模型都只是模仿人类智能的某个方面。例如，大语言模型非常擅长理解和撰写文本，它们的能力常常超越人类在这些领域的表现。然而，当涉及到简单的算术任务时，LLMs就会经常出现问题。&lt;/p&gt;
+&lt;p&gt;  那么&lt;strong&gt;让大模型能够自己解决更复杂的问题，现阶段提出的解决方案就是：AI Agent。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  早在 2016 年，强化学习代理就被炒得沸沸扬扬，人们试图创建不同类型的强化学习代理来玩游戏，从而去评判这类代理的智能性。当时还没有人工智能代理的概念。 OpenAI 进行了一系列研究，包括探索强化学习 (RL) 在不同领域的应用，比如游戏和网页导航。其中，有一个名为“World of Bits”的项目，就是在训练人工智能代理在复杂的网络环境中执行任务，例如订购商品或服务。这个项目是对强化学习技术在现实世界任务中应用潜力的探索之一。论文：👉 &lt;a class=&#34;link&#34; href=&#34;https://proceedings.mlr.press/v70/shi17a/shi17a.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;World of Bits: An Open-Domain Platform for Web-Based Agents&lt;/a&gt;&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240829100032426.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  如上图所示，这张论文中展示的多个网页界面中，每个界面都关联着一个特定的查询问题，用于展示不同类型的在线任务或服务。具体包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;机票预订&lt;/strong&gt;：从旧金山到纽约的航班预订。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;餐馆搜索&lt;/strong&gt;：寻找旧金山最好的韩国餐馆。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;贷款计算器&lt;/strong&gt;：计算$2000贷款两年期限的月付额。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;产品价格查询&lt;/strong&gt;：查询印第安纳州的iPhone 7 Plus价格。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单词搜索&lt;/strong&gt;：使用字母“sycopthat”寻找9个字母的单词。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;食谱搜索&lt;/strong&gt;：寻找不含鸡肉但包含或执行相关的操作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  这些示例显示了人工智能如何帮助处理各种在线活动，从搜索信息到处理具体的请求，如购物或查询。这种技术的目的是通过自动化过程来简化用户的日常任务，提高效率，可能通过智能代理或特定的应用程序可以实现。此类系统通常会集成到网站或应用程序中，使用户可以通过自然语言查询来互动，系统则返回相关的答案或执行相关的操作。看似简单，但这并不像我们现在思考的那么简单。它就像自动驾驶汽车一样，很容易想到，很容易创建概念验证，但很难使其真正可用。&lt;/p&gt;
+&lt;p&gt;  &lt;strong&gt;OpenAI 持续不断的研究一直得不到比较好的结果，我们认为主要的原因就是缺少了直到现在才出现的：大模型。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  早在2023年中旬，OpenAI 作为在大模型整个行业的技术领航者，很早就推出了 GPT Plugins 商店，就是在借助大模型的力量，重新启动相关研究，并希望打造一个类似APP Store的生态系统，让每个人都能以极低的门槛创建自己的智能应用，无论是供个人使用还是为他人服务。然而，直到现在，GPT Plugins并未实现其初衷，使用率也未达预期。主要原因在于，如果把强化学习的一套方案移植到大模型，这种做法似乎并未产生立竿见影的效果。这直接导致了GPT Plugins虽然能开发智能应用，但这些应用还远未能满足我们对复杂度和功能性的高要求，也未能达到我们对人工智能应用预期的高度。同时，我会认为2023年的大模型，自身能力不足也是造成这种现状的根本原因。&lt;/p&gt;
+&lt;p&gt;  人类具有非凡的能力，能够不断吸收信息、做出决定、采取行动、观察变化，然后做出下一个决定。我们的整个生活是一个永无休止的观察、思想和行动的链条。通过将复杂的问题分解为更小的、可管理的部分，并不断地借鉴前几代人的知识，我们人类已经取得了长足的进步。&lt;strong&gt;通用人工智能的最终形态就是：我们能够转移这个概念到大模型上，使其不断做出新的决策，从而逐步接近更复杂问题的解决方案。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  至此，也就衍生出了 AI Agent （人工智能代理）的基本概念：**一个感知环境、处理信息并采取行动以实现特定目标的软件程序或系统。**现阶段我们会把单一的大模型作为AI Agent 的核心，而不是全部。它应该是一个智能的AI系统，能够解释问题、观察环境并据此做出决策。如果在AI Agent 构建流程中添加一些将语音转换为文本的模型、解释图像内容的模型，就可以构建自己的 &lt;code&gt;Jarvis&lt;/code&gt; 所需的一切。（复仇者联盟电影中钢铁侠的私人虚拟助理）&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/04.png&#34; width=60%&gt;&lt;/div&gt;
+&lt;p&gt;  如上图所示，描述了一个人工智能代理（AGI）如何处理用户询问的流程。用户通过语音向AGI提问，AGI首先解析并理解这个问题，然后搜索相关的存储文档或在线信息。基于搜索到的信息，AGI生成一个适当的回答，例如解释它无法找到与用户提问的问题相关的具体信息。最后，AGI将生成的文本回答转化为语音输出，以向用户提供回应。整个过程显示了AGI如何利用现有资源来理解和回应复杂的人类询问。从这个过程中，就可以很好的理解，&lt;strong&gt;AGI的实现过程中为什么要关注 AI Agents ，而不是单一的大模型。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  很好解释，通过提示工程， 大模型可以生成更类似于人类的响应。但当我们应用代理的概念时，我们使用大模型不仅仅是回答问题，而是作为大脑处理它所看到的观察结果并决定下一步该做什么。人类处理问题就是这样：如果有一项任务需要解决，往往是去寻找能够帮助我们尽可能轻松地解决该任务的方法和工具。如果我们不给大模型配备足够的工具，即便它知道要做什么，但不具备调用工具的能力一切将会变为空谈。&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240828103858977.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  从根本上讲，与严格遵守设定脚本或任务序列的传统自动化系统不同，人工智能代理具有感知、解释、学习和适应的能力。将它们视为数字助理，不仅执行任务，还不断评估周围环境，从不同的交互中学习，并做出决策以实现特定目标。它们可以采取多种形式，从执行单一任务的简单软件到管理复杂流程的复杂系统。人工智能代理在不可预测的环境中表现出色，其适应性和学习能力可以得到充分利用。从浏览互联网、与应用程序交互、处理大量数据到参与交易，这些任务都可以委托给人工智能代理。&lt;/p&gt;
+&lt;h1 id=&#34;4-ai-agent-背后的理论&#34;&gt;4 AI Agent 背后的理论
+&lt;/h1&gt;&lt;p&gt;  人类的优势是能够吸收相对大量的信息，过滤掉不重要的细节，并根据关键信息做出决策。比如在处理一件事情之前，我们通常会先将大问题分解为一个个小的假设，然后尝试通过观察逐步支持或反驳这些假设。&lt;strong&gt;从这个现实的观点出发，启发 AI Agent 早期范式的一篇论文 👉  &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2210.03629&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS&lt;/a&gt;  中使用“思维链提示”来模仿这个概念，它将多步骤问题分解为中间步骤:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;发起一项行动，让大模型观察所选环境的反馈&lt;/li&gt;
+&lt;li&gt;在流程中收集所有信息并使用它来决定下一步采取什么合适的行动&lt;/li&gt;
+&lt;li&gt;迭代地执行此操作来解决更大、更复杂的任务，使用一种称为“推理跟踪”的方法，该方法涉及跟踪整个过程所经历的步骤或阶段以得出结论或解决方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  如下图所示，整个过程是一个动态循环。代理不断从环境中学习，通过其行动影响环境，然后根据环境的反馈继续调整其行动和策略。这种模式特别适用于那些需要理解和生成自然语言的应用场景，如聊天机器人、自动翻译系统或其他形式的自动化客户支持。&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/05.png&#34; width=60%&gt;&lt;/div&gt;
+&lt;p&gt;  一个这是更加感官性的认知如下图所示：&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/06.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  如上图所示，展示了一个人工智能代理的基本架构，包括它与环境的互动、感知输入、大脑处理及其决策过程。具体来说：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;环境（Environment）&lt;/strong&gt;： AI代理接收来自其周围环境的信息。环境可以是一个网站、数据库或任何其他类型的系统。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;感知（Perception）&lt;/strong&gt;： 即输入。AI代理通过多种方式感知环境，如视觉（图像）、听觉（声音）、文本（文字信息）和其他传感器输入（如位置、温度等）。这些输入帮助代理理解当前的环境状态。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;大脑（Brain）&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;存储（Storage）&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;记忆（Memory）&lt;/strong&gt;：存储先前的经验和数据，类似于人类的记忆。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;知识（Knowledge）&lt;/strong&gt;：包括事实、信息和代理用于决策的程序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;决策制定（Decision Making）&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;总结（Summary）&lt;/strong&gt;、&lt;strong&gt;回忆（Recall）&lt;/strong&gt;、&lt;strong&gt;学习（Learn）&lt;/strong&gt;、&lt;strong&gt;检索（Retrieve）&lt;/strong&gt;：这些功能帮助AI在需要时回顾和利用存储的知识。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;规划/推理（Planning/Reasoning）&lt;/strong&gt;：基于当前输入和存储的知识，制定行动计划。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行动（Action）&lt;/strong&gt;：代理基于其感知和决策过程产生响应或行动。这可以是物理动作、发送API请求、生成文本或其他形式的输出。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  所以从这个过程中，我们就可以抽象出 AI Agent 的最经典，同时也是目前任何一套Agent 框架的基本框架，如下图所示：&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240829111123754.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片来源：https://lilianweng.github.io/posts/2023-06-23-agent/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  这套&lt;strong&gt;智能代理架构是指自主代理的结构化设计&lt;/strong&gt;，自主代理是能够独立感知环境、做出决策并采取行动以实现特定目标的系统或实体。该架构描述了代理的各个组件如何交互以促进智能行为。该架构包含四个关键组件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;**规划（Planning）：**该组件将代理置于动态环境中，使其能够根据其目标和收集的信息制定策略并规划未来的行动。&lt;/li&gt;
+&lt;li&gt;**记忆（Memory）：**该组件使智能体能够回忆过去的行为、经历和结果，这对于学习和适应至关重要。&lt;/li&gt;
+&lt;li&gt;**行动（Action）：**该组件将智能体的决策转化为具体的行动，执行计划的任务以达到预期的结果。&lt;/li&gt;
+&lt;li&gt;**工具（Tools）：**拥有一名仅拥有LLM的代理人就像使用一台没有任何额外设备的计算机一样。工具让代理能够使用互联网、获取特殊知识或与擅长特定事物的几种不同的人工智能模型一起工作，从而使代理变得更加有用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  人工智能代理的特点是其主动性和决策能力。与被动工具不同，它们主动参与环境，做出选择并采取行动来实现其指定目标。在企业环境中，人工智能代理通过自动化日常任务和分析复杂数据来提高效率，从而使员工能够专注于战略和创造性工作。这些代理补充而不是取代人类的努力，促进提高劳动力的生产力和效率。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;  让我们想象一个中国市场销售经理李华和他的人工智能助理的场景。&lt;/p&gt;
+&lt;p&gt;  李华的工作日以检查电子邮件开始。他收到了来自潜在客户张伟的邮件，张伟对他公司提供的高效解决方案感兴趣。李华的人工智能助手直接连接到他的电子邮件系统，并且实时监控这些互动。根据李华过去的回复习惯和公司提供的信息库，人工智能助手草拟了一封详细的回复。邮件中不仅总结了公司的高效解决方案及其优势，还根据张伟的需求定制了相关建议。&lt;/p&gt;
+&lt;p&gt;  李华审阅了这份草稿邮件，加入了一些个人化的语句，以显得更加友好和专业，然后发送给了张伟。随后，人工智能建议的后续步骤包括安排与张伟的电话会议、发送一份详细的产品介绍手册，或者如果一周内没有得到回复，提醒李华进行跟进。李华同意了这些建议，人工智能助手随即整理他的日程，通过电子邮件发送产品手册，并在他的电子日历中设置了跟进提醒。通过让人工智能处理这些日常但关键的任务，李华可以将更多精力投入到其他重要的业务拓展活动中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  这个过程中AI Agent 展现出来的关键能力：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI Agent 利用大模型固有的语言理解能力来解释指令、上下文和目标。这使它们能够根据人类的提示自主或半自主地运作。&lt;/li&gt;
+&lt;li&gt;AI Agent 可以使用各种工具（阅读邮件，计算器、搜索引擎等）来收集信息并采取行动来完成分配的任务。它们的能力超出了单纯的语言处理范围。&lt;/li&gt;
+&lt;li&gt;AI Agent 能够展示复杂的推理技术，可以建立逻辑联系来得出结论和解决问题，而不仅仅是简单的文本理解。&lt;/li&gt;
+&lt;li&gt;AI Agent 可以通过将上下文和目标集成到其语言生成能力中，生成用于特定目的的定制文本，例如电子邮件、报告和营销材料。&lt;/li&gt;
+&lt;li&gt;AI Agent 代理可以完全自主或半自主运行，需要与用户进行不同级别的交互。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  人工智能代理的好处不仅仅是效率。它们营造协作环境，降低人为错误的风险，并腾出宝贵的时间进行创造性和战略性思考。从本质上讲，人工智能代理不仅仅是工具，更是助手。它们是补充人类能力并推动创新的合作伙伴。&lt;/p&gt;
+&lt;h1 id=&#34;5-agentexecutor&#34;&gt;5 AgentExecutor
+&lt;/h1&gt;&lt;p&gt;  接下来需要明确的是，AI Agent能够连续执行正确的工具，不断观察结果，然后决定下一步需要哪种工具。这种函数的迭代执行是由 &lt;code&gt;AgentExecutor&lt;/code&gt; 执行的。 &lt;code&gt;AgentExecutor&lt;/code&gt; 指的是代理运行时，整个过程一遍又一遍地重复，直到达到预定义的终止标准。&lt;/p&gt;
+&lt;p&gt;​        随着企业认识到即将到来的人工智能代理革命，解决方案提供商纷纷涌现，它们会提供工具和框架，使构建这些人工智能代理变得容易。从无代码、低代码到完整的 Python 库等等。框架和工具的列表简直是令人眼花缭乱。但最根本的区别，无非是基于Agent经典框架的扩展及不同的&lt;code&gt;AgentExecutor&lt;/code&gt; 构建理念和流程。&lt;/p&gt;
+&lt;p&gt;  每个&lt;code&gt;AgentExecutor&lt;/code&gt;都有自己的执行任务和制定决策的方法和方法。&lt;code&gt;AgentExecutor&lt;/code&gt;的选择主要取决于手头任务的具体要求、决策过程的复杂性以及希望代理展现的自主性或智能水平，不同的&lt;code&gt;AgentExecutor&lt;/code&gt;也就形成了多个不同的产品和工具，这里有一个对AI Agent 工具总结整理较好的一个导航性网站：https://e2b.dev/ai-agents/open-source 👇&lt;/p&gt;
+&lt;div align=center&gt;&lt;img src=&#34;https://muyu001.oss-cn-beijing.aliyuncs.com/img/landscape-latest.png&#34; width=80%&gt;&lt;/div&gt;
+&lt;p&gt;  人工智能代理代表了技术领域的变革力量。它们的能力，从简单的自动化到像 Devin 这样的系统所展示的独创性，都在迅速扩展。我们正在见证它们在客户服务和虚拟协助等日常任务中的成功，而这仅仅是开始。在日益复杂的大模型的支持下，新一代人工智能代理迎来了一个前所未有的效率和创新时代。而随着企业大规模采用人工智能代理，对熟练人员（能够设计、部署和管理这些系统的人员）的需求将会猛增。除了某些行业可能出现的工作岗位流失之外，人工智能还将创造令人兴奋的新职业。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>About Llm Agents Explore</title>
+        <link>https://zcxggmu.github.io/p/about-llm-agents-explore/</link>
+        <pubDate>Mon, 28 Oct 2024 15:27:44 +0800</pubDate>
+        
+        <guid>https://zcxggmu.github.io/p/about-llm-agents-explore/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;转载自：https://zhuanlan.zhihu.com/p/679177488&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-基准llm-agents-是什么&#34;&gt;1 基准：LLM Agents 是什么
+&lt;/h2&gt;&lt;p&gt;首先要明确LLM Agents是什么，这是讨论的基准。在此提供三个视角供大家参考：一是用户认识LLM Agents的方式，二是所有人都可以用来认识LLM Agents的方式，三是生产者（整个生产链条：研究人员、开发人员、产品经理、游戏策划等）认识LLM Agents的方式。学术上的定义已有很多文章提到，这里只是我比较喜欢的三个视角。&lt;/p&gt;
+&lt;h3 id=&#34;11-面向用户实用主义定义&#34;&gt;&lt;strong&gt;1.1 面向用户：实用主义定义&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;**“能帮助某类用户的，基于大语言模型的产品就是LLM Agents。”**我个人认为这是适合Agents用户认识LLM Agents的方式。&lt;/p&gt;
+&lt;p&gt;例如：对于需要日常助手的用户来讲，一个产品能够通过传统交互为主，自然语言为辅的方式，帮助用户安排好日程，提醒好会议，给出一些日常的生活工作建议，那这就是一个LLM Agent。&lt;/p&gt;
+&lt;p&gt;又例如：对于正在一个开放世界游玩的玩家来讲，一个NPC能够通过某种基于自然语言的方式同玩家进行交互，这种交互要么涉及到玩法，要么提供情绪价值，那这也是一个LLM Agent。&lt;/p&gt;
+&lt;h3 id=&#34;12-面向所有人一种直觉定义&#34;&gt;1.2 面向所有人：一种直觉定义
+&lt;/h3&gt;&lt;p&gt;**“只要是以LLM为核心的玩意，这玩意在一定外部环境下行动，有一定的内部模块，能够进行某种形式输入和进行某种形式输出，就是LLM Agents。”**这是一种比较简单地认识LLM Agents的方式，强调了其基本性质和核心特点，即“以LLM为核心”和“内部模块”。提取一下相关要素：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;以LLM为核心&lt;/li&gt;
+&lt;li&gt;外部环境&lt;/li&gt;
+&lt;li&gt;内部模块&lt;/li&gt;
+&lt;li&gt;输入和输出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;举一个简单的例子：一个能联网搜索的LLM助手。其上述要素分别为：和用户交流以及和互联网接触的外部环境，进行搜索并处理结果的相关模块，接收用户输入并生成回复输出的LLM。&lt;/p&gt;
+&lt;h3 id=&#34;13-面向生产者一种学术定义&#34;&gt;1.3 面向生产者：一种学术定义
+&lt;/h3&gt;&lt;p&gt;我个人认为复旦NLP组的一篇综述所提出的LLM Agents框架，是比较全面的。这里给出原文的插图，并基于原文作一定分析，会相对难读一点，请诸位见谅。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-a01b897f0c97ba4b3861bac31b2c59d2_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Conceptual framework of LLM-based agent with three components: brain, perception and action.&lt;/p&gt;
+&lt;p&gt;Agent首先是“运动”在“环境”（Enviroment）中的，环境描述了Agent所在的状态空间，运动则是一个抽象概念，可以将其理解为Agent所有行为的总和。Agent的一切都是和这个环境相关联的：包括其感知（输入），大脑（各种类型的内部处理）和行动（输出）。Agent也是环境的一部分，因而Agent的行动改变环境时也可以改变Agent自身。&lt;/p&gt;
+&lt;p&gt;**Agent的“运动”可以被大致分类为感知，内部处理，行动三个部分。分别对应图中Perception，Brain，Action三个模块。Brain模块承担记忆、思考和决策等内在的任务；Perception模块负责感知和处理来自外部环境的多模态信息；Action模块负责使用工具执行任务并影响周围环境。**三个模块也描述了一个Agent自身状态的全部组成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其机理分别于类似于人类用眼睛耳朵等获得信息，用大脑用于处理信息和驱动四肢，用四肢改变环境和改变人类自身。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;**Agent的内部信息通路是Perception-&amp;gt;Brain-&amp;gt;Action，而信息通路的设计本身也应该是Agent的一部分。**这类似于人类的神经信号传输，决定了一些Agent可表征的信息范围、信息损失和计算效率问题。宏观来看，Agent应该通过一轮或多轮的”输入-&amp;gt;处理-&amp;gt;输出“来完成一个任务，是否结束任务应由外界或内部的反馈信息来确定。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作为人类，很多时候我们完成了一件事才能看到结果，然后会通过对上一件事的结果再次&amp;quot;输入-&amp;gt;处理-&amp;gt;输出&amp;quot;。我们会得到反馈并推理出上一件事完成的效果如何，而正是通过这种反馈，我们才决定要不要继续做这件事和下一步怎么进行。这其实是多轮的&amp;quot;输入-&amp;gt;处理-&amp;gt;输出&amp;quot;，只是对于人类是时时刻刻进行着的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当然，还可以做更多的细分，详见原文：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2309.07864v1.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;《The Rise and Potential of Large Language Model Based Agents：A Survey》arxiv.org/pdf/2309.07864v1.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-深入llm-agents-的细分技术&#34;&gt;2 深入：LLM Agents 的细分技术
+&lt;/h2&gt;&lt;p&gt;了解了基本概念和框架之后，有必要简单了解一下其细分技术。在此大概分解一下LLM Agents所用到的一些技术点：大致是RAG，CoT，意图识别与执行，数据通路和行动框架，SFT，多模态这六点。细分技术部分由于个人能力有限，无法详尽，仅作抛砖引玉。但会尽量写一点新的东西，以减轻诸位食之无味的程度。&lt;/p&gt;
+&lt;h3 id=&#34;21-rag知识记忆与技能库&#34;&gt;2.1 RAG：知识，记忆与技能库
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;2.1.1 RAG简介&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RAG应该是大家耳熟能详的技术。官方一点地讲：RAG模型的核心思想就是将传统的语言生成模型（如GPT系列）与一个检索系统相结合，&lt;strong&gt;在处理一个输入时，RAG首先使用检索系统从一个大规模的文档集合中检索出相关的文本片段，然后将这些检索到的文本作为额外的上下文信息输入到生成模型中，以此来生成更加丰富和准确的输出。说白了就是给LLM一个字典让它查。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RAG在LLM Agents的用途包括：知识库导入，长期记忆支持，技能库支持等等。知识库导入不一定就是一条条干瘪的知识，也可以是一些风格化，个人化的东西。检索不一定就是只算语义相似度，也可以使用其他的一些检索函数。&lt;/p&gt;
+&lt;p&gt;RAG往往是结合向量数据库，但是对于简单应用而言，只需要JSON格式文件就能实现，甚至能轻易指向其他格式文件（如图像）。注意：这里的&lt;code&gt;embedding&lt;/code&gt;是&lt;code&gt;text embedding&lt;/code&gt;，即句向量，需要和词向量分开。句向量是将整个句子映射到向量空间，而计算句子语义相似度最常见的方式则是计算其&lt;code&gt;text embedding&lt;/code&gt;之间的余弦相似度。而这种语义相似度除了可以进行文本检索以外，也可也用于识别用户意图，进行情感分析等等。&lt;/p&gt;
+&lt;p&gt;RAG有一个经典开源实现，即&lt;code&gt;LangChain-ChatGLM&lt;/code&gt;。因为确实经典，所以这里只挂上其实现过程，不多赘述。感兴趣的读者可自行搜索。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic2.zhimg.com/80/v2-5fa32381acdfb9afecdae3015af24a09_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.1.2 聊聊《Generative Agents》的检索函数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;前面谈到，RAG的检索函数不一定只算语义相似度，可以有其他实现形式。比如《Generative Agents》里记忆流的检索函数。其检索函数的要素有三点，即&lt;code&gt;[时效性，重要性，相关性]&lt;/code&gt;。时效性代表记忆最近被检索出的时间，重要性表明Agents对该记忆事件的重要性评估（一般是结合人设让LLM给出个分数，或许也可以用一个小模型做评分），相关性就是语义相似度。&lt;/p&gt;
+&lt;p&gt;检索记忆时，不再是按照语义相似度进行排序。而是在对三个特征进行最小最大归一化之后，计算一个综合评分，然后取&lt;code&gt;Top k&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Xnorm=X−XminXmax−XminX_{\text{norm}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}}X_{\text{norm}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}} 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;score=a∗recency+b∗importance+c∗relevancescore = a*recency +  b*importance + c*relevancescore = a*recency +  b*importance + c*relevance 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;详见原文：&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2304.03442.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arxiv.org/pdf/2304.03442.pdfarxiv.org/pdf/2304.03442.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.1.3 RAG的语义孤立问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;**RAG同样会出现一些问题。除了chunk本身就会丢失一些上下文以外（可以用交叠上下文来缓解），chunk的语义本身也是“孤立”的。**这里是指：一段chunk中的文本可能需要chunk外的内容来帮助理解。例如有三个chunk分别为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;胡桃和宵宫是好朋友。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;宵宫是“长野原烟花店”的现任店主。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;胡桃是璃月“往生堂”第七十七代堂主。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;对于一个通用LLM而言，如果它拿到的最相似匹配是“胡桃和宵宫是好朋友”，那其实LLM并不知道胡桃和宵宫是谁，并不一定能答好这个问题。**这是因为：要理解一个知识，就需要理解其上层知识。**在这个例子里，即“胡桃和宵宫到底是谁”。&lt;/p&gt;
+&lt;p&gt;针对于这个问题，向大家介绍一个比较简单的，面向原生JSON格式文件的优化方法，类似于分层检索：&lt;strong&gt;通过将知识库分层，首先在较高层次上对用户的查询进行理解和定位，然后再在更具体的层次上检索细节信息。这样一来，每次RAG时会拿到多级的语义，既有宏观认识也有最匹配用户Query的内容，或许能改善RAG效果。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-dc0b62c3629e832a9103ecfcd89eda58_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对于上面的例子，其两级组织格式就应该是：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;顶层知识：宵宫是“长野原烟花店”的现任店主。胡桃是璃月“往生堂”第七十七代堂主。 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;↓指向
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;子知识：胡桃和宵宫是好朋友。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;**如此一来，每次检索到最相似的匹配是“胡桃和宵宫是好朋友。”时，就必然会附带上对胡桃和宵宫的简介。需要指出的是，由于没有向量数据库等高效存储检索系统，这并不是一种生产环境适用的高效方法。**只适用于小型项目，如独立游戏。具体实现可以参考文章末尾的链接。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.1.4 另一种方法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我之前也有看到过另外一种做法：即按照语义去切分段落。合并语义上相关联的段落，然后对段落生成一个描述句，以该描述句来生成嵌入向量。即以段落描述句的嵌入向量为键，段落的完整内容为值。我们可以简单对比一下这两种方法：&lt;/p&gt;
+&lt;p&gt;分层检索通过建立层级结构，使得检索能够从大范围的上下文逐步深入到具体细节，保持了信息之间的关联性，但可能会因为结构的复杂性和维护难度而影响检索效率。语义切分合并则侧重于将语义相似的内容动态组织在一起，通过为每个内容块生成描述性的句子来创建索引，这样可以提高检索效率，但有时可能会因为合并不当而丢失关键上下文。&lt;/p&gt;
+&lt;p&gt;实际上，这两种方法可以结合起来使用。例如，可以先通过分层检索方法构建一个宏观的知识框架，然后在具体的层级内使用语义切分合并方法来进一步细化信息组织。这样，既保留了层级结构带来的上下文关联优势，又能够利用语义相似度进行高效检索。&lt;/p&gt;
+&lt;p&gt;此处花了一些篇幅阐述RAG的问题和可能的解决方案，只是想说明RAG还是有很多可能性的。&lt;/p&gt;
+&lt;h3 id=&#34;22-cot问题分解与推理&#34;&gt;2.2 CoT：问题分解与推理
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;2.2.1 CoT简介与两个例子&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;**CoT指的是大家耳熟能详的思维链及其变种。即让LLM将一个复杂问题分解为级联的子问题，并依次进行顺序处理，可以显著提升LLM处理较复杂的性能。说白了就是让它多想几步。CoT既可以用在单次内容生成里，也可用在一条内容生成的Pipeline里。**一般的例子的是用CoT做数学题，但大家可能看腻了：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-5e97e4e443f687b0b9125bb34efd1f24_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;我这里倒是想给出一个基于想法进行风格化回复的例子，其广义上也是CoT的思路，并且很好理解，希望能让大家耳目一新。&lt;/p&gt;
+&lt;p&gt;直接让LLM做角色扮演对话会出现一些问题：例如，LLM喜欢抽取Prompt的要素而非好好说话；或是不怎么利用Prompt的要素而说一些无关紧要的话；又或是LLM干脆不知所措，说一些莫名其妙的话。&lt;strong&gt;我认为问题在于：LLM是需要“思考”后才能好好说话的，角色扮演（风格化对话）对于LLM其实是一个复杂问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;**因而可以将CoT的思想应用于风格化对话生成任务中，把对话生成分解为两个步骤：首先生成角色的内心思考内容，然后基于这些内容构建角色的回复。**这样可以确保对话既符合角色的人设，又能够自然地融入到对话的流程中，经简单的主观测试，回复效果的确有提升。请大家重点关注下图左侧的生成部分（红框圈起来的部分）：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/80/v2-1416fba5fcb1d96576ef61f5a3dfc375_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;具体的Prompt是这样组织的，应该比较好理解。请重点关注两段Prompt之间是如何联动的，即第一段生成的结果如何被嵌入到第二段Prompt当中：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;thought_prompt = f&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;角色名称：{self.name}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;初始记忆：{self.seed_memory}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;当前心情：{self.mood}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;任务：根据角色当前的相关记忆，相关知识,对话上下文进行分析，基于角色第一视角进行思考，给出角色的心理反应对和相关事件的判断。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;字数限制：不超过100字。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&amp;lt;&amp;lt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;相关记忆：“{memory[&amp;#39;description&amp;#39;]}” 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;相关知识：“{knowledge_text}”
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;对话上下文：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{self.language_style}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{context}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;请仅返回{self.name}第一人称视角下的思考内容，不要添加额外信息或格式。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;response_prompt = f&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;角色名称：{self.name}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;初始记忆：{self.seed_memory}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;当前心情：{self.fsm.mood}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;任务：基于角色的思考内容和对话上下文进行回复。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;字数限制：不超过100字。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&amp;lt;&amp;lt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;思考内容：“{thought}”
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;对话上下文：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{self.language_style}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{context}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;请在思考内容和对话上下文的基础上，以{self.name}的身份回复。不要扮演其他角色或添加额外信息，不要添加其他格式。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;具体实现可以参考文章末尾的链接，仅以此作为例子介绍。CoT相关内容详见原文：&lt;/p&gt;
+&lt;p&gt;[&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//arxiv.org/abs/2201.11903&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;2201.11903] Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (arxiv.org)arxiv.org/abs/2201.11903&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.2.2 CoT变种&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;CoT的两个经典变种是ToT和Self-consistency。ToT是CoT的一个扩展，它不仅仅以线性的方式构建思维链，而是创建一个更为复杂的树形结构来进行推理。Self-consistency是另一种变种，强调在推理过程中保持一致性，会对语言模型进行多次采样，生成多个推理路径。然后再对不同推理路径的生成结果，基于投票选择最一致的答案输出。关于LM采样的概念，可以学习一下贪心解码，束搜索，Top-k ，Temperature等。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic2.zhimg.com/80/v2-d6683f42deb686d1af9eed4c268d9afb_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pica.zhimg.com/80/v2-594e55d5750bb04b140f05c9a33124a8_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;23-意图识别与执行&#34;&gt;2.3 意图识别与执行
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;2.3.1 函数调用的例子&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;意图识别与执行是指让LLM基于上下文从一组备选项中选择合适的类别，根据需要填入相应的参数，并进行格式化输出的能力（注：意图识别与执行这个说法不一定准确，好像也可以说是符号推理之类的，这里向大家讨教正确说法）。我个人认为这种能力在构建LLM Agent时非常重要。&lt;/p&gt;
+&lt;p&gt;意图识别与执行包括工具使用，行为状态切换，理解环境反馈等（环境反馈的一个例子是：LLM生成的代码运行失败，Agent根据代码解释器返回的相关错误信息进行修改）。&lt;/p&gt;
+&lt;p&gt;对于工具使用，函数调用就是一个典型例子。我们这里以OpenAI对话接口的函数调用功能&lt;code&gt;Function Calling&lt;/code&gt;为例。**&lt;code&gt;Function Calling&lt;/code&gt;的工作方式是：首先，我们提供一个工具函数或外部API的接口描述，包括其用途和参数；然后，根据用户的查询（Query），让LLM生成一个格式化的函数调用。**假设一个函数描述大概长这个样子，其描述了一个用于检索wiki百科的函数接口：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;name&amp;#34;: &amp;#34;use_wiki&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;description&amp;#34;: &amp;#34;检索wiki百科以补充不了解的知识&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;parameters&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &amp;#34;type&amp;#34;: &amp;#34;object&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &amp;#34;properties&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &amp;#34;query&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &amp;#34;type&amp;#34;: &amp;#34;string&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &amp;#34;description&amp;#34;: &amp;#34;需要检索的事物&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &amp;#34;required&amp;#34;: [&amp;#34;query&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;用户只需要在上下文中描述一个具体任务，如果LLM认为需要调用相关函数，就有可能会触发函数调用功能。在这个例子中，LLM会解析用户的查询，并生成一个格式化的调用请求，例如&lt;code&gt;use_wiki(query=&amp;quot;特定主题的关键词&amp;quot;)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.3.2 状态切换的例子&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;意图识别与执行不止是函数调用。例如：在上下文中给定LLM一些情绪种类描述和情绪程度说明，要求LLM分析一段用户输入的情绪种类和情绪程度数值，并格式化地返回。又例如：要求LLM分析上下文中给出的一些状态和场景，并要求LLM根据场景决定其中的角色应该如何行动。这一类问题也算是意图识别与执行，这种能力往往作为某种中间步骤被使用。其准确数学模型应该是马尔可夫决策过程（MDP）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;意图识别与执行是构建LLM Agent时的一个重要能力，因为它允许模型进行决策并生成可操作的输出，这也是建立其数据通路与行动框架的基础。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里给出一个最简单的用Prompt切换状态的例子，仅作示范：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;任务：推理角色的下一个心情应该是什么。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&amp;lt;&amp;lt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;角色当前心情：{self.mood}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;观察到的事件：{trigger}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;角色的想法：{thought}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;可能的心情列表：{self.mood_list}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;现在请根据角色目前的心情,观察到的事件和角色想法,从可能的心情列表中选择一个心情。例如：{self.mood_list[0]}。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;心情可以是不变的。精确地输出心情名称，不要进行额外的输出。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;24-数据通路与行动框架&#34;&gt;2.4 数据通路与行动框架
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;数据通路通常指的是在Agent内部信息流动的机制，包括感知环境的输入、处理这些输入的中间步骤，以及生成输出或行动的最终步骤。行动框架则指的是Agent决策的算法和策略，它定义了Agent如何根据输入的数据和内部状态来选择行动。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;两者共同定义了Agent到底以什么规则在对应的环境下行动。这里给出一些经典的框架图供参考，我倒是觉得不用过于纠结这个框架，面向业务去定义就好了：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-a01b897f0c97ba4b3861bac31b2c59d2_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-5f5f2df8b3d7aef83ac699789df6ddde_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-de808f5f2753b796a27b95e7414bbd72_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;举个具体例子。《Voyager：LLM 驱动的具身终身学习智能体》用LLM来自我掌握技能和发现新事物，该智能体的数据通路与行动框架可以概括为以下几个构件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;自动课程（Automatic Curriculum）：为智能体提供一系列逐步增加难度的任务，鼓励多样化行为和施加约束的指令，以促使其不断学习和进步。&lt;/li&gt;
+&lt;li&gt;迭代提示机制（Iterative Prompting Mechanism）：用于引导智能体迭代和提升自身的技能，并引入环境反馈，程序解释器的执行错误，自我验证等。&lt;/li&gt;
+&lt;li&gt;技能库（Skill Library）：用于存储智能体掌握的各种技能。通过存储成功解决任务的行动程序来逐渐构建技能库。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic2.zhimg.com/80/v2-1ef735280676e17f7e88a60c4220e005_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Agent会试图解决由自动课程提出的越来越难的任务，不断地生成代码和接受反馈，自我纠错和自我验证。直到自我验证模块确认任务完成后，就把生成的代码技能添加到技能库。后续就可以使用技能库里的相关技能来辅助完成相关新的任务。&lt;/p&gt;
+&lt;p&gt;总结一下，其完成“自我进化”的行动要素就是三点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;保持Agent持续活动，不断地接受任务要求，进行学习尝试，进行自我验证。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自我验证成功后，把学习成果添加到知识库中。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Agent后续的活动可以以某种方法，使用之前添加到知识库的知识。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;仅以此作为例子描述什么是数据通路与行动框架，详见原文：&lt;/p&gt;
+&lt;p&gt;[&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//arxiv.org/abs/2305.16291&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;2305.16291] Voyager: An Open-Ended Embodied Agent with Large Language Models (arxiv.org)arxiv.org/abs/2305.16291&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;25-sft简介参数级别支撑&#34;&gt;2.5 SFT简介：参数级别支撑
+&lt;/h3&gt;&lt;p&gt;SFT当然不是Agent专有的话题，但对于LLM Agents而言，同样是重要的技术点。SFT即监督微调（Supervised Fine-Tuning）。SFT的一般目的是强化通用LLM在某个垂直任务上的能力，但也会出现“灾难性遗忘”这样的问题。&lt;/p&gt;
+&lt;p&gt;全参微调非常吃显存和计算资源，因而后续出现了各种各样的低资源微调方法。全参微调、Prompt Tuning、LoRA、P-Tuning等都在SFT这个范围里面。&lt;/p&gt;
+&lt;p&gt;最简单的SFT就是针对&lt;code&gt;{prompt，response}&lt;/code&gt;的单轮问答&lt;code&gt;pair&lt;/code&gt;进行微调，其数据格式组织如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;prompt&amp;#34;: &amp;#34;&amp;lt;prompt text&amp;gt;&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;response&amp;#34;: &amp;#34;&amp;lt;response text&amp;gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;有必要指出的是，微调本身就是一门大学问，尤其是在真实业务场景中的微调。这些任务需要进行数据建设，模型训练，模型迭代的全过程，是复杂的工程和业务问题。此处做一简介，主要是为了文章结构上的完整性，不作为重点案例介绍。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SFT和RAG往往是被二选一的，也常被横向比较各自的优劣。但如果用对齐的RAG格式问答对去微调LLM，或许也是可行的。即用微调增强LLM通过{检索内容+上下文}来生成内容的能力。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;26-多模态简介&#34;&gt;2.6 多模态简介
+&lt;/h3&gt;&lt;p&gt;多模态和SFT一样，当然不是Agent的专有话题，但聊Agent往往也会谈到。同SFT，此处做一简介，主要是为了文章结构上的完整性，不作为重点案例介绍。多模态LLMs不仅能够理解和生成文本（对于LLM Agents而言，重点是理解），还能够理解和生成与其他模态相关的信息，如图像。以GPT-4V为例：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-75548befc206df39ec8f68e84c5638f0_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-反思llm-agents-的一些问题&#34;&gt;3 反思：LLM Agents 的一些问题
+&lt;/h2&gt;&lt;p&gt;聊完LLM Agents的概念和部分细分技术，我们也必须认识到LLM Agents现有的问题。在此大概分解一下LLM Agents现有的一些问题：&lt;strong&gt;大致是绝对能力，能耗比与效率，安全，产品力这四点。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;31-绝对能力&#34;&gt;3.1 绝对能力
+&lt;/h3&gt;&lt;p&gt;我将绝对能力定义为：不考虑算力和时间开销，或者说，给定极宽容的条件，一个LLM Agent最好能做到什么程度。这当然是基于细分任务去定义的。比较悲观地说：当前的LLM Agents事实上连绝对能力都是不够的。&lt;strong&gt;就算给定极宽容的条件，LLM Agents也解决不了很多复杂问题，甚至一些人类觉得很简单的问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一是因为当前的LLM本身能力不足：通用知识不够丰富，也只能做比较浅的推理。二是因为一些外部框架（如RAG）也不够灵活，比较生硬：对于RAG而言，与理想状态需要什么就能检索到什么相比，还是有一定距离。&lt;/p&gt;
+&lt;h3 id=&#34;32-能耗比与效率&#34;&gt;3.2 能耗比与效率
+&lt;/h3&gt;&lt;p&gt;第二点当然就是能耗比与效率了。当前的LLM Agents大多还是在一个很宽松的条件下运行的，甚至有一些模拟是某种类似“离线渲染”的做法。如果考虑能耗比与效率，比较悲观地说：绝大多数LLM Agents都会败下阵来，一无是处。&lt;strong&gt;LLM Agents真正落地是必须考虑能耗比与效率问题的，因为这意味着服务开销和实时性。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;33-安全&#34;&gt;3.3 安全
+&lt;/h3&gt;&lt;p&gt;**LLM Agents的产品能力和产品安全几乎永远是双刃剑。**当一个LLM Agent需要更好地为一个业务或客户服务时，就不得不获取相关业务或者相关客户的数据，来提高其服务能力。如何获取，存储，处理相关数据，都需要考虑到安全性。理解这一点最好的例子可能是支付软件的“免密支付”功能。然而，LLM Agents更有数据色彩，可能更需要考虑这些问题。&lt;/p&gt;
+&lt;p&gt;另一个方面则是LLM或LLM Agents本身的安全能力：例如幻觉问题，有害内容输出问题（安全能力好像尤其容易被SFT破坏），Prompt注入问题等等。&lt;/p&gt;
+&lt;h3 id=&#34;34-理想主义与产品力&#34;&gt;3.4 理想主义与产品力
+&lt;/h3&gt;&lt;p&gt;**LLM Agents必须面向某个场景，提供某种具体服务，而不是抽象的能力个体。**当前的LLM Agents多多少少还是有一些理想主义色彩的（当然绝对不是说有一些理想主义不好，我自己就有一点理想主义）。虽说也有一些确实面向了业务，是确实有用的LLM Agents，但离“Agents遍地开花”一说，似乎还有很长的路要走。我个人最期待的是游戏场景的落地。&lt;/p&gt;
+&lt;h2 id=&#34;4-展望与agents有关的愿想&#34;&gt;4 展望：与Agents有关的愿想
+&lt;/h2&gt;&lt;p&gt;作为爱好者，当然会有一些愿想。我当然也有很多关于Agents的想象。这些想象，也一定程度上为我提供了一些干活的动力，本节也会相对主观一点。以下是我从脑海中复杂的愿景里抽离出的一些典型，不分好坏先后：&lt;/p&gt;
+&lt;h3 id=&#34;41-单兵能力&#34;&gt;4.1 单兵能力
+&lt;/h3&gt;&lt;p&gt;希望看到超强的单兵LLM Agents。举个具体例子的话：大概就是《ATRI》里的亚托莉这样的存在，不过不一定要有实体。具体来讲，需要看到这些方面的能力：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;**超强的生成能力，能耗比和实时性：**生成能力当然是基础。流畅性，连贯性和一致性必须保证。再就是能耗比和实时性：效率要高，速度要快。&lt;/li&gt;
+&lt;li&gt;**超强的记忆系统：**只要内存管够，就能高效地存储LLM Agents原始感知输入，存储内部推理结果，存储相关环境反馈。并且能在将来真正高效地检索到相关记忆链条。&lt;/li&gt;
+&lt;li&gt;**超强的知识系统：**只要内存管够，就能准确存储和检索精确的知识。并且能保持知识是最新的，能够进行知识自检或高级别推理。&lt;/li&gt;
+&lt;li&gt;**真正的角色一致性：**即“真的像是一个具体的角色”。关于这一点，我认为CharacterEval这篇论文给出的指标比较靠谱。如下图所示，RPCA是指角色扮演会话Agent。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic1.zhimg.com/80/v2-bf483eef80398e5235615a37dbe54f78_720w.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;角色一致性的五个评价要素&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;KE（知识曝光 Knowledge Exposure）：智能体在对话中展现的知识量，为后续的知识表达能力评估提供支持。&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;KA（知识准确性 Knowledge Accuracy）：智能体能够根据角色档案中的知识，准确地生成回应。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;KH（知识幻觉 Knowledge Hallucination）：避免智能体在对话中创造或引用与角色身份不一致或不存在的知识。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PB（人格行为 Personality Behavior）：通过描述角色的动作、表情和语调，智能体应保持一致的行为表现，以增强用户的沉浸感。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PU（人格言辞 Personality Utterance）：智能体在对话中保持与角色表达习惯一致的言辞风格。&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;详见原文：&lt;/p&gt;
+&lt;p&gt;[&lt;a class=&#34;link&#34; href=&#34;https://link.zhihu.com/?target=https%3A//arxiv.org/abs/2401.01275&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;2401.01275] CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation (arxiv.org)arxiv.org/abs/2401.01275&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;42-游戏玩法&#34;&gt;4.2 游戏玩法
+&lt;/h3&gt;&lt;p&gt;希望看到出色的LLM Agents+游戏玩法的成果。具体来讲，希望看到这些玩法要素：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;**真正能好好说话的智能NPC：**比如我掏出手机给一个NPC发消息，NPC真的能根据目前的人设状况和剧情设定，动态地进行风格化回复。基本要求是：NPC真的像这个NPC在说话，没有AI味。进阶要求是：能通过智能NPC来反映世界观中的一些隐藏信息等。这是比较通用的要素，可以在大多数游戏中为沉浸感和养成系统服务。&lt;/li&gt;
+&lt;li&gt;**玩法上结合LLM Agents：**例如一种剧情解密类游戏，需要和NPC对话来推动一些分支或获得一些信息来帮助主线。这种想法很简单，甚至已有Demo，问题是怎么才好玩，怎么才可控，怎么才不会让玩家疲劳等。其他玩法亦可结合，但需要想象力和工程力。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;43-私有化部署&#34;&gt;4.3 私有化部署
+&lt;/h3&gt;&lt;p&gt;希望看到能私有化部署的个人助理。举个例子的话，大概就是贾维斯那种，这里强调的不是能力，而是私人性**。**具体需要看到这些方面的能力：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;**绝对安全的隐私数据管理：**能够让人完全安心地交付个人数据，包括隐私，健康，社交数据等，并保持更新时效性数据。&lt;/li&gt;
+&lt;li&gt;**高自由度的私有定制：**能根据个人行动特点进行分析，并给出相应推荐。能够以个人爱好定制语言风格和语音声线等。其他的请诸位发挥想象力。&lt;/li&gt;
+&lt;li&gt;**能作为某种级别的个人代理存在：**当Agent获取了个人数据，理解个人行为模式（也是数据）之后，在用户允许的情况下，能够以用户个人风格代表用户个人完成某种任务。可以进行聊天回复，邮件回复，购买物品这些行为。如果用户真的真的真的允许，甚至可以完全复刻用户的语言风格和行为模式，作为用户的数字分身。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>Openai Use Tutorial Ch3</title>
         <link>https://zcxggmu.github.io/p/openai-use-tutorial-ch3/</link>
         <pubDate>Thu, 24 Oct 2024 14:34:08 +0800</pubDate>
