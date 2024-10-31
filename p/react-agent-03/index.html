@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ReAct Agent 当前主流的大模型AI产品主要落地于三种应用形态，分别是聊天机器人、人工智能助手以及人工智能代理。首先对于聊天机器人而言，若仅需做通用领域的知识问答，则依赖的是在线大模型/开源大模型的原生能力，我们需要做的是以产品的架构去构建大模型的接入方式。若需对私有数据进行问答，通常会引入检索增强生成（Retrieval-Augmented Generation, RAG）技术，以实现对特定数据源的有效访问和信息整合。\n">
+<title>React Agent 03</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/p/react-agent-03/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="React Agent 03">
+<meta property='og:description' content="ReAct Agent 当前主流的大模型AI产品主要落地于三种应用形态，分别是聊天机器人、人工智能助手以及人工智能代理。首先对于聊天机器人而言，若仅需做通用领域的知识问答，则依赖的是在线大模型/开源大模型的原生能力，我们需要做的是以产品的架构去构建大模型的接入方式。若需对私有数据进行问答，通常会引入检索增强生成（Retrieval-Augmented Generation, RAG）技术，以实现对特定数据源的有效访问和信息整合。\n">
+<meta property='og:url' content='https://zcxggmu.github.io/p/react-agent-03/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='llm' /><meta property='article:tag' content='openai' /><meta property='article:published_time' content='2024-10-31T17:33:19&#43;08:00'/><meta property='article:modified_time' content='2024-10-31T17:33:19&#43;08:00'/>
+<meta name="twitter:title" content="React Agent 03">
+<meta name="twitter:description" content="ReAct Agent 当前主流的大模型AI产品主要落地于三种应用形态，分别是聊天机器人、人工智能助手以及人工智能代理。首先对于聊天机器人而言，若仅需做通用领域的知识问答，则依赖的是在线大模型/开源大模型的原生能力，我们需要做的是以产品的架构去构建大模型的接入方式。若需对私有数据进行问答，通常会引入检索增强生成（Retrieval-Augmented Generation, RAG）技术，以实现对特定数据源的有效访问和信息整合。\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16968365064894999835.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#react-agent">ReAct Agent</a></li>
+    <li><a href="#1-从提示工程到代理工程">1. 从提示工程到代理工程</a></li>
+    <li><a href="#2-react-agent-基本理论">2. ReAct Agent 基本理论</a></li>
+    <li><a href="#3-从零构建-react-agent">3. 从零构建 ReAct Agent</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/llm-from-scratch/" >
+                Llm-From-Scratch
+            </a>
+        
+            <a href="/categories/openai/" >
+                Openai
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/react-agent-03/">React Agent 03</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-31</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 20 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="react-agent">ReAct Agent
+</h1><p>  当前主流的大模型AI产品主要落地于三种应用形态，分别是<strong>聊天机器人、人工智能助手以及人工智能代理</strong>。首先对于聊天机器人而言，若仅需做通用领域的知识问答，则依赖的是在线大模型/开源大模型的原生能力，我们需要做的是以产品的架构去构建大模型的接入方式。若需对私有数据进行问答，通常会引入检索增强生成（Retrieval-Augmented Generation, RAG）技术，以实现对特定数据源的有效访问和信息整合。</p>
+<p>  在开发的技术选型的过程中，**真正容易引起混淆的是人工智能助手与人工智能代理这两类应用。**表面上，这两者常常因称呼上的类似而被误解为同一类应用产品，但实质上，它们基于完全不同的底层架构。<strong>这种差异关键在于它们处理任务和交互方式的根本设计理念，影响了它们在实际应用中的功能和效能。</strong></p>
+<p>​       首先，**人工智能助手的核心功能在于，辅助用户完成一些通常需要人工参与的既定任务，其主要作用是替代人工执行特定操作。**这一过程依赖于Function Calling技术——大模型调用特定函数的能力，这些函数可以是内置的，也可以是用户自定义的。<strong>在执行任务时，大模型会通过分析问题来决定何时以及如何调用这些函数</strong>，从而增强其处理特定任务的能力。例如，在电商智能客服案例中，通过给大模型配置查询商品数据库和优惠政策这两个工具（Tools），所构造出来的智能客服能够准确理解并回应用户的具体需求。这种 <code>Function_call</code> 的机制使得大模型可以有效利用外部工具或内部功能，从而提升其执行复杂任务的能力。</p>
+<p>  在处理这类问题时，我们主要**依赖于大模型的原生意图识别能力以及单个、多个或并行函数的调用功能。**然而，问题也很明显的显现出来了，就是当用户的单次请求中包含多个意图时。例如，用户询问：“你家卖健身手套吗？现在有什么优惠？” 理想的处理流程应如下：</p>
+<ol>
+<li>首先调用一个工具查询数据库后台，确认是否有该商品。如果没有，直接回复用户。</li>
+<li>如果商品存在，根据第一个工具的查询结果，再调用第二个工具查询该商品的优惠信息，并计算后回复给用满意度。</li>
+</ol>
+<p>  但很明显，无论我们怎么努力，都会发现这不是单纯的<code>Function Calling</code>能够实现的复杂需求。所以才来到了AI Agent的应用领域 - 人工智能代理。</p>
+<p>  我们可以通过一些简化的比喻，来理解 <code>Function calling</code> 和 <code>AI Agent</code> 这两个概念：想象你正在使用刚刚购买的手机，当你想要拍照时，你会打开相机应用。这个相机应用就是一个人工智能助手，它提供了拍照的功能。你通过点击相机图标来 <code>calling</code> 这个功能，然后就可以拍照、编辑照片等。在这个比喻中，相机应用就是预定义的函数，而打开相机应用并使用其功能的技术就是 <code>Function Calling</code> 。</p>
+<p>​       而对于人工智能代理，想象一个机器人管家。这个机器人能够理解你的指令，比如 “请打扫客厅”，并且能够执行这个任务。机器人管家就是一个AI Agent，它能够自主地感知环境（比如识别哪些地方是客厅），做出决策（比如决定打扫的顺序和方法），并执行任务（比如使用吸尘器打扫）。在这个比喻中，机器人管家是一个能够自主行动和做出复杂决策的实体，而其背后支撑其做这一系列复杂任务的技术，就是 <code>AI Agent</code> 。</p>
+<p>  总结来说，<code>Function Calling</code> 就像是调用一个具体的功能或工具，来帮助你完成特定的任务，而 <code>AI Agent</code> 则更像是一个能够独立思考和行动的个体，它可以在没有人类直接指导的情况下完成一系列复杂的任务。所以能够很明显的感觉出，以 AI Agent 为底层架构的应用，其核心是要具备 <strong>自主决策 +  高效执行</strong> 的能力。</p>
+<h1 id="1-从提示工程到代理工程">1. 从提示工程到代理工程
+</h1><p>  正如上面所说，我们一直使用的提示工程似乎都在指导着大模型，去完成单一轮次的特定需求。而现在想让大模型做一个能够独立思考的个体，此时我们要思考的是：构建 AI Agent 的目的是什么？它有具体的工作或角色定位吗？有没有支持目标的行动？或者支持行动的目标？那么就<strong>非常有必要开始从提示工程过渡到更广泛的东西，即代理工程</strong>。</p>
+<p>​      通过建立适当的框架、方法和心理模型来有效地设计整个流程。而**这个阶段所提到的AI Agent 的心理模型，指的是在围绕代理工程的思维过程。**核心思想相对简单，如下图所示：👇</p>
+<div align=center><img src="https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240911131347408.png" width=80%></div>
+<p>  如上图所示，整个框架强调了从赋予AI代理任务到技术实现之间的递进关系，每一层都为下一层提供支持和基础。从AI代理被赋予特定的工作（Job(s)）开始，进而必须执行的操作（Action(s)）以完成这些工作，再到执行这些操作所需的特定能力（Capabilities）及其所需的熟练程度（Required Level of Proficiency）。为了达到这些能力的熟练程度，代理需要依赖于各种技术和技巧（Technologies and Techniques），而这些技术和技巧又必须通过精确的编排（Orchestration）来实现有效整合。整个过程形成了一个系统，其中每个部分都是实现AI代理高效运作的关键。</p>
+<p>  **设计人工智能代理做重要的是清楚地概述代理应该做什么。**代理需要完成的主要工作、任务或目标是什么？这可以被视为一个高级目标，也可以分解为具体的工作和任务。比如这样一个场景：👇</p>
+<div align=center><img src="https://muyu001.oss-cn-beijing.aliyuncs.com/img/001.png" width=80%></div>
+<p>  当 “我” 萌生了去北京旅游的想法时，按照常规的出游思路，需要进行以下前期准备和计划：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">    想法1: 首先，我需要了解北京的热门景点并制定一个旅游行程。
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">      行动1: 我会在小红书上搜索相关的旅游攻略。
+</span></span><span class="line"><span class="cl">      观察1: 根据攻略，我制定了一个为期三天的旅游计划。接下来，我需要考虑如何到达北京，这意味着我得订购机票。
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    想法2: 我需要预订飞往北京的机票。
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      行动2: 我现在使用携程APP来订购机票。
+</span></span><span class="line"><span class="cl">      观察2: 机票已经订好，我已经能够到达北京了。既然计划在那里停留三天，我还需要解决住宿的问题。
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    想法3: 接下来，我要预订酒店，以确保北京行的住宿安排。
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">      行动3: 我在飞猪APP上搜索并预订了北京的酒店。
+</span></span><span class="line"><span class="cl">      观察3: 酒店预订已确认。
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    结论: 现在所有的准备工作都已完成，我可以放心出发了。
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="ni">&amp;emsp;&amp;emsp;</span>在上述北京旅游的规划过程中，初始输入仅为一条意图：“我想去北京旅游”。接下来的所有步骤，包括在小红书上查找旅游信息、通过携程APP订票、以及使用飞猪APP预订酒店，都是一系列的思考和行动过程。提示工程是一种非常经济有效的方法，我们已经习惯于利用它来增强大语言模型（LLM）处理复杂任务的能力。那么对于上述过程，如果也想让大模型通过提示工程的这种方式去自主完成，其实并不复杂，这里我们先给出提示示例：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```python
+</span></span><span class="line"><span class="cl">prompt = &#34;&#34;&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You run in a loop of Thought, Action, Observation, Answer.
+</span></span><span class="line"><span class="cl">At the end of the loop you output an Answer
+</span></span><span class="line"><span class="cl">Use Thought to describe your thoughts about the question you have been asked.
+</span></span><span class="line"><span class="cl">Use Action to run one of the actions available to you.
+</span></span><span class="line"><span class="cl">Observation will be the result of running those actions.
+</span></span><span class="line"><span class="cl">Answer will be the result of analysing the Observation
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Your available actions are:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xiaohongshu:
+</span></span><span class="line"><span class="cl">e.g. xiaohongshu: Beijing travel tips
+</span></span><span class="line"><span class="cl">Runs a search through the Xiaohongshu API and returns travel tips and recommendations for Beijing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ctrip:
+</span></span><span class="line"><span class="cl">e.g. ctrip: flights to Beijing
+</span></span><span class="line"><span class="cl">Runs a search through the Ctrip API to find available flights to Beijing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Always use the Xiaohongshu and Ctrip APIs if you have the opportunity to do so.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Example session:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Question: I&#39;m planning a trip to Beijing, what should I do first?
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Thought: I should find out about the attractions and tips for visiting Beijing on Xiaohongshu.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Action: xiaohongshu: Beijing travel tips
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Observation: The search returns a list of popular travel tips and must-visit attractions in Beijing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Answer: Start by researching Beijing&#39;s must-visit attractions and travel tips on Xiaohongshu. Then, look for available flights on Ctrip and consider accommodation options.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">....
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&#34;&#34;&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  对应的中文版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">你需要在“思考、行动、观察、回答”的循环中运行。
+</span></span></span><span class="line"><span class="cl"><span class="s2">在循环的最后，你需要输出一个答案。
+</span></span></span><span class="line"><span class="cl"><span class="s2">使用“思考”来描述你对被问及问题的思考。
+</span></span></span><span class="line"><span class="cl"><span class="s2">使用“行动”来执行可用的行动之一。
+</span></span></span><span class="line"><span class="cl"><span class="s2">“观察”将是执行这些行动后的结果。
+</span></span></span><span class="line"><span class="cl"><span class="s2">“回答”将是对观察结果的分析。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">你的可用行动有：
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">小红书:
+</span></span></span><span class="line"><span class="cl"><span class="s2">例如：小红书: 北京旅游攻略
+</span></span></span><span class="line"><span class="cl"><span class="s2">通过小红书API搜索，并返回北京旅游攻略和推荐。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">携程:
+</span></span></span><span class="line"><span class="cl"><span class="s2">例如：携程: 前往北京的航班
+</span></span></span><span class="line"><span class="cl"><span class="s2">通过携程API搜索，并找到前往北京的可用航班。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">尽可能使用小红书和携程API进行查询。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">示例会话：
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">问题: 我正计划去北京旅游，我应该先做什么？
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">思考: 我应该在小红书上查找关于访问北京的景点和攻略。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">行动: 小红书: 北京旅游攻略
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">观察: 搜索返回了北京的热门旅游攻略和必游景点的列表。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">回答: 首先，你可以在小红书上了解北京的必游景点和旅游攻略。接着，在携程上查找可用的前往北京的航班，并考虑住宿选择。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">.......
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  很惊喜的是，这样的提示方法确实可以让大模型在接收到输入后，自动的进入决策分析过程。比如我们直接使用 <code>ChatGPT</code> 使用 Few-Shot 提示方法来进行尝试：</p>
+<div align=center><img src="https://muyu001.oss-cn-beijing.aliyuncs.com/img/0901.png" width=80%></div>
+<p>  所谓的代理工程，一种最简单的理解是：<strong>更加复杂的提示工程</strong>。从提示工程到代理工程的过渡体现在：不再只是提供单一的任务描述，而是<strong>明确界定代理所需承担的具体职责，详尽概述完成这些任务所需采取的操作，并清楚指定执行这些操作所必须具备的能力，形成一个高级的认知模型。</strong></p>
+<p>  而这种复杂提示行之有效的原因，还是起源于 <code>ReAct</code> 的思想框架。</p>
+<h1 id="2-react-agent-基本理论">2. ReAct Agent 基本理论
+</h1><p>  ReAct Agent 也称为 <code>ReAct</code>，是一个用于提示大语言模型的框架，它首次在 2022 年 10 月的论文<a class="link" href="https://arxiv.org/pdf/2210.03629"  target="_blank" rel="noopener"
+    >《ReAct：Synergizing Reasoning and Acting in Language Models》</a>中引入，并于2023 年 3 月修订。该框架的开发是为了协同大语言模型中的推理和行动，使它们更加强大、通用和可解释。通过交叉推理和行动，<strong>ReAct 使智能体能够动态地在产生想法和特定于任务的行动之间交替。</strong></p>
+<blockquote>
+<p>ReAct：https://react-lm.github.io/</p>
+</blockquote>
+<p>  ReAct 框架有两个过程，由 <code>Reason</code> 和 <code>Act</code> 结合而来。从本质上讲，这种方法的灵感来自于人类如何和谐地结合思维和行动来执行任务，就像上面 “我想去北京旅游” 这个示例一样。</p>
+<p>  首先第一部分 Reason，它基于一种推理技术 — <a class="link" href="https://arxiv.org/pdf/2201.11903"  target="_blank" rel="noopener"
+    >思想链（CoT）</a>， CoT是一种提示工程，通过将输入分解为多个逻辑思维步骤，帮助大语言模型执行推理并解决复杂问题。这使得大模型能够按顺序规划和解决任务的每个部分，从而更准确地获得最终结果，具体包括：</p>
+<ul>
+<li>**分解问题：**当面对复杂任务时，CoT 方法不是通过单个步骤解决它，而是将任务分解为更小的步骤，每个步骤解决不同方面的问题。</li>
+<li>**顺序思维：**思维链中的每一步都建立在上一步的结果之上。这样，模型就能从头到尾构造出一条逻辑推理链。</li>
+</ul>
+<p>  比如，一家商店以 100 元的价格出售产品。如果商店降价20%，然后加价10%，产品的最终价格是多少？</p>
+<ul>
+<li>步骤 1：计算降价20%后的价格。如果原价是100元，商店降价20%，我们计算降价后的价格： 10 x (1–0.2) = 80.</li>
+<li>步骤 2：计算上涨 10% 后的价格。降价后，产品价格为 80 元。现在商店涨价10%：80 x (1 + 0.1) = 88.</li>
+<li>结论：先降价后加价后，产品最终售价为88元。</li>
+</ul>
+<div align=center><img src="https://muyu001.oss-cn-beijing.aliyuncs.com/img/image-20240919105639207.png" width=80%></div>
+<p>  但是，即使在 CoT 提示工程的限定下，大模型仍然会产生幻觉。因为经过长期的使用，大家发现在推理的中间阶段，会产生不正确的答案或上下游的传播错误。所以，Google DeepMind 团队开发了<code>ReAct</code>的技术来弥补这一点。ReAct 采用的是 <strong>思想-行动-观察循环</strong> 的思路，其中代理根据先前的观察进行推理以决定行动。这个迭代过程使其能够根据其行动的结果，来调整和完善其方法。如下图所示：👇</p>
+<div align=center><img src="https://muyu001.oss-cn-beijing.aliyuncs.com/img/002.png" width=80%></div>
+<p>  在这个过程中，<code>Question</code> 指的是用户请求的任务或需要解决的问题，<code>Thought</code> 用来确定要采取的行动并向大模型展示如何创建/维护/调整行动计划，<code>Action Input</code> 是用来让大模型与外部环境（例如搜索引擎、维基百科）的实时交互，包括具有预定义范围的API。而<code>Observation</code> 阶段会观察执行操作结果的输出，重复此过程直至任务完成。</p>
+<p>  由 <code>ReAct</code> 思想抽象出来的代理工程，其基本示例如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">You run in a loop of Thought, Action, Observation, Answer.
+</span></span></span><span class="line"><span class="cl"><span class="s2">At the end of the loop you output an Answer
+</span></span></span><span class="line"><span class="cl"><span class="s2">Use Thought to describe your thoughts about the question you have been asked.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Use Action to run one of the actions available to you.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Observation will be the result of running those actions.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Answer will be the result of analysing the Observation
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Your available actions are:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">calculate:
+</span></span></span><span class="line"><span class="cl"><span class="s2">e.g. calculate: 4 * 7 / 3
+</span></span></span><span class="line"><span class="cl"><span class="s2">Runs a calculation and returns the number - uses Python so be sure to use floating point syntax if necessary
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">wikipedia:
+</span></span></span><span class="line"><span class="cl"><span class="s2">e.g. wikipedia: Django
+</span></span></span><span class="line"><span class="cl"><span class="s2">Returns a summary from searching Wikipedia
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Always look things up on Wikipedia if you have the opportunity to do so.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Example session:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Question: What is the capital of France?
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Thought: I should look up France on Wikipedia
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Action: wikipedia: France
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">You should then call the appropriate action and determine the answer from 
+</span></span></span><span class="line"><span class="cl"><span class="s2">the result
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">You then output:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Answer: The capital of France is Paris
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  对应的中文版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">您在一个由“思考、行动、观察、回答”组成的循环中运行。
+</span></span></span><span class="line"><span class="cl"><span class="s2">在循环的最后，您输出一个答案。
+</span></span></span><span class="line"><span class="cl"><span class="s2">使用“思考”来描述您对所提问题的思考。
+</span></span></span><span class="line"><span class="cl"><span class="s2">使用“行动”来执行您可用的动作之一。
+</span></span></span><span class="line"><span class="cl"><span class="s2">“观察”将是执行这些动作的结果。
+</span></span></span><span class="line"><span class="cl"><span class="s2">“回答”将是分析“观察”结果后得出的答案。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">您可用的动作包括：
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">calculate（计算）:
+</span></span></span><span class="line"><span class="cl"><span class="s2">例如：calculate: 4 * 7 / 3
+</span></span></span><span class="line"><span class="cl"><span class="s2">执行计算并返回数字 - 使用Python，如有必要请确保使用浮点数语法
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">wikipedia（维基百科）:
+</span></span></span><span class="line"><span class="cl"><span class="s2">例如：wikipedia: Django
+</span></span></span><span class="line"><span class="cl"><span class="s2">返回从维基百科搜索的摘要
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">如果有机会，请始终在维基百科上查找信息。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">示例会话：
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">问题：法国的首都是什么？
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">思考：我应该在维基百科上查找关于法国的信息
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">行动：wikipedia: France
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">然后您应该调用适当的动作，并从结果中确定答案
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">您然后输出：
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">回答：法国的首都是巴黎
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  如上示例所示：在 <code>ReAct</code> 框架下的代理工程描述中，明确的是**代理的任务和执行过程。<strong>面对不同的场景，其实我们</strong>只需要改变的是：1. 代理的身份设定 2. 代理完成任务所需要的工具。**代理的身份通常通过 <code>system</code> 角色来定义，而所需的工具及其应用，则是 <code>Function Calling</code>  所涉及的关于外部工具的定义和使用方法。只不过，在代理框架下这些工具的应用方法，需要进行适当的调整以适应不同的需求。</p>
+<p>  接下来，我尝试用 <code>Python</code> 复现 <code>ReAct</code> 框架实现自主代理的逻辑。</p>
+<h1 id="3-从零构建-react-agent">3. 从零构建 ReAct Agent
+</h1><p>  <strong>代理的一个主要组成部分是系统提示词</strong>，一般是通过 <code>&lt;'role' : 'system'&gt;</code> 来设定，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span></span><span class="line"><span class="cl"><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-4o-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;你是一位专业的人工智能领域的教授，具备50年的教学经验&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;请你详细的介绍一下：什么是人工智能？&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  在这个示例中，<code>system</code> 角色被设置为 “你是一位专业的人工智能领域的教授，具备50年的教学经验”。这一设定使大模型能够从一个人工智能教授的角度出发，详尽介绍人工智能的定义、分类、应用、挑战和未来展望。这种详细的介绍反映了教授丰富的知识和对领域的深刻理解。</p>
+<p>  我们再来测试不同的身份设定，会得到怎样不同的回答，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-4o-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;你是一位杂技演员，完全不知道人工智能是什么。&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;请你详细的介绍一下：什么是人工智能？&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">抱歉，我对人工智能并不了解。我的工作主要是进行杂技表演，比如平衡、翻滚、跳跃等。如果你对杂技有什么问题或者想了解我的表演，请随时问我！
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  在这个示例中，<code>system</code> 角色被设定为 “你是一位杂技演员，完全不知道人工智能是什么”。这一设定导致在生成的回答中，大模型以一个对人工智能一无所知的杂技演员的身份来回答，结果是它无法提供关于人工智能的任何信息，而是转而提到自己的专业领域，即杂技表演。</p>
+<p>  通过这两个示例可以看出**，<code>system</code> 角色设定对大模型的回答有决定性影响。**这一机制允许我们开发者或使用者通过改变角色设定，来控制大模型的知识范围和行为，使大模型能够适应不同的对话场景和用户需求。这种方法在代理工程中是非常有用的，特别是在需要代理以不同身份进行交互的情况下，可以有效地模拟多种人物角色的行为和专业知识。<strong>这种系统提示会直接引导代理推理问题并酌情选择有助于解决问题的外部工具。</strong> 那么，我们就应该在系统提示词中，去定义如下所示的完整 AI Agent 自主推理的核心流程：</p>
+<div align=center><img src="https://muyu001.oss-cn-beijing.aliyuncs.com/img/2024-09-19-1023.png" width=80%></div>
+<p>  基于上述流程，要通过代码实现 <code>ReAct Agent</code>，能够明确需要做的三项工作是：</p>
+<ol>
+<li>精心设计代理的完整提示词，并在大模型的 <code>system</code> 角色设置中进行设定，以确保代理的行为和知识与其角色一致。</li>
+<li>实时将用户的问题作为变量输入，填充到系统提示（System Prompt）中，确保代理能够根据当前的用户需求生成响应。</li>
+<li>构建并整合所需的工具，使 <code>ReAct Agent</code> 能够完成预定任务，这些工具也应作为变量被嵌入到系统提示中，以便在运行时调用。</li>
+</ol>
+<p>  接下来，我们将实现一个基础但功能完整的 <code>ReAct Agent</code> 流程。这个AI代理的设计需求是能够实时搜索网络上的信息，并在需要进行数学计算时，调用计算工具。具体使用的工具包括：</p>
+<ul>
+<li><strong>Serper API</strong>：利用这个API，代理可以根据给定的关键词执行实时Google搜索，并返回搜索结果中的第一个条目。</li>
+<li><strong>calculate</strong>：这个功能通过使用Python的 <code>eval()</code> 函数来解析并计算数学表达式，从而得到数值和互动性。</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Step 1. 设计完整的代理工程提示</strong></li>
+</ul>
+<p>  正如我们上面介绍的 <code>ReAct</code>原理，其本质是采用了 <code>思想-行动-观察</code> 的循环过程来逐步实现复杂任务，那么其系统提示（System Prompt）就可以设计如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">system_prompt</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">You run in a loop of Thought, Action, Observation, Answer.
+</span></span></span><span class="line"><span class="cl"><span class="s2">At the end of the loop you output an Answer
+</span></span></span><span class="line"><span class="cl"><span class="s2">Use Thought to describe your thoughts about the question you have been asked.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Use Action to run one of the actions available to you.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Observation will be the result of running those actions.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Answer will be the result of analysing the Observation
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Your available actions are:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">calculate:
+</span></span></span><span class="line"><span class="cl"><span class="s2">e.g. calculate: 4 * 7 / 3
+</span></span></span><span class="line"><span class="cl"><span class="s2">Runs a calculation and returns the number - uses Python so be sure to use floating point syntax if necessary
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">fetch_real_time_info:
+</span></span></span><span class="line"><span class="cl"><span class="s2">e.g. fetch_real_time_info: Django
+</span></span></span><span class="line"><span class="cl"><span class="s2">Returns a real info from searching SerperAPI
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Always look things up on fetch_real_time_info if you have the opportunity to do so.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Example session:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Question: What is the capital of China?
+</span></span></span><span class="line"><span class="cl"><span class="s2">Thought: I should look up on SerperAPI
+</span></span></span><span class="line"><span class="cl"><span class="s2">Action: fetch_real_time_info: What is the capital of China?
+</span></span></span><span class="line"><span class="cl"><span class="s2">PAUSE 
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">You will be called again with this:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Observation: China is a country. The capital is Beijing.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Thought: I think I have found the answer
+</span></span></span><span class="line"><span class="cl"><span class="s2">Action: Beijing.
+</span></span></span><span class="line"><span class="cl"><span class="s2">You should then call the appropriate action and determine the answer from the result
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">You then output:
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Answer: The capital of China is Beijing
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Example session
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Question: What is the mass of Earth times 2?
+</span></span></span><span class="line"><span class="cl"><span class="s2">Thought: I need to find the mass of Earth on fetch_real_time_info
+</span></span></span><span class="line"><span class="cl"><span class="s2">Action: fetch_real_time_info : mass of earth
+</span></span></span><span class="line"><span class="cl"><span class="s2">PAUSE
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">You will be called again with this: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Observation: mass of earth is 1,1944×10e25
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Thought: I need to multiply this by 2
+</span></span></span><span class="line"><span class="cl"><span class="s2">Action: calculate: 5.972e24 * 2
+</span></span></span><span class="line"><span class="cl"><span class="s2">PAUSE
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">You will be called again with this: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Observation: 1,1944×10e25
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">If you have the answer, output it as the Answer.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Answer: The mass of Earth times 2 is 1,1944×10e25.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">Now it&#39;s your turn:
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  提示词的第一部分，告诉大模型如何通过我们之前看到的流程的标记部分循环处理问题，第二部分描述计算和搜索维基百科的工具操作，最后是一个示例的会话。整体结构非常清晰。</p>
+<ul>
+<li><strong>Step 2. 定义工具</strong></li>
+</ul>
+<p>  定义工具的方法与 <a class="link" href="https://zcxggmu.github.io/p/agent-function-calling-02/"  target="_blank" rel="noopener"
+    >Agent Function Calling 02</a> 中介绍的一样，我们仅需要确定工具函数的入参及返回的结果即可。对于如上我们设计的场景，一共需要两个工具，其一是用来根据关键词检索 <code>Serper API</code>，返回详细的检索信息。其二是一个计算函数，接收的入参是需要执行计算操作的数值，返回最终的计算结果。代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fetch_real_time_info</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># API参数</span>
+</span></span><span class="line"><span class="cl">    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="s1">&#39;0f31d8c5561bdaa4c71ad7c86f6e63a4a26cead9&#39;</span><span class="p">,</span>  <span class="c1"># 使用您自己的API密钥</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>    <span class="c1"># 查询参数，表示要搜索的问题。</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">1</span>       <span class="c1"># 返回结果的数量设为1，API将返回一个相关的搜索结果。</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 发起GET请求到Serper API</span>
+</span></span><span class="line"><span class="cl">    <span class="n">api_result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://google.serper.dev/search&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 解析返回的JSON数据</span>
+</span></span><span class="line"><span class="cl">    <span class="n">search_data</span> <span class="o">=</span> <span class="n">api_result</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 提取并返回查询到的信息</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">search_data</span><span class="p">[</span><span class="s2">&#34;organic&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">search_data</span><span class="p">[</span><span class="s2">&#34;organic&#34;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;snippet&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;没有找到相关结果。&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  测试代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 使用示例</span>
+</span></span><span class="line"><span class="cl"><span class="n">query</span> <span class="o">=</span> <span class="s2">&#34;世界上最长的河流是哪条河流？&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">fetch_real_time_info</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">1.</span> 尼罗河（Nile）. 6670km ; 2. 亚马逊河（Amazon）. 6400km ; 3. 长江（Chang Jiang）. 6397km ; 4. 密西西比河（Mississippi）. 6020km.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>  函数 <code>calculate</code> 接收一个字符串参数 operation，该字符串代表一个数学运算表达式，并使用 Python 的内置函数 <code>eval</code> 来执行这个表达式，然后返回运算的结果。函数的返回类型被指定为 float，意味着期望返回值为浮点数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  测试代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 调用函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">calculate</span><span class="p">(</span><span class="s2">&#34;100 / 5&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># 输出结果应该是 20.0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">20.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  最后，定义一个名为 <code>available_actions</code> 的字典，用来存储可用的函数引用，用来在后续的Agent 实际执行 Action 时可以根据需要调用对应的功能。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">available_actions</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;fetch_real_time_info&#34;</span><span class="p">:</span> <span class="n">fetch_real_time_info</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;calculate&#34;</span><span class="p">:</span> <span class="n">calculate</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>Step 3. 开发大模型交互接口</strong></li>
+</ul>
+<p>  接下来，定义大模型交互逻辑接口。这里实现一个 <code>ChatBot</code> 类，将系统提示（system）与用户（user）或助手的提示（assistant）分开，并在实例化 <code>ChatBot</code> 时对其进行初始化。 核心逻辑为 <code>__call__</code> 函数负责存储用户消息和聊天机器人的响应，调用 <code>execute</code> 来运行代理。完整代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">openai</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">httpx</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ChatBot</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="n">system</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">messages</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">system</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">system</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">message</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;assistant&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">result</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-4o&#34;</span><span class="p">,</span> <span class="n">messages</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面是每个部分的具体解释：</p>
+<blockquote>
+<ul>
+<li><code>init</code>：用来接收系统提示(System Prompt)，并追加到全局的消息列表中。</li>
+<li><code>call</code>：是 <code>Python</code> 类的一个特殊方法, 当对一个类的实例像调用函数一样传递参数并执行时，实际上就是在调用这个类的 <strong>call</strong> 方法。其内部会 调用 <code>execute</code> 方法。</li>
+<li><code>execute</code>：实际上就是与 <code>OpenAI</code> 的API进行交互，发送累积的消息历史（包括系统消息、用户消息和之前的回应）到 <code>OpenAI</code> 的聊天模型，返回最终的响应。</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Step 4. 定义代理循环逻辑</strong></li>
+</ul>
+<p>  在代理循环中，其内部逻辑如下图所示👇</p>
+<div align=center><img src="https://muyu001.oss-cn-beijing.aliyuncs.com/img/004.png" width=80%></div>
+<p>  从 <code>Thought</code> 到 <code>Action</code> ， 最后到 <code>Observation</code> 状态，是一个循环的逻辑，而循环的次数，取决于大模型将用户的原始 <code>Goal</code> 分成了多少个子任务。 所有这样的逻辑中，我们需要去处理的是：</p>
+<ol>
+<li>判断大模型当前处于哪一个状态阶段</li>
+<li>如果停留在 <code>Action</code> 阶段，需要像调用 Function Calling 的过程一样，先执行工具，再将工具的执行结果传递给 <code>Obversation</code> 状态阶段。</li>
+</ol>
+<p>  首先需要明确，需要执行操作的过程是：大模型识别到用户的意图中需要调用工具，那么其停留的阶段一定是在 <code>Action：xxx : xxx</code> 阶段，其中第一个 <code>xxx</code>，就是调用的函数名称，第二个 <code>xxx</code>，就是调用第一个 <code>xxx</code> 函数时，需要传递的参数。我们可以通过正则表达式来进行捕获。如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># (\w+) 是一个捕获组，匹配一个或多个字母数字字符（包括下划线）。这部分用于捕获命令中指定的动作名称</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (.*) 是另一个捕获组，它匹配冒号之后的任意字符，直到字符串结束。这部分用于捕获命令的参数。</span>
+</span></span><span class="line"><span class="cl"><span class="n">action_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;^Action: (\w+): (.*)$&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  测试代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">match</span> <span class="o">=</span> <span class="n">action_re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="s2">&#34;Action: fetch_real_time_info: mass of earth&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="k">match</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># &#39;fetch_real_time_info&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># &#39;mass of earth&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">fetch_real_time_info
+</span></span><span class="line"><span class="cl">mass of earth
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  由此，我们定义了一个 <code>AgentExecutor</code> 函数。该函数将实现一个循环，检测状态并使用正则表达式提取当前停留的状态阶段。不断地迭代，直到没有更多的（或者我们已达到最大迭代次数）调用操作，再返回最终的响应。完整代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">action_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;^Action: (\w+): (.*)$&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">AgentExecutor</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">max_turns</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bot</span> <span class="o">=</span> <span class="n">ChatBot</span><span class="p">(</span><span class="n">system_prompt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 通过 next_prompt 标识每一个子任务的阶段性输入</span>
+</span></span><span class="line"><span class="cl">    <span class="n">next_prompt</span> <span class="o">=</span> <span class="n">question</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">max_turns</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 这里调用的就是 ChatBot 类的 __call__ 方法</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">bot</span><span class="p">(</span><span class="n">next_prompt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;result:</span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 在这里通过正则判断是否到了需要调用函数的Action阶段</span>
+</span></span><span class="line"><span class="cl">        <span class="n">actions</span> <span class="o">=</span> <span class="p">[</span><span class="n">action_re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">action_re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">actions</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 提取调用的工具名和工具所需的入参</span>
+</span></span><span class="line"><span class="cl">            <span class="n">action</span><span class="p">,</span> <span class="n">action_input</span> <span class="o">=</span> <span class="n">actions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">action</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">available_actions</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;Unknown action: </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">action_input</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;running: </span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">action_input</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">observation</span> <span class="o">=</span> <span class="n">available_actions</span><span class="p">[</span><span class="n">action</span><span class="p">](</span><span class="n">action_input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Observation: </span><span class="si">{</span><span class="n">observation</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">next_prompt</span> <span class="o">=</span> <span class="s2">&#34;Observation: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">bot</span><span class="o">.</span><span class="n">messages</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  运行 AI Agent 进行一系列测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">AgentExecutor</span><span class="p">(</span><span class="s2">&#34;世界上最长的河流是什么？&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">result:Thought: 我需要查找一下世界上最长的河流信息。
+</span></span><span class="line"><span class="cl">Action: fetch_real_time_info: 世界上最长的河流
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">running: fetch_real_time_info 世界上最长的河流
+</span></span><span class="line"><span class="cl">Observation: 1. 尼罗河（Nile）. 6670km ; 2. 亚马逊河（Amazon）. 6400km ; 3. 长江（Chang Jiang）. 6397km ; 4. 密西西比河（Mississippi）. 6020km.
+</span></span><span class="line"><span class="cl">result:Answer: 世界上最长的河流是尼罗河，全长6670公里。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">AgentExecutor</span><span class="p">(</span><span class="s2">&#34;20 * 15 等于多少&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">result:Thought: 用户需要我计算 20 乘以 15 的结果。
+</span></span><span class="line"><span class="cl">Action: calculate: 20 * 15
+</span></span><span class="line"><span class="cl">running: calculate 20 * 15
+</span></span><span class="line"><span class="cl">Observation: 300
+</span></span><span class="line"><span class="cl">result:Answer: 20 乘以 15 等于 300。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">AgentExecutor</span><span class="p">(</span><span class="s2">&#34;世界上最长的河流，与中国最长的河流，它们之间的差值是多少？&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">result:Thought: 我需要查找世界上最长的河流和中国最长的河流各自的长度，并计算它们之间的差值。
+</span></span><span class="line"><span class="cl">Action: fetch_real_time_info: 世界上最长的河流
+</span></span><span class="line"><span class="cl">PAUSE
+</span></span><span class="line"><span class="cl">running: fetch_real_time_info 世界上最长的河流
+</span></span><span class="line"><span class="cl">Observation: 1. 尼罗河（Nile）. 6670km ; 2. 亚马逊河（Amazon）. 6400km ; 3. 长江（Chang Jiang）. 6397km ; 4. 密西西比河（Mississippi）. 6020km.
+</span></span><span class="line"><span class="cl">result:Thought: 我已经找到了世界上最长的河流是尼罗河，其长度为6670公里。中国最长的河流是长江，其长度为6397公里。现在只需计算它们之间的长度差异。
+</span></span><span class="line"><span class="cl">Action: calculate: 6670 - 6397
+</span></span><span class="line"><span class="cl">PAUSE
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Observation: 273
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Answer: 世界上最长的河流是尼罗河，其长度为6670公里。中国最长的河流是长江，其长度为6397公里。它们之间的差值是273公里。
+</span></span><span class="line"><span class="cl">running: calculate 6670 - 6397
+</span></span><span class="line"><span class="cl">Observation: 273
+</span></span><span class="line"><span class="cl">result:Answer: 世界上最长的河流是尼罗河，其长度为6670公里。中国最长的河流是长江，其长度为6397公里。它们之间的差值是273公里。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  从以上案例中，非常明显的发现，ReAct（推理和行动）框架通过将推理和行动整合到一个有凝聚力的操作范式中，能够实现动态和自适应问题解决，从而允许与用户和外部工具进行更复杂的交互。这种方法不仅增强了大模型处理复杂查询的能力，还提高了其在多步骤任务中的性能，使其适用于从自动化客户服务到复杂决策系统的广泛应用。</p>
+<p>  就目前的 AI Agent 现状而言，流行的代理框架都有内置的 ReAct 代理，比如 <code>Langchain</code>、<code>LlamaIndex</code>中的代理，或者 <code>CrewAI</code> 这种新兴起的 Agent 开发框架，都是基于 ReAct 理念的一种变种。<code>LangChain</code> 的 ReAct 代理工程描述 👇</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">Answer</span> <span class="err">the</span> <span class="err">following</span> <span class="err">questions</span> <span class="err">as</span> <span class="err">best</span> <span class="err">you</span> <span class="err">can.</span> <span class="err">You</span> <span class="err">have</span> <span class="err">access</span> 
+</span></span><span class="line"><span class="cl"><span class="err">to</span> <span class="err">the</span> <span class="err">following</span> <span class="err">tools:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="err">tools</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">Use</span> <span class="err">the</span> <span class="err">following</span> <span class="err">format:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">Question:</span> <span class="err">the</span> <span class="err">input</span> <span class="err">question</span> <span class="err">you</span> <span class="err">must</span> <span class="err">answer</span>
+</span></span><span class="line"><span class="cl"><span class="err">Thought:</span> <span class="err">you</span> <span class="err">should</span> <span class="err">always</span> <span class="err">think</span> <span class="err">about</span> <span class="err">what</span> <span class="err">to</span> <span class="err">do</span>
+</span></span><span class="line"><span class="cl"><span class="err">Action:</span> <span class="err">the</span> <span class="err">action</span> <span class="err">to</span> <span class="err">take,</span> <span class="err">should</span> <span class="err">be</span> <span class="err">one</span> <span class="err">of</span> <span class="p">[{</span><span class="err">tool_names</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="err">Action</span> <span class="err">Input:</span> <span class="err">the</span> <span class="err">input</span> <span class="err">to</span> <span class="err">the</span> <span class="err">action</span>
+</span></span><span class="line"><span class="cl"><span class="err">Observation:</span> <span class="err">the</span> <span class="err">result</span> <span class="err">of</span> <span class="err">the</span> <span class="err">action</span>
+</span></span><span class="line"><span class="cl"><span class="err">...</span> <span class="err">(this</span> <span class="err">Thought/Action/Action</span> <span class="err">Input/Observation</span> <span class="err">can</span> <span class="err">repeat</span> <span class="err">N</span> <span class="err">times)</span>
+</span></span><span class="line"><span class="cl"><span class="err">Thought:</span> <span class="err">I</span> <span class="err">now</span> <span class="err">know</span> <span class="err">the</span> <span class="err">final</span> <span class="err">answer</span>
+</span></span><span class="line"><span class="cl"><span class="err">Final</span> <span class="err">Answer:</span> <span class="err">the</span> <span class="err">final</span> <span class="err">answer</span> <span class="err">to</span> <span class="err">the</span> <span class="err">original</span> <span class="err">input</span> <span class="err">question</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">Begin!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">Question:</span> <span class="p">{</span><span class="err">input</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="err">Thought:</span><span class="p">{</span><span class="err">agent_scratchpad</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">There</span> <span class="err">are</span> <span class="err">three</span> <span class="err">placeholders</span> <span class="p">{</span><span class="err">tool</span><span class="p">}</span><span class="err">,</span> <span class="p">{</span><span class="err">input</span><span class="p">}</span><span class="err">,</span> <span class="err">and</span> <span class="p">{</span><span class="err">agent_scratchpad</span><span class="p">}</span> <span class="err">in</span> <span class="err">this</span> <span class="err">prompt.</span> <span class="err">These</span> <span class="err">will</span> <span class="err">be</span> <span class="err">replaced</span> <span class="err">with</span> <span class="err">the</span> <span class="err">appropriate</span> <span class="err">text</span> <span class="err">before</span> <span class="err">sending</span> <span class="err">it</span> <span class="err">to</span> <span class="err">LLM.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  这个提示中有三个占位符 <code>{tool}</code>、<code>{input}</code> 和 <code>{agent_scratchpad}</code> 。在发送给 LLM 之前，这些内容将被替换为适当的文本。</p>
+<ul>
+<li><code>tools</code> - 工具的描述</li>
+<li><code>tool_names</code> - 工具的名称</li>
+<li><code>input</code> - 大模型接收的原始问题（通常是来自用户的问题）</li>
+<li><code>agent_scratchpad</code> - 保存以前的想法/行动/行动输入/观察的历史记录</li>
+</ul>
+<p>  因此，基于 <code>ReAct</code> 的代理工程并非一成不变，其所调用的工具也不局限于单一类型。这种灵活性实际上为 Agent 执行人工智能代理任务开启了无限可能。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/llm/">Llm</a>
+        
+            <a href="/tags/openai/">Openai</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/agent-function-calling-02/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Agent Function Calling 02</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/llm-agent-intro-01/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Llm Agent Intro 01</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/about-llm-agents-explore/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">About Llm Agents Explore</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/openai-use-tutorial-ch3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Openai Use Tutorial Ch3</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/openai-use-tutorial-ch2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Openai Use Tutorial Ch2</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
+
+
+    </body>
+</html>
