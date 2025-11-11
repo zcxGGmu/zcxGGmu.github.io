@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zcxggmu.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="riscv vector上下文追踪机制分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RISC-V Vector上下文调度框架">
+<meta property="og:url" content="https://zcxggmu.github.io/2025/11/11/RISC-V-Vector%E4%B8%8A%E4%B8%8B%E6%96%87%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:site_name" content="zcxGGmu&#39;s blog">
+<meta property="og:description" content="riscv vector上下文追踪机制分析">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202401111027078.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312201753572.png">
+<meta property="article:published_time" content="2025-11-11T02:00:57.000Z">
+<meta property="article:modified_time" content="2025-11-11T02:37:27.420Z">
+<meta property="article:author" content="zcxGGmu">
+<meta property="article:tag" content="SIMD">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202401111027078.png">
+
+<link rel="canonical" href="https://zcxggmu.github.io/2025/11/11/RISC-V-Vector%E4%B8%8A%E4%B8%8B%E6%96%87%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>RISC-V Vector上下文调度框架 | zcxGGmu's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">zcxGGmu's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">行远自迩，登高自卑</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zcxggmu.github.io/2025/11/11/RISC-V-Vector%E4%B8%8A%E4%B8%8B%E6%96%87%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zcxGGmu">
+      <meta itemprop="description" content="kernel/kvm, arm/riscv, llm/agent">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zcxGGmu's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          RISC-V Vector上下文调度框架
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-11 10:00:57 / 修改时间：10:37:27" itemprop="dateCreated datePublished" datetime="2025-11-11T10:00:57+08:00">2025-11-11</time>
+            </span>
+
+          
+            <div class="post-description">riscv vector上下文追踪机制分析</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-背景"><a href="#1-背景" class="headerlink" title="1 背景"></a>1 背景</h1><blockquote>
+<p>基于<a target="_blank" rel="noopener" href="https://lore.kernel.org/linux-riscv/20240108035209.GA212605@sol.localdomain/T/#mda836061caf7a5db9b6994a58ec8e32721ae5038">[v9, 00&#x2F;10] riscv: support kernel-mode Vector</a>，目前v6.7主线未合入。</p>
+<hr>
+<p>从多hart多task角度出发，返回用户态前，hart上装载的如果不是即将被调度task的vector_state是否能感知到？</p>
+<ul>
+<li>hart视角下：TIF_RISCV_V_DEFER_RESTORE没问题</li>
+<li>task视角下：如果task还被调度到原hart上时，原hart的vector_state不变，原实现感知不到。</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202401111027078.png" alt="image-20240111102727997"></p>
+<h1 id="2-框架"><a href="#2-框架" class="headerlink" title="2 框架"></a>2 框架</h1><p>为了减少不必要地保存和恢复vector状态的次数，内核需要跟踪两件事：</p>
+<blockquote>
+<p>a) 对于每个任务，内核需要记住最后一个将任务的vector状态加载到寄存器上的hart是哪一个；</p>
+<p>b) 对于每个hart，内核需要记住最近加载到寄存器上的用户态vector状态属于哪个任务，或者在此期间是否已被用于执行内核模式vector操作。</p>
+</blockquote>
+<ul>
+<li>对于a），向 <code>thread_struct</code> 添加了一个 <code>vector_cpu</code> 字段，每当vector状态被加载到hart上时，该字段会更新为当前hart的ID。</li>
+<li>对于b），添加了per-hart变量 <code>vector_last_state</code>，其中包含最近加载到hart上的任务的用户空间vector状态的地址，如果在此之后执行了内核模式vector，则为NULL。</li>
+</ul>
+<hr>
+<p>基于以上，我们在任务切换时就不再需要立即恢复下一个vector状态，可以将这个检查推迟到用户空间的恢复阶段，在这个阶段需要验证hart的 <code>vector_last_state</code> 和任务的 <code>vector_cpu</code> 是否仍然保持同步。如果同步，就可以省略vector的恢复操作。</p>
+<p>为了更好地描述上述的 <code>task-hart</code> 的双向同步机制，使用统一线程标识 <code>TIF_FOREIGN_VSTATE</code> 来指示当前任务的用户态vector状态是否存在于hart中。如果当前hart的vetor寄存器包含当前任务的最新用户态vector状态，不设置该标志，否则设置。</p>
+<p>对于某个任务，其可能的执行序列如下：</p>
+<ul>
+<li>**任务被调度：**如果任务的vector_cpu字段包含当前hart的ID，且hart的 <code>vector_last_state</code> per-cpu变量指向任务的vector_state，<code>TIF_FOREIGN_VSTATE</code> 标志位被清除，否则被设置；</li>
+<li>**任务返回到用户空间：**如果设置了 <code>TIF_FOREIGN_VSTATE</code> 标志，任务的用户空间vector状态将从内存复制到寄存器中，任务的vector_cpu字段将设置为当前hart的ID，当前hart的 <code>vector_last_state</code> 指针将设置为该任务的vstate，并清除 <code>TIF_FOREIGN_VSTATE</code> 标志；</li>
+<li>**该任务执行一个普通的系统调用：**当返回到用户空间时，<code>TIF_FOREIGN_VSTATE</code> 标志仍将被清除，因此不会恢复vector状态；</li>
+<li>**该任务执行一个系统调用，该系统调用执行一些vector指令：**在此之前，调用 <code>kernel_vector_begin()</code> 函数，将任务的vector寄存器内容复制到内存中，清除vector_last_state变量，并设置 <code>TIF_FOREIGN_VSTATE</code> 标志；</li>
+<li>**在调用kernel_vector_end()之后，任务被抢占：**由于我们还没有从第二个系统调用中返回，<code>TIF_FOREIGN_VSTATE</code>仍然被设置，因此vector寄存器中的内容不会被保存到内存中，而是被丢弃。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312201753572.png" alt="fpsimd_reduce_switch_times.drawio"></p>
+<ol>
+<li><p><strong>task0首次被调度：</strong></p>
+<blockquote>
+<p>判断是否保持同步:</p>
+<p>TIF_FOREIGN_VSTATE &#x3D; (task0-&gt;vector_cpu !&#x3D; hart0 || vector_last_state !&#x3D; task0)</p>
+</blockquote>
+</li>
+<li><p><strong>task0返回用户态：</strong></p>
+<blockquote>
+<p>* 判断TIF_FOREIGN_VSTATE，这里为TRUE，<br>那就恢复vector_state到寄存器上；<br>* task0-&gt;vector_cpu &#x3D; hart0;<br>* vector_last_state &#x3D; task0;<br>* TIF_FOREIGN_VSTATE &#x3D; false;</p>
+</blockquote>
+</li>
+<li><p><strong>task0让出CPU控制权</strong></p>
+</li>
+<li><p><strong>task0再次被调度运行，目标CPU仍然为hart0：</strong></p>
+<blockquote>
+<p>还是判断和1）相同的两个变量，看是否同步，此时：<br>task0-&gt;vector_cpu &#x3D; hart0；<br>vector_last_state &#x3D; task0;<br>&#x3D;&gt; TIF_FOREIGN_VSTATE &#x3D; false;</p>
+</blockquote>
+</li>
+<li><p><strong>task0再次返回用户态：</strong></p>
+<blockquote>
+<p>task0再次被调度运行，目标CPU仍然为hart0：</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>后续工作：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 考虑能否基于原 <code>DEFER</code> 进程标识实现；</li>
+<li><input disabled="" type="checkbox"> 依次验证进程调度、内核模式vector操作、信号处理等非常虚拟化场景下的开销；</li>
+<li><input disabled="" type="checkbox"> 接入KVM：<ul>
+<li><input disabled="" type="checkbox"> 分析现有 <code>vcpu_load/restore</code> 路径上的vector切换是否存在问题； </li>
+<li><input disabled="" type="checkbox"> 关于 <code>TIF_FOREIGN_VSTATE</code> 的设置时机；</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/SIMD/" rel="tag"># SIMD</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/11/11/RISC-V%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" rel="prev" title="RISC-V异常处理机制">
+      <i class="fa fa-chevron-left"></i> RISC-V异常处理机制
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2025/11/11/Linux%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6/" rel="next" title="Linux进程调度机制">
+      Linux进程调度机制 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">1 背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%A1%86%E6%9E%B6"><span class="nav-number">2.</span> <span class="nav-text">2 框架</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">zcxGGmu</p>
+  <div class="site-description" itemprop="description">kernel/kvm, arm/riscv, llm/agent</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zcxGGmu</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
