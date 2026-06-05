@@ -69,6 +69,35 @@ function stripHtml(html) {
   return cheerio.load(html).text().replace(/\s+/g, " ").trim();
 }
 
+function slugifyHeading(text) {
+  const normalized = String(text || "")
+    .trim()
+    .toLowerCase()
+    .replace(/<[^>]*>/g, "")
+    .replace(/&[a-z0-9#]+;/gi, "")
+    .replace(/[\s_]+/g, "-")
+    .replace(/[^\p{Letter}\p{Number}-]+/gu, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+  return normalized || "section";
+}
+
+function addHeadingIds(html) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const used = new Map();
+
+  $(".post-body h1, .post-body h2, .post-body h3, .post-body h4, h1, h2, h3, h4").each((_, node) => {
+    const heading = $(node);
+    const existing = String(heading.attr("id") || "").trim();
+    const base = existing || slugifyHeading(heading.text().replace(/\s+/g, " ").trim());
+    const count = used.get(base) || 0;
+    used.set(base, count + 1);
+    heading.attr("id", count ? `${base}-${count + 1}` : base);
+  });
+
+  return $("body").html() || $.root().html() || html;
+}
+
 function normalizeArray(value) {
   if (!value) return [];
   return Array.isArray(value) ? value.filter(Boolean).map(String) : [String(value)];
@@ -141,7 +170,7 @@ async function loadPosts() {
     const source = await fs.readFile(path.join(contentDir, file), "utf8");
     const parsed = matter(source);
     const data = parsed.data;
-    const html = marked.parse(parsed.content);
+    const html = addHeadingIds(marked.parse(parsed.content));
     const plain = stripHtml(html);
     const slug = String(data.slug || file.replace(/\.md$/, ""));
     const year = dateYear(data.date);
@@ -407,7 +436,7 @@ function renderPostList(posts) {
 
 function renderToc(html) {
   const $ = cheerio.load(html, { decodeEntities: false });
-  const headings = $(".post-body h2, .post-body h3, .post-body h4")
+  const headings = $(".post-body h1, .post-body h2, .post-body h3, .post-body h4")
     .toArray()
     .map((node) => ({
       level: Number(node.tagName.slice(1)),
