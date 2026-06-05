@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>zcxGGmu's Blog</title>
+  <link>https://zcxggmu.github.io</link>
+  <description>个人知识归档与长期阅读笔记，收录值得反复回看的文章、视频和技术材料。</description>
+<item>
+  <title>设备虚拟化</title>
+  <link>https://zcxggmu.github.io/blog/2025/%E8%AE%BE%E5%A4%87%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/%E8%AE%BE%E5%A4%87%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
+  <pubDate>Tue, 11 Nov 2025 02:30:05 GMT</pubDate>
+  <description>设备模拟与直通访问</description>
+</item>
+<item>
+  <title>内存虚拟化</title>
+  <link>https://zcxggmu.github.io/blog/2025/%E5%86%85%E5%AD%98%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/%E5%86%85%E5%AD%98%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
+  <pubDate>Tue, 11 Nov 2025 02:29:16 GMT</pubDate>
+  <description>x86内存虚拟化分析</description>
+</item>
+<item>
+  <title>cpu虚拟化</title>
+  <link>https://zcxggmu.github.io/blog/2025/cpu%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/cpu%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
+  <pubDate>Tue, 11 Nov 2025 02:28:38 GMT</pubDate>
+  <description>Intel VT-x虚拟化分析</description>
+</item>
+<item>
+  <title>Linux RISC-V Vector支持</title>
+  <link>https://zcxggmu.github.io/blog/2025/Linux-RISC-V-Vector%E6%94%AF%E6%8C%81/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/Linux-RISC-V-Vector%E6%94%AF%E6%8C%81/</guid>
+  <pubDate>Tue, 11 Nov 2025 02:23:22 GMT</pubDate>
+  <description>riscv vector内核异常处理、调度机制分析</description>
+</item>
+<item>
+  <title>KVM/ARM SVE虚拟化支持</title>
+  <link>https://zcxggmu.github.io/blog/2025/KVM-ARM-SVE%E8%99%9A%E6%8B%9F%E5%8C%96%E6%94%AF%E6%8C%81/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/KVM-ARM-SVE%E8%99%9A%E6%8B%9F%E5%8C%96%E6%94%AF%E6%8C%81/</guid>
+  <pubDate>Tue, 11 Nov 2025 02:18:49 GMT</pubDate>
+  <description>ARMv8 SVE虚拟化软硬件架构分析，基于linux-v6.7-rc6</description>
+</item>
+<item>
+  <title>Linux进程调度机制</title>
+  <link>https://zcxggmu.github.io/blog/2025/Linux%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/Linux%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%9C%BA%E5%88%B6/</guid>
+  <pubDate>Tue, 11 Nov 2025 02:10:24 GMT</pubDate>
+  <description>内核抢占在一定程度上减少了对某种事件的响应延迟，这也是内核抢占被引入的目的</description>
+</item>
+<item>
+  <title>RISC-V Vector上下文调度框架</title>
+  <link>https://zcxggmu.github.io/blog/2025/RISC-V-Vector%E4%B8%8A%E4%B8%8B%E6%96%87%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/RISC-V-Vector%E4%B8%8A%E4%B8%8B%E6%96%87%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6/</guid>
+  <pubDate>Tue, 11 Nov 2025 02:00:57 GMT</pubDate>
+  <description>riscv vector上下文追踪机制分析</description>
+</item>
+<item>
+  <title>RISC-V异常处理机制</title>
+  <link>https://zcxggmu.github.io/blog/2025/RISC-V%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/RISC-V%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
+  <pubDate>Tue, 11 Nov 2025 01:38:10 GMT</pubDate>
+  <description>在RISC-V标准中，trap表示的是，由异常或者中断引起的控制权转移到陷阱处理程序的过程。</description>
+</item>
+<item>
+  <title>Linux RISC-V APLIC分析</title>
+  <link>https://zcxggmu.github.io/blog/2025/Linux-RISC-V-APLIC%E5%88%86%E6%9E%90/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/Linux-RISC-V-APLIC%E5%88%86%E6%9E%90/</guid>
+  <pubDate>Mon, 10 Nov 2025 16:16:13 GMT</pubDate>
+  <description>Linux RISC-V APLIC分析</description>
+</item>
+<item>
+  <title>riscv/arm simd软硬件架构对比</title>
+  <link>https://zcxggmu.github.io/blog/2025/riscv-arm-simd%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%9E%B6%E6%9E%84%E5%AF%B9%E6%AF%94/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/riscv-arm-simd%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%9E%B6%E6%9E%84%E5%AF%B9%E6%AF%94/</guid>
+  <pubDate>Mon, 10 Nov 2025 09:47:39 GMT</pubDate>
+  <description>riscv/arm linux vector support</description>
+</item>
+<item>
+  <title>hexo+next+github搭建blog</title>
+  <link>https://zcxggmu.github.io/blog/2025/hexo-next-github%E6%90%AD%E5%BB%BAblog/</link>
+  <guid>https://zcxggmu.github.io/blog/2025/hexo-next-github%E6%90%AD%E5%BB%BAblog/</guid>
+  <pubDate>Mon, 10 Nov 2025 07:51:26 GMT</pubDate>
+  <description>使用GitHub page + hexo + NexT主题的搭建方式</description>
+</item>
+</channel>
+</rss>

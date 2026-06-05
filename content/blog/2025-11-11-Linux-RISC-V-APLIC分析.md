@@ -1,0 +1,207 @@
+---
+title: "Linux RISC-V APLIC分析"
+date: "2025-11-11T00:16:13+08:00"
+updated: "2025-11-11T01:05:10.279Z"
+slug: "Linux-RISC-V-APLIC分析"
+description: "Linux RISC-V APLIC分析"
+categories: 
+  - "体系结构"
+tags: 
+  - "RISC-V"
+series: 
+  - "RISC-V 笔记"
+featured_image: "/images/covers/cover-blog.png"
+pinned: false
+---
+
+<h1 id="0-参考">0 参考</h1><p><a target="_blank" rel="noopener" href="https://blog.stephenmarz.com/2022/07/26/aplic/">The RISC-V APLIC’s New Features – Stephen Marz</a></p>
+<p>本博客系列涉及此处编写的代码：<a target="_blank" rel="noopener" href="https://github.com/sgmarz/riscv_msi%E3%80%82">https://github.com/sgmarz/riscv_msi。</a></p>
+<p>APLIC规范（仍处于草案阶段）是高级中断架构（AIA）规范的一部分，保存在此处：<a target="_blank" rel="noopener" href="https://github.com/riscv/riscv-aia%E3%80%82">https://github.com/riscv/riscv-aia。</a></p>
+<h1 id="1-介绍">1 介绍</h1><p>高级平台级中断控制器（APLIC）是SiFive公司的PLIC的高级版本。其主要提升在于**支持通过消息发送中断。**因此，当与IMSIC配对时，APLIC可以像任何其他硬件设备一样发送消息。</p>
+<p>原始PLIC的主要目的是聚合、优先处理和发送硬件中断信号。它为操作系统提供了一种声明、处理和完成中断请求的方法。APILC通过 “外部中断” 引脚向特定的HART（硬件线程，即CPU核心）发送通知。然后，该HART通过从特定的PLIC寄存器（称为 <code>claim</code> 寄存器）读取来确定中断的来源。这将返回一个标识设备的数字。通常，这个数字指向连接硬件设备和PLIC的特定线路。</p>
+<h1 id="2-APLIC">2 APLIC</h1><p>新的APLIC与SiFive PLIC不兼容。其中一些概念和特性是相同的，但寄存器文件和映射是不同的。从技术上讲，可以实现一个没有完整APLIC的系统，但AIA文档明确指出：“ 完全符合高级中断架构需要APLIC ”。</p>
+<p>首先，APLIC寄存器布局如下：</p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Aplic</span> {</span><br><span class="line">    <span class="keyword">pub</span> domaincfg: <span class="type">u32</span>,           <span class="comment">// Domain CSR that controls how this APLIC functions</span></span><br><span class="line">    <span class="keyword">pub</span> sourcecfg: [<span class="type">u32</span>; <span class="number">1023</span>],   <span class="comment">// Source configuration for 1023 interrupts</span></span><br><span class="line">    _reserved1: [<span class="type">u8</span>; <span class="number">0xBC0</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> mmsiaddrcfg: <span class="type">u32</span>,         <span class="comment">// Machine-level MSI address (for APLIC to write MSIs)</span></span><br><span class="line">    <span class="keyword">pub</span> mmsiaddrcfgh: <span class="type">u32</span>,</span><br><span class="line">    <span class="keyword">pub</span> smsiaddrcfg: <span class="type">u32</span>,         <span class="comment">// Supervisor-level MSI address</span></span><br><span class="line">    <span class="keyword">pub</span> smsiaddrcfgh: <span class="type">u32</span>,</span><br><span class="line">    _reserved2: [<span class="type">u8</span>; <span class="number">0x30</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> setip: [<span class="type">u32</span>; <span class="number">32</span>],         <span class="comment">// Bitset to set pending interrupts (32 IRQS per element)</span></span><br><span class="line">    _reserved3: [<span class="type">u8</span>; <span class="number">92</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> setipnum: <span class="type">u32</span>,            <span class="comment">// Sets a pending interrupt by number</span></span><br><span class="line">    _reserved4: [<span class="type">u8</span>; <span class="number">0x20</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> clrip: [<span class="type">u32</span>; <span class="number">32</span>],         <span class="comment">// Bitset to clear pending interrupts (opposite of setip)</span></span><br><span class="line">    _reserved5: [<span class="type">u8</span>; <span class="number">92</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> clripnum: <span class="type">u32</span>,            <span class="comment">// Clears a pending interrupt by number</span></span><br><span class="line">    _reserved6: [<span class="type">u8</span>; <span class="number">32</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> setie: [<span class="type">u32</span>; <span class="number">32</span>],         <span class="comment">// Bitset to enable interrupts</span></span><br><span class="line">    _reserved7: [<span class="type">u8</span>; <span class="number">92</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> setienum: <span class="type">u32</span>,            <span class="comment">// Enable an interrupt by number</span></span><br><span class="line">    _reserved8: [<span class="type">u8</span>; <span class="number">32</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> clrie: [<span class="type">u32</span>; <span class="number">32</span>],         <span class="comment">// Bitset to disable interrupts (opposite of setie)</span></span><br><span class="line">    _reserved9: [<span class="type">u8</span>; <span class="number">92</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> clrienum: <span class="type">u32</span>,            <span class="comment">// Disable an interrupt by number</span></span><br><span class="line">    _reserved10: [<span class="type">u8</span>; <span class="number">32</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> setipnum_le: <span class="type">u32</span>,         <span class="comment">// Set an interrupt pending by number always little end first</span></span><br><span class="line">    <span class="keyword">pub</span> setipnum_be: <span class="type">u32</span>,         <span class="comment">// Set an interrupt pending by number always big end first</span></span><br><span class="line">    _reserved11: [<span class="type">u8</span>; <span class="number">4088</span>],</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> genmsi: <span class="type">u32</span>,              <span class="comment">// Used to generate MSIs</span></span><br><span class="line">    <span class="keyword">pub</span> target: [<span class="type">u32</span>; <span class="number">1023</span>],      <span class="comment">// Target control per interrupt</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>下面介绍一些重点寄存器：<code>domaincfg/sourcecfg/setip/clrip/genmsi/target</code>。</p>
+<h2 id="2-1-Domain-Configuration-Register-domaincfg">2.1 Domain Configuration Register (domaincfg)</h2><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312111231523.png" alt="img" style="zoom:67%;">
+
+<p>域配置寄存器（32位）该寄存器有三个可用字段：</p>
+<ul>
+<li>中断使能（IE，第8位）</li>
+<li>传递模式（DM，第2位）</li>
+<li>大小端模式（BE，第0位）</li>
+</ul>
+<hr>
+<p>首先的 8 位是一个字节顺序标记，目的在于测试寄存器是大端序还是小端序。它被设置为 <code>0x80</code>，以便我们可以测试寄存器的字节顺序。例如，如果我们执行一个 “加载字”（ <code>lw</code> 指令在RISC-V中），并且在第一个字节中得到 <code>0x80</code>，那意味着机器是大端序。如果没有得到 <code>0x80</code>，则是小端序，并且加载的字节包含传输模式和大端序位。</p>
+<p>中断使能位（Interrupt enable bit）用于使 APLIC 能够发送中断信号（1 = 使能，0 = 禁用）。这并不意味着中断一定会被接收到，而<strong>仅仅表示 APLIC 可以通过触发一个挂起位来发送中断信号。</strong></p>
+<p>中断投递模式（DM）位允许配置 APLIC 以发送常规中断，类似于旧的PLIC，或者以消息形式发送中断（MSI）。如果 DM 位设置为 0，则会发送直接中断，类似于旧的 APLIC。如果 DM 位设置为 1，则会发送 MSIs。</p>
+<p>大端位允许 APLIC 以大端模式（BE = 1）或以小端模式（BE = 0）写入消息。但是，BE位还会影响多字节域配置寄存器的顺序。最高有效字节被故意设置为 <code>0x80</code>，作为一种字节顺序标记。</p>
+<p>我们可以写一个Rust函数来设置域注册。该注册函数中的所有参数都是布尔类型。</p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Aplic</span> {</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">set_domaincfg</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, bigendian: <span class="type">bool</span>, msimode: <span class="type">bool</span>, enabled: <span class="type">bool</span>) {</span><br><span class="line">        <span class="comment">// Rust library assures that converting a bool into u32 will use</span></span><br><span class="line">        <span class="comment">// 1 for true and 0 for false</span></span><br><span class="line">        <span class="keyword">let</span> <span class="variable">enabled</span> = <span class="type">u32</span>::<span class="title function_ invoke__">from</span>(enabled);</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">msimode</span> = <span class="type">u32</span>::<span class="title function_ invoke__">from</span>(msimode);</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">bigendian</span> = <span class="type">u32</span>::<span class="title function_ invoke__">from</span>(bigendian);</span><br><span class="line">        <span class="keyword">self</span>.domaincfg = (enabled &lt;&lt; <span class="number">8</span>) | (msimode &lt;&lt; <span class="number">2</span>) | bigendian;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="2-2-Source-Configuration-Registers-sourcecfg-u32-1023">2.2 Source Configuration Registers (sourcecfg[u32; 1023])</h2><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312111234809.png" alt="img" style="zoom: 67%;">
+
+<blockquote>
+<p><em>If bit 10 (delegate) is 0, SM is in bits 2:0. If D=1, bits 9:0 mark the child index.</em></p>
+</blockquote>
+<p>如果位10（代理）为0，则SM位于位 <code>2:0</code>。如果D=1，则位 <code>9:0</code> 标记子索引。</p>
+<p>每个可能的中断都有一个 <code>sourcecfg</code> 寄存器。请记住，中断0是不可能的，所以中断 1 的源配置寄存器在 <code>sourcecfg[0]</code> 中。这就是为什么我提供的 Rust 代码示例会从中断源的值中减去 1 的原因。</p>
+<p>委托位 <code>D</code>（位10）可以读取以确定所给中断是否已被委托。该位是可读写的。如果我们将1写入该字段，则将其委托给子域。如果该特定源没有子域，该位将始终被读取为0。</p>
+<p>源模式位 <code>SM</code>（位2:0）控制着对于那些未委派的中断如何触发。如果一个中断被委派（D=1），位9:0描述了它被委派给的子中断的索引。如果中断未被委派（D=0），那么每个中断源可以通过以下方式之一配置为触发 “挂起” 中断。</p>
+<table>
+<thead>
+<tr>
+<th align="left">3-bit “SM” value</th>
+<th align="left">Register Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">Inactive</td>
+<td align="left">The interrupt source cannot generate an interrupt and is inactive.</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">Detached</td>
+<td align="left">The interrupt can only be generated by writing directly to the APLIC.</td>
+</tr>
+<tr>
+<td align="left">2, 3</td>
+<td align="left">–</td>
+<td align="left"><em>Reserved</em></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Edge1</td>
+<td align="left">The interrupt is asserted on a <strong>rising</strong> edge (from 0 to 1).</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Edge0</td>
+<td align="left">The interrupt is asserted on a <strong>falling</strong> edge (from 1 to 0).</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Level1</td>
+<td align="left">The interrupt is asserted when <strong>high</strong> (device IRQ pin is asserted).</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">Level0</td>
+<td align="left">The interrupt is asserted when <strong>low</strong> (device IRQ pin is deasserted).</td>
+</tr>
+</tbody></table>
+<p>一个不活动的中断源无法通过APLIC产生中断，我们也无法通过写入中断挂起寄存器来手动触发中断。一个分离的中断源无法被设备触发，但是我们可以手动写入MMIO APLIC寄存器来触发中断。</p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#[repr(u32)]</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">SourceModes</span> {</span><br><span class="line">    Inactive = <span class="number">0</span>,</span><br><span class="line">    Detached = <span class="number">1</span>,</span><br><span class="line">    RisingEdge = <span class="number">4</span>,</span><br><span class="line">    FallingEdge = <span class="number">5</span>,</span><br><span class="line">    LevelHigh = <span class="number">6</span>,</span><br><span class="line">    LevelLow = <span class="number">7</span>,</span><br><span class="line">}</span><br><span class="line"><span class="keyword">impl</span> <span class="title class_">Aplic</span> {</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">set_sourcecfg</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, irq: <span class="type">u32</span>, mode: SourceModes) {</span><br><span class="line">        <span class="built_in">assert!</span>(irq &gt; <span class="number">0</span> &amp;&amp; irq &lt; <span class="number">1024</span>);</span><br><span class="line">        <span class="keyword">self</span>.sourcecfg[irq <span class="keyword">as</span> <span class="type">usize</span> - <span class="number">1</span>] = mode <span class="keyword">as</span> <span class="type">u32</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">sourcecfg_delegate</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, irq: <span class="type">u32</span>, child: <span class="type">u32</span>) {</span><br><span class="line">        <span class="built_in">assert!</span>(irq &gt; <span class="number">0</span> &amp;&amp; irq &lt; <span class="number">1024</span>);</span><br><span class="line">        <span class="keyword">self</span>.sourcecfg[irq <span class="keyword">as</span> <span class="type">usize</span> - <span class="number">1</span>] = <span class="number">1</span> &lt;&lt; <span class="number">10</span> | (child &amp; <span class="number">0x3ff</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="2-3-Set-Clear-Pending-Enable-Interrupt-setip-clrip-Registers">2.3 Set/Clear Pending/Enable Interrupt (setip/clrip) Registers</h2><p>这些寄存器控制着中断是否处于挂起状态。当启用的中断被触发时，APLIC将自动设置这些位；然而，我们也可以手动将中断设置为挂起中断。</p>
+<p>这些寄存器与IMSIC寄存器不同。<strong>有一组寄存器用于设置待处理中断，另一组寄存器用于清除待处理中断。</strong></p>
+<p><code>setipnum</code> 和 <code>clripnum</code> 寄存器的功能与以下使用 <code>setip/clrip</code> 寄存器的 Rust 函数类似。</p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Aplic</span></span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">set_ip</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, irq: <span class="type">u32</span>, pending: <span class="type">bool</span>) {</span><br><span class="line">        <span class="built_in">assert!</span>(irq &gt; <span class="number">0</span> &amp;&amp; irq &lt; <span class="number">1024</span>);</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">irqidx</span> = irq <span class="keyword">as</span> <span class="type">usize</span> / <span class="number">32</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">irqbit</span> = irq <span class="keyword">as</span> <span class="type">usize</span> % <span class="number">32</span>;</span><br><span class="line">        <span class="keyword">if</span> pending {</span><br><span class="line">            <span class="comment">// self.setipnum = irq;</span></span><br><span class="line">            <span class="keyword">self</span>.setip[irqidx] = <span class="number">1</span> &lt;&lt; irqbit;</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            <span class="comment">// self.clripnum = irq;</span></span><br><span class="line">            <span class="keyword">self</span>.clrip[irqidx] = <span class="number">1</span> &lt;&lt; irqbit;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>中断使能寄存器 <code>setie/clrie</code> 的作用类似于中断挂起寄存器，但它们允许中断被信号化。<strong>如果一个中断未被使能，则该中断会被屏蔽，无法被触发。</strong></p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Aplic</span> {</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">set_ie</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, irq: <span class="type">u32</span>, enabled: <span class="type">bool</span>) {</span><br><span class="line">        <span class="built_in">assert!</span>(irq &gt; <span class="number">0</span> &amp;&amp; irq &lt; <span class="number">1024</span>);</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">irqidx</span> = irq <span class="keyword">as</span> <span class="type">usize</span> / <span class="number">32</span>;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">irqbit</span> = irq <span class="keyword">as</span> <span class="type">usize</span> % <span class="number">32</span>;</span><br><span class="line">        <span class="keyword">if</span> enabled {</span><br><span class="line">            <span class="comment">// self.setienum = irq;</span></span><br><span class="line">            <span class="keyword">self</span>.setie[irqidx] = <span class="number">1</span> &lt;&lt; irqbit;</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            <span class="comment">// self.clrienum = irq;</span></span><br><span class="line">            <span class="keyword">self</span>.clrie[irqidx] = <span class="number">1</span> &lt;&lt; irqbit;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="2-4-Generate-MSI-Register-genmsi">2.4 Generate MSI Register (genmsi)</h2><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312111239184.png" alt="img" style="zoom:80%;">
+
+<p><code>genmsi</code> 寄存器中有两个读/写字段和一个只读字段。即使直接写入IMSIC更高效，但可以使用 <code>genmsi</code> 寄存器来触发MSI写入。</p>
+<p>HART Index是您想要发送MSI的目标HART，EIID（外部中断标识符）是要写入IMSIC的值。通常，EIID与您想要触发的中断号相同。</p>
+<h2 id="2-5-Target-Control-Registers-target-u32-1032">2.5 Target Control Registers (target[u32; 1032])</h2><p>目标控制寄存器根据 APLIC 的配置方式有两种不同形式。如果 APLIC 配置为**直接传递模式，**则寄存器包含一个 HART Index和一个优先级。较小的优先级表示较高，因此 10 的优先级高于 20。</p>
+<img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312111238873.png" alt="img" style="zoom:80%;">
+
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Aplic</span> {</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">set_target_direct</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, irq: <span class="type">u32</span>, hart: <span class="type">u32</span>, prio: <span class="type">u32</span>) {</span><br><span class="line">        <span class="built_in">assert!</span>(irq &gt; <span class="number">0</span> &amp;&amp; irq &lt; <span class="number">1024</span>);</span><br><span class="line">        <span class="keyword">self</span>.target[irq <span class="keyword">as</span> <span class="type">usize</span> - <span class="number">1</span>] = (hart &lt;&lt; <span class="number">18</span>) | (prio &amp; <span class="number">0xFF</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>**在MSI交付模式下，**寄存器包含一个HART索引、客户索引和外部中断标识符（EIID）。</p>
+<p><img src="https://blog.stephenmarz.com/wp-content/uploads/2022/07/image-7-1024x116.png" alt="img"></p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span> <span class="title class_">Aplic</span> {</span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">set_target_msi</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>, irq: <span class="type">u32</span>, hart: <span class="type">u32</span>, guest: <span class="type">u32</span>, eiid: <span class="type">u32</span>) {</span><br><span class="line">        <span class="built_in">assert!</span>(irq &gt; <span class="number">0</span> &amp;&amp; irq &lt; <span class="number">1024</span>);</span><br><span class="line">        <span class="keyword">self</span>.target[irq <span class="keyword">as</span> <span class="type">usize</span> - <span class="number">1</span>] = (hart &lt;&lt; <span class="number">18</span>) | (guest &lt;&lt; <span class="number">12</span>) | eiid;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="2-6-Interrupt-Delivery-Control">2.6 Interrupt Delivery Control</h2><p>正如我之前提到的，APLIC可以配置为MSI模式或直接模式：</p>
+<ul>
+<li>在MSI模式下，消息由输入MSI控制器（IMSIC）处理；</li>
+<li>然而，在直接模式下，APLIC本身将控制中断。这是通过APLIC的中断传递控制（IDC）部分来实现的。</li>
+</ul>
+<hr>
+<p>对于QEMU上的 <code>virt</code> 虚拟机，中断传递控制寄存器 <code>IDC</code> 被内存映射到0x地址。寄存器的布局如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Offset</th>
+<th align="left">Size (bytes)</th>
+<th align="left">Register Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">4</td>
+<td align="left">idelivery</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">4</td>
+<td align="left">iforce</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">4</td>
+<td align="left">ithreshold</td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left">4</td>
+<td align="left">topi</td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left">4</td>
+<td align="left">claimi</td>
+</tr>
+</tbody></table>
+<p>每个IDC用于一个独立的HART，长度为32字节。因此，HART #0的寄存器从偏移量0开始，HART #1的寄存器从偏移量32开始，以此类推。</p>
+<hr>
+<p><code>idelivery</code> 寄存器启用了APLIC的直接传递模式。如果该寄存器设置为1，则APLIC可以传递中断，否则，如果该寄存器设置为0，则APLIC不传递中断。</p>
+<p><img src="https://blog.stephenmarz.com/wp-content/uploads/2022/07/image-9-1024x128.png" alt="img"></p>
+<blockquote>
+<p>The idelivery register</p>
+</blockquote>
+<hr>
+<p>中断强制寄存器强制 APLIC 提交中断 #0。如果我们向该寄存器写入1，并且 APLIC 的中断已启用，则这将发出一个中断信号。</p>
+<p><img src="https://blog.stephenmarz.com/wp-content/uploads/2022/07/image-10-1024x129.png" alt="img"></p>
+<blockquote>
+<p>The iforce register</p>
+</blockquote>
+<hr>
+<p>中断阈值寄存器设置了能够被监听到的中断优先级的阈值。阈值为0意味着所有中断都可以被监听到。如果值非零，则该值或更高优先级的任何中断都会被屏蔽，因此无法被监听到。在这种情况下，与其他所有情况一样，数字越小，优先级越高。不要被0所迷惑，它只是一个特殊值，可以解除所有优先级的屏蔽。然而，阈值为1意味着所有中断都会被屏蔽，而阈值为2意味着只有优先级1的中断可以被监听到。</p>
+<p><img src="https://blog.stephenmarz.com/wp-content/uploads/2022/07/image-11-1024x121.png" alt="img"></p>
+<blockquote>
+<p>The ithreshold register</p>
+</blockquote>
+<hr>
+<p><code>topi</code> 寄存器保存的是最高优先级且已启用的中断号。该寄存器分为两部分：</p>
+<ul>
+<li><code>25:16</code> 位保存中断号</li>
+<li><code>7:0</code> 位保存中断优先级</li>
+</ul>
+<p><img src="https://blog.stephenmarz.com/wp-content/uploads/2022/07/image-12-1024x135.png" alt="img"></p>
+<blockquote>
+<p>The topi and claim registers</p>
+</blockquote>
+<p>申请寄存器与顶级中断寄存器相同，只是它表示我们正在申请顶级中断。当我们从该寄存器读取时，给定寄存器的挂起位将被清零。</p>
+<p>我制作的仓库上的操作系统只使用MSI传递模式，因为这种传递控制方式与旧的PLIC非常相似。</p>
+<h1 id="3-结论">3 结论</h1><p>QEMU的 <code>virt</code> 虚拟机将UART连接到外部IRQ＃10，因此我们可以在UART接收器有数据时使用APLIC发送消息。这要求我们使用上述寄存器来设置APLIC。</p>
+<p>在下面的代码中，我在M/S模式之间进行了分割，并将UART委派给S模式APLIC（索引0）。</p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">aplic_init</span>() {</span><br><span class="line">    <span class="comment">// The root APLIC</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">mplic</span> = Aplic::<span class="title function_ invoke__">as_mut</span>(AplicMode::Machine);</span><br><span class="line">    <span class="comment">// The delgated child APLIC</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">splic</span> = Aplic::<span class="title function_ invoke__">as_mut</span>(AplicMode::Supervisor);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Enable both the machine and supervisor PLICS</span></span><br><span class="line">    mplic.<span class="title function_ invoke__">set_domaincfg</span>(<span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line">    splic.<span class="title function_ invoke__">set_domaincfg</span>(<span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Write messages to IMSIC_S</span></span><br><span class="line">    mplic.<span class="title function_ invoke__">set_msiaddr</span>(AplicMode::Supervisor, crate::imsic::IMSIC_S);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Delegate interrupt 10 to child 0, which is APLIC_S</span></span><br><span class="line">    <span class="comment">// Interrupt 10 is the UART. So, whenever the UART receives something</span></span><br><span class="line">    <span class="comment">// into its receiver buffer register, it triggers an IRQ #10 to the APLIC.</span></span><br><span class="line">    mplic.<span class="title function_ invoke__">sourcecfg_delegate</span>(<span class="number">10</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// The EIID is the value that is written to the MSI address</span></span><br><span class="line">    <span class="comment">// When we read TOPEI in IMSIC, it will give us the EIID if it</span></span><br><span class="line">    <span class="comment">// has been enabled.</span></span><br><span class="line">    splic.<span class="title function_ invoke__">set_target_msi</span>(<span class="number">10</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Level high means to trigger the message delivery when the IRQ is</span></span><br><span class="line">    <span class="comment">// asserted (high).</span></span><br><span class="line">    splic.<span class="title function_ invoke__">set_sourcecfg</span>(<span class="number">10</span>, SourceModes::LevelHigh);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// The order is important. QEMU will not allow enabling of the IRQ</span></span><br><span class="line">    <span class="comment">// unless the source configuration is set properly.</span></span><br><span class="line">    <span class="comment">// mplic.set_irq(10, true);</span></span><br><span class="line">    splic.<span class="title function_ invoke__">set_ie</span>(<span class="number">10</span>, <span class="literal">true</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>当UART发送中断时，我们现在可以在IMSIC中编写UART处理程序。</p>
+<figure class="highlight rust"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">imsic_handle</span>(pm: PrivMode) {</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">msgnum</span> = <span class="title function_ invoke__">imsic_pop</span>(pm);</span><br><span class="line">    <span class="keyword">match</span> msgnum {</span><br><span class="line">        <span class="number">0</span> =&gt; <span class="built_in">println!</span>(<span class="string">"Spurious 'no' message."</span>),</span><br><span class="line">        <span class="number">2</span> =&gt; <span class="built_in">println!</span>(<span class="string">"First test triggered by MMIO write successful!"</span>),</span><br><span class="line">        <span class="number">4</span> =&gt; <span class="built_in">println!</span>(<span class="string">"Second test triggered by EIP successful!"</span>),</span><br><span class="line">        <span class="number">10</span> =&gt; <span class="title function_ invoke__">console_irq</span>(),</span><br><span class="line">        _ =&gt; <span class="built_in">println!</span>(<span class="string">"Unknown msi #{}"</span>, msgnum),</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面的代码将任何消息#10转发到 <code>console_irq</code>，而 <code>console_irq</code> 则从UART设备的接收缓冲寄存器中弹出一个值。</p>
+<p>一切都说完了，我们可以开始接收UART消息了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MaskerDad/BlogImage@main/202312111243914.png" alt="image-20231211124316885"></p>
