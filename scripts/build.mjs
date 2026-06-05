@@ -232,6 +232,25 @@ function avatarHtml(className = "site-avatar") {
   return `<img class="${className}" src="${escapeAttr(config.avatar)}" alt="${escapeAttr(config.author)}" loading="lazy">`;
 }
 
+function themeToggleHtml(className = "") {
+  const classes = ["theme-toggle", className].filter(Boolean).join(" ");
+  return `<button class="${classes}" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>`;
+}
+
+function themeBootstrapScript() {
+  return `<script>
+(function(){
+  var key="blog-theme";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+})();</script>`;
+}
+
 function headHtml(page) {
   const title = page.title === config.title ? config.title : `${page.title} - ${config.title}`;
   const description = page.description || config.description;
@@ -245,7 +264,7 @@ function headHtml(page) {
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeAttr(description)}">
   <meta name="author" content="${escapeAttr(config.author)}">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f8fafc">
   <meta property="og:url" content="${escapeAttr(canonical)}">
   <meta property="og:site_name" content="${escapeAttr(config.title)}">
   <meta property="og:title" content="${escapeAttr(page.title)}">
@@ -258,14 +277,70 @@ function headHtml(page) {
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  ${themeBootstrapScript()}
   <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
   <link rel="stylesheet" href="/scss/modern.min.css" media="screen">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
 </head>`;
+}
+
+function themeScript() {
+  return `<script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>`;
 }
 
 function progressScript() {
@@ -385,6 +460,7 @@ function layout(page, mainHtml, options = {}) {
       <div class="container container-narrow nav-content">
         <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
         <a id="navTitle" class="navbar-brand" href="/">${escapeHtml(config.brand)}</a>
+        ${themeToggleHtml("theme-toggle-mobile")}
       </div>
     </nav>
     <div class="single-column-header-container" id="pageHead">
@@ -402,6 +478,7 @@ function layout(page, mainHtml, options = {}) {
         <div class="nav-title">${escapeHtml(config.brand)}</div>
         <div class="nav-subtitle">${escapeHtml(config.subtitle)}</div>
       </a>
+      <div class="theme-switcher theme-switcher-desktop">${themeToggleHtml("theme-toggle-desktop")}</div>
       <div class="nav-link-list">${navItems(activeUrl)}</div>
       <div class="nav-footer">${footerHtml()}</div>
     </div>
@@ -411,6 +488,7 @@ function layout(page, mainHtml, options = {}) {
   </div>
   <script src="/js/journal.js"></script>
   <script src="/js/code-enhance.js"></script>
+  ${themeScript()}
   ${progressScript()}
   ${lightboxScript()}
 </body>
