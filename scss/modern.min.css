@@ -137,6 +137,52 @@ a:hover {
   font-weight: 800;
 }
 
+.site-avatar,
+.mobile-site-avatar,
+.drawer-avatar {
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);
+}
+
+.site-avatar {
+  width: 92px;
+  height: 92px;
+  margin: 0 0 18px auto;
+  border: 3px solid rgba(255, 255, 255, 0.92);
+}
+
+.mobile-site-avatar {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+  border: 3px solid rgba(255, 255, 255, 0.94);
+}
+
+.drawer-profile {
+  padding: 0 30px 18px;
+  text-align: center;
+}
+
+.drawer-avatar {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 10px;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+}
+
+.drawer-title {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.single-column-drawer-container .drawer-content {
+  flex-direction: column;
+}
+
 .single-column-header-container a,
 .single-column-nav-container a {
   text-decoration: none !important;

@@ -198,6 +198,11 @@ function footerHtml() {
   return `${social}<br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; ${new Date().getFullYear()} ${escapeHtml(config.brand)}<br><span>备案信息占位</span>`;
 }
 
+function avatarHtml(className = "site-avatar") {
+  if (!config.avatar) return "";
+  return `<img class="${className}" src="${escapeAttr(config.avatar)}" alt="${escapeAttr(config.author)}" loading="lazy">`;
+}
+
 function headHtml(page) {
   const title = page.title === config.title ? config.title : `${page.title} - ${config.title}`;
   const description = page.description || config.description;
@@ -340,7 +345,7 @@ function layout(page, mainHtml, options = {}) {
   <a class="skip-link" href="#main-content">跳到主要内容</a>
   <div id="app">
     <div class="single-column-drawer-container" id="drawer">
-      <div class="drawer-content"><div class="drawer-menu">${drawerItems(activeUrl)}</div></div>
+      <div class="drawer-content"><div class="drawer-profile">${avatarHtml("drawer-avatar")}<div class="drawer-title">${escapeHtml(config.brand)}</div></div><div class="drawer-menu">${drawerItems(activeUrl)}</div></div>
     </div>
     <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
     <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
@@ -351,7 +356,7 @@ function layout(page, mainHtml, options = {}) {
       </div>
     </nav>
     <div class="single-column-header-container" id="pageHead">
-      <a href="/"><div class="single-column-header-title">${escapeHtml(config.brand)}</div><div class="single-column-header-subtitle">${escapeHtml(config.subtitle)}</div></a>
+      <a href="/">${avatarHtml("mobile-site-avatar")}<div class="single-column-header-title">${escapeHtml(config.brand)}</div><div class="single-column-header-subtitle">${escapeHtml(config.subtitle)}</div></a>
     </div>
     <div id="content">
       <div id="streamContainer" class="stream-container" role="main">
@@ -361,6 +366,7 @@ function layout(page, mainHtml, options = {}) {
     </div>
     <div id="sideContainer" class="side-container">
       <a class="a-block nav-head ${activeUrl === "/" ? "active" : "false"}" href="/">
+        ${avatarHtml("site-avatar")}
         <div class="nav-title">${escapeHtml(config.brand)}</div>
         <div class="nav-subtitle">${escapeHtml(config.subtitle)}</div>
       </a>
