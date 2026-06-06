@@ -10,6 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const config = JSON.parse(await fs.readFile(path.join(rootDir, "site.config.json"), "utf8"));
 const contentDir = path.join(rootDir, "content", "blog");
+const assetVersion = "20260606-sidebar-nav";
 const generatedTargets = [
   "index.html",
   "index.xml",
@@ -283,7 +284,7 @@ function headHtml(page) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
-  <link rel="stylesheet" href="/scss/modern.min.css" media="screen">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=${assetVersion}" media="screen">
   <meta name="color-scheme" content="light dark">
 </head>`;
 }
