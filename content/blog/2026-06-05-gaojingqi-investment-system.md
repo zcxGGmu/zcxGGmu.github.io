@@ -13,7 +13,7 @@ tags:
 series:
   - "投资体系"
 featured_image: "/images/covers/gaojingqi-investment-system.png"
-pinned: false
+pinned: true
 ---
 
 高景气投资体系的核心，不是给出一套“看到某个词就买”的短线秘方，而是回答一个更底层的问题：普通投资者如何从大量新闻、政策、产业变化和市场情绪里，识别真正能改变行业景气度的事件，再把它落到可操作的板块、个股、仓位和退出规则上。
