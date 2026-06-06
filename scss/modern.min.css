@@ -18,6 +18,9 @@
   --code-bg: rgba(25, 118, 210, 0.08);
   --blockquote-text: #164e7a;
   --blockquote-bg: rgba(25, 118, 210, 0.06);
+  --nav-hover-bg: rgba(25, 118, 210, 0.04);
+  --nav-active-bg: rgba(25, 118, 210, 0.09);
+  --nav-active-text: #0f5ead;
   --line: rgba(15, 23, 42, 0.1);
   --line-strong: rgba(15, 23, 42, 0.16);
   --shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
@@ -49,6 +52,9 @@ html[data-theme="dark"] {
   --code-bg: rgba(125, 183, 255, 0.12);
   --blockquote-text: #c8e0ff;
   --blockquote-bg: rgba(125, 183, 255, 0.12);
+  --nav-hover-bg: rgba(125, 183, 255, 0.1);
+  --nav-active-bg: rgba(125, 183, 255, 0.16);
+  --nav-active-text: #dbeafe;
   --line: rgba(226, 232, 240, 0.12);
   --line-strong: rgba(226, 232, 240, 0.2);
   --shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
@@ -191,12 +197,39 @@ a:hover {
 .side-container .nav-head,
 .side-container .nav-link-list .nav-link-item,
 .single-column-drawer-container .drawer-content .drawer-menu .drawer-menu-item {
+  color: var(--ink);
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .side-container .nav-head .nav-title,
 .single-column-header-title {
+  color: var(--heading);
   font-weight: 800;
+}
+
+.side-container .nav-head:hover,
+.side-container .nav-link-list .nav-link-item:hover,
+.single-column-drawer-container .drawer-content .drawer-menu .drawer-menu-item:hover {
+  border-right-color: var(--accent);
+  background: var(--nav-hover-bg);
+  color: var(--nav-active-text);
+}
+
+.side-container .nav-head.active,
+.side-container .nav-link-list .nav-link-item.active,
+.single-column-drawer-container .drawer-content .drawer-menu .drawer-menu-item.active {
+  border-right-color: var(--accent);
+  background: var(--nav-active-bg);
+  color: var(--nav-active-text);
+}
+
+.side-container .nav-head:hover *,
+.side-container .nav-link-list .nav-link-item:hover *,
+.single-column-drawer-container .drawer-content .drawer-menu .drawer-menu-item:hover *,
+.side-container .nav-head.active *,
+.side-container .nav-link-list .nav-link-item.active *,
+.single-column-drawer-container .drawer-content .drawer-menu .drawer-menu-item.active * {
+  color: inherit;
 }
 
 .site-avatar,
