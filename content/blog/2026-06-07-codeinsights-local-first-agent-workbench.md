@@ -1,7 +1,7 @@
 ---
-title: "CodeInsights 深度分析：把 AI Agent 变成可审计的工程工作台"
+title: "CodeInsights：面向开源贡献的 AI 工作流平台"
 date: "2026-06-07T01:20:00+08:00"
-updated: "2026-06-07T01:20:00+08:00"
+updated: "2026-06-07T09:20:00+08:00"
 slug: "codeinsights-local-first-agent-workbench"
 description: "CodeInsights 的核心不是再做一个聊天壳，而是把 Agent 运行时、Pipeline 状态机、本地 JSONL 事件、人工 gate 和权限边界组织成一个面向长期软件贡献的工程工作台。"
 categories:
@@ -17,8 +17,6 @@ series:
 featured_image: "/images/posts/codeinsights/codeinsights-agent-workbench-cover.png"
 pinned: true
 ---
-
-![CodeInsights Agent 工作台封面](/images/posts/codeinsights/codeinsights-agent-workbench-cover.png)
 
 CodeInsights 是一个很值得认真看的项目。它表面上是一个 Electron 桌面应用，真正的重点却不在桌面壳本身，而在它试图回答一个更难的问题：当 AI Agent 已经可以读代码、写代码、运行命令、审查补丁、生成提交材料时，怎样把这种能力放进一个可恢复、可审计、可回放、可人工接管的工程流程里。
 
