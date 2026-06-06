@@ -10,7 +10,7 @@ tags:
   - "SIMD"
 series: 
   - "虚拟化笔记"
-featured_image: "/images/covers/cover-kernel.png"
+featured_image: "/images/covers/kvm-arm-sve-virtualization.png"
 pinned: false
 ---
 

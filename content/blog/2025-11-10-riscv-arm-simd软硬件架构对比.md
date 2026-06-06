@@ -10,7 +10,7 @@ tags:
   - "SIMD"
 series: 
   - "向量计算笔记"
-featured_image: "/images/covers/cover-riscv.png"
+featured_image: "/images/covers/riscv-arm-simd-architecture.png"
 pinned: false
 ---
 

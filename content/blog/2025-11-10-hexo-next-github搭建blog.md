@@ -9,7 +9,7 @@ categories:
 tags: 
   - "博客搭建"
 series: []
-featured_image: "/images/covers/cover-virtualization.png"
+featured_image: "/images/covers/hexo-next-github-blog.png"
 pinned: false
 ---
 

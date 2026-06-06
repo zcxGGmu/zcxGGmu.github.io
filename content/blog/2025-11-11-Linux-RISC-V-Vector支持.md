@@ -10,7 +10,7 @@ tags:
   - "SIMD"
 series: 
   - "RISC-V 笔记"
-featured_image: "/images/covers/cover-virtualization.png"
+featured_image: "/images/covers/linux-riscv-vector.png"
 pinned: false
 ---
 

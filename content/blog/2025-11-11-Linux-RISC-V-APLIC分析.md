@@ -10,7 +10,7 @@ tags:
   - "RISC-V"
 series: 
   - "RISC-V 笔记"
-featured_image: "/images/covers/cover-blog.png"
+featured_image: "/images/covers/linux-riscv-aplic.png"
 pinned: false
 ---
 

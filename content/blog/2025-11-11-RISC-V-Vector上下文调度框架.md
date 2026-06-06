@@ -10,7 +10,7 @@ tags:
   - "SIMD"
 series: 
   - "RISC-V 笔记"
-featured_image: "/images/covers/cover-kernel.png"
+featured_image: "/images/covers/riscv-vector-context-scheduling.png"
 pinned: false
 ---
 
