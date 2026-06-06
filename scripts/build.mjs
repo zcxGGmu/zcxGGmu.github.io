@@ -577,7 +577,7 @@ function renderTermIndex(title, terms, baseUrl) {
 }
 
 function renderTermPage(title, posts) {
-  return `<div class="post-list-container post-list-container-shadow">
+  return `<div class="post-list-container post-list-container-shadow taxonomy-term-header">
     <div class="taxonomy-page"><h1>${escapeHtml(title)}</h1></div>
   </div>${renderPostList(posts)}`;
 }

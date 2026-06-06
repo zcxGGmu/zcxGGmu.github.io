@@ -378,6 +378,11 @@ a:hover {
   border-radius: 0;
 }
 
+.stream-container .taxonomy-term-header {
+  min-height: 0;
+  padding-bottom: 0;
+}
+
 .stream-container .post .post-head-wrapper {
   min-height: 300px;
 }
