@@ -1,7 +1,7 @@
 ---
 title: "CodeInsights：面向开源贡献的 AI 工作流平台"
 date: "2026-06-07T01:20:00+08:00"
-updated: "2026-06-07T09:45:00+08:00"
+updated: "2026-06-07T10:10:00+08:00"
 slug: "codeinsights-local-first-agent-workbench"
 description: "CodeInsights 的核心不是再做一个聊天壳，而是把 Agent 运行时、Pipeline 状态机、本地 JSONL 事件、人工 gate 和权限边界组织成一个面向长期软件贡献的工程工作台。"
 categories:
@@ -54,6 +54,25 @@ Electron 应用本身采用典型的三层隔离：Main 负责系统能力、文
 
 更重要的是，Provider、Agent Runtime、Pipeline、Bridge 和 UI 没有混在一起。模型供应商适配负责协议差异；Coding Agent Runtime 负责 Claude Code、Codex、opencode 这类执行器；Pipeline 再根据节点职责决定运行时。只有这样，平台才能在增加新模型、新运行时、新工作流时保持可演进。
 
+![CodeInsights 系统架构图](/images/posts/codeinsights/codeinsights-system-architecture.png)
+
+这张系统架构图揭示了 CodeInsights 的核心边界：最上层是用户可见的桌面工作台，包括 React Renderer、AppShell、Workbench Views 和 Quick Task；中间是安全 IPC 桥，所有 renderer 能力都必须通过 shared contracts、preload bridge 和 main process handlers 进入主进程；再往下才是 Agent Services、Pipeline Services、Provider Core 和 Bridge Hub 等真正接触文件系统、模型运行时、本地状态和远程消息平台的服务模块。
+
+这种分层把“显示状态”和“制造状态”分开。Renderer 负责呈现任务、gate、records、workspace、配置和运行进度；Main Services 负责创建会话、调度 runtime、写入 JSON/JSONL、调用模型供应商、处理 Bridge 消息和执行系统探测。能力越接近本地文件、凭证、命令和远程写操作，就越应该停留在主进程服务层，而不是泄露到 UI 组件里。
+
+### 功能模块视图
+
+从功能模块看，CodeInsights 至少由六组能力拼成。
+
+- 桌面交互模块：`React Renderer`、`AppShell`、`Workbench Views`、`Quick Task` 组成主要操作界面，覆盖常驻工作台和快捷任务入口。
+- 安全通信模块：`Shared Contracts`、`Preload Bridge`、`IPC Handlers` 共同定义 renderer 到 main 的白名单调用面，避免 UI 直接持有 Node 能力。
+- Agent 编排模块：`Agent Services` 管理会话、runtime runner、权限请求、AskUser、事件流和工作区上下文。
+- Pipeline 编排模块：`Pipeline Services` 负责 LangGraph 状态机、阶段流转、人工 gate、checkpoint、records 和 artifacts。
+- 模型与运行时模块：`Provider Core` 抹平 Anthropic、OpenAI、Google 及兼容端点差异，`Coding Runtimes` 接入 Claude、Codex、opencode 等实际执行器。
+- 本地与远程扩展模块：`Local State` 保存 JSON/JSONL 状态，`Bridge Hub` 和 `Watchers` 把飞书、钉钉、微信、文件变化和工具事件接入桌面工作流。
+
+这组模块的价值在于职责可替换。Provider 可以换，runtime 可以换，Pipeline 节点可以换，Bridge 平台也可以扩展；只要 IPC 契约、事件信封和本地状态模型稳定，平台就不会被某一个模型供应商或某一种 Agent SDK 锁死。
+
 ## Pipeline：把贡献拆成状态机
 
 Pipeline 是 CodeInsights 最有辨识度的部分。它把一次开源贡献拆成六个节点：
@@ -61,6 +80,12 @@ Pipeline 是 CodeInsights 最有辨识度的部分。它把一次开源贡献拆
 ```text
 Explorer -> Planner -> Developer -> Reviewer -> Tester -> Committer
 ```
+
+![Pipeline v2 LangGraph 流程图](/images/posts/codeinsights/codeinsights-pipeline-langgraph-flow.png)
+
+Pipeline v2 的流程不是线性脚本，而是带有人工 gate、失败回路和持久化证据的贡献状态机。`User Goal` 进入系统后，先由 Explorer 扫描仓库、发现可贡献任务，再进入 `Task Gate` 让人选择任务；Planner 产出方案、风险和执行边界，再进入 `Plan Gate` 做文档审查；Developer 以 `workspace-write` 权限实现变更，`Dev Gate` 检查阶段产物；Reviewer 以只读审计方式判断质量，如果失败则回到 Developer，超过失败次数后进入 `Review Gate` 由人接管。
+
+验证与提交阶段同样被拆开：Tester 生成测试证据，遇到阻塞风险进入 `Test Gate`；Committer 只生成提交和 PR 草稿，真正影响远端的动作必须经过 `Submit Gate` 和 `Remote Write` 确认。`./patch-work`、checkpoints、pipeline records 和 artifacts 构成证据层，既能支撑恢复，也能支撑审计。这个设计让一次贡献不再是“模型说它完成了”，而是每一步都有状态、产物、风险和批准点。
 
 这条链路不应该是手写的 if/else 流水账，而应该是可 checkpoint、可 interrupt、可 resume 的状态机。Pipeline 以 LangGraph `StateGraph` 为骨架，每个节点运行后都进入 gate，等待人类审核、反馈、重跑或继续。Reviewer 还有特殊循环：如果审查不通过，流程回到 Developer；多轮仍不能通过时进入 `review_iteration_limit` gate，由人类接管或接受风险。
 
@@ -88,6 +113,12 @@ CodeInsights 的 gate 不是 UI 上的确认弹窗那么简单，而是状态机
 
 Agent 模式的关键在于“会话优先”而不是“设置优先”。Claude Code、Codex 和 opencode 可以被组织为同一类 Coding Agent Runtime，但已有会话必须优先保持原 runtime，新会话才读取当前设置。
 
+![Agent Runtime 流程图](/images/posts/codeinsights/codeinsights-agent-runtime-flow.png)
+
+Agent Runtime 流程把一次用户请求拆成四层：Renderer 中的 AgentView 只负责发送、停止和响应；主进程的 agent-service 负责接入 EventBus；AgentOrchestrator 负责 guard、prompt、retry 和 runtime 选择；底层 runtime 再分流到 Claude Code、Codex 或 opencode。这样 UI 不需要知道每个 runtime 的命令行细节，runtime 也不需要直接关心 React 状态。
+
+图中的 `Runtime Snapshot` 是关键节点。每个 session 启动时，工作区的 MCP、skills、manifest 和 cwd 会被冻结成当时的运行时快照；随后权限请求、AskUser、工具调用和运行事件通过 User Gates 与 AgentEventBus 回到全局 listener。最终，事件适配器会把不同 runtime 的输出转成统一信封，写入 runtime event log，并同步到本地 workspace files。换句话说，Agent 的执行环境、权限交互、事件记录和 UI 状态并不是散落的，它们围绕 session 形成一个闭环。
+
 这避免了一个常见问题：用户今天把默认 runtime 从 Claude 切到 Codex，昨天的长期任务重开后却悄悄换了执行引擎。对短对话来说这不一定重要，但对长期工程任务来说，执行环境本身就是上下文的一部分。
 
 运行时能力也需要抽象成统一接口：是否支持流式事件、恢复线程、abort、队列消息、设置权限模式、逐工具权限、服务状态和模型刷新。这样 UI 不必为每一种 runtime 写完全不同的一套逻辑，而是根据 capabilities 展示或降级。
@@ -95,6 +126,12 @@ Agent 模式的关键在于“会话优先”而不是“设置优先”。Claud
 ## 事件流：把 Agent 行为变成可回放日志
 
 长期 Agent 任务不能只保存最终消息，必须保存运行事件。统一的 `AgentStreamEnvelope` 可以承载 `run_started`、`assistant_delta`、`tool_started`、`tool_completed`、`permission_requested`、`ask_user_requested`、`retry_scheduled`、`run_completed`、`run_failed` 等事件。不同 runtime 的原始事件被适配成同一种事件信封后，平台才能统一展示、搜索、重放和审计。
+
+![IPC 与 Renderer 状态流图](/images/posts/codeinsights/codeinsights-ipc-state-flow.png)
+
+IPC 与状态流图说明了事件如何从“主进程事实”变成“前端可见状态”。最上层的 shared IPC types、local electron types 和 channel constants 定义通道名称与请求响应类型；主进程集中注册 agent、pipeline、system、settings 等 handler；preload 只暴露 `window.electronAPI` 白名单；renderer 通过 invoke API 发起请求，通过 event subscriptions 接收 `STREAM_*`、`STATUS_*` 之类的异步事件。
+
+最重要的设计点是全局 listener 常驻。Agent atoms、Pipeline atoms、Chat 和 Settings 状态都由顶层初始化器挂载的监听器写入，而不是只由当前可见页面临时订阅。这样即使用户切换标签页、打开设置、查看文件面板或让会话在后台运行，流式事件仍然会进入 Jotai 状态图。对于长期任务，UI 的正确性来自事件账本，而不是来自当前组件是否还挂在屏幕上。
 
 `agent-runtime-event-log.ts` 进一步把事件按 `runId` 和递增 `sequence` 写入 JSONL。它还做了两件细节工作：
 
@@ -107,6 +144,12 @@ Agent 模式的关键在于“会话优先”而不是“设置优先”。Claud
 ## 本地优先不是口号
 
 CodeInsights 没有默认引入本地数据库，而是用本机文件系统保存配置、索引、JSONL、checkpoint 和 artifacts。正式版本默认写入 `~/.codeinsights/`，开发模式写入 `~/.codeinsights-dev/`，并支持 `CODEINSIGHTS_CONFIG_DIR` 覆盖。
+
+![本地存储框架图](/images/posts/codeinsights/codeinsights-local-storage-framework.png)
+
+本地存储框架把状态分成几类：全局配置保存在 providers、app settings、prompts、memory 和 default skills 中；会话记录保存在 chat records、agent records、pipeline state 和 contribution tasks 中；工作区快照保存在 `agent-workspaces/{slug}`、`sessions/{id}/cwd`、runtime manifest、pipeline artifacts 和目标仓库内的 `./patch-work` 中。
+
+这里的关键取舍是“不默认引入本地数据库”。JSON 适合配置和索引，JSONL 适合追加式事件和会话记录，目录结构适合工作区快照、附件、artifacts 和 patch-work 证据。它让迁移、备份、排障和人工审计都更直接：配置根目录可以整体搬走，某次 session 可以按 JSONL 回放，某个 Pipeline 的产物可以从 artifacts 和 patch-work 中还原。
 
 目录大致分为几类：
 
