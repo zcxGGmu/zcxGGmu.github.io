@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive">
+  <title>What you need to learn from claw-code repo - zcxGGmu's Blog</title>
+  <meta name="description" content="融合 claw-code repo 的 PHILOSOPHY 与 Sigrid Jin 长文：真正值得学习的不是生成出来的代码，而是人类给方向、agent 组织执行、事件路由与多 agent 闭环协同的系统。">
+  <meta name="author" content="zcxGGmu">
+  <meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/blog/2026/what-you-need-to-learn-from-claw-code-repo/">
+  <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
+  <meta property="og:title" content="What you need to learn from claw-code repo">
+  <meta property="og:description" content="融合 claw-code repo 的 PHILOSOPHY 与 Sigrid Jin 长文：真正值得学习的不是生成出来的代码，而是人类给方向、agent 组织执行、事件路由与多 agent 闭环协同的系统。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zcxggmu.github.io/blog/2026/what-you-need-to-learn-from-claw-code-repo/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>
+(function(){
+  var key="blog-theme";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=20260606-sidebar-nav" media="screen">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div id="app">
+    <div class="single-column-drawer-container" id="drawer">
+      <div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+    </div>
+    <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
+    <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+      <div id="navBackground" class="nav-background"></div>
+      <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
+        <a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a>
+        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>
+      </div>
+    </nav>
+    <div class="single-column-header-container" id="pageHead">
+      <a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+    </div>
+    <div id="content">
+      <div id="streamContainer" class="stream-container" role="main">
+        <div id="main-content"></div>
+        <div class="post-list-container post-list-container-shadow">
+    <article class="post">
+      <div class="post-head-wrapper" style="background-image:url('/images/posts/claw-code/claw-code-orchestration-concept.jpg')">
+        <div class="post-title">What you need to learn from claw-code repo
+          <div class="post-subtitle">融合 claw-code repo 的 PHILOSOPHY 与 Sigrid Jin 长文：真正值得学习的不是生成出来的代码，而是人类给方向、agent 组织执行、事件路由与多 agent 闭环协同的系统。</div>
+          <div class="post-meta"><time itemprop="datePublished">2026-06-06</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI/">AI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/claw-code/">claw-code</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>&nbsp;<a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">系统设计</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 7 min</div>
+        </div>
+      </div>
+      <div class="post-body-wrapper"><div class="post-body" v-pre><p>这篇文章融合两份材料：一份是 claw-code 仓库里的 <a href="https://github.com/ultraworkers/claw-code/blob/main/PHILOSOPHY.md">PHILOSOPHY.md</a>，另一份是 Sigrid Jin 在 <a href="https://x.com/realsigridjin/status/2039472968624185713">X 动态</a>中指向的长文 <a href="https://www.linkedin.com/pulse/what-you-need-learn-from-claw-code-repo-jin-hyung-park--uygoc">What you need to learn from claw-code repo</a>。前者更像宣言，短、硬、直接；后者更像现场复盘，把技术系统、开发者心理、注意力经济和未来职业分化放在一起讲。</p>
+<p>两篇文章的共同结论非常清楚：不要只盯着仓库里的 Python 文件、Rust crate 或某次重写到底用了几个小时。真正值得学习的是生产这些代码的系统。代码是证据，系统才是产品。</p>
+<p><img src="/images/posts/claw-code/claw-code-orchestration-concept.jpg" alt="claw-code coordination concept"></p>
+<h2 id="不要盯着文件看">不要盯着文件看</h2>
+<p>PHILOSOPHY 的开头用了一个很强的判断：如果你只看生成出来的文件，你看错了层级。Sigrid 的长文也延续了同一个判断：大家为 claw-code 的 clean-room Python 重写、Rust 重写和惊人的 star 增长速度兴奋或恐惧，但这些都只是表层。</p>
+<p>仓库里的代码当然重要，但它不是最关键的对象。真正重要的是：一个人通过 Discord 发出方向，多个 coding agents 在后台拆任务、分角色、写代码、跑测试、争论失败、修复问题，并在通过验证后推送结果。这个系统让“开发”从一个人在终端里不停敲代码，变成了人类设定目标、agents 执行劳动、协调层保证闭环。</p>
+<p>可以把原文的核心压缩成一句话：<strong>代码是副产物，协调系统才是主角。</strong></p>
+<p><img src="/images/posts/claw-code/claw-code-star-history.jpg" alt="claw-code star history"></p>
+<h2 id="人类界面不是终端而是-discord">人类界面不是终端，而是 Discord</h2>
+<p>最容易误读 claw-code 的地方，是把截图里的终端、tmux、工作流面板当成人类的主要操作界面。原文反复强调：那些终端会话属于 agents，不属于人类操作者。</p>
+<p>人类真正面对的是 Discord。一个人可以在手机上输入一句指令，然后放下手机、去喝咖啡、睡觉，或者处理别的事情。后台系统会读取指令，把它拆成任务，把任务交给不同角色，持续执行、测试、复盘和重试。人类第二天回来看到的是一个完成度很高的结果，而不是一夜未眠之后的半成品。</p>
+<p>这不是“换一个聊天入口控制终端”这么简单。它意味着人类和软件生产系统之间的接口变了。过去的人机界面是 IDE、shell、编辑器、日志窗口；现在的高层界面可以只是一个自然语言输入框。人类不再把每一步手工操作塞进系统，而是把方向、约束、验收标准和优先级塞进系统。</p>
+<p>PHILOSOPHY 里那句短句很适合保留：“Humans set direction; claws perform the labor.” 这里的重点不是神秘化 agent，而是重新划分劳动：人类负责方向，agents 负责执行。</p>
+<h2 id="三层系统omxclawhipomo">三层系统：OmX、clawhip、OmO</h2>
+<p>claw-code 背后的系统可以拆成三层：工作流层、事件路由层、多 agent 协调层。</p>
+<p>第一层是 OmX，也就是 oh-my-codex。它把一句自然语言指令变成可重复执行的工作协议。长文里提到的 <code>$architect</code>、<code>$executor</code>、<code>$plan</code>、<code>$ralph</code>、<code>$team</code>，本质上都是把“我想做某件事”变成结构化流程的入口。轻量任务可以规划后执行，重型任务可以进入持续验证循环，多模块任务可以拆给多个 agents 并行推进。</p>
+<p>第二层是 clawhip。它不是写业务代码的 agent，而是事件和通知路由器。它监听 git commits、GitHub issues、PRs、tmux sessions、agent 生命周期事件，然后把状态发送到对应 Discord channel。这个设计最重要的地方，是把“监控、通知、状态格式化”从 agent 的上下文窗口里移出去。agent 的上下文应该尽量留给实现、错误、测试和决策，而不是塞满通知模板。</p>
+<p><img src="/images/posts/claw-code/claw-code-discord-flow-1.jpg" alt="clawhip Discord flow 1"></p>
+<p><img src="/images/posts/claw-code/claw-code-discord-flow-2.jpg" alt="clawhip Discord flow 2"></p>
+<p>第三层是 OmO，也就是 oh-my-openagent。它负责多个 agents 之间的协作：架构师如何给计划，执行者如何落地，审查者如何指出问题，严重分歧如何回到重新规划，验证失败如何触发重试。单个 agent 可以很快，但复杂项目真正需要的是协作闭环。没有闭环，快只会把错误放大。</p>
+<p>这三层合在一起，才构成真正的开发系统：OmX 把指令变成协议，clawhip 把事件送到正确地方，OmO 让多个 agents 在冲突、交接、审查和验证中收敛。</p>
+<h2 id="闭环比速度重要">闭环比速度重要</h2>
+<p>很多人被 claw-code 的速度震住了：两小时、一天、十万 stars，这些数字很容易让人把注意力放在“AI 写代码比人快”上。但速度不是最值得学习的部分。速度只是一个结果。</p>
+<p>更重要的是闭环。一个可工作的 agent system 至少需要这些环节：</p>
+<ol>
+<li>人类提出明确方向和约束。</li>
+<li>Architect 分析目标系统，拆出结构化计划。</li>
+<li>Executor 根据计划写代码、运行工具、补测试。</li>
+<li>Reviewer 检查输出，指出行为问题和质量问题。</li>
+<li>如果问题严重，回到规划；如果只是局部失败，进入修复和验证。</li>
+<li>通过检查之后再推送、通知、归档。</li>
+</ol>
+<p>这个循环看起来像人类团队里的架构评审、开发、自测、code review 和 CI，只是被压缩进了一个更自动化的协作系统。也正因为如此，claw-code 的重点不是“某个 agent 很聪明”，而是“系统让多个能力有限但速度很快的 agent 可以持续纠错”。</p>
+<p>没有闭环的 AI 编程，很容易变成高产垃圾。闭环的意义在于：快不是目的，快而能收敛才有价值。</p>
+<h2 id="真正的瓶颈变了">真正的瓶颈变了</h2>
+<p>如果 agent 可以在很短时间里重写一个代码库，那么什么会变贵？</p>
+<p>不是打字速度，不是会不会记住某个 API，也不是能不能手写一段样板代码。真正变贵的是：</p>
+<ul>
+<li>知道什么值得构建。</li>
+<li>知道为什么要构建。</li>
+<li>能把目标架构拆成 agent 可以执行的任务。</li>
+<li>能区分哪些部分可以并行，哪些部分必须串行。</li>
+<li>能写出清晰的约束、边界和验收标准。</li>
+<li>能判断 agent 产出的东西“技术上能跑”但“产品上不对”。</li>
+</ul>
+<p>Sigrid 的文章里有一个很好的提醒：更快的 agent 不会降低清晰思考的重要性，反而会提高它。因为一个方向错误的高速系统，会非常快地产出大量错误代码。过去，慢本身会限制错误扩散；现在，慢这个保护层正在消失。</p>
+<p>这也解释了为什么 claw-code 背后的开发者真正做的不是“打字”，而是系统设计。他知道最终系统应该长什么样，知道哪些部分有依赖，知道哪些地方可以并行，把约束设好，再让 agents 去工作。Python 文件只是结果，真正的能力在结果之前。</p>
+<h2 id="ralphthon-的隐含教训">Ralphthon 的隐含教训</h2>
+<p>长文用 Ralphthon 和 OmOCon 作为例子：不要在 hackathon 里通宵手写代码。这个时代更值得投入精力的，是设计 agent 系统，以及设置 agents 之间的协调方式。</p>
+<p><img src="/images/posts/claw-code/ralphthon-sf.jpg" alt="Ralphthon SF"></p>
+<p>这不是偷懒，而是把人类时间放到更高杠杆的位置。过去通宵的主要收益，是多写几千行代码；现在通宵的更高收益，可能是把任务拆对、把验证规则写清楚、把失败恢复路径设计好。能够把清晰方向交给系统的人，早上会拿到一个接近可用的产品；试图微操每一行代码的人，反而会被速度拖垮。</p>
+<p>这里最值得迁移到日常工作的，不是某个具体工具命令，而是一种工作姿势：</p>
+<ol>
+<li>不要把自己当成人肉执行器。</li>
+<li>先设计可交付的闭环。</li>
+<li>让 agents 在闭环里跑。</li>
+<li>人类把注意力放在判断、品味、约束和验收上。</li>
+</ol>
+<h2 id="github-stars噪声和旧信号失效">GitHub stars、噪声和旧信号失效</h2>
+<p>Sigrid 的文章后半段从技术系统转向社会信号。claw-code 过了 100K stars 之后，很多社交关系突然改变：消息被回复，投资人开始主动出现，旧的冷淡被热情替代。这不是因为人突然变聪明了，而是因为 repo 变成了注意力中心。</p>
+<p>这部分讨论有点刺耳，但很重要。GitHub stars 过去常常近似代表工程质量：一个 repo 有上万 stars，通常意味着有人花了很久写代码、修 bug、维护 issues、处理社区反馈。但 AI-assisted development 普及之后，这个信号正在变得不稳定。一个项目可以很快获得代码和传播，star 数可能更多反映 virality，而不是长期工程沉淀。</p>
+<p>这不是说 stars 没意义，而是说它的解释方式变了。过去 stars 更像质量代理，现在 stars 也可能是注意力代理。对于开发者来说，这意味着不能再只用旧指标判断一个项目，更要看它背后的系统、维护能力、真实用户价值和长期方向。</p>
+<p><img src="/images/posts/claw-code/github-claw-code-og.png" alt="GitHub claw-code preview"></p>
+<h2 id="ai-时代还剩什么">AI 时代还剩什么</h2>
+<p>当 coding intelligence 变得越来越便宜，技术行业剩下的稀缺能力会更偏向判断、品味、稳定性和人与人之间的信任。</p>
+<p>长文里提到一种粗粝但有启发的分类：未来公司里仍然重要的角色，可能不是“更会写代码的人”，而是几类更难被压缩进 prompt 的人。</p>
+<p>第一类是能用 AI 快速移动、同时有产品思维的人。他们不只是 vibe coding，而是能把模糊需求变成可验证产品。</p>
+<p>第二类是安全和基础设施人员。AI 生成的代码越多，系统拼接、运行稳定性、权限边界、供应链风险和事故恢复就越重要。</p>
+<p>第三类是面向人的角色。产品、销售、社区、客户成功、开发者关系，这些工作处理的是信任、表达、体验和关系。</p>
+<p>第四类是组织里的成年人。法律、财务、治理、流程、风险控制，这些人会在高速系统快要飞散的时候让它慢一点。</p>
+<p>这些角色的共同点，是它们都不只是“写代码”。它们处理的是方向、约束、责任和社会现实。</p>
+<h2 id="两类人的分化">两类人的分化</h2>
+<p>claw-code 引发的反应可以粗略分成两类。</p>
+<p>一类人把自己的价值建立在旧系统里：大公司履历、晋升路径、稀缺的工程实现能力、对规则的熟悉。当 AI 把“能写代码”这件事快速商品化时，这类人会感到不安。因为他们过去的护城河正在被填平。</p>
+<p>另一类人本来就不完全适应旧系统。他们有想法，有产品直觉，有非做不可的东西，但过去被执行带宽限制。对这类人来说，AI agent 不是威胁，而是杠杆。真正稀缺的从来不是语法，而是脑子里那个明确、固执、有品味的产品图像。</p>
+<p>这条分界线不等于技术强弱。它更像是在问：你的价值来自“我能写别人写不了的代码”，还是来自“我知道什么应该存在，以及它应该怎样工作”？</p>
+<p>如果是前者，压力会越来越大；如果是后者，agent 会放大你。</p>
+<h2 id="从-claw-code-学到的东西">从 claw-code 学到的东西</h2>
+<p>claw-code 最后留给开发者的启发，不是“如何复制一个爆款 repo”，而是如何重新理解软件生产。</p>
+<p>第一，代码仍然重要，但代码不再是唯一产品。协调系统、工作协议、验证闭环、事件路由，同样是产品的一部分。</p>
+<p>第二，人类不应该和机器比打字。人类应该负责方向、品味、约束、判断和最终验收。</p>
+<p>第三，多 agent 不是把几个模型放在一起聊天，而是让它们在明确角色、交接规则、反馈机制和失败恢复里工作。</p>
+<p>第四，越快的系统越需要更清晰的方向。模糊需求在慢团队里只是拖延，在快系统里会变成灾难。</p>
+<p>第五，未来开发者真正需要训练的，不只是写代码，而是任务分解、架构表达、产品判断、验证设计和系统运营。</p>
+<p>所以，再看 claw-code 的时候，不要只打开 <code>src/</code>。去看 OmX 如何把指令变成流程，去看 clawhip 如何把通知移出 agent context，去看 OmO 如何让 Architect、Executor、Reviewer 在分歧里收敛。repo 是 artifact，真正值得学习的是 artifact 背后的生产方式。</p>
+<p>这也是两篇原文最一致的结论：<strong>claw-code 是 autonomous software development 的公开演示。代码是结果，哲学是系统。</strong></p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://github.com/ultraworkers/claw-code/blob/main/PHILOSOPHY.md">claw-code PHILOSOPHY.md</a></li>
+<li><a href="https://x.com/realsigridjin/status/2039472968624185713">Sigrid Jin on X</a></li>
+<li><a href="https://www.linkedin.com/pulse/what-you-need-learn-from-claw-code-repo-jin-hyung-park--uygoc">What you need to learn from claw-code repo</a></li>
+<li><a href="https://github.com/Yeachan-Heo/clawhip">clawhip</a></li>
+<li><a href="https://github.com/Yeachan-Heo/oh-my-codex">oh-my-codex</a></li>
+<li><a href="https://github.com/code-yeongyu/oh-my-openagent">oh-my-openagent</a></li>
+</ul>
+<hr id="EOF"><p class="last-modified">最后整理于 2026-06-06</p></div></div>
+      <nav class="post-pagination">
+        <a class="newer-posts">下一篇<br>没有更新的文章</a>
+        <a class="older-posts" href="/blog/2026/gaojingqi-investment-system/">上一篇<br>高景气投资体系与逻辑</a>
+      </nav>
+    </article>
+  </div>
+      </div>
+    </div>
+    <div id="sideContainer" class="side-container">
+      <a class="a-block nav-head false" href="/">
+        <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
+        <div class="nav-title">zcxGGmu's Blog</div>
+        <div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+      </a>
+      <div class="theme-switcher theme-switcher-desktop"><button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div>
+      <div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+      <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+    </div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#不要盯着文件看">不要盯着文件看</a><a class="toc-link toc-level-2" href="#人类界面不是终端而是-discord">人类界面不是终端，而是 Discord</a><a class="toc-link toc-level-2" href="#三层系统omxclawhipomo">三层系统：OmX、clawhip、OmO</a><a class="toc-link toc-level-2" href="#闭环比速度重要">闭环比速度重要</a><a class="toc-link toc-level-2" href="#真正的瓶颈变了">真正的瓶颈变了</a><a class="toc-link toc-level-2" href="#ralphthon-的隐含教训">Ralphthon 的隐含教训</a><a class="toc-link toc-level-2" href="#github-stars噪声和旧信号失效">GitHub stars、噪声和旧信号失效</a><a class="toc-link toc-level-2" href="#ai-时代还剩什么">AI 时代还剩什么</a><a class="toc-link toc-level-2" href="#两类人的分化">两类人的分化</a><a class="toc-link toc-level-2" href="#从-claw-code-学到的东西">从 claw-code 学到的东西</a><a class="toc-link toc-level-2" href="#sources">Sources</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    
+    <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+  </div>
+  <script src="/js/journal.js"></script>
+  <script src="/js/code-enhance.js"></script>
+  <script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+  <script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+  <script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
