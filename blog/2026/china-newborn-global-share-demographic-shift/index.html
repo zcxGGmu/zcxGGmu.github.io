@@ -23,6 +23,7 @@
   <script>
 (function(){
   var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
   var theme="";
   try{theme=localStorage.getItem(key)||""}catch(_){}
   if(theme!=="light"&&theme!=="dark"){
@@ -30,13 +31,16 @@
   }
   document.documentElement.dataset.theme=theme;
   document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
 })();</script>
   <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
-  <link rel="stylesheet" href="/scss/modern.min.css?v=20260606-sidebar-nav" media="screen">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen">
   <meta name="color-scheme" content="light dark">
 </head>
 <body>
@@ -105,6 +109,9 @@
       </div>
     </div>
     <div id="sideContainer" class="side-container">
+      <button class="sidebar-collapse-toggle" type="button" data-sidebar-collapse-toggle title="收起左侧边栏" aria-label="收起左侧边栏" aria-expanded="true">
+        <span class="material-icons sidebar-collapse-icon" aria-hidden="true">chevron_left</span>
+      </button>
       <a class="a-block nav-head false" href="/">
         <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
         <div class="nav-title">zcxGGmu's Blog</div>
@@ -171,6 +178,36 @@
     if(query.addEventListener) query.addEventListener("change",onChange);
     else if(query.addListener) query.addListener(onChange);
   }
+})();</script>
+  <script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
 })();</script>
   <script>
 (function(){

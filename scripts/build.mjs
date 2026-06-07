@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const config = JSON.parse(await fs.readFile(path.join(rootDir, "site.config.json"), "utf8"));
 const contentDir = path.join(rootDir, "content", "blog");
-const assetVersion = "20260606-sidebar-nav";
+const assetVersion = "20260607-sidebar-collapse";
 const generatedTargets = [
   "index.html",
   "index.xml",
@@ -242,6 +242,7 @@ function themeBootstrapScript() {
   return `<script>
 (function(){
   var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
   var theme="";
   try{theme=localStorage.getItem(key)||""}catch(_){}
   if(theme!=="light"&&theme!=="dark"){
@@ -249,6 +250,9 @@ function themeBootstrapScript() {
   }
   document.documentElement.dataset.theme=theme;
   document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
 })();</script>`;
 }
 
@@ -341,6 +345,39 @@ function themeScript() {
     if(query.addEventListener) query.addEventListener("change",onChange);
     else if(query.addListener) query.addListener(onChange);
   }
+})();</script>`;
+}
+
+function sidebarCollapseScript() {
+  return `<script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
 })();</script>`;
 }
 
@@ -474,6 +511,9 @@ function layout(page, mainHtml, options = {}) {
       </div>
     </div>
     <div id="sideContainer" class="side-container">
+      <button class="sidebar-collapse-toggle" type="button" data-sidebar-collapse-toggle title="收起左侧边栏" aria-label="收起左侧边栏" aria-expanded="true">
+        <span class="material-icons sidebar-collapse-icon" aria-hidden="true">chevron_left</span>
+      </button>
       <a class="a-block nav-head ${activeUrl === "/" ? "active" : "false"}" href="/">
         ${avatarHtml("site-avatar")}
         <div class="nav-title">${escapeHtml(config.brand)}</div>
@@ -490,6 +530,7 @@ function layout(page, mainHtml, options = {}) {
   <script src="/js/journal.js"></script>
   <script src="/js/code-enhance.js"></script>
   ${themeScript()}
+  ${sidebarCollapseScript()}
   ${progressScript()}
   ${lightboxScript()}
 </body>
