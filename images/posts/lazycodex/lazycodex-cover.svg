@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d97757"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7b8b5c"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8c6f5a"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#b45309"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9a6fb0"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d97757"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8f8a80"/>
+    </marker>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 24px; font-weight: 700; fill: #141413; }
+    .subtitle { font-size: 13px; font-weight: 500; fill: #8f8a80; }
+    .section { font-size: 13px; font-weight: 700; fill: #8b7355; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #b4aba0; }
+    .node-title { font-size: 18px; font-weight: 700; fill: #141413; }
+    .node-sub { font-size: 12px; font-weight: 500; fill: #6b6257; }
+    .node-type { font-size: 11px; font-weight: 700; fill: #a29a8f; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b6257; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b6257; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #a29a8f; }
+    </style>
+  </defs>
+  <rect width="1200.0" height="630.0" fill="#f8f6f3"/>
+  <text x="600.0" y="56" text-anchor="middle" class="title">LazyCodex</text>
+  <text x="600.0" y="82" text-anchor="middle" class="subtitle">把 OmO agent harness 打包成 Codex 的项目记忆、规划、执行与验证工作台</text>
+  <rect x="70.0" y="132.0" width="1060.0" height="104.0" rx="16.0" fill="none" stroke="#ded8cf" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="36.0" y="184.0" text-anchor="start" dominant-baseline="middle" font-size="14.0" font-weight="600" fill="#6b6257">Install</text>
+  <rect x="70.0" y="276.0" width="1060.0" height="116.0" rx="16.0" fill="none" stroke="#ded8cf" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="36.0" y="334.0" text-anchor="start" dominant-baseline="middle" font-size="14.0" font-weight="600" fill="#6b6257">Codex</text>
+  <rect x="70.0" y="432.0" width="1060.0" height="112.0" rx="16.0" fill="none" stroke="#ded8cf" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="36.0" y="488.0" text-anchor="start" dominant-baseline="middle" font-size="14.0" font-weight="600" fill="#6b6257">Evidence</text>
+  <path d="M 354.0,192.0 L 478.0,192.0" fill="none" stroke="#d97757" stroke-width="2.0" marker-end="url(#arrowA)"/>
+  <path d="M 724.0,192.0 L 836.0,192.0" fill="none" stroke="#7b8b5c" stroke-width="2.0" marker-end="url(#arrowB)"/>
+  <path d="M 316.0,344.0 L 384.0,344.0" fill="none" stroke="#8c6f5a" stroke-width="2.0" marker-end="url(#arrowC)"/>
+  <path d="M 580.0,344.0 L 648.0,344.0" fill="none" stroke="#d97757" stroke-width="2.0" marker-end="url(#arrowA)"/>
+  <path d="M 844.0,344.0 L 912.0,344.0" fill="none" stroke="#d97757" stroke-width="2.0" marker-end="url(#arrowA)"/>
+  <path d="M 334.0,498.0 L 354.4,498.0 L 407.6,500.0 L 428.0,500.0" fill="none" stroke="#8c6f5a" stroke-width="2.0" marker-end="url(#arrowC)"/>
+  <path d="M 644.0,500.0 L 664.4,500.0 L 721.6,498.0 L 742.0,498.0" fill="none" stroke="#7b8b5c" stroke-width="2.0" marker-end="url(#arrowB)"/>
+  <rect x="128.0" y="156.0" width="226.0" height="72.0" rx="10.0" fill="#fffaf3" stroke="#d97757" stroke-width="1.8"/>
+  <text x="241.0" y="174.0" text-anchor="middle" class="node-type">ALIAS</text>
+  <text x="241.0" y="198.0" text-anchor="middle" class="node-title">npx lazycodex-ai</text>
+  <text x="241.0" y="220.0" text-anchor="middle" class="node-sub">install alias</text>
+  <rect x="478.0" y="150.0" width="246.0" height="84.0" rx="10.0" fill="#f7ecda" stroke="#d0b893" stroke-width="2.0"/>
+  <rect x="484.0" y="156.0" width="234.0" height="72.0" rx="7.0" fill="none" stroke="#d0b893" stroke-width="1.2" opacity="0.65"/>
+  <text x="601.0" y="168.0" text-anchor="middle" class="node-type">HARNESS</text>
+  <text x="601.0" y="198.0" text-anchor="middle" class="node-title">oh-my-openagent</text>
+  <text x="601.0" y="220.0" text-anchor="middle" class="node-sub">omo install --platform=codex</text>
+  <rect x="836.0" y="150.0" width="230.0" height="84.0" rx="10.0" fill="#c8e4db" stroke="#7b8b5c" stroke-width="2.0"/>
+  <rect x="842.0" y="156.0" width="218.0" height="72.0" rx="7.0" fill="none" stroke="#7b8b5c" stroke-width="1.2" opacity="0.65"/>
+  <text x="951.0" y="168.0" text-anchor="middle" class="node-type">PLUGIN</text>
+  <text x="951.0" y="198.0" text-anchor="middle" class="node-title">OMO Plugin</text>
+  <text x="951.0" y="220.0" text-anchor="middle" class="node-sub">skills + hooks + MCP</text>
+  <rect x="120.0" y="310.0" width="196.0" height="68.0" rx="10.0" fill="#e9f1fb" stroke="#8c6f5a" stroke-width="1.8"/>
+  <text x="218.0" y="328.0" text-anchor="middle" class="node-type">MEMORY</text>
+  <text x="218.0" y="350.0" text-anchor="middle" class="node-title">/init-deep</text>
+  <text x="218.0" y="372.0" text-anchor="middle" class="node-sub">hierarchical AGENTS.md</text>
+  <rect x="384.0" y="310.0" width="196.0" height="68.0" rx="10.0" fill="#f7ecda" stroke="#d0b893" stroke-width="1.8"/>
+  <text x="482.0" y="328.0" text-anchor="middle" class="node-type">PLANNING</text>
+  <text x="482.0" y="350.0" text-anchor="middle" class="node-title">$ulw-plan</text>
+  <text x="482.0" y="372.0" text-anchor="middle" class="node-sub">decision-complete plan</text>
+  <rect x="648.0" y="310.0" width="196.0" height="68.0" rx="10.0" fill="#c8e4db" stroke="#7b8b5c" stroke-width="1.8"/>
+  <text x="746.0" y="328.0" text-anchor="middle" class="node-type">DELIVERY</text>
+  <text x="746.0" y="350.0" text-anchor="middle" class="node-title">$start-work</text>
+  <text x="746.0" y="372.0" text-anchor="middle" class="node-sub">Boulder execution</text>
+  <rect x="912.0" y="310.0" width="196.0" height="68.0" rx="10.0" fill="#efe8de" stroke="#d0c3b3" stroke-width="1.8"/>
+  <text x="1010.0" y="328.0" text-anchor="middle" class="node-type">VERIFY</text>
+  <text x="1010.0" y="350.0" text-anchor="middle" class="node-title">$ulw-loop</text>
+  <text x="1010.0" y="372.0" text-anchor="middle" class="node-sub">Oracle verified loop</text>
+  <ellipse cx="239.0" cy="471.0" rx="47.5" ry="9.0" fill="#e5e8df" stroke="#7b8b5c" stroke-width="2.2"/>
+  <rect x="144.0" y="471.0" width="190.0" height="54.0" fill="#e5e8df" stroke="#7b8b5c" stroke-width="2.2"/>
+  <ellipse cx="239.0" cy="525.0" rx="47.5" ry="9.0" fill="#e5e8df" stroke="#7b8b5c" stroke-width="2.2"/>
+  <ellipse cx="239.0" cy="489.36" rx="47.5" ry="9.0" fill="none" stroke="#7b8b5c" stroke-opacity="0.45" stroke-width="1.2"/>
+  <ellipse cx="239.0" cy="505.2" rx="47.5" ry="9.0" fill="none" stroke="#7b8b5c" stroke-opacity="0.25" stroke-width="1.2"/>
+  <text x="239.0" y="492.0" text-anchor="middle" class="node-title">Rule Context</text>
+  <text x="239.0" y="516.0" text-anchor="middle" class="node-sub">CONTEXT / rules / instructions</text>
+  <rect x="428.0" y="470.0" width="216.0" height="60.0" rx="10.0" fill="#e9f1fb" stroke="#8c6f5a" stroke-width="1.8"/>
+  <text x="536.0" y="488.0" text-anchor="middle" class="node-type">DIAGNOSTICS</text>
+  <text x="536.0" y="506.0" text-anchor="middle" class="node-title">LSP + Comment Check</text>
+  <text x="536.0" y="528.0" text-anchor="middle" class="node-sub">post-edit feedback</text>
+  <ellipse cx="849.0" cy="471.0" rx="53.5" ry="9.0" fill="#efe8de" stroke="#d0c3b3" stroke-width="2.2"/>
+  <rect x="742.0" y="471.0" width="214.0" height="54.0" fill="#efe8de" stroke="#d0c3b3" stroke-width="2.2"/>
+  <ellipse cx="849.0" cy="525.0" rx="53.5" ry="9.0" fill="#efe8de" stroke="#d0c3b3" stroke-width="2.2"/>
+  <ellipse cx="849.0" cy="489.36" rx="53.5" ry="9.0" fill="none" stroke="#d0c3b3" stroke-opacity="0.45" stroke-width="1.2"/>
+  <ellipse cx="849.0" cy="505.2" rx="53.5" ry="9.0" fill="none" stroke="#d0c3b3" stroke-opacity="0.25" stroke-width="1.2"/>
+  <text x="849.0" y="492.0" text-anchor="middle" class="node-title">Evidence Ledger</text>
+  <text x="849.0" y="516.0" text-anchor="middle" class="node-sub">.omo/start-work/*.jsonl</text>
+  <rect x="377.5" y="162.0" width="77" height="20" rx="6" fill="#f8f6f3" opacity="0.96"/>
+  <text x="416.0" y="176.0" text-anchor="middle" class="arrow-label">delegates</text>
+  <rect x="745.0" y="162.0" width="70" height="20" rx="6" fill="#f8f6f3" opacity="0.96"/>
+  <text x="780.0" y="176.0" text-anchor="middle" class="arrow-label">installs</text>
+</svg>

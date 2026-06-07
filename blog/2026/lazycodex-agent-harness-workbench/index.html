@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive">
+  <title>LazyCodex：把 Codex 变成可验证的 Agent 工程工作台 - zcxGGmu's Blog</title>
+  <meta name="description" content="LazyCodex 的核心不是一个安装命令，而是把 OmO agent harness 打包进 Codex：项目记忆、规划、执行、生命周期 hooks、MCP、诊断、证据账本和独立验证共同组成一个面向复杂代码库的工程工作台。">
+  <meta name="author" content="zcxGGmu">
+  <meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/blog/2026/lazycodex-agent-harness-workbench/">
+  <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
+  <meta property="og:title" content="LazyCodex：把 Codex 变成可验证的 Agent 工程工作台">
+  <meta property="og:description" content="LazyCodex 的核心不是一个安装命令，而是把 OmO agent harness 打包进 Codex：项目记忆、规划、执行、生命周期 hooks、MCP、诊断、证据账本和独立验证共同组成一个面向复杂代码库的工程工作台。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zcxggmu.github.io/blog/2026/lazycodex-agent-harness-workbench/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>
+(function(){
+  var key="blog-theme";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=20260606-sidebar-nav" media="screen">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div id="app">
+    <div class="single-column-drawer-container" id="drawer">
+      <div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+    </div>
+    <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
+    <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+      <div id="navBackground" class="nav-background"></div>
+      <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
+        <a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a>
+        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>
+      </div>
+    </nav>
+    <div class="single-column-header-container" id="pageHead">
+      <a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+    </div>
+    <div id="content">
+      <div id="streamContainer" class="stream-container" role="main">
+        <div id="main-content"></div>
+        <div class="post-list-container post-list-container-shadow">
+    <article class="post">
+      <div class="post-head-wrapper" style="background-image:url('/images/posts/lazycodex/lazycodex-cover.png')">
+        <div class="post-title">LazyCodex：把 Codex 变成可验证的 Agent 工程工作台
+          <div class="post-subtitle">LazyCodex 的核心不是一个安装命令，而是把 OmO agent harness 打包进 Codex：项目记忆、规划、执行、生命周期 hooks、MCP、诊断、证据账本和独立验证共同组成一个面向复杂代码库的工程工作台。</div>
+          <div class="post-meta"><time itemprop="datePublished">2026-06-07</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI/">AI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/LazyCodex/">LazyCodex</a>&nbsp;<a href="/tags/Codex/">Codex</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/OmO/">OmO</a>&nbsp;<a href="/tags/%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81/">工程工作流</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 9 min</div>
+        </div>
+      </div>
+      <div class="post-body-wrapper"><div class="post-body" v-pre><p>LazyCodex 表面上是一个非常小的 npm 包：运行 <code>npx lazycodex-ai install</code>，就能把 OmO 的 Codex 版本装进本地环境。但真正值得分析的部分并不在这个命令本身，而在命令背后的产品边界：它试图把 Codex 从“会写代码的对话工具”推进到“有项目记忆、有计划、有生命周期控制、有证据账本、有独立验证的工程工作台”。</p>
+<p>这种定位决定了 LazyCodex 不是一个 prompt pack，也不是一个简单的 CLI 别名。它更像 LazyVim 之于 Neovim：把一套复杂但有价值的工作流预先装配好，让使用者不必从零理解插件、hooks、skills、MCP、模型配置、诊断工具和交付协议之间的关系。</p>
+<h2 id="一个薄入口背后一套-harness">一个薄入口，背后一套 Harness</h2>
+<p>根目录的 <code>package.json</code> 把包名定义为 <code>lazycodex-ai</code>，bin 指向 <code>bin/lazycodex-ai.js</code>。这个入口文件做的事非常克制：当参数是 <code>install</code> 时，它把命令改写为：</p>
+<pre><code class="language-bash">npx --yes --package oh-my-openagent omo install --platform=codex
+</code></pre>
+<p>如果不是 <code>install</code>，它仍然通过 <code>npx --yes --package oh-my-openagent omo ...</code> 转发给 OmO。也就是说，LazyCodex 根包不是核心执行引擎，而是一个低摩擦的安装与调用别名。项目里的测试也专门固定了这一点：<code>--dry-run install --no-tui --codex-autonomous</code> 必须输出带 <code>--platform=codex</code> 的 OmO 安装命令，非安装命令则必须转发成 <code>omo doctor</code> 这类上游命令。</p>
+<p>这个设计的好处是边界清楚。LazyCodex 不需要在根包里复制 OmO 的完整实现，而是专注于把 Codex 平台需要的插件、hooks、skills、MCP 和文档组织成一个稳定的发行面。<code>.gitmodules</code> 也把 <code>src/</code> 声明为 <code>oh-my-openagent</code> 子模块，说明项目的主干思路是“薄发行层 + OmO 核心 harness + Codex 本地插件适配”。</p>
+<p><img src="/images/posts/lazycodex/lazycodex-system-architecture.png" alt="LazyCodex 系统架构"></p>
+<p>这张架构图展示了 LazyCodex 的四层边界。第一层是用户和 Codex host；第二层是 <code>lazycodex-ai</code> npm 别名、<code>npx</code> 转发和 OmO installer；第三层是 Codex 可识别的插件表面，包括 <code>plugin.json</code>、<code>skills/</code>、<code>hooks/</code> 和 <code>.mcp.json</code>；第四层是本地运行组件与状态文件，例如 <code>rules</code>、<code>lsp</code>、<code>telemetry</code>、<code>ulw-loop</code>、<code>.omo</code> 状态和插件数据目录。</p>
+<p>这意味着 LazyCodex 的价值不在于“替用户敲了一行命令”，而在于把 Codex 原本分散的能力做成一个可安装、可更新、可测试、可解释的工作台。</p>
+<h2 id="仓库结构">仓库结构</h2>
+<p>LazyCodex 的源码可以按五块理解。</p>
+<pre><code class="language-text">bin/lazycodex-ai.js          npm 命令入口，负责转发到 oh-my-openagent
+plugins/omo/                 Codex 聚合插件，暴露 skills、hooks、MCP servers
+plugins/omo/components/      本地组件：rules、lsp、comment-checker、telemetry 等
+plugins/omo/skills/          工作流与专业技能说明
+packages/web/                lazycodex.ai 文档站，Next.js + Cloudflare Workers
+test/ 和 plugins/omo/test/   包入口、插件聚合、hooks、skills 同步等契约测试
+</code></pre>
+<p>根包很薄，但 <code>plugins/omo</code> 很重。<code>plugins/omo/.codex-plugin/plugin.json</code> 定义了一个名为 <code>omo</code> 的 Codex 插件命名空间，向 Codex 暴露三类能力：<code>skills</code>、<code>hooks</code>、<code>mcpServers</code>。它的接口描述也把能力明确列为 Hooks、MCP Tools、Code Intelligence、Workflow、Context Injection。换句话说，LazyCodex 不是只给 Codex 加几条命令，而是在 Codex 生命周期里挂入一套本地工程系统。</p>
+<h2 id="聚合插件把分散能力收进一个命名空间">聚合插件：把分散能力收进一个命名空间</h2>
+<p><code>plugins/omo</code> 的聚合方式很有工程意味。各组件仍然各自独立放在 <code>components/</code> 下，但最终只通过一个 <code>omo</code> 插件导出。测试会检查组件目录列表是否只包含预期组件，检查聚合 manifest 是否仍然拥有 <code>omo</code> 命名空间，检查 hook 命令是否全部指向组件目录，而不是泄露成一堆外部插件名。</p>
+<p>这种聚合方式解决了两个问题。</p>
+<p>第一，安装体验简单。用户只需要启用一个插件，而不是逐个理解 rules、LSP、telemetry、comment checker、ultrawork、ulw-loop、start-work-continuation 之间的关系。</p>
+<p>第二，维护边界清楚。组件可以独立演进，聚合层只负责把它们装配到 Codex 的生命周期里。<code>plugins/omo/package.json</code> 的 build 流程也体现了这一点：先同步 hook 状态消息，构建 bundled MCP runtimes，同步 skills，同步 telemetry，再构建组件。</p>
+<h2 id="工作流从项目记忆到验证完成">工作流：从项目记忆到验证完成</h2>
+<p>LazyCodex 的工作流可以概括为四个支柱：<code>/init-deep</code>、<code>$ulw-plan</code>、<code>$start-work</code>、<code>$ulw-loop</code>。</p>
+<p><img src="/images/posts/lazycodex/lazycodex-command-workflow.png" alt="LazyCodex 工作流"></p>
+<p><code>/init-deep</code> 解决的是项目记忆问题。它不是让模型凭一轮浏览记住仓库，而是生成分层的 <code>AGENTS.md</code>。复杂目录会被打分，重要子目录会获得更靠近代码的本地说明，后续 agent 在编辑之前能先拿到结构、约定、入口、反模式和测试习惯。</p>
+<p><code>$ulw-plan</code> 解决的是规划问题。它被定义为 Prometheus 战略规划顾问，只负责探索、提问、分析和写计划，不直接改产品代码。它的关键约束是“先探索，再提问，再等待批准”。很多所谓需要问用户的问题，其实可以通过读代码、查配置、看测试和分析目录结构解决；只有探索后仍然无法决定的产品或安全边界，才应该交给用户确认。最终计划写到 <code>.omo/plans/&lt;slug&gt;.md</code>，供执行阶段消费。</p>
+<p><code>$start-work</code> 解决的是交付执行问题。它读取 <code>.omo/plans/</code> 下的计划，创建或恢复 <code>.omo/boulder.json</code> 中的 Boulder 状态，然后执行第一个未完成的顶层 checkbox。它要求每个任务都形成证据：计划复读、自动验证、手工 QA、对抗 QA、清理回执，并把事件写入 <code>.omo/start-work/ledger.jsonl</code>。这不是普通“按 todo 做事”，而是一套工程交付协议。</p>
+<p><code>$ulw-loop</code> 解决的是开放式任务的持续推进问题。它强调目标、成功标准、证据和 Oracle 验证。即便 agent 自认为完成，也不能直接结束；必须有独立验证确认，失败则继续循环。这种设计把“模型的完成声明”和“系统的完成判定”分开，是 LazyCodex 最重要的思想之一。</p>
+<h2 id="start-work-的核心boulder账本与独立验证">start-work 的核心：Boulder、账本与独立验证</h2>
+<p><code>$start-work</code> 值得单独看。它并不是把计划一次性塞给模型，然后希望模型自己保持纪律。它要求在实现开始前写入 <code>.omo/boulder.json</code>，并把 Codex session id 记录为 <code>codex:&lt;session_id&gt;</code>。Stop hook 会读取这个状态：如果当前 session 还有未完成计划，就返回 <code>decision: "block"</code>，把下一步继续执行的 directive 注入回 Codex。这样一来，跨轮次、跨停止点的续跑不再只依赖聊天上下文，而是依赖本地状态文件。</p>
+<p>计划执行时，每个 checkbox 还要形成 ledger。账本不是为了好看，而是为了抵抗几类常见失败：测试没真正跑、手工 QA 没留下 artifact、清理工作没完成、子任务自称完成但没有独立复核、通过日志只是误导性成功输出。<code>start-work</code> 的规则要求 worker 的 <code>DoneClaim</code> 只能算候选结果，必须经过独立上下文的 <code>AdversarialVerify</code>，只有 <code>confirmed</code> 才能让 checkbox 变成完成。</p>
+<p>这套机制成本很高，但目标也很明确：复杂代码库里的 AI Agent 不能只追求速度，还要追求可恢复、可审计和可复验。</p>
+<h2 id="生命周期-hooks让-codex-运行时变成受控流程">生命周期 Hooks：让 Codex 运行时变成受控流程</h2>
+<p>LazyCodex 的另一个关键点是 hooks。<code>plugins/omo/hooks/hooks.json</code> 按 Codex 生命周期注册了大量本地命令。</p>
+<p><img src="/images/posts/lazycodex/lazycodex-hook-lifecycle.png" alt="Codex 生命周期 Hook"></p>
+<p><code>SessionStart</code> 阶段会加载项目规则、记录匿名日活遥测，并在 startup 来源下检查自动更新。<code>UserPromptSubmit</code> 阶段会再次加载项目规则，检查是否触发 ultrawork directive，并处理 ulw-loop steering。<code>PreToolUse</code> 阶段会对 Bash 给出 Git Bash MCP 建议，并拦截带 <code>token_budget</code> 等额外字段的 <code>create_goal</code>，强制 goal 保持无限预算。<code>PostToolUse</code> 阶段会在 edit-like 工具之后运行 comment checker 和 LSP diagnostics，并在 <code>apply_patch</code> 后注入匹配文件的动态规则。<code>Stop</code> 和 <code>SubagentStop</code> 阶段会检查 start-work continuation，如果 Boulder 状态里还有未完成任务，就阻止结束并注入续跑指令。</p>
+<p>这套 hook 设计把 Codex 的“单轮对话”改造成了“有生命周期的执行环境”。项目规则不是一次性提示词；诊断不是事后人工补查；计划续跑不是用户手动催促；完成判断也不是一句“我完成了”。每个阶段都有本地组件介入。</p>
+<h2 id="功能模块图命令skillshooksmcp-与组件">功能模块图：命令、skills、hooks、MCP 与组件</h2>
+<p><img src="/images/posts/lazycodex/lazycodex-module-map.png" alt="LazyCodex 功能模块图"></p>
+<p>功能上，LazyCodex 至少由六组模块拼成。</p>
+<p>命令模块负责把常用工作流前置：<code>$ulw-plan</code> 规划，<code>$start-work</code> 执行计划，<code>$ulw-loop</code> 处理需要持续推进和验证的开放任务。</p>
+<p>项目记忆模块由 <code>/init-deep</code> 和 <code>rules</code> 共同承担。<code>init-deep</code> 生成分层 <code>AGENTS.md</code>，<code>rules</code> 则从 <code>CONTEXT.md</code>、<code>.omo/rules/**/*.md</code>、<code>.claude/rules/**/*.md</code>、<code>.cursor/rules/**/*.md</code>、GitHub instructions 等来源加载静态或动态规则，并通过 hookSpecificOutput 注入上下文。</p>
+<p>专业 skills 模块覆盖审查、去 AI 味重构、前端 UI、严格编程规范、调试、LSP、git-master、visual QA 等任务。它把“模型应该怎么做某类工程工作”写成可复用的局部操作手册。</p>
+<p>hooks 模块负责把这些能力挂到 Codex 生命周期里。它不是文档层建议，而是实际运行本地 CLI：rules、lsp、comment-checker、telemetry、ultrawork、ulw-loop、start-work-continuation、git-bash 都以组件形式被调用。</p>
+<p>MCP 模块把外部能力接进来。<code>.mcp.json</code> 声明了 <code>ast_grep</code>、<code>grep_app</code>、<code>context7</code>、<code>git_bash</code>、<code>lsp</code> 等 server。这里需要注意一个工程边界：配置里出现了 <code>components/ast-grep-mcp</code> 和 <code>components/git-bash-mcp</code> 之类路径，而当前聚合组件目录中主要可见的是 <code>git-bash</code> 与 <code>lsp</code> 等封装组件；这说明 LazyCodex 的发行面依赖 build/sync 过程生成或装配部分 runtime，而不能只按静态文件名做最终判断。</p>
+<p>支撑模块包括测试、模型目录、文档站和隐私说明。<code>model-catalog.json</code> 保存当前和历史 managed profile；<code>migrate-codex-config.mjs</code> 会在配置为空、匹配当前托管状态或匹配历史托管 profile 时写入模型配置，但如果检测到用户已修改，则不会强行覆盖。文档站位于 <code>packages/web</code>，使用 Next.js 15、React 19、Cloudflare Workers 相关工具链，并通过脚本生成 docs content。</p>
+<h2 id="质量控制测试保护的是产品边界">质量控制：测试保护的是产品边界</h2>
+<p>LazyCodex 的测试并不是只测函数返回值，也在保护产品边界。</p>
+<p>根目录测试保护 npm 包名、版本、bin 映射、publish workflow 默认版本、dry-run 命令改写。<code>plugins/omo/test</code> 则保护聚合 manifest、hooks、skills 同步、MCP 配置、hook 状态消息、自动更新注册、组件目录边界等。尤其是 hooks 测试会检查每个 command hook 都有面向用户的 statusMessage，并避免出现过于泛化的 “hook runner” 标签。</p>
+<p>这些测试透露出项目作者对发行体验的重视：一个本地 agent harness 如果安装后行为不可见，用户会很难信任；如果组件边界混乱，后续维护会迅速失控；如果 hook 状态消息不可读，用户只会看到一堆莫名其妙的后台命令。</p>
+<h2 id="隐私自动更新与模型配置">隐私、自动更新与模型配置</h2>
+<p>LazyCodex 的隐私边界需要分开看。</p>
+<p><code>rules</code>、<code>comment-checker</code>、<code>lsp</code> 等组件主要在本地运行。<code>rules</code> 读取本地规则文件和 hook payload，写入去重状态，不主动发网络请求。<code>comment-checker</code> 在本地可用时调用本地 checker binary，不自行调用网络服务。</p>
+<p><code>telemetry</code> 是例外。它会在 <code>SessionStart</code> 发送匿名日活事件到 PostHog，每台机器每天 UTC 最多一次。实现里使用 <code>sha256("omo-codex:" + hostname)</code> 作为 distinct id，不发送原始 hostname，也声明不会发送 prompt、transcript、源码、路径、token、API key、用户名或邮箱。它提供 <code>OMO_CODEX_DISABLE_POSTHOG=1</code>、<code>OMO_CODEX_SEND_ANONYMOUS_TELEMETRY=0</code> 等 opt-out 环境变量。对本地开发工具来说，这种遥测应该被清楚标注，LazyCodex 至少在 README 和 telemetry README 中给出了披露与关闭方式。</p>
+<p>自动更新也值得关注。<code>auto-update.mjs</code> 默认每 24 小时检查一次 <code>lazycodex-ai</code> 最新版本，失败重试间隔默认 30 分钟，实际更新命令是：</p>
+<pre><code class="language-bash">npx --yes lazycodex-ai@latest install --no-tui --codex-autonomous
+</code></pre>
+<p>它会通过 lock 和 state 文件避免频繁重复执行，也提供 <code>LAZYCODEX_AUTO_UPDATE_DISABLED=1</code> 或 <code>OMO_CODEX_AUTO_UPDATE_DISABLED=1</code> 关闭。对追求稳定环境的开发者来说，自动更新是便利也是风险；它适合保持 harness 新鲜，但在生产型工作站上最好明确知道它何时会动配置。</p>
+<p>模型配置迁移同样是双刃剑。<code>migrate-codex-config.mjs</code> 会读取 <code>model-catalog.json</code>，在配置为空或处于 LazyCodex 认可的 managed profile 时写入当前模型、上下文窗口和 reasoning effort。它对“用户已修改配置”的情况会保持克制，不强行覆盖。这个策略比无条件改配置安全，但仍然意味着安装 LazyCodex 后，Codex 的模型配置可能进入一个由 LazyCodex 管理的状态。</p>
+<h2 id="适合什么场景">适合什么场景</h2>
+<p>LazyCodex 最适合复杂代码库里的长任务：需要先理解仓库结构，需要明确计划，需要拆分执行，需要测试和手工 QA，需要跨轮次续跑，需要独立审查，需要把证据留在本地文件系统里。比如大型重构、跨模块功能、长期遗留仓库梳理、开源贡献准备、需要对抗验证的用户可见变更。</p>
+<p>它不适合所有任务。一个很小的单文件改动，如果也完整走 <code>/init-deep -&gt; ulw-plan -&gt; start-work -&gt; adversarial verify</code>，成本会明显过高。LazyCodex 的强项不是“让简单任务更快”，而是“让复杂任务不那么容易失控”。</p>
+<h2 id="总结">总结</h2>
+<p>LazyCodex 的核心价值可以用一句话概括：把 Codex 的 agent 能力从聊天界面提升为工程流程。</p>
+<p>它通过轻量 npm 别名降低安装门槛，通过 <code>omo</code> 聚合插件统一暴露 skills、hooks 和 MCP，通过 <code>/init-deep</code> 建立项目记忆，通过 <code>$ulw-plan</code> 把模糊目标变成决策完整的计划，通过 <code>$start-work</code> 用 Boulder 状态和 ledger 支撑执行，通过 <code>$ulw-loop</code> 和 Oracle-style 验证约束完成声明，再通过 LSP、comment checker、rules、telemetry、auto-update、model catalog 等组件补齐运行时体验。</p>
+<p>这不是一套轻工具，而是一套有强约束的 agent harness。它的代价是流程重、token 消耗大、安装后介入面广；它的收益是复杂任务可恢复、可审计、可验证。对于真正依赖 AI Agent 做工程交付的人来说，这种“慢一点但留下证据”的方向，反而更接近长期可用的工作台。</p>
+<h2 id="源码索引">源码索引</h2>
+<ul>
+<li><a href="https://github.com/code-yeongyu/lazycodex">code-yeongyu/lazycodex</a></li>
+<li><a href="https://github.com/code-yeongyu/lazycodex/blob/main/.gitmodules">oh-my-openagent 子模块声明</a></li>
+<li><a href="https://github.com/code-yeongyu/lazycodex/blob/main/bin/lazycodex-ai.js">lazycodex-ai 入口</a></li>
+<li><a href="https://github.com/code-yeongyu/lazycodex/blob/main/plugins/omo/.codex-plugin/plugin.json">OmO Codex 插件 manifest</a></li>
+<li><a href="https://github.com/code-yeongyu/lazycodex/blob/main/plugins/omo/hooks/hooks.json">OmO hooks 配置</a></li>
+<li><a href="https://lazycodex.ai">LazyCodex 文档站</a></li>
+</ul>
+<hr id="EOF"><p class="last-modified">最后整理于 2026-06-07</p></div></div>
+      <nav class="post-pagination">
+        <a class="newer-posts" href="/blog/2026/gaojingqi-investment-system/">下一篇<br>高景气投资体系与逻辑</a>
+        <a class="older-posts" href="/blog/2026/financial-freedom-road/">上一篇<br>财富自由之路</a>
+      </nav>
+    </article>
+  </div>
+      </div>
+    </div>
+    <div id="sideContainer" class="side-container">
+      <a class="a-block nav-head false" href="/">
+        <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
+        <div class="nav-title">zcxGGmu's Blog</div>
+        <div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+      </a>
+      <div class="theme-switcher theme-switcher-desktop"><button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div>
+      <div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+      <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+    </div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#一个薄入口背后一套-harness">一个薄入口，背后一套 Harness</a><a class="toc-link toc-level-2" href="#仓库结构">仓库结构</a><a class="toc-link toc-level-2" href="#聚合插件把分散能力收进一个命名空间">聚合插件：把分散能力收进一个命名空间</a><a class="toc-link toc-level-2" href="#工作流从项目记忆到验证完成">工作流：从项目记忆到验证完成</a><a class="toc-link toc-level-2" href="#start-work-的核心boulder账本与独立验证">start-work 的核心：Boulder、账本与独立验证</a><a class="toc-link toc-level-2" href="#生命周期-hooks让-codex-运行时变成受控流程">生命周期 Hooks：让 Codex 运行时变成受控流程</a><a class="toc-link toc-level-2" href="#功能模块图命令skillshooksmcp-与组件">功能模块图：命令、skills、hooks、MCP 与组件</a><a class="toc-link toc-level-2" href="#质量控制测试保护的是产品边界">质量控制：测试保护的是产品边界</a><a class="toc-link toc-level-2" href="#隐私自动更新与模型配置">隐私、自动更新与模型配置</a><a class="toc-link toc-level-2" href="#适合什么场景">适合什么场景</a><a class="toc-link toc-level-2" href="#总结">总结</a><a class="toc-link toc-level-2" href="#源码索引">源码索引</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    
+    <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+  </div>
+  <script src="/js/journal.js"></script>
+  <script src="/js/code-enhance.js"></script>
+  <script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+  <script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+  <script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
