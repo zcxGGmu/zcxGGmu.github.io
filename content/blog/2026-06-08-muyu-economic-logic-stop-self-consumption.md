@@ -15,11 +15,11 @@ tags:
   - "产业政策"
 series:
   - "中国经济"
-featured_image: "/images/posts/muyu-economic-logic/muyu-economic-logic-cover.jpg"
+featured_image: "/images/posts/muyu-economic-logic/muyu-economic-logic-cover-v2.png"
 pinned: false
 ---
 
-![经济逻辑封面](/images/posts/muyu-economic-logic/muyu-economic-logic-cover.jpg)
+![经济逻辑封面](/images/posts/muyu-economic-logic/muyu-economic-logic-cover-v2.png)
 
 房价下跌，到底应该开心还是难过？同样是一平米土地，为什么北京可以卖到数万元，鹤岗却可能只有几百元？为什么一个城市拼命招商引资、修路建园区、补贴企业，最后普通人的体感却常常是房贷更重、通勤更长、工作更卷？
 
