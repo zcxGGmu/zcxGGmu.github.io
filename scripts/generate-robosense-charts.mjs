@@ -446,6 +446,97 @@ function valuationScenarios() {
   );
 }
 
+function cellLines(x, y, lines, opts = {}) {
+  const { lineHeight = 23, size = 17, weight = 600, color = C.ink } = opts;
+  return lines.map((lineText, i) => text(x, y + i * lineHeight, lineText, { size, weight, color })).join("\n");
+}
+
+function productMoatMatrix() {
+  const rows = [
+    {
+      product: "EM4",
+      color: C.teal,
+      role: ["高阶 ADAS /", "Robotaxi 主雷达"],
+      specs: ["2160-beam；600m 最远测距", "SPAD-SoC；60% 数据压缩"],
+      commercial: ["2025Q4 大规模交付", "Robotaxi EM4+E1 方案"],
+      read: ["高性能旗舰，验证技术上限", "但收入弹性取决于高端车型"]
+    },
+    {
+      product: "EMX",
+      color: C.blue,
+      role: ["主流 ADAS", "前向主雷达"],
+      specs: ["192-beam；300m 最远测距", "20Hz；120×80×30mm"],
+      commercial: ["2025 年内投产", "2026Q1 初期量产影响毛利"],
+      read: ["承担中高配车型放量", "良率爬坡决定毛利修复"]
+    },
+    {
+      product: "MX",
+      color: C.green,
+      role: ["低成本", "中距车载雷达"],
+      specs: ["25mm；<10W；200m", "M-Core SoC；ROI 251 线"],
+      commercial: ["低价 MX 占比提升", "推动 ADAS ASP 下行"],
+      read: ["打开 15-20 万元车渗透", "也加剧价格战压力"]
+    },
+    {
+      product: "E1 / E1R",
+      color: C.amber,
+      role: ["车载补盲 /", "机器人导航"],
+      specs: ["120°×90°；75m / 30m@10%", "全固态；SoC 集成感知"],
+      commercial: ["E 平台交付 >30 万台", "割草机器人/Robotaxi 使用"],
+      read: ["平台复用价值高", "是车规能力外溢到机器人"]
+    },
+    {
+      product: "Airy / Fairy",
+      color: C.purple,
+      role: ["机器人", "广域感知"],
+      specs: ["Airy 360°×90°；30m@10%", "Fairy 150m；0.5cm 精度"],
+      commercial: ["Airy Lite 2025Q4 交付", "机器人出货 2025 年 30.3 万台"],
+      read: ["支撑第二曲线", "需验证复购与 ASP 稳定"]
+    },
+    {
+      product: "AC2",
+      color: C.red,
+      role: ["具身智能", "操作视觉"],
+      specs: ["dToF + 双目 RGB + IMU", "±5mm；0.05-8m；<1ms"],
+      commercial: ["欧洲人形机器人批量订单", "仍处早期放量"],
+      read: ["从雷达到机器人视觉", "早期产品，需看规模收入"]
+    }
+  ];
+  let body = text(92, 206, "产品不是孤立 SKU，而是车载高阶化、低成本普及和机器人第二曲线的载体。", { size: 24, weight: 700 });
+  const cols = [
+    { label: "产品", x: 94, w: 112 },
+    { label: "定位", x: 220, w: 190 },
+    { label: "公开参数/技术特征", x: 428, w: 300 },
+    { label: "商业化信号", x: 752, w: 235 },
+    { label: "投资含义", x: 1010, w: 270 }
+  ];
+  const tableX = 82;
+  const tableY = 242;
+  const rowH = 70;
+  body += rect(tableX, tableY, 1218, 46, C.dark, { rx: 16 });
+  cols.forEach((col) => {
+    body += text(col.x, tableY + 31, col.label, { size: 18, weight: 800, color: "#ffffff" });
+  });
+  rows.forEach((row, i) => {
+    const y = tableY + 46 + i * rowH;
+    body += rect(tableX, y, 1218, rowH, i % 2 === 0 ? "#ffffff" : "#f2f6f0", { rx: i === rows.length - 1 ? 16 : 0, stroke: "#dbe5df", sw: 1 });
+    body += rect(94, y + 16, 88, 38, row.color, { rx: 12 });
+    body += text(138, y + 42, row.product, { size: 19, weight: 900, color: "#ffffff", anchor: "middle" });
+    body += cellLines(220, y + 27, row.role, { size: 16, lineHeight: 22, color: C.ink, weight: 700 });
+    body += cellLines(428, y + 27, row.specs, { size: 16, lineHeight: 22, color: C.ink, weight: 700 });
+    body += cellLines(752, y + 27, row.commercial, { size: 16, lineHeight: 22, color: C.muted, weight: 700 });
+    body += cellLines(1010, y + 27, row.read, { size: 16, lineHeight: 22, color: C.ink, weight: 700 });
+  });
+  body += rect(100, 725, 1180, 40, "#ffffff", { rx: 14, stroke: "#dbe5df", sw: 1 });
+  body += text(126, 751, "读法：产品矩阵越丰富，越能覆盖车企与机器人客户；但护城河最终由成本、良率、SOP 转化和现金流验证。", { size: 19, weight: 800, color: C.ink });
+  return base(
+    "速腾聚创热门产品矩阵与投资含义",
+    "公司披露参数与商业化信号整理；产品性能陈述不等于独立验证结论",
+    body,
+    "数据来源：RoboSense 产品页、2025 年报/业绩公告、2026Q1 公告；作者整理"
+  );
+}
+
 async function main() {
   await fs.mkdir(outDir, { recursive: true });
   const charts = {
@@ -454,6 +545,7 @@ async function main() {
     "robosense-shipments-asp.svg": shipmentsAsp(),
     "robosense-profitability-cash.svg": profitabilityCash(),
     "robosense-customers-orders.svg": customersOrders(),
+    "robosense-product-moat-matrix.svg": productMoatMatrix(),
     "robosense-valuation-scenarios.svg": valuationScenarios()
   };
   await Promise.all(Object.entries(charts).map(([name, svg]) => fs.writeFile(path.join(outDir, name), svg, "utf8")));
