@@ -27,17 +27,17 @@
   <rect width="100%" height="100%" fill="#020617"/>
   <rect width="100%" height="100%" fill="url(#grid)"/>
 
-  <text x="500" y="40" fill="url(#header-grad)" font-family="monospace" font-size="18" font-weight="700" text-anchor="middle">Codex CLI — Architecture</text>
-  <text x="500" y="58" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">Single-agent, Cloud-model, Local-execution Coding Tool</text>
+  <text x="500" y="40" fill="url(#header-grad)" font-family="monospace" font-size="18" font-weight="700" text-anchor="middle">Codex App — Architecture</text>
+  <text x="500" y="58" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">Desktop coding workbench with local, worktree, and cloud threads</text>
 
   <!-- User Layer -->
   <rect x="50" y="90" width="120" height="70" rx="8" fill="rgba(30,41,59,0.5)" stroke="#94a3b8" stroke-width="1.5"/>
   <text x="110" y="118" fill="white" font-family="monospace" font-size="12" font-weight="600" text-anchor="middle">Developer</text>
-  <text x="110" y="138" fill="#94a3b8" font-family="monospace" font-size="9" text-anchor="middle">Terminal / IDE / Web</text>
+  <text x="110" y="138" fill="#94a3b8" font-family="monospace" font-size="9" text-anchor="middle">Desktop / IDE / Cloud</text>
 
   <!-- Codex Core Boundary -->
   <rect x="220" y="80" width="740" height="590" rx="12" fill="rgba(34,211,238,0.03)" stroke="#22d3ee" stroke-width="1" stroke-dasharray="8,4"/>
-  <text x="235" y="100" fill="#22d3ee" font-family="monospace" font-size="10" font-weight="600">Codex CLI Runtime (Local)</text>
+  <text x="235" y="100" fill="#22d3ee" font-family="monospace" font-size="10" font-weight="600">Codex App Runtime (Local / Worktree)</text>
 
   <!-- Config Layer -->
   <rect x="250" y="120" width="330" height="50" rx="6" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1.5"/>
@@ -64,25 +64,25 @@
   <text x="415" y="482" fill="white" font-family="monospace" font-size="11" font-weight="600" text-anchor="middle">MCP Server Integration</text>
   <text x="415" y="500" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">Web Search · External APIs · Custom Tools</text>
 
-  <!-- OpenAI Cloud -->
+  <!-- Model / Cloud -->
   <rect x="650" y="120" width="280" height="400" rx="12" fill="rgba(251,191,36,0.05)" stroke="#fbbf24" stroke-width="1" stroke-dasharray="8,4"/>
-  <text x="662" y="140" fill="#fbbf24" font-family="monospace" font-size="10" font-weight="600">OpenAI Cloud</text>
+  <text x="662" y="140" fill="#fbbf24" font-family="monospace" font-size="10" font-weight="600">Model Providers / Codex Cloud</text>
 
   <!-- Model -->
   <rect x="680" y="165" width="220" height="70" rx="6" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="790" y="190" fill="white" font-family="monospace" font-size="12" font-weight="700" text-anchor="middle">GPT-4o / o4-mini</text>
-  <text x="790" y="210" fill="#94a3b8" font-family="monospace" font-size="9" text-anchor="middle">OpenAI API · ChatGPT Plan</text>
-  <text x="790" y="226" fill="#fbbf24" font-family="monospace" font-size="7" text-anchor="middle">Single Provider</text>
+  <text x="790" y="190" fill="white" font-family="monospace" font-size="12" font-weight="700" text-anchor="middle">gpt-5.5 / gpt-5.4</text>
+  <text x="790" y="210" fill="#94a3b8" font-family="monospace" font-size="9" text-anchor="middle">Recommended Codex models</text>
+  <text x="790" y="226" fill="#fbbf24" font-family="monospace" font-size="7" text-anchor="middle">Local can use compatible providers</text>
 
   <!-- API Gateway -->
   <rect x="680" y="270" width="220" height="50" rx="6" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
   <text x="790" y="292" fill="white" font-family="monospace" font-size="11" font-weight="600" text-anchor="middle">API Gateway</text>
-  <text x="790" y="308" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">Chat Completions · Streaming</text>
+  <text x="790" y="308" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">Responses · Chat Completions</text>
 
   <!-- Codex Web -->
   <rect x="680" y="355" width="220" height="50" rx="6" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="790" y="377" fill="white" font-family="monospace" font-size="11" font-weight="600" text-anchor="middle">Codex Web (Cloud Agent)</text>
-  <text x="790" y="393" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">chatgpt.com/codex</text>
+  <text x="790" y="377" fill="white" font-family="monospace" font-size="11" font-weight="600" text-anchor="middle">Codex Cloud Tasks</text>
+  <text x="790" y="393" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">Default model not user-set</text>
 
   <!-- Subagents -->
   <rect x="680" y="435" width="220" height="50" rx="6" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.5"/>
@@ -114,9 +114,9 @@
   <!-- Key Insight -->
   <rect x="50" y="555" width="500" height="85" rx="6" fill="rgba(15,23,42,0.8)" stroke="#1e293b" stroke-width="1"/>
   <text x="70" y="578" fill="#22d3ee" font-family="monospace" font-size="10" font-weight="600">Key Insight</text>
-  <text x="70" y="596" fill="#94a3b8" font-family="monospace" font-size="9">Single cloud model provider (OpenAI). Agent loop runs locally, model runs remotely.</text>
-  <text x="70" y="612" fill="#64748b" font-family="monospace" font-size="8">Focused on coding — no multi-platform messaging, no persistent cross-session memory.</text>
-  <text x="70" y="628" fill="#64748b" font-family="monospace" font-size="8">Best for: Focused coding tasks with fast iteration. Tightly coupled to OpenAI ecosystem.</text>
+  <text x="70" y="596" fill="#94a3b8" font-family="monospace" font-size="9">Project-focused threads with deep Git, terminal, browser, and review tooling.</text>
+  <text x="70" y="612" fill="#64748b" font-family="monospace" font-size="8">Automations run in App context; project tasks need powered-on local machine.</text>
+  <text x="70" y="628" fill="#64748b" font-family="monospace" font-size="8">Not a general public webhook gateway or cross-platform messaging bot.</text>
 
   <!-- Legend -->
   <rect x="600" y="555" width="16" height="10" rx="2" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1"/>

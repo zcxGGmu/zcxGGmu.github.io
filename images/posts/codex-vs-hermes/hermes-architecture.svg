@@ -28,7 +28,7 @@
   <rect width="100%" height="100%" fill="url(#grid)"/>
 
   <text x="550" y="35" fill="url(#hermes-grad)" font-family="monospace" font-size="18" font-weight="700" text-anchor="middle">Hermes Agent — Architecture</text>
-  <text x="550" y="53" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">Multi-provider, Multi-platform, Self-improving AI Agent Framework</text>
+  <text x="550" y="53" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">Always-on, multi-provider, multi-platform AI agent system</text>
 
   <!-- Entry Points -->
   <rect x="30" y="75" width="1040" height="55" rx="8" fill="rgba(15,23,42,0.5)" stroke="#1e293b" stroke-width="1"/>
@@ -41,7 +41,7 @@
   <text x="285" y="114" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Messaging Gateway</text>
 
   <rect x="380" y="100" width="130" height="22" rx="4" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1"/>
-  <text x="445" y="114" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">ACP Adapter</text>
+  <text x="445" y="114" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Desktop App</text>
 
   <rect x="530" y="100" width="120" height="22" rx="4" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1"/>
   <text x="590" y="114" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Cron Scheduler</text>
@@ -50,7 +50,7 @@
   <text x="730" y="114" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">API Server</text>
 
   <rect x="810" y="100" width="130" height="22" rx="4" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1"/>
-  <text x="875" y="114" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Python Library</text>
+  <text x="875" y="114" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">RPC / Python</text>
 
   <!-- Platform Layer -->
   <rect x="30" y="155" width="340" height="90" rx="8" fill="rgba(30,41,59,0.5)" stroke="#94a3b8" stroke-width="1.5"/>
@@ -103,13 +103,13 @@
   <text x="425" y="178" fill="#fbbf24" font-family="monospace" font-size="10" font-weight="600">Provider Hub (Any LLM)</text>
 
   <rect x="430" y="195" width="260" height="30" rx="5" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.2"/>
-  <text x="560" y="215" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">OpenAI · Anthropic · DeepSeek</text>
+  <text x="560" y="215" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Nous Portal · OpenRouter · OpenAI</text>
 
   <rect x="430" y="235" width="260" height="30" rx="5" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.2"/>
-  <text x="560" y="255" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Google · xAI · Groq · Mistral</text>
+  <text x="560" y="255" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">NovitaAI · NVIDIA NIM · GLM</text>
 
   <rect x="430" y="275" width="260" height="30" rx="5" fill="rgba(120,53,15,0.3)" stroke="#fbbf24" stroke-width="1.2"/>
-  <text x="560" y="295" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">OpenRouter · Nous Portal</text>
+  <text x="560" y="295" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Moonshot · MiniMax · Custom endpoint</text>
 
   <rect x="430" y="315" width="260" height="30" rx="5" fill="rgba(30,41,59,0.5)" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
   <text x="560" y="335" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">Local: llama.cpp · vLLM · Ollama</text>
@@ -163,10 +163,10 @@
   <rect x="760" y="485" width="290" height="25" rx="4" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1"/>
   <text x="905" y="502" fill="white" font-family="monospace" font-size="8" text-anchor="middle">Home Assistant · Kanban · Obsidian · OCR</text>
 
-  <!-- Memory DB -->
+  <!-- Memory -->
   <rect x="760" y="525" width="290" height="40" rx="4" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1.2"/>
-  <text x="905" y="543" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Memory DB · Session Search (FTS5)</text>
-  <text x="905" y="558" fill="#94a3b8" font-family="monospace" font-size="7" text-anchor="middle">Cross-session persistence · Self-recall</text>
+  <text x="905" y="543" fill="white" font-family="monospace" font-size="9" font-weight="600" text-anchor="middle">Memory Files · Session Search</text>
+  <text x="905" y="558" fill="#94a3b8" font-family="monospace" font-size="7" text-anchor="middle">MEMORY.md · USER.md · FTS5 recall</text>
 
   <!-- Cross-session Learning -->
   <rect x="760" y="578" width="290" height="25" rx="4" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1.2"/>
@@ -188,11 +188,11 @@
   <!-- Key Insight -->
   <rect x="30" y="475" width="340" height="150" rx="6" fill="rgba(15,23,42,0.8)" stroke="#1e293b" stroke-width="1"/>
   <text x="50" y="498" fill="#a78bfa" font-family="monospace" font-size="10" font-weight="600">Key Differentiators</text>
-  <text x="50" y="518" fill="#94a3b8" font-family="monospace" font-size="8">- Any LLM provider (model freedom)</text>
+  <text x="50" y="518" fill="#94a3b8" font-family="monospace" font-size="8">- Provider routing and custom endpoints</text>
   <text x="50" y="535" fill="#94a3b8" font-family="monospace" font-size="8">- Multi-platform messaging (Discord, TG, Slack...)</text>
   <text x="50" y="552" fill="#94a3b8" font-family="monospace" font-size="8">- Self-improving Skills (procedural memory)</text>
-  <text x="50" y="569" fill="#94a3b8" font-family="monospace" font-size="8">- Cross-session persistent Memory + FTS5</text>
-  <text x="50" y="586" fill="#94a3b8" font-family="monospace" font-size="8">- Cron scheduler (autonomous periodic tasks)</text>
+  <text x="50" y="569" fill="#94a3b8" font-family="monospace" font-size="8">- Bounded memory files + session search</text>
+  <text x="50" y="586" fill="#94a3b8" font-family="monospace" font-size="8">- Cron where the gateway daemon runs</text>
   <text x="50" y="603" fill="#94a3b8" font-family="monospace" font-size="8">- Subagent delegation + Orchestration</text>
   <text x="50" y="620" fill="#94a3b8" font-family="monospace" font-size="8">- Nous Portal (unified tool subscriptions)</text>
 

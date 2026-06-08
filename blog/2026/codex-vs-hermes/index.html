@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="generator" content="Custom static archive">
   <title>Codex 那么全能，为什么还需要 Hermes？ - zcxGGmu's Blog</title>
-  <meta name="description" content="Codex 是 OpenAI 的全能编码 Agent，Hermes 是 Nous Research 的自进化 AI 框架。它们的竞争不在功能数量上，而在架构哲学的根本分野：Cloud-first vs Local-first，Single-provider vs Multi-provider，Session-bound vs Cross-session。这篇文章从架构图出发，深入分析两种 Agent 的设计选择及其适用边界。">
+  <meta name="description" content="Codex App 是 OpenAI 面向本地/云端编码线程的高强度工作台，Hermes Agent 是 Nous Research 的开源常驻 Agent 系统。两者的关键差异不在功能数量，而在运行边界、自动化入口、消息交付、模型治理和长期记忆。本文修正若干常见误解，并用 GitHub PR 自动审查机器人说明 Hermes 能完成而 Codex App 很难独立完成的复杂场景。">
   <meta name="author" content="zcxGGmu">
   <meta name="theme-color" content="#f8fafc">
   <meta property="og:url" content="https://zcxggmu.github.io/blog/2026/codex-vs-hermes/">
   <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
   <meta property="og:title" content="Codex 那么全能，为什么还需要 Hermes？">
-  <meta property="og:description" content="Codex 是 OpenAI 的全能编码 Agent，Hermes 是 Nous Research 的自进化 AI 框架。它们的竞争不在功能数量上，而在架构哲学的根本分野：Cloud-first vs Local-first，Single-provider vs Multi-provider，Session-bound vs Cross-session。这篇文章从架构图出发，深入分析两种 Agent 的设计选择及其适用边界。">
+  <meta property="og:description" content="Codex App 是 OpenAI 面向本地/云端编码线程的高强度工作台，Hermes Agent 是 Nous Research 的开源常驻 Agent 系统。两者的关键差异不在功能数量，而在运行边界、自动化入口、消息交付、模型治理和长期记忆。本文修正若干常见误解，并用 GitHub PR 自动审查机器人说明 Hermes 能完成而 Codex App 很难独立完成的复杂场景。">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
@@ -68,44 +68,45 @@
     <article class="post">
       <div class="post-head-wrapper" style="background-image:url('/images/posts/codex-vs-hermes/codex-vs-hermes-cover.png')">
         <div class="post-title">Codex 那么全能，为什么还需要 Hermes？
-          <div class="post-subtitle">Codex 是 OpenAI 的全能编码 Agent，Hermes 是 Nous Research 的自进化 AI 框架。它们的竞争不在功能数量上，而在架构哲学的根本分野：Cloud-first vs Local-first，Single-provider vs Multi-provider，Session-bound vs Cross-session。这篇文章从架构图出发，深入分析两种 Agent 的设计选择及其适用边界。</div>
-          <div class="post-meta"><time itemprop="datePublished">2026-06-08</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI/">AI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Codex/">Codex</a>&nbsp;<a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">架构分析</a>&nbsp;<a href="/tags/Claw%20Code/">Claw Code</a>&nbsp;<a href="/tags/OpenAI/">OpenAI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 10 min</div>
+          <div class="post-subtitle">Codex App 是 OpenAI 面向本地/云端编码线程的高强度工作台，Hermes Agent 是 Nous Research 的开源常驻 Agent 系统。两者的关键差异不在功能数量，而在运行边界、自动化入口、消息交付、模型治理和长期记忆。本文修正若干常见误解，并用 GitHub PR 自动审查机器人说明 Hermes 能完成而 Codex App 很难独立完成的复杂场景。</div>
+          <div class="post-meta"><time itemprop="datePublished">2026-06-08</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI/">AI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Codex/">Codex</a>&nbsp;<a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">架构分析</a>&nbsp;<a href="/tags/Claw%20Code/">Claw Code</a>&nbsp;<a href="/tags/OpenAI/">OpenAI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 9 min</div>
         </div>
       </div>
-      <div class="post-body-wrapper"><div class="post-body" v-pre><p>Codex App 发布后，一个很自然的质疑是：当 OpenAI 已经做出了一个可以在桌面端自主编码、读文件、跑命令、设置定时任务、甚至调用子 Agent 的工具，为什么还需要另一个 Agent 框架？</p>
-<p>简单回答：<strong>Codex 解决的是"怎么让 AI 帮你写代码"，Hermes 解决的是"怎么让 AI 成为一个持续的工程伙伴"。</strong></p>
-<p>这句话隐藏着两类 Agent 在架构哲学上的根本分歧。下面我们从架构图出发，逐步展开。</p>
-<h2 id="一系统架构对比">一、系统架构对比</h2>
-<p>本文的对比对象是 <strong>Codex App</strong>（OpenAI 的桌面编码 Agent，包含 CLI、IDE 扩展和 Web 端）与 <strong>Hermes Agent</strong>（Nous Research 的开源自进化 Agent 框架）。Codex App 是目前 Codex 产品线中最完整的产品形态，支持 Automations（定时任务）、Worktrees、Review、Computer Use 等功能。</p>
-<h3 id="codex-app深度编码体验-项目级自动化">Codex App：深度编码体验 + 项目级自动化</h3>
+      <div class="post-body-wrapper"><div class="post-body" v-pre><p>Codex App 发布后，一个很自然的问题是：OpenAI 已经把桌面编码、文件编辑、终端、Git、Worktree、Automations、MCP、Computer Use、Browser、Skills 都做到一个产品里了，为什么还需要 Hermes 这样的 Agent 框架？</p>
+<p>更准确的回答不是“谁更强”，而是：</p>
+<p><strong>Codex App 是一个面向代码仓库的高强度 Agent 工作台；Hermes Agent 是一个可以常驻、跨平台、跨模型、可沉淀记忆和技能的 Agent 系统。</strong></p>
+<p>截至 2026-06-08，这个判断需要先修正几个常见误解：</p>
+<ul>
+<li>Codex App 不是整个 Codex 产品线。Codex 还包括 CLI、IDE Extension、Cloud、SDK 等形态；本文主要比较桌面端 Codex App 与 Hermes Agent。</li>
+<li>Codex 不是完全不能换模型。本地 Codex 可以指向支持 Chat Completions 或 Responses API 的模型/供应商；但 Codex Cloud 当前不能改默认模型，OpenAI 推荐模型仍是最完整的一等体验。</li>
+<li>Codex 不是“关闭就一切归零”。Codex 有 threads、thread automations，以及可用时的 Memories；只是它的长期记忆和消息网关不是 Hermes 那种显式的常驻系统。</li>
+<li>Hermes 也不是只有终端。Hermes 已经有 CLI、Messaging Gateway、Cron、Web/Dashboard 以及 native desktop app；但它的核心仍是 gateway/daemon 形态，而不是单一桌面应用。</li>
+</ul>
+<h2 id="一系统边界先说清楚">一、系统边界先说清楚</h2>
+<h3 id="codex-app项目内编码线程和本地自动化">Codex App：项目内编码线程和本地自动化</h3>
 <p><img src="/images/posts/codex-vs-hermes/codex-architecture.png" alt="Codex 架构图"></p>
-<p>Codex App 的架构可以用一句话概括：<strong>本地 Agent Runtime + 远程 OpenAI 模型 + 项目级自动化</strong>。它运行在你的机器上，负责读取配置、加载 AGENTS.md、管理工具调度（Shell、文件系统、Git、MCP、Computer Use），每一次推理通过 HTTPS 调用 OpenAI API。</p>
-<p>这个设计的核心特征：</p>
-<ol>
-<li><strong>单一模型供应商</strong> — 必须使用 OpenAI 的模型（GPT-4o、o4-mini 等），通过 ChatGPT 订阅或 API Key 接入。没有切换模型的自由。</li>
-<li><strong>会话级状态</strong> — Codex 的一次对话是自包含的。关闭 App，会话结束。没有跨会话的持久记忆。</li>
-<li><strong>工具围绕代码展开</strong> — Shell、文件编辑、Git、沙箱执行、MCP、Computer Use。所有工具都为编码场景优化。</li>
-<li><strong>Automations（定时任务）</strong> — Codex App 支持通过 cron 表达式设置定时任务，结果发送到 Inbox。但要求 Codex App 保持运行、机器开机、项目在磁盘上可用。支持 Worktree 隔离。</li>
-<li><strong>Subagent 横向扩展</strong> — 支持子 Agent 并行执行任务，共享同一模型和工具集。</li>
-</ol>
-<h3 id="hermes-agent多模型多平台自进化的-agent-系统">Hermes Agent：多模型、多平台、自进化的 Agent 系统</h3>
+<p>OpenAI 文档把 Codex App 定义为一个“focused desktop experience”，用来并行处理 Codex threads。它的核心能力是围绕本地项目和 Git 仓库组织起来的：</p>
+<ul>
+<li><strong>线程模式</strong>：Local、Worktree、Cloud。Local/Worktree 在你的电脑上运行，Cloud 在配置好的远程环境中运行。</li>
+<li><strong>编码工具链</strong>：文件读写、Shell/PowerShell、Git diff/commit/push/PR、集成终端、沙箱和审批。</li>
+<li><strong>扩展能力</strong>：MCP、Skills、Web search、in-app browser、Computer Use、图片生成、非代码 artifacts 预览。</li>
+<li><strong>自动化</strong>：Codex Automations 可以按计划运行，项目级任务可以进入 Inbox；thread automations 可以保留同一个 thread 的上下文做心跳式跟进。</li>
+<li><strong>模型</strong>：OpenAI 当前推荐 Codex 使用 <code>gpt-5.5</code>、<code>gpt-5.4</code>、<code>gpt-5.4-mini</code> 等模型；本地 Codex 也可以配置兼容 Chat Completions 或 Responses API 的其他 provider/model。Codex Cloud 当前不能改默认模型。</li>
+</ul>
+<p>这里最重要的限制不是“功能少”，而是<strong>运行边界</strong>：项目级 Automations 要求运行本地 Codex App 的机器开机、Codex 运行、项目仍在磁盘上。Codex App 也不是一个通用的公网 webhook gateway 或聊天平台机器人框架。</p>
+<h3 id="hermes-agent常驻入口模型路由和过程性记忆">Hermes Agent：常驻入口、模型路由和过程性记忆</h3>
 <p><img src="/images/posts/codex-vs-hermes/hermes-architecture.png" alt="Hermes 架构图"></p>
-<p>Hermes 的架构在多个维度上做出了截然不同的选择：</p>
-<ol>
-<li><p><strong>多入口点</strong> — CLI (<code>hermes</code>)、消息网关（Discord / Telegram / Slack / Signal / WhatsApp / Matrix / Email / WeChat）、ACP 适配器、Cron 调度器、API Server、Python 库。</p>
-</li>
-<li><p><strong>多模型供应商</strong> — OpenAI、Anthropic、DeepSeek、Google、xAI、Groq、Mistral、OpenRouter、Nous Portal，以及本地 llama.cpp / vLLM / Ollama。热切换：<code>/model deepseek:deepseek-v4-pro</code>。</p>
-</li>
-<li><p><strong>跨会话持久化</strong> — Memory DB（SQLite + FTS5 全文搜索）让 Hermes 记住用户偏好、项目结构。Session Search 检索历史对话。</p>
-</li>
-<li><p><strong>自进化的技能系统</strong> — 执行复杂任务后自动抽象为"技能"（Skill），包含完整执行逻辑和陷阱说明。</p>
-</li>
-<li><p><strong>工具生态远超编码</strong> — 40+ 工具：Terminal、File System、Browser、ComfyUI（图片生成）、TTS、Spotify、GitHub、Notion、Linear、Airtable、Email、Calendar、YouTube、Maps、Home Assistant、Kanban、Obsidian、OCR……</p>
-</li>
-<li><p><strong>Cron 调度器</strong> — 服务端常驻执行，不需要本地机器开机。支持多平台推送（Telegram、Discord 等）、script-only 零 token 模式、job 间链式依赖。</p>
-</li>
-</ol>
-<h3 id="核心差异对比">核心差异对比</h3>
+<p>Hermes 的设计重心不同。它是 Nous Research 的开源 Agent 系统，强调“agent lives where you do”：</p>
+<ul>
+<li><strong>入口</strong>：CLI、Desktop、Messaging Gateway、Cron、API/Web/Dashboard、Python/RPC 工具。</li>
+<li><strong>消息平台</strong>：Telegram、Discord、Slack、WhatsApp、Signal、Email、Matrix、Mattermost、Lark/Feishu、DingTalk、WeCom/Weixin、Teams、LINE、ntfy、Browser 等多平台 adapter。</li>
+<li><strong>模型供应商</strong>：README 当前重点列出 Nous Portal、OpenRouter、NovitaAI、NVIDIA NIM、Xiaomi MiMo、z.ai/GLM、Kimi/Moonshot、MiniMax、Hugging Face、OpenAI 和自定义 endpoint；本地/自托管路径可通过 Ollama、vLLM、llama.cpp 或 OpenAI-compatible endpoint 接入。</li>
+<li><strong>工具系统</strong>：终端、文件、Web/search、browser、media、memory/session search、cron/delivery、Home Assistant、MCP 等 40+ 工具类别。</li>
+<li><strong>记忆</strong>：持久记忆主要由 <code>MEMORY.md</code>、<code>USER.md</code> 这类有边界的文本记忆注入会话；README 另提到 FTS5 session search 用于跨会话检索。不要把它简化成一个万能“Memory DB”。</li>
+<li><strong>Cron</strong>：Cron 运行在 Hermes gateway daemon 所在的位置。gateway 在 VPS 上，就不依赖你的笔记本；gateway 在本机上，本机仍然是运行前提。</li>
+</ul>
+<p>Hermes 的关键词是<strong>常驻服务</strong>。它更像一个可被消息、cron、webhook、脚本、团队频道反复唤起的 Agent host。</p>
+<h2 id="二核心差异对比">二、核心差异对比</h2>
 <table>
 <thead>
 <tr>
@@ -115,232 +116,184 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>模型自由度</strong></td>
-<td>仅 OpenAI</td>
-<td>20+ 供应商，可本地部署</td>
+<td>主要定位</td>
+<td>桌面/云端编码线程工作台</td>
+<td>常驻、多入口 Agent 系统</td>
 </tr>
 <tr>
-<td><strong>入口点</strong></td>
-<td>桌面 App / CLI / IDE / Web</td>
-<td>终端 + 消息平台 + Cron + API</td>
+<td>最强场景</td>
+<td>修改代码、验证、Git 工作流、前端/桌面测试</td>
+<td>消息触发、cron/webhook、跨平台交付、长期工作流</td>
 </tr>
 <tr>
-<td><strong>持久化</strong></td>
-<td>会话内</td>
-<td>跨会话 Memory + FTS5 检索</td>
+<td>模型</td>
+<td>OpenAI 推荐模型是一等体验；本地可配置兼容 provider；Cloud 默认模型当前不可改</td>
+<td>多 provider 和自定义 endpoint 是核心设计，支持本地/自托管路线</td>
 </tr>
 <tr>
-<td><strong>技能系统</strong></td>
-<td>静态 Skills</td>
-<td>自进化的过程性技能</td>
+<td>自动化</td>
+<td>App 内 Automations；项目级任务依赖本机 App、项目磁盘和沙箱配置</td>
+<td>Gateway/Cron 所在机器常驻；可在 VPS/服务器上 7x24 运行</td>
 </tr>
 <tr>
-<td><strong>工具范围</strong></td>
-<td>编码工具 + Computer Use</td>
-<td>生活+工作全栈工具</td>
+<td>交付</td>
+<td>App Inbox、线程、通知、Git/PR</td>
+<td>Telegram/Discord/Slack/Email/Browser/本地文件/API 等</td>
 </tr>
 <tr>
-<td><strong>定时任务</strong></td>
-<td>Automations（需本机开机+App运行）</td>
-<td>Cron 调度器（服务端常驻）</td>
+<td>记忆</td>
+<td>threads、thread automations、Memories（可用时）</td>
+<td><code>MEMORY.md</code>/<code>USER.md</code>、session search、skills 过程沉淀</td>
 </tr>
 <tr>
-<td><strong>定时任务交付</strong></td>
-<td>Inbox（App 内查看）</td>
-<td>多平台推送 / 本地文件 / 链式依赖</td>
+<td>扩展</td>
+<td>MCP、Plugins、Skills、local environments</td>
+<td>MCP、tools/toolsets、skills、gateway adapters、RPC 脚本</td>
 </tr>
 <tr>
-<td><strong>生态系统</strong></td>
-<td>OpenAI 封闭生态</td>
-<td>开源 MIT + 社区 Skill Hub + Skills Hub</td>
+<td>团队消息</td>
+<td>不是通用消息平台机器人</td>
+<td>多平台 Messaging Gateway 是核心能力</td>
 </tr>
 <tr>
-<td><strong>多平台消息</strong></td>
-<td>无</td>
-<td>Discord / Telegram / Slack / Signal 等 20+</td>
+<td>开源属性</td>
+<td>OpenAI 产品线</td>
+<td>MIT 开源项目</td>
 </tr>
 </tbody></table>
-<h2 id="二codex-那么全能为什么还需要-hermes">二、Codex 那么全能，为什么还需要 Hermes？</h2>
-<p>这不是一个"谁更好"的问题，而是**"你在解决什么问题"**的问题。Codex 和 Hermes 分别适合不同的使用场景。</p>
-<h3 id="场景一纯编码任务-codex-是更好的选择">场景一：纯编码任务 → Codex 是更好的选择</h3>
-<p>如果你打开终端的目的是：重构一个模块、修复一个 bug、写一段新的 feature、审查代码，那么 Codex 是更直接的选择。</p>
-<p><strong>原因：</strong></p>
+<p>所以，Codex App 和 Hermes 的关系不是“替代”，而是“运行边界不同”。</p>
+<h2 id="三为什么有了-codex-app-还需要-hermes">三、为什么有了 Codex App 还需要 Hermes？</h2>
+<h3 id="场景一高强度编码任务codex-app-更直接">场景一：高强度编码任务，Codex App 更直接</h3>
+<p>如果目标是重构一个模块、修 bug、写 feature、跑测试、看 diff、提交 PR，Codex App 通常更顺手：</p>
 <ul>
-<li>Codex 的工具链围绕代码优化到了极致：Shell、文件编辑、Git、沙箱、MCP。每一个工具都是为编码场景调优的。</li>
-<li>Codex 的 prompt 工程经过 OpenAI 的大量优化，在代码理解和生成上的表现是顶级的。</li>
-<li>不需要跨会话记忆——一次编码会话通常是一次性的、自包含的。</li>
-<li>ChatGPT 订阅用户的开箱体验极好：<code>curl ... | sh</code> 一条命令装完，登录 ChatGPT 账号就能用。</li>
+<li>它的界面、Git diff、Worktree、审批和终端都围绕仓库修改组织。</li>
+<li>它能把本地项目、IDE context、in-app browser、Computer Use 串在一个桌面工作流里。</li>
+<li>OpenAI 推荐模型在编码、工具调用和复杂推理上是一等入口。</li>
+<li>对个人开发者来说，App 内 Inbox、thread automation、worktree 隔离已经能覆盖很多周期性代码任务。</li>
 </ul>
-<p><strong>Hermes 也能做编码，但不是它的主战场。</strong> Hermes 的工具更泛化，模型选择更多样，但在纯编码任务的"平均体验"上，不如 Codex 聚焦。</p>
-<h3 id="场景二跨会话工程协作-hermes-是唯一的选择">场景二：跨会话工程协作 → Hermes 是唯一的选择</h3>
-<p>当你的工作跨越多个会话、多天甚至多周——例如一个持续演进的开源项目贡献——Hermes 的持久化能力就变成了刚需。</p>
-<p><strong>具体来说：</strong></p>
+<p>Hermes 也能写代码，但它的优势不在“把一个本地仓库改得最快”，而在“把代码任务放进一个长期、跨平台、可被事件触发的系统”。</p>
+<h3 id="场景二事件驱动和公网-webhookhermes-的形态更合适">场景二：事件驱动和公网 webhook，Hermes 的形态更合适</h3>
+<p>Codex App 可以做定时轮询，也能通过插件和 GitHub 工具处理 PR 状态。但它不是一个对外暴露路由、校验 HMAC、接收 GitHub webhook、再把结果评论回 PR 的常驻服务。</p>
+<p>Hermes 的 Messaging Gateway/Webhook/Cron 模式天然适合这类事情：</p>
+<ul>
+<li>GitHub、监控系统或业务系统发事件。</li>
+<li>Gateway 校验请求并把 payload 变成 Agent prompt。</li>
+<li>Agent 加载 skill，调用终端、GitHub CLI/API、项目脚本。</li>
+<li>结果回写 GitHub、发到 Telegram/Discord/Slack，或保存到本地文件。</li>
+</ul>
+<p>这不是“Codex 不能借助外部服务做到”，而是<strong>Codex App 自身不是这个系统边界</strong>。你需要 GitHub Actions、自建 server、Codex CLI/SDK 或其他 bot framework 做 glue code。Hermes 把这层 glue code 放进了产品架构。</p>
+<h3 id="场景三跨平台异步协作hermes-是更自然的入口">场景三：跨平台异步协作，Hermes 是更自然的入口</h3>
+<p>现实里的工程讨论经常发生在群聊里：</p>
+<ul>
+<li>Telegram 里问“昨晚监控有没有异常？”</li>
+<li>Discord 里 @agent “看一下这个 PR diff”</li>
+<li>Slack 里让它把 CI 失败总结成 issue</li>
+<li>手机上用语音或消息触发一个服务器任务</li>
+</ul>
+<p>Codex App 有桌面 App、IDE 同步、ChatGPT mobile 远程连接等能力，但它不是一个覆盖 20+ 平台的 messaging gateway。Hermes 的假设是：Agent 应该活在你已经在用的通信流里。</p>
+<h3 id="场景四长期记忆和-skill-沉淀hermes-的表达更显式">场景四：长期记忆和 skill 沉淀，Hermes 的表达更显式</h3>
+<p>Codex 已经有 threads、thread automations 和 Memories，所以“Codex 每次都从零开始”是不严谨的。</p>
+<p>真正的差异在于，Hermes 把长期记忆和过程性经验做成了更显式的用户资产：</p>
+<ul>
+<li><code>MEMORY.md</code>、<code>USER.md</code> 用来存稳定偏好、个人背景、项目约定。</li>
+<li>Session search 用来找历史会话里的事实和决策。</li>
+<li>Skills 可以把成功完成复杂任务的流程固化为可复用说明和脚本。</li>
+<li>Gateway/Cron 可以在不同入口复用这些记忆和 skill。</li>
+</ul>
+<p>这也不是魔法。长期记忆需要治理，skill 也需要审阅，否则错误经验会被固化。但对于“同一个 Agent 长期服务同一个人/团队”的场景，这个方向比单次编码会话更重要。</p>
+<h3 id="场景五模型和工具治理hermes-更偏可编排系统">场景五：模型和工具治理，Hermes 更偏“可编排系统”</h3>
+<p>过去常见的说法是“Codex 绑死 OpenAI，Hermes 才能换模型”。这个说法现在需要收窄：本地 Codex 可以配置兼容 provider/model。</p>
+<p>但二者的产品重心仍然不同：</p>
+<ul>
+<li>Codex 的最佳路径是 OpenAI/ChatGPT 账号、推荐 Codex 模型、Codex App/CLI/IDE/Cloud 的一体化体验。</li>
+<li>Hermes 把 provider 选择、<code>/model</code> 切换、自定义 endpoint、本地模型、工具后端、消息平台 delivery 都作为一等配置面。</li>
+</ul>
+<p>如果你在做的是“用一个 agentic runtime 统一管理多个模型、多个工具后端、多个触发入口”，Hermes 的心智负担反而更低。</p>
+<h3 id="场景六非编码任务和个人团队-opshermes-覆盖更宽">场景六：非编码任务和个人/团队 ops，Hermes 覆盖更宽</h3>
+<p>Codex 的工具生态正在扩展，已经不再只会写代码。但它的默认工作对象仍是项目、线程、文件、Git、浏览器预览和桌面应用。</p>
+<p>Hermes 的工具面更像“知识工作者的操作台”：消息、邮件、日历、YouTube/媒体、Home Assistant、搜索、浏览器、服务器脚本、定时任务、通知交付。它适合把很多“不是写代码但围绕工程和生活运转”的任务串起来。</p>
+<h2 id="四github-上的复杂案例pr-自动审查机器人">四、GitHub 上的复杂案例：PR 自动审查机器人</h2>
+<p>用户真正应该看的不是“安装 Hermes + 接一个模型”的教程，而是 <strong>Hermes 能不能作为常驻系统接入真实工作流</strong>。</p>
+<p>我在 GitHub 上更推荐研究这个案例：</p>
+<ul>
+<li><a href="https://github.com/aliaihub/awesome-hermes-usecases/blob/main/usecases/github-pr-review-webhook.md">GitHub PR Review Agent: webhook 版本</a></li>
+<li><a href="https://github.com/aliaihub/awesome-hermes-usecases/blob/main/usecases/github-pr-review-cron.md">GitHub PR Review Agent: cron 版本</a></li>
+<li><a href="https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/messaging/webhooks.md">Hermes 官方 webhook 文档源码</a></li>
+<li><a href="https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/cron.md">Hermes 官方 cron 文档源码</a></li>
+</ul>
+<p>它的核心不是“让 AI 看 diff”，而是把 PR review 做成一个常驻机器人。</p>
+<h3 id="webhook-模式">Webhook 模式</h3>
+<pre><code class="language-text">GitHub pull_request 事件
+  -&gt; Hermes gateway 接收 webhook
+  -&gt; 校验 HMAC secret
+  -&gt; 把 payload 转成 agent prompt
+  -&gt; 加载 pr-review skill
+  -&gt; 调用 gh pr diff / gh api 读取上下文
+  -&gt; Agent 审查代码
+  -&gt; gh pr review 或 GitHub API 评论回 PR
+  -&gt; 可选：把摘要发到 Telegram/Discord
+</code></pre>
+<p>这个模式适合公网服务器。优点是实时：PR 一创建或更新，机器人就能响应。</p>
+<h3 id="cron-模式">Cron 模式</h3>
+<pre><code class="language-text">每 N 分钟触发
+  -&gt; 在指定 repo workdir 运行
+  -&gt; gh pr list 找 open PR
+  -&gt; 过滤已审查/无需审查的 PR
+  -&gt; 获取 diff 和项目上下文
+  -&gt; Agent 输出 review 或 digest
+  -&gt; 发到聊天频道或写回 GitHub
+</code></pre>
+<p>这个模式不需要公网 webhook，适合不能暴露端口的环境。缺点是实时性取决于轮询间隔。</p>
+<h3 id="为什么这个案例-codex-app-很难独立完成">为什么这个案例 Codex App 很难独立完成？</h3>
+<p>这里要讲严谨：Codex App 不是完全不能帮你做 PR review。你可以让 Codex 在本地仓库里读 diff、跑测试、写 review；也可以用 Codex Automations 轮询某个项目并输出结果。</p>
+<p>难点在“独立、常驻、事件驱动、跨平台交付”：</p>
 <ol>
-<li><p><strong>Memory 系统</strong>：Hermes 会在你第一次告诉它"这个项目用的是 pytest + xdist"后，把这个事实存入持久化记忆。下次新开一个会话，这个知识会自动注入 system prompt。你不需要重复解释。</p>
-</li>
-<li><p><strong>Session Search</strong>：你可以问 Hermes "我们上周讨论的那个 PR #42 是怎么处理的？"，它会从 SQLite 数据库中检索历史对话并给出准确答案。Codex 做不到这一点——关闭终端，一切归零。</p>
-</li>
-<li><p><strong>Skills 的积累效应</strong>：每一次成功完成一个复杂任务，Hermes 都会把执行模式沉淀为技能。使用 Hermes 的时间越长，它就越懂你的工作流。Codex 的每次对话都是"从零开始"。</p>
-</li>
+<li><strong>公网事件入口</strong>：Codex App 本身不是 HTTP webhook server，不能直接承担 GitHub webhook 接收、HMAC 校验、路由分发。</li>
+<li><strong>服务生命周期</strong>：PR bot 需要长期在线。Codex 项目级 Automations 依赖本机 App、机器电源和本地项目；Hermes gateway 可以跑在 VPS 上。</li>
+<li><strong>事件到 Agent 的路由</strong>：Hermes 把 webhook payload 转 prompt、加载 skill、选择 workdir、调用 CLI/API 作为一套 gateway 流程；Codex App 需要外部 server 或 GitHub Actions 做编排。</li>
+<li><strong>多平台 delivery</strong>：Hermes 可以把结果写回 GitHub，同时发到 Telegram/Discord/Slack；Codex App 的一等交付面是 App 内线程/Inbox/通知。</li>
+<li><strong>团队共享</strong>：PR bot 是团队服务，不是某个开发者桌面上的一次性 thread。Hermes 的网关、白名单、平台 adapter 更贴近这个形态。</li>
 </ol>
-<p><strong>这是最深层的差异：Codex 是工具，Hermes 是伙伴。</strong> 工具每次使用前都要重新"设置"，伙伴记得你们共同的历史。</p>
-<h3 id="场景三多平台异步协作-这是-hermes-的独特定位">场景三：多平台异步协作 → 这是 Hermes 的独特定位</h3>
-<p>Codex App 是桌面应用，交互发生在 App 内部。但现实中，很多工程讨论发生在群聊里。</p>
-<p>Hermes 的 Messaging Gateway 让它可以在 Discord、Telegram、Slack 等平台上被团队成员 @ 唤起。你可以：</p>
+<p>这个案例也有 caveat：<code>awesome-hermes-usecases</code> 里的 PR bot 是 runbook，不是一个完整可 <code>docker compose up</code> 的成品 repo。另一个 <a href="https://github.com/NousResearch/hermes-agent/issues/5563">NousResearch/hermes-agent issue #5563</a> 提供了更接近生产的 field report，但它描述的是私有生产流水线，不能当成可复现实验。严谨的结论应该是：<strong>公开材料已经足以证明 Hermes 的架构适合这类工作流，但落地仍需要工程化配置、凭据管理、sandbox 和 prompt-injection 防护。</strong></p>
+<h2 id="五怎么选">五、怎么选？</h2>
+<p>你更像 Codex App 用户，如果：</p>
 <ul>
-<li>在 Discord 群里 @Hermes "review 一下这个 PR"</li>
-<li>在 Telegram 里让它查一下今天的 CI 状态</li>
-<li>在 Slack 里让它创建 Linear issue</li>
+<li>主要工作是在本地/云端代码仓库里完成修改。</li>
+<li>关心 diff、测试、Git、Worktree、前端预览、Computer Use。</li>
+<li>能接受自动化运行在本机 App 或 Codex Cloud 的边界里。</li>
+<li>希望尽量少配置，直接用 OpenAI 推荐模型和一体化体验。</li>
 </ul>
-<p>同时，因为 Memory 是跨平台的，你在 Telegram 上交代过的偏好，在 Discord 会话中也会被记住。</p>
-<p><strong>Codex App 没有消息平台集成。</strong> 它是一款桌面应用，交互局限在 App 窗口内。Hermes 假设你是一个团队中的一员，需要异步、多平台的信息流动。</p>
-<h3 id="场景四定时任务-两者都有但交付模型完全不同">场景四：定时任务 → 两者都有，但交付模型完全不同</h3>
-<p>Codex App 和 Hermes 都支持定时任务，但设计哲学截然不同：</p>
-<p><strong>Codex Automations</strong>（<a href="https://developers.openai.com/codex/app/automations">文档</a>）：</p>
+<p>你更像 Hermes 用户，如果：</p>
 <ul>
-<li>在本地机器上运行，要求 Codex App 保持开启、机器不关机</li>
-<li>结果发送到 App 内的 <strong>Inbox</strong>，无变更时自动归档</li>
-<li>项目级：每个 automation 绑定到特定项目，Git 项目支持 Worktree 隔离</li>
-<li>可与 Skills 结合完成复杂任务</li>
-<li>适合：个人开发者在自己机器上的周期性编码任务</li>
+<li>需要一个 7x24 常驻的 Agent gateway。</li>
+<li>需要 Telegram/Discord/Slack/Email 等消息入口和交付。</li>
+<li>需要接收 webhook、跑 cron、调用脚本、把结果发回多个平台。</li>
+<li>需要长期记忆、session search、skill 沉淀和多入口复用。</li>
+<li>需要更强的模型/provider/tool 后端治理，包括本地或自托管模型。</li>
 </ul>
-<p><strong>Hermes Cron</strong>（<a href="https://hermes-agent.nousresearch.com/docs/guides/automate-with-cron">文档</a>）：</p>
+<p>很多实际工作流会同时使用二者：</p>
 <ul>
-<li>在 gateway 服务器上运行（可以是一台 $5/月的 VPS），7×24 常驻</li>
-<li>结果推送到 <strong>任意消息平台</strong>（Telegram、Discord、Slack）或本地文件</li>
-<li>支持 <strong>script-only 模式</strong>（<code>no_agent=True</code>）：Python 脚本做机械检测，只在有变更时唤醒 Agent → 零 token 静默运行</li>
-<li>支持 <strong>job 间链式依赖</strong>（<code>context_from</code>）：job A 采集数据 → job B 分析处理</li>
-<li>不绑定项目，可执行任意系统级任务（服务器监控、价格追踪、竞品动态）</li>
-<li>适合：团队共享的常驻自动化，或需要跨平台通知的场景</li>
+<li>Codex App 负责本地高强度编码、修 bug、重构、验证和 PR 准备。</li>
+<li>Hermes 负责常驻自动化、消息机器人、跨平台通知、长期记忆和团队 ops。</li>
 </ul>
-<p>关键差异不是"有没有"，而是**"能不能在你不开机的时候跑"<strong>和</strong>"结果发到哪里"**。</p>
-<h3 id="场景五模型自由和隐私需求-hermes-是唯一选择">场景五：模型自由和隐私需求 → Hermes 是唯一选择</h3>
-<p>如果你的组织对数据隐私有严格要求，不能把代码发送到 OpenAI 的 API；或者你希望使用特定的开源模型来降低成本——Codex 完全无法满足。</p>
-<p>Hermes 支持本地模型（llama.cpp、vLLM、Ollama），所有推理都在本地完成，代码永不离开你的机器。同时，你可以为不同类型的任务使用不同的模型：</p>
+<h2 id="六结语">六、结语</h2>
+<p>Codex App 和 Hermes 的分野不是“一个全能、一个落后”，而是：</p>
 <ul>
-<li>编码用 DeepSeek（成本低、代码能力强）</li>
-<li>创意写作用 Claude（语言质量高）</li>
-<li>敏感项目用本地 Llama（数据不出境）</li>
+<li><strong>Codex App 把编码工作台做深</strong>：线程、Worktree、Git、终端、Browser、Computer Use、Automations 都围绕仓库修改组织。</li>
+<li><strong>Hermes 把 Agent host 做宽</strong>：消息网关、Cron、provider routing、toolsets、memory、skills、delivery 都围绕常驻服务组织。</li>
 </ul>
-<p><strong>Codex 绑死了 OpenAI。</strong> 无论你的需求如何变化，你只能使用 OpenAI 的模型。</p>
-<h3 id="场景六非编码的日常任务-hermes-的工具生态更丰富">场景六：非编码的日常任务 → Hermes 的工具生态更丰富</h3>
-<p>Codex 的工具集是为编码设计的。Hermes 的工具集覆盖了更广泛的生活和工作场景：</p>
-<ul>
-<li><strong>想听音乐？</strong> → <code>在 Spotify 上播放 Lo-fi 歌单</code></li>
-<li><strong>需要生成封面图？</strong> → <code>用 ComfyUI 生成一张赛博朋克风格的封面</code></li>
-<li><strong>要管理日历？</strong> → <code>帮我在下周三下午 3 点安排一个会议</code></li>
-<li><strong>想控制智能家居？</strong> → <code>把客厅的灯调成暖色</code></li>
-<li><strong>要做笔记？</strong> → <code>把这个 idea 存到 Obsidian</code></li>
-<li><strong>要 OCR 文档？</strong> → <code>提取这个 PDF 里的所有表格</code></li>
-</ul>
-<p>这些场景和"写代码"没有关系，但它们构成了一个现代知识工作者的真实日常。Hermes 让你不需要在 10 个不同的工具之间切换——一个 Agent 解决所有。</p>
-<h2 id="三hermes-复杂使用案例">三、Hermes 复杂使用案例</h2>
-<p>以下案例均来自 Hermes Agent 官方文档中的实战教程（见 <a href="https://github.com/NousResearch/hermes-agent/tree/main/website/docs/guides"><code>hermes-agent/website/docs/guides/</code></a>），每个案例都有完整的配置步骤和可运行代码。</p>
-<h3 id="案例一每日简报机器人daily-briefing-bot">案例一：每日简报机器人（Daily Briefing Bot）</h3>
-<p>来自官方教程 <a href="https://hermes-agent.nousresearch.com/docs/guides/daily-briefing-bot">Tutorial: Daily Briefing Bot</a>。这是一个完全自动化的新闻摘要系统：</p>
-<pre><code>流程：
-1. 每天 8:00 AM — Cron 调度器触发任务
-2. Hermes 启动全新 Agent 会话，加载预设 prompt
-3. Web Search（Firecrawl）拉取 AI / 开源 LLM 相关最新新闻
-4. Agent 提炼并格式化为简报（含来源链接）
-5. 自动推送到 Telegram 或 Discord
-</code></pre>
-<p><strong>这个案例展示的能力链条：</strong></p>
-<ul>
-<li><strong>Cron</strong> → 定时自主触发，无需人工干预</li>
-<li><strong>Web Search</strong> → 接入实时信息</li>
-<li><strong>NL Summarization</strong> → 将原始信息提炼为结构化简报</li>
-<li><strong>Messaging Delivery</strong> → 推送到你日常使用的通讯平台</li>
-<li><strong>零代码配置</strong> → 全程通过对话式 prompt 完成，不写一行代码</li>
-</ul>
-<p>官方教程还提供了不使用消息平台的方案（<code>deliver: "local"</code>，简报保存到 <code>~/.hermes/cron/output/</code>），以及如何先手动测试工作流再自动化。</p>
-<h3 id="案例二github-pr-自动审查-agent">案例二：GitHub PR 自动审查 Agent</h3>
-<p>来自官方教程 <a href="https://hermes-agent.nousresearch.com/docs/guides/github-pr-review-agent">Tutorial: GitHub PR Review Agent</a> 和 <a href="https://hermes-agent.nousresearch.com/docs/guides/webhook-github-pr-review">Webhook 版本</a>。</p>
-<p>两种模式都支持：</p>
-<p><strong>Cron 轮询模式</strong>（适合无公网 IP 的环境）：</p>
-<pre><code>每 2 小时 → gh pr list → 检出新增 PR → 获取 diff → Agent 审查 → 推送审查结果到 Discord/Telegram
-</code></pre>
-<p><strong>Webhook 实时模式</strong>（需要公网端点）：</p>
-<pre><code>GitHub PR 事件 → Webhook POST → Hermes 接收 → Agent 获取 diff → 审查 → 直接评论到 PR 线程
-</code></pre>
-<p><strong>这个案例的关键价值：</strong></p>
-<ul>
-<li><strong>Cron 模式</strong>可以在 NAT/防火墙后的机器上工作，不需要公网 IP</li>
-<li><strong>Webhook 模式</strong>是实时的，PR 一开就能收到审查</li>
-<li>审查结果可以直接评论到 PR 页面（Webhook 模式）或推送到聊天频道（两种模式都支持）</li>
-<li>官方文档明确警告了 webhook 的 prompt injection 风险并给出了沙箱化建议——这是一个真正可上生产的设计</li>
-</ul>
-<h3 id="案例三团队-telegram-助手">案例三：团队 Telegram 助手</h3>
-<p>来自官方教程 <a href="https://hermes-agent.nousresearch.com/docs/guides/team-telegram-assistant">Tutorial: Team Telegram Assistant</a>。</p>
-<p>这不是一个人的工具，而是整个团队共享的 AI 助手：</p>
-<ul>
-<li><strong>多用户会话隔离</strong> — 每个团队成员有自己的对话上下文，互不干扰</li>
-<li><strong>权限控制</strong> — 只允许白名单用户交互，防止未授权访问</li>
-<li><strong>全工具访问</strong> — Terminal、文件编辑、Web Search、代码执行，跑在服务器上</li>
-<li><strong>定时团队任务</strong> — 每日站会提醒、健康检查、共享日报推送到团队频道</li>
-</ul>
-<p>官方教程从零开始：创建 BotFather 机器人 → 配置 Hermes gateway → 设置用户授权 → 测试运行。全部步骤清晰可操作。</p>
-<h3 id="案例四网站变更监控">案例四：网站变更监控</h3>
-<p>来自官方教程 <a href="https://hermes-agent.nousresearch.com/docs/guides/automate-with-cron">Automate Anything with Cron</a> 的 Pattern 1。</p>
-<p>利用 Hermes Cron 的 <code>script</code> 参数实现零 token 浪费的变更监控：</p>
-<pre><code>Python 脚本（change-detection）→ 仅在有变更时输出 diff → Agent 收到 diff 后判断是否值得通知 → 推送
-</code></pre>
-<p><strong>设计精妙之处：</strong></p>
-<ul>
-<li>Python 脚本负责机械工作（fetch + hash + diff），<strong>不消耗 token</strong></li>
-<li>Agent 只在脚本检测到变更时才介入，做语义判断（"这个改动用通知用户吗？"）</li>
-<li>脚本无变更时输出为空 → Agent 不运行 → 零成本静默</li>
-</ul>
-<p>这个模式可以适配到任何"检测-判断-通知"场景：价格监控、竞品动态、安全公告、API 文档变更。</p>
-<h3 id="案例五nous-portal-统一工具订阅">案例五：Nous Portal 统一工具订阅</h3>
-<p><a href="https://portal.nousresearch.com">Nous Portal</a> 是 Hermes 生态的关键组件。它解决了一个现实痛点：<strong>工具 API Key 碎片化</strong>。</p>
-<p>如果要让 Agent 同时使用搜索、图片生成、TTS 和云端浏览器，传统上需要：</p>
-<ul>
-<li>Firecrawl（搜索）— 单独注册付费</li>
-<li>FAL / ComfyUI Cloud（图片生成）— 单独注册付费</li>
-<li>OpenAI / ElevenLabs（TTS）— 单独注册付费</li>
-<li>Browser Use（云端浏览器）— 单独注册付费</li>
-</ul>
-<p>Nous Portal 用一个订阅统一覆盖所有这些后端。一条命令完成全部配置：</p>
-<pre><code class="language-bash">hermes setup --portal
-</code></pre>
-<p>Codex 没有这个维度的对应物——它的工具边界由 OpenAI 定义，工具网关的控制权不在你手里。</p>
-<h2 id="四你是-codex-用户还是-hermes-用户">四、你是 Codex 用户还是 Hermes 用户？</h2>
-<p>这个问题的答案取决于你的需求图景：</p>
-<pre><code>你是 Codex App 用户，如果：
-  ✓ 你的主要场景是在桌面端写代码
-  ✓ 你需要最好的一手编码体验 + Computer Use
-  ✓ 你已经深度使用 OpenAI/ChatGPT 生态
-  ✓ 你的定时任务可以接受"本机开机+App运行"的前提
-  ✓ 你不需要跨会话记忆或多平台消息
-
-你是 Hermes 用户，如果：
-  ✓ 你需要跨会话的持久记忆和技能积累
-  ✓ 你需要多平台（Discord/Telegram/Slack 等）交互
-  ✓ 你的定时任务需要 7×24 常驻（VPS 上跑，不依赖本机）
-  ✓ 你需要定时任务结果推送到消息平台而非 App 内 Inbox
-  ✓ 你需要模型自由（不同任务用不同模型）
-  ✓ 你需要非编码工具（Spotify、日历、智能家居等）
-  ✓ 你对数据隐私有要求（需要本地模型）
-  ✓ 你希望一个随时间越来越懂你的 Agent
-</code></pre>
-<p><strong>最佳实践：两者并不是互斥的。</strong></p>
-<p>很多开发者同时使用两者：</p>
-<ul>
-<li><strong>Codex App</strong> 用于桌面端的高强度编码会话</li>
-<li><strong>Hermes</strong> 作为"常驻 Agent"，管理知识、自动化任务、跨平台协作</li>
-</ul>
-<p>这不是一个零和博弈。Codex App 和 Hermes 在各自的架构哲学下做到极致，聪明的用户会在合适的场景使用合适的工具。</p>
-<h2 id="五结语">五、结语</h2>
-<p>Codex App 和 Hermes 的差异不是功能数量之争，而是架构哲学之争。</p>
-<ul>
-<li>Codex App 选择了 <strong>深度</strong>：在编码这个垂直场景里，把体验打磨到极致（Automations、Worktrees、Computer Use、Review）。代价是生态封闭、限于桌面端。</li>
-<li>Hermes 选择了 <strong>广度</strong>：在多场景、多平台、多模型的图景里，构建一个自进化的 Agent 系统。代价是单点编码深度不如 Codex。</li>
-</ul>
-<p>两个项目都还在快速演进。Codex App 在 OpenAI 的资源支持下，功能迭代速度惊人。Hermes 作为开源社区驱动的项目，凭借插件生态和社区 Skill Hub，走的是另一条"群体智慧"的路线。</p>
-<p>最终，<strong>Codex App 让你写更好的代码，Hermes 让你成为一个更高效的工程师。</strong></p>
+<p>所以，Codex App 的存在不会消灭 Hermes 的价值。只要你的问题从“这次帮我改代码”变成“这个 Agent 能不能长期在我的工程和消息流里工作”，Hermes 就仍然有独立位置。</p>
 <hr>
-<p><em>本文架构图使用 dark-themed SVG 风格绘制，源码可在 <a href="https://github.com/zcxGGmu/zcxggmu.github.io">GitHub</a> 查看。</em></p>
+<p>参考入口：</p>
+<ul>
+<li><a href="https://developers.openai.com/codex/app/features">Codex App features</a></li>
+<li><a href="https://developers.openai.com/codex/app/automations">Codex Automations</a></li>
+<li><a href="https://developers.openai.com/codex/models">Codex Models</a></li>
+<li><a href="https://github.com/NousResearch/hermes-agent">Hermes Agent README</a></li>
+<li><a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging">Hermes Messaging Gateway</a></li>
+<li><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/tools">Hermes Tools &amp; Toolsets</a></li>
+<li><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/cron">Hermes Cron</a></li>
+</ul>
 <hr id="EOF"><p class="last-modified">最后整理于 2026-06-08</p></div></div>
       <nav class="post-pagination">
         <a class="newer-posts" href="/blog/2026/gaojingqi-investment-system/">下一篇<br>高景气投资体系与逻辑</a>
@@ -363,7 +316,7 @@
       <div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
       <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
     </div>
-    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#一系统架构对比">一、系统架构对比</a><a class="toc-link toc-level-3" href="#codex-app深度编码体验-项目级自动化">Codex App：深度编码体验 + 项目级自动化</a><a class="toc-link toc-level-3" href="#hermes-agent多模型多平台自进化的-agent-系统">Hermes Agent：多模型、多平台、自进化的 Agent 系统</a><a class="toc-link toc-level-3" href="#核心差异对比">核心差异对比</a><a class="toc-link toc-level-2" href="#二codex-那么全能为什么还需要-hermes">二、Codex 那么全能，为什么还需要 Hermes？</a><a class="toc-link toc-level-3" href="#场景一纯编码任务-codex-是更好的选择">场景一：纯编码任务 → Codex 是更好的选择</a><a class="toc-link toc-level-3" href="#场景二跨会话工程协作-hermes-是唯一的选择">场景二：跨会话工程协作 → Hermes 是唯一的选择</a><a class="toc-link toc-level-3" href="#场景三多平台异步协作-这是-hermes-的独特定位">场景三：多平台异步协作 → 这是 Hermes 的独特定位</a><a class="toc-link toc-level-3" href="#场景四定时任务-两者都有但交付模型完全不同">场景四：定时任务 → 两者都有，但交付模型完全不同</a><a class="toc-link toc-level-3" href="#场景五模型自由和隐私需求-hermes-是唯一选择">场景五：模型自由和隐私需求 → Hermes 是唯一选择</a><a class="toc-link toc-level-3" href="#场景六非编码的日常任务-hermes-的工具生态更丰富">场景六：非编码的日常任务 → Hermes 的工具生态更丰富</a><a class="toc-link toc-level-2" href="#三hermes-复杂使用案例">三、Hermes 复杂使用案例</a><a class="toc-link toc-level-3" href="#案例一每日简报机器人daily-briefing-bot">案例一：每日简报机器人（Daily Briefing Bot）</a><a class="toc-link toc-level-3" href="#案例二github-pr-自动审查-agent">案例二：GitHub PR 自动审查 Agent</a><a class="toc-link toc-level-3" href="#案例三团队-telegram-助手">案例三：团队 Telegram 助手</a><a class="toc-link toc-level-3" href="#案例四网站变更监控">案例四：网站变更监控</a><a class="toc-link toc-level-3" href="#案例五nous-portal-统一工具订阅">案例五：Nous Portal 统一工具订阅</a><a class="toc-link toc-level-2" href="#四你是-codex-用户还是-hermes-用户">四、你是 Codex 用户还是 Hermes 用户？</a><a class="toc-link toc-level-2" href="#五结语">五、结语</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#一系统边界先说清楚">一、系统边界先说清楚</a><a class="toc-link toc-level-3" href="#codex-app项目内编码线程和本地自动化">Codex App：项目内编码线程和本地自动化</a><a class="toc-link toc-level-3" href="#hermes-agent常驻入口模型路由和过程性记忆">Hermes Agent：常驻入口、模型路由和过程性记忆</a><a class="toc-link toc-level-2" href="#二核心差异对比">二、核心差异对比</a><a class="toc-link toc-level-2" href="#三为什么有了-codex-app-还需要-hermes">三、为什么有了 Codex App 还需要 Hermes？</a><a class="toc-link toc-level-3" href="#场景一高强度编码任务codex-app-更直接">场景一：高强度编码任务，Codex App 更直接</a><a class="toc-link toc-level-3" href="#场景二事件驱动和公网-webhookhermes-的形态更合适">场景二：事件驱动和公网 webhook，Hermes 的形态更合适</a><a class="toc-link toc-level-3" href="#场景三跨平台异步协作hermes-是更自然的入口">场景三：跨平台异步协作，Hermes 是更自然的入口</a><a class="toc-link toc-level-3" href="#场景四长期记忆和-skill-沉淀hermes-的表达更显式">场景四：长期记忆和 skill 沉淀，Hermes 的表达更显式</a><a class="toc-link toc-level-3" href="#场景五模型和工具治理hermes-更偏可编排系统">场景五：模型和工具治理，Hermes 更偏“可编排系统”</a><a class="toc-link toc-level-3" href="#场景六非编码任务和个人团队-opshermes-覆盖更宽">场景六：非编码任务和个人/团队 ops，Hermes 覆盖更宽</a><a class="toc-link toc-level-2" href="#四github-上的复杂案例pr-自动审查机器人">四、GitHub 上的复杂案例：PR 自动审查机器人</a><a class="toc-link toc-level-3" href="#webhook-模式">Webhook 模式</a><a class="toc-link toc-level-3" href="#cron-模式">Cron 模式</a><a class="toc-link toc-level-3" href="#为什么这个案例-codex-app-很难独立完成">为什么这个案例 Codex App 很难独立完成？</a><a class="toc-link toc-level-2" href="#五怎么选">五、怎么选？</a><a class="toc-link toc-level-2" href="#六结语">六、结语</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
     
     <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
   </div>
