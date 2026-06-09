@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640" role="img" aria-labelledby="title desc">
+  <title id="title">量化黑箱系统流水线</title>
+  <desc id="desc">量化黑箱系统流水线</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <linearGradient id="coverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfeff"/>
+      <stop offset="46%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#fff7ed"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .mono { font-family: "SFMono-Regular", "Menlo", "Consolas", monospace; }
+  </style>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+
+  <text x="700" y="80" text-anchor="middle" font-size="40" font-weight="800" fill="#1f2933" class=""><tspan x="700" dy="0">量化“黑箱”的标准流水线</tspan></text>
+  <text x="700" y="130" text-anchor="middle" font-size="22" font-weight="450" fill="#52606d" class=""><tspan x="700" dy="0">每个模块都应有输入、输出、假设、约束和事后反馈；神秘感来自外部不可见，不来自不可解释。</tspan></text>
+  <rect x="70" y="205" width="178" height="142" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="1" />
+      <text x="159" y="247" text-anchor="middle" font-size="26" font-weight="800" fill="#2563eb" class=""><tspan x="159" dy="0">数据</tspan></text>
+      <text x="159" y="301" text-anchor="middle" font-size="18" font-weight="480" fill="#1f2933" class=""><tspan x="159" dy="-11.88">价格、成交、基本面、另类数</tspan><tspan x="159" dy="23.76">据、组合状态</tspan></text>
+<rect x="280" y="315" width="178" height="142" rx="12" fill="#ccfbf1" stroke="#0f766e" stroke-width="2" opacity="1" />
+      <text x="369" y="357" text-anchor="middle" font-size="26" font-weight="800" fill="#0f766e" class=""><tspan x="369" dy="0">Alpha 模型</tspan></text>
+      <text x="369" y="411" text-anchor="middle" font-size="18" font-weight="480" fill="#1f2933" class=""><tspan x="369" dy="-11.88">把信息转成预期收益或相对</tspan><tspan x="369" dy="23.76">排序</tspan></text>
+<rect x="490" y="205" width="178" height="142" rx="12" fill="#fef3c7" stroke="#b7791f" stroke-width="2" opacity="1" />
+      <text x="579" y="247" text-anchor="middle" font-size="26" font-weight="800" fill="#b7791f" class=""><tspan x="579" dy="0">风险模型</tspan></text>
+      <text x="579" y="301" text-anchor="middle" font-size="18" font-weight="480" fill="#1f2933" class=""><tspan x="579" dy="-11.88">估计波动、相关性、因子暴</tspan><tspan x="579" dy="23.76">露和尾部风险</tspan></text>
+<rect x="700" y="315" width="178" height="142" rx="12" fill="#ffedd5" stroke="#c2410c" stroke-width="2" opacity="1" />
+      <text x="789" y="357" text-anchor="middle" font-size="26" font-weight="800" fill="#c2410c" class=""><tspan x="789" dy="0">成本模型</tspan></text>
+      <text x="789" y="411" text-anchor="middle" font-size="18" font-weight="480" fill="#1f2933" class=""><tspan x="789" dy="-11.88">手续费、价差、冲击、延迟与</tspan><tspan x="789" dy="23.76">容量</tspan></text>
+<rect x="910" y="205" width="178" height="142" rx="12" fill="#dcfce7" stroke="#2f855a" stroke-width="2" opacity="1" />
+      <text x="999" y="247" text-anchor="middle" font-size="26" font-weight="800" fill="#2f855a" class=""><tspan x="999" dy="0">组合构建</tspan></text>
+      <text x="999" y="301" text-anchor="middle" font-size="18" font-weight="480" fill="#1f2933" class=""><tspan x="999" dy="-11.88">在约束下把信号变成目标持</tspan><tspan x="999" dy="23.76">仓</tspan></text>
+<rect x="1120" y="315" width="178" height="142" rx="12" fill="#e0e7ff" stroke="#2563eb" stroke-width="2" opacity="1" />
+      <text x="1209" y="357" text-anchor="middle" font-size="26" font-weight="800" fill="#2563eb" class=""><tspan x="1209" dy="0">执行系统</tspan></text>
+      <text x="1209" y="411" text-anchor="middle" font-size="18" font-weight="480" fill="#1f2933" class=""><tspan x="1209" dy="-11.88">把目标持仓拆成可成交订单</tspan><tspan x="1209" dy="23.76">并反馈</tspan></text>
+  <line x1="256" y1="276" x2="270" y2="386" stroke="#334155" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="466" y1="386" x2="480" y2="276" stroke="#334155" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="676" y1="276" x2="690" y2="386" stroke="#334155" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="886" y1="386" x2="900" y2="276" stroke="#334155" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="1096" y1="276" x2="1110" y2="386" stroke="#334155" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M 1168 455 C 970 588, 430 588, 242 455" fill="none" stroke="#334155" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)" opacity="0.8"/>
+  <text x="700" y="560" text-anchor="middle" font-size="23" font-weight="650" fill="#334155" class=""><tspan x="700" dy="0">实盘反馈：成交质量、滑点、回撤、信号衰减、容量变化</tspan></text>
+  <rect x="134" y="494" width="210" height="52" rx="26" fill="#eef2ff" stroke="none" stroke-width="0" opacity="1" />
+  <text x="239" y="528" text-anchor="middle" font-size="22" font-weight="600" fill="#2563eb" class=""><tspan x="239" dy="0">研究闭环</tspan></text>
+  <rect x="1048" y="494" width="210" height="52" rx="26" fill="#fef3c7" stroke="none" stroke-width="0" opacity="1" />
+  <text x="1153" y="528" text-anchor="middle" font-size="22" font-weight="600" fill="#b7791f" class=""><tspan x="1153" dy="0">交易闭环</tspan></text>
+
+</svg>
