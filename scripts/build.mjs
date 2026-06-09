@@ -485,6 +485,7 @@ function layout(page, mainHtml, options = {}) {
   const activeUrl = page.activeUrl || page.url || "/";
   const desktopPagination = options.pagination ? paginationHtml(options.pagination.current, options.pagination.total, options.pagination.basePath, "desktop") : paginationHtml(1, 1, "/", "desktop");
   const mobilePagination = options.pagination ? paginationHtml(options.pagination.current, options.pagination.total, options.pagination.basePath, "mobile") : "";
+  const mobilePaginationLine = mobilePagination ? `    ${mobilePagination}\n` : "";
   return `${headHtml(page)}
 <body>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -524,8 +525,7 @@ function layout(page, mainHtml, options = {}) {
       <div class="nav-footer">${footerHtml()}</div>
     </div>
     <div id="extraContainer" class="extra-container"><div class="toc-wrapper">${options.toc || ""}</div>${desktopPagination}</div>
-    ${mobilePagination}
-    <div id="single-column-footer">${footerHtml()}</div>
+${mobilePaginationLine}    <div id="single-column-footer">${footerHtml()}</div>
   </div>
   <script src="/js/journal.js"></script>
   <script src="/js/code-enhance.js"></script>
