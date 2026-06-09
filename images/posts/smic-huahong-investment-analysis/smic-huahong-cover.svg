@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">中芯国际与华虹半导体</title>
+  <desc id="desc">晶圆代工双样本：规模型龙头与特色工艺平台的投资价值比较</desc>
+  <rect width="1400" height="820" fill="#fbfcfd"/>
+  <rect x="36" y="32" width="1328" height="756" rx="22" fill="#f4f7f9" stroke="#dce3ea"/>
+  <text x="82" y="102" fill="#17212b" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="40" font-weight="800" text-anchor="start">中芯国际与华虹半导体</text>
+  <text x="82" y="146" fill="#65737e" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="21" font-weight="500" text-anchor="start">晶圆代工双样本：规模型龙头与特色工艺平台的投资价值比较</text>
+
+  <defs>
+    <linearGradient id="fab" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e8f3fb"/>
+      <stop offset="52%" stop-color="#f9efe1"/>
+      <stop offset="100%" stop-color="#edf2f4"/>
+    </linearGradient>
+    <pattern id="wafer" width="42" height="42" patternUnits="userSpaceOnUse">
+      <circle cx="21" cy="21" r="15" fill="none" stroke="#c8d4de" stroke-width="1"/>
+      <line x1="6" y1="21" x2="36" y2="21" stroke="#d9e1e8" stroke-width="1"/>
+      <line x1="21" y1="6" x2="21" y2="36" stroke="#d9e1e8" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="80" y="190" width="1240" height="500" rx="28" fill="url(#fab)" stroke="#dce3ea" stroke-width="1" opacity="1"/>
+  <rect x="80" y="190" width="1240" height="500" rx="28" fill="url(#wafer)" stroke="none" stroke-width="0" opacity="0.38"/>
+  <polygon points="290,565 560,385 835,565" fill="#1b76b8" stroke="none" stroke-width="0" opacity="0.9"/>
+  <polygon points="600,565 860,310 1140,565" fill="#c77d1f" stroke="none" stroke-width="0" opacity="0.9"/>
+  <rect x="160" y="292" width="540" height="168" rx="18" fill="rgba(255,255,255,0.88)" stroke="#dce3ea" stroke-width="1" opacity="1"/>
+  <text x="190" y="350" fill="#1b76b8" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="900" text-anchor="start">中芯国际</text>
+  <text x="190" y="400" fill="#17212b" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="750" text-anchor="start">规模、12英寸产能、综合平台</text>
+  <rect x="720" y="292" width="520" height="168" rx="18" fill="rgba(255,255,255,0.88)" stroke="#dce3ea" stroke-width="1" opacity="1"/>
+  <text x="750" y="350" fill="#c77d1f" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="900" text-anchor="start">华虹半导体</text>
+  <text x="750" y="400" fill="#17212b" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="24" font-weight="750" text-anchor="start">特色工艺、功率/MCU、利用率</text>
+  <text x="700" y="618" fill="#17212b" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="900" text-anchor="middle">投资分析与优势对比</text>
+
+  <text x="82" y="770" fill="#65737e" font-family="Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="16" font-weight="500" text-anchor="start">本文图表基于公司公告、行业公开资料整理</text>
+</svg>
