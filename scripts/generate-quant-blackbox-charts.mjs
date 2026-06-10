@@ -136,20 +136,18 @@ function cover() {
   ${rect(96, 86, 1208, 584, { fill: "rgba(255,255,255,0.82)", stroke: "#e2e8f0", radius: 18, extra: 'filter="url(#softShadow)"' })}
   ${pill(152, 142, 250, 54, "读书笔记", { fill: palette.softTeal, textFill: palette.teal })}
   ${multiline("打开量化投资的黑箱", 152, 264, { anchor: "start", size: 62, weight: 800, maxChars: 22, fill: palette.ink })}
-  ${multiline("从信号、组合、交易到风控的系统化投资框架", 152, 350, { anchor: "start", size: 34, weight: 600, maxChars: 30, fill: palette.slate })}
-  ${multiline("Rishi K. Narang 的核心贡献，是把“黑箱”拆成可检查、可治理、可评估的投资系统。", 152, 425, { anchor: "start", size: 25, weight: 450, maxChars: 40, fill: palette.muted })}
-  ${rect(780, 164, 410, 330, { fill: "#0f172a", stroke: "#1e293b", radius: 14 })}
-  ${multiline("BLACK BOX", 985, 218, { size: 34, weight: 800, fill: "#e2e8f0", maxChars: 12 })}
-  ${rect(830, 258, 310, 52, { fill: "#1e293b", stroke: "#334155", radius: 8 })}
-  ${rect(830, 335, 310, 52, { fill: "#1e293b", stroke: "#334155", radius: 8 })}
-  ${rect(830, 412, 310, 52, { fill: "#1e293b", stroke: "#334155", radius: 8 })}
-  ${multiline("Alpha / Risk / Cost", 985, 292, { size: 22, weight: 650, fill: "#bfdbfe", maxChars: 18 })}
-  ${multiline("Portfolio Construction", 985, 369, { size: 22, weight: 650, fill: "#ccfbf1", maxChars: 20 })}
-  ${multiline("Execution & Feedback", 985, 446, { size: 22, weight: 650, fill: "#fed7aa", maxChars: 20 })}
-  ${arrow(700, 330, 780, 330, "#334155", 4)}
-  ${arrow(1190, 330, 1265, 330, "#334155", 4)}
-  ${pill(525, 302, 156, 58, "数据", { fill: palette.softBlue, textFill: palette.blue })}
-  ${pill(1265, 302, 156, 58, "订单", { fill: palette.softAmber, textFill: palette.amber })}
+  ${multiline("从信号、组合、交易到风控的系统化投资框架", 152, 350, { anchor: "start", size: 34, weight: 600, maxChars: 16, fill: palette.slate })}
+  ${multiline("Rishi K. Narang 的核心贡献，是把“黑箱”拆成可检查、可治理、可评估的投资系统。", 152, 468, { anchor: "start", size: 25, weight: 450, maxChars: 28, fill: palette.muted })}
+  ${rect(820, 172, 370, 306, { fill: "#0f172a", stroke: "#1e293b", radius: 14 })}
+  ${multiline("BLACK BOX", 1005, 224, { size: 34, weight: 800, fill: "#e2e8f0", maxChars: 12 })}
+  ${rect(870, 264, 270, 48, { fill: "#1e293b", stroke: "#334155", radius: 8 })}
+  ${rect(870, 335, 270, 48, { fill: "#1e293b", stroke: "#334155", radius: 8 })}
+  ${rect(870, 406, 270, 48, { fill: "#1e293b", stroke: "#334155", radius: 8 })}
+  ${multiline("Alpha / Risk / Cost", 1005, 296, { size: 21, weight: 650, fill: "#bfdbfe", maxChars: 18 })}
+  ${multiline("Portfolio Construction", 1005, 367, { size: 21, weight: 650, fill: "#ccfbf1", maxChars: 20 })}
+  ${multiline("Execution & Feedback", 1005, 438, { size: 21, weight: 650, fill: "#fed7aa", maxChars: 20 })}
+  <circle cx="782" cy="326" r="9" fill="#2563eb" opacity="0.7"/>
+  <circle cx="1228" cy="326" r="9" fill="#b7791f" opacity="0.7"/>
   ${multiline("量化不是神秘公式，而是一组有边界的工程流程", 700, 610, { size: 28, weight: 600, fill: palette.slate, maxChars: 34 })}
 `;
   return baseSvg(1400, 760, body, "打开量化投资的黑箱读书笔记封面");

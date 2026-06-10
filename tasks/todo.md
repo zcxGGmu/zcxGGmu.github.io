@@ -30,3 +30,20 @@
 - Root cause: the post `featured_image` reused the in-article title card SVG, while the article template overlays title, description, date, tags, and reading time on top of featured images.
 - Fix: add `quant-blackbox-hero.svg` as a title-free decorative hero image and point the post front matter at it. The original title card remains as the first image in the article body.
 - Verification: `node tests/check-quant-blackbox-featured-image.mjs`, `node tests/check-mobile-card-css.mjs`, `npm run build`, and a 1200x900 Chromium screenshot of the article page.
+
+# Quant Black Box First Image Fix
+
+- [x] Add a regression check for the in-article cover layout.
+- [x] Verify the regression check fails on the current cover.
+- [x] Remove external pipeline nodes from the title card.
+- [x] Regenerate the SVG assets.
+- [x] Inspect the cover alone and inside the article page.
+- [x] Run build and automated verification.
+- [x] Record review notes.
+- [x] Commit and push to `origin/gh-pages`.
+
+## Review
+
+- Root cause: the in-article title card mixed cover text with external `数据`/`订单` pipeline nodes and arrows, which became cramped at article-body width.
+- Fix: simplify `quant-blackbox-cover.svg` to a cleaner title card by removing external pipeline nodes and wrapping the subtitle/description copy.
+- Verification: `node tests/check-quant-blackbox-cover-layout.mjs`, the existing article/image checks, `npm run build`, direct SVG browser screenshot, and article-page screenshot.
