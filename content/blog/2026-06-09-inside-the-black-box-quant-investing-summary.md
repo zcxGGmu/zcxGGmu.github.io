@@ -15,7 +15,7 @@ tags:
   - "读书笔记"
 series:
   - "投资读书笔记"
-featured_image: "/images/posts/inside-the-black-box-quant-investing-summary/quant-blackbox-cover.svg"
+featured_image: "/images/posts/inside-the-black-box-quant-investing-summary/quant-blackbox-hero.svg"
 pinned: false
 ---
 

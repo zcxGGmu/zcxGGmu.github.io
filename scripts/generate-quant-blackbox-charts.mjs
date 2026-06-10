@@ -155,6 +155,71 @@ function cover() {
   return baseSvg(1400, 760, body, "打开量化投资的黑箱读书笔记封面");
 }
 
+function hero() {
+  const body = `
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="52%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#164e63"/>
+    </linearGradient>
+    <radialGradient id="heroGlow" cx="32%" cy="26%" r="70%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.38"/>
+      <stop offset="46%" stop-color="#2563eb" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="heroShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="760" fill="url(#heroGradient)"/>
+  <rect width="1400" height="760" fill="url(#heroGlow)"/>
+  <g opacity="0.24">
+    <path d="M 110 180 C 320 95, 455 238, 675 165 S 1010 72, 1295 210" fill="none" stroke="#67e8f9" stroke-width="4"/>
+    <path d="M 90 595 C 265 470, 458 665, 662 534 S 1018 430, 1316 570" fill="none" stroke="#fed7aa" stroke-width="5"/>
+    <path d="M 180 378 L 1220 378" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="10 16"/>
+  </g>
+  <g transform="translate(690 122)" filter="url(#heroShadow)">
+    ${rect(0, 0, 444, 360, { fill: "#0b1220", stroke: "#334155", radius: 18, strokeWidth: 2 })}
+    <circle cx="62" cy="58" r="15" fill="#38bdf8" opacity="0.9"/>
+    <circle cx="112" cy="58" r="15" fill="#2dd4bf" opacity="0.9"/>
+    <circle cx="162" cy="58" r="15" fill="#f59e0b" opacity="0.9"/>
+    ${rect(54, 122, 336, 52, { fill: "#111827", stroke: "#334155", radius: 10 })}
+    ${rect(54, 206, 336, 52, { fill: "#111827", stroke: "#334155", radius: 10 })}
+    ${rect(54, 290, 336, 52, { fill: "#111827", stroke: "#334155", radius: 10 })}
+    <line x1="92" y1="148" x2="282" y2="148" stroke="#bfdbfe" stroke-width="8" stroke-linecap="round" opacity="0.72"/>
+    <line x1="92" y1="232" x2="338" y2="232" stroke="#ccfbf1" stroke-width="8" stroke-linecap="round" opacity="0.72"/>
+    <line x1="92" y1="316" x2="246" y2="316" stroke="#fed7aa" stroke-width="8" stroke-linecap="round" opacity="0.72"/>
+    <circle cx="340" cy="148" r="8" fill="#bfdbfe" opacity="0.86"/>
+    <circle cx="284" cy="316" r="8" fill="#fed7aa" opacity="0.86"/>
+  </g>
+  <g>
+    ${rect(180, 286, 170, 58, { fill: "#dbeafe", stroke: "none", radius: 29, strokeWidth: 0, opacity: 0.92 })}
+    ${rect(430, 286, 170, 58, { fill: "#ccfbf1", stroke: "none", radius: 29, strokeWidth: 0, opacity: 0.92 })}
+    ${rect(1178, 286, 170, 58, { fill: "#fef3c7", stroke: "none", radius: 29, strokeWidth: 0, opacity: 0.92 })}
+    <circle cx="230" cy="315" r="11" fill="#1d4ed8" opacity="0.9"/>
+    <circle cx="280" cy="315" r="11" fill="#38bdf8" opacity="0.9"/>
+    <circle cx="480" cy="315" r="11" fill="#0f766e" opacity="0.9"/>
+    <circle cx="530" cy="315" r="11" fill="#2dd4bf" opacity="0.9"/>
+    <circle cx="1232" cy="315" r="11" fill="#b7791f" opacity="0.9"/>
+    <circle cx="1282" cy="315" r="11" fill="#f59e0b" opacity="0.9"/>
+    ${arrow(350, 315, 430, 315, "#94a3b8", 4)}
+    ${arrow(600, 315, 690, 315, "#94a3b8", 4)}
+    ${arrow(1134, 315, 1178, 315, "#94a3b8", 4)}
+  </g>
+  <g opacity="0.42">
+    <circle cx="186" cy="152" r="4" fill="#e0f2fe"/>
+    <circle cx="248" cy="214" r="4" fill="#e0f2fe"/>
+    <circle cx="360" cy="152" r="4" fill="#e0f2fe"/>
+    <circle cx="468" cy="220" r="4" fill="#e0f2fe"/>
+    <line x1="186" y1="152" x2="248" y2="214" stroke="#bae6fd" stroke-width="2"/>
+    <line x1="248" y1="214" x2="360" y2="152" stroke="#bae6fd" stroke-width="2"/>
+    <line x1="360" y1="152" x2="468" y2="220" stroke="#bae6fd" stroke-width="2"/>
+  </g>
+`;
+  return baseSvg(1400, 760, body, "Quant investing system hero", "Decorative system diagram for the article hero.");
+}
+
 function pipeline() {
   const steps = [
     ["数据", "价格、成交、基本面、另类数据、组合状态", palette.softBlue, palette.blue],
@@ -281,6 +346,7 @@ function riskChecklist() {
 }
 
 await writeSvg("quant-blackbox-cover.svg", cover());
+await writeSvg("quant-blackbox-hero.svg", hero());
 await writeSvg("quant-blackbox-pipeline.svg", pipeline());
 await writeSvg("quant-blackbox-model-stack.svg", modelStack());
 await writeSvg("quant-blackbox-strategy-taxonomy.svg", taxonomy());
