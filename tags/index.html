@@ -1,255 +1,669 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="generator" content="Custom static archive">
-  <title>标签 - zcxGGmu's Blog</title>
-  <meta name="description" content="个人知识归档与长期阅读笔记，收录值得反复回看的文章、视频和技术材料。">
-  <meta name="author" content="zcxGGmu">
-  <meta name="theme-color" content="#f8fafc">
-  <meta property="og:url" content="https://zcxggmu.github.io/tags/">
-  <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
-  <meta property="og:title" content="标签">
-  <meta property="og:description" content="个人知识归档与长期阅读笔记，收录值得反复回看的文章、视频和技术材料。">
-  <meta property="og:locale" content="zh_cn">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://zcxggmu.github.io/tags/">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
-  <script>
-(function(){
-  var key="blog-theme";
-  var sidebarKey="blog-sidebar-collapsed";
-  var theme="";
-  try{theme=localStorage.getItem(key)||""}catch(_){}
-  if(theme!=="light"&&theme!=="dark"){
-    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
-  }
-  document.documentElement.dataset.theme=theme;
-  document.documentElement.style.colorScheme=theme;
-  try{
-    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
-  }catch(_){}
-})();</script>
-  <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
-  <link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen">
-  <meta name="color-scheme" content="light dark">
-</head>
-<body>
-  <a class="skip-link" href="#main-content">跳到主要内容</a>
-  <div id="app">
-    <div class="single-column-drawer-container" id="drawer">
-      <div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item false" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item active" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="演示说明">
+<title>Tags</title>
+
+<link rel='canonical' href='https://zcxggmu.github.io/tags/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Tags">
+<meta property='og:description' content="演示说明">
+<meta property='og:url' content='https://zcxggmu.github.io/tags/'>
+<meta property='og:site_name' content='zcxGGmu'>
+<meta property='og:type' content='website'>
+<meta name="twitter:title" content="Tags">
+<meta name="twitter:description" content="演示说明"><link rel="alternate" type="application/rss&#43;xml" href="https://zcxggmu.github.io/tags/index.xml">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu93b59d28999460e5af2c7d45dd5d75a2_50196_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zcxGGmu</a></h1>
+            <h2 class="site-description">riscv, linux-kernel/kvm, llm-app/infer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zcxGGmu'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                <form action="/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+            
+                <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">归档</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2024">
+                        
+                            <span class="year">2024</span>
+                            <span class="count">7</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2020">
+                        
+                            <span class="year">2020</span>
+                            <span class="count">1</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2019">
+                        
+                            <span class="year">2019</span>
+                            <span class="count">4</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+            
+        
+            
+                <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
     </div>
-    <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
-    <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-      <div id="navBackground" class="nav-background"></div>
-      <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
-        <a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a>
-        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>
-      </div>
-    </nav>
-    <div class="single-column-header-container" id="pageHead">
-      <a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+    <h2 class="widget-title section-title">分类</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/categories/llm-from-scratch/" class="font_size_7">
+                llm-from-scratch
+            </a>
+        
+            <a href="/categories/openai/" class="font_size_7">
+                openai
+            </a>
+        
+            <a href="/categories/test/" class="font_size_2">
+                Test
+            </a>
+        
+            <a href="/categories/syntax/" class="font_size_1">
+                syntax
+            </a>
+        
+            <a href="/categories/themes/" class="font_size_1">
+                themes
+            </a>
+        
+            <a href="/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/" class="font_size_1">
+                تجربة
+            </a>
+        
+            <a href="/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/" class="font_size_1">
+                تجربة مع فراغات
+            </a>
+        
+            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="font_size_1">
+                测试
+            </a>
+        
     </div>
-    <div id="content">
-      <div id="streamContainer" class="stream-container" role="main">
-        <div id="main-content"></div>
-        <div class="post-list-container post-list-container-shadow">
-    <div class="taxonomy-page">
-      <h1>标签</h1>
-      <div class="taxonomy-grid">
-        <a class="taxonomy-card" href="/tags/AI%20Agent/"><span>AI Agent</span><strong>5</strong></a><a class="taxonomy-card" href="/tags/%E6%8A%95%E8%B5%84%E5%88%86%E6%9E%90/"><span>投资分析</span><strong>4</strong></a><a class="taxonomy-card" href="/tags/SIMD/"><span>SIMD</span><strong>4</strong></a><a class="taxonomy-card" href="/tags/%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86/"><span>风险管理</span><strong>3</strong></a><a class="taxonomy-card" href="/tags/%E6%8A%95%E8%B5%84%E5%BF%83%E7%90%86/"><span>投资心理</span><strong>3</strong></a><a class="taxonomy-card" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/"><span>虚拟化</span><strong>3</strong></a><a class="taxonomy-card" href="/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/"><span>半导体</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E8%B4%A2%E5%8A%A1%E8%87%AA%E7%94%B1/"><span>财务自由</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F/"><span>交易系统</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93/"><span>量化交易</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><span>强化学习</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"><span>软件工程</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E6%8A%95%E8%B5%84%E4%BD%93%E7%B3%BB/"><span>投资体系</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E7%8E%B0%E9%87%91%E6%B5%81/"><span>现金流</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E8%B5%84%E4%BA%A7%E9%85%8D%E7%BD%AE/"><span>资产配置</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/Codex/"><span>Codex</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/FIRE/"><span>FIRE</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/RISC-V/"><span>RISC-V</span><strong>2</strong></a><a class="taxonomy-card" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"><span>博客搭建</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%BA%A7%E4%B8%9A%E5%8D%87%E7%BA%A7/"><span>产业升级</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%BA%A7%E4%B8%9A%E6%94%BF%E7%AD%96/"><span>产业政策</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%9F%8E%E6%8A%95%E5%80%BA/"><span>城投债</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%82%A8%E8%93%84%E7%8E%87/"><span>储蓄率</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%89%93%E5%BC%80%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E7%9A%84%E9%BB%91%E7%AE%B1/"><span>打开量化投资的黑箱</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%9C%B0%E6%96%B9%E6%94%BF%E5%BA%9C/"><span>地方政府</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%94%B5%E8%A7%A3%E9%93%9D/"><span>电解铝</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span>读书笔记</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/"><span>多智能体</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%9D%9E%E5%86%9C/"><span>非农</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%88%86%E7%A8%8E%E5%88%B6/"><span>分税制</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/"><span>风险控制</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%A4%8D%E7%9B%98/"><span>复盘</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%B8%AF%E8%82%A1/"><span>港股</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%AB%98%E6%99%AF%E6%B0%94/"><span>高景气</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81/"><span>工程工作流</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%BE%9B%E5%BA%94%E9%93%BE/"><span>供应链</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%A1%85%E5%85%89/"><span>硅光</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%AE%8F%E8%A7%82/"><span>宏观</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E/"><span>宏观经济</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%8D%8E%E8%99%B9%E5%8D%8A%E5%AF%BC%E4%BD%93/"><span>华虹半导体</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"><span>机器人</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE/"><span>激光雷达</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%BB%B7%E5%80%BC%E6%8A%95%E6%9C%BA/"><span>价值投机</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84/"><span>价值投资</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/"><span>架构分析</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%BA%A4%E6%98%93%E7%BA%AA%E5%BE%8B/"><span>交易纪律</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/"><span>进程调度</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%99%B6%E5%9C%86%E4%BB%A3%E5%B7%A5/"><span>晶圆代工</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E8%80%81%E9%BE%84%E5%8C%96/"><span>老龄化</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%94%82%E7%94%B5%E6%B1%A0/"><span>锂电池</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%94%82%E7%9F%BF/"><span>锂矿</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84/"><span>量化投资</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%93%9D/"><span>铝</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%BE%8E%E8%82%A1/"><span>美股</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%BE%8E%E8%81%94%E5%82%A8/"><span>美联储</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%BA%BA%E5%8F%A3%E7%BB%93%E6%9E%84/"><span>人口结构</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E8%AE%A4%E7%9F%A5/"><span>认知</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E8%9E%8D%E6%8D%B7%E8%82%A1%E4%BB%BD/"><span>融捷股份</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%94%9F%E8%82%B2%E7%8E%87/"><span>生育率</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E9%80%9F%E8%85%BE%E8%81%9A%E5%88%9B/"><span>速腾聚创</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%A4%A9%E9%BD%90%E9%94%82%E4%B8%9A/"><span>天齐锂业</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%9C%9F%E5%9C%B0%E8%B4%A2%E6%94%BF/"><span>土地财政</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%B3%BB%E7%BB%9F%E5%8C%96%E6%8A%95%E8%B5%84/"><span>系统化投资</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"><span>系统架构</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"><span>系统设计</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%B0%A7%E5%8C%96%E9%93%9D/"><span>氧化铝</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E6%B0%B8%E5%85%B4%E6%9D%90%E6%96%99/"><span>永兴材料</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%9F%A5%E4%B9%8E%E8%BD%AC%E8%BD%BD/"><span>知乎转载</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85/"><span>置身事内</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%B8%AD%E5%9B%BD%E5%AE%8F%E6%A1%A5/"><span>中国宏桥</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/"><span>中国经济</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%B8%AD%E5%9B%BD%E9%93%9D%E4%B8%9A/"><span>中国铝业</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/"><span>中芯国际</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E5%91%A8%E6%9C%9F/"><span>周期</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E7%A0%94/"><span>自动化科研</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/"><span>自动驾驶</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/AI/"><span>AI</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/AI%20%E9%87%8F%E5%8C%96/"><span>AI 量化</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/AI%20Quant/"><span>AI Quant</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/aleabitoreddit/"><span>aleabitoreddit</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/Claw%20AI%20Lab/"><span>Claw AI Lab</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/Claw%20Code/"><span>Claw Code</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/claw-code/"><span>claw-code</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/Claw-Code/"><span>Claw-Code</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/CodeInsights/"><span>CodeInsights</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/CPI/"><span>CPI</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/CPO/"><span>CPO</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/Electron/"><span>Electron</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/Hermes/"><span>Hermes</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/LazyCodex/"><span>LazyCodex</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/OmO/"><span>OmO</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/OpenAI/"><span>OpenAI</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/Pipeline/"><span>Pipeline</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/PPI/"><span>PPI</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/RoboSense/"><span>RoboSense</span><strong>1</strong></a><a class="taxonomy-card" href="/tags/Serenity/"><span>Serenity</span><strong>1</strong></a>
-      </div>
+</section>
+
+            
+        
+            
+                <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
     </div>
-  </div>
-      </div>
+    <h2 class="widget-title section-title">标签云</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/llm/" class="font_size_7">
+                llm
+            </a>
+        
+            <a href="/tags/openai/" class="font_size_7">
+                openai
+            </a>
+        
+            <a href="/tags/css/" class="font_size_1">
+                css
+            </a>
+        
+            <a href="/tags/emoji/" class="font_size_1">
+                emoji
+            </a>
+        
+            <a href="/tags/html/" class="font_size_1">
+                html
+            </a>
+        
+            <a href="/tags/markdown/" class="font_size_1">
+                markdown
+            </a>
+        
+            <a href="/tags/themes/" class="font_size_1">
+                themes
+            </a>
+        
+            <a href="/tags/%D9%85%D8%A7%D8%B1%D9%83%D8%AF%D8%A7%D9%88%D9%86/" class="font_size_1">
+                ماركداون
+            </a>
+        
+            <a href="/tags/%D9%86%D8%B5/" class="font_size_1">
+                نص
+            </a>
+        
+            <a href="/tags/%D9%88%D8%B3%D9%85-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/" class="font_size_1">
+                وسم مع فراغات
+            </a>
+        
     </div>
-    <div id="sideContainer" class="side-container">
-      <button class="sidebar-collapse-toggle" type="button" data-sidebar-collapse-toggle title="收起左侧边栏" aria-label="收起左侧边栏" aria-expanded="true">
-        <span class="material-icons sidebar-collapse-icon" aria-hidden="true">chevron_left</span>
-      </button>
-      <a class="a-block nav-head false" href="/">
-        <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
-        <div class="nav-title">zcxGGmu's Blog</div>
-        <div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
-      </a>
-      <div class="theme-switcher theme-switcher-desktop"><button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div>
-      <div class="nav-link-list"><a class="a-block nav-link-item false" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item active" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
-      <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
-    </div>
-    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
-    <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
-  </div>
-  <script src="/js/journal.js"></script>
-  <script src="/js/code-enhance.js"></script>
-  <script>
-(function(){
-  var key="blog-theme";
-  var meta=document.querySelector('meta[name="theme-color"]');
-  function systemTheme(){
-    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+</section>
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <header>
+        <h3 class="section-title">
+            
+                章节
+            
+        </h3>
+
+        <div class="section-card">
+            <div class="section-details">
+                <h3 class="section-count">10 个页面</h3>
+                <h1 class="section-term">Tags</h1>
+                
+            </div>
+        </div>
+    </header>
+        
+    
+    <section class="article-list--compact">
+        
+            <article>
+    <a href="/tags/llm/">
+        <div class="article-details">
+            <h2 class="article-title">llm</h2>
+            <footer class="article-time">
+                <time datetime='2024-10-31T17:33:19&#43;08:00'>2024-10-31</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/openai/">
+        <div class="article-details">
+            <h2 class="article-title">openai</h2>
+            <footer class="article-time">
+                <time datetime='2024-10-31T17:33:19&#43;08:00'>2024-10-31</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/css/">
+        <div class="article-details">
+            <h2 class="article-title">css</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-11T00:00:00Z'>2019-03-11</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/html/">
+        <div class="article-details">
+            <h2 class="article-title">html</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-11T00:00:00Z'>2019-03-11</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/markdown/">
+        <div class="article-details">
+            <h2 class="article-title">markdown</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-11T00:00:00Z'>2019-03-11</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/themes/">
+        <div class="article-details">
+            <h2 class="article-title">themes</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-11T00:00:00Z'>2019-03-11</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/%D9%85%D8%A7%D8%B1%D9%83%D8%AF%D8%A7%D9%88%D9%86/">
+        <div class="article-details">
+            <h2 class="article-title">ماركداون</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-09T00:00:00Z'>2019-03-09</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/%D9%86%D8%B5/">
+        <div class="article-details">
+            <h2 class="article-title">نص</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-09T00:00:00Z'>2019-03-09</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/%D9%88%D8%B3%D9%85-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/">
+        <div class="article-details">
+            <h2 class="article-title">وسم مع فراغات</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-09T00:00:00Z'>2019-03-09</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+            <article>
+    <a href="/tags/emoji/">
+        <div class="article-details">
+            <h2 class="article-title">emoji</h2>
+            <footer class="article-time">
+                <time datetime='2019-03-05T00:00:00Z'>2019-03-05</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
+    </section>
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 zcxGGmu
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<div id="particles-js"></div>
+
+<script src=https://zcxggmu.github.io/background/particles.min.js></script>
+<script>
+  particlesJS.load('particles-js', "https://zcxggmu.github.io/background/particlesjs-config.json", function() {
+    console.log('particles.js loaded - callback');
+  });
+</script>
+
+<style>
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: -1;
   }
-  function storedTheme(){
-    try{return localStorage.getItem(key)||""}catch(_){return ""}
-  }
-  function setStoredTheme(theme){
-    try{localStorage.setItem(key,theme)}catch(_){}
-  }
-  function setLegacyCookie(theme){
-    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
-  }
-  function applyTheme(theme,persist){
-    theme=theme==="dark"?"dark":"light";
-    document.documentElement.dataset.theme=theme;
-    document.documentElement.style.colorScheme=theme;
-    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
-    if(persist!==false){
-      setStoredTheme(theme);
-      setLegacyCookie(theme);
+</style>
+
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
     }
-    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
-      var dark=theme==="dark";
-      var icon=button.querySelector(".theme-toggle-icon");
-      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
-      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
-      button.setAttribute("aria-pressed",dark?"true":"false");
-      button.title=dark?"切换浅色模式":"切换深色模式";
-    });
-  }
-  window.setColorTheme=function(theme){applyTheme(theme,true)};
-  window.toggleColorTheme=function(){
-    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
-  };
-  window.toggleDarkMode=window.toggleColorTheme;
-  document.addEventListener("DOMContentLoaded",function(){
-    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
-    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
-      button.addEventListener("click",function(){window.toggleColorTheme()});
-    });
-  });
-  if(window.matchMedia){
-    var query=window.matchMedia("(prefers-color-scheme: dark)");
-    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
-    if(query.addEventListener) query.addEventListener("change",onChange);
-    else if(query.addListener) query.addListener(onChange);
-  }
-})();</script>
-  <script>
-(function(){
-  var key="blog-sidebar-collapsed";
-  function storedCollapsed(){
-    try{return localStorage.getItem(key)==="1"}catch(_){return false}
-  }
-  function storeCollapsed(collapsed){
-    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
-  }
-  function applySidebarState(collapsed,persist){
-    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
-    if(persist!==false) storeCollapsed(collapsed);
-    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
-      var icon=button.querySelector(".sidebar-collapse-icon");
-      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
-      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
-      button.setAttribute("aria-expanded",collapsed?"false":"true");
-      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
-    });
-  }
-  window.toggleSidebarCollapsed=function(){
-    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
-    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
-      button.addEventListener("click",window.toggleSidebarCollapsed);
-    });
-  });
-})();</script>
-  <script>
-(function(){
-  function byId(id){return document.getElementById(id)}
-  function ensureChrome(){
-    if(!byId("reading-progress")){
-      var progress=document.createElement("div");
-      progress.id="reading-progress";
-      progress.setAttribute("aria-hidden","true");
-      document.body.appendChild(progress);
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
     }
-    if(!byId("backToTop")){
-      var button=document.createElement("button");
-      button.id="backToTop";
-      button.type="button";
-      button.title="返回顶部";
-      button.setAttribute("aria-label","返回顶部");
-      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
-      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
-      document.body.appendChild(button);
-    }
-  }
-  function update(){
-    var root=document.documentElement;
-    var total=root.scrollHeight-root.clientHeight;
-    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
-    var progress=byId("reading-progress");
-    var top=byId("backToTop");
-    var global=byId("globalBackToTop");
-    if(progress) progress.style.width=percent+"%";
-    var show=(window.scrollY||root.scrollTop)>360;
-    if(top) top.classList.toggle("show",show);
-    if(global) global.classList.toggle("invisible",!show);
-  }
-  window.toggleDrawer=function(){
-    var drawer=byId("drawer");
-    var overlay=byId("drawer-overlay");
-    var open=!drawer.classList.contains("single-column-drawer-container-active");
-    drawer.classList.toggle("single-column-drawer-container-active",open);
-    document.documentElement.style.overflow=open?"hidden":"";
-    if(overlay) overlay.style.display=open?"block":"none";
-  };
-  document.addEventListener("DOMContentLoaded",function(){
-    ensureChrome();
-    update();
-    window.addEventListener("scroll",update,{passive:true});
-    window.addEventListener("resize",update,{passive:true});
-  });
-})();</script>
-  <script>
-(function(){
-  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
-  ready(function(){
-    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
-    if(!images.length) return;
-    var box=document.createElement("div");
-    box.className="image-lightbox";
-    box.setAttribute("role","dialog");
-    box.setAttribute("aria-modal","true");
-    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
-    document.body.appendChild(box);
-    var preview=box.querySelector("img");
-    var close=box.querySelector("button");
-    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
-    images.forEach(function(img){
-      img.tabIndex=0;
-      img.addEventListener("click",function(){
-        preview.src=img.currentSrc||img.src;
-        preview.alt=img.alt||"";
-        box.classList.add("is-visible");
-        document.body.classList.add("lightbox-open");
-      });
-    });
-    close.addEventListener("click",hide);
-    box.addEventListener("click",function(event){if(event.target===box) hide()});
-    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
-  });
-})();</script>
-</body>
+    initTocHide()
+</script>
+
+
+
+
+    </body>
 </html>
