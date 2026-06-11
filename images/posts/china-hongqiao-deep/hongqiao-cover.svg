@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="aluminum" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0c0c0"/>
+      <stop offset="50%" style="stop-color:#e8e8e8"/>
+      <stop offset="100%" style="stop-color:#a0a0a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative aluminum ingot shapes -->
+  <rect x="850" y="180" width="280" height="60" rx="10" fill="url(#aluminum)" opacity="0.3" transform="rotate(-15, 990, 210)"/>
+  <rect x="830" y="260" width="300" height="50" rx="8" fill="url(#aluminum)" opacity="0.2" transform="rotate(-10, 980, 285)"/>
+  <rect x="860" y="340" width="260" height="55" rx="10" fill="url(#aluminum)" opacity="0.25" transform="rotate(-20, 990, 367)"/>
+  
+  <!-- Industrial silhouette -->
+  <rect x="780" y="420" width="420" height="8" rx="4" fill="#e94560" opacity="0.6"/>
+  <rect x="800" y="400" width="380" height="8" rx="4" fill="#e94560" opacity="0.4"/>
+  
+  <!-- Stock chart line -->
+  <polyline points="100,480 200,460 300,470 400,430 500,440 600,390 700,400 800,360 900,370 1000,320 1100,340" 
+    fill="none" stroke="#e94560" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="100,480 200,460 300,470 400,430 500,440 600,390 700,400 800,360 900,370 1000,320 1100,340" 
+    fill="none" stroke="#e94560" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+  
+  <!-- Grid lines -->
+  <line x1="80" y1="400" x2="1120" y2="400" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+  <line x1="80" y1="360" x2="1120" y2="360" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+  <line x1="80" y1="440" x2="1120" y2="440" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+  
+  <!-- Title -->
+  <text x="80" y="120" font-family="sans-serif" font-size="48" font-weight="bold" fill="#ffffff">中国宏桥</text>
+  <text x="80" y="175" font-family="sans-serif" font-size="32" fill="#e94560" opacity="0.9">01378.HK</text>
+  <text x="80" y="230" font-family="sans-serif" font-size="22" fill="#c0c0c0" opacity="0.8">全球铝业龙头 · 全产业链一体化 · 价值重估之路</text>
+  
+  <!-- Data badges -->
+  <rect x="80" y="530" width="200" height="50" rx="25" fill="#e94560" opacity="0.15"/>
+  <text x="180" y="562" font-family="sans-serif" font-size="18" fill="#e94560" text-anchor="middle">花旗目标价 HK$48</text>
+  
+  <rect x="300" y="530" width="200" height="50" rx="25" fill="#e94560" opacity="0.15"/>
+  <text x="400" y="562" font-family="sans-serif" font-size="18" fill="#e94560" text-anchor="middle">股息率 8-10%</text>
+  
+  <rect x="520" y="530" width="220" height="50" rx="25" fill="#e94560" opacity="0.15"/>
+  <text x="630" y="562" font-family="sans-serif" font-size="18" fill="#e94560" text-anchor="middle">2025 净利 226亿</text>
+  
+  <rect x="760" y="530" width="220" height="50" rx="25" fill="#e94560" opacity="0.15"/>
+  <text x="870" y="562" font-family="sans-serif" font-size="18" fill="#e94560" text-anchor="middle">控股股东增持</text>
+</svg>
