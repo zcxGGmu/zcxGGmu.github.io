@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f8fafc">
-  <meta name="description" content="读《量化交易从入门到精通》概述章节后整理的原创笔记：从交易圣杯、技术分析、人性弱点、量化证伪，到机械交易系统与经典策略的入门地图，并附已授权原文图表。">
-  <meta property="og:title" content="量化交易概述：从交易圣杯到可检验系统 - zcxGGmu's Blog">
-  <meta property="og:description" content="量化交易不是寻找神秘圣杯，而是把交易想法变成可定义、可回测、可复盘、可迭代的系统，并附已授权原文图表。">
+  <meta name="description" content="经授权全文转载《量化交易从入门到精通》“概述”章节，完整保留原始排版、策略源码与原书插图。">
+  <meta property="og:title" content="《量化交易从入门到精通》概述：投资市场是否有交易圣杯 - zcxGGmu's Blog">
+  <meta property="og:description" content="经授权全文转载《量化交易从入门到精通》“概述”章节，按原书第 16 页至第 60 页逐页完整展示。">
   <meta property="og:url" content="https://zcxggmu.github.io/2026/06/11/quant-trading-overview/">
   <link rel="canonical" href="https://zcxggmu.github.io/2026/06/11/quant-trading-overview/">
   <link rel="stylesheet" href="/scss/journal.min.css">
@@ -18,9 +18,8 @@
   <style>
     body.quant-trading-overview .post-title h1 {
       max-width: 100%;
-      line-height: 1.25;
+      line-height: 1.18;
       overflow-wrap: anywhere;
-      word-break: break-all;
     }
     body.quant-trading-overview,
     body.quant-trading-overview .stream-container,
@@ -31,32 +30,40 @@
       overflow-x: hidden;
     }
     body.quant-trading-overview .post-body p,
-    body.quant-trading-overview .post-body blockquote {
+    body.quant-trading-overview .post-body blockquote,
+    body.quant-trading-overview .post-body figcaption {
       white-space: normal;
-      overflow-wrap: anywhere;
-      word-break: break-all;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
-    body.quant-trading-overview .overview-image-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+    body.quant-trading-overview .chapter-meta-note {
+      margin: 0 0 28px;
+      color: #60758a;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    body.quant-trading-overview .chapter-page-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
       margin: 24px 0 8px;
     }
-    body.quant-trading-overview .overview-image-gallery figure {
+    body.quant-trading-overview .chapter-page {
       margin: 0;
-      padding: 10px;
+      padding: 14px;
       border: 1px solid rgba(25, 118, 210, 0.12);
-      border-radius: 8px;
-      background: rgba(25, 118, 210, 0.03);
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
     }
-    body.quant-trading-overview .overview-image-gallery img {
+    body.quant-trading-overview .chapter-page img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 6px;
     }
-    body.quant-trading-overview .overview-image-gallery figcaption {
-      margin-top: 8px;
+    body.quant-trading-overview .chapter-page figcaption {
+      margin-top: 10px;
       color: #60758a;
       font-size: 13px;
       text-align: center;
@@ -66,30 +73,28 @@
     }
     @media screen and (max-width: 480px) {
       body.quant-trading-overview .post-body-wrapper {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-      body.quant-trading-overview .post-body p,
-      body.quant-trading-overview .post-body blockquote {
-        max-width: calc(100vw - 48px);
+        padding-left: 18px;
+        padding-right: 18px;
       }
       body.quant-trading-overview .post-title h1 {
-        font-size: 28px;
+        font-size: 26px;
         margin: 14px 0 22px;
       }
       body.quant-trading-overview .mobile-title-break {
         display: block;
       }
-      body.quant-trading-overview .post-body blockquote {
-        margin-left: 0;
-        margin-right: 0;
+      body.quant-trading-overview .chapter-page {
+        padding: 10px;
+      }
+      body.quant-trading-overview .chapter-meta-note {
+        font-size: 13px;
       }
       body.quant-trading-overview .post-title .post-meta {
         line-height: 1.6;
       }
     }
   </style>
-  <title>量化交易概述：从交易圣杯到可检验系统 - zcxGGmu's Blog</title>
+  <title>《量化交易从入门到精通》概述：投资市场是否有交易圣杯 - zcxGGmu's Blog</title>
 </head>
 <body class="quant-trading-overview">
 <div class="side-container">
@@ -118,134 +123,70 @@
   <div class="post">
     <div class="post-head-wrapper" style="background-image:url('/images/posts/quant-trading-overview/cover.svg')">
       <div class="post-title">
-        <h1>量化交易概述：<br class="mobile-title-break">从交易圣杯到可检验系统</h1>
+        <h1>《量化交易从入门到精通》概述：<br class="mobile-title-break">投资市场是否有交易圣杯</h1>
         <div class="post-meta">
           <span>2026-06-11</span>&nbsp;&nbsp;
           <a href="/categories/量化交易/" style="color:#1976d2">量化交易</a>&nbsp;
           <a href="/categories/投资/" style="color:#1976d2">投资</a>&nbsp;
           <a href="/categories/读书/" style="color:#1976d2">读书</a>&nbsp;&nbsp;
-          <span class="material-icons" style="font-size:16px;vertical-align:middle">schedule</span> 14 分钟
+          <span class="material-icons" style="font-size:16px;vertical-align:middle">schedule</span> 45 页原文
         </div>
       </div>
     </div>
     <div class="post-body-wrapper">
       <div class="post-body">
         <blockquote>
-          <p>这是一篇基于周泽炜《量化交易从入门到精通》“概述”章节整理的原创读书笔记。它保留章节的问题线索与策略地图，但不复刻原章节文字。原章节图片已按授权保留在文末，本文只讨论方法论与研究框架，不构成任何投资建议。</p>
+          <p>本文经授权全文转载周泽炜《量化交易从入门到精通》“概述”章节。为完整保留原始排版、策略源码和书中插图，下方按原书页序逐页展示，不再对原文做摘要式改写。</p>
         </blockquote>
 
-<p>量化交易最容易被包装成两种幻觉：一种是神秘化，仿佛只要掌握某个指标、公式或老师口中的秘诀，就能穿越牛熊；另一种是工具化，仿佛把交易软件、回测平台和几行代码接起来，市场就会自动吐出利润。真正有价值的入门方式，恰好要从这两种幻觉之间走过去。</p>
-
-<p>《量化交易从入门到精通》的“概述”章节提出的核心问题是：投资市场里有没有交易圣杯？如果把圣杯理解成永远有效、稳定赚钱、无需调整的秘术，答案大概率是否定的；但如果把圣杯理解成一套能持续约束自己、检验想法、控制风险、迭代策略的系统，那么量化交易确实提供了一条更接近“可重复”的路。</p>
-
-<h2>技术首先研究人</h2>
-<p>技术分析看起来是在研究价格、成交量、均线、形态和指标，底层其实是在研究人的行为。价格图表不是自然界的曲线，而是无数交易者在贪婪、恐惧、迟疑、从众和仓位压力下留下的痕迹。</p>
-
-<p>这也是为什么“懂技术”和“能赚钱”之间隔着很远。一个人可以背熟很多形态和指标，却依然在市场里反复犯错。原因通常不在知识点缺失，而在于他用散户心态使用技术：上涨时追逐确定感，下跌时寻找安慰，亏损时扩大赌注，盈利时过早兑现。</p>
-
-<p>所以技术的第一层价值不是预测市场，而是揭示自己。交易者总想看透庄家和机构，但更现实的训练是看透自己的反应模式：什么时候会急着进场，什么时候会害怕止损，什么时候会把一次随机盈利误认为能力，什么时候又会为了证明自己正确而拒绝承认市场已经变了。</p>
-
-<h2>从信念到规则</h2>
-<p>章节里反复出现的一条主线，是把主观经验拆成可以描述的规则。比如趋势、量能、形态、均线、周期和指标，都不应该停留在“感觉很好”或“老师说有用”的层面，而要进一步转化成可执行条件。</p>
-
-<p>“线上阴线买、线下阳线抛”就是典型例子。它作为经验口诀很容易传播，但一进入量化研究，就必须回答一串具体问题：线指哪条线？是均线、支撑压力位，还是通道边界？阴线和阳线如何定义？触线、跌破、突破、回抽的判定阈值是多少？入场后在哪里止损，在哪里止盈，是否允许反手，手续费和滑点如何计入？</p>
-
-<p>一旦问题被问到这个程度，口号就变成了策略。策略未必赚钱，但它至少可以被检验；而不能被检验的经验，很容易变成交易者自我暗示的材料。</p>
-
-<h2>量化的第一职能是证伪</h2>
-<p>很多人学习量化，是为了马上找到盈利模型。但对多数入门者来说，量化更重要的第一功能是证伪。</p>
-
-<p>市场上有大量听起来顺口、传播很广、甚至短期看起来有效的技巧。它们可能来自幸存者偏差，可能来自特定行情阶段，也可能只是忽略了交易成本、滑点和样本外失效。量化回测不能保证发现真理，却能帮助我们淘汰一批明显经不起数据检验的观点。</p>
-
-<p>一次合格的证伪，至少要做到四件事：定义规则，确定样本，计入成本，观察不同市场阶段的表现。只有这样，交易者才不会被少数漂亮案例牵着走，也不会把偶然盈利误读成稳定优势。</p>
-
-<h2>抛硬币与海龟实验</h2>
-<p>交易入门里有两个很适合打破迷信的故事：抛硬币交易和海龟实验。</p>
-
-<p>抛硬币交易想说明的是，入场信号并不总是系统里最关键的部分。即便入场接近随机，只要资金管理、止损机制、盈亏比和趋势持有逻辑足够严谨，系统仍可能呈现出某种可控特征。反过来，一个看似高明的入场信号，如果没有仓位和风险控制，也可能把账户带向不可恢复的回撤。</p>
-
-<p>海龟交易实验更进一步：它强调交易规则可以被训练、复制和执行。突破入场、波动率定仓、分批加仓、严格止损、组合分散，这些要素共同构成了一套机械系统。它不要求交易者每天临场发挥，而是要求交易者在压力下仍然按规则行动。</p>
-
-<p>这对普通交易者很重要。多数人真正缺少的不是灵感，而是在连续亏损、连续盈利、突然大波动和噪声信息轰炸下仍然保持一致性的能力。</p>
-
-<h2>机械交易系统</h2>
-<p>所谓机械交易系统，不是把交易变成僵硬的按钮，也不是否定人的经验，而是提前把关键决策写清楚：什么条件下入场，什么条件下退出，单笔亏损是多少，连续亏损如何降仓，策略失效如何暂停，参数更新如何进行。</p>
-
-<p>机械化的价值在于减少临场解释权。交易者最危险的时刻，往往不是不知道规则，而是给自己开例外：这次跌破不算，新闻出来再看看，仓位大一点也许能扳回来，指标已经坏了但感觉马上反转。一个好的系统会把这些“临时发挥”压缩到最小。</p>
-
-<p>当然，机械化不等于永不调整。真正的系统应该分成两层：执行层稳定，研究层迭代。执行层负责按既定规则交易；研究层负责定期复盘、检查样本外表现、评估策略容量和市场环境变化。把这两层混在一起，交易就会在“盘中改规则”的混乱里失真。</p>
-
-<h2>经典策略的共同点</h2>
-<p>章节中提到的 Aberration、一目均衡表、Dual Thrust 等策略，表面形式不同，背后都在处理同一个问题：如何把市场状态压缩成明确的交易边界。</p>
-
-<p>Aberration 属于通道突破思路。它关心价格是否突破由波动范围构成的边界，适合观察趋势启动后的延续性。一目均衡表则把趋势、支撑压力、时间平移和价格位置放到同一套图形系统里，试图用多条线之间的关系描述均衡与失衡。Dual Thrust 是日内突破策略的经典代表，它用前 N 日的最高价、最低价、最高收盘价和最低收盘价计算波动区间，再以上下轨触发多空方向。</p>
-
-<p>这些策略值得学习的地方，不是照抄参数，而是理解它们如何组织问题：先定义市场状态，再定义触发条件，然后安排出场、止损、仓位和成本。策略名字并不重要，重要的是它能否被清楚表达、能否被不同样本检验、能否在实盘约束下执行。</p>
-
-<h2>回测不是盈利证明</h2>
-<p>量化学习最容易陷入的第二个误区，是把漂亮回测当成赚钱证明。回测只是研究工具，不是未来收益承诺。</p>
-
-<p>一个回测结果要被认真对待，至少要追问这些问题：数据是否有幸存者偏差？是否发生未来函数？手续费、滑点、冲击成本是否合理？参数是不是过度拟合？样本是否覆盖上涨、下跌、震荡和极端波动？策略容量有多大？如果连续亏损十次，账户还能不能活下来？</p>
-
-<p>交易系统最终面对的是资金曲线，不是指标截图。年化收益、胜率、盈亏比、最大回撤、收益回撤比、夏普比率都只是观察角度。它们必须和交易频率、持仓周期、资金容量、心理承受能力放在一起看。</p>
-
-<h2>入门路线</h2>
-<p>如果把这一章当成量化交易入门地图，可以整理成一条比较稳的路径。</p>
-
-<p>第一步，先把交易观点写成规则。不要说“趋势好就买”，而要说用什么指标、什么周期、什么阈值判断趋势。第二步，用历史数据证伪规则，重点不是找最佳参数，而是看逻辑是否在不同市场状态下仍有解释力。第三步，加入成本、滑点、仓位、止损和组合约束。第四步，做样本外测试和模拟盘，观察执行层是否符合预期。第五步，小资金实盘验证，记录每一次偏离规则的原因。第六步，定期复盘，但避免盘中随意改策略。</p>
-
-<p>这条路线不性感，却比寻找神奇指标可靠。量化交易真正训练的是把想法落地成系统的能力，而不是把市场简化成某个万能答案。</p>
-
-<h2>结语</h2>
-<p>投资市场也许没有一只可以永久取胜的圣杯，但有一类更朴素的优势：少信口号，多做验证；少临场发挥，多尊重规则；少追逐神秘，多承认成本、风险和失效。</p>
-
-<p>量化交易的意义正在这里。它让交易者从“我觉得”走向“我定义”，从“我听说”走向“我验证”，从“我赌这次不一样”走向“我知道这套系统在什么条件下该工作，也知道什么时候该停下来”。这不是神话，却已经是许多交易者最缺的一步。</p>
-
-<h2>原文图表</h2>
-<p>以下图片为《量化交易从入门到精通》“概述”章节中已获授权保留的原文图表，按原始页码顺序排列。</p>
-<div class="overview-image-gallery">
-  <figure><img src="/images/overview/page019_img0.jpeg" alt="概述章节原文图表 page019_img0" loading="lazy"><figcaption>page019_img0</figcaption></figure>
-  <figure><img src="/images/overview/page020_img0.jpeg" alt="概述章节原文图表 page020_img0" loading="lazy"><figcaption>page020_img0</figcaption></figure>
-  <figure><img src="/images/overview/page022_img0.jpeg" alt="概述章节原文图表 page022_img0" loading="lazy"><figcaption>page022_img0</figcaption></figure>
-  <figure><img src="/images/overview/page022_img1.jpeg" alt="概述章节原文图表 page022_img1" loading="lazy"><figcaption>page022_img1</figcaption></figure>
-  <figure><img src="/images/overview/page024_img0.jpeg" alt="概述章节原文图表 page024_img0" loading="lazy"><figcaption>page024_img0</figcaption></figure>
-  <figure><img src="/images/overview/page024_img1.jpeg" alt="概述章节原文图表 page024_img1" loading="lazy"><figcaption>page024_img1</figcaption></figure>
-  <figure><img src="/images/overview/page025_img0.jpeg" alt="概述章节原文图表 page025_img0" loading="lazy"><figcaption>page025_img0</figcaption></figure>
-  <figure><img src="/images/overview/page025_img1.jpeg" alt="概述章节原文图表 page025_img1" loading="lazy"><figcaption>page025_img1</figcaption></figure>
-  <figure><img src="/images/overview/page025_img2.jpeg" alt="概述章节原文图表 page025_img2" loading="lazy"><figcaption>page025_img2</figcaption></figure>
-  <figure><img src="/images/overview/page025_img3.jpeg" alt="概述章节原文图表 page025_img3" loading="lazy"><figcaption>page025_img3</figcaption></figure>
-  <figure><img src="/images/overview/page026_img0.jpeg" alt="概述章节原文图表 page026_img0" loading="lazy"><figcaption>page026_img0</figcaption></figure>
-  <figure><img src="/images/overview/page031_img0.jpeg" alt="概述章节原文图表 page031_img0" loading="lazy"><figcaption>page031_img0</figcaption></figure>
-  <figure><img src="/images/overview/page031_img1.jpeg" alt="概述章节原文图表 page031_img1" loading="lazy"><figcaption>page031_img1</figcaption></figure>
-  <figure><img src="/images/overview/page032_img0.jpeg" alt="概述章节原文图表 page032_img0" loading="lazy"><figcaption>page032_img0</figcaption></figure>
-  <figure><img src="/images/overview/page033_img0.jpeg" alt="概述章节原文图表 page033_img0" loading="lazy"><figcaption>page033_img0</figcaption></figure>
-  <figure><img src="/images/overview/page034_img0.jpeg" alt="概述章节原文图表 page034_img0" loading="lazy"><figcaption>page034_img0</figcaption></figure>
-  <figure><img src="/images/overview/page034_img1.jpeg" alt="概述章节原文图表 page034_img1" loading="lazy"><figcaption>page034_img1</figcaption></figure>
-  <figure><img src="/images/overview/page038_img0.jpeg" alt="概述章节原文图表 page038_img0" loading="lazy"><figcaption>page038_img0</figcaption></figure>
-  <figure><img src="/images/overview/page038_img1.jpeg" alt="概述章节原文图表 page038_img1" loading="lazy"><figcaption>page038_img1</figcaption></figure>
-  <figure><img src="/images/overview/page039_img0.jpeg" alt="概述章节原文图表 page039_img0" loading="lazy"><figcaption>page039_img0</figcaption></figure>
-  <figure><img src="/images/overview/page039_img1.jpeg" alt="概述章节原文图表 page039_img1" loading="lazy"><figcaption>page039_img1</figcaption></figure>
-  <figure><img src="/images/overview/page040_img0.jpeg" alt="概述章节原文图表 page040_img0" loading="lazy"><figcaption>page040_img0</figcaption></figure>
-  <figure><img src="/images/overview/page042_img0.jpeg" alt="概述章节原文图表 page042_img0" loading="lazy"><figcaption>page042_img0</figcaption></figure>
-  <figure><img src="/images/overview/page044_img0.jpeg" alt="概述章节原文图表 page044_img0" loading="lazy"><figcaption>page044_img0</figcaption></figure>
-  <figure><img src="/images/overview/page044_img1.jpeg" alt="概述章节原文图表 page044_img1" loading="lazy"><figcaption>page044_img1</figcaption></figure>
-  <figure><img src="/images/overview/page045_img0.jpeg" alt="概述章节原文图表 page045_img0" loading="lazy"><figcaption>page045_img0</figcaption></figure>
-  <figure><img src="/images/overview/page045_img1.jpeg" alt="概述章节原文图表 page045_img1" loading="lazy"><figcaption>page045_img1</figcaption></figure>
-  <figure><img src="/images/overview/page046_img0.jpeg" alt="概述章节原文图表 page046_img0" loading="lazy"><figcaption>page046_img0</figcaption></figure>
-  <figure><img src="/images/overview/page046_img1.jpeg" alt="概述章节原文图表 page046_img1" loading="lazy"><figcaption>page046_img1</figcaption></figure>
-  <figure><img src="/images/overview/page047_img0.jpeg" alt="概述章节原文图表 page047_img0" loading="lazy"><figcaption>page047_img0</figcaption></figure>
-  <figure><img src="/images/overview/page047_img1.jpeg" alt="概述章节原文图表 page047_img1" loading="lazy"><figcaption>page047_img1</figcaption></figure>
-  <figure><img src="/images/overview/page048_img0.jpeg" alt="概述章节原文图表 page048_img0" loading="lazy"><figcaption>page048_img0</figcaption></figure>
-  <figure><img src="/images/overview/page048_img1.jpeg" alt="概述章节原文图表 page048_img1" loading="lazy"><figcaption>page048_img1</figcaption></figure>
-  <figure><img src="/images/overview/page049_img0.jpeg" alt="概述章节原文图表 page049_img0" loading="lazy"><figcaption>page049_img0</figcaption></figure>
-  <figure><img src="/images/overview/page053_img0.jpeg" alt="概述章节原文图表 page053_img0" loading="lazy"><figcaption>page053_img0</figcaption></figure>
-  <figure><img src="/images/overview/page053_img1.jpeg" alt="概述章节原文图表 page053_img1" loading="lazy"><figcaption>page053_img1</figcaption></figure>
-  <figure><img src="/images/overview/page054_img0.jpeg" alt="概述章节原文图表 page054_img0" loading="lazy"><figcaption>page054_img0</figcaption></figure>
-  <figure><img src="/images/overview/page055_img0.jpeg" alt="概述章节原文图表 page055_img0" loading="lazy"><figcaption>page055_img0</figcaption></figure>
-  <figure><img src="/images/overview/page055_img1.jpeg" alt="概述章节原文图表 page055_img1" loading="lazy"><figcaption>page055_img1</figcaption></figure>
-  <figure><img src="/images/overview/page056_img0.jpeg" alt="概述章节原文图表 page056_img0" loading="lazy"><figcaption>page056_img0</figcaption></figure>
-  <figure><img src="/images/overview/page060_img0.jpeg" alt="概述章节原文图表 page060_img0" loading="lazy"><figcaption>page060_img0</figcaption></figure>
-  <figure><img src="/images/overview/page060_img1.jpeg" alt="概述章节原文图表 page060_img1" loading="lazy"><figcaption>page060_img1</figcaption></figure>
+<p class="chapter-meta-note">章节范围：原书第 16 页至第 60 页，共 45 页。本文仅作内容转载与学习存档，不构成任何投资建议。</p>
+<div class="chapter-page-stack">
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-016.jpg" alt="《量化交易从入门到精通》概述章节原书第 16 页" loading="eager"><figcaption>原书第 16 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-017.jpg" alt="《量化交易从入门到精通》概述章节原书第 17 页" loading="eager"><figcaption>原书第 17 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-018.jpg" alt="《量化交易从入门到精通》概述章节原书第 18 页" loading="lazy"><figcaption>原书第 18 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-019.jpg" alt="《量化交易从入门到精通》概述章节原书第 19 页" loading="lazy"><figcaption>原书第 19 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-020.jpg" alt="《量化交易从入门到精通》概述章节原书第 20 页" loading="lazy"><figcaption>原书第 20 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-021.jpg" alt="《量化交易从入门到精通》概述章节原书第 21 页" loading="lazy"><figcaption>原书第 21 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-022.jpg" alt="《量化交易从入门到精通》概述章节原书第 22 页" loading="lazy"><figcaption>原书第 22 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-023.jpg" alt="《量化交易从入门到精通》概述章节原书第 23 页" loading="lazy"><figcaption>原书第 23 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-024.jpg" alt="《量化交易从入门到精通》概述章节原书第 24 页" loading="lazy"><figcaption>原书第 24 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-025.jpg" alt="《量化交易从入门到精通》概述章节原书第 25 页" loading="lazy"><figcaption>原书第 25 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-026.jpg" alt="《量化交易从入门到精通》概述章节原书第 26 页" loading="lazy"><figcaption>原书第 26 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-027.jpg" alt="《量化交易从入门到精通》概述章节原书第 27 页" loading="lazy"><figcaption>原书第 27 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-028.jpg" alt="《量化交易从入门到精通》概述章节原书第 28 页" loading="lazy"><figcaption>原书第 28 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-029.jpg" alt="《量化交易从入门到精通》概述章节原书第 29 页" loading="lazy"><figcaption>原书第 29 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-030.jpg" alt="《量化交易从入门到精通》概述章节原书第 30 页" loading="lazy"><figcaption>原书第 30 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-031.jpg" alt="《量化交易从入门到精通》概述章节原书第 31 页" loading="lazy"><figcaption>原书第 31 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-032.jpg" alt="《量化交易从入门到精通》概述章节原书第 32 页" loading="lazy"><figcaption>原书第 32 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-033.jpg" alt="《量化交易从入门到精通》概述章节原书第 33 页" loading="lazy"><figcaption>原书第 33 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-034.jpg" alt="《量化交易从入门到精通》概述章节原书第 34 页" loading="lazy"><figcaption>原书第 34 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-035.jpg" alt="《量化交易从入门到精通》概述章节原书第 35 页" loading="lazy"><figcaption>原书第 35 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-036.jpg" alt="《量化交易从入门到精通》概述章节原书第 36 页" loading="lazy"><figcaption>原书第 36 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-037.jpg" alt="《量化交易从入门到精通》概述章节原书第 37 页" loading="lazy"><figcaption>原书第 37 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-038.jpg" alt="《量化交易从入门到精通》概述章节原书第 38 页" loading="lazy"><figcaption>原书第 38 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-039.jpg" alt="《量化交易从入门到精通》概述章节原书第 39 页" loading="lazy"><figcaption>原书第 39 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-040.jpg" alt="《量化交易从入门到精通》概述章节原书第 40 页" loading="lazy"><figcaption>原书第 40 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-041.jpg" alt="《量化交易从入门到精通》概述章节原书第 41 页" loading="lazy"><figcaption>原书第 41 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-042.jpg" alt="《量化交易从入门到精通》概述章节原书第 42 页" loading="lazy"><figcaption>原书第 42 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-043.jpg" alt="《量化交易从入门到精通》概述章节原书第 43 页" loading="lazy"><figcaption>原书第 43 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-044.jpg" alt="《量化交易从入门到精通》概述章节原书第 44 页" loading="lazy"><figcaption>原书第 44 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-045.jpg" alt="《量化交易从入门到精通》概述章节原书第 45 页" loading="lazy"><figcaption>原书第 45 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-046.jpg" alt="《量化交易从入门到精通》概述章节原书第 46 页" loading="lazy"><figcaption>原书第 46 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-047.jpg" alt="《量化交易从入门到精通》概述章节原书第 47 页" loading="lazy"><figcaption>原书第 47 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-048.jpg" alt="《量化交易从入门到精通》概述章节原书第 48 页" loading="lazy"><figcaption>原书第 48 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-049.jpg" alt="《量化交易从入门到精通》概述章节原书第 49 页" loading="lazy"><figcaption>原书第 49 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-050.jpg" alt="《量化交易从入门到精通》概述章节原书第 50 页" loading="lazy"><figcaption>原书第 50 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-051.jpg" alt="《量化交易从入门到精通》概述章节原书第 51 页" loading="lazy"><figcaption>原书第 51 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-052.jpg" alt="《量化交易从入门到精通》概述章节原书第 52 页" loading="lazy"><figcaption>原书第 52 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-053.jpg" alt="《量化交易从入门到精通》概述章节原书第 53 页" loading="lazy"><figcaption>原书第 53 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-054.jpg" alt="《量化交易从入门到精通》概述章节原书第 54 页" loading="lazy"><figcaption>原书第 54 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-055.jpg" alt="《量化交易从入门到精通》概述章节原书第 55 页" loading="lazy"><figcaption>原书第 55 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-056.jpg" alt="《量化交易从入门到精通》概述章节原书第 56 页" loading="lazy"><figcaption>原书第 56 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-057.jpg" alt="《量化交易从入门到精通》概述章节原书第 57 页" loading="lazy"><figcaption>原书第 57 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-058.jpg" alt="《量化交易从入门到精通》概述章节原书第 58 页" loading="lazy"><figcaption>原书第 58 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-059.jpg" alt="《量化交易从入门到精通》概述章节原书第 59 页" loading="lazy"><figcaption>原书第 59 页</figcaption></figure>
+  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-060.jpg" alt="《量化交易从入门到精通》概述章节原书第 60 页" loading="lazy"><figcaption>原书第 60 页</figcaption></figure>
+</div>
 </div>
 
       </div>
