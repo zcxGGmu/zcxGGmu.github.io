@@ -12,9 +12,98 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <style>
+    body.china-hongqiao-deep-analysis .post-body h2,
+    body.china-hongqiao-deep-analysis .post-body h3,
+    body.china-hongqiao-deep-analysis .post-body h4 {
+      scroll-margin-top: 88px;
+    }
+    body.china-hongqiao-deep-analysis .extra-container {
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 18px;
+      padding-top: 26px;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    body.china-hongqiao-deep-analysis .extra-container .pagination {
+      position: sticky;
+      top: 24px;
+      z-index: 2;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc {
+      margin: 0 0 32px;
+      padding: 18px 20px;
+      border: 1px solid rgba(25, 118, 210, 0.14);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(25, 118, 210, 0.06), rgba(25, 118, 210, 0.02));
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-sidebar {
+      width: min(100%, 290px);
+      margin: 0;
+      position: sticky;
+      top: 92px;
+      max-height: calc(100vh - 120px);
+      overflow: auto;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-inline {
+      display: none;
+      margin-top: 24px;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-title {
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-list,
+    body.china-hongqiao-deep-analysis .chapter-toc-sublist {
+      margin: 0;
+      padding-left: 20px;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-item {
+      margin: 6px 0;
+      color: #334155;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-item a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-item a:hover {
+      text-decoration: underline;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-sublist {
+      margin-top: 6px;
+    }
+    body.china-hongqiao-deep-analysis .chapter-toc-item.toc-h3,
+    body.china-hongqiao-deep-analysis .chapter-toc-item.toc-h4 {
+      color: #475569;
+      font-size: 14px;
+    }
+    @media screen and (max-width: 480px) {
+      body.china-hongqiao-deep-analysis .chapter-toc {
+        padding: 16px;
+      }
+      body.china-hongqiao-deep-analysis .chapter-toc-title {
+        font-size: 15px;
+      }
+      body.china-hongqiao-deep-analysis .chapter-toc-inline {
+        display: block;
+      }
+    }
+    @media screen and (max-width: 1020px) {
+      body.china-hongqiao-deep-analysis .chapter-toc-sidebar {
+        display: none;
+      }
+      body.china-hongqiao-deep-analysis .chapter-toc-inline {
+        display: block;
+      }
+    }
+  </style>
   <title>中国宏桥(01378)深度分析 - zcxGGmu's Blog</title>
 </head>
-<body>
+<body class="china-hongqiao-deep-analysis">
 <div class="side-container">
   <div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
   <div class="nav-link-list">
@@ -36,7 +125,10 @@
 </div>
 <div class="extra-container"><div class="pagination">
   <button class="pagination-action" onclick="history.back()"><span class="material-icons pagination-action-icon">keyboard_arrow_up</span></button>
-</div></div>
+</div><aside class="chapter-toc chapter-toc-sidebar" aria-labelledby="chapter-toc-sidebar-title">
+  <div class="chapter-toc-title" id="chapter-toc-sidebar-title">目录</div>
+  <div id="chapter-toc-sidebar-list"></div>
+</aside></div>
 <div class="stream-container">
   <div class="post">
     <div class="post-head-wrapper" style="background-image:url('/images/posts/china-hongqiao-deep/hongqiao-cover.svg')">
@@ -56,6 +148,11 @@
         <blockquote>
           <p>本文综合花旗、华创证券、浙商证券、天风证券、国信证券、华源证券、CMB International等多家权威机构研报，以及新浪财经最新报道，全方位深度分析中国宏桥(01378.HK)的投资价值。</p>
         </blockquote>
+
+        <nav class="chapter-toc chapter-toc-inline" aria-labelledby="chapter-toc-inline-title">
+          <div class="chapter-toc-title" id="chapter-toc-inline-title">目录</div>
+          <div id="chapter-toc-inline-list"></div>
+        </nav>
 
         <h2>一、最新动态：花旗维持"买入"，目标价48港元</h2>
 
@@ -293,6 +390,98 @@
   </div>
 </div>
 <div id="single-column-footer">魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div>
+<script>
+(function () {
+  var tocMounts = [
+    document.getElementById("chapter-toc-sidebar-list"),
+    document.getElementById("chapter-toc-inline-list")
+  ].filter(Boolean);
+  if (!tocMounts.length) return;
+
+  var headings = Array.from(document.querySelectorAll(".post-body h2, .post-body h3, .post-body h4"));
+  if (!headings.length) return;
+
+  function ensureId(heading, index) {
+    if (!heading.id) heading.id = "section-" + (index + 1);
+  }
+
+  function createItem(heading) {
+    var item = document.createElement("li");
+    item.className = "chapter-toc-item toc-" + heading.tagName.toLowerCase();
+    var link = document.createElement("a");
+    link.href = "#" + heading.id;
+    link.textContent = heading.textContent.replace(/\s+/g, " ").trim();
+    item.appendChild(link);
+    return item;
+  }
+
+  var topList = document.createElement("ul");
+  topList.className = "chapter-toc-list";
+  var currentH2Item = null;
+  var currentH2Sublist = null;
+  var currentH3Item = null;
+  var currentH3Sublist = null;
+
+  headings.forEach(function (heading, index) {
+    ensureId(heading, index);
+    var item = createItem(heading);
+    var tag = heading.tagName;
+
+    if (tag === "H2") {
+      topList.appendChild(item);
+      currentH2Item = item;
+      currentH2Sublist = null;
+      currentH3Item = null;
+      currentH3Sublist = null;
+      return;
+    }
+
+    if (tag === "H3") {
+      if (!currentH2Item) {
+        topList.appendChild(item);
+        currentH3Item = item;
+        currentH3Sublist = null;
+        return;
+      }
+      if (!currentH2Sublist) {
+        currentH2Sublist = document.createElement("ul");
+        currentH2Sublist.className = "chapter-toc-sublist";
+        currentH2Item.appendChild(currentH2Sublist);
+      }
+      currentH2Sublist.appendChild(item);
+      currentH3Item = item;
+      currentH3Sublist = null;
+      return;
+    }
+
+    if (!currentH3Item && currentH2Item) {
+      if (!currentH2Sublist) {
+        currentH2Sublist = document.createElement("ul");
+        currentH2Sublist.className = "chapter-toc-sublist";
+        currentH2Item.appendChild(currentH2Sublist);
+      }
+      currentH2Sublist.appendChild(item);
+      return;
+    }
+
+    if (currentH3Item) {
+      if (!currentH3Sublist) {
+        currentH3Sublist = document.createElement("ul");
+        currentH3Sublist.className = "chapter-toc-sublist";
+        currentH3Item.appendChild(currentH3Sublist);
+      }
+      currentH3Sublist.appendChild(item);
+      return;
+    }
+
+    topList.appendChild(item);
+  });
+
+  tocMounts.forEach(function (mount, index) {
+    mount.replaceChildren(index === 0 ? topList : topList.cloneNode(true));
+  });
+})();
+</script>
 <script src="/js/journal.js"></script>
 </body>
 </html>
