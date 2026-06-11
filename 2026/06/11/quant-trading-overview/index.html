@@ -40,12 +40,37 @@
     body.quant-trading-overview .post-body h3 {
       scroll-margin-top: 88px;
     }
+    body.quant-trading-overview .extra-container {
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 18px;
+      padding-top: 26px;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    body.quant-trading-overview .extra-container .pagination {
+      position: sticky;
+      top: 24px;
+      z-index: 2;
+    }
     body.quant-trading-overview .chapter-toc {
       margin: 0 0 32px;
       padding: 18px 20px;
       border: 1px solid rgba(25, 118, 210, 0.14);
       border-radius: 12px;
       background: linear-gradient(180deg, rgba(25, 118, 210, 0.06), rgba(25, 118, 210, 0.02));
+    }
+    body.quant-trading-overview .chapter-toc-sidebar {
+      width: min(100%, 290px);
+      margin: 0;
+      position: sticky;
+      top: 92px;
+      max-height: calc(100vh - 120px);
+      overflow: auto;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+    body.quant-trading-overview .chapter-toc-inline {
+      display: none;
     }
     body.quant-trading-overview .chapter-toc-title {
       margin-bottom: 10px;
@@ -71,6 +96,10 @@
     }
     body.quant-trading-overview .chapter-toc-sublist {
       margin-top: 6px;
+    }
+    body.quant-trading-overview .chapter-toc-item.toc-h3 {
+      color: #475569;
+      font-size: 14px;
     }
     body.quant-trading-overview .chapter-figure {
       margin: 26px 0;
@@ -125,6 +154,9 @@
       body.quant-trading-overview .chapter-toc-title {
         font-size: 15px;
       }
+      body.quant-trading-overview .chapter-toc-inline {
+        display: block;
+      }
       body.quant-trading-overview .mobile-title-break {
         display: block;
       }
@@ -134,6 +166,14 @@
       }
       body.quant-trading-overview .post-title .post-meta {
         line-height: 1.6;
+      }
+    }
+    @media screen and (max-width: 1020px) {
+      body.quant-trading-overview .chapter-toc-sidebar {
+        display: none;
+      }
+      body.quant-trading-overview .chapter-toc-inline {
+        display: block;
       }
     }
   </style>
@@ -161,7 +201,10 @@
 </div>
 <div class="extra-container"><div class="pagination">
   <button class="pagination-action" onclick="history.back()"><span class="material-icons pagination-action-icon">keyboard_arrow_up</span></button>
-</div></div>
+</div><aside class="chapter-toc chapter-toc-sidebar" aria-labelledby="chapter-toc-sidebar-title">
+  <div class="chapter-toc-title" id="chapter-toc-sidebar-title">目录</div>
+  <div id="chapter-toc-sidebar-list"></div>
+</aside></div>
 <div class="stream-container">
   <div class="post">
     <div class="post-head-wrapper" style="background-image:url('/images/posts/quant-trading-overview/cover.svg')">
@@ -183,9 +226,9 @@
         </blockquote>
 
 <p class="chapter-meta-note">章节范围：原书第 16 页至第 60 页。本文仅作内容转载与学习存档，不构成任何投资建议。</p>
-<nav class="chapter-toc" aria-labelledby="chapter-toc-title">
-  <div class="chapter-toc-title" id="chapter-toc-title">目录</div>
-  <div id="chapter-toc-list"></div>
+<nav class="chapter-toc chapter-toc-inline" aria-labelledby="chapter-toc-inline-title">
+  <div class="chapter-toc-title" id="chapter-toc-inline-title">目录</div>
+  <div id="chapter-toc-inline-list"></div>
 </nav>
 <h2>概述</h2>
 <h3>投资市场是否有交易圣杯</h3>
@@ -582,8 +625,11 @@ sellshort nextbar atvar6 stop;</code></pre>
 <div id="single-column-footer">魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div>
 <script>
 (function () {
-  var tocMount = document.getElementById("chapter-toc-list");
-  if (!tocMount) return;
+  var tocMounts = [
+    document.getElementById("chapter-toc-sidebar-list"),
+    document.getElementById("chapter-toc-inline-list")
+  ].filter(Boolean);
+  if (!tocMounts.length) return;
 
   var headings = Array.from(document.querySelectorAll(".post-body h2, .post-body h3"));
   if (!headings.length) return;
@@ -627,7 +673,9 @@ sellshort nextbar atvar6 stop;</code></pre>
     currentSublist.appendChild(item);
   });
 
-  tocMount.replaceChildren(topList);
+  tocMounts.forEach(function (mount, index) {
+    mount.replaceChildren(index === 0 ? topList : topList.cloneNode(true));
+  });
 })();
 </script>
 <script src="/js/journal.js"></script>
