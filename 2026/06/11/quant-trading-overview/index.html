@@ -36,6 +36,42 @@
       font-size: 14px;
       line-height: 1.8;
     }
+    body.quant-trading-overview .post-body h2,
+    body.quant-trading-overview .post-body h3 {
+      scroll-margin-top: 88px;
+    }
+    body.quant-trading-overview .chapter-toc {
+      margin: 0 0 32px;
+      padding: 18px 20px;
+      border: 1px solid rgba(25, 118, 210, 0.14);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(25, 118, 210, 0.06), rgba(25, 118, 210, 0.02));
+    }
+    body.quant-trading-overview .chapter-toc-title {
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    body.quant-trading-overview .chapter-toc-list,
+    body.quant-trading-overview .chapter-toc-sublist {
+      margin: 0;
+      padding-left: 20px;
+    }
+    body.quant-trading-overview .chapter-toc-item {
+      margin: 6px 0;
+      color: #334155;
+    }
+    body.quant-trading-overview .chapter-toc-item a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+    body.quant-trading-overview .chapter-toc-item a:hover {
+      text-decoration: underline;
+    }
+    body.quant-trading-overview .chapter-toc-sublist {
+      margin-top: 6px;
+    }
     body.quant-trading-overview .chapter-figure {
       margin: 26px 0;
     }
@@ -82,6 +118,12 @@
       }
       body.quant-trading-overview .post-body {
         font-size: 16px;
+      }
+      body.quant-trading-overview .chapter-toc {
+        padding: 16px;
+      }
+      body.quant-trading-overview .chapter-toc-title {
+        font-size: 15px;
       }
       body.quant-trading-overview .mobile-title-break {
         display: block;
@@ -141,6 +183,10 @@
         </blockquote>
 
 <p class="chapter-meta-note">章节范围：原书第 16 页至第 60 页。本文仅作内容转载与学习存档，不构成任何投资建议。</p>
+<nav class="chapter-toc" aria-labelledby="chapter-toc-title">
+  <div class="chapter-toc-title" id="chapter-toc-title">目录</div>
+  <div id="chapter-toc-list"></div>
+</nav>
 <h2>概述</h2>
 <h3>投资市场是否有交易圣杯</h3>
 <h2>什么是技术？</h2>
@@ -531,9 +577,59 @@ sellshort nextbar atvar6 stop;</code></pre>
       <div class="newer-posts"><a href="/">← 返回首页</a></div>
       <div class="older-posts"></div>
     </div>
-  </div>
+</div>
 </div>
 <div id="single-column-footer">魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div>
+<script>
+(function () {
+  var tocMount = document.getElementById("chapter-toc-list");
+  if (!tocMount) return;
+
+  var headings = Array.from(document.querySelectorAll(".post-body h2, .post-body h3"));
+  if (!headings.length) return;
+
+  var topList = document.createElement("ul");
+  topList.className = "chapter-toc-list";
+  var lastLevel2Item = null;
+  var currentSublist = null;
+
+  headings.forEach(function (heading, index) {
+    if (!heading.id) {
+      heading.id = "section-" + (index + 1);
+    }
+
+    var item = document.createElement("li");
+    item.className = "chapter-toc-item toc-" + heading.tagName.toLowerCase();
+
+    var link = document.createElement("a");
+    link.href = "#" + heading.id;
+    link.textContent = heading.textContent.replace(/\s+/g, " ").trim();
+    item.appendChild(link);
+
+    if (heading.tagName === "H2") {
+      topList.appendChild(item);
+      lastLevel2Item = item;
+      currentSublist = null;
+      return;
+    }
+
+    if (!lastLevel2Item) {
+      topList.appendChild(item);
+      return;
+    }
+
+    if (!currentSublist) {
+      currentSublist = document.createElement("ul");
+      currentSublist.className = "chapter-toc-sublist";
+      lastLevel2Item.appendChild(currentSublist);
+    }
+
+    currentSublist.appendChild(item);
+  });
+
+  tocMount.replaceChildren(topList);
+})();
+</script>
 <script src="/js/journal.js"></script>
 </body>
 </html>
