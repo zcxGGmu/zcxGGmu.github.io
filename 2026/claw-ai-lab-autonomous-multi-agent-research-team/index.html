@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive">
+  <title>Claw AI Lab：一个自主多智能体研究团队 - zcxGGmu's Blog</title>
+  <meta name="description" content="Claw AI Lab 将自动化科研从黑箱式 prompt-to-paper 流水线推进为可交互、可检查、可靠性感知的 AI 实验室：用户可以从一个提示创建完整研究团队，并在统一仪表盘中监控、回滚、复现和接管研究过程。">
+  <meta name="author" content="zcxGGmu">
+  <meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/claw-ai-lab-autonomous-multi-agent-research-team/">
+  <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
+  <meta property="og:title" content="Claw AI Lab：一个自主多智能体研究团队">
+  <meta property="og:description" content="Claw AI Lab 将自动化科研从黑箱式 prompt-to-paper 流水线推进为可交互、可检查、可靠性感知的 AI 实验室：用户可以从一个提示创建完整研究团队，并在统一仪表盘中监控、回滚、复现和接管研究过程。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zcxggmu.github.io/2026/claw-ai-lab-autonomous-multi-agent-research-team/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div id="app">
+    <div class="single-column-drawer-container" id="drawer">
+      <div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+    </div>
+    <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
+    <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+      <div id="navBackground" class="nav-background"></div>
+      <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
+        <a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a>
+        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>
+      </div>
+    </nav>
+    <div class="single-column-header-container" id="pageHead">
+      <a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+    </div>
+    <div id="content">
+      <div id="streamContainer" class="stream-container" role="main">
+        <div id="main-content"></div>
+        <div class="post-list-container post-list-container-shadow">
+    <article class="post">
+      <div class="post-head-wrapper" style="background-image:url('/images/posts/claw-ai-lab-paper/clawailab-main.png')">
+        <div class="post-title">Claw AI Lab：一个自主多智能体研究团队
+          <div class="post-subtitle">Claw AI Lab 将自动化科研从黑箱式 prompt-to-paper 流水线推进为可交互、可检查、可靠性感知的 AI 实验室：用户可以从一个提示创建完整研究团队，并在统一仪表盘中监控、回滚、复现和接管研究过程。</div>
+          <div class="post-meta"><time itemprop="datePublished">2026-06-07</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI/">AI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Claw%20AI%20Lab/">Claw AI Lab</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E7%A0%94/">自动化科研</a>&nbsp;<a href="/tags/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/">多智能体</a>&nbsp;<a href="/tags/Claw-Code/">Claw-Code</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 11 min</div>
+        </div>
+      </div>
+      <div class="post-body-wrapper"><div class="post-body" v-pre><p>本文为论文 <a href="https://arxiv.org/abs/2605.22662">Claw AI Lab: An Autonomous Multi-Agent Research Team</a> 的中文译文。论文 PDF 地址：<a href="https://arxiv.org/pdf/2605.22662">https://arxiv.org/pdf/2605.22662</a>。文中图片保留自论文源码资源。</p>
+<h2 id="标题与作者">标题与作者</h2>
+<p><strong>Claw AI Lab：一个自主多智能体研究团队</strong></p>
+<p>作者：Fan Wu、Cheng Chen、Zhenshan Tan、Taiyu Zhang、Xinzhen Xu、Yanyu Qian、Dingcheng Gao、Lanyun Zhu、Qi Zhu、Yi Tan、Deyi Ji、Guosheng Lin、Tianrun Chen、Deheng Ye、Fayao Liu。</p>
+<p>机构：NTU、A*STAR、Moxin Technology Co., LTD、NUIST、THU、USTC。</p>
+<p>项目地址：<a href="https://github.com/Claw-AI-Lab/Claw-AI-Lab">https://github.com/Claw-AI-Lab/Claw-AI-Lab</a></p>
+<h2 id="摘要">摘要</h2>
+<p>本文提出 Claw AI Lab，一个面向实验室原生场景的自主研究平台。它将自动化科研从隐藏的 prompt-to-paper 流水线推进为可交互的 AI 实验室。系统并不围绕单一智能体或固定串行工作流构建，而是允许用户从一个提示实例化完整研究团队，并通过统一仪表盘配置角色、组织协作流程、实时监控事件、检查中间产物，以及执行回滚和恢复控制。</p>
+<p>平台还支持探索、多智能体讨论和复现等不同研究模式，使自主研究在实践中变得更可操控，也更接近真实实验室工作。Claw AI Lab 的一项关键实践贡献在于 Claw-Code Harness：它把本地代码库、数据集和检查点连接到可运行实验，并将执行产物反馈回研究循环。因此，harness 不仅改善执行集成，也提升实验完成度和结果完整性：实验更容易被检查、迭代，并忠实迁移到最终论文中，从而减少部分运行、错误表格和结果报告畸形等常见失败模式。</p>
+<p>在五个 AI 研究案例的内部评估中，以 AutoResearchClaw 为基线，AI 专家评审在想法新颖性、实验完整性和论文呈现质量上持续偏好 Claw AI Lab。Claw AI Lab 可被视为一种新范式的早期步骤：自主研究作为可用、可交互、可靠性感知的科学基础设施。</p>
+<h2 id="1-引言">1. 引言</h2>
+<p>大语言模型的快速进展使自主研究越来越可行。AutoResearchClaw、autoresearch 以及其他端到端研究智能体已经证明，自动化研究工作流具备可行性：一个主题可以在有限人类干预下，从想法发展推进到实验、分析和论文写作。同时，近期工作也不再局限于一次性论文生成，而是开始探索多智能体科学协作、假设生成，以及更具交互性的科学自动化形式。</p>
+<p>Claw AI Lab 在这个方向上迈出不同一步：它不再把自主研究主要视为自动论文生产，而是将其重新定义为一个可运行的交互式 AI 实验室。</p>
+<p>这种定位是 Claw AI Lab 设计的核心。系统被设计为实验室原生的多智能体研究平台，允许用户用一个提示创建完整 AI 研究实验室，并支持可定制角色、协作工作流和人类干预。它的界面围绕统一仪表盘展开，提供实时事件流、多项目监控、产物检查和一键回滚。Claw AI Lab 还支持三种不同研究模式：Explore、Discussion 和 Reproduce。由此，系统从隐藏的串行流水线转向更可见、更协作、更可控的研究环境。与纯离线论文生成流水线相比，它更接近交互式和持续性科学系统。</p>
+<p><img src="/images/posts/claw-ai-lab-paper/clawailab-main.png" alt="Overview of Claw AI Lab"></p>
+<p><em>图 1：Claw AI Lab 总览。系统将自动研究组织为五个相互连接的层：想法层、规划层、编码层、实验层和写作层。每一层都使用专门智能体和验证循环；反馈可以跨层流动，并在必要时修订早期决策。</em></p>
+<p>实验室视角非常重要，因为真实研究不是一次性生成任务。研究是交互式、迭代式、角色专门化并且产物密集的过程。因此，Claw AI Lab 旨在让自主研究在实践中更可用：用户可以启动项目、监控智能体、检查中间产物，并在研究过程中持续干预，而不是只在开始或结束时介入。从这个意义上说，系统的贡献不只是更强自动化，而是面向自主研究的更强系统抽象：研究被视为一个持久、可检查的过程，而不是黑箱流水线。</p>
+<p>Claw AI Lab 的一个关键实践优势在于实验执行和结果整合。已有系统表明，编码智能体已经可以围绕真实训练代码和评估指标运行有效研究循环。Claw AI Lab 将 Claw-Code Harness 作为核心组件，引入读取本地代码库、数据集和检查点、编写可运行代码，并产出完整研究交付物的能力，这些交付物包括论文、代码、图表和实验日志。这个设计使 harness 不只是简单执行包装器，而是连接本地研究资产与可运行实验、并把实验输出接回更大研究工作流的接口。因此，harness 强化了实现、执行和报告之间的连续性。</p>
+<p>这一点对实验完成度尤其重要。在自主研究中，常见失败模式包括：实验只部分运行，中间输出难以检查，或者最终报告里的结果表格不能忠实反映实际执行输出。近期基准也表明，多步研究执行、复现实验和证据追踪远比表层生成更困难。Claw AI Lab 明确针对这一缺口而设计。通过把 harness 嵌入仪表盘原生、以产物为中心的工作流，Claw AI Lab 让实验输出更可见、更容易追踪，也更容易进入最终报告。换言之，harness 改善的不只是实验能否运行，还包括实验是否能被推进为完整、可检查、并正确反映的研究产物。相比只从流水线角度理解自主研究，这正是 Claw 提升研究完成质量的关键实践原因。</p>
+<p>综合来看，Claw AI Lab 指向该领域更广阔的方向。自主研究的未来可能不在于越来越长的隐藏流水线，而在于可交互、可检查、可靠性感知的 AI 实验室系统。从这个角度看，Claw 的贡献不只是更强平台，也是一种更强的自主研究框架：自主研究不应只是论文写作自动化，而应是可用科学基础设施的构建。</p>
+<h2 id="2-方法">2. 方法</h2>
+<p>本文提出 Claw AI Lab，一个层级化多智能体框架。它通过把端到端研究过程分解为五个结构化层，实现研究自动化：Idea、Planning、Coding、Experiment 和 Writing。系统模拟真实研究实践，把角色专门化、迭代优化和跨阶段反馈统一到闭环流水线中。</p>
+<h3 id="总览">总览</h3>
+<p>不同于以线性方式运行的流水线式研究智能体，Claw AI Lab 采用金字塔式架构：高层概念会逐步转化为可执行产物。每一层由职责不同的专门智能体处理，中间输出则通过验证循环持续优化。这个设计符合角色专门化研究智能体和交互式科学自动化的发展趋势。它既支持全局协调，也支持局部优化，从而确保早期决策与后续执行保持一致。</p>
+<h3 id="想法层">想法层</h3>
+<p>研究过程从多智能体讨论阶段开始。多个智能体共同探索问题空间。系统并不依赖单一视角，而是通过并行想法提案鼓励多样观点，随后进行结构化辩论和优化。共识机制会选择并整合最有前景的方向。</p>
+<p>这种由讨论驱动的设计增强了稳健性和多样性，也更接近真实研究想法的形成方式：研究想法通常来自协作，而不是孤立生成。</p>
+<h3 id="规划层">规划层</h3>
+<p>在选定想法后，系统把它拆解为结构化计划，包括任务、依赖关系和里程碑。规划智能体通过验证循环持续细化计划；当计划尚不完整或存在模糊部分时，会在执行前进行修订。</p>
+<p>关键在于，规划不是一次性过程。它支持自适应优化，可以根据下游阶段反馈进行更新，例如编码失败或实验结果反馈。这能确保计划始终可行，并与实际约束保持一致。</p>
+<h3 id="编码层">编码层</h3>
+<p>编码层把获批实验计划转化为可运行研究代码。该层以 Claw-Code Harness 为中心，使用 agentic coding loop：模型可以检查本地代码库、数据集和检查点，然后通过受控工具编写、运行、调试和改进实验文件。这些工具包括 bash、读取文件、写入文件、编辑文件、glob 搜索和 grep 搜索。</p>
+<p>Harness 还通过在沙箱工作区执行每项任务来提高实验可靠性，并注入只读 Python 控制器，用于时间预算执行、指标报告、结果收尾以及 NaN/Inf 检测。它还会执行冒烟测试和反伪造检查，以检测虚假指标、占位代码或 mock 实现。</p>
+<h3 id="实验层">实验层</h3>
+<p>实现完成后，系统会在计算资源上部署实验，并收集指标和日志。实验层作为迭代优化循环运行：结果会被分析，并指导后续调整。</p>
+<p>重要的是，反馈不仅在实验阶段内部传播，也会跨层传播。例如，意外结果可能触发规划阶段更新；反复失败可能导致重新审视最初想法。跨层反馈使系统能够持续改进，并防止错误积累。</p>
+<h3 id="写作层">写作层</h3>
+<p>最后阶段把实验结果转化为结构化研究输出。系统生成大纲、制作可视化、起草论文，并执行迭代审查与改进。</p>
+<p>通过把写作整合到同一条流水线中，Claw AI Lab 可以保证实验结果与报告发现之间的一致性，减少执行与文档之间的断裂。</p>
+<h2 id="3-实验">3. 实验</h2>
+<h3 id="31-实验设置">3.1 实验设置</h3>
+<p>Claw AI Lab 在完全自主项目模式下运行。它使用 GPT-5.4 作为主模型和编码模型，使用 Gemini-3-Pro-Image-Preview 作为论文插图生成模型，并使用 Qwen3.5-Plus / Qwen-Plus 作为备用模型。</p>
+<p>AutoResearchClaw 使用 GPT-5.4 作为主模型，Gemini-2.5-Pro-Flash-Image 作为图像模型，并使用 GPT-4o / GPT-4o-mini 作为备用模型。</p>
+<p>系统在四个不同主题上与 AutoResearchClaw 进行比较。主题 1 到主题 3 是研究主题，主题 4 是复现主题。四个主题分别是：</p>
+<ul>
+<li>Quantifying Hallucination in Generated Video Models</li>
+<li>LIAR Dataset-Based Fake News Classification Solution</li>
+<li>A Q-Learning Approach for Student Performance Improvement Using Public Educational Data</li>
+<li>Reproducing and Analyzing PhyCustom on Flux</li>
+</ul>
+<p>每篇生成论文由两个 LLM 评估器评审：ChatGPT 5.4 Thinking 和 Gemini 3.1 Pro。评估维度共有六个，包括技术深度与可复现性、结构与章节流、创新性与贡献、清晰度与术语、逻辑论证、引用与证据支持。每次评审都在新的会话窗口中进行，以减少上下文延续影响。研究论文使用相同学术评审提示，复现论文使用单独的复现导向提示。</p>
+<h3 id="32-实验结果">3.2 实验结果</h3>
+<p>表 1 汇总主题 1 到主题 3 的研究论文结果。Claw AI Lab 在两个评估器下均持续优于 AutoResearchClaw，平均提升在 +15.5 到 +16.5 分之间。</p>
+<table>
+<thead>
+<tr>
+<th>论文</th>
+<th align="right">ChatGPT：AutoResearchClaw</th>
+<th align="right">ChatGPT：Claw AI Lab</th>
+<th align="right">Gemini：AutoResearchClaw</th>
+<th align="right">Gemini：Claw AI Lab</th>
+<th align="right">平均提升</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Paper 1</td>
+<td align="right">62/100</td>
+<td align="right">77/100</td>
+<td align="right">68/100</td>
+<td align="right">86/100</td>
+<td align="right">+16.5</td>
+</tr>
+<tr>
+<td>Paper 2</td>
+<td align="right">49/100</td>
+<td align="right">71/100</td>
+<td align="right">64/100</td>
+<td align="right">73/100</td>
+<td align="right">+15.5</td>
+</tr>
+<tr>
+<td>Paper 3</td>
+<td align="right">62/100</td>
+<td align="right">73/100</td>
+<td align="right">73/100</td>
+<td align="right">95/100</td>
+<td align="right">+16.5</td>
+</tr>
+</tbody></table>
+<p><em>表 1：主题 1 到主题 3 的三篇研究论文定量结果。不同评估器从六个维度进行评分。</em></p>
+<p>表 2 展示主题 4 的复现报告结果。平均分从 73.0/100 提升到 78.0/100，对应 5.0 分提升。</p>
+<table>
+<thead>
+<tr>
+<th>评估器</th>
+<th align="right">AutoResearchClaw</th>
+<th align="right">Claw AI Lab</th>
+<th align="right">提升</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ChatGPT</td>
+<td align="right">66/100</td>
+<td align="right">73/100</td>
+<td align="right">+7.0</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td align="right">80/100</td>
+<td align="right">83/100</td>
+<td align="right">+3.0</td>
+</tr>
+<tr>
+<td>Average</td>
+<td align="right">73.0/100</td>
+<td align="right">78.0/100</td>
+<td align="right">+5.0</td>
+</tr>
+</tbody></table>
+<p><em>表 2：主题 4 复现报告的定量结果。</em></p>
+<p>总体来看，ChatGPT 和 Gemini 评估器在所有主题上都给 Claw AI Lab 更高评分，说明提升在不同评估协议下保持稳定。图 2 进一步给出六个维度上的细粒度比较。整体上，Claw AI Lab 在多数案例中表现更具竞争力，也更均衡。这些结果表明，Claw AI Lab 受益于更可靠、更高效的 Claw-Code harness；该 harness 能提供更可信的实验执行，并为生成论文提供更强实验证据支持，最终带来更稳定的整体论文质量提升。</p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-1-gemini.png" alt="Paper 1 scored by Gemini"></p>
+<p><em>图 2a：Paper 1，由 Gemini 评分。</em></p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-1-gpt.png" alt="Paper 1 scored by ChatGPT"></p>
+<p><em>图 2b：Paper 1，由 ChatGPT 评分。</em></p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-2-gemini.png" alt="Paper 2 scored by Gemini"></p>
+<p><em>图 2c：Paper 2，由 Gemini 评分。</em></p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-2-gpt.png" alt="Paper 2 scored by ChatGPT"></p>
+<p><em>图 2d：Paper 2，由 ChatGPT 评分。</em></p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-3-gemini.png" alt="Paper 3 scored by Gemini"></p>
+<p><em>图 2e：Paper 3，由 Gemini 评分。</em></p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-3-gpt.png" alt="Paper 3 scored by ChatGPT"></p>
+<p><em>图 2f：Paper 3，由 ChatGPT 评分。</em></p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-4-gemini.png" alt="Paper 4 scored by Gemini"></p>
+<p><em>图 2g：Paper 4，由 Gemini 评分。</em></p>
+<p><img src="/images/posts/claw-ai-lab-paper/radar-paper-4-gpt.png" alt="Paper 4 scored by ChatGPT"></p>
+<p><em>图 2h：Paper 4，由 ChatGPT 评分。每个面板都在六个维度上比较 Claw AI Lab 与 AutoResearchClaw。</em></p>
+<h2 id="4-结论">4. 结论</h2>
+<p>Claw AI Lab 将自主研究从隐藏式流水线推进为可交互、可检查、可靠性感知的 AI 实验室。它把完整研究过程拆分为想法、规划、编码、实验和写作五个层级，并通过多智能体协作、验证循环和跨层反馈连接起来。相比一次性生成论文，Claw AI Lab 更强调研究过程中的可观察性、可接管性和产物连续性。</p>
+<p>系统的关键实践价值集中在 Claw-Code Harness。它将本地代码、数据集、检查点和实验执行连接起来，使实验不只是“能跑”，还要能被检查、迭代、追踪，并被忠实写入最终论文。这种设计减少了自主研究中常见的部分运行、虚假结果、结果表格与实际输出不一致等问题。</p>
+<p>实验结果显示，在三个研究主题和一个复现主题上，Claw AI Lab 均优于 AutoResearchClaw。研究论文的平均提升达到约 15.5 到 16.5 分，复现报告平均提升 5 分。结果说明，将执行、产物、监控和写作放进统一实验室式工作流，可以稳定提升自主研究输出质量。</p>
+<p>更大的意义在于研究范式的变化：自主研究不应只追求更长、更自动的黑箱流水线，而应走向可用、可交互、可靠性感知的科学基础设施。Claw AI Lab 展示的方向是，未来 AI 研究系统应当像实验室一样运行，而不只是像论文生成器一样输出。</p>
+<h2 id="参考文献">参考文献</h2>
+<p>以下参考文献保留论文英文原始格式。</p>
+<ol>
+<li>Xuan Dong, Huanyang Zheng, Tianhao Niu, Zhe Han, Pengzhan Li, Bofei Liu, Zhengyang Liu, Guancheng Li, Qingfu Zhu, and Wanxiang Che. <em>Epibench: Benchmarking multi-turn research workflows for multimodal agents</em>. arXiv preprint arXiv:2604.05557, 2026.</li>
+<li>Ali Essam Ghareeb, Benjamin Chang, Ludovico Mitchener, Angela Yiu, Caralyn J. Szostkiewicz, Jon M. Laurent, Muhammed T. Razzak, Andrew D. White, Michaela M. Hinks, and Samuel G. Rodriques. <em>Robin: A multi-agent system for automating scientific discovery</em>. arXiv preprint arXiv:2505.13400, 2025.</li>
+<li>Juraj Gottweis, Wei-Hung Weng, Alexander Daryin, Tao Tu, Anil Palepu, Petar Sirkovic, Artiom Myaskovsky, Felix Weissenberger, Keran Rong, Ryutaro Tanno, et al. <em>Towards an ai co-scientist</em>. arXiv preprint arXiv:2502.18864, 2025.</li>
+<li>Andrej Karpathy. <em>autoresearch</em>, 2026. URL: <a href="https://github.com/karpathy/autoresearch">https://github.com/karpathy/autoresearch</a>.</li>
+<li>Black Forest Labs. <em>Flux</em>, 2024. URL: <a href="https://github.com/black-forest-labs/flux">https://github.com/black-forest-labs/flux</a>.</li>
+<li>Ed Li, Junyu Ren, Xintian Pan, Cat Yan, Chuanhao Li, Dirk Bergemann, and Zhuoran Yang. <em>Build your personalized research group: A multiagent framework for continual and interactive science automation</em>. arXiv preprint arXiv:2510.15624, 2025.</li>
+<li>Jiaqi Liu, Peng Xia, Siwei Han, Shi Qiu, Letian Zhang, Guiming Chen, Haoqin Tu, Xinyu Yang, Jiawei Zhou, Hongtu Zhu, Yun Li, Jiaheng Zhang, Yuyin Zhou, Zeyu Zheng, Cihang Xie, Mingyu Ding, and Huaxiu Yao. <em>AutoResearchClaw: Fully autonomous research from idea to paper</em>, 2026. URL: <a href="https://github.com/aiming-lab/AutoResearchClaw">https://github.com/aiming-lab/AutoResearchClaw</a>.</li>
+<li>Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob N. Foerster, Jeff Clune, and David Ha. <em>The AI Scientist: Towards fully automated open-ended scientific discovery</em>. arXiv preprint arXiv:2408.06292, 2024.</li>
+<li>Samuel Schmidgall, Yusheng Su, Ze Wang, Ximeng Sun, Jialian Wu, Xiaodong Yu, Jiang Liu, Michael Moor, Zicheng Liu, and Emad Barsoum. <em>Agent Laboratory: Using LLM agents as research assistants</em>. Findings of the Association for Computational Linguistics: EMNLP 2025, pp. 5977-6043, 2025.</li>
+<li>Giulio Starace, Oliver Jaffe, Dane Sherburn, James Aung, Jun Shern Chan, Leon Maksin, Rachel Dias, Evan Mays, Benjamin Kinsella, Wyatt Thompson, Johannes Heidecke, Amelia Glaese, and Tejal Patwardhan. <em>PaperBench: Evaluating AI's ability to replicate AI research</em>. Proceedings of the 42nd International Conference on Machine Learning, PMLR 267, pp. 56843-56873, 2025.</li>
+<li>UltraWorkers. <em>Claw Code</em>, 2026. URL: <a href="https://github.com/ultraworkers/claw-code">https://github.com/ultraworkers/claw-code</a>. Public Rust implementation of the <code>claw</code> CLI agent harness. Accessed: 2026-05-18.</li>
+<li>Fan Wu, Cheng Chen, Zhoujie Fu, Jiacheng Wei, Yi Xu, Deheng Ye, and Guosheng Lin. <em>PhyCustom: Towards realistic physical customization in text-to-image generation</em>. arXiv preprint arXiv:2512.02794, 2025.</li>
+<li>Yutaro Yamada, Robert Tjarko Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob Foerster, Jeff Clune, and David Ha. <em>The AI Scientist-v2: Workshop-level automated scientific discovery via agentic tree search</em>. arXiv preprint arXiv:2504.08066, 2025.</li>
+<li>Yuxiang Zheng, Dayuan Fu, Xiangkun Hu, Xiaojie Cai, Lyumanshan Ye, Pengrui Lu, and Pengfei Liu. <em>DeepResearcher: Scaling deep research via reinforcement learning in real-world environments</em>. Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pp. 414-431, 2025.</li>
+</ol>
+<h2 id="资料与图片来源">资料与图片来源</h2>
+<ul>
+<li>arXiv 页面：<a href="https://arxiv.org/abs/2605.22662">https://arxiv.org/abs/2605.22662</a></li>
+<li>PDF：<a href="https://arxiv.org/pdf/2605.22662">https://arxiv.org/pdf/2605.22662</a></li>
+<li>论文源码图片：来自 arXiv e-print 源码包</li>
+<li>项目地址：<a href="https://github.com/Claw-AI-Lab/Claw-AI-Lab">https://github.com/Claw-AI-Lab/Claw-AI-Lab</a></li>
+</ul>
+<hr id="EOF"><p class="last-modified">最后整理于 2026-06-07</p></div></div>
+      <nav class="post-pagination">
+        <a class="newer-posts" href="/2026/muyu-economic-logic-stop-self-consumption/">下一篇<br>拼命省钱到处卷，怎么反而越活越累？看透经济底层逻辑，停止自我内耗</a>
+        <a class="older-posts" href="/2026/ai-quant-from-models-to-trading-system/">上一篇<br>AI 量化：从模型到交易系统</a>
+      </nav>
+    </article>
+  </div>
+      </div>
+    </div>
+    <div id="sideContainer" class="side-container">
+      <button class="sidebar-collapse-toggle" type="button" data-sidebar-collapse-toggle title="收起左侧边栏" aria-label="收起左侧边栏" aria-expanded="true">
+        <span class="material-icons sidebar-collapse-icon" aria-hidden="true">chevron_left</span>
+      </button>
+      <a class="a-block nav-head false" href="/">
+        <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
+        <div class="nav-title">zcxGGmu's Blog</div>
+        <div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+      </a>
+      <div class="theme-switcher theme-switcher-desktop"><button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div>
+      <div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+      <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+    </div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#标题与作者">标题与作者</a><a class="toc-link toc-level-2" href="#摘要">摘要</a><a class="toc-link toc-level-2" href="#1-引言">1. 引言</a><a class="toc-link toc-level-2" href="#2-方法">2. 方法</a><a class="toc-link toc-level-3" href="#总览">总览</a><a class="toc-link toc-level-3" href="#想法层">想法层</a><a class="toc-link toc-level-3" href="#规划层">规划层</a><a class="toc-link toc-level-3" href="#编码层">编码层</a><a class="toc-link toc-level-3" href="#实验层">实验层</a><a class="toc-link toc-level-3" href="#写作层">写作层</a><a class="toc-link toc-level-2" href="#3-实验">3. 实验</a><a class="toc-link toc-level-3" href="#31-实验设置">3.1 实验设置</a><a class="toc-link toc-level-3" href="#32-实验结果">3.2 实验结果</a><a class="toc-link toc-level-2" href="#4-结论">4. 结论</a><a class="toc-link toc-level-2" href="#参考文献">参考文献</a><a class="toc-link toc-level-2" href="#资料与图片来源">资料与图片来源</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+  </div>
+  <script src="/js/journal.js"></script>
+  <script src="/js/code-enhance.js"></script>
+  <script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+  <script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+  <script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+  <script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
