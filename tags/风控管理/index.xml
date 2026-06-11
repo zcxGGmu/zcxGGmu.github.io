@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>风控管理 on zcxGGmu</title><link>https://zcxggmu.github.io/tags/%E9%A3%8E%E6%8E%A7%E7%AE%A1%E7%90%86/</link><description>Recent content in 风控管理 on zcxGGmu</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>zcxGGmu</copyright><lastBuildDate>Thu, 11 Jun 2026 17:00:00 +0800</lastBuildDate><atom:link href="https://zcxggmu.github.io/tags/%E9%A3%8E%E6%8E%A7%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>《量化交易从入门到精通》全书精华——TOP交易员策略与实战手记</title><link>https://zcxggmu.github.io/p/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%85%A8%E4%B9%A6%E7%B2%BE%E5%8D%8Etop%E4%BA%A4%E6%98%93%E5%91%98%E7%AD%96%E7%95%A5%E4%B8%8E%E5%AE%9E%E6%88%98%E6%89%8B%E8%AE%B0/</link><pubDate>Thu, 11 Jun 2026 17:00:00 +0800</pubDate><guid>https://zcxggmu.github.io/p/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%85%A8%E4%B9%A6%E7%B2%BE%E5%8D%8Etop%E4%BA%A4%E6%98%93%E5%91%98%E7%AD%96%E7%95%A5%E4%B8%8E%E5%AE%9E%E6%88%98%E6%89%8B%E8%AE%B0/</guid><description>&lt;h1 id="前言">前言
+&lt;/h1>&lt;p>《量化交易从入门到精通——TOP交易员交易策略与实战手记》是周泽炜（MultiCharts中国首席讲师）所著的一本量化交易实战书籍，由企业管理出版社于2021年出版。全书以&amp;quot;理论—指标—策略&amp;quot;三大部分为主线，附带了近60种量化交易策略的完整源代码和实战验证数据，堪称量化交易者的&amp;quot;红宝书&amp;quot;。&lt;/p>
+&lt;p>本文将对全书核心内容进行全面梳理和总结。&lt;/p>
+&lt;hr>
+&lt;h1 id="概述投资市场是否有交易圣杯">概述：投资市场是否有交易圣杯？
+&lt;/h1>&lt;h2 id="什么是交易的圣杯">什么是交易的圣杯？
+&lt;/h2>&lt;p>交易圣杯是指一个稳定获利的方法，能让我们依靠这种方法实现财务自由。作者周泽炜的答案是：&lt;strong>投资市场不止有圣杯，而且还有很多圣杯。&lt;/strong>&lt;/p>
+&lt;p>书中通过两个经典案例证明这一观点：&lt;/p>
+&lt;h3 id="海龟实验1983年">海龟实验（1983年）
+&lt;/h3>&lt;p>著名商品投机家理查德·丹尼斯从1000名申请者中精选13人，经过两周培训后实盘交易。在随后四年中，&amp;ldquo;海龟们&amp;quot;取得了&lt;strong>年均复利80%&lt;/strong> 的收益。这个实验证明：&lt;strong>交易可以被传授，用一套简单的机械交易系统，可以使仅有很少或根本没有交易经验的人成为优秀的交易员。&lt;/strong>&lt;/p>
+&lt;h3 id="aberration策略">Aberration策略
+&lt;/h3>&lt;p>由Keith Fitschen于1986年发明，是曾经创下100%以上年收益率的传奇交易系统。策略核心逻辑：使用35日移动平均线和标准差构成布林通道，当价格突破上轨做多、下破下轨做空、回归中轨平仓。直到今天，该策略仍在多个市场表现优异。&lt;/p>
+&lt;h2 id="量化交易的核心认知">量化交易的核心认知
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>程序化交易&lt;/strong>是一种交易方式，&lt;strong>量化&lt;/strong>是交易的工具&lt;/li>
+&lt;li>量化的第一职能是&lt;strong>证伪&lt;/strong>——帮你证伪错误的交易逻辑和观点&lt;/li>
+&lt;li>量化交易的基础是&lt;strong>概率学&lt;/strong>和&lt;strong>统计学&lt;/strong>&lt;/li>
+&lt;li>交易的本质是价格变化，指标只是用来描述价格变化的手段&lt;/li>
+&lt;/ul>
+&lt;h2 id="抛硬币交易法的启示">抛硬币交易法的启示
+&lt;/h2>&lt;p>作者设计了一个极端简单的&amp;quot;抛硬币交易法&amp;rdquo;：日线开盘开仓，价格双数做多、单数做空，收盘平仓。无止损时三个品种资金曲线均归零——交易成本吞噬了所有随机利润。但&lt;strong>加入移动止损后&lt;/strong>，策略立即转为正收益。&lt;/p>
+&lt;p>这揭示了一个核心洞见：**在概率为50%的随机交易中，仅靠一个止损规则就能获得概率优势。**量化策略的每一次优化，都只是为了在交易过程中获取哪怕一点点的概率优势。&lt;/p>
+&lt;h2 id="六大交易口诀">六大交易口诀
+&lt;/h2>&lt;p>作者提出：&lt;strong>量能为纲、趋势为先、形态为优、均线为绳、周期为重、指标为辅。&lt;/strong>&lt;/p>
+&lt;h2 id="dual-thrust策略">Dual Thrust策略
+&lt;/h2>&lt;p>Dual Thrust策略由Michael Chalek在20世纪80年代开发，曾被《Futures Truth》评为最赚钱策略之一。核心逻辑：&lt;/p>
+&lt;ul>
+&lt;li>Range = Max(HH - LC, HC - LL)，其中HH/LL/HC/LC为前N日的最高/最低价和最高/最低收盘价&lt;/li>
+&lt;li>上轨 = 开盘价 + K × Range，下轨 = 开盘价 - K × Range&lt;/li>
+&lt;li>突破上轨做多，突破下轨做空&lt;/li>
+&lt;/ul>
+&lt;p>该策略引入了&lt;strong>非对称通道&lt;/strong>概念，历经三十余年依然有效。&lt;/p>
+&lt;hr>
+&lt;h1 id="第一章能量守恒理论">第一章：能量守恒理论
+&lt;/h1>&lt;h2 id="核心思想">核心思想
+&lt;/h2>&lt;p>作者的主观交易以&amp;quot;能量守恒理论&amp;quot;为核心，认为市场中的多空能量保持守恒：&lt;/p>
+&lt;ul>
+&lt;li>一波多头行情的发动消耗多方能量并抑制空方能量&lt;/li>
+&lt;li>多头能量耗尽后，空方出现抵抗性行情&lt;/li>
+&lt;li>此消彼长、周而复始，达到市场行情的平衡&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>能量守恒公式：P1 + T1 = P2 + T2 + C&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>P：Price（价格）&lt;/li>
+&lt;li>T：Time（时间）&lt;/li>
+&lt;li>N：选择参数（0.382、0.5、0.618、1、1.382、1.5、1.618等）&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>&amp;ldquo;碧空之歌&amp;quot;操作策略&lt;/strong>：行情在特定周期形成震荡箱体超过30根K线，在箱体上下轨挂置突破单，目标为箱体等宽一倍。&lt;/p>
+&lt;h2 id="第一节趋势与形态">第一节：趋势与形态
+&lt;/h2>&lt;p>&lt;strong>K线语言&lt;/strong>是读懂市场的基础。市场结构有以下几种：&lt;/p>
+&lt;ol>
+&lt;li>正处上涨趋势中&lt;/li>
+&lt;li>正处下跌趋势中&lt;/li>
+&lt;li>在两个水平位之间震荡&lt;/li>
+&lt;li>即将出现新趋势&lt;/li>
+&lt;li>正在筑底或筑顶&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>大阴线/大阳线在不同位置的含义：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>高位大阴线 → 顶部即将或已经形成的信号&lt;/li>
+&lt;li>中部大阴线 → 跌破重要支撑位置&lt;/li>
+&lt;li>末端大阴线 → 价格触底反弹的信号（诱空）&lt;/li>
+&lt;/ul>
+&lt;p>基于K线语言，作者设计了&lt;strong>TOP7策略&lt;/strong>（五根K线组合追势，第5根突破前4根趋势方向进场）和&lt;strong>TOP35策略&lt;/strong>（K线动能突破——计算K线动能超过平均波幅时触发趋势信号）等量化策略。TOP37策略更进一步：将大阴线最高价/大阳线最低价作为多空分界位置，价格反向有效击穿后顺势交易。&lt;/p>
+&lt;h2 id="第二节趋势交易理论">第二节：趋势交易理论
+&lt;/h2>&lt;p>&lt;strong>趋势的定义：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>上涨趋势&lt;/strong>：高点与低点都不断抬高&lt;/li>
+&lt;li>&lt;strong>下跌趋势&lt;/strong>：高点与低点都不断降低&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>&amp;ldquo;黎明之光&amp;quot;操作策略&lt;/strong>：价格有效跌破&amp;quot;末升低&amp;rdquo;（上涨趋势中最后一波回调的低点）后反弹做空，止损放在前高附近；价格有效击穿&amp;quot;末跌高&amp;rdquo;（下跌趋势中最后一波反弹的高点）后回落做多，止损放在前低附近。&lt;/p>
+&lt;p>&lt;strong>&amp;ldquo;剑宗入门&amp;quot;策略&lt;/strong>（基于海龟交易法则）：突破特定周期高低点顺势交易，使用自适应均线离场（均线参数从初始值开始每根K线递减1，最低至16）。100万本金7年盈利1165万，资金增长&lt;strong>11.65倍&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>TOP32趋势理论量化策略&lt;/strong>：价格有效跌破最近一个K线结构低点后做空，有效击穿最近高点后做多，以SAR指标或N周期高低点突破离场。&lt;/p>
+&lt;h2 id="第三节如何定义震荡市场">第三节：如何定义震荡市场
+&lt;/h2>&lt;p>震荡市场表现为价格在两个水平位之间上下波动。识别反转点的方法包括：&lt;/p>
+&lt;ul>
+&lt;li>支撑位与阻力位&lt;/li>
+&lt;li>轴心点&lt;/li>
+&lt;li>心理价位&lt;/li>
+&lt;li>前一个波峰/波谷、趋势线&lt;/li>
+&lt;/ul>
+&lt;h2 id="第四节涨跌定量速度分型">第四节：涨跌定量速度分型
+&lt;/h2>&lt;p>&lt;strong>速度的急缓定量&lt;/strong>分为绝对和相对：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>急速行情&lt;/strong> → 对应缓速回调/反弹 → &lt;strong>顺势操作&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>缓速行情&lt;/strong> → 对应急速回调/反弹 → &lt;strong>逆势操作&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>速度的循环&lt;/strong>：新生 → 成长 → 鼎盛 → 衰退 → 死亡。顶底背离的本质是速度从鼎盛走进衰退的过程。&lt;/p>
+&lt;p>实战案例：2007年5月30日A股调高印花税，抗跌性强（缓速下跌）的股票（如000002万科）后期创出新高，抗跌性弱（急速下跌）的股票（如600661）后期涨势落后于大盘。&lt;strong>速度就像一个市场过滤器，每经过一次调整都能把好的投资品种显现出来。&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>TOP24策略&lt;/strong>：对特定周期高低点中线进行加权平均得到平滑中轨线，计算中轨线的线性回归斜率，当斜率超过阈值进场，斜率反转离场。&lt;/p>
+&lt;h2 id="第五节价格波动原理atr">第五节：价格波动原理（ATR）
+&lt;/h2>&lt;p>ATR（Average True Range）由威尔德（Welles Wilder）提出，是衡量市场价格波动的核心指标。作者认为ATR在量化交易中的地位远高于传统指标，因为它&lt;strong>最纯粹、最真实&lt;/strong>地描述价格波动。&lt;/p>
+&lt;p>&lt;strong>价格波动原理&lt;/strong>：震荡行情情绪冷淡、波幅较小、节奏较慢；趋势行情情绪强烈、成交量放大、波幅较大、节奏较快。&lt;/p>
+&lt;p>基于ATR设计了：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>TOP16策略&lt;/strong>（异动突破）——一段时间内波动收窄后，最近三根K线形成单边趋势且幅度超过整体波幅一定比例，顺势交易&lt;/li>
+&lt;li>&lt;strong>TOP18策略&lt;/strong>（金肯特纳通道）——以三价均线+ATR倍数构筑通道，突破通道同时突破N周期高低点顺势交易&lt;/li>
+&lt;/ul>
+&lt;h2 id="第六节斐波那契数列与黄金分割">第六节：斐波那契数列与黄金分割
+&lt;/h2>&lt;p>黄金分割关键位置：&lt;strong>0.236、0.382、0.5、0.618、0.809&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>实用要点：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>强势单边回调不会击穿38.2%&lt;/li>
+&lt;li>50%是回调与反转的多空分界线&lt;/li>
+&lt;li>61.8%位置反弹概率高达85%&lt;/li>
+&lt;li>每波高点/低点都会成为未来行情的重要黄金分割位置（延展理论）&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>&amp;ldquo;田昳决策&amp;quot;操作策略&lt;/strong>：单边行情回调击穿50%且时间小于上涨时间1/2，在38.2%压力位置逆向做空/做多，止损设在高点上方。&lt;/p>
+&lt;p>&lt;strong>TOP29&amp;quot;五线谱&amp;quot;策略&lt;/strong>：将唐奇安通道四等分（五条线），价格在中轨上方做多/下方做空，结合K线涨跌幅超过1/4通道宽度确认信号。风控使用科学仓位公式。&lt;/p>
+&lt;h2 id="第七节实用波浪理论">第七节：实用波浪理论
+&lt;/h2>&lt;p>作者取艾略特波浪理论之实用、弃其繁冗，总结出：&lt;/p>
+&lt;p>&lt;strong>波浪理论三大铁律：&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>浪2不可以回撤浪1的100%以上&lt;/li>
+&lt;li>浪3不能是最短的推动浪&lt;/li>
+&lt;li>浪4不能与浪1重叠&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>8浪循环特点速查：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>浪1：筑底形态，常带长下影线大阳线&lt;/li>
+&lt;li>浪2：回调可达100%，成交量缩小，指标超卖&lt;/li>
+&lt;li>浪3：最具爆发性，常为延伸浪，成交量最大&lt;/li>
+&lt;li>浪4：形态复杂（三角形多见），与浪2交替（简单/复杂）&lt;/li>
+&lt;li>浪5：成交量与升幅小于浪3，指标常出现背离&lt;/li>
+&lt;li>浪A：3波或5波，市场常误判为调整&lt;/li>
+&lt;li>浪B：情绪化上涨，成交量小，时间短&lt;/li>
+&lt;li>浪C：杀伤力最强，以5浪下跌，幅度至少与A等长&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>&amp;ldquo;滔天之澜&amp;quot;操作策略&lt;/strong>：以浪3主升浪为利润目标。上涨行情，在浪1终点浪2起点上方挂多单，止损浪2终点；下跌行情反之。止盈设为浪3与浪1等长位置。&lt;/p>
+&lt;hr>
+&lt;h1 id="第二章实用指标与应用方法">第二章：实用指标与应用方法
+&lt;/h1>&lt;h2 id="第一四节移动平均线与通道指标">第一～四节：移动平均线与通道指标
+&lt;/h2>&lt;h3 id="十大均线专业线双子线生命线织女线">十大均线——专业线、双子线、生命线、织女线
+&lt;/h3>&lt;p>作者为不同品种/周期设定了专属均线参数，提出了四大均线应用方法：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>专业线&lt;/strong>：每个品种每个周期都有其最适合的特定均线参数。例如现货黄金日线：3/5/12/21/25/43/64/86/99/120/840/888&lt;/li>
+&lt;li>&lt;strong>双子线&lt;/strong>：快线28为进场线，慢线48为防守线，用于短线判断&lt;/li>
+&lt;li>&lt;strong>生命线&lt;/strong>：股票的466/900线，外汇的170/410线，大宗商品的200/360线——代表长期趋势&lt;/li>
+&lt;li>&lt;strong>织女线&lt;/strong>：28/48/58三线黏合走平→ 短中长期资金成本一致→ 方向性选择概率增加。三线同时穿过同一根K线实体称为&amp;quot;织女三穿一&amp;rdquo;，预示大涨或大跌&lt;/li>
+&lt;/ul>
+&lt;h3 id="蓝绿系统与红绿系统均线的创新应用">蓝绿系统与红绿系统——均线的创新应用
+&lt;/h3>&lt;p>&lt;strong>蓝绿系统&lt;/strong>：同一均线周期（15），蓝线=开盘价均线，绿线=收盘价均线。多头时收盘价高于开盘价→绿线在蓝线上方，空头时反之。&lt;/p>
+&lt;p>&lt;strong>红绿系统&lt;/strong>：红线=最低价均线（58），绿线=最高价均线（58）。多头回踩绿线做多/跌破红线止损；空头回踩红线做空/击穿绿线止损。&lt;/p>
+&lt;p>&lt;strong>红蓝系统（成本线通道）&lt;/strong>：红线=收盘价均线向上平移2.5%，蓝线=收盘价均线向下平移2.5%，描述价格合理波动区间。&lt;/p>
+&lt;h3 id="金肯特纳keltner通道">金肯特纳（Keltner）通道
+&lt;/h3>&lt;p>由Chester Keltner于1960年提出。基于&lt;strong>三价均线&lt;/strong>（最高+最低+收盘/3）± ATR构成的通道。突破上轨做多，下轨做空。核心优势：使用&lt;strong>真实振幅（TR = Max(昨收,今高) - Min(昨收,今低)）&lt;/strong>，包含了跳空缺口的影响。&lt;/p>
+&lt;p>&lt;strong>TOP17指数移动平均线量化策略&lt;/strong>：使用EMA替代MA构筑通道，加入走平状态判断震荡充分度，设计三重出场（均线反穿+固定止盈+时间止盈）。&lt;/p>
+&lt;h3 id="自适应均线ama">自适应均线（AMA）
+&lt;/h3>&lt;p>考夫曼在《精明交易者》中提出：当价格快速移动时用短期均线，横盘时用长期均线。通过计算&lt;strong>价格变动速率&lt;/strong>（效率系数 = |收盘价-N日前收盘价| / Σ|每日价格变动|），让均线参数在2~30日EMA之间自动平滑过渡。&lt;/p>
+&lt;p>作者还提供了基于ADX和RSI指标的自适应均线变体，核心原理相同——趋势强时缩短参数，震荡时延长参数。&lt;/p>
+&lt;p>&lt;strong>TOP41&amp;quot;均线离散策略&amp;rdquo;&lt;/strong>：独创的变数自适应均线（短中长期均线的加权平均），通过计算三均线离散值判断震荡充分度。离散值收窄→震荡充分→突破ATR通道→顺势交易。&lt;/p>
+&lt;h2 id="第五节布林线boll">第五节：布林线（BOLL）
+&lt;/h2>&lt;p>传统认知：价格接近上轨做空、接近下轨做多。
+&lt;strong>作者颠覆性观点&lt;/strong>：布林通道是用来&lt;strong>突破&lt;/strong>的！价格落在通道外代表市场波动加大，是机构主力行为概率增加——是&lt;strong>最好的交易机会&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>TOP22&amp;quot;简单布林策略&amp;rdquo;&lt;/strong>：通道收口（上轨/下轨 &amp;lt; 1.011）+ 价格突破上下轨 → 顺势交易。回穿反向轨道平仓。&lt;/p>
+&lt;p>&lt;strong>&amp;ldquo;强盗布林&amp;quot;策略&lt;/strong>（经典中长线策略）：&lt;/p>
+&lt;ul>
+&lt;li>入场：价格突破布林上轨+收盘价&amp;gt;90周期收盘价最高值→做多；反之做空&lt;/li>
+&lt;li>出场：使用&lt;strong>递减均线参数&lt;/strong>——持仓每多一天，出场均线参数减1（从44最低到18）。持仓越久越容易获利离场，不会舍弃大段利润&lt;/li>
+&lt;/ul>
+&lt;h2 id="第六节rsi指标">第六节：RSI指标
+&lt;/h2>&lt;p>&lt;strong>公式本质&lt;/strong>：RSI = SMA(上涨幅度,N) / SMA(总涨跌幅度,N) × 100&lt;/p>
+&lt;p>四种用途：&lt;/p>
+&lt;ul>
+&lt;li>80/20为超买超卖信号&lt;/li>
+&lt;li>30/70为多空分界位置&lt;/li>
+&lt;li>结合&amp;quot;织女三穿一&amp;quot;确定突破点&lt;/li>
+&lt;li>结合成本线判断支撑压力&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>TOP3&amp;quot;价格回归策略&amp;rdquo;&lt;/strong>：RSI极端值（&amp;lt;20或&amp;gt;80）+ 价格偏离均线超过X% + 当前跌幅/涨幅收窄 → 逆势交易。固定百分比止盈止损+时间止盈（超时保本平仓）。&lt;/p>
+&lt;h2 id="第七节macd">第七节：MACD
+&lt;/h2>&lt;p>MACD被称为&amp;quot;指标之王&amp;quot;。核心逻辑：&lt;/p>
+&lt;ul>
+&lt;li>DIF = EMA(12) - EMA(26)：描述快慢均线的&amp;quot;离差&amp;quot;&lt;/li>
+&lt;li>DEA = DIF的9日加权平均&lt;/li>
+&lt;li>MACD柱 = (DIF - DEA) × 2&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>关键认知&lt;/strong>：如果说均线是描述价格波动的指标，那么MACD就是&lt;strong>描述均线变化&lt;/strong>的指标。&lt;/p>
+&lt;h2 id="第八十一节其他重要指标">第八～十一节：其他重要指标
+&lt;/h2>&lt;h3 id="sar抛物线指标">SAR抛物线指标
+&lt;/h3>&lt;p>集&amp;quot;止损&amp;quot;与&amp;quot;反转&amp;quot;于一体，是量化策略中最常用的移动出场工具。SAR点以弧形移动，兼具价格与时间两个维度。&lt;strong>TOP27策略&lt;/strong>：SAR多空转换节点+突破唐奇安通道上下轨→顺势进场，自适应均线出场。&lt;/p>
+&lt;h3 id="平均动向指数adx">平均动向指数（ADX）
+&lt;/h3>&lt;p>计算最复杂的主流指标：TR → +DM/-DM → +DI/-DI → DX → ADX。&lt;/p>
+&lt;ul>
+&lt;li>ADX递增 → 趋势加剧（不论涨跌）&lt;/li>
+&lt;li>ADX &amp;lt; 20且横向 → 无趋势/弱趋势&lt;/li>
+&lt;li>ADX从高点转跌 → 原有趋势减弱&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>TOP34策略&lt;/strong>：ADX&amp;lt;20且递增 + 均线方向确认 → 进场。SAR移动止盈出场。&lt;/p>
+&lt;h3 id="相对动力指标">相对动力指标
+&lt;/h3>&lt;p>计算方式：N周期价格波幅 / N周期每根K线波幅累加 × 100。&lt;/p>
+&lt;ul>
+&lt;li>指标上行 → 动力扩大，进入趋势行情&lt;/li>
+&lt;li>指标下行 → 动力收缩，进入震荡行情&lt;/li>
+&lt;li>低位 → 动力聚集，趋势性行情概率增加；高位 → 动力释放，震荡概率增加&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>TOP48策略&lt;/strong>基于此设计。&lt;/p>
+&lt;h3 id="阿隆指标aroon">阿隆指标（Aroon）
+&lt;/h3>&lt;p>由Tushar Chande于1995年发表，通过计算价格达到近期最高/最低价以来经过的期间数判断趋势。&lt;/p>
+&lt;ul>
+&lt;li>AroonUp = (计算期天数-最高价后天数)/计算期天数×100&lt;/li>
+&lt;li>AroonDown = (计算期天数-最低价后天数)/计算期天数×100&lt;/li>
+&lt;li>UP线上穿DOWN线 → 多头信号；DOWN线上穿UP线 → 空头信号&lt;/li>
+&lt;/ul>
+&lt;p>作者提供了三套基于阿隆指标不同逻辑的量化策略源码。&lt;/p>
+&lt;h2 id="第十二节三重滤网系统">第十二节：三重滤网系统
+&lt;/h2>&lt;p>亚历山大·埃尔德于1986年发表，同时采用顺势指标与摆荡指标，过滤各自缺点：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>第一层滤网&lt;/strong>：大周期趋势判断方向（如周线MACD斜率），剔除一个选择（观望或单向交易）&lt;/li>
+&lt;li>&lt;strong>第二层滤网&lt;/strong>：小周期寻找逆势入场区域——上升趋势利用下跌找做多机会，下降趋势利用上涨找沽空机会&lt;/li>
+&lt;li>&lt;strong>第三层滤网&lt;/strong>：确定精确进场点——追踪型停止单捕捉盘中突破&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>TOP30&amp;quot;地平线三重滤网&amp;quot;策略&lt;/strong>的实现：&lt;/p>
+&lt;ol>
+&lt;li>第一层：唐奇安通道中轨加权平均得到平滑&amp;quot;飞跃线&amp;quot;，价格在上方为多头市场&lt;/li>
+&lt;li>第二层：飞跃线±N倍ATR构成交易区域，寻找低多/高空机会&lt;/li>
+&lt;li>第三层：SAR指标锁定精确开仓点&lt;/li>
+&lt;li>出场：价格距离飞跃线N个ATR，或SAR反转&lt;/li>
+&lt;/ol>
+&lt;h2 id="第十三节相对价格策略">第十三节：相对价格策略
+&lt;/h2>&lt;p>&lt;strong>核心思想&lt;/strong>：凡所有相，皆是虚妄。将绝对价格转化为相对价格（收盘价/N日前收盘价-1），使价格围绕0轴波动，锁定在-1到1之间，&lt;strong>描述相对涨跌速率&lt;/strong>而非绝对价格水平。&lt;/p>
+&lt;p>基于相对价格构建均线和唐奇安通道，突破高低点交易。这种处理方式消除了不同品种、不同时期价格绝对值差异带来的不可比问题。&lt;/p>
+&lt;hr>
+&lt;h1 id="第三章策略设计与风控管理">第三章：策略设计与风控管理
+&lt;/h1>&lt;h2 id="第一节交易中最有效的盈利因子">第一节：交易中最有效的盈利因子
+&lt;/h2>&lt;p>&lt;strong>最简单的策略也能盈利&lt;/strong>：仅用&amp;quot;突破88根K线最高点做多，跌破88根K线最低点做空&amp;quot;这一条规则，在A股（300只个股）、国内期货（9个品种）、股指期货（3个指数）、外盘期货（12个品种）等多个市场均能实现正收益。&lt;/p>
+&lt;p>&lt;strong>核心结论：趋势突破是中短线交易中最有效的盈利因子。&lt;/strong>&lt;/p>
+&lt;h2 id="第二节交易策略的设计">第二节：交易策略的设计
+&lt;/h2>&lt;p>策略设计的六步流程：&lt;strong>交易类型 → 环境判定 → 进场信号 → 出场判定 → 仓位管理 → 复盘优化&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>震荡型策略的设计要点&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>基于正态分布理论——价格偏离合理区间（如均线、RSI中轨）太远会回归&lt;/li>
+&lt;li>右侧进场（等小周期趋势反转后再进场）优于左侧进场&lt;/li>
+&lt;li>好的趋势策略在震荡中不应发出进场信号，好的震荡策略在趋势中同理&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>核心矛盾&lt;/strong>：人性不可改变——人们喜欢刺激（追涨杀跌）、不能接受失败（扛单）、贪婪（梭哈）。既然不能克服人性，就应该&lt;strong>设计机械交易系统来规避人性干扰&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>TOP55&amp;quot;双唐奇安量化策略&amp;quot;&lt;/strong>：双周期唐奇安通道（22周期和120周期），结合均线趋势过滤和分段式出场（持仓≤22周期用唐奇安通道出场，&amp;gt;22周期用ATR回撤出场）。&lt;/p>
+&lt;h2 id="第三节仓位管理">第三节：仓位管理
+&lt;/h2>&lt;p>&lt;strong>核心观点&lt;/strong>：交易的本质是买卖&amp;quot;风险&amp;quot;，控制风险比追求收益更重要。&lt;/p>
+&lt;ul>
+&lt;li>专业机构的资金红线：&lt;strong>最大回撤10%&lt;/strong>&lt;/li>
+&lt;li>交易账户 = 保证金 + 10%风险权益&lt;/li>
+&lt;li>科学仓位公式：&lt;strong>开单仓位 = [胜率 - (1-胜率)/平均盈亏比] / 2&lt;/strong>&lt;/li>
+&lt;li>风控方法：设定10%最大回撤目标，一成仓不能确保目标就减仓，能稳定控制最大回撤&amp;lt;6%则加仓&lt;/li>
+&lt;/ul>
+&lt;h2 id="第四节交易者五大常见误区">第四节：交易者五大常见误区
+&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>裸K才是最高境界&lt;/strong> → 道听途说，未经求证。一个优秀交易者需要有自己的分析和判断能力&lt;/li>
+&lt;li>&lt;strong>心态第一，技术第二&lt;/strong> → 心态问题本质是对自己技术不自信或未严格执行交易纪律&lt;/li>
+&lt;li>&lt;strong>杠杆交易风险更大&lt;/strong> → 合理运用杠杆是避险工具，以小博大应是&amp;quot;以个人总资产之小部分，博市场之大&amp;quot;&lt;/li>
+&lt;li>&lt;strong>好系统要技术面+基本面结合&lt;/strong> → 投资者关注基本面，投机者只关注价格。混用是没认清自己身份&lt;/li>
+&lt;li>&lt;strong>国际市场没有庄家&lt;/strong> → 任何市场都有庄家：黄金定价权在美国，原油在OPEC，铜在中国&lt;/li>
+&lt;/ol>
+&lt;h2 id="第五节网格交易策略">第五节：网格交易策略
+&lt;/h2>&lt;p>网格交易法（渔网策略）是最适合程序化交易的策略之一，擅长震荡行情捕捉噪声。&lt;/p>
+&lt;p>作者提供了&lt;strong>四种网格策略变体&lt;/strong>：&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>动态网格（逆向加仓）&lt;/strong>：以均线为中轴，偏离Y%开首仓，反向一个网宽加仓一次，两个网宽止损，顺向一个网宽止盈&lt;/li>
+&lt;li>&lt;strong>动态网格（顺向加仓）&lt;/strong>：同样以均线为中轴，但顺向加仓、反向止损&lt;/li>
+&lt;li>&lt;strong>日内开盘价网格&lt;/strong>：以当日开盘价展开双层渔网，每穿越一层反向开一手&lt;/li>
+&lt;li>&lt;strong>历史区间等分网格&lt;/strong>：基于200根K线价格区间8等分，在中枢上下各4层设置限价单，设止盈和远端止损，60根K无交易自动重新调整&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>核心难点&lt;/strong>：趋势行情中如何智能识别并规避风险。&lt;/p>
+&lt;h2 id="第六节量价异动策略">第六节：量价异动策略
+&lt;/h2>&lt;p>&lt;strong>交易的三才（天地人）&lt;/strong>：天时=时间，地利=支撑阻力位，人和=成交量。&lt;/p>
+&lt;p>&lt;strong>成交量三大经典表述&lt;/strong>：&lt;/p>
+&lt;ol>
+&lt;li>量在价先——成交量是价格的先行指标&lt;/li>
+&lt;li>天量天价——高换手意味着短期高位&lt;/li>
+&lt;li>地量地价&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>量价研究三个方向&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>量价同步放大 → 趋势行情开始&lt;/li>
+&lt;li>量价背离（放量不涨/缩量上涨）→ 隐藏未来价格趋势的KEY&lt;/li>
+&lt;li>量价波幅对比 → 寻找隐含规律&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>TOP40策略&lt;/strong>：成交量长期低位后突然放大X倍均量 + K线涨跌幅超过Y倍ATR → 顺势进场，K线极值止损，SAR移动出场。&lt;/p>
+&lt;h2 id="第七节多因子量化策略">第七节：多因子量化策略
+&lt;/h2>&lt;p>通过叠加多个具有细微交易优势的条件因子获得相对优势。&lt;/p>
+&lt;p>&lt;strong>TOP38&amp;quot;六君子策略&amp;quot;的六个因子（每个权重=1）：&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>价格在均线上方→做多积分+1（顺势优势）&lt;/li>
+&lt;li>价格在飞跃线上方→做多积分+1&lt;/li>
+&lt;li>价格偏离飞跃线不超过N倍ATR→做多做空积分均+1（回归交易区域）&lt;/li>
+&lt;li>K线异常波动（涨跌幅&amp;gt;X倍ATR）→顺势方向积分+1&lt;/li>
+&lt;li>突破Y周期高点→做多积分+1；跌破Y周期低点→做空积分+1（海龟逻辑）&lt;/li>
+&lt;li>突破Z周期布林上下轨→顺势方向积分+1（Aberration逻辑）&lt;/li>
+&lt;/ol>
+&lt;p>累积积分达标后触发交易。六个独立因子的叠加形成了稳健的交易信号。&lt;/p>
+&lt;h2 id="第八节经典策略r-breaker">第八节：经典策略R-Breaker
+&lt;/h2>&lt;p>Richard Saidenberg于1994年发布，连续15年荣登《Futures Truth》杂志Top10赚钱策略。&lt;/p>
+&lt;p>&lt;strong>策略构成&lt;/strong>：通过前日OHLC计算六个价位（观察卖出/买入价、反转卖出/买入价、突破卖出/买入价），追踪盘中价格实施两种操作：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>趋势进场&lt;/strong>：突破买卖价→顺势开仓&lt;/li>
+&lt;li>&lt;strong>反转离场+反手&lt;/strong>：先触发观察价但未触发突破价→回落穿过反转价→反手做反向&lt;/li>
+&lt;/ul>
+&lt;p>作者的独立批判：趋势+震荡结合可能导致过度拟合（4个参数计算6个价位），出场方式有优化空间。CTA策略设计的大忌是&lt;strong>过度拟合&lt;/strong>。&lt;/p>
+&lt;h2 id="第九节恒温器策略thermostat">第九节：恒温器策略Thermostat
+&lt;/h2>&lt;p>通过CMI（市场波动指数）将市场分为趋势和震荡两种模式：&lt;/p>
+&lt;ul>
+&lt;li>CMI = |Close - N周期前收盘| × 100 / (N周期最高价 - N周期最低价)&lt;/li>
+&lt;li>CMI &amp;lt; 20 → 震荡模式（基于开盘价+ATR和三日均价的震荡策略）&lt;/li>
+&lt;li>CMI ≥ 20 → 趋势模式（布林通道突破策略，核心逻辑等同于Aberration）&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>作者的实证发现&lt;/strong>：将恒温器策略拆开分析后，趋势部分绩效优良，震荡部分反而拖累整体——再次印证中短线交易中&lt;strong>趋势策略是更科学的选择&lt;/strong>。&lt;/p>
+&lt;hr>
+&lt;h1 id="附录一基于波动率因子的择时分析吕尚">附录一：基于波动率因子的择时分析（吕尚）
+&lt;/h1>&lt;p>针对沪深300指数的波动率单因子择时策略，ATR vs STD对比分析：&lt;/p>
+&lt;p>&lt;strong>ATR在以下场景更优&lt;/strong>：盘整向趋势转化（ATR保持高水平但STD逐步抬升）、不带缺口的趋势逆转（ATR稳定但STD先降后升）、带缺口的趋势逆转、单根K线波幅逐步增大（ATR同步上升但STD停留在0）。&lt;/p>
+&lt;p>&lt;strong>策略逻辑（极简）&lt;/strong>：&lt;/p>
+&lt;ol>
+&lt;li>波动率 = log(收盘价) / log(前90周期收盘价) - 1&lt;/li>
+&lt;li>波动率90周期移动平均 + 90周期移动最大值构成通道&lt;/li>
+&lt;li>波动率上穿通道上轨 → 做多&lt;/li>
+&lt;li>波动率下穿均线 → 平多&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>2014-2019年回测&lt;/strong>：510300ETF策略净值2.24（124%收益），最大回撤12.84%，交易32次。同时提供MC的Easy Language和Python两种语言实现代码。&lt;/p>
+&lt;hr>
+&lt;h1 id="附录二macd顶底背离量化策略慕金龙">附录二：MACD顶底背离量化策略（慕金龙）
+&lt;/h1>&lt;p>&lt;strong>顶背离&lt;/strong>：价格一峰比一峰高，MACD一峰比一峰低 → 卖出信号
+&lt;strong>底背离&lt;/strong>：价格一底比一底低，MACD一底比一底高 → 买入信号&lt;/p>
+&lt;p>&lt;strong>策略完整逻辑&lt;/strong>：&lt;/p>
+&lt;ol>
+&lt;li>记录MACD快慢线每次交叉点及对应K线高低点&lt;/li>
+&lt;li>金叉状态下：当前高点低于前次金叉高点 + 当前MACD高于前次MACD → 底背离买入&lt;/li>
+&lt;li>死叉状态下：当前低点高于前次死叉低点 + 当前MACD低于前次MACD → 顶背离卖出&lt;/li>
+&lt;li>结合MACD动态区间交易模式：金叉后突破周期内高点做多，死叉后跌破周期内低点做空&lt;/li>
+&lt;li>移动出场：持仓时间越长，出场条件越宽松（liQKA系数从1线性递减至0.5）&lt;/li>
+&lt;/ol>
+&lt;p>完整策略使用MC的Easy Language编写，在国内期货1小时线上验证有效。&lt;/p>
+&lt;hr>
+&lt;h1 id="总结">总结
+&lt;/h1>&lt;h2 id="本书的核心价值">本书的核心价值
+&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>从理论到实践的完整体系&lt;/strong>：能量守恒理论 → 实用指标 → 策略设计 → 风控管理，逻辑清晰&lt;/li>
+&lt;li>&lt;strong>近60种策略源码&lt;/strong>：涵盖趋势策略、震荡策略、日内策略、多因子策略等，均提供完整源码和跨市场回测数据&lt;/li>
+&lt;li>&lt;strong>独立思考和批判精神&lt;/strong>：对经典策略（恒温器震荡部分无效、R-Breaker过度拟合风险、&amp;ldquo;线上阴线买&amp;quot;实证颠覆传统认知）敢于质疑和实证检验&lt;/li>
+&lt;li>&lt;strong>跨市场验证&lt;/strong>：所有策略均在A股、期货、外汇、股指期货等市场进行了实盘级别的回测验证&lt;/li>
+&lt;/ol>
+&lt;h2 id="核心洞见">核心洞见
+&lt;/h2>&lt;blockquote>
+&lt;p>趋势突破是中短线交易中最有效的盈利因子。
+程序化交易是一种交易方式，量化是交易的工具，而量化交易的基础是概率学和统计学。
+凡所有相，皆是虚妄。研究交易最纯粹的方式就是研究&amp;quot;价格&amp;rdquo;。
+没有&amp;quot;真理&amp;quot;是不能被质疑的。一个优秀的交易者要知道自己该坚持什么，要用自己的眼睛看脑子想。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="延伸阅读">延伸阅读
+&lt;/h2>&lt;ul>
+&lt;li>《乌合之众：大众心理研究》——理解市场群体心理&lt;/li>
+&lt;li>《大癫狂：非同寻常的大众幻想与群众性癫狂》——心理因素控制市场&lt;/li>
+&lt;li>《交易的逻辑与艺术》（陈侃迪）——交易系统底层逻辑&lt;/li>
+&lt;li>《我当交易员的日子：期权波动率交易核心策略与技巧》——国内首部小说体期权实战&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;em>本文基于周泽炜著《量化交易从入门到精通——TOP交易员交易策略与实战手记》（企业管理出版社，2021年）整理。书中所有策略均使用MultiCharts的Easy Language编写，可在MC平台上直接运行回测。&lt;/em>&lt;/p></description></item></channel></rss>
