@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f8fafc">
-  <meta name="description" content="经授权全文转载《量化交易从入门到精通》“概述”章节，完整保留原始排版、策略源码与原书插图。">
+  <meta name="description" content="经授权全文转载《量化交易从入门到精通》“概述”章节，现已改为可复制的文字版正文，并保留原书图片与策略源码。">
   <meta property="og:title" content="《量化交易从入门到精通》概述：投资市场是否有交易圣杯 - zcxGGmu's Blog">
-  <meta property="og:description" content="经授权全文转载《量化交易从入门到精通》“概述”章节，按原书第 16 页至第 60 页逐页完整展示。">
+  <meta property="og:description" content="经授权全文转载《量化交易从入门到精通》“概述”章节，全文以可复制文字排版呈现，并保留原书图片与策略源码。">
   <meta property="og:url" content="https://zcxggmu.github.io/2026/06/11/quant-trading-overview/">
   <link rel="canonical" href="https://zcxggmu.github.io/2026/06/11/quant-trading-overview/">
   <link rel="stylesheet" href="/scss/journal.min.css">
@@ -18,21 +18,15 @@
   <style>
     body.quant-trading-overview .post-title h1 {
       max-width: 100%;
-      line-height: 1.18;
+      line-height: 1.2;
       overflow-wrap: anywhere;
     }
-    body.quant-trading-overview,
-    body.quant-trading-overview .stream-container,
-    body.quant-trading-overview .post,
-    body.quant-trading-overview .post-body-wrapper,
     body.quant-trading-overview .post-body {
-      max-width: 100%;
-      overflow-x: hidden;
+      font-size: 17px;
+      line-height: 1.95;
     }
     body.quant-trading-overview .post-body p,
-    body.quant-trading-overview .post-body blockquote,
-    body.quant-trading-overview .post-body figcaption {
-      white-space: normal;
+    body.quant-trading-overview .post-body blockquote {
       overflow-wrap: break-word;
       word-break: normal;
     }
@@ -40,53 +34,60 @@
       margin: 0 0 28px;
       color: #60758a;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
-    body.quant-trading-overview .chapter-page-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      margin: 24px 0 8px;
+    body.quant-trading-overview .chapter-figure {
+      margin: 26px 0;
     }
-    body.quant-trading-overview .chapter-page {
-      margin: 0;
-      padding: 14px;
-      border: 1px solid rgba(25, 118, 210, 0.12);
-      border-radius: 10px;
-      background: #ffffff;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-    }
-    body.quant-trading-overview .chapter-page img {
+    body.quant-trading-overview .chapter-figure img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 6px;
+      border-radius: 10px;
+      border: 1px solid rgba(25, 118, 210, 0.12);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
     }
-    body.quant-trading-overview .chapter-page figcaption {
-      margin-top: 10px;
-      color: #60758a;
-      font-size: 13px;
-      text-align: center;
+    body.quant-trading-overview .chapter-code {
+      margin: 22px 0;
+      padding: 16px 18px;
+      border-radius: 12px;
+      background: #0f172a;
+      color: #e2e8f0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    body.quant-trading-overview .chapter-poem {
+      margin: 22px 0;
+      padding: 12px 18px;
+      border-left: 4px solid #1976d2;
+      background: rgba(25, 118, 210, 0.05);
+    }
+    body.quant-trading-overview .chapter-poem p {
+      margin: 0;
     }
     body.quant-trading-overview .mobile-title-break {
       display: none;
     }
     @media screen and (max-width: 480px) {
       body.quant-trading-overview .post-body-wrapper {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       body.quant-trading-overview .post-title h1 {
         font-size: 26px;
         margin: 14px 0 22px;
       }
+      body.quant-trading-overview .post-body {
+        font-size: 16px;
+      }
       body.quant-trading-overview .mobile-title-break {
         display: block;
       }
-      body.quant-trading-overview .chapter-page {
-        padding: 10px;
-      }
-      body.quant-trading-overview .chapter-meta-note {
+      body.quant-trading-overview .chapter-code {
+        padding: 14px;
         font-size: 13px;
       }
       body.quant-trading-overview .post-title .post-meta {
@@ -129,63 +130,398 @@
           <a href="/categories/量化交易/" style="color:#1976d2">量化交易</a>&nbsp;
           <a href="/categories/投资/" style="color:#1976d2">投资</a>&nbsp;
           <a href="/categories/读书/" style="color:#1976d2">读书</a>&nbsp;&nbsp;
-          <span class="material-icons" style="font-size:16px;vertical-align:middle">schedule</span> 45 页原文
+          <span class="material-icons" style="font-size:16px;vertical-align:middle">schedule</span> 19 分钟
         </div>
       </div>
     </div>
     <div class="post-body-wrapper">
       <div class="post-body">
         <blockquote>
-          <p>本文经授权全文转载周泽炜《量化交易从入门到精通》“概述”章节。为完整保留原始排版、策略源码和书中插图，下方按原书页序逐页展示，不再对原文做摘要式改写。</p>
+          <p>本文经授权全文转载周泽炜《量化交易从入门到精通》“概述”章节。以下正文已改为可复制的文字版，并保留原书图片与策略源码。</p>
         </blockquote>
 
-<p class="chapter-meta-note">章节范围：原书第 16 页至第 60 页，共 45 页。本文仅作内容转载与学习存档，不构成任何投资建议。</p>
-<div class="chapter-page-stack">
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-016.jpg" alt="《量化交易从入门到精通》概述章节原书第 16 页" loading="eager"><figcaption>原书第 16 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-017.jpg" alt="《量化交易从入门到精通》概述章节原书第 17 页" loading="eager"><figcaption>原书第 17 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-018.jpg" alt="《量化交易从入门到精通》概述章节原书第 18 页" loading="lazy"><figcaption>原书第 18 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-019.jpg" alt="《量化交易从入门到精通》概述章节原书第 19 页" loading="lazy"><figcaption>原书第 19 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-020.jpg" alt="《量化交易从入门到精通》概述章节原书第 20 页" loading="lazy"><figcaption>原书第 20 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-021.jpg" alt="《量化交易从入门到精通》概述章节原书第 21 页" loading="lazy"><figcaption>原书第 21 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-022.jpg" alt="《量化交易从入门到精通》概述章节原书第 22 页" loading="lazy"><figcaption>原书第 22 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-023.jpg" alt="《量化交易从入门到精通》概述章节原书第 23 页" loading="lazy"><figcaption>原书第 23 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-024.jpg" alt="《量化交易从入门到精通》概述章节原书第 24 页" loading="lazy"><figcaption>原书第 24 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-025.jpg" alt="《量化交易从入门到精通》概述章节原书第 25 页" loading="lazy"><figcaption>原书第 25 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-026.jpg" alt="《量化交易从入门到精通》概述章节原书第 26 页" loading="lazy"><figcaption>原书第 26 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-027.jpg" alt="《量化交易从入门到精通》概述章节原书第 27 页" loading="lazy"><figcaption>原书第 27 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-028.jpg" alt="《量化交易从入门到精通》概述章节原书第 28 页" loading="lazy"><figcaption>原书第 28 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-029.jpg" alt="《量化交易从入门到精通》概述章节原书第 29 页" loading="lazy"><figcaption>原书第 29 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-030.jpg" alt="《量化交易从入门到精通》概述章节原书第 30 页" loading="lazy"><figcaption>原书第 30 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-031.jpg" alt="《量化交易从入门到精通》概述章节原书第 31 页" loading="lazy"><figcaption>原书第 31 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-032.jpg" alt="《量化交易从入门到精通》概述章节原书第 32 页" loading="lazy"><figcaption>原书第 32 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-033.jpg" alt="《量化交易从入门到精通》概述章节原书第 33 页" loading="lazy"><figcaption>原书第 33 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-034.jpg" alt="《量化交易从入门到精通》概述章节原书第 34 页" loading="lazy"><figcaption>原书第 34 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-035.jpg" alt="《量化交易从入门到精通》概述章节原书第 35 页" loading="lazy"><figcaption>原书第 35 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-036.jpg" alt="《量化交易从入门到精通》概述章节原书第 36 页" loading="lazy"><figcaption>原书第 36 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-037.jpg" alt="《量化交易从入门到精通》概述章节原书第 37 页" loading="lazy"><figcaption>原书第 37 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-038.jpg" alt="《量化交易从入门到精通》概述章节原书第 38 页" loading="lazy"><figcaption>原书第 38 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-039.jpg" alt="《量化交易从入门到精通》概述章节原书第 39 页" loading="lazy"><figcaption>原书第 39 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-040.jpg" alt="《量化交易从入门到精通》概述章节原书第 40 页" loading="lazy"><figcaption>原书第 40 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-041.jpg" alt="《量化交易从入门到精通》概述章节原书第 41 页" loading="lazy"><figcaption>原书第 41 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-042.jpg" alt="《量化交易从入门到精通》概述章节原书第 42 页" loading="lazy"><figcaption>原书第 42 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-043.jpg" alt="《量化交易从入门到精通》概述章节原书第 43 页" loading="lazy"><figcaption>原书第 43 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-044.jpg" alt="《量化交易从入门到精通》概述章节原书第 44 页" loading="lazy"><figcaption>原书第 44 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-045.jpg" alt="《量化交易从入门到精通》概述章节原书第 45 页" loading="lazy"><figcaption>原书第 45 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-046.jpg" alt="《量化交易从入门到精通》概述章节原书第 46 页" loading="lazy"><figcaption>原书第 46 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-047.jpg" alt="《量化交易从入门到精通》概述章节原书第 47 页" loading="lazy"><figcaption>原书第 47 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-048.jpg" alt="《量化交易从入门到精通》概述章节原书第 48 页" loading="lazy"><figcaption>原书第 48 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-049.jpg" alt="《量化交易从入门到精通》概述章节原书第 49 页" loading="lazy"><figcaption>原书第 49 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-050.jpg" alt="《量化交易从入门到精通》概述章节原书第 50 页" loading="lazy"><figcaption>原书第 50 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-051.jpg" alt="《量化交易从入门到精通》概述章节原书第 51 页" loading="lazy"><figcaption>原书第 51 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-052.jpg" alt="《量化交易从入门到精通》概述章节原书第 52 页" loading="lazy"><figcaption>原书第 52 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-053.jpg" alt="《量化交易从入门到精通》概述章节原书第 53 页" loading="lazy"><figcaption>原书第 53 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-054.jpg" alt="《量化交易从入门到精通》概述章节原书第 54 页" loading="lazy"><figcaption>原书第 54 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-055.jpg" alt="《量化交易从入门到精通》概述章节原书第 55 页" loading="lazy"><figcaption>原书第 55 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-056.jpg" alt="《量化交易从入门到精通》概述章节原书第 56 页" loading="lazy"><figcaption>原书第 56 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-057.jpg" alt="《量化交易从入门到精通》概述章节原书第 57 页" loading="lazy"><figcaption>原书第 57 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-058.jpg" alt="《量化交易从入门到精通》概述章节原书第 58 页" loading="lazy"><figcaption>原书第 58 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-059.jpg" alt="《量化交易从入门到精通》概述章节原书第 59 页" loading="lazy"><figcaption>原书第 59 页</figcaption></figure>
-  <figure class="chapter-page"><img src="/images/posts/quant-trading-overview/chapter-pages/page-060.jpg" alt="《量化交易从入门到精通》概述章节原书第 60 页" loading="lazy"><figcaption>原书第 60 页</figcaption></figure>
+<p class="chapter-meta-note">章节范围：原书第 16 页至第 60 页。本文仅作内容转载与学习存档，不构成任何投资建议。</p>
+<h2>概述</h2>
+<h3>投资市场是否有交易圣杯</h3>
+<h2>什么是技术？</h2>
+<p>技术研究的是人的本身，是阐述人性的具体手段。技术提示的是人性的弱点，是用来判断散户操作心理的一种工具。在投资市场中散户往往不够理性，是庄家和机构的目标，所以，最好的技术就是判断散户在何时何地会出现过失性操作的工具。</p>
+<p>很多人做交易都在想如何看透庄家，实际上这属于舍近求远，我们更多的是应该看透自己，因为自己就是一个散户，我们只要赢了自己就能赢得交易。</p>
+<p>我们总说在投资市场中充满陷阱与虚假，其实一切皆是实相，只是我们的心蒙蔽了自己，只看我们想看到的，相信我们希望相信的，自以为是地去判断行情。</p>
+<h3>很多人会问，为什么自己懂技术但还是在输钱？</h3>
+<p>因为他们虽然手上有技术，但是依然抱着散户的心态去运用他所谓的技术。所以在投资市场中，有心态第一、技术第二的说法。</p>
+<h3>周泽炜说</h3>
+<blockquote class="chapter-poem"><p>量能为纲、趋势为先、形态为优、均线为绳、周期为重、指标为<br>辅。</p></blockquote>
+<p>量能为纲——主观交易中我们以“能量守恒理论”为核心，以等距箱体理论、黄金分割延展理论、实用波浪理论为主体。</p>
+<p>趋势为先——任何市场的任何走势，无不都是由趋势+趋势所构成。因此“顺势而为”也被认为是投资市场里的第一要诀，交易上我们不断重复：判断趋势、适应趋势、等待趋势、跟随趋势、再判断、再适应……</p>
+<p>形态为优——形态分析是一种直接从历史价格图表上去分辨价格变动趋势的分析方法。市场行情的形态是有其必然性的，也就是说，市场形态的形成，是必然按它特定的规律往前走的。形态高于一切，在主观交易中形态分析是技术分析体系中的基础。</p>
+<p>均线为绳——移动平均线（MA）是以道·琼斯的“平均成本概念”为理论基础，采用统计学中“移动平均”的原理，将一段时期内价格平均值连成曲线，用来显示行情价格的历史波动情况，进而反映价格指数未来发展趋势的技术分析方法。它是道氏理论的形象化表述。“十彩均线系统”结合了行情每个周期的波动规律，是准确判断现有趋势、判断将出现的趋势、发现过度延伸即将反转的趋势的重要手段之一。</p>
+<p>周期为重——市场运动的最终线索就在其运行周期上，对于时间周期的研究为我们的测市手段增加了时间维度。笔者交易中对周期的判断，以“三角洲理论”“江恩理论”“对等循环周期理论”为主体，来判断市场价格波动的规律及不同周期下行情的特性与节奏的不同。</p>
+<p>指标为辅——笔者认为常用指标是分析行情的辅助工具，而不再是分析过程中的固定主体，以规避在指标分析中经常会出现的本身缺陷。</p>
+<h2>荼毒中国交易者最深的交易技巧</h2>
+<p>一个人拿 10 万元本金投入市场，先在市场上赚 10%，然后再亏掉10%，这时他是亏损的。另一个人拿了 10 万元本金投入市场，先亏损了10%，然后再赚回 10%，你会惊异地发现他还是亏损的。交易就是这么一个看似公平实则不然的社会活动。</p>
+<p>投资市场最不缺的就是人云亦云、以讹传讹。每次我出外做线下讲座都不忘顺口说一句“学习交易，首先要做的就是少上网”，因为网络上所分享的交易技巧十有八九都有“毒”。当然这也不能责怪网络，网络只是将错误的信息更快更广泛地流传开来了而已。俗话说得好，“对的学习方式能帮助你事半功倍，而错误的学习能让你万劫不复！”是的，所以交易成了许多人永远学不会的一门学问。</p>
+<p>我们说量化的第一职能是证伪。因此如果你的量化交易尚不能成为你交易盈利的工具，那至少也可以帮你证伪错误的交易逻辑和观点。</p>
+<figure class="chapter-figure"><img src="/images/overview/page019_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 19-1" loading="lazy"></figure>
+<h3>什么是线上阴线买，线下阳线抛？</h3>
+<p>“线上阴线买，线下阳线抛”出自民间股神殷保华，一个中年离异的空调装修工，阴差阳错猜对了 2001 年 8 月A股顶部而封“神”。2011年2 月遭刑拘，因不具备证券投资咨询从业资格举办股票咨询讲座及培训班致大批股民受骗上当而锒铛入狱。现实再次告诫我们，如果你没有执照就不要学别人耍流氓。</p>
+<p>线上阴线买，线下阳线抛。这句话的重点就是这个“线”，首先我们要确定这个“线”是指的什么，阴线买与阳线抛这两点比较好理解。</p>
+<p>“线”可以是重要的压力或者支撑线，也可以是均线。如下图所示：突破重要压力后的回踩反抽时的阴线买入。</p>
+<figure class="chapter-figure"><img src="/images/overview/page020_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 20-1" loading="lazy"></figure>
+<p>接下来我们就从期货和股票两个市场分别就这个逻辑进行验证。</p>
+<h3>策略一，“线上阴线买”</h3>
+<p>① 当均线 60 线上行时，价格回踩均线，做多。</p>
+<p>止损：当价格跌破均线 60 线超过 5 个K线真实波幅；</p>
+<p>止盈：使用SAR指标做移动止盈。</p>
+<p>② 当均线 60 线下行时，价格反弹均线，做空。</p>
+<p>止损：当价格突破均线 60 线超过 5 个K线真实波幅；</p>
+<p>止盈：使用SAR指标做移动止盈。</p>
+<h3>策略源码（MC版本）</h3>
+<pre class="chapter-code"><code>inputs:zq(60),sb(5);
+variables:var0(0),oParCl(0), oParOp(0), oPostion(0), oTransition(0)
+,var7(0);
+var0=Average(close,zq);
+condition1=close&lt;open and Low&lt;var0 and
+close&gt;var00.3*AvgTrueRange(99) and var0&gt;var0[1] and var0[1]&gt;var0[2];
+condition2=close&gt;open and high&gt;var0 and
+close&lt;var0+0.3*AvgTrueRange(99) and var0&lt;var0[1] and var0[1]&lt;var0[2];
+Value1 = ParabolicSAR(0.02, 0.2, oParCl, oParOp, var7, oTransition);
+if condition1 then buy next bar at market;
+if condition2 then sellshort next bar at market;
+if marketposition=1 and var7=-1 and var7[1]=1 then sell( &quot;bp48&quot; )
+next bar at market;
+if marketposition=-1 and var7=1 and var7[1]=-1 then buytocover
+(&quot;sp48&quot;) next bar at market;
+if marketposition=1 then sell( &quot;bp482&quot; ) next bar at var0[1]-
+sb*AvgTrueRange(99) stop;
+if marketposition=-1 then buytocover ( &quot;sp482&quot; ) next bar at
+var0[1]+sb*AvgTrueRange(99) stop;
+if marketposition=-1 then buytocover ( &quot;sp482&quot; ) next bar at
+var0[1]+sb*AvgTrueRange(99) stop;</code></pre>
+<figure class="chapter-figure"><img src="/images/overview/page022_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 22-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page022_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 22-2" loading="lazy"></figure>
+<h3>策略二，“线下阳线买”</h3>
+<p>① 当均线 60 线上行时，价格反弹均线，做多。</p>
+<p>止损：当价格跌破均线 60 线超过 5 个K线真实波幅；</p>
+<p>止盈：使用SAR指标做移动止盈。</p>
+<p>② 当均线 60 线下行时，价格回踩均线，做空。</p>
+<p>止损：当价格突破均线 60 线超过 5 个K线真实波幅；</p>
+<p>止盈：使用SAR指标做移动止盈。</p>
+<h3>策略源码（MC版本）</h3>
+<pre class="chapter-code"><code>inputs:zq(60),sb(5);
+variables:var0(0),oParCl(0), oParOp(0), oPostion(0), oTransition(0)
+,var7(0);
+var0=Average(close,zq);
+condition1=close&gt;open and high&gt;var0 and
+close&lt;var0+0.3*AvgTrueRange(99)and var0&gt;var0[1] and var0[1]&gt;var0[2];
+condition2=close&lt;open and low&lt;var0 and close&gt;var0-
+0.3*AvgTrueRange(99) and var0&lt;var0[1] and var0[1]&lt;var0[2];
+Value1 = ParabolicSAR(0.02, 0.2, oParCl, oParOp, var7, oTransition);
+if marketposition=0 and condition1 then buy next bar at market;
+if marketposition=0 and condition2 then sellshort next bar at market;
+if marketposition=1 and var7=-1 and var7[1]=1 then sell( &quot;bp48&quot; )
+next bar at market;
+if marketposition=-1 and var7=1 and var7[1]=-1 then buytocover (
+&quot;sp48&quot;) next bar at market;
+if marketposition=1 then sell( &quot;bp482&quot; ) next bar at var0[1]-
+sb*AvgTrueRange(99) stop;
+if marketposition=-1 then buytocover ( &quot;sp482&quot; ) next bar at
+var0[1]+sb*AvgTrueRange(99) stop;</code></pre>
+<figure class="chapter-figure"><img src="/images/overview/page024_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 24-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page024_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 24-2" loading="lazy"></figure>
+<p>以上内容使用果仁网在A股市场中进行验证。</p>
+<h3>策略三，当均线50线、60线呈多头排列时，线上阴线买；当均线50线、60线呈空头排列时，线下阳线卖。</h3>
+<figure class="chapter-figure"><img src="/images/overview/page025_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 25-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page025_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 25-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page025_img2.jpeg" alt="《量化交易从入门到精通》概述原书插图 25-3" loading="lazy"></figure>
+<h3>策略四，当均线50线、60线呈多头排列时，线下阳线买；当均线50线、60线呈空头排列时，线下阳线卖。</h3>
+<figure class="chapter-figure"><img src="/images/overview/page025_img3.jpeg" alt="《量化交易从入门到精通》概述原书插图 25-4" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page026_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 26-1" loading="lazy"></figure>
+<p>测试的四个策略，不管是线上阴线买，还是线下阳线买，都获得了收益。但从数据看来，“线下阳线买”不管在期货还是股票的交易结果都明显好于“线上阴线买”（回踩做多）的交易方式。而这个测试结果却和大多数人对“线上阴线买，买错了也要买。线下阳线抛，抛错了也要抛”这句金句的理解相悖。至此殷保华名节不保，一个民间“股神”瞬间沦为一个修空调的……</p>
+<h3>那为什么线下阳线做多相较线上阴线做多盈利效果更好？</h3>
+<p>答案：当大周期趋势向上，小周期K线出现上穿均线迹象时，代表大周期小周期共振看多。而当大周期趋势向上，小周期K线回落均线，则代表小周期出现败落迹象。试问有哪次口头趋势不是从K线回落均线开始的？所以严格意义上说，K线回踩均线不是做多信号而是做空信号。</p>
+<p>既然不管是“线上阴线买”，还是“线下阳线买”都能获利，那策略盈利最主要的因素又是什么呢？</p>
+<p>答案：条件“当均线呈现多头形态”+做多，即“趋势”。</p>
+<h2>慢半拍与快半拍交易法则</h2>
+<p>中国的投资市场中绝大多数的投资者和从业人员都仅处于交易的入门阶段。而由于中国投资者群体的庞大，所以很多错误的观点以讹传讹后往往就变成了大多数人在交易中的误区。比如说大多数人认为技术分析是用来预测未来价格走势的，所以会对交易指标的滞后性唏嘘不已。</p>
+<p>其实这是对行情技术分析本末倒置的一种理解。技术指标是用来描述价格变化的一种工具，也就是说，先有价格，然后对价格进行分析后得到的指标。所以指标不可能领先价格，也就不存在预测价格走势这一说。而已知价格在短期内存在无规律波动的特性，得出所谓通过技术分析预测价格走势其实和“猜”没有本质区别。所以技术分析其实是根据未来价格的变化设计实际交易策略的一种理论依据。即，如果价格上涨，交易者应该如何进场，怎么出场；如果价格下跌，交易者应该如何进场，怎么出场。</p>
+<p>所谓右侧交易，是对顺势交易的一种统称。既然是顺势交易，即趋势已经形成后的交易方式，因此右侧交易永远比狭义的最优进场点慢半拍。而慢小半拍还是大半拍就成了大多数右侧交易者精益求精的追求。</p>
+<p>有些人认为大多数投资者因为采取右侧交易法则，就是当他们看到价格创出新高时才确定行情的起始，随后跟随趋势进场交易。尤其是在面对短期波动的时候，他们认为这样更容易追在阶段高点，也就成了只有少数人赚钱的根本原因（这种无稽之谈竟被百度百科收录，可见对交易这么严谨的一门学问，有多少错误的观点被我们信以为真）。</p>
+<p>所谓左侧交易，即逆势交易。左侧更多适用于大资金的长线交易，科学的左侧交易的逻辑基点在于投资标的的价值回归。左侧交易者往往通过多次加仓的方式摊薄成本，降低逆势交易带来的风险。因此左侧交易往往比狭义的最优进场点快半拍。而快小半拍还是大半拍成了大多数左侧交易者精益求精的追求。</p>
+<p>大多数的交易者几乎都不会追求行情绝对的高低点，因为那样的境界往往是可遇而不可求的。左侧交易和右侧交易其实没有优劣，它们一个偏重长线，另一个偏重短线；一个基于价值，另一个基于价格；一个多次加仓，一个单笔进出。说的是两种完全不同的交易理念。</p>
+<h2>什么是程序化？</h2>
+<p>世间万物无一不在周而复始地变化着，因此，即使任何交易策略都不免出现失效的情况，但还是有许多经典交易策略，如一目均衡表、海龟交易、Aberration，都具有相当长寿的生命周期。但对于优秀的交易策略，不同人有着不同的定义。有人说，好的交易策略就应该可以在短期获取绝对收益。有人说，好的交易策略就应该在长期获得相对稳定的收益。而即使是长期最稳定的策略都免不了出现短期不稳定的情况。</p>
+<p>很多人都有一个误区，认为优秀的交易策略一定很严谨，因为严谨所以整个系统应该相对复杂。但事实并非如此，就像真理往往都是最简单的道理，生命周期较长的策略，其策略结构反而出奇的简洁。这其实很好理解，交易策略就像是一部机器。如果问你，一个由一百个零件组成的机器和一个只有两个零件的机器哪个更容易损坏？你的答案会是什么呢？</p>
+<p>其实量化交易能让人更好地理解交易。</p>
+<p>账户的资金曲线主要是由胜率和盈亏比两个因素决定的。因此追求高胜率往往需要我们以放弃盈亏比作为代价。而主流的交易策略是趋势跟随，这就需要以更优秀的盈亏比作为策略设计的逻辑起点。因此许多趋势跟随策略的胜率往往小于 50%。从概率学的角度来讲，这样的策略容易出现连续的亏损。我们发现当概率较低的策略出现连续亏损的时候，交易者会出现忧虑、质疑的心理状态。其实这和主观交易中交易者连续亏损造成的心理变化是相仿的，只是在出现连续亏损后主观交易者容易因为心态变化而产生交易失误。而许多专家却将其归结于“交易状态”，其实这只是因为短期市场节奏变化引起的短期策略失效，毕竟我们认为并没有能完美应对所有市场走势变化的交易系统。此时有许多量化者因为对策略的质疑放弃了原本盈利的量化策略，主观交易者因为对技术的忧虑，去改变原本正确的交易方式。而我们甚至不能把这种情况归结于人性的弱点。所以交易的本质不仅仅是人性。</p>
+<h3>周泽炜说</h3>
+<blockquote class="chapter-poem"><p>程序化交易是一种交易的方式，量化是交易的工具。而量化交易的<br>基础是概率学、统计学。量化交易是交易市场中一种最客观科学的证伪<br>工具。</p></blockquote>
+<h2>“抛硬币交易法”</h2>
+<p>随着我们对程序化策略研究的深入，对量化交易有了更多的理解，我们发现程序化交易者和传统主观交易者在交易的理解上有很多分歧。比如传统主观交易者看待交易的时候更多会从交易理论出发，他们在编写程序化交易逻辑的时候更多是利用道氏理论、波浪理论、江恩理论等经典交易理论，结合自己对市场的了解搭建量化框架。而更多的程序化交易者则信奉概率学，他们中的很大一部分人对于传统交易理论并不感冒，认为交易的本质就是一场概率学的赌博，胜负非正即反。程序化要做的仅仅是在胜负 50%的投机中获取哪怕一点点的优势。</p>
+<p>那么我们根据概率学的交易逻辑给大家讲解最基础的一种量化思路，我们称它为“抛硬币交易法”。</p>
+<p>“抛硬币交易”，乍一看是一个相当不靠谱的交易方式，因为抛硬币不论正反都只有 50%的成功率。看似简单但其结果免不了徒劳无功空忙一场。那让我们通过量化数据看下它的交易结果。</p>
+<h3>“抛硬币交易法”策略规则：</h3>
+<p>日线开盘开仓，日线收盘平仓。若价格双数开盘做多，则多单进场；若价格单数开盘做空，则空单进场。</p>
+<h3>“抛硬币交易法”策略源代码（MC版本）</h3>
+<pre class="chapter-code"><code>if mod(open,2)=0 and time&lt;0910 then buy(&quot;B&quot;) next bar at market;
+if mod(open,2)=1 and time&lt;0910 then sellshort(&quot;S&quot;) next bar at
+market;
+if time&gt;=1450 and marketposition=-1 then buytocover(&quot;P1&quot;) next bar
+at market;
+if time&gt;=1450 and marketposition=1 then sell(&quot;P2&quot;) next bar at
+market;</code></pre>
+<p>我们抽样测试国内期货螺纹钢、橡胶、玉米在无手续费环境下的资金曲线变化（数据时间 2014 年 1 月 1 日～ 2018 年 5 月 30 日）。</p>
+<figure class="chapter-figure"><img src="/images/overview/page031_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 31-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page031_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 31-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page032_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 32-1" loading="lazy"></figure>
+<p>如果量化交易是一种概率学，策略的每一次优化都只是为了在交易过程中获得一点点概率优势。那么我们如何让“抛硬币交易法”在实际交易中获得概率优势？</p>
+<h3>我们对交易策略进行了改进：</h3>
+<p>① 日线开盘开仓，日线收盘平仓。若价格双数开盘做多，则多单进场；若价格单数开盘做空，则空单进场。</p>
+<p>② 设置移动止损为当天最高价亏损 41 跳。</p>
+<h3>改进后的“抛硬币交易法”源代码（MC版本）</h3>
+<pre class="chapter-code"><code>Inputs:zs(41);
+variables:vbar(0);
+if mod(open,2)=0 and time&lt;0910 then buy(&quot;B&quot;) next bar at market;
+if mod(open,2)=1 and time&lt;0910 then sellshort(&quot;S&quot;) next bar at
+market;
+if time&gt;=1450 and marketposition=-1 then buytocover(&quot;P1&quot;) next bar
+at market;
+if time&gt;=1450 and marketposition=1 then sell(&quot;P2&quot;) next bar at
+market;
+if vbar&lt;&gt;currentbar then begin
+setstoploss(zs*bigpointvalue);
+end;</code></pre>
+<figure class="chapter-figure"><img src="/images/overview/page033_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 33-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page034_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 34-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page034_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 34-2" loading="lazy"></figure>
+<h2>投资市场是否有交易圣杯？</h2>
+<p>什么是交易的圣杯？所谓交易圣杯就是指一个稳定获利的方法，能让我们依靠这种方法来实现财务自由。</p>
+<p>投资市场有没有圣杯？想必大多数人的答案都是“没有”。</p>
+<p>但为什么没有？谁告诉你没有的？没有调查就没有发言权。你有没有仔细调查过，还是只是听别人说？</p>
+<p>在我看来，投资市场不止有圣杯，而且还有很多圣杯。</p>
+<p>那些叫嚷着投资市场没有交易圣杯，让别人认清现实的所谓“专家”，无非是给自己在判断错行情后找一个台阶。</p>
+<p>没有稳定获利交易方法的人自然没见过圣杯长什么样，也不愿承认自己的平庸。</p>
+<p>那有人就要问了，言外之意是“你一定见过交易圣杯”。</p>
+<p>其实关于交易圣杯这个问题，早在 1983 年那次交易史上最著名的金融实验“海龟实验”已经给出了我们答案。</p>
+<p>1983 年年中，著名的商品投机家理查德·丹尼斯与他的老友比尔·埃克哈特进行了一场辩论，这场辩论是关于伟大的交易员是天生造就还是后天培养的。理查德相信，他可以教会人们成为伟大的交易员。比尔则认为遗传和天性才是决定因素。</p>
+<p>为了解决这一问题，他们在《巴伦氏》《华尔街期刊》《纽约时报》上刊登了大幅广告，招聘交易学员。广告中称，在一个短暂的培训后，新手将被提供一个账户进行交易。理查德从 1000 名申请者中精选出 13个人，1983 年 12 月底学员们在芝加哥进行两周的培训后开始实盘交易。</p>
+<p>这就是交易史上最著名的“海龟实验”，在随后的四年中“海龟们”取得了年均复利 80%的收益。是的，理查德证明了交易可以被传授。即使在今天，依然有交易者使用海归交易法的改进版本在投资市场持续获得收益。这个实验不止证明了投资市场存在交易圣杯的这一事实，而且它还证明了用一套简单的法则（即机械交易系统），可以使仅有很少或根本没有交易经验的人成为优秀的交易员。一个小白交易者通过科学的交易学习可以在非常短的时间内实现稳定盈利。</p>
+<p>如果在交易中依赖自己的判断，你可能会发现恰恰应该勇敢时你却胆怯，而应该胆怯时却勇敢。因此对于一致性赚钱的交易，使用机械系统就是最佳的方式。如果你拥有一个能够盈利的机械交易系统，而且你虔诚地跟随这个系统，那么你的交易将会取得盈利，而且系统会帮助你安然摆脱难免会来自于一长串亏损或者巨额盈利的内心的挣扎。</p>
+<p>海龟交易系统是一个完整的交易系统。这是实验取得成功的一个主要因素。机械交易系统使交易者更容易地进行一致性的、成功的交易，因为它没有给交易者的判断力留下重要的决策任务。</p>
+<p>如果你觉得一个海龟交易还不足以说明问题，那容我再举一例。</p>
+<p>很多靠直觉玩期货的朋友可能对Aberration策略还是有点陌生，这个曾经创下 100%以上年收益率的传奇交易系统由Keith Fitschen于 1986年发明。在 1993 年，他将该系统发布在美国《Futures Truth》杂志上，自策略发布之日起，其绩效一直排名靠前，在 1997 年、2001 年和 2005年已发布交易系统的业绩排名中均名列第一。</p>
+<p>这是一款中长线的交易系统，属于趋势追踪型策略，它在谷物、肉类、金属、能源、外汇、股指期货等 8 个品种之间灵活运转，通过长线地追踪趋势来获得盈利。而由于它同时在多个不相关或相关性很低的市场中进行交易，因此只需在一种或几种市场中获得趋势的高额盈利，就能弥补在其他不稳定市场中的亏损。它的交易频率一般是每年交易某一品种3 ～ 4 次，60%的时间都持仓，平均每笔交易持仓 60 天。</p>
+<p>该策略的开平仓策略是这样的：首先利用 35 日移动平均线和 35 日</p>
+<p>内收盘价的标准差，得出上中下三条轨道，当上一个Bar的收盘价上穿了上轨的时候开多，下穿了下轨的时候开空，下穿了中轨的时候平掉多头，上穿了中轨的时候平掉空头。</p>
+<p>该策略的思想很简单，就是利用移动平均线和标准差设置通道，然后随时判断是否突破了通道，从而捕捉到趋势。而当趋势逐渐减弱的时候，由于中轨会先趋于缓和，因此当K线反向穿过中轨的时候，就可以认为趋势已经结束，止盈出场。而如果有趋势的误判，在K线反向穿过中轨的时候，也可以及时止损。</p>
+<p>直至今日Aberration策略依然在很多交易市场中有着良好的交易表现。现在你还要和我说投资市场里没有交易的圣杯吗？</p>
+<h3>Aberration策略源码（MC语言：easy language）</h3>
+<pre class="chapter-code"><code>inputs:boll(35);
+variables:ma(0),var0(0),var1(0),var2(0),var3(0),var4(0),var5(0),var6(0) ;
+var2=Average(close,boll);
+var0=BollingerBand(open,boll,2);
+var1=BollingerBand(open,boll,-2) ;
+if close cross above var0 then buy(&quot;B&quot;) next bar at market;
+if close cross under var1 then sellshort(&quot;S&quot;) next bar at market;
+if close cross under var2 then sell (&quot;Lzy&quot;) next bar at market;
+if close cross under var2 then buytocover (&quot;Szy&quot;) next bar at market;</code></pre>
+<h3>测评数据如下：</h3>
+<h3>策略应用软件：MultiCharts 中国版</h3>
+<p>测试范围：铁矿石、螺纹钢、橡胶、甲醇、PTA、焦炭、豆粕、白糖、棕榈油。</p>
+<p>应用主要品种：国内期货</p>
+<p>手续费设计：万 2 手续费（覆盖 2 个滑点）</p>
+<p>历史回测周期：2012 ～ 2019 年日线数据</p>
+<figure class="chapter-figure"><img src="/images/overview/page038_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 38-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page038_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 38-2" loading="lazy"></figure>
+<p>测试范围：沪深 300 指数中 300 只个股</p>
+<p>历史回测周期：2012 ～ 2019 年日线数据</p>
+<p>应用主要品种：中国A股</p>
+<p>手续费设计：千 2 手续费</p>
+<figure class="chapter-figure"><img src="/images/overview/page039_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 39-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page039_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 39-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page040_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 40-1" loading="lazy"></figure>
+<h3>周泽炜说</h3>
+<blockquote class="chapter-poem"><p>现在的世界，什么都快。</p></blockquote>
+<blockquote class="chapter-poem"><p>微信比写信快，高铁比动车快；</p></blockquote>
+<blockquote class="chapter-poem"><p>忘记比记得快，晚上比白天快。</p></blockquote>
+<blockquote class="chapter-poem"><p>感情来得快，去得也快；</p></blockquote>
+<blockquote class="chapter-poem"><p>承诺许得快，忘得也快。</p></blockquote>
+<blockquote class="chapter-poem"><p>有人说：改变不了世界，你融入它就好；</p></blockquote>
+<blockquote class="chapter-poem"><p>选择大于努力，选择对的也罢；</p></blockquote>
+<blockquote class="chapter-poem"><p>我说：既然终有人会改变这世界，那为什么不是我？</p></blockquote>
+<blockquote class="chapter-poem"><p>既然有那么多选择，那为什么不能选择努力？</p></blockquote>
+<h2>一目均衡表</h2>
+<p>一目均衡表由日本记者一目山人（Ichimoku Sanjin，真名：细田悟一）发明，是日本最普及的买卖图表工具，应用不单限于股市，更在债券、外汇市场广泛为投资者采用。此发明在 20 世纪 30 年代面世，是一个已90 岁高龄的交易策略。</p>
+<p>这个爷爷辈的技术理论，比艾略特 1938 年发表波浪理论早数年，比葛兰碧 1960 年发表移动平均线早三十年，比 1979 年提出的MACD早近五十年，比理查德·丹尼斯的海归交易早了五十年。</p>
+<p>一目均衡图由五组参数合成，与现在常用的移动平均线吻合。参数基于各个长短周期的高低点，提供一明确简单的走势图。五个参数如下：</p>
+<p>① 短轴快线。</p>
+<p>短轴快线 = 转换线 = （9 日内最高+9 日内最低）/2，以 9 日为一短线周期（周期长短可任意更改）。</p>
+<p>② 中轴慢线。</p>
+<p>中轴慢线 = 基准线 = （26 日内最高+26 日内最低）/2，以 26 日为一中线周期（周期长短可任意调教）。</p>
+<p>③ 后移指标。</p>
+<p>后移指标 = 迟行带 = 将今日收市价后移至一中线周期。</p>
+<p>④ 前移指标A。</p>
+<p>前移指标A = 先行带A =（短轴快线+中轴慢线）/2，前移至一中线周期。</p>
+<p>⑤ 前移指标B。</p>
+<p>前移指标B = 先行带B =（52 日内最高+52 日内最低）/2，前移至一中线周期。</p>
+<p>⑥ 云带（抵抗带）。</p>
+<p>云带= 前移指标A及前移指标B的空间。</p>
+<figure class="chapter-figure"><img src="/images/overview/page042_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 42-1" loading="lazy"></figure>
+<p>一目均衡表以 9、26、52 三个系数计算周期。在 1930 年代，日本是每周六天工作，传统的系统包括一个半星期（短）、一个月（中）及二个月（长）为准，现今社会，已由六个工作天改为五个，故此根据一目均衡表的神髓，应改为 7、22、44 才能配合现今社会。</p>
+<h3>升势（买入信号）：</h3>
+<p>K线位于云的上方；</p>
+<p>K线在基准线之上推移（基准线成为下降阻力）；</p>
+<p>转换线在基准线的上方推移（超强势的情况下，K线在转换线上方推移）。</p>
+<h3>降势（卖出信号）：</h3>
+<p>K线在云的下方；</p>
+<p>K线在基准线的下方推移（反弹只到转换线的位置，难以反弹到基准线）；</p>
+<p>转换线在基准线的下方推移（降势明显的情况下，K线在转换线的下方推移）。</p>
+<h3>策略系统（MC语言：easy language）代码</h3>
+<pre class="chapter-code"><code>inputs:na(7),na2(33),na3(53);
+variables:var0(0),var1(0),var2(0),var3(0),var4(0),var5(0),var6(0),var7(0),
+var0=(highest(h,na)+lowest(l,na))/2;
+var1=(highest(h,na2)+lowest(l,na2))/2;
+var2=(var0+var1)/2;var3=var2[na2];
+var4=(highest(h,na3)+lowest(l,na3))/2;
+var5=var4[na2];
+if close&gt;var3 and close&gt;var5 and close&gt;var1 and var0&gt;var1 and
+var1&gt;var3 and var1&gt;var5 then buy next bar at market;
+if close&lt;var3 and close&lt;var5 and close&lt;var1 and var0&lt;var1 and
+var1&lt;var3 and var1&lt;var5 then sellshort next bar at market;
+if close&lt;var3 and close&lt;var5 then sell next bar at market;
+if close&gt;var3 and close&gt;var5 then buytocover next bar at market;</code></pre>
+<h3>测评数据如下：</h3>
+<h3>策略应用软件：MultiCharts</h3>
+<p>中国版测试范围：铁矿石、螺纹钢、橡胶、甲醇、PTA、焦炭、豆粕、白糖、棕榈油。</p>
+<p>应用主要品种：国内期货</p>
+<p>手续费设计：万 2 手续费（覆盖 2 个滑点）</p>
+<p>历史回测周期：2012 ～ 2019 年 15 分钟数据</p>
+<figure class="chapter-figure"><img src="/images/overview/page044_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 44-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page044_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 44-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page045_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 45-1" loading="lazy"></figure>
+<p>测试范围：铁矿石、螺纹钢、橡胶、甲醇、PTA、焦炭、豆粕、白糖、棕榈油。</p>
+<p>应用主要品种：国内期货</p>
+<p>手续费设计：万 2</p>
+<p>手续费（覆盖 2 个滑点）</p>
+<p>历史回测周期：2012 ～ 2019 年 30 分钟数据</p>
+<figure class="chapter-figure"><img src="/images/overview/page045_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 45-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page046_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 46-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page046_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 46-2" loading="lazy"></figure>
+<p>测试范围：铁矿石、螺纹钢、橡胶、甲醇、PTA、焦炭、豆粕、白糖、棕榈油。</p>
+<p>应用主要品种：国内期货</p>
+<p>手续费设计：万 2</p>
+<p>手续费（覆盖 2 个滑点）</p>
+<p>历史回测周期：2012 ～ 2019 年 60 分钟数据</p>
+<figure class="chapter-figure"><img src="/images/overview/page047_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 47-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page047_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 47-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page048_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 48-1" loading="lazy"></figure>
+<p>测试范围：沪深 300 指数中 300 只个股</p>
+<p>历史回测周期：2010 ～ 2019 年日线数据</p>
+<p>应用主要品种：中国A股</p>
+<p>手续费设计：千分之一</p>
+<figure class="chapter-figure"><img src="/images/overview/page048_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 48-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page049_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 49-1" loading="lazy"></figure>
+<h3>周泽炜说</h3>
+<blockquote class="chapter-poem"><p>一目均衡表，是一个年代久远的交易系统。因此这个策略系统的部<br>分内容有一定的优化空间。比如转换线和基准线我们可以利用葛兰碧的<br>移动平均线理论做移动平滑。迟行线本意是用来计算现价与基准线周期<br>价格的乖离率，我们可以用乖离率理论做优化。值得注意的，是在这个<br>策略系统中使用了指标周期平移的概念。</p></blockquote>
+<h2>机械交易系统</h2>
+<p>不得不承认的是，交易者分成两种，天赋型和后天型。天赋型的交易者往往经过一段时间的交易，通过经验的总结，就能在投资市场取得不错的交易收益。而后天型交易者说的则是绝大多数人往往需要后天科学系统的学习才可能做到稳定盈利。而交易技术的“剑宗与气宗之争”是大多数交易者在学习和建立交易系统过程中必经的一个三岔路口。</p>
+<p>传统交易中，交易技巧是“剑”，交易经验和心态是“气”。大多数人认为应该“以气御剑”。以气为体，以剑为用；气为主，剑为从；气为纲，剑为目。练气倘若不成，剑术再强，总归无用。小说《笑傲江湖》中，华山剑宗的功夫易于速成，见效极快；而气宗的功夫虽然见效慢但是后期威力远高于剑宗。剑宗和气宗的功夫各练十年，定是剑宗占上风；各练二十年，各擅胜场，难分上下；二十年之后气宗的功夫才渐渐越练越强；到三十年时，剑宗的功夫便再也不能望气宗的项背了。气宗弟子讲究以气御剑，所以华山派气宗弟子都重视修炼内功，而岳不群所修习的《紫霞神功》则是华山派最强内功。</p>
+<p>现在的你会如何抉择，是先练“气”，还是先练“剑”？其实交易技巧和交易心态并不是你死我活不能共存的，只代表你学习交易的起点，最终总要殊途同归的。而投资市场每天都是钩心斗角和腥风血雨，每一秒都有无数交易者倒在血泊中。所以笔者认为，只有坚强地活着才能修炼成最后的赢家。而机械型交易系统无疑是见效最快，能最快获得稳定盈利的交易方式。</p>
+<p>那什么是机械型交易系统呢？凡过去到未来所有成功的交易者他们都达到了“交易机械化”。因为唯有将自己的交易规则、策略统一才是成功交易的第一步，而这个统一的过程就是将交易过程给予机械化或称条理化。套一个SARS的流行语汇，就是制定你的交易S.O.P（行动执行标准）。于是，你的交易就是一切By the Book ！条列你的交易规则、量化你的一切参考数据，从如何进场到如何出场，没有含糊的灰色的审度，一切量化！当交易被条理化、机械化后，我们确实地去执行便是达到了“机械化交易”。</p>
+<p>为什么我说古今所有的成功交易者都是“机械化交易者”呢？你有听过索罗斯像我们这样今天用RSI交易，明天又喜新厌旧地学起波浪理论来了吗？我想如果你听到这样的消息，打死你都不会再想投资量子基金了！那你呢？你的“好学”导致你自己不再相信你自己，别人也看不见你在交易圈的成长！为什么呢？因为你一直在变、一直在变。没有任何一位成功的交易者是像普罗大众般的花十多年的时间在寻找一个自己都不知道的东西的。</p>
+<p>一个优秀的机械交易系统不会给交易者的判断力留下重要的决策任务，从而使交易者更容易进行一致性的、成功的交易。换而言之，机械交易系统在交易前就已经确定了交易的进场和出场位置。</p>
+<p>既然“剑宗”的交易技术易于速成，见效极快。那到底有多快，给大家打个样呗？</p>
+<h2>“剑宗入门”交易策略</h2>
+<p>我们利用海龟交易法则核心逻辑，突破特定周期高低点后进场顺势交易，并以自适应均线（特定周期均线在交易进场后，每经过一根K线，均线周期参数减少 1 直至周期参数缩小至 16 后保持不变）作为离场条件设计交易策略。</p>
+<h3>策略源码（MC语言：easy language）</h3>
+<pre class="chapter-code"><code>inputs:sj(92),ma(47),ma2(16);
+variables:var0(0),var1(0),var2(0),var3(0),var4(0),var5(0),var6(0)
+,var7(0),var8(0),var00(0),var11(0),oParCl(0), oParOp(0), oPostion(0)
+,oTransition(0),mp(0);
+if marketposition=0 then buy(&quot;1&quot;) next bar at highest[1](h,sj) stop;
+if marketposition=0 then sellshort(&quot;2&quot;) next bar at Lowest[1](l,sj) stop;
+mp=marketposition;
+if mp[1]=0 and mp&lt;&gt;0 then var5=currentbar;
+var6=ma+var5-currentbar;
+if var6&lt;=ma2 then var6=ma2;
+if mp[1]&lt;&gt;0 and mp=0 then var6=ma;
+var0=Average(OPEN,var6);
+if marketposition=1 then sell next bar at var0 stop;
+if marketposition=-1 then buytocover next bar at var0 stop;</code></pre>
+<h3>测评数据如下：</h3>
+<h3>策略应用软件：MultiCharts 中国版</h3>
+<p>测试范围：铁矿石、螺纹钢、橡胶、甲醇、PTA、焦炭、豆粕、白糖、棕榈油。</p>
+<p>应用主要品种：国内期货</p>
+<p>手续费设计：万 2 手续费（覆盖 2 个滑点）</p>
+<p>历史回测周期：2012 ～ 2019 年日线数据</p>
+<h3>100 万本金，每次交易使用 3.2%仓位，7 年盈利 11657252.50元，资金增长 11.65 倍。</h3>
+<figure class="chapter-figure"><img src="/images/overview/page053_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 53-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page053_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 53-2" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page054_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 54-1" loading="lazy"></figure>
+<p>测试范围：沪深 300 指数中 300 只个股</p>
+<p>历史回测周期：2010 ～ 2019 年日线数据</p>
+<p>应用主要品种：中国A股</p>
+<p>手续费设计：千 2 手续费</p>
+<h3>100 万本金，每次交易购买 2 万权益股票，9 年盈利374164079 元，资金增长 3.74 倍（由于中国股市不能做空长熊短牛，因此不宜简单使用复利模式进行交易）。</h3>
+<figure class="chapter-figure"><img src="/images/overview/page055_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 55-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page055_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 55-2" loading="lazy"></figure>
+<p>好吧，以上是机械交易系统中最中庸的交易策略了。你觉得如何？多个市场上万次的交易数据验证其实用性。</p>
+<h2>曾经最赚钱的量化策略长什么样？</h2>
+<p>Dual Thrust策略是一种趋势跟踪系统，属于日内交易策略。该策略由Michael Chalek 在 20 世纪 80 年代开发，曾被《Futures Truth》杂志评为最赚钱的策略之一。Dual Thrust系统具有简单易用和适用度广的特点，其思路简单且参数少，配合不同的参数、止盈止损和仓位管理，可以为投资者带来长期稳定的收益。而且该策略适用品种较多，被投资者广泛应用于股票、货币、贵金属、债券、能源及股指期货市场等。在Dual Thrust 交易系统中，对于震荡区间的定义非常关键，这也是该交易系统的核心。</p>
+<p>Dual Thrust策略实际上是对传统开盘区间突破策略的一个改进。两个策略均是对当日开盘价加减某个数（记为Range），获得一个区间，突破区间上轨做多，突破区间下轨做空。开盘区间突破策略通过前一个交易日的最高价和最低价确定Range的值，而Dual Thrust策略使用前N日的 4 个价格（前N日最高价HH、前N日最低价LL、前N日最高收盘价HC、前N日最低收盘价LC）来确定Range的值，并且引入更多参数，使得通过Range确定的区间可以是非对称的。</p>
+<figure class="chapter-figure"><img src="/images/overview/page056_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 56-1" loading="lazy"></figure>
+<h3>策略指标</h3>
+<p>N日High的最高价为HH ；</p>
+<p>N日Close的最低价LC ；</p>
+<p>N日Close的最高价为HC ；</p>
+<p>N日Low 的最低价LL ；</p>
+<p>浮动区间 = Max(HH - LC，HC - LL) ；</p>
+<p>日内价格上轨 = 开盘价+ K1 * 浮动区间；</p>
+<p>日内价格下轨 = 开盘价 - K2 * 浮动区间。</p>
+<h3>策略进出场设计</h3>
+<p>当价格向上突破上轨时，如果当时持有空头，则先平仓，再开多仓；如果没有仓位，则直接做多；</p>
+<p>当价格向下突破下轨时，如果当时持有多头，则先平仓，再开空仓；如果没有仓位，则直接做空。</p>
+<p>我们将曾经全球最赚钱量化策略之一的Dual Thrust做成指标，这个指标是否是最赚钱的指标呢？（文华 8 版本源码）</p>
+<pre class="chapter-code"><code>NP:=BARSLAST(DATE&lt;&gt;REF(DATE,1));
+OPEND:=REF(O,NP);
+H1:=REF(HIGH,NP);
+L1:=REF(LOW,NP);
+C1:=REF(CLOSE,NP);
+HH1:=HHV(REF(H1,1),20);
+LL1:=LLV(REF(L1,1),20);
+HC1:=HHV(REF(C1,1),20);
+LC1:=LLV(REF(C1,1),20);
+SELLR:=MAX(HH1-LC1,HC1-LL1);
+BUYP:=OPEND+1.5*SELLR;
+SELLP:=OPEND-1.5*SELLR;
+KTEXT(CROSS(HIGH,BUYP),0,BUYP,1,COLORWHITE,&#x27;做多&#x27;);
+KTEXT(CROSS(SELLP,LOW),0,SELLP,1,COLORWHITE,&#x27;做空&#x27;);
+DRAWNUMBER(CROSS(HIGH,BUYP),BUYP,BUYP,2,COLORWHI
+TE);//画价格
+DRAWNUMBER(CROSS(SELLP,LOW),SELLP,SELLP,2,COLORWHI
+TE);//画价格</code></pre>
+<h3>周泽炜说</h3>
+<blockquote class="chapter-poem"><p>Dual Thrust和Aberration都是国外非常经典的量化策略，历经三十余<br>年也未失效，所以被称为“经典”或“最赚钱策略”也是实至名归。<br>Dual Thrust和Aberration同样都是通道突破策略，但Dual Thrust对于通道<br>区间的设定显得更独特。笔者曾尝试用ATR或其他设计方式代替原策略<br>的通道设计，但效率却并没有得到有效提高，可见原设计者见解的独<br>到。而Dual Thrust中提出的非对称性通道，经过笔者多次测试结果并没<br>有优于对称性通道，因此笔者在翻译Dual Thrust时将K1和K2进行了合<br>并，减少了策略所需参数。</p></blockquote>
+<p>Dual Thrust是一个具有极大想象空间的日内策略，包括：如果加入些许趋势的判断会否提高策略效率？如果设计不同情境非对称通道是否将有独特的优势？如果将其设计成非日内策略，是否会有不同的效果？</p>
+<h3>策略源码（MC版本）</h3>
+<pre class="chapter-code"><code>inputs:zq(20),zq2(1.5) ;
+variables:var0(0),var1(0),var2(0),var3(0),var4(0),var5(0),var6(0);
+var0=highest(highD(1),zq);
+var1=lowest(lowD(1),zq);
+var2=highest(closed(1),zq);
+var3=lowest(closed(1),zq);
+var4=maxlist(var0-var3,var2-var1);
+var5=opend(0)+zq2*var4;
+var6=opend(0)-zq2*var4;
+buy next bar at var5 stop;
+sellshort nextbar atvar6 stop;</code></pre>
+<h3>测评数据如下：</h3>
+<h3>策略应用软件：MultiCharts 中国版</h3>
+<p>测试范围：铁矿石、螺纹钢、橡胶、甲醇、PTA、焦炭、豆粕、白糖、棕榈油、玉米、镍。</p>
+<p>应用主要品种：国内期货</p>
+<p>手续费设计：万 2 手续费（覆盖 1 个滑点）</p>
+<p>历史回测周期：2012 ～ 2019 年 15 分钟数据</p>
+<figure class="chapter-figure"><img src="/images/overview/page060_img0.jpeg" alt="《量化交易从入门到精通》概述原书插图 60-1" loading="lazy"></figure>
+<figure class="chapter-figure"><img src="/images/overview/page060_img1.jpeg" alt="《量化交易从入门到精通》概述原书插图 60-2" loading="lazy"></figure>
 </div>
 </div>
 
