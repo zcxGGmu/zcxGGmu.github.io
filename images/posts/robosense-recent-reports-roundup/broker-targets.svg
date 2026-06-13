@@ -1,7 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620"><style>text{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei',Arial,sans-serif}.title{font-size:34px;font-weight:800;fill:#0f172a}.sub{font-size:17px;fill:#475569}.label{font-size:15px;fill:#334155}.small{font-size:12px;fill:#64748b}.num{font-size:22px;font-weight:800;fill:#0f172a}.box{fill:#fff;stroke:#dbe3ef;stroke-width:1.2}.blue{fill:#2563eb}.green{fill:#059669}.orange{fill:#ea580c}.red{fill:#dc2626}.muted{fill:#f8fafc}.line{stroke:#dbe3ef;stroke-width:1.2}</style>
-<rect width="1100" height="620" fill="#ffffff"/><text x="50" y="60" class="title">近期券商目标价与评级</text><text x="50" y="92" class="sub">单位：港元；仅整理公开可检索信息</text>
-<line x1="220" y1="150" x2="990" y2="150" class="line"/><line x1="220" y1="510" x2="990" y2="510" class="line"/>
-<line x1="374" y1="145" x2="374" y2="515" stroke="#e2e8f0"/><text x="364" y="535" class="small">38</text><line x1="563.9333333333335" y1="145" x2="563.9333333333335" y2="515" stroke="#e2e8f0"/><text x="553.9333333333335" y="535" class="small">41.7</text><line x1="733.3333333333333" y1="145" x2="733.3333333333333" y2="515" stroke="#e2e8f0"/><text x="723.3333333333333" y="535" class="small">45</text><line x1="795.4466666666667" y1="145" x2="795.4466666666667" y2="515" stroke="#e2e8f0"/><text x="785.4466666666667" y="535" class="small">46.21</text><line x1="836" y1="145" x2="836" y2="515" stroke="#e2e8f0"/><text x="826" y="535" class="small">47</text><line x1="938.6666666666666" y1="145" x2="938.6666666666666" y2="515" stroke="#e2e8f0"/><text x="928.6666666666666" y="535" class="small">49</text><line x1="946.3666666666666" y1="145" x2="946.3666666666666" y2="515" stroke="#e2e8f0"/><text x="936.3666666666666" y="535" class="small">49.15</text>
-<text x="50" y="185" class="label">美银</text><circle cx="374" cy="180" r="8" fill="#2563eb"/><text x="388" y="185" class="label">38 / 买入</text><text x="690" y="185" class="small">下调目标价，关注短期亏损与毛利率</text><text x="50" y="225" class="label">富瑞</text><circle cx="563.9333333333335" cy="220" r="8" fill="#2563eb"/><text x="577.9333333333335" y="225" class="label">41.7 / 买入</text><text x="690" y="225" class="small">需求强但竞争分散</text><text x="50" y="265" class="label">摩通</text><circle cx="733.3333333333333" cy="260" r="8" fill="#2563eb"/><text x="747.3333333333333" y="265" class="label">45 / 增持</text><text x="690" y="265" class="small">毛利率承压但看好SPAD-SoC</text><text x="50" y="305" class="label">瑞银</text><circle cx="733.3333333333333" cy="300" r="8" fill="#2563eb"/><text x="747.3333333333333" y="305" class="label">45 / 买入</text><text x="690" y="305" class="small">下调目标价，仍看好中期成长</text><text x="50" y="345" class="label">海通国际</text><circle cx="795.4466666666667" cy="340" r="8" fill="#2563eb"/><text x="809.4466666666667" y="345" class="label">46.21 / 优于大市</text><text x="690" y="345" class="small">机器人业务重估逻辑</text><text x="50" y="385" class="label">中金</text><circle cx="836" cy="380" r="8" fill="#2563eb"/><text x="850" y="385" class="label">47 / 跑赢行业</text><text x="690" y="385" class="small">1Q26符合预期</text><text x="50" y="425" class="label">国盛</text><circle cx="938.6666666666666" cy="420" r="8" fill="#2563eb"/><text x="952.6666666666666" y="425" class="label">49 / 买入</text><text x="690" y="425" class="small">下半年交付+机器人+自研芯片</text><text x="50" y="465" class="label">交银国际</text><circle cx="946.3666666666666" cy="460" r="8" fill="#2563eb"/><text x="960.3666666666666" y="465" class="label">49.15 / 买入</text><text x="690" y="465" class="small">4Q25盈利后上调目标价</text>
-<text x="50" y="585" class="small">目标价来自公开新闻/PDF披露，口径和日期不同，不应机械比较。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="880" viewBox="0 0 1200 880">
+  <style>
+    text{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei',Arial,sans-serif}
+    .title{font-size:34px;font-weight:800;fill:#0f172a}
+    .sub{font-size:17px;fill:#475569}
+    .head{font-size:14px;font-weight:700;fill:#64748b}
+    .org{font-size:17px;font-weight:800;fill:#0f172a}
+    .label{font-size:15px;fill:#334155}
+    .small{font-size:12px;fill:#64748b}
+    .note{font-size:13px;fill:#475569}
+    .row{fill:#fff;stroke:#dbe3ef;stroke-width:1.2}
+    .axis{stroke:#cbd5e1;stroke-width:1.2}
+    .grid{stroke:#e2e8f0;stroke-width:1}
+    .barLow{fill:#ea580c}
+    .barMid{fill:#0f766e}
+    .barHigh{fill:#2563eb}
+  </style>
+  <rect width="1200" height="880" fill="#f8fafc"/>
+  <rect x="34" y="28" width="1132" height="824" rx="24" fill="#ffffff" stroke="#dbe3ef"/>
+  <text x="68" y="76" class="title">近期券商目标价与评级/观点</text>
+  <text x="68" y="108" class="sub">单位：港元；按公开可检索信息整理，目标价口径和发布日期不同，不应机械比较</text>
+
+  <text x="72" y="154" class="head">机构</text>
+  <text x="210" y="154" class="head">评级 / 目标价</text>
+  <text x="418" y="154" class="head">目标价区间（38-49.15）</text>
+  <line x1="70" y1="172" x2="1130" y2="172" class="axis"/>
+  <line x1="430" y1="184" x2="430" y2="760" class="grid"/>
+  <line x1="565" y1="184" x2="565" y2="760" class="grid"/>
+  <line x1="700" y1="184" x2="700" y2="760" class="grid"/>
+  <line x1="835" y1="184" x2="835" y2="760" class="grid"/>
+  <line x1="970" y1="184" x2="970" y2="760" class="grid"/>
+  <text x="420" y="788" class="small">38</text>
+  <text x="553" y="788" class="small">41</text>
+  <text x="688" y="788" class="small">44</text>
+  <text x="823" y="788" class="small">47</text>
+  <text x="956" y="788" class="small">49+</text>
+
+  <g transform="translate(60,192)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">美银</text>
+    <text x="150" y="28" class="label">买入 / 38</text>
+    <rect x="370" y="15" width="24" height="18" rx="9" class="barLow"/>
+    <text x="12" y="52" class="note">维持买入但下调目标价；重点关注短期亏损、毛利率和新品量产成本。</text>
+  </g>
+  <g transform="translate(60,262)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">富瑞</text>
+    <text x="150" y="28" class="label">买入 / 41.7</text>
+    <rect x="370" y="15" width="172" height="18" rx="9" class="barLow"/>
+    <text x="12" y="52" class="note">需求强，但竞争格局分散；核心变量是车载市占率和价格压力。</text>
+  </g>
+  <g transform="translate(60,332)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">摩通</text>
+    <text x="150" y="28" class="label">增持 / 45</text>
+    <rect x="370" y="15" width="304" height="18" rx="9" class="barMid"/>
+    <text x="12" y="52" class="note">毛利率承压但仍看好催化；SPAD-SoC自研方案和客户合作是关键。</text>
+  </g>
+  <g transform="translate(60,402)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">瑞银</text>
+    <text x="150" y="28" class="label">买入 / 45</text>
+    <rect x="370" y="15" width="304" height="18" rx="9" class="barMid"/>
+    <text x="12" y="52" class="note">下调目标价，仍看好中期成长；短期盈利与ASP压力需要继续观察。</text>
+  </g>
+  <g transform="translate(60,472)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">海通国际</text>
+    <text x="150" y="28" class="label">优于大市 / 46.21</text>
+    <rect x="370" y="15" width="353" height="18" rx="9" class="barMid"/>
+    <text x="12" y="52" class="note">机器人业务带来平台重估逻辑；公司从车载LiDAR向physical AI硬件扩展。</text>
+  </g>
+  <g transform="translate(60,542)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">中金</text>
+    <text x="150" y="28" class="label">跑赢行业 / 47</text>
+    <rect x="370" y="15" width="384" height="18" rx="9" class="barHigh"/>
+    <text x="12" y="52" class="note">1Q26业绩符合预期；机器人及其他业务销量高增是亮点。</text>
+  </g>
+  <g transform="translate(60,612)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">国盛</text>
+    <text x="150" y="28" class="label">买入 / 49</text>
+    <rect x="370" y="15" width="464" height="18" rx="9" class="barHigh"/>
+    <text x="12" y="52" class="note">看好下半年交付、机器人需求与芯片降本；2026-2028年收入预测30.4/40.8/52.9亿元。</text>
+  </g>
+  <g transform="translate(60,682)">
+    <rect class="row" x="0" y="0" width="1080" height="66" rx="12"/>
+    <text x="12" y="28" class="org">交银国际</text>
+    <text x="150" y="28" class="label">买入 / 49.15</text>
+    <rect x="370" y="15" width="470" height="18" rx="9" class="barHigh"/>
+    <text x="12" y="52" class="note">4Q25单季度盈利后上调目标价；关注2026年销量指引与低价产品ASP影响。</text>
+  </g>
+
+  <text x="68" y="828" class="small">注：图表为本地自制，颜色仅表示目标价所处区间，不代表投资评级强弱。</text>
 </svg>
