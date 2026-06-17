@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+<style>
+text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','Microsoft JhengHei','SimHei',sans-serif;fill:#111827}
+.small{font-size:13px;fill:#6b7280}.label{font-size:14px;font-weight:600}.title{font-size:26px;font-weight:700}.subtitle{font-size:14px;fill:#6b7280}.mono{font-family:'JetBrains Mono','SFMono-Regular',Consolas,monospace;font-size:12px}.lane{font-size:12px;font-weight:700;fill:#475569;letter-spacing:.06em}
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity=".10"/></filter>
+</defs>
+<rect width="1280" height="720" fill="#ffffff"/>
+
+<rect x="44" y="44" width="1192" height="632" rx="28" fill="#f8fafc" stroke="#e5e7eb"/>
+<text x="86" y="112" class="title">Gajae-Code：外部 Agent Harness 的工程化样本</text>
+<text x="86" y="145" class="subtitle">固定工作流 + 可审计会话 + 原生工具加速 + 可嵌入 RPC，把 AI 编程从聊天窗口推进到工程控制面</text>
+<rect x="86" y="208" width="210" height="116" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="191" y="236" text-anchor="middle" class="label">四技能工作流</text>
+<text x="191" y="256" text-anchor="middle" class="small">deep-interview</text>
+<text x="191" y="274" text-anchor="middle" class="small">ralplan / ultragoal</text>
+<text x="191" y="292" text-anchor="middle" class="small">team when needed</text>
+<rect x="345" y="208" width="210" height="116" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="450" y="236" text-anchor="middle" class="label">会话组装层</text>
+<text x="450" y="256" text-anchor="middle" class="small">settings / model</text>
+<text x="450" y="274" text-anchor="middle" class="small">rules / skills</text>
+<text x="450" y="292" text-anchor="middle" class="small">tools / prompt</text>
+<rect x="604" y="208" width="210" height="116" rx="10" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="709" y="236" text-anchor="middle" class="label">Agent Core</text>
+<text x="709" y="256" text-anchor="middle" class="small">stream model</text>
+<text x="709" y="274" text-anchor="middle" class="small">execute tools</text>
+<text x="709" y="292" text-anchor="middle" class="small">append context</text>
+<rect x="863" y="208" width="210" height="116" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5" filter="url(#shadow)"/>
+<text x="968" y="236" text-anchor="middle" class="label">原生与自动化</text>
+<text x="968" y="256" text-anchor="middle" class="small">Rust N-API</text>
+<text x="968" y="274" text-anchor="middle" class="small">tmux workers</text>
+<text x="968" y="292" text-anchor="middle" class="small">Python robogjc</text>
+<path d="M 296 266 L 345 266" fill="none" stroke="#2563eb" stroke-width="2"  marker-end="url(#arrow-blue)"/><path d="M 555 266 L 604 266" fill="none" stroke="#16a34a" stroke-width="2"  marker-end="url(#arrow-green)"/><path d="M 814 266 L 863 266" fill="none" stroke="#9333ea" stroke-width="2"  marker-end="url(#arrow-purple)"/>
+<rect x="86" y="392" width="987" height="1.5" fill="#cbd5e1"/>
+<text x="86" y="438" class="label">本文核心判断</text>
+<text x="86" y="470" class="small">1. GJC 不是“更会聊天的 CLI”，而是围绕需求澄清、计划审查、目标账本和证据完成构建的流程产品。</text>
+<text x="86" y="500" class="small">2. 它的复杂度来自真实工程边界：多 provider、长会话、工具执行、tmux 并发、native addon、RPC 自动化和 GitHub bot。</text>
+<text x="86" y="530" class="small">3. 当前仍是 beta：强约束带来可靠性，但 Bun/Rust/native/tmux/配置链路也抬高了使用和维护门槛。</text>
+<text x="86" y="600" class="mono" fill="#64748b">Snapshot: GitHub main 20cac17, npm gajae-code 0.5.0, 3182 files, 925 TS/TSX test files, checked 2026-06-13.</text>
+
+</svg>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="680" viewBox="0 0 1400 680" role="img" aria-labelledby="title desc">
+  <title id="title">量化策略风险与尽调清单</title>
+  <desc id="desc">量化策略风险与尽调清单</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <linearGradient id="coverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfeff"/>
+      <stop offset="46%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#fff7ed"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .mono { font-family: "SFMono-Regular", "Menlo", "Consolas", monospace; }
+  </style>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+
+  <text x="700" y="72" text-anchor="middle" font-size="39" font-weight="800" fill="#1f2933" class=""><tspan x="700" dy="0">评估量化策略时，先问风险如何被控制</tspan></text>
+  <rect x="70" y="104" width="1260" height="40" rx="8" fill="#334155" stroke="#334155" stroke-width="2" opacity="1" />
+  <text x="180" y="131" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff" class=""><tspan x="180" dy="0">风险类别</tspan></text>
+  <text x="560" y="131" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff" class=""><tspan x="560" dy="0">典型失效方式</tspan></text>
+  <text x="1040" y="131" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff" class=""><tspan x="1040" dy="0">应有控制机制</tspan></text>
+  <rect x="70" y="145" width="1260" height="58" rx="8" fill="#ffffff" stroke="#d9e2ec" stroke-width="1" opacity="1" />
+      <text x="180" y="182" text-anchor="middle" font-size="21" font-weight="800" fill="#c2410c" class=""><tspan x="180" dy="0">信号风险</tspan></text>
+      <text x="560" y="182" text-anchor="middle" font-size="20" font-weight="500" fill="#1f2933" class=""><tspan x="560" dy="0">样本外失效、因子拥挤、数据挖掘</tspan></text>
+      <text x="1040" y="182" text-anchor="middle" font-size="20" font-weight="600" fill="#2f855a" class=""><tspan x="1040" dy="0">滚动验证、实盘跟踪、信号衰减监控</tspan></text><rect x="70" y="217" width="1260" height="58" rx="8" fill="#f1f5f9" stroke="#d9e2ec" stroke-width="1" opacity="1" />
+      <text x="180" y="254" text-anchor="middle" font-size="21" font-weight="800" fill="#c2410c" class=""><tspan x="180" dy="0">模型风险</tspan></text>
+      <text x="560" y="254" text-anchor="middle" font-size="20" font-weight="500" fill="#1f2933" class=""><tspan x="560" dy="0">参数不稳、协方差估计错误、极端相关性上升</tspan></text>
+      <text x="1040" y="254" text-anchor="middle" font-size="20" font-weight="600" fill="#2f855a" class=""><tspan x="1040" dy="0">压力测试、情景分析、模型委员会</tspan></text><rect x="70" y="289" width="1260" height="58" rx="8" fill="#ffffff" stroke="#d9e2ec" stroke-width="1" opacity="1" />
+      <text x="180" y="326" text-anchor="middle" font-size="21" font-weight="800" fill="#c2410c" class=""><tspan x="180" dy="0">成本风险</tspan></text>
+      <text x="560" y="326" text-anchor="middle" font-size="20" font-weight="500" fill="#1f2933" class=""><tspan x="560" dy="0">滑点高于回测、市场冲击、容量瓶颈</tspan></text>
+      <text x="1040" y="326" text-anchor="middle" font-size="20" font-weight="600" fill="#2f855a" class=""><tspan x="1040" dy="0">成交回放、容量约束、低换手优先</tspan></text><rect x="70" y="361" width="1260" height="58" rx="8" fill="#f1f5f9" stroke="#d9e2ec" stroke-width="1" opacity="1" />
+      <text x="180" y="398" text-anchor="middle" font-size="21" font-weight="800" fill="#c2410c" class=""><tspan x="180" dy="0">流动性风险</tspan></text>
+      <text x="560" y="398" text-anchor="middle" font-size="20" font-weight="500" fill="#1f2933" class=""><tspan x="560" dy="0">无法成交、集中持仓、赎回压力</tspan></text>
+      <text x="1040" y="398" text-anchor="middle" font-size="20" font-weight="600" fill="#2f855a" class=""><tspan x="1040" dy="0">持仓限额、现金缓冲、分层减仓</tspan></text><rect x="70" y="433" width="1260" height="58" rx="8" fill="#ffffff" stroke="#d9e2ec" stroke-width="1" opacity="1" />
+      <text x="180" y="470" text-anchor="middle" font-size="21" font-weight="800" fill="#c2410c" class=""><tspan x="180" dy="0">操作风险</tspan></text>
+      <text x="560" y="470" text-anchor="middle" font-size="20" font-weight="500" fill="#1f2933" class=""><tspan x="560" dy="0">代码错误、数据断流、交易接口异常</tspan></text>
+      <text x="1040" y="470" text-anchor="middle" font-size="20" font-weight="600" fill="#2f855a" class=""><tspan x="1040" dy="0">灰度发布、kill switch、审计日志</tspan></text><rect x="70" y="505" width="1260" height="58" rx="8" fill="#f1f5f9" stroke="#d9e2ec" stroke-width="1" opacity="1" />
+      <text x="180" y="542" text-anchor="middle" font-size="21" font-weight="800" fill="#c2410c" class=""><tspan x="180" dy="0">治理风险</tspan></text>
+      <text x="560" y="542" text-anchor="middle" font-size="20" font-weight="500" fill="#1f2933" class=""><tspan x="560" dy="0">黑箱不可解释、权限失控、临时改规则</tspan></text>
+      <text x="1040" y="542" text-anchor="middle" font-size="20" font-weight="600" fill="#2f855a" class=""><tspan x="1040" dy="0">权限边界、变更审批、事后复盘</tspan></text>
+  <text x="700" y="618" text-anchor="middle" font-size="24" font-weight="650" fill="#334155" class=""><tspan x="700" dy="0">黑箱可怕的不是复杂，而是没有权限边界、没有成本校准、没有可复盘的失败记录。</tspan></text>
+
+</svg>
