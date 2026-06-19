@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0c1d"/>
+      <stop offset="100%" stop-color="#1a1025"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowRed">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <g opacity="0.04" stroke="#ffffff">
+    <line x1="0" y1="157" x2="1200" y2="157"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="472" x2="1200" y2="472"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+  </g>
+
+  <!-- Big falling stock chart -->
+  <g filter="url(#glowRed)" opacity="0.12">
+    <polyline points="100,80 300,100 500,60 700,200 900,380 1100,520" 
+              fill="none" stroke="#ef4444" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Stock candlestick chart - falling -->
+  <!-- Big red candles on the right -->
+  <g filter="url(#glow)" opacity="0.85">
+    <rect x="800" y="320" width="28" height="80" rx="2" fill="#ef4444"/>
+    <line x1="814" y1="280" x2="814" y2="320" stroke="#ef4444" stroke-width="3"/>
+    <line x1="814" y1="400" x2="814" y2="440" stroke="#ef4444" stroke-width="3"/>
+    
+    <rect x="850" y="390" width="28" height="60" rx="2" fill="#ef4444"/>
+    <line x1="864" y1="360" x2="864" y2="390" stroke="#ef4444" stroke-width="3"/>
+    <line x1="864" y1="450" x2="864" y2="480" stroke="#ef4444" stroke-width="3"/>
+
+    <rect x="900" y="420" width="28" height="90" rx="2" fill="#ef4444"/>
+    <line x1="914" y1="380" x2="914" y2="420" stroke="#ef4444" stroke-width="3"/>
+    <line x1="914" y1="510" x2="914" y2="560" stroke="#ef4444" stroke-width="3"/>
+
+    <rect x="950" y="450" width="28" height="70" rx="2" fill="#ef4444" opacity="0.7"/>
+    <line x1="964" y1="430" x2="964" y2="450" stroke="#ef4444" stroke-width="2" opacity="0.7"/>
+    <line x1="964" y1="520" x2="964" y2="550" stroke="#ef4444" stroke-width="2" opacity="0.7"/>
+  </g>
+
+  <!-- Small green candle on left (was high) -->
+  <g filter="url(#glow)" opacity="0.4">
+    <rect x="650" y="180" width="28" height="50" rx="2" fill="#22c55e"/>
+    <line x1="664" y1="150" x2="664" y2="180" stroke="#22c55e" stroke-width="3"/>
+    <line x1="664" y1="230" x2="664" y2="250" stroke="#22c55e" stroke-width="3"/>
+  </g>
+
+  <!-- Price line fall -->
+  <g filter="url(#glowRed)" opacity="0.7">
+    <polyline points="664,215 700,200 750,250 814,360 864,425 914,465 964,485" 
+              fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Percentage labels -->
+  <text x="664" y="195" font-family="JetBrains Mono, monospace" font-size="18" fill="#22c55e" opacity="0.6" text-anchor="middle">+15%</text>
+  <text x="964" y="570" font-family="JetBrains Mono, monospace" font-size="22" fill="#ef4444" filter="url(#glow)" text-anchor="middle">-40%</text>
+
+  <!-- Title text -->
+  <text x="60" y="160" font-family="Noto Sans SC, sans-serif" font-size="52" font-weight="800" fill="#f8fafc" letter-spacing="3">
+    重仓被深套怎么办
+  </text>
+
+  <!-- Decorative line under title -->
+  <line x1="60" y1="190" x2="550" y2="190" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+
+  <!-- Subtitle -->
+  <text x="60" y="240" font-family="Noto Sans SC, sans-serif" font-size="22" fill="#94a3b8" letter-spacing="1">
+    投资中最重要的不是预测，而是应对
+  </text>
+
+  <!-- Key points -->
+  <g transform="translate(60, 300)" opacity="0.7">
+    <circle cx="8" cy="-4" r="4" fill="#ef4444"/>
+    <text x="22" y="0" font-family="Noto Sans SC, sans-serif" font-size="16" fill="#cbd5e1">深套时的心理陷阱</text>
+
+    <circle cx="8" cy="28" r="4" fill="#f59e0b"/>
+    <text x="22" y="32" font-family="Noto Sans SC, sans-serif" font-size="16" fill="#cbd5e1">基本面重新评估框架</text>
+
+    <circle cx="8" cy="60" r="4" fill="#22c55e"/>
+    <text x="22" y="64" font-family="Noto Sans SC, sans-serif" font-size="16" fill="#cbd5e1">解套的操作策略与纪律</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="60" y="580" font-family="JetBrains Mono, monospace" font-size="13" fill="#64748b" letter-spacing="2">
+    INVESTMENT STRATEGY · DEEP LOSS RECOVERY
+  </text>
+  <text x="1050" y="580" font-family="Noto Sans SC, sans-serif" font-size="14" fill="#64748b" letter-spacing="1" text-anchor="end">
+    zcxGGmu's Blog
+  </text>
+
+  <!-- Decorative dots -->
+  <circle cx="570" cy="100" r="1.5" fill="#f59e0b" opacity="0.4"/>
+  <circle cx="590" cy="120" r="2" fill="#ef4444" opacity="0.3"/>
+  <circle cx="580" cy="140" r="1" fill="#a78bfa" opacity="0.3"/>
+</svg>
