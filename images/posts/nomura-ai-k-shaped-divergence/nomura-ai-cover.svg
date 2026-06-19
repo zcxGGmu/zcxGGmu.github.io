@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+    <linearGradient id="upper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="lower" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9ca3af"/>
+      <stop offset="100%" stop-color="#6b7280"/>
+    </linearGradient>
+    <linearGradient id="texture" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.06"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#texture)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.06" stroke="#ffffff">
+    <line x1="0" y1="157" x2="1200" y2="157"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="472" x2="1200" y2="472"/>
+  </g>
+
+  <!-- K-shape divergence visual: V-shaped split -->
+  <!-- Upper arm (AI prosperity - blue) -->
+  <g opacity="0.15">
+    <polygon points="300,500 300,120 800,100" fill="url(#upper)"/>
+  </g>
+  <g opacity="0.12">
+    <polygon points="300,500 300,560 800,600" fill="url(#lower)"/>
+  </g>
+
+  <!-- K-shape outline -->
+  <g filter="url(#glow)">
+    <!-- Upper arm -->
+    <line x1="250" y1="480" x2="520" y2="140" stroke="#00d4ff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <line x1="520" y1="140" x2="820" y2="85" stroke="#00d4ff" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+    <!-- Vertical stem -->
+    <line x1="250" y1="580" x2="250" y2="100" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <!-- Lower arm -->
+    <line x1="250" y1="480" x2="520" y2="520" stroke="#9ca3af" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <line x1="520" y1="520" x2="820" y2="570" stroke="#9ca3af" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- Upper arm icons (AI prosperity symbols) -->
+  <g filter="url(#glow)" opacity="0.9">
+    <!-- Chip icon -->
+    <rect x="860" y="70" width="36" height="36" rx="4" fill="none" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="870" y="80" width="16" height="16" rx="2" fill="#00d4ff" opacity="0.3"/>
+    <line x1="896" y1="88" x2="886" y2="88" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="896" y1="96" x2="886" y2="96" stroke="#00d4ff" stroke-width="1"/>
+    <!-- Server/data center -->
+    <rect x="930" y="72" width="28" height="14" rx="2" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+    <circle cx="940" cy="79" r="2" fill="#00d4ff"/>
+    <circle cx="950" cy="79" r="2" fill="#00d4ff"/>
+    <rect x="930" y="90" width="28" height="14" rx="2" fill="none" stroke="#0ea5e9" stroke-width="1.5"/>
+    <circle cx="940" cy="97" r="2" fill="#0ea5e9"/>
+    <circle cx="950" cy="97" r="2" fill="#0ea5e9"/>
+    <!-- Graph up arrow -->
+    <polyline points="990,100 1010,80 1050,65" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="1050,60 1060,65 1050,72" fill="#00d4ff"/>
+  </g>
+
+  <!-- Lower arm icons (decline symbols) -->
+  <g opacity="0.7">
+    <!-- House (declining) -->
+    <rect x="860" y="540" width="32" height="24" fill="none" stroke="#9ca3af" stroke-width="2"/>
+    <polygon points="856,540 876,520 896,540" fill="none" stroke="#9ca3af" stroke-width="2"/>
+    <rect x="870" y="552" width="12" height="12" fill="#9ca3af" opacity="0.3"/>
+    <!-- Factory (closed) -->
+    <rect x="920" y="545" width="28" height="18" rx="2" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0.6"/>
+    <rect x="924" y="550" width="8" height="8" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0.5"/>
+    <rect x="936" y="550" width="8" height="8" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0.5"/>
+    <line x1="915" y1="540" x2="953" y2="570" stroke="#ef4444" stroke-width="2.5" opacity="0.6"/>
+    <!-- Graph down -->
+    <polyline points="990,540 1010,555 1050,575" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Title text -->
+  <text x="60" y="270" font-family="Noto Sans SC, sans-serif" font-size="46" font-weight="800" fill="#f8fafc" letter-spacing="2">
+    野村研报深度解读
+  </text>
+  <text x="60" y="340" font-family="Noto Sans SC, sans-serif" font-size="32" font-weight="600" fill="#00d4ff" letter-spacing="1">
+    AI繁荣加剧K型分化
+  </text>
+  <text x="60" y="390" font-family="Noto Sans SC, sans-serif" font-size="22" font-weight="400" fill="#94a3b8" letter-spacing="1">
+    财富与收入不平等何解？
+  </text>
+
+  <!-- Subtitle / meta -->
+  <line x1="60" y1="420" x2="300" y2="420" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+  <text x="60" y="460" font-family="Noto Sans SC, sans-serif" font-size="14" fill="#64748b" letter-spacing="1">
+    NOMURA RESEARCH · K-SHAPED DIVERGENCE · 2026
+  </text>
+  <text x="1050" y="460" font-family="Noto Sans SC, sans-serif" font-size="14" fill="#64748b" letter-spacing="1" text-anchor="end">
+    zcxGGmu's Blog
+  </text>
+
+  <!-- K-shape labels -->
+  <text x="830" y="78" font-family="JetBrains Mono, monospace" font-size="13" fill="#00d4ff" opacity="0.8">AI BOOM</text>
+  <text x="830" y="563" font-family="JetBrains Mono, monospace" font-size="13" fill="#9ca3af" opacity="0.8">DECLINE</text>
+
+  <!-- Decorative dots -->
+  <circle cx="180" cy="500" r="2" fill="#00d4ff" opacity="0.3"/>
+  <circle cx="200" cy="505" r="1.5" fill="#0ea5e9" opacity="0.3"/>
+  <circle cx="190" cy="515" r="1" fill="#a78bfa" opacity="0.3"/>
+  <circle cx="160" cy="510" r="1.5" fill="#00d4ff" opacity="0.2"/>
+</svg>
