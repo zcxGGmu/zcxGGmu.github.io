@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Abstract layers of wealth, platforms, and AI infrastructure">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.48" stop-color="#16323f"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0" x2="1">
+      <stop offset="0" stop-color="#e2e8f0" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#94a3b8" stop-opacity="0.62"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 648 C240 574 366 696 568 623 C808 536 930 421 1198 476 C1370 511 1485 461 1600 404 L1600 900 L0 900 Z" fill="#020617" opacity="0.28"/>
+  <g opacity="0.20" stroke="#e2e8f0" stroke-width="1">
+    <path d="M130 155 H1460"/>
+    <path d="M130 275 H1460"/>
+    <path d="M130 395 H1460"/>
+    <path d="M130 515 H1460"/>
+    <path d="M130 635 H1460"/>
+    <path d="M250 90 V750"/>
+    <path d="M490 90 V750"/>
+    <path d="M730 90 V750"/>
+    <path d="M970 90 V750"/>
+    <path d="M1210 90 V750"/>
+    <path d="M1450 90 V750"/>
+  </g>
+  <g transform="translate(180 152)">
+    <polygon points="472,0 820,612 124,612" fill="#020617" opacity="0.42"/>
+    <polygon points="472,34 748,542 198,542" fill="#f8fafc" opacity="0.10"/>
+    <polygon points="472,34 622,310 322,310" fill="#fbbf24" opacity="0.78"/>
+    <polygon points="322,310 622,310 748,542 198,542" fill="#38bdf8" opacity="0.46"/>
+    <path d="M255 432 H690" stroke="#f8fafc" stroke-opacity="0.68" stroke-width="10" stroke-linecap="round"/>
+    <path d="M340 279 H605" stroke="#f8fafc" stroke-opacity="0.72" stroke-width="10" stroke-linecap="round"/>
+    <path d="M410 150 H535" stroke="#f8fafc" stroke-opacity="0.82" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(1000 150)">
+    <rect x="0" y="0" width="360" height="360" rx="34" fill="#020617" opacity="0.62"/>
+    <rect x="38" y="38" width="284" height="284" rx="24" fill="none" stroke="#e2e8f0" stroke-opacity="0.72" stroke-width="8"/>
+    <g stroke="#f8fafc" stroke-opacity="0.64" stroke-width="6" stroke-linecap="round">
+      <path d="M180 38 V-38"/>
+      <path d="M180 322 V400"/>
+      <path d="M38 180 H-42"/>
+      <path d="M322 180 H404"/>
+      <path d="M75 75 L22 22"/>
+      <path d="M285 75 L338 22"/>
+      <path d="M75 285 L22 338"/>
+      <path d="M285 285 L338 338"/>
+    </g>
+    <circle cx="180" cy="180" r="76" fill="#22c55e" opacity="0.86"/>
+    <circle cx="180" cy="180" r="36" fill="#f8fafc" opacity="0.88"/>
+    <g fill="#fbbf24" opacity="0.86">
+      <circle cx="104" cy="112" r="13"/>
+      <circle cx="254" cy="106" r="13"/>
+      <circle cx="108" cy="254" r="13"/>
+      <circle cx="256" cy="258" r="13"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#f8fafc" stroke-opacity="0.34" stroke-width="5">
+    <path d="M760 392 C884 330 942 318 1035 314"/>
+    <path d="M748 555 C902 610 1003 559 1130 510"/>
+    <path d="M585 215 C712 158 846 128 1000 175"/>
+  </g>
+  <g transform="translate(148 706)">
+    <rect x="0" y="0" width="1304" height="76" rx="20" fill="url(#plate)"/>
+    <rect x="54" y="25" width="188" height="26" rx="13" fill="#0f172a" opacity="0.52"/>
+    <rect x="290" y="25" width="324" height="26" rx="13" fill="#0f172a" opacity="0.38"/>
+    <rect x="668" y="25" width="260" height="26" rx="13" fill="#0f172a" opacity="0.30"/>
+    <rect x="994" y="25" width="236" height="26" rx="13" fill="#0f172a" opacity="0.44"/>
+  </g>
+  <circle cx="1300" cy="690" r="120" fill="#f8fafc" opacity="0.12" filter="url(#soft)"/>
+  <circle cx="250" cy="150" r="120" fill="#22c55e" opacity="0.10" filter="url(#soft)"/>
+</svg>
