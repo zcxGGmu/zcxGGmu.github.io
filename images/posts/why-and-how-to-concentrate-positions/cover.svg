@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">仓位系统封面图</title>
+  <desc id="desc">以研究、赔率、风险和纪律构成的集中投资仓位框架。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1728"/>
+      <stop offset="0.5" stop-color="#13344a"/>
+      <stop offset="1" stop-color="#213b2a"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#93c5fd" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#93c5fd" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#bbf7d0" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#03121f" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="780" fill="url(#bg)"/>
+  <rect width="1400" height="780" fill="#020617" opacity="0.18"/>
+  <g opacity="0.26">
+    <path d="M-60 132 C160 88 300 162 520 118 C760 70 930 112 1130 82 C1260 62 1350 66 1460 42" fill="none" stroke="url(#line)" stroke-width="4"/>
+    <path d="M-60 244 C190 312 320 226 520 280 C740 340 920 238 1138 286 C1268 314 1360 274 1460 292" fill="none" stroke="url(#line)" stroke-width="3"/>
+    <path d="M-60 462 C140 398 286 512 500 440 C742 356 902 418 1116 374 C1268 344 1368 392 1460 356" fill="none" stroke="url(#line)" stroke-width="4"/>
+  </g>
+  <path d="M0 620 C180 548 268 700 438 620 C615 536 705 494 880 554 C1070 620 1190 520 1400 448 L1400 780 L0 780 Z" fill="#7aa15b" opacity="0.32"/>
+  <g transform="translate(805 110)" filter="url(#shadow)">
+    <rect x="0" y="0" width="430" height="390" rx="8" fill="#f8fafc" opacity="0.92"/>
+    <rect x="36" y="52" width="300" height="20" rx="6" fill="#0f172a" opacity="0.24"/>
+    <g opacity="0.95">
+      <rect x="38" y="104" width="340" height="34" rx="6" fill="#2563eb"/>
+      <rect x="38" y="157" width="296" height="34" rx="6" fill="#0f766e"/>
+      <rect x="38" y="210" width="258" height="34" rx="6" fill="#16a34a"/>
+      <rect x="38" y="263" width="216" height="34" rx="6" fill="#ca8a04"/>
+      <rect x="38" y="316" width="174" height="34" rx="6" fill="#dc2626"/>
+    </g>
+    <g fill="#ffffff" opacity="0.7">
+      <circle cx="356" cy="121" r="8"/>
+      <circle cx="312" cy="174" r="8"/>
+      <circle cx="274" cy="227" r="8"/>
+      <circle cx="232" cy="280" r="8"/>
+      <circle cx="190" cy="333" r="8"/>
+    </g>
+  </g>
+  <g transform="translate(120 560)" opacity="0.72">
+    <rect x="0" y="0" width="500" height="2" fill="#dbeafe" opacity="0.55"/>
+    <circle cx="0" cy="1" r="6" fill="#bfdbfe"/>
+    <circle cx="168" cy="1" r="6" fill="#a7f3d0"/>
+    <circle cx="334" cy="1" r="6" fill="#fde68a"/>
+    <circle cx="500" cy="1" r="6" fill="#fecaca"/>
+  </g>
+</svg>
