@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive">
+  <title>AI 硬件供应链再定价：从 MLCC、内存互连到 CCL 涨价的投资框架 - zcxGGmu's Blog</title>
+  <meta name="description" content="AI 算力扩张正在把瓶颈从 GPU 传导到 MLCC、FCBGA、内存调度、光互连、先进封装与 CCL 电子玻纤，产业链利润围绕稀缺产能重新分配。">
+  <meta name="author" content="zcxGGmu">
+  <meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/ai-hardware-supply-chain-repricing/">
+  <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
+  <meta property="og:title" content="AI 硬件供应链再定价：从 MLCC、内存互连到 CCL 涨价的投资框架">
+  <meta property="og:description" content="当所有人盯着 GPU，真正的边际变化正在底层元器件、材料、互连与封装产能中发生。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zcxggmu.github.io/2026/ai-hardware-supply-chain-repricing/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div id="app">
+    <div class="single-column-drawer-container" id="drawer">
+      <div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+    </div>
+    <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
+    <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+      <div id="navBackground" class="nav-background"></div>
+      <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
+        <a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a>
+        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>
+      </div>
+    </nav>
+    <div class="single-column-header-container" id="pageHead">
+      <a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+    </div>
+    <div id="content">
+      <div id="streamContainer" class="stream-container" role="main">
+        <div id="main-content"></div>
+        <div class="post-list-container post-list-container-shadow">
+    <article class="post">
+      <div class="post-head-wrapper" style="background-image:url('/images/posts/ai-hardware-supply-chain-repricing/cover.svg')">
+        <div class="post-title">AI 硬件供应链再定价：从 MLCC、内存互连到 CCL 涨价的投资框架
+          <div class="post-subtitle">当所有人盯着 GPU，真正的边际变化正在底层元器件、材料、互连与封装产能中发生。</div>
+          <div class="post-meta"><time itemprop="datePublished">2026-06-21</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E6%8A%95%E8%B5%84/">投资</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/">半导体</a>&nbsp;<a href="/tags/AI%E8%8A%AF%E7%89%87/">AI芯片</a>&nbsp;<a href="/tags/%E4%BE%9B%E5%BA%94%E9%93%BE/">供应链</a>&nbsp;<a href="/tags/%E9%AB%98%E6%99%AF%E6%B0%94/">高景气</a>&nbsp;<a href="/tags/%E6%8A%95%E8%B5%84%E5%88%86%E6%9E%90/">投资分析</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 19 min</div>
+        </div>
+      </div>
+      <div class="post-body-wrapper"><div class="post-body" v-pre>
+
+<h2 id="总论">一、总论：AI 硬件的利润正在从显性算力流向隐性瓶颈</h2>
+
+<p>AI 硬件产业链的表层叙事很容易被 GPU、模型参数和算力集群占满。但真正决定利润再分配的，往往不是最耀眼的芯片，而是芯片能否稳定工作、数据能否低延迟流动、材料能否承受高频高速信号，以及产能能否按时爬坡。</p>
+
+<p>当 AI 服务器从单卡、单机走向机架级系统，产业约束会沿着一条很清晰的路径向外扩散：先是电源完整性，再是高层数基板和被动元件，再是内存容量与调度效率，再是光互连带宽，最后落到 CCL、电子玻纤、先进封装和全球代工产能。</p>
+
+<p>这意味着，AI 投资不能只盯着“谁拥有最强算力”，还要追问三个更底层的问题：</p>
+
+<ul>
+  <li>哪个环节正在从充裕变成稀缺？</li>
+  <li>哪个环节的价格上涨能够直接穿透到利润表？</li>
+  <li>哪个公司的产能、良率和客户验证最可能把产业瓶颈变成业绩弹性？</li>
+</ul>
+
+<p>本质上，这是一轮围绕物理瓶颈展开的再定价。GPU 是需求发动机，底层材料、元器件、互连、封装和制造产能才是利润扩散的路径。</p>
+
+<h2 id="mlcc">二、第一章：MLCC 与高端基板，算力机架的电源完整性溢价</h2>
+
+<h3>1. AI 服务器不是多用一点电容，而是把 MLCC 需求推向机架级爆发</h3>
+
+<p>传统消费电子里，MLCC 是极不起眼的基础元件。高端智能手机大约使用一千多颗 MLCC，普通服务器大约使用几千颗。进入 AI 机架后，数字迅速失去线性意义：GB300 级别的 AI 机架可能需要约 35.5 万颗 MLCC，下一代机架级系统的用量甚至可能进一步抬升到 50 万颗以上。</p>
+
+<p>数量增长只是第一层变化。更关键的是总电容容量和单位价值量同时上升。普通服务器的电容需求可以理解为稳定供电的常规配置，而 AI 机架面对的是数千亿级晶体管在极短时间内同时开关。电源线路存在物理延迟和寄生电感，远端电源无法在纳秒级时间里完成所有响应，芯片附近就必须布置大量高可靠、高容量、低阻抗的电容阵列。</p>
+
+<p>因此，AI 机架不是简单“多买一些便宜元件”，而是在主板空间极度拥挤、功耗密度极高、可靠性要求极严的条件下，购买精密材料科学能力。</p>
+
+<h3>2. 高端 MLCC 的核心不是便宜，而是微型化、大容量和可靠性</h3>
+
+<p>高端 AI 服务器大量使用 1050 尺寸、47 微法拉等高容量小型化 MLCC。1050 尺寸意味着长度约 1.0 毫米、宽度约 0.5 毫米，几乎接近一粒粗沙。在这样的体积里，要堆叠数百层甚至上千层超薄金属电极，并保证每一层绝缘、容量和可靠性稳定。</p>
+
+<p>这类产品已经脱离普通工业零件的范畴。它的价值来自三点：第一，单位体积内的容量密度；第二，高温高压环境下的可靠性；第三，在 AI 主板有限面积内解决瞬态电流波动的能力。</p>
+
+<p>正因为技术壁垒足够高，高端 MLCC 的价格和利润率会显著高于普通型号。机构定价里，村田制作所、TDK、太阳诱电等厂商被放在这一轮产业再定价的核心位置。村田在 MLCC 市场份额和堆叠成型能力上具备优势，部分高端型号的边际利润率可能非常高，价格弹性对利润表的穿透也更直接。</p>
+
+<h3>3. 汽车电子提供底盘，AI 服务器提供向上斜率</h3>
+
+<p>MLCC 逻辑并不只靠 AI。汽车电动化和智能化正在抬升单车电子元件价值量。传统燃油车的 MLCC 单车价值量较低，而电动车、智能座舱、自动驾驶和高压平台会让电容数量与规格同时提升。</p>
+
+<p>这使得高端被动元件厂商形成“两条腿走路”的结构：汽车电子提供较稳定的基本盘，AI 服务器提供斜率更陡的增量弹性。投资跟踪时，不能只看 AI 叙事热度，而要同时观察产能利用率、价格战是否缓和、特定高端型号是否持续涨价，以及汽车订单是否托住下行风险。</p>
+
+<h3>4. FCBGA 与基板产能，决定 AI 芯片能否被物理承载</h3>
+
+<p>AI GPU 不只是晶圆上的计算单元，还需要高层数、大面积、高良率的封装基板来承载。FCBGA 基板的难点在于线路密度、层数、热膨胀控制和良率爬坡。面积更大、层数更多的 AI 基板，一旦某一层线路对位偏差或热变形失控，整块基板就可能报废。</p>
+
+<p>这也是 Ibiden 等基板厂商被重新关注的原因。传统 CPU 客户的增速不再代表未来，非英特尔客户、AI GPU 客户、服务器收入占比和先进基板产能迁移，才是判断估值是否兑现的核心。</p>
+
+<p>这一环节的关键验证指标很简单：非传统客户收入增速是否持续上行，AI 相关产线良率是否爬坡成功，服务器收入占比是否从当前水平继续提升。如果这些指标兑现，市场交易的就不是一个短期主题，而是公司客户结构和利润中枢的重构。</p>
+
+<h2 id="memory-interconnect-foundry">三、第二章：内存、光互连与代工，算力瓶颈的三种破局路线</h2>
+
+<h3>1. 内存开支可能成为 AI 资本开支的沉重约束</h3>
+
+<p>AI 训练与推理不仅消耗 GPU，也极度消耗内存。随着模型参数量、上下文长度和多模态数据规模扩大，DRAM、HBM 与存储层级的资本开支占比快速上升。若 AI 基建资本开支继续扩张，内存支出在总资本开支中的占比可能从个位数提升到三成甚至更高。</p>
+
+<p>问题在于，DRAM 不仅贵，而且耗电、占空间、受产能周期约束。靠无止境增加昂贵内存来喂饱 GPU，会让数据中心的资本效率越来越差。</p>
+
+<h3>2. 软件化内存调度，是对硬件堆叠路径的约束</h3>
+
+<p>AMD 收购 MEXT 这类软件资产，核心含义不是单纯补充产品线，而是用智能调度挑战“无限堆 DRAM”的资本开支路径。思路可以概括为“前店后仓”：热数据放在快速但昂贵的 DRAM 中，冷数据放进便宜但较慢的 NAND 闪存中，通过预测模型提前把即将使用的数据调入高速层。</p>
+
+<p>这套机制的本质，是用软件降低对最昂贵硬件的边际依赖。它不会让 DRAM 不重要，但会改变 DRAM、NAND、控制器、软件调度和系统架构之间的利润分配。</p>
+
+<p>投资上需要理解这一点：如果软件调度成熟，内存厂商对 DRAM 涨价的掌控力可能被削弱，NAND 与存储管理生态反而会获得新的需求弹性。算力竞赛不是简单堆硬件，而是每一美元资本开支都被迫追求更高利用率。</p>
+
+<h3>3. 200G VCSEL 的意义，是低成本材料路线挑战昂贵互连方案</h3>
+
+<p>数据从内存和存储中出来后，马上会撞上另一个瓶颈：芯片之间、服务器之间、机架之间的互连带宽。光互连的重要性由此上升。</p>
+
+<p>PicoJool 推出 200G VCSEL 的产业含义，在于尝试用成本更低、供应更广的砷化镓路线，挑战更昂贵的磷化铟路线。VCSEL 的难点不只是“能发光”，而是在高速调制下保持足够带宽、低误码率和可靠性。若 38GHz 附近的带宽表现能够跨过量产门槛，材料成本结构就可能发生变化。</p>
+
+<p>这里的再定价逻辑不是单个实验室参数，而是“便宜材料能否替代昂贵材料”。一旦成立，受益者是低成本光器件、模块、交换互连和 AI 数据中心网络建设；受冲击的是原本依赖高价材料路线的供应链。</p>
+
+<h3>4. Intel 的代工机会，来自台积电先进封装产能成为瓶颈</h3>
+
+<p>AI 芯片产业链的另一个变化，是先进封装产能变成全行业硬约束。台积电在先进制程和 CoWoS 等封装能力上仍处强势地位，但 AI 需求过快增长会让产能成为所有客户争抢的瓶颈。</p>
+
+<p>当一个供应商的产能成为全行业约束，客户天然会寻找第二来源。Intel 若能在美国本土制造、先进封装和大客户合作上获得突破，市场愿意给予重新定价。这里交易的不是 Intel 已经完全逆转，而是“产能瓶颈给第二供应商带来的期权价值”。</p>
+
+<p>这条线的跟踪重点不是单日股价，也不是宏大口号，而是先进封装产能爬坡、关键客户订单、良率进展和后端工程团队执行力。</p>
+
+<h2 id="ccl-glass-cloth">四、第三章：CCL 与电子玻纤，AI 需求如何抽干传统材料产能</h2>
+
+<h3>1. 弱需求环境中的涨价，往往意味着供给侧发生了更剧烈的变化</h3>
+
+<p>在智能手机、个人电脑、传统汽车等非 AI 需求并不强的环境下，建滔积层板仍能在 1-5 月累计涨价后，于 6 月对 CCL 和半固化片进一步上调平均售价。这种涨价不是普通需求复苏，而是 AI 设备对高端电子玻纤布和高端 CCL 产能的抽离效应。</p>
+
+<p>普通材料没有突然变得更受欢迎，但生产普通材料的设备和产能被更高利润的 AI 材料占用，供给端被抽走，传统产品反而出现缺货涨价。这就是典型的“高端需求挤压低端供给”。</p>
+
+<h3>2. 电子玻纤布从普通耗材变成高性能材料瓶颈</h3>
+
+<p>电子玻纤布是 CCL 的核心骨架材料。普通电子玻纤布每米价格大约在个位数到十元级别，而 AI 服务器所需的低介电常数、低热膨胀系数、高稳定性材料，价格可能上升到数十元甚至两百元以上。</p>
+
+<p>差异来自物理约束。AI 芯片高频高速运行时，电路板材料必须降低介电损耗，避免信号明显衰减；同时还要控制热膨胀，避免高温环境下线路变形、开裂或失效。低 Dk、低 CTE、Q-glass 等材料要求，使传统玻纤布产能无法简单等同于 AI 玻纤布产能。</p>
+
+<p>当高端布价格远高于普通布，供应商自然会把设备切向 AI 订单。普通 CCL 产能被挤压，价格上涨顺着产业链传导到建滔这类传统 CCL 厂商，形成短期利润弹性。</p>
+
+<h3>3. 价格弹性与估值弹性同时出现，但不能忽视高位融资信号</h3>
+
+<p>建滔积层板的定价逻辑非常典型：如果 CCL 平均售价持续上行，毛利率扩张会比收入增长更快，利润弹性会被放大。花旗把目标价上调至 120 港元，本质上是在为未来数年的盈利上行周期定价。</p>
+
+<p>但高景气里最需要警惕的，正是看似完美的线性外推。母公司在高位折价配售，表面上会被理解为套现压力；更积极的解释是，公司需要用股权融资为未来两年的高额资本开支做准备，包括清远新窑炉、开平高端 CCL 项目，以及越南、泰国的海外布局。</p>
+
+<p>这两个解释并不互斥。融资既可能是战略扩产，也可能意味着公司和大股东知道未来窗口期宝贵。投资上不能只看“融资用途好不好”，还要看融资后的项目能否兑现良率、客户认证和利润率。</p>
+
+<h3>4. 打入顶级 AI 客户供应链，是额外期权，不是确定利润</h3>
+
+<p>进入 NVIDIA 等顶级 AI 供应链，会彻底改变 CCL 厂商的估值体系。但高端制造业的残酷之处在于，资本开支只是入场券，真正壁垒是认证周期、批量稳定性、介电损耗一致性、热可靠性和良率爬坡。</p>
+
+<p>生益科技等先进入者已经具备技术和客户优势。后来者即使投入巨大，也未必能在 2027 年顺利拿到足够份额。市场可以为潜在认证支付期权溢价，但不能把期权当成已经落袋的利润。</p>
+
+<p>这一章最重要的验证点，是 7 月中旬可能出现的盈利预告和 8 月中旬半年报。如果上半年净利润能接近或超过市场乐观预期，就说明涨价已经穿透到利润端；如果利润低于预期，前期建立在价格和产能挤压之上的估值体系就需要重新审视。</p>
+
+<h2 id="framework">五、综合框架：AI 硬件投资要从“买算力”转向“买瓶颈”</h2>
+
+<p>三条主线放在一起，形成的是同一个框架：AI 算力需求越强，越会暴露传统硬件体系的物理瓶颈；瓶颈越清晰，利润就越容易向掌握稀缺产能和关键材料的公司集中。</p>
+
+<table>
+  <thead><tr><th>瓶颈层级</th><th>核心问题</th><th>受益环节</th><th>关键验证指标</th></tr></thead>
+  <tbody>
+    <tr><td>电源完整性</td><td>高功耗 AI 机架瞬态电流波动加剧</td><td>高端 MLCC、钽电容、电源管理</td><td>高端型号价格、产能利用率、AI 与汽车订单占比</td></tr>
+    <tr><td>物理承载</td><td>GPU 面积、层数、热管理难度提升</td><td>FCBGA、高端基板、先进封装材料</td><td>非传统客户收入、良率爬坡、服务器收入占比</td></tr>
+    <tr><td>内存效率</td><td>DRAM 成本和功耗成为资本开支压力</td><td>内存调度软件、NAND、控制器、系统架构</td><td>软件方案落地、NAND 需求、内存支出占比变化</td></tr>
+    <tr><td>互连带宽</td><td>芯片和机架间数据传输成为瓶颈</td><td>VCSEL、光模块、交换芯片、光互连材料</td><td>200G VCSEL 量产、误码率、客户导入进展</td></tr>
+    <tr><td>材料供给</td><td>AI 高端材料抽走传统产能</td><td>CCL、电子玻纤布、Q-glass、半固化片</td><td>涨价落地、盈利预告、客户认证、海外产能</td></tr>
+  </tbody>
+</table>
+
+<p>这个框架里最值得买的不是“听起来最 AI 的公司”，而是满足四个条件的公司：需求真实、产能稀缺、价格能涨、利润能兑现。缺少任一条件，都可能只是主题交易。</p>
+
+<h2 id="signals">六、接下来最值得跟踪的信号</h2>
+
+<p>第一，MLCC 产能利用率是否维持在 85%-90% 以上。只要利用率处于高位，价格战就会显著缓和，高端型号的涨价更容易留在利润表里。</p>
+
+<p>第二，AI 机架对高端电容和基板的单机价值量是否继续上升。GB300、Rubin 等架构的功耗、板级设计和电源需求，是判断被动元件景气持续性的前瞻信号。</p>
+
+<p>第三，VCSEL 的实验室突破能否跨过量产门槛。光互连领域最怕“参数漂亮、量产困难”，因此良率、可靠性和客户验证比单个带宽数字更重要。</p>
+
+<p>第四，Intel 先进封装和代工客户是否真正落地。市场可以为第二供应商支付期权溢价，但最终仍要回到产能、良率、订单和毛利率。</p>
+
+<p>第五，建滔积层板的盈利预告和半年报能否验证涨价。价格上涨只是第一步，利润兑现才是估值继续上修的前提。</p>
+
+<h2 id="risk">七、投资结论：这是进攻型主线，但不适合无验证重仓</h2>
+
+<p>AI 硬件供应链再定价是一条进攻性很强的主线。它的吸引力在于，市场注意力集中在 GPU 时，底层材料和元器件往往存在预期差；一旦涨价、产能利用率和利润同时兑现，股价弹性会非常剧烈。</p>
+
+<p>但这条主线也不适合无条件重仓。风险主要来自五个方向：</p>
+
+<ul>
+  <li>AI 资本开支增速放缓，导致高端材料扩产变成产能过剩；</li>
+  <li>客户认证失败，潜在供应链期权无法兑现；</li>
+  <li>良率爬坡低于预期，高毛利订单反而变成成本黑洞；</li>
+  <li>传统消费电子需求继续疲弱，抵消涨价带来的利润弹性；</li>
+  <li>估值已经提前反映乐观情景，一旦业绩不及预期，回撤会非常快。</li>
+</ul>
+
+<p>更合理的策略是分层配置：已经涨价并能在财报中验证利润的环节，可以作为核心观察仓；仍处在认证或量产前夜的环节，只适合作为期权仓；对估值已经大幅抬升的公司，要用盈利预告、客户订单和产能利用率设定明确的加减仓条件。</p>
+
+<p>一句话总结：AI 硬件的下一阶段，不只是 GPU 的竞赛，而是电容、基板、内存调度、光互连、封装和材料共同参与的物理瓶颈再定价。真正有价值的投资线索，往往藏在这些不耀眼但无法绕开的底层环节里。</p>
+
+<p><strong>免责声明：</strong>本文仅用于产业研究与投资方法论梳理，不构成任何证券、基金或衍生品买卖建议。文中涉及公司、估值、目标价、盈利预测和产业假设均需以正式公告、研报原文及后续财务数据为准；市场有风险，投资需独立判断。</p>
+
+      </div></div>
+      <section class="post-footer"><div class="post-footer-line"><div class="post-footer-heading">标签</div><div class="post-footer-values"><a class="badge badge-tag" href="/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/">半导体</a> <a class="badge badge-tag" href="/tags/AI%E8%8A%AF%E7%89%87/">AI芯片</a> <a class="badge badge-tag" href="/tags/%E4%BE%9B%E5%BA%94%E9%93%BE/">供应链</a> <a class="badge badge-tag" href="/tags/%E9%AB%98%E6%99%AF%E6%B0%94/">高景气</a> <a class="badge badge-tag" href="/tags/%E6%8A%95%E8%B5%84%E5%88%86%E6%9E%90/">投资分析</a></div></div></section>
+      <nav class="post-pagination">
+        <a class="newer-posts">下一篇<br>没有更新的文章</a>
+        <a class="older-posts" href="/2026/growth-cycle-investment-philosophy/">上一篇<br>高景气成长投资：在产业周期中寻找进攻性资产</a>
+      </nav>
+    </article>
+  </div>
+      </div>
+    </div>
+    <div id="sideContainer" class="side-container">
+      <button class="sidebar-collapse-toggle" type="button" data-sidebar-collapse-toggle title="收起左侧边栏" aria-label="收起左侧边栏" aria-expanded="true">
+        <span class="material-icons sidebar-collapse-icon" aria-hidden="true">chevron_left</span>
+      </button>
+      <a class="a-block nav-head false" href="/">
+        <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
+        <div class="nav-title">zcxGGmu's Blog</div>
+        <div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+      </a>
+      <div class="theme-switcher theme-switcher-desktop"><button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div>
+      <div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+      <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+    </div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#总论">一、总论</a><a class="toc-link toc-level-2" href="#mlcc">二、MLCC 与基板</a><a class="toc-link toc-level-2" href="#memory-interconnect-foundry">三、内存、互连与代工</a><a class="toc-link toc-level-2" href="#ccl-glass-cloth">四、CCL 与电子玻纤</a><a class="toc-link toc-level-2" href="#framework">五、综合框架</a><a class="toc-link toc-level-2" href="#signals">六、跟踪信号</a><a class="toc-link toc-level-2" href="#risk">七、投资结论</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+  </div>
+  <script src="/js/journal.js"></script>
+  <script src="/js/code-enhance.js"></script>
+  <script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}
+  function storedTheme(){try{return localStorage.getItem(key)||""}catch(_){return ""}}
+  function setStoredTheme(theme){try{localStorage.setItem(key,theme)}catch(_){}}
+  function setLegacyCookie(theme){document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";}
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){setStoredTheme(theme);setLegacyCookie(theme);}
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);};
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){button.addEventListener("click",function(){window.toggleColorTheme()});});
+  });
+  if(window.matchMedia){var query=window.matchMedia("(prefers-color-scheme: dark)");var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};if(query.addEventListener) query.addEventListener("change",onChange);else if(query.addListener) query.addListener(onChange);}
+})();</script>
+  <script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){try{return localStorage.getItem(key)==="1"}catch(_){return false}}
+  function storeCollapsed(collapsed){try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}}
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);};
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){button.addEventListener("click",window.toggleSidebarCollapsed);});
+  });
+})();</script>
+  <script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){var progress=document.createElement("div");progress.id="reading-progress";progress.setAttribute("aria-hidden","true");document.body.appendChild(progress);}
+    if(!byId("backToTop")){var button=document.createElement("button");button.id="backToTop";button.type="button";button.title="返回顶部";button.setAttribute("aria-label","返回顶部");button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});document.body.appendChild(button);}
+  }
+  function update(){var root=document.documentElement;var total=root.scrollHeight-root.clientHeight;var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;var progress=byId("reading-progress");var top=byId("backToTop");var global=byId("globalBackToTop");if(progress) progress.style.width=percent+"%";var show=(window.scrollY||root.scrollTop)>360;if(top) top.classList.toggle("show",show);if(global) global.classList.toggle("invisible",!show);}
+  window.toggleDrawer=function(){var drawer=byId("drawer");var overlay=byId("drawer-overlay");var open=!drawer.classList.contains("single-column-drawer-container-active");drawer.classList.toggle("single-column-drawer-container-active",open);document.documentElement.style.overflow=open?"hidden":"";if(overlay) overlay.style.display=open?"block":"none";};
+  document.addEventListener("DOMContentLoaded",function(){ensureChrome();update();window.addEventListener("scroll",update,{passive:true});window.addEventListener("resize",update,{passive:true});});
+})();</script>
+  <script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');if(!images.length) return;
+    var box=document.createElement("div");box.className="image-lightbox";box.setAttribute("role","dialog");box.setAttribute("aria-modal","true");box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';document.body.appendChild(box);
+    var preview=box.querySelector("img");var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){img.tabIndex=0;img.addEventListener("click",function(){preview.src=img.currentSrc||img.src;preview.alt=img.alt||"";box.classList.add("is-visible");document.body.classList.add("lightbox-open");});});
+    close.addEventListener("click",hide);box.addEventListener("click",function(event){if(event.target===box) hide()});document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
