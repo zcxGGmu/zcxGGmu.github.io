@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="52%" stop-color="#eef6ff"/>
+      <stop offset="100%" stop-color="#f7f5ef"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;fill:#172033}
+      .title{font-size:42px;font-weight:800}
+      .subtitle{font-size:20px;fill:#5b6472}
+      .panel-title{font-size:30px;font-weight:800}
+      .tag{font-size:15px;font-weight:700;fill:#fff}
+      .metric{font-size:22px;font-weight:800}
+      .label{font-size:16px;fill:#566174}
+      .body{font-size:18px;fill:#263246}
+      .small{font-size:15px;fill:#64748b}
+      .warn{font-size:16px;fill:#8a4b16;font-weight:700}
+    </style>
+  </defs>
+  <rect width="1280" height="780" fill="url(#bg)"/>
+  <text x="70" y="78" class="title">ASMPT vs 中芯国际：两条最核心的港股半导体主线</text>
+  <text x="70" y="116" class="subtitle">ASMPT 买订单质量和先进封装设备弹性；中芯国际买核心制造资产和 Q2 指引兑现。</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="160" width="545" height="455" rx="18" fill="#ffffff"/>
+    <rect x="665" y="160" width="545" height="455" rx="18" fill="#ffffff"/>
+  </g>
+
+  <rect x="105" y="194" width="96" height="32" rx="16" fill="#2563eb"/>
+  <text x="153" y="216" text-anchor="middle" class="tag">进攻仓</text>
+  <text x="105" y="264" class="panel-title">ASMPT 0522.HK</text>
+  <text x="105" y="298" class="subtitle">先进封装设备弹性</text>
+
+  <g transform="translate(105 338)">
+    <text x="0" y="0" class="label">2026Q1 订单额</text>
+    <text x="0" y="34" class="metric">HK$56.73 亿</text>
+    <text x="250" y="0" class="label">Book-to-bill</text>
+    <text x="250" y="34" class="metric">1.43</text>
+    <text x="0" y="98" class="label">Q2 收入指引</text>
+    <text x="0" y="132" class="metric">US$5.40-6.00 亿</text>
+    <text x="250" y="98" class="label">调整后毛利率</text>
+    <text x="250" y="132" class="metric">39.5%</text>
+  </g>
+
+  <rect x="105" y="515" width="470" height="1.2" fill="#d7dde8"/>
+  <text x="105" y="552" class="body">核心验证：C2W TCB、HBM4、Hybrid Bonding、CPO 订单</text>
+  <text x="105" y="582" class="warn">买入纪律：等回撤 + Q2/Q3 订单连续性，不追单日新闻</text>
+
+  <rect x="700" y="194" width="96" height="32" rx="16" fill="#0f766e"/>
+  <text x="748" y="216" text-anchor="middle" class="tag">核心仓</text>
+  <text x="700" y="264" class="panel-title">中芯国际 0981.HK</text>
+  <text x="700" y="298" class="subtitle">国产晶圆代工核心资产</text>
+
+  <g transform="translate(700 338)">
+    <text x="0" y="0" class="label">2026Q1 收入</text>
+    <text x="0" y="34" class="metric">US$25.05 亿</text>
+    <text x="250" y="0" class="label">毛利率</text>
+    <text x="250" y="34" class="metric">20.1%</text>
+    <text x="0" y="98" class="label">Q2 收入指引</text>
+    <text x="0" y="132" class="metric">环比 +14%-16%</text>
+    <text x="250" y="98" class="label">产能利用率</text>
+    <text x="250" y="132" class="metric">93.1%</text>
+  </g>
+
+  <rect x="700" y="515" width="470" height="1.2" fill="#d7dde8"/>
+  <text x="700" y="552" class="body">核心验证：Q2 指引、毛利率 20% 防线、资本开支吸收</text>
+  <text x="700" y="582" class="warn">买入纪律：用 PB 和财报验证分批，不把 AI 叙事一次买满</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="650" width="1140" height="70" rx="18" fill="#172033"/>
+  </g>
+  <text x="100" y="693" fill="#fff" font-size="22" font-weight="800">组合含义：</text>
+  <text x="220" y="693" fill="#e5eefb" font-size="20">中芯国际负责确定性和底仓韧性；ASMPT 负责 AI 后道设备弹性。两者都需要数据验证，不适合无纪律追高。</text>
+</svg>
