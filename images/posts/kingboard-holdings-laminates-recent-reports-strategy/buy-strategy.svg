@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img">
+  <rect width="1200" height="820" fill="#f8fafc"/>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#0ea5a4"/>
+      <stop offset="0.52" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  
+    <text x="54" y="62" font-family="Noto Sans SC, Arial" font-size="30" font-weight="800" fill="#0f172a">买入策略：把“景气”拆成验证项，不把目标价当买入理由</text>
+    <g filter="url(#shadow)">
+    <rect x="70" y="115" width="320" height="200" rx="8" fill="#eff6ff" stroke="#dbe3ef"/>
+    <text x="94" y="151" font-family="Noto Sans SC, Arial" font-size="22" font-weight="700" fill="#0f172a">左侧：建滔集团</text>
+    <text x="94" y="191" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">核心：母公司折价收敛</text><text x="94" y="221" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">买点：配售后回撤 + 负债改善</text><text x="94" y="251" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">加仓：SOTP 折让继续收敛</text><text x="94" y="281" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">减仓：地产/投资拖累扩大</text>
+  </g>
+    <g filter="url(#shadow)">
+    <rect x="440" y="115" width="320" height="200" rx="8" fill="#ecfdf5" stroke="#dbe3ef"/>
+    <text x="464" y="151" font-family="Noto Sans SC, Arial" font-size="22" font-weight="700" fill="#0f172a">中间：建滔积层板</text>
+    <text x="464" y="191" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">核心：CCL 涨价穿透利润表</text><text x="464" y="221" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">买点：盈利预喜 / 中报验证</text><text x="464" y="251" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">加仓：毛利率与订单继续上修</text><text x="464" y="281" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">减仓：涨价断档或认证失败</text>
+  </g>
+    <g filter="url(#shadow)">
+    <rect x="810" y="115" width="320" height="200" rx="8" fill="#fff7ed" stroke="#dbe3ef"/>
+    <text x="834" y="151" font-family="Noto Sans SC, Arial" font-size="22" font-weight="700" fill="#0f172a">右侧：行业变量</text>
+    <text x="834" y="191" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">电子玻纤布供需缺口</text><text x="834" y="221" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">铜箔、树脂、玻纤成本传导</text><text x="834" y="251" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">AI 服务器 PCB 材料升级</text><text x="834" y="281" font-family="Noto Sans SC, Arial" font-size="18" fill="#334155">客户认证与海外扩产节奏</text>
+  </g>
+    <line x1="90" y1="420" x2="1110" y2="420" stroke="url(#accent)" stroke-width="10"/>
+    <circle cx="200" cy="420" r="18" fill="#2563eb"/><text x="145" y="465" font-size="18" font-family="Noto Sans SC, Arial" fill="#334155">跟踪</text>
+    <circle cx="460" cy="420" r="18" fill="#0ea5a4"/><text x="404" y="465" font-size="18" font-family="Noto Sans SC, Arial" fill="#334155">验证</text>
+    <circle cx="720" cy="420" r="18" fill="#f97316"/><text x="664" y="465" font-size="18" font-family="Noto Sans SC, Arial" fill="#334155">分批</text>
+    <circle cx="980" cy="420" r="18" fill="#ef4444"/><text x="924" y="465" font-size="18" font-family="Noto Sans SC, Arial" fill="#334155">风控</text>
+    <text x="100" y="540" font-family="Noto Sans SC, Arial" font-size="20" font-weight="700" fill="#0f172a">三条纪律</text>
+    <text x="100" y="585" font-family="Noto Sans SC, Arial" font-size="19" fill="#334155">1. 高景气不等于无限估值：先等盈利预告、半年报、毛利率和客户认证数据。</text>
+    <text x="100" y="625" font-family="Noto Sans SC, Arial" font-size="19" fill="#334155">2. 0148 买折价收敛，01888 买利润弹性，两者仓位逻辑不同。</text>
+    <text x="100" y="665" font-family="Noto Sans SC, Arial" font-size="19" fill="#334155">3. 配售不是单向利空或利好：关键看现金是否转化成产能、良率、订单和 ROE。</text>
+    <text x="100" y="735" font-family="Noto Sans SC, Arial" font-size="18" fill="#64748b">本文所有“买入策略”均为研究框架，不构成个股买卖建议。</text>
+</svg>
