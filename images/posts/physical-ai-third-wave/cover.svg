@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a0e1a"/><stop offset="100%" stop-color="#141a2e"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.03" stroke="#f97316"><line x1="0" y1="157" x2="1200" y2="157"/><line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="472" x2="1200" y2="472"/></g>
+  <!-- Robot arm abstract -->
+  <g filter="url(#glow)" opacity="0.06" transform="translate(800,120)">
+    <line x1="0" y1="200" x2="60" y2="80" stroke="#f97316" stroke-width="12"/><line x1="60" y1="80" x2="180" y2="40" stroke="#f97316" stroke-width="10"/>
+    <circle cx="0" cy="200" r="20" fill="none" stroke="#f97316" stroke-width="6"/><circle cx="60" cy="80" r="12" fill="#f97316" opacity="0.4"/>
+    <rect x="150" y="20" width="60" height="40" rx="6" fill="none" stroke="#f97316" stroke-width="4"/>
+  </g>
+  <!-- Three waves -->
+  <g opacity="0.12">
+    <path d="M 60 420 Q 200 380 350 420" fill="none" stroke="#64748b" stroke-width="6"/>
+    <path d="M 60 440 Q 200 390 350 440" fill="none" stroke="#06b6d4" stroke-width="6"/>
+    <path d="M 60 460 Q 200 400 350 460" fill="none" stroke="#f97316" stroke-width="8"/>
+  </g>
+  <text x="60" y="140" font-family="Noto Sans SC, sans-serif" font-size="46" font-weight="800" fill="#f8fafc" letter-spacing="3">物理AI：人工智能第三浪</text>
+  <text x="60" y="210" font-family="Noto Sans SC, sans-serif" font-size="28" font-weight="600" fill="#f97316" letter-spacing="2">人形机器人、自动驾驶、工业自动化的投资图谱</text>
+  <line x1="60" y1="245" x2="750" y2="245" stroke="#f97316" stroke-width="1.5" opacity="0.4"/>
+  <g transform="translate(60, 300)" opacity="0.75">
+    <circle cx="8" cy="-4" r="4" fill="#06b6d4"/><text x="22" y="0" font-family="Noto Sans SC, sans-serif" font-size="15" fill="#cbd5e1">VLA模型 + 世界模型：物理AI的双引擎架构</text>
+    <circle cx="8" cy="30" r="4" fill="#f97316"/><text x="22" y="34" font-family="Noto Sans SC, sans-serif" font-size="15" fill="#cbd5e1">2026→2040：从3800亿到3.26万亿美元的市场扩张</text>
+    <circle cx="8" cy="64" r="4" fill="#22c55e"/><text x="22" y="68" font-family="Noto Sans SC, sans-serif" font-size="15" fill="#cbd5e1">三大载体：人形机器人、自动驾驶平台、工业自动化</text>
+  </g>
+  <text x="60" y="580" font-family="JetBrains Mono, monospace" font-size="12" fill="#64748b">PHYSICAL AI · VLA · WORLD MODELS · HUMANOID ROBOTS · 2026</text>
+  <text x="1050" y="580" font-family="Noto Sans SC, sans-serif" font-size="14" fill="#64748b" text-anchor="end">zcxGGmu's Blog</text>
+</svg>
