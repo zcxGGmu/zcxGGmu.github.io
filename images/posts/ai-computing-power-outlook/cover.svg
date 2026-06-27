@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="50%" stop-color="#0d1228"/>
+      <stop offset="100%" stop-color="#111a33"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Grid -->
+  <g opacity="0.03" stroke="#6366f1">
+    <line x1="0" y1="157" x2="1200" y2="157"/><line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="472" x2="1200" y2="472"/>
+  </g>
+  <!-- Chip/CPU icon abstract -->
+  <g filter="url(#glow)" opacity="0.06" transform="translate(750, 150)">
+    <rect x="0" y="0" width="300" height="300" rx="16" fill="none" stroke="#6366f1" stroke-width="40"/>
+    <rect x="60" y="60" width="180" height="180" rx="8" fill="none" stroke="#6366f1" stroke-width="20"/>
+    <line x1="150" y1="0" x2="150" y2="300" stroke="#6366f1" stroke-width="15" opacity="0.5"/>
+    <line x1="0" y1="150" x2="300" y2="150" stroke="#6366f1" stroke-width="15" opacity="0.5"/>
+  </g>
+  <!-- Neural network nodes -->
+  <g opacity="0.15">
+    <circle cx="100" cy="300" r="3" fill="#818cf8"/><circle cx="140" cy="280" r="3" fill="#818cf8"/>
+    <circle cx="180" cy="310" r="3" fill="#818cf8"/><circle cx="120" cy="340" r="3" fill="#818cf8"/>
+    <circle cx="160" cy="350" r="3" fill="#818cf8"/>
+    <line x1="100" y1="300" x2="140" y2="280" stroke="#818cf8" stroke-width="0.5"/>
+    <line x1="140" y1="280" x2="180" y2="310" stroke="#818cf8" stroke-width="0.5"/>
+    <line x1="100" y1="300" x2="120" y2="340" stroke="#818cf8" stroke-width="0.5"/>
+    <line x1="120" y1="340" x2="160" y2="350" stroke="#818cf8" stroke-width="0.5"/>
+  </g>
+  <!-- Title -->
+  <text x="60" y="140" font-family="Noto Sans SC, sans-serif" font-size="46" font-weight="800" fill="#f8fafc" letter-spacing="3">算力产业链深度展望</text>
+  <text x="60" y="210" font-family="Noto Sans SC, sans-serif" font-size="28" font-weight="600" fill="#818cf8" letter-spacing="2">国产AI大模型、算力芯片与绿色电力</text>
+  <line x1="60" y1="245" x2="620" y2="245" stroke="#6366f1" stroke-width="1.5" opacity="0.4"/>
+  <!-- Key points -->
+  <g transform="translate(60, 300)" opacity="0.75">
+    <circle cx="8" cy="-4" r="4" fill="#818cf8"/><text x="22" y="0" font-family="Noto Sans SC, sans-serif" font-size="15" fill="#cbd5e1">国产大模型：技术拐点+资本化，算力需求持续爆发</text>
+    <circle cx="8" cy="30" r="4" fill="#22c55e"/><text x="22" y="34" font-family="Noto Sans SC, sans-serif" font-size="15" fill="#cbd5e1">国产算力芯片：全面缺货，供应链整体进入兑现期</text>
+    <circle cx="8" cy="64" r="4" fill="#f59e0b"/><text x="22" y="68" font-family="Noto Sans SC, sans-serif" font-size="15" fill="#cbd5e1">绿电资产：0.5倍PB估值洼地，算电协同新范式</text>
+  </g>
+  <text x="60" y="580" font-family="JetBrains Mono, monospace" font-size="12" fill="#64748b">AI INFRASTRUCTURE · DOMESTIC CHIPS · GREEN POWER · 2026</text>
+  <text x="1050" y="580" font-family="Noto Sans SC, sans-serif" font-size="14" fill="#64748b" text-anchor="end">zcxGGmu's Blog</text>
+</svg>
