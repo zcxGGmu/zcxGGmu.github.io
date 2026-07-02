@@ -73,7 +73,7 @@
 <p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/cover.png" alt="Sashiko 深度解析：把 Linux 内核代码审查拆成可验证的多阶段智能流水线"></p>
 <p>Sashiko 是一个很有代表性的 agentic code review 项目。它的目标不是泛泛地让大模型“帮忙看代码”，而是把 Linux Kernel 的补丁审查流程拆成一条可持久化、可恢复、可验证、可度量的流水线：先收集 patch，再解析邮件和 series，再找到合适的 kernel baseline，再用 git worktree 证明补丁能应用，最后让多阶段 LLM review worker 在受控工具箱中查证代码，并输出符合 LKML 习惯的 inline review。</p>
 <p>这类系统真正难的地方，不是调用某个模型 API，而是如何把概率模型放进确定性工程系统里。Sashiko 的价值也正在这里：它把“模型可能发现 bug”这个不稳定能力，用数据库状态机、baseline 检测、worktree 沙箱、严格 JSON 校验、只读 git 工具、token 预算、邮件策略和 embargo 机制包起来，让它更接近一个可以长期运行的内核维护辅助系统。</p>
-<p>本文基于本地项目 <code>/Users/zq/Desktop/ai-projs/harness/sashiko</code> 的 README、设计文档、源码和测试结构进行解析，重点讨论系统架构、核心模块、补丁到 review 的端到端流程、11 阶段审查协议、AI provider/tool calling 抽象，以及这个项目对 agentic engineering 的启发。</p>
+<p>本文基于该项目的 README、设计文档、源码和测试结构进行解析，重点讨论系统架构、核心模块、补丁到 review 的端到端流程、11 阶段审查协议、AI provider/tool calling 抽象，以及这个项目对 agentic engineering 的启发。</p>
 
 <h2 id="定位">项目定位：它不是聊天机器人，而是内核补丁审查系统</h2>
 <p>Sashiko 的 README 把它定义为“agentic Linux kernel code review system”。这句话里的三个限定词都很重要。</p>
