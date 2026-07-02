@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="1280" height="820">
+<style>
+text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.title { font-size: 28px; font-weight: 700; fill: #111827; }
+.subtitle { font-size: 14px; fill: #6b7280; }
+.boxTitle { font-size: 16px; font-weight: 700; fill: #111827; }
+.boxText { font-size: 12px; fill: #4b5563; }
+.lane { fill: #f8fafc; stroke: #d1d5db; stroke-dasharray: 7 5; stroke-width: 1.4; }
+.label { font-size: 11px; fill: #6b7280; font-weight: 700; letter-spacing: .05em; }
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#ea580c"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/></marker>
+</defs>
+<rect width="1280" height="820" fill="#ffffff"/>
+<text x="48" y="50" class="title" text-anchor="start">CLI / Local Review 双路径</text>
+<text x="50" y="78" class="subtitle" text-anchor="start">sashiko-cli local 默认优先提交到 daemon；--force-local 才直接运行本地 review subprocess</text>
+<rect x="80" y="170" width="190" height="90" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="96" y="198" class="boxTitle" text-anchor="start">sashiko-cli local</text>
+<text x="96" y="222" class="boxText" text-anchor="start">input: commit/range</text>
+<text x="96" y="240" class="boxText" text-anchor="start">repo + baseline</text>
+<rect x="350" y="150" width="210" height="120" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="366" y="178" class="boxTitle" text-anchor="start">探测 daemon</text>
+<text x="366" y="202" class="boxText" text-anchor="start">Settings.toml server</text>
+<text x="366" y="220" class="boxText" text-anchor="start">HTTP health/API</text>
+<rect x="675" y="115" width="230" height="105" rx="10" fill="#ecfdf5" stroke="#86efac" stroke-width="1.5"/>
+<text x="691" y="143" class="boxTitle" text-anchor="start">Daemon path</text>
+<text x="691" y="167" class="boxText" text-anchor="start">/api/submit</text>
+<text x="691" y="185" class="boxText" text-anchor="start">queue patchset</text>
+<text x="691" y="203" class="boxText" text-anchor="start">show status</text>
+<rect x="675" y="330" width="230" height="120" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="691" y="358" class="boxTitle" text-anchor="start">Local subprocess</text>
+<text x="691" y="382" class="boxText" text-anchor="start">build ReviewInput JSON</text>
+<text x="691" y="400" class="boxText" text-anchor="start">spawn review binary</text>
+<text x="691" y="418" class="boxText" text-anchor="start">parse JSON result</text>
+<rect x="990" y="330" width="190" height="120" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+<text x="1006" y="358" class="boxTitle" text-anchor="start">review binary</text>
+<text x="1006" y="382" class="boxText" text-anchor="start">apply patches</text>
+<text x="1006" y="400" class="boxText" text-anchor="start">optional AI</text>
+<text x="1006" y="418" class="boxText" text-anchor="start">stdout JSON</text>
+<path d="M270,215 L350,215" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="256" y="199" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="310" y="215" class="boxText" text-anchor="middle">start</text>
+<path d="M560,195 L675,165" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+<rect x="563" y="164" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="617" y="180" class="boxText" text-anchor="middle">daemon alive</text>
+<path d="M560,225 L675,380" stroke="#ea580c" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+<rect x="563" y="286" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="617" y="302" class="boxText" text-anchor="middle">--force-local / down</text>
+<path d="M905,390 L990,390" stroke="#ea580c" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+<rect x="893" y="374" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="947" y="390" class="boxText" text-anchor="middle">stdin JSON</text>
+<path d="M990,450 L790,510" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<rect x="836" y="464" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="890" y="480" class="boxText" text-anchor="middle">result</text>
+<rect x="640" y="520" width="300" height="90" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="656" y="548" class="boxTitle" text-anchor="start">交互模式</text>
+<text x="656" y="572" class="boxText" text-anchor="start">发现 issue 后等待用户修复或反驳</text>
+<text x="656" y="590" class="boxText" text-anchor="start">再次运行 review</text>
+</svg>

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive">
+  <title>Sashiko 深度解析：把 Linux 内核代码审查拆成可验证的多阶段智能流水线 - zcxGGmu's Blog</title>
+  <meta name="description" content="Sashiko 是一个面向 Linux Kernel patch 的 agentic review 系统。它把邮件、PR/MR、git patch、baseline 检测、worktree 验证、LLM 多阶段审查和 LKML 风格输出，组织成一条可恢复、可度量、可约束的工程流水线。">
+  <meta name="author" content="zcxGGmu">
+  <meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/sashiko-agentic-linux-kernel-code-review-architecture/">
+  <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
+  <meta property="og:title" content="Sashiko 深度解析：把 Linux 内核代码审查拆成可验证的多阶段智能流水线">
+  <meta property="og:description" content="Sashiko 是一个面向 Linux Kernel patch 的 agentic review 系统。它把邮件、PR/MR、git patch、baseline 检测、worktree 验证、LLM 多阶段审查和 LKML 风格输出，组织成一条可恢复、可度量、可约束的工程流水线。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zcxggmu.github.io/2026/sashiko-agentic-linux-kernel-code-review-architecture/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div id="app">
+    <div class="single-column-drawer-container" id="drawer">
+      <div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+    </div>
+    <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
+    <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+      <div id="navBackground" class="nav-background"></div>
+      <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
+        <a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a>
+        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>
+      </div>
+    </nav>
+    <div class="single-column-header-container" id="pageHead">
+      <a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+    </div>
+    <div id="content">
+      <div id="streamContainer" class="stream-container" role="main">
+        <div id="main-content"></div>
+        <div class="post-list-container post-list-container-shadow">
+    <article class="post">
+      <div class="post-head-wrapper" style="background-image:url('/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/cover.png')">
+        <div class="post-title">财富自由为什么更依赖投资，而不是工作：从出售时间到资产系统<div class="post-subtitle">工作是原始资本的来源，但财富自由不是把时间卖得更贵，而是把金融资本、认知资本和健康资本，转化成能够持续产生现金流的投资与商业系统。</div><div class="post-meta"><time itemprop="datePublished">2026-07-01</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%8A%A1/">个人财务</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1/">财富自由</a>&nbsp;<a href="/tags/%E6%8A%95%E8%B5%84/">投资</a>&nbsp;<a href="/tags/%E5%A4%8D%E5%88%A9/">复利</a>&nbsp;<a href="/tags/%E7%8E%B0%E9%87%91%E6%B5%81/">现金流</a>&nbsp;<a href="/tags/%E5%82%A8%E8%93%84%E7%8E%87/">储蓄率</a>&nbsp;<a href="/tags/%E9%87%91%E8%9E%8D%E8%B5%84%E6%9C%AC/">金融资本</a>&nbsp;<a href="/tags/%E8%AE%A4%E7%9F%A5%E8%B5%84%E6%9C%AC/">认知资本</a>&nbsp;<a href="/tags/%E5%81%A5%E5%BA%B7%E8%B5%84%E6%9C%AC/">健康资本</a>&nbsp;<a href="/tags/%E4%B8%AA%E4%BA%BA%E5%95%86%E4%B8%9A%E7%B3%BB%E7%BB%9F/">个人商业系统</a>&nbsp;<a href="/tags/%E8%B5%84%E4%BA%A7%E9%85%8D%E7%BD%AE/">资产配置</a>&nbsp;<a href="/tags/%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/">长期主义</a>&nbsp;<a href="/tags/%E6%99%AE%E9%80%9A%E4%BA%BA%20FIRE/">普通人 FIRE</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 12 min</div></div>
+        </div>
+      <div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/cover.png" alt="Sashiko 深度解析：把 Linux 内核代码审查拆成可验证的多阶段智能流水线"></p>
+<p>Sashiko 是一个很有代表性的 agentic code review 项目。它的目标不是泛泛地让大模型“帮忙看代码”，而是把 Linux Kernel 的补丁审查流程拆成一条可持久化、可恢复、可验证、可度量的流水线：先收集 patch，再解析邮件和 series，再找到合适的 kernel baseline，再用 git worktree 证明补丁能应用，最后让多阶段 LLM review worker 在受控工具箱中查证代码，并输出符合 LKML 习惯的 inline review。</p>
+<p>这类系统真正难的地方，不是调用某个模型 API，而是如何把概率模型放进确定性工程系统里。Sashiko 的价值也正在这里：它把“模型可能发现 bug”这个不稳定能力，用数据库状态机、baseline 检测、worktree 沙箱、严格 JSON 校验、只读 git 工具、token 预算、邮件策略和 embargo 机制包起来，让它更接近一个可以长期运行的内核维护辅助系统。</p>
+<p>本文基于本地项目 <code>/Users/zq/Desktop/ai-projs/harness/sashiko</code> 的 README、设计文档、源码和测试结构进行解析，重点讨论系统架构、核心模块、补丁到 review 的端到端流程、11 阶段审查协议、AI provider/tool calling 抽象，以及这个项目对 agentic engineering 的启发。</p>
+
+<h2 id="定位">项目定位：它不是聊天机器人，而是内核补丁审查系统</h2>
+<p>Sashiko 的 README 把它定义为“agentic Linux kernel code review system”。这句话里的三个限定词都很重要。</p>
+<p><strong>第一，它是 Linux kernel 专用。</strong>Linux 内核补丁审查不是普通应用代码 review。它涉及 UAPI 兼容性、驱动状态机、DMA、内存屏障、RCU、锁顺序、错误路径、资源生命周期、硬件寄存器访问、子系统维护规则和邮件列表礼仪。一个通用代码助手如果不了解这些上下文，很容易输出看似合理、实则不可用的建议。</p>
+<p><strong>第二，它是 patch review 系统。</strong>Sashiko 处理的基本对象不是仓库里的某个文件，而是邮件列表、git commit、PR/MR 或 mbox 中提交的 patchset。系统必须理解 cover letter、[PATCH 1/N]、Message-ID、References、To/Cc、baseline、series 顺序、后续 patch 是否修复前面 patch 的中间态问题等信息。</p>
+<p><strong>第三，它是 agentic，但不是失控 agent。</strong>LLM 能使用工具，但工具被限制为只读 git 查询：grep、show、blame、diff、log、read files、read prompt。模型可以查证上下文，却不能随意改代码。这种设计很适合 review 场景：review 的任务是发现、验证和表达问题，而不是直接修改被审查仓库。</p>
+<p>项目当前由 Rust 实现，crate 名称为 <code>sashiko</code>，版本为 <code>0.2.3</code>。它提供 daemon、Web UI/API、CLI、本地 review binary、benchmark 工具和多 provider LLM 接入。源码分布也很清楚：<code>src/main.rs</code> 负责 daemon 总装配，<code>src/reviewer.rs</code> 负责编排 review，<code>src/worker/prompts.rs</code> 执行多阶段 LLM pipeline，<code>src/ai/*</code> 封装模型后端，<code>src/toolbox/*</code> 提供只读代码工具。</p>
+
+<h2 id="总览">总体架构：确定性工程外壳包住概率模型内核</h2>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/architecture.png" alt="Sashiko 总体架构图"></p>
+<p>Sashiko 的总体架构可以理解为四层。</p>
+<p><strong>入口层</strong>负责把不同来源统一成内部事件。邮件列表通过 NNTP/lore 进入，CLI 和 HTTP API 可以提交 mbox、commit 或 range，Forge webhook 可以接 GitHub PR 和 GitLab MR。无论来源如何，最终都变成 <code>Event</code>：<code>ArticleFetched</code>、<code>PatchSubmitted</code>、<code>RawMboxSubmitted</code> 或 <code>IngestionFailed</code>。</p>
+<p><strong>解析与持久化层</strong>负责把 raw event 变成数据库对象。Parser dispatcher 调用 <code>parse_email</code> 或使用预解析的 patch metadata，DB worker 再把 message、thread、patch、patchset、subsystem、baseline、filter、MR metadata 等信息写入 libSQL。这里的关键原则是：先落库，再排队。即使进程崩溃，状态也能从数据库恢复。</p>
+<p><strong>审查层</strong>由 Reviewer service 和 AI Worker 组成。Reviewer 轮询 <code>Pending</code> patchset，解析 baseline 候选，创建 git worktree，尝试应用完整 series，然后为每个有效 patch 构造 review 输入。AI Worker 再进行 Phase 0 prompt 选择、stage planning、Stage 1-11 多阶段审查和工具调用。</p>
+<p><strong>输出层</strong>负责把 review 结果变成用户可消费的形式。结果会写入 <code>reviews</code>、<code>findings</code>、<code>ai_interactions</code> 和 <code>tool_usages</code>，同时根据 email policy 进入 <code>email_outbox</code>，或根据 Patchwork 策略进入 <code>patchwork_outbox</code>。Web UI/API 和 CLI 都可以查询这些状态。</p>
+<p>这套架构的本质，是用确定性系统约束概率模型：数据库记录状态，git worktree 验证补丁，schema 校验模型输出，工具箱限制模型行为，review pipeline 分离“发现问题”和“确认问题”。这样设计后，LLM 不再是一个孤立聊天窗口，而是流水线中的一个受控分析组件。</p>
+
+<h2 id="入口">三类入口：邮件列表、HTTP/API/CLI、Forge Webhook</h2>
+<p>Sashiko 的入口设计体现了它对 Linux 开发工作流的理解。Linux kernel 的主战场仍然是邮件列表，但现代协作也会遇到本地开发、自动化 CI、GitHub PR 和 GitLab MR。因此项目没有把入口绑定在单一协议上。</p>
+<p><strong>邮件列表入口</strong>由 <code>Ingestor</code> 和 <code>NntpClient</code> 负责。live mode 会轮询 <code>nntp.lore.kernel.org</code>；bootstrap/offline mode 可以从 lore git archive 拉取历史对象。这使它既能长期跟踪列表，也能批量导入历史邮件用于测试和基准评估。</p>
+<p><strong>API/CLI 入口</strong>集中在 <code>src/api.rs</code> 和 <code>src/bin/sashiko-cli.rs</code>。API 提供 <code>/api/submit</code>、<code>/api/patchsets</code>、<code>/api/review</code>、<code>/api/patchset/rerun</code>、<code>/api/patchset/cancel</code> 等端点；CLI 则提供 <code>submit</code>、<code>status</code>、<code>list</code>、<code>show</code>、<code>rerun</code>、<code>cancel</code> 和 <code>local</code> 命令。</p>
+<p><strong>Forge webhook 入口</strong>由 <code>src/forge.rs</code> 抽象。<code>ForgeProvider</code> trait 定义 <code>validate_event</code> 和 <code>parse_payload</code>，当前内置 GitHub 和 GitLab provider。webhook 收到 PR/MR 事件后，提取 repo URL、PR/MR number、title、head/base ref，再交给 FetchAgent 抽取 patch。README 也明确标注 Forge integration 仍是 experimental 和 unsupported，这一点在生产使用中要特别注意。</p>
+<p>三类入口的共同点是：它们都不直接调用模型，而是先把输入转化为统一事件，再进入同一套解析、持久化和 review 流水线。这避免了“每种入口都实现一遍 review 逻辑”的重复，也让系统状态可追踪。</p>
+
+<h2 id="事件流">事件与状态流：从 raw event 到 pending patchset</h2>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/event-flow.png" alt="Sashiko 事件与状态流"></p>
+<p>在 <code>src/events.rs</code> 中，Sashiko 定义了四类核心事件：<code>ArticleFetched</code>、<code>PatchSubmitted</code>、<code>RawMboxSubmitted</code> 和 <code>IngestionFailed</code>。这一步很关键，因为事件是入口层和内部处理层之间的协议边界。</p>
+<p><code>src/main.rs</code> 中的 parser dispatcher 消费 raw event，再把结果发给 <code>ParsedArticle</code> channel。对于 <code>ArticleFetched</code>，它会把 raw 邮件交给 <code>patch::parse_email</code>；对于 <code>PatchSubmitted</code>，它直接构造 <code>PatchsetMetadata</code> 和 <code>Patch</code>；对于 <code>RawMboxSubmitted</code>，它先把 mbox 切成多封邮件，再逐封解析。</p>
+<p>DB worker 是第二个收敛点。它批量消费 <code>ParsedArticle</code>，将邮件线程、message、patch、patchset、recipients、mailing lists、subsystems、baseline 和 filters 写入数据库。这里还有几个很实际的逻辑：根据 To/Cc 和 touched paths 识别 subsystem，根据 email policy 计算 embargo，合并同一 thread 中的 series，并在收到足够 patch parts 后把 patchset 从 <code>Incomplete</code> 推到 <code>Pending</code>。</p>
+<p>这种事件流的好处是吞吐和恢复。Parser 可以并发，DB worker 可以批量，Reviewer 不需要关心 patch 来自哪里，只要轮询 <code>Pending</code> patchset 即可。系统不依赖外部消息队列，而是用 tokio mpsc 和数据库状态协作：mpsc 负责运行时吞吐，libSQL 负责崩溃后的事实来源。</p>
+
+<h2 id="baseline">Baseline 与 Git Worktree：先证明补丁能应用，再谈审查</h2>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/baseline-worktree.png" alt="Sashiko baseline 与 worktree 模型"></p>
+<p>Linux kernel patch review 有一个容易被低估的问题：补丁到底应该应用在哪个树上？同一组变更可能依赖 <code>bpf-next</code>、<code>net-next</code>、<code>drm-misc</code>、<code>linux-next</code> 或主线中的不同状态。如果 baseline 选错，模型看到的上下文就是错的，review 结果自然会偏离真实开发状态。</p>
+<p>Sashiko 用 <code>src/baseline.rs</code> 中的 <code>BaselineRegistry</code> 解决这个问题。它会从 diff 中提取 touched files，再结合 MAINTAINERS、custom remotes、subject/body 里的 tree 线索和 subsystem 特例生成候选 baseline。对于 linux-mm 这类子系统，它还会有特殊优先级处理。</p>
+<p>Reviewer 会先检查 patchset 是否已有 forced baseline；如果有，就优先使用数据库里的 baseline commit。否则，它调用 <code>resolve_candidates</code> 生成候选列表，然后在 <code>prepare_baseline_worktree</code> 中逐个尝试。每个候选都会创建一个 git worktree，并尝试应用完整 patch series。只有整个 series 能应用成功，这个 baseline 才进入后续 review。</p>
+<p>worktree 模型由 <code>src/git_ops.rs</code> 封装。<code>GitWorktree::new</code> 使用 detached checkout，并通过 <code>reset --hard</code> 固定到目标 commit。补丁应用使用 <code>git am</code>，失败时执行 abort。并发 worktree 操作通过全局 async mutex 做保护，避免多个 review 同时 add/remove/prune worktree 时互相踩踏。review 结束后 worktree 会显式 remove，启动时还会清理 stale worktree。</p>
+<p>这一层是 Sashiko 的工程底座。它先用确定性 git 机制证明“补丁在这个基线上成立”，再让模型审查。没有这一步，LLM 很容易在错误上下文里批评并不存在的问题，或者漏掉 baseline 差异导致的真实风险。</p>
+
+<h2 id="provider">AI Provider 抽象：把 Gemini、Claude、OpenAI-compatible 和 CLI 后端统一起来</h2>
+<p>Sashiko 的模型接入层集中在 <code>src/ai/*</code>。核心接口是 <code>AiProvider</code> trait，它统一暴露 <code>generate_content</code>、<code>estimate_tokens</code>、<code>get_capabilities</code> 和可选 <code>cache_stats</code>。调用方只依赖 <code>AiRequest</code>、<code>AiResponse</code>、<code>AiMessage</code>、<code>AiTool</code>、<code>ToolCall</code>、<code>AiUsage</code> 这些统一结构。</p>
+<p>这种抽象让 Sashiko 可以同时支持多种后端：Gemini、Claude API、OpenAI-compatible、AWS Bedrock、Vertex AI，以及 Claude CLI、Codex CLI、Copilot CLI、Kiro CLI、Devin CLI 等本地/订阅式后端。不同 provider 的 wire format 可以完全不同，但 review pipeline 不需要知道这些差异。</p>
+<p>Provider factory 还有一个重要细节：<code>create_provider_cached</code> 可以给 provider 包一层 <code>CachingAiProvider</code>，把响应缓存放在主 database 同目录的 <code>response_cache.db</code>。对于多阶段审查和 benchmark 迭代来说，这可以显著降低重复请求成本。</p>
+<p>错误分类也被统一成 <code>AiErrorClass</code>：<code>Fatal</code>、<code>RateLimit</code> 和 <code>Transient</code>。SessionRunner 可以对 rate limit 和 transient error 做 sleep + retry；对某些 provider 的 recitation/safety block，也可以通过 session hook 转换成带反馈的重试。这是把外部模型服务纳入工程系统时必须做的抽象，否则每个 provider 的失败都会泄漏到业务层。</p>
+
+<h2 id="toolbox">SessionRunner 与 ToolBox：让模型查证代码，而不是凭记忆猜</h2>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/tool-loop.png" alt="Sashiko SessionRunner 与 ToolBox 循环"></p>
+<p>Sashiko 的 LLM 交互不是一次 prompt、一次 answer。<code>src/ai/session.rs</code> 定义了 <code>LlmSession</code> 和 <code>SessionRunner</code>。一个 session 负责提供 system prompt、initial prompt、tool declarations、temperature、response format、validation hook 和 provider error hook；SessionRunner 则驱动多轮循环。</p>
+<p>循环逻辑大致是：构造 <code>AiRequest</code> 调用 provider；如果返回 <code>tool_calls</code>，就调用 session 的 <code>call_tools</code>；工具结果作为 <code>AiRole::Tool</code> message 放回 history；继续下一轮；如果没有 tool call，则进入 <code>validate</code>。如果输出格式不合格，validation 会返回反馈，Runner 追加反馈后重试。</p>
+<p>工具箱在 <code>src/toolbox/mod.rs</code> 和 <code>src/toolbox/framework.rs</code>。<code>ToolRegistry</code> 负责声明工具、标准化参数、动态 dispatch；<code>ToolBox</code> 把 registry 和 <code>SashikoToolContext</code> 绑定起来。context 包含 worktree path、prompt path、active patch files、virtual HEAD 和工具缓存。</p>
+<p>当前工具主要是只读 git 工具：<code>git_read_files</code>、<code>git_blame</code>、<code>git_diff</code>、<code>git_show</code>、<code>git_log</code>、<code>git_ls</code>、<code>git_grep</code>、<code>git_find_files</code>，以及用于读取 review prompt 的 <code>read_prompt</code>。这套工具让模型可以在审查过程中查调用链、看历史、读定义、找符号，而不是凭训练记忆臆测内核源码。</p>
+<p>这里的设计很克制：工具足够强，能提高审查证据质量；工具又足够窄，不允许模型修改仓库。对 review 系统来说，这是合适的能力边界。</p>
+
+<h2 id="pipeline">11 阶段审查流水线：先发散找问题，再收敛成证据</h2>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/review-pipeline.png" alt="Sashiko 11 阶段审查流水线"></p>
+<p>Sashiko 最有价值的设计，是把内核审查拆成 11 个阶段。Stage 1-7 类似一组专科 reviewer 并行会诊；Stage 8-11 则是 lead reviewer 做去重、仲裁、验证和最终表达。</p>
+<p><strong>Stage 1</strong> 分析 commit 主目标，关注架构思想、UAPI、兼容性和概念层面的错误。<strong>Stage 2</strong> 核对实现是否真的完成 commit message 里的承诺，有没有漏改驱动、漏处理 corner case 或引入未说明副作用。<strong>Stage 3</strong> 追踪执行流，检查错误路径、返回值、off-by-one、NULL dereference 等逻辑问题。</p>
+<p><strong>Stage 4</strong> 关注资源管理，分析内存泄漏、UAF、double free、对象生命周期、队列和 workqueue。<strong>Stage 5</strong> 关注锁和同步，包括死锁、锁顺序、RCU 规则、IRQ 上下文和线程安全。<strong>Stage 6</strong> 是安全审计，关注 buffer overflow、越界读写、TOCTOU、信息泄漏。<strong>Stage 7</strong> 是硬件工程师视角，专门审查 driver/hardware 代码中的寄存器访问、DMA mapping、memory barrier、时序和电源/时钟状态机。</p>
+<p>前 7 个阶段产出两类对象：<code>concerns</code> 和 <code>dismissed_concerns</code>。这很重要。系统不仅记录“怀疑有什么问题”，也记录“检查过但排除的问题”。后续 Stage 9 可以把二者放在一起做冲突仲裁，避免一个阶段报问题、另一个阶段已经证明不是问题。</p>
+<p><strong>Stage 8</strong> 做去重与合并，把重复 root cause、重复代码位置、重复 failure mode 合成一个更完整 concern，同时保留精确 locations。<strong>Stage 9</strong> 做 concern 与 dismissed concern 的冲突解决，明确要求二者都不可信，必须回到代码证据判断哪边成立。<strong>Stage 10</strong> 做最终验证和 severity 估计，过滤 false positive，检查后续 patch 是否已经修复中间态问题，并区分 pre-existing 与 newly introduced。<strong>Stage 11</strong> 将 findings 转成 LKML-friendly inline email review。</p>
+<p>这套 pipeline 的核心是“先提高召回，再控制误报”。前段宁可多怀疑，后段用证据收敛。相比让模型一次性输出最终 review，这种结构更像工程化的审查协议。</p>
+
+<h2 id="data">数据模型：patchset、review、finding 与 interaction 的主链路</h2>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/data-model.png" alt="Sashiko 核心数据模型"></p>
+<p>Sashiko 的数据模型围绕几个核心实体展开。</p>
+<p><code>threads</code> 和 <code>messages</code> 保存邮件线程和邮件本体；<code>patchsets</code> 表示一组逻辑相关的 patch series；<code>patches</code> 保存 series 中的单个 patch；<code>baselines</code> 保存 repo、branch 和 last known commit；<code>reviews</code> 保存对 patchset 或单 patch 的审查结果；<code>findings</code> 保存结构化问题，包括 severity、problem、suggestion、preexisting 和 locations。</p>
+<p>AI 相关审计信息也被持久化。<code>ai_interactions</code> 记录 provider、model、input_context、output_raw、tokens_in、tokens_out、tokens_cached；<code>tool_usages</code> 记录 review_id、tool_name、arguments、output_length 等。换句话说，Sashiko 不只是保存最终文本，而是尽量保存模型运行过程的可追踪证据。</p>
+<p>子系统关系通过多对多表表达：<code>messages_subsystems</code>、<code>threads_subsystems</code>、<code>patches_subsystems</code>、<code>patchsets_subsystems</code>。recipients 也被规范化为 <code>people</code> 和 <code>messages_recipients</code>。输出侧则有 <code>email_outbox</code> 和 <code>patchwork_outbox</code>。</p>
+<p>这个 schema 说明 Sashiko 不是“跑一次模型然后打印结果”的脚本，而是一个长期运行的 review tracking 系统。它需要回答：这个 patchset 当前是什么状态？对应哪个 baseline？哪些 patch 已 review？哪些 finding 是新增问题？模型用了多少 token？工具查了什么？邮件是否已经发出？这些问题都必须有持久化答案。</p>
+
+<h2 id="cli">CLI 与本地审查：daemon 优先，本地 subprocess 兜底</h2>
+<p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/local-cli.png" alt="Sashiko CLI 与本地审查双路径"></p>
+<p><code>sashiko-cli</code> 是项目面向开发者的日常入口。它可以提交 patch、查看状态、列出 patchsets、展示 review、请求 rerun、取消 pending review，也可以执行本地 review。</p>
+<p>最值得注意的是 <code>sashiko-cli local</code> 的双路径设计。默认情况下，它会先探测 daemon 是否可用。如果 daemon 正在运行，它会把本地 commit/range 通过 <code>/api/submit</code> 交给服务端统一排队审查。这样本地开发者和长期 daemon 共享同一套状态、Web UI、数据库和通知机制。</p>
+<p>如果 daemon 不可用，或者用户显式使用 <code>--force-local</code>，CLI 会进入本地 subprocess 路径：构造 <code>ReviewInput</code> JSON，通过 stdin 传给 <code>review</code> binary，由后者解析 baseline、创建或复用 worktree、应用 patches、可选执行 AI review，并把 JSON 结果输出到 stdout。</p>
+<p>本地模式还有 <code>--no-ai</code> 和 <code>--interactive</code>。前者只验证 patch 能否应用，适合快速检查；后者在发现 issue 后等待用户修复或输入 rebuttal，再重新运行 review。这使 Sashiko 不只是服务器端机器人，也可以作为个人开发工作流中的本地审查器。</p>
+
+<h2 id="可靠性">可靠性设计：并发、恢复、限流、缓存和 embargo</h2>
+<p>Sashiko 的可靠性设计分散在多个层面。</p>
+<p><strong>并发控制</strong>方面，parser dispatcher 使用 semaphore 控制解析并发；Reviewer 用 <code>review.concurrency</code> 控制 worktree/patchset 处理并发；LLM semaphore 则按 <code>concurrency * 3</code> 经验值扩展，以适配 Stage 1-7 并行、Stage 8-11 串行的平均请求形态。</p>
+<p><strong>崩溃恢复</strong>方面，系统启动时会 reset 中断状态，例如把 <code>Applying</code> / <code>In Review</code> 相关状态恢复到可继续处理的位置。worktree 目录也会在启动时清理，reference repo 会 prune stale worktrees，避免旧状态污染新的 review。</p>
+<p><strong>成本控制</strong>方面，配置提供 <code>max_input_tokens</code>、<code>max_interactions</code>、<code>max_total_tokens</code>、<code>max_total_output_tokens</code>、response cache、token usage 统计和 tool usage 统计。Prompt 选择也做了优化：Phase 0 先筛 relevant subsystem guides，Stage 3-6 可以不用 full log，prefetch 只提取 modified functions/structs。</p>
+<p><strong>输出控制</strong>方面，email policy 支持 <code>reply_all</code>、<code>reply_to_author</code>、<code>cc_individuals</code>、<code>mute_all</code>、静态 CC、ignored emails、subject prefixes、per-subsystem overrides 和 embargo hours。对于内核社区而言，自动 review 不是越快越好；有时需要延迟释放，避免干扰 maintainer 的人工节奏。</p>
+
+<h2 id="权衡">关键工程权衡：召回率、误报率、上下文成本和社区礼仪</h2>
+<p>Sashiko 有几个非常值得学习的 tradeoff。</p>
+<p><strong>召回率 vs 误报率。</strong>前 7 个阶段偏向多跑、多怀疑、多收集 concern；后 4 个阶段再去重、仲裁、验证和生成最终文本。这是典型的“先扩张搜索空间，再收敛证据”。如果一开始就要求模型只输出最终答案，召回率会下降；如果只追求召回，不做后段验证，误报会污染社区信任。</p>
+<p><strong>上下文完整性 vs token 成本。</strong>Linux kernel 太大，不可能把整个仓库塞进上下文。Sashiko 用 prompt index 筛选、prefetch modified functions/structs、只读 git tools、truncator 和 per-stage context 策略解决这个问题。模型初始只拿关键上下文，不够再查。</p>
+<p><strong>并行度 vs API 压力。</strong>Stage 1-7 并行可以提高吞吐，但 LLM 请求成本和 rate limit 会成为瓶颈。Sashiko 用 patchset concurrency 和 LLM semaphore 分层限流，避免 worktree 和 provider 同时被打爆。</p>
+<p><strong>单 patch review vs series final state。</strong>Linux patch series 中，前一个 patch 可能引入中间态，后一个 patch 再修复或重构。Sashiko 在 Stage 10 强调要检查 final series state，避免对中间态误报。这一点非常内核化，也非常重要。</p>
+<p><strong>自动化速度 vs 社区礼仪。</strong>Stage 11 专门生成 LKML-friendly inline reply，email policy 默认也非常保守。Sashiko 明白 review 结果不是发给机器看的，而是发给 maintainer、作者和邮件列表社区看的。技术正确之外，还需要语气、格式和时机正确。</p>
+
+<h2 id="局限">局限与风险：Sashiko 解决了什么，仍然没有解决什么</h2>
+<p>Sashiko 已经把 LLM review 工程化到相当完整的程度，但它仍然不是“自动维护者”。</p>
+<p>第一，模型输出仍然是概率性的。同一个 patch 在不同模型、不同温度、不同上下文下可能得到不同结果。Sashiko 用多阶段、验证、schema、工具查证降低不稳定性，但无法完全消除。</p>
+<p>第二，它并不可靠编译整个 kernel。设计文档也承认编译是 missing link。很多内核 bug 必须通过特定 config、特定硬件、特定 workload 或长期 fuzz 才能发现。Sashiko 更擅长静态语义审查、路径推理和上下文一致性检查。</p>
+<p>第三，baseline 检测仍是启发式。MAINTAINERS、subject、custom remotes 和 apply success 可以提高成功率，但内核树生态复杂，某些 patch 仍可能依赖尚未进入任何已知 tree 的上下文。</p>
+<p>第四，自动 review 可能产生社区成本。即使误报率不高，只要输出太频繁、语气不合适或位置不精确，就会打扰维护者。因此 email policy、embargo、mute、send_positive_review 等配置不是附属功能，而是生产系统的必要部分。</p>
+<p>第五，项目 schema 中还存在一些值得后续整理的边角问题，例如 <code>patchwork_outbox</code> 的 schema 片段里 <code>check_state</code> 字段出现重复定义痕迹。这类问题不影响整体架构判断，但说明项目仍在快速迭代中。</p>
+
+<h2 id="结论">结论：真正值得学习的是“可验证 agent 系统”的工程形态</h2>
+<p>Sashiko 最值得学习的地方，不是它用了哪个模型，也不是它能否在某个 benchmark 上找出多少 bug，而是它展示了一种可验证 agent 系统的工程形态。</p>
+<p>它没有把 LLM 当作万能黑盒，而是把 LLM 放在一个确定性的外壳里：输入被解析成事件，状态被写入数据库，baseline 被 git 验证，worktree 被隔离，工具是只读的，阶段输出有 schema，错误可以重试，token 可以统计，邮件输出有策略，结果可以在 Web UI 和 CLI 中追踪。</p>
+<p>对于任何想做代码审查 agent、CI agent、自动 triage agent 或维护者辅助系统的人，Sashiko 都提供了一个很好的参考：真正的 agentic engineering 不是“让模型自己想办法”，而是把任务拆成可验证阶段，把不确定推理限制在清晰边界内，再用工程系统记录、校验和恢复每一步。</p>
+<p>如果用一句话概括：Sashiko 不是一个会聊天的 review bot，而是一套面向 Linux kernel patch 的审查生产线。它把社区工作流、git 事实、数据库状态、模型推理和邮件礼仪缝合到一起，这也正好呼应了它名字的含义：用一针一线加固复杂系统中最容易磨损的位置。</p>
+</div></div>
+      <nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/wuxi-xdc-morgan-stanley-adc-cdmo-order-boom/">上一篇<br>药明合联：ADC CDMO订单爆发、83港元目标价与成长性再定价</a></nav>
+    </article>
+  </div>
+      </div>
+    </div>
+    <div id="sideContainer" class="side-container">
+      <button class="sidebar-collapse-toggle" type="button" data-sidebar-collapse-toggle title="收起左侧边栏" aria-label="收起左侧边栏" aria-expanded="true">
+        <span class="material-icons sidebar-collapse-icon" aria-hidden="true">chevron_left</span>
+      </button>
+      <a class="a-block nav-head false" href="/">
+        <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
+        <div class="nav-title">zcxGGmu's Blog</div>
+        <div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+      </a>
+      <div class="theme-switcher theme-switcher-desktop"><button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div>
+      <div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+      <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+    </div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#定位">项目定位：它不是聊天机器人，而是内核补丁审查系统</a><a class="toc-link toc-level-2" href="#总览">总体架构：确定性工程外壳包住概率模型内核</a><a class="toc-link toc-level-2" href="#入口">三类入口：邮件列表、HTTP/API/CLI、Forge Webhook</a><a class="toc-link toc-level-2" href="#事件流">事件与状态流：从 raw event 到 pending patchset</a><a class="toc-link toc-level-2" href="#baseline">Baseline 与 Git Worktree：先证明补丁能应用，再谈审查</a><a class="toc-link toc-level-2" href="#provider">AI Provider 抽象：把 Gemini、Claude、OpenAI-compatible 和 CLI 后端统一起来</a><a class="toc-link toc-level-2" href="#toolbox">SessionRunner 与 ToolBox：让模型查证代码，而不是凭记忆猜</a><a class="toc-link toc-level-2" href="#pipeline">11 阶段审查流水线：先发散找问题，再收敛成证据</a><a class="toc-link toc-level-2" href="#data">数据模型：patchset、review、finding 与 interaction 的主链路</a><a class="toc-link toc-level-2" href="#cli">CLI 与本地审查：daemon 优先，本地 subprocess 兜底</a><a class="toc-link toc-level-2" href="#可靠性">可靠性设计：并发、恢复、限流、缓存和 embargo</a><a class="toc-link toc-level-2" href="#权衡">关键工程权衡：召回率、误报率、上下文成本和社区礼仪</a><a class="toc-link toc-level-2" href="#局限">局限与风险：Sashiko 解决了什么，仍然没有解决什么</a><a class="toc-link toc-level-2" href="#结论">结论：真正值得学习的是“可验证 agent 系统”的工程形态</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+  </div>
+  <script src="/js/journal.js"></script>
+  <script src="/js/code-enhance.js"></script>
+  <script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+  <script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+  <script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+  <script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>

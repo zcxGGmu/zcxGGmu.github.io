@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="1280" height="820">
+<style>
+text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.title { font-size: 28px; font-weight: 700; fill: #111827; }
+.subtitle { font-size: 14px; fill: #6b7280; }
+.boxTitle { font-size: 16px; font-weight: 700; fill: #111827; }
+.boxText { font-size: 12px; fill: #4b5563; }
+.lane { fill: #f8fafc; stroke: #d1d5db; stroke-dasharray: 7 5; stroke-width: 1.4; }
+.label { font-size: 11px; fill: #6b7280; font-weight: 700; letter-spacing: .05em; }
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#ea580c"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/></marker>
+</defs>
+<rect width="1280" height="820" fill="#ffffff"/>
+<text x="48" y="50" class="title" text-anchor="start">11 阶段 Review Pipeline</text>
+<text x="50" y="78" class="subtitle" text-anchor="start">前 7 阶段并行提高召回，后 4 阶段串行去重、仲裁、验证和生成 LKML 输出</text>
+<rect x="45" y="125" width="1190" height="185" rx="12" fill="#eff6ff" stroke="#d1d5db" stroke-dasharray="7 5"/>
+<text x="61" y="149" class="label" text-anchor="start">PARALLEL SEARCH</text>
+<rect x="45" y="350" width="1190" height="220" rx="12" fill="#f8fafc" stroke="#d1d5db" stroke-dasharray="7 5"/>
+<text x="61" y="374" class="label" text-anchor="start">SERIAL CONSOLIDATION</text>
+<rect x="45" y="620" width="1190" height="120" rx="12" fill="#ecfdf5" stroke="#d1d5db" stroke-dasharray="7 5"/>
+<text x="61" y="644" class="label" text-anchor="start">OUTPUT</text>
+<rect x="80" y="175" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="96" y="203" class="boxTitle" text-anchor="start">S1 目标意图</text>
+<text x="96" y="227" class="boxText" text-anchor="start">concept / UAPI</text>
+<rect x="245" y="175" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="261" y="203" class="boxTitle" text-anchor="start">S2 实现核对</text>
+<text x="261" y="227" class="boxText" text-anchor="start">claims vs code</text>
+<rect x="410" y="175" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="426" y="203" class="boxTitle" text-anchor="start">S3 执行流</text>
+<text x="426" y="227" class="boxText" text-anchor="start">logic paths</text>
+<rect x="575" y="175" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="591" y="203" class="boxTitle" text-anchor="start">S4 资源管理</text>
+<text x="591" y="227" class="boxText" text-anchor="start">UAF / leak</text>
+<rect x="740" y="175" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="756" y="203" class="boxTitle" text-anchor="start">S5 锁并发</text>
+<text x="756" y="227" class="boxText" text-anchor="start">RCU / deadlock</text>
+<rect x="905" y="175" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="921" y="203" class="boxTitle" text-anchor="start">S6 安全审计</text>
+<text x="921" y="227" class="boxText" text-anchor="start">OOB / TOCTOU</text>
+<rect x="1070" y="175" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="1086" y="203" class="boxTitle" text-anchor="start">S7 硬件视角</text>
+<text x="1086" y="227" class="boxText" text-anchor="start">DMA / barrier</text>
+<rect x="140" y="410" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="156" y="438" class="boxTitle" text-anchor="start">S8 去重合并</text>
+<text x="156" y="462" class="boxText" text-anchor="start">concerns merge</text>
+<rect x="390" y="410" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="406" y="438" class="boxTitle" text-anchor="start">S9 冲突仲裁</text>
+<text x="406" y="462" class="boxText" text-anchor="start">concern vs dismissed</text>
+<rect x="640" y="410" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="656" y="438" class="boxTitle" text-anchor="start">S10 最终验证</text>
+<text x="656" y="462" class="boxText" text-anchor="start">false-positive filter</text>
+<rect x="890" y="410" width="130" height="85" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="906" y="438" class="boxTitle" text-anchor="start">S11 邮件生成</text>
+<text x="906" y="462" class="boxText" text-anchor="start">LKML inline reply</text>
+<path d="M210,218 L245,218" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M375,218 L410,218" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M540,218 L575,218" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M705,218 L740,218" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M870,218 L905,218" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M1035,218 L1070,218" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M270,452 L390,452" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<path d="M520,452 L640,452" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<path d="M770,452 L890,452" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<path d="M640,265 L205,410" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+<path d="M640,265 L455,410" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+<path d="M640,265 L705,410" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+<path d="M640,265 L955,410" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+<rect x="470" y="650" width="340" height="58" rx="10" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+<text x="492" y="684" class="boxTitle" text-anchor="start">最终产物</text>
+<text x="492" y="706" class="boxText" text-anchor="start">findings + inline review + token usage + interaction logs</text>
+<path d="M955,495 L640,650" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+</svg>

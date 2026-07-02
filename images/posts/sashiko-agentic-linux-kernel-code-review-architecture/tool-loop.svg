@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="1280" height="820">
+<style>
+text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.title { font-size: 28px; font-weight: 700; fill: #111827; }
+.subtitle { font-size: 14px; fill: #6b7280; }
+.boxTitle { font-size: 16px; font-weight: 700; fill: #111827; }
+.boxText { font-size: 12px; fill: #4b5563; }
+.lane { fill: #f8fafc; stroke: #d1d5db; stroke-dasharray: 7 5; stroke-width: 1.4; }
+.label { font-size: 11px; fill: #6b7280; font-weight: 700; letter-spacing: .05em; }
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#ea580c"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/></marker>
+</defs>
+<rect width="1280" height="820" fill="#ffffff"/>
+<text x="48" y="50" class="title" text-anchor="start">SessionRunner + ToolBox 调用循环</text>
+<text x="50" y="78" class="subtitle" text-anchor="start">模型可以请求只读 git 工具；工具结果回填为 Tool message，直到输出通过校验</text>
+<rect x="80" y="185" width="180" height="95" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+<text x="96" y="213" class="boxTitle" text-anchor="start">ReviewStageSession</text>
+<text x="96" y="237" class="boxText" text-anchor="start">system prompt</text>
+<text x="96" y="255" class="boxText" text-anchor="start">user prompt</text>
+<text x="96" y="273" class="boxText" text-anchor="start">validate()</text>
+<rect x="355" y="165" width="190" height="130" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="371" y="193" class="boxTitle" text-anchor="start">SessionRunner</text>
+<text x="371" y="217" class="boxText" text-anchor="start">max turns</text>
+<text x="371" y="235" class="boxText" text-anchor="start">validation retry</text>
+<text x="371" y="253" class="boxText" text-anchor="start">rate-limit retry</text>
+<rect x="650" y="170" width="190" height="120" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="666" y="198" class="boxTitle" text-anchor="start">AiProvider</text>
+<text x="666" y="222" class="boxText" text-anchor="start">Gemini / Claude</text>
+<text x="666" y="240" class="boxText" text-anchor="start">OpenAI-compatible</text>
+<text x="666" y="258" class="boxText" text-anchor="start">CLI providers</text>
+<rect x="930" y="170" width="210" height="120" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="946" y="198" class="boxTitle" text-anchor="start">LLM Response</text>
+<text x="946" y="222" class="boxText" text-anchor="start">content</text>
+<text x="946" y="240" class="boxText" text-anchor="start">tool_calls[]</text>
+<text x="946" y="258" class="boxText" text-anchor="start">usage</text>
+<rect x="650" y="430" width="210" height="120" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="666" y="458" class="boxTitle" text-anchor="start">ToolRegistry</text>
+<text x="666" y="482" class="boxText" text-anchor="start">normalize args</text>
+<text x="666" y="500" class="boxText" text-anchor="start">dispatch</text>
+<text x="666" y="518" class="boxText" text-anchor="start">cache result</text>
+<rect x="930" y="430" width="210" height="120" rx="10" fill="#ecfdf5" stroke="#86efac" stroke-width="1.5"/>
+<text x="946" y="458" class="boxTitle" text-anchor="start">只读 Git Tools</text>
+<text x="946" y="482" class="boxText" text-anchor="start">grep / show / blame</text>
+<text x="946" y="500" class="boxText" text-anchor="start">diff / log / read files</text>
+<text x="946" y="518" class="boxText" text-anchor="start">read_prompt</text>
+<rect x="355" y="430" width="190" height="120" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="371" y="458" class="boxTitle" text-anchor="start">Validation</text>
+<text x="371" y="482" class="boxText" text-anchor="start">JSON schema</text>
+<text x="371" y="500" class="boxText" text-anchor="start">format feedback</text>
+<text x="371" y="518" class="boxText" text-anchor="start">fatal / retry</text>
+<path d="M260,232 L355,232" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="253" y="216" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="307" y="232" class="boxText" text-anchor="middle">request</text>
+<path d="M545,232 L650,232" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="543" y="216" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="597" y="232" class="boxText" text-anchor="middle">AiRequest</text>
+<path d="M840,232 L930,232" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="831" y="216" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="885" y="232" class="boxText" text-anchor="middle">response</text>
+<path d="M1035,290 L1035,430" stroke="#ea580c" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+<rect x="981" y="344" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="1035" y="360" class="boxText" text-anchor="middle">tool call</text>
+<path d="M930,490 L860,490" stroke="#ea580c" stroke-width="2" fill="none" marker-end="url(#arrow-orange)"/>
+<rect x="841" y="474" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="895" y="490" class="boxText" text-anchor="middle">execute</text>
+<path d="M650,490 L545,490" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+<rect x="543" y="474" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="597" y="490" class="boxText" text-anchor="middle">Tool msg</text>
+<path d="M445,430 L445,295" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<rect x="391" y="346" width="108" height="22" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="445" y="362" class="boxText" text-anchor="middle">no tools</text>
+<path d="M445,430 C330,360 330,285 355,250" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<rect x="325" y="342" width="120" height="24" rx="5" fill="#ffffff" opacity="0.96"/>
+<text x="385" y="359" class="boxText" text-anchor="middle">retry feedback</text>
+</svg>

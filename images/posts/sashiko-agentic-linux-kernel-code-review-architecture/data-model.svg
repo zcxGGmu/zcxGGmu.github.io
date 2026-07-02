@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="1280" height="820">
+<style>
+text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.title { font-size: 28px; font-weight: 700; fill: #111827; }
+.subtitle { font-size: 14px; fill: #6b7280; }
+.boxTitle { font-size: 16px; font-weight: 700; fill: #111827; }
+.boxText { font-size: 12px; fill: #4b5563; }
+.lane { fill: #f8fafc; stroke: #d1d5db; stroke-dasharray: 7 5; stroke-width: 1.4; }
+.label { font-size: 11px; fill: #6b7280; font-weight: 700; letter-spacing: .05em; }
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#ea580c"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/></marker>
+</defs>
+<rect width="1280" height="820" fill="#ffffff"/>
+<text x="48" y="50" class="title" text-anchor="start">核心数据模型</text>
+<text x="50" y="78" class="subtitle" text-anchor="start">主链路是 message → patchset → patch → review → finding；旁路记录 AI interaction、tool usage 和通知 outbox</text>
+<rect x="80" y="155" width="165" height="105" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="96" y="183" class="boxTitle" text-anchor="start">threads</text>
+<text x="96" y="207" class="boxText" text-anchor="start">id</text>
+<text x="96" y="225" class="boxText" text-anchor="start">root_message_id</text>
+<text x="96" y="243" class="boxText" text-anchor="start">subject</text>
+<rect x="300" y="155" width="165" height="105" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="316" y="183" class="boxTitle" text-anchor="start">messages</text>
+<text x="316" y="207" class="boxText" text-anchor="start">message_id</text>
+<text x="316" y="225" class="boxText" text-anchor="start">thread_id</text>
+<text x="316" y="243" class="boxText" text-anchor="start">author/body</text>
+<rect x="520" y="155" width="165" height="105" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="536" y="183" class="boxTitle" text-anchor="start">patchsets</text>
+<text x="536" y="207" class="boxText" text-anchor="start">status</text>
+<text x="536" y="225" class="boxText" text-anchor="start">baseline_id</text>
+<text x="536" y="243" class="boxText" text-anchor="start">embargo_until</text>
+<rect x="750" y="155" width="165" height="105" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="766" y="183" class="boxTitle" text-anchor="start">patches</text>
+<text x="766" y="207" class="boxText" text-anchor="start">patchset_id</text>
+<text x="766" y="225" class="boxText" text-anchor="start">message_id</text>
+<text x="766" y="243" class="boxText" text-anchor="start">diff</text>
+<rect x="970" y="155" width="165" height="105" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="986" y="183" class="boxTitle" text-anchor="start">reviews</text>
+<text x="986" y="207" class="boxText" text-anchor="start">patchset_id</text>
+<text x="986" y="225" class="boxText" text-anchor="start">patch_id</text>
+<text x="986" y="243" class="boxText" text-anchor="start">interaction_id</text>
+<rect x="970" y="400" width="165" height="105" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="986" y="428" class="boxTitle" text-anchor="start">findings</text>
+<text x="986" y="452" class="boxText" text-anchor="start">review_id</text>
+<text x="986" y="470" class="boxText" text-anchor="start">severity</text>
+<text x="986" y="488" class="boxText" text-anchor="start">locations</text>
+<rect x="720" y="400" width="165" height="105" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+<text x="736" y="428" class="boxTitle" text-anchor="start">ai_interactions</text>
+<text x="736" y="452" class="boxText" text-anchor="start">provider/model</text>
+<text x="736" y="470" class="boxText" text-anchor="start">input/output</text>
+<text x="736" y="488" class="boxText" text-anchor="start">tokens</text>
+<rect x="500" y="400" width="165" height="105" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+<text x="516" y="428" class="boxTitle" text-anchor="start">tool_usages</text>
+<text x="516" y="452" class="boxText" text-anchor="start">review_id</text>
+<text x="516" y="470" class="boxText" text-anchor="start">tool_name</text>
+<text x="516" y="488" class="boxText" text-anchor="start">output_length</text>
+<rect x="285" y="400" width="165" height="105" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="301" y="428" class="boxTitle" text-anchor="start">baselines</text>
+<text x="301" y="452" class="boxText" text-anchor="start">repo_url</text>
+<text x="301" y="470" class="boxText" text-anchor="start">branch</text>
+<text x="301" y="488" class="boxText" text-anchor="start">commit</text>
+<rect x="80" y="400" width="165" height="105" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="96" y="428" class="boxTitle" text-anchor="start">subsystems</text>
+<text x="96" y="452" class="boxText" text-anchor="start">name</text>
+<text x="96" y="470" class="boxText" text-anchor="start">mailing_list</text>
+<path d="M245,207 L300,207" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M465,207 L520,207" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M685,207 L750,207" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M915,207 L970,207" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M1050,260 L1050,400" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<path d="M970,450 L885,450" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<path d="M970,500 L665,500" stroke="#9333ea" stroke-width="2" fill="none" marker-end="url(#arrow-purple)"/>
+<path d="M590,260 L365,400" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+<path d="M160,400 L545,260" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" stroke-dasharray="6 4"/>
+<g transform="translate(80,720)">
+<line x1="0" y1="8" x2="35" y2="8" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<text x="46" y="12" class="boxText" text-anchor="start">主实体关系</text>
+<line x1="180" y1="8" x2="215" y2="8" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<text x="226" y="12" class="boxText" text-anchor="start">AI/工具审计记录</text>
+<line x1="410" y1="8" x2="445" y2="8" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-blue)"/>
+<text x="456" y="12" class="boxText" text-anchor="start">多对多子系统关联</text>
+</g>
+</svg>
