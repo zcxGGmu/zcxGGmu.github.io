@@ -75,12 +75,35 @@
 <p>这类系统真正难的地方，不是调用某个模型 API，而是如何把概率模型放进确定性工程系统里。Sashiko 的价值也正在这里：它把“模型可能发现 bug”这个不稳定能力，用数据库状态机、baseline 检测、worktree 沙箱、严格 JSON 校验、只读 git 工具、token 预算、邮件策略和 embargo 机制包起来，让它更接近一个可以长期运行的内核维护辅助系统。</p>
 <p>本文基于该项目的 README、设计文档、源码和测试结构进行解析，重点讨论系统架构、核心模块、补丁到 review 的端到端流程、11 阶段审查协议、AI provider/tool calling 抽象，以及这个项目对 agentic engineering 的启发。</p>
 
+<h2 id="读者">适合谁读：从项目解析进入可验证 Agent 工程</h2>
+<p>这篇文章适合三类读者。</p>
+<p><strong>第一类是做代码审查、CI、研发效能和 DevTools 的工程师。</strong>Sashiko 把 review 任务拆成 ingestion、baseline、worktree、tool calling、multi-stage reasoning、outbox notification 等多个可观察环节。它提供的不是一个炫技 demo，而是一套可以借鉴到内部 review bot、自动 triage、PR 风险扫描和 release gate 的工程骨架。</p>
+<p><strong>第二类是做 Agent 系统工程化的人。</strong>很多 agent 项目失败，不是因为模型能力不够，而是因为没有状态机、没有证据链、没有恢复机制、没有工具边界，也没有输出质量控制。Sashiko 的设计价值在于：它把不确定的 LLM 推理压进确定性的执行框架里，让每一步都可以排队、重试、记录、审计和回放。</p>
+<p><strong>第三类是关注 Linux kernel、系统软件和开源协作的人。</strong>内核补丁审查天然复杂：patch series、邮件线程、MAINTAINERS、子系统树、锁和内存模型、硬件状态机、LKML 礼仪，任何一个环节处理粗糙都会让自动化输出失去可信度。Sashiko 的项目边界足够窄，反而让它更能体现高质量 agent 系统应该如何尊重真实工作流。</p>
+<p>因此，本文不会把 Sashiko 当成“某个模型 wrapper”来读，而是把它当成一个可验证 agent 系统样本：输入如何标准化，状态如何落库，工具如何受限，推理如何分阶段，输出如何变成社区可接受的 review。</p>
+
 <h2 id="定位">项目定位：它不是聊天机器人，而是内核补丁审查系统</h2>
 <p>Sashiko 的 README 把它定义为“agentic Linux kernel code review system”。这句话里的三个限定词都很重要。</p>
 <p><strong>第一，它是 Linux kernel 专用。</strong>Linux 内核补丁审查不是普通应用代码 review。它涉及 UAPI 兼容性、驱动状态机、DMA、内存屏障、RCU、锁顺序、错误路径、资源生命周期、硬件寄存器访问、子系统维护规则和邮件列表礼仪。一个通用代码助手如果不了解这些上下文，很容易输出看似合理、实则不可用的建议。</p>
 <p><strong>第二，它是 patch review 系统。</strong>Sashiko 处理的基本对象不是仓库里的某个文件，而是邮件列表、git commit、PR/MR 或 mbox 中提交的 patchset。系统必须理解 cover letter、[PATCH 1/N]、Message-ID、References、To/Cc、baseline、series 顺序、后续 patch 是否修复前面 patch 的中间态问题等信息。</p>
 <p><strong>第三，它是 agentic，但不是失控 agent。</strong>LLM 能使用工具，但工具被限制为只读 git 查询：grep、show、blame、diff、log、read files、read prompt。模型可以查证上下文，却不能随意改代码。这种设计很适合 review 场景：review 的任务是发现、验证和表达问题，而不是直接修改被审查仓库。</p>
 <p>项目当前由 Rust 实现，crate 名称为 <code>sashiko</code>，版本为 <code>0.2.3</code>。它提供 daemon、Web UI/API、CLI、本地 review binary、benchmark 工具和多 provider LLM 接入。源码分布也很清楚：<code>src/main.rs</code> 负责 daemon 总装配，<code>src/reviewer.rs</code> 负责编排 review，<code>src/worker/prompts.rs</code> 执行多阶段 LLM pipeline，<code>src/ai/*</code> 封装模型后端，<code>src/toolbox/*</code> 提供只读代码工具。</p>
+
+<h2 id="对比">与普通 Code Review Bot 的差异：从单轮评论到审查生产线</h2>
+<p>理解 Sashiko 最直接的方式，是把它和常见的 code review bot 放在一起比较。很多 review bot 的核心流程是：拿到 diff，把 diff 放进 prompt，请模型输出评论。这个路径足够简单，但很难处理 Linux kernel 这类高上下文、高社区约束、高误报成本的场景。</p>
+<table>
+<thead><tr><th>维度</th><th>普通 Review Bot</th><th>Sashiko</th></tr></thead>
+<tbody>
+<tr><td>输入对象</td><td>通常是 PR diff 或单个 patch</td><td>邮件、mbox、commit/range、PR/MR，最终统一成 patchset/thread/message</td></tr>
+<tr><td>上下文基础</td><td>主要依赖当前 diff 和 prompt</td><td>先解析 series，再选择 baseline，并在 worktree 中应用完整补丁序列</td></tr>
+<tr><td>模型调用</td><td>常见为单轮或少量多轮问答</td><td>Phase 0 + Stage 1-11，多阶段发散、去重、仲裁、验证、成文</td></tr>
+<tr><td>工具权限</td><td>可能没有工具，或工具边界较宽</td><td>只读 git 工具箱，允许查证，不允许修改被审查仓库</td></tr>
+<tr><td>状态管理</td><td>经常依赖一次性任务状态</td><td>libSQL 持久化 messages、patchsets、reviews、findings、tool usages、outbox</td></tr>
+<tr><td>输出形态</td><td>面向平台评论区</td><td>面向 LKML inline reply、Patchwork check、Web/API/CLI 查询</td></tr>
+<tr><td>质量控制</td><td>多靠 prompt 约束</td><td>schema 校验、错误重试、false positive 过滤、series final state 检查</td></tr>
+</tbody>
+</table>
+<p>这张表背后的核心差异是：普通 bot 更像“模型评论器”，Sashiko 更像“审查生产线”。前者强调快速接入，后者强调可恢复、可审计、可约束和可运营。对于真实研发组织而言，后者虽然复杂得多，但也更接近能够长期运行的系统。</p>
 
 <h2 id="总览">总体架构：确定性工程外壳包住概率模型内核</h2>
 <p><img src="/images/posts/sashiko-agentic-linux-kernel-code-review-architecture/architecture.png" alt="Sashiko 总体架构图"></p>
@@ -174,6 +197,25 @@
 <p>第四，自动 review 可能产生社区成本。即使误报率不高，只要输出太频繁、语气不合适或位置不精确，就会打扰维护者。因此 email policy、embargo、mute、send_positive_review 等配置不是附属功能，而是生产系统的必要部分。</p>
 <p>第五，项目 schema 中还存在一些值得后续整理的边角问题，例如 <code>patchwork_outbox</code> 的 schema 片段里 <code>check_state</code> 字段出现重复定义痕迹。这类问题不影响整体架构判断，但说明项目仍在快速迭代中。</p>
 
+<h2 id="落地">落地建议：从实验 demo 走向可运营系统</h2>
+<p>如果把 Sashiko 的思想迁移到企业内部或开源项目维护流程中，最重要的不是立刻复制 11 个审查阶段，而是先把运营边界设计清楚。</p>
+<p><strong>第一，先从只读审查开始。</strong>不要让模型一开始就拥有写权限或自动修复权限。更稳妥的路径是：模型只能读取代码、读取历史、生成结构化 finding，并把最终建议交给人类 reviewer 或 CI gate。只有当误报率、漏报率、回滚路径和审计机制足够成熟后，才考虑自动 patch 生成。</p>
+<p><strong>第二，所有结论都要绑定证据。</strong>finding 里必须包含文件、行号、触发路径、风险解释和建议修复方向。没有代码位置、没有调用链、没有上下文证据的评论，即使听起来合理，也应该被系统降权或丢弃。</p>
+<p><strong>第三，把发送策略当成产品能力。</strong>自动 review 的输出对象通常是人。什么时候发、发给谁、是否抄送、是否延迟、是否允许 positive review、是否需要人工确认，都会影响系统在团队中的信任度。Sashiko 把 email policy、embargo 和 outbox 做成配置，是非常正确的方向。</p>
+<p><strong>第四，先度量，再扩大覆盖。</strong>上线初期应该记录每个 provider、每个阶段、每类工具调用的 token 成本、耗时、命中率、被接受率和误报原因。没有这些数据，团队只能凭感觉判断模型好不好；有了这些数据，才能决定应该优化 prompt、换 provider、减少阶段，还是增加人工 gate。</p>
+<p><strong>第五，保留人工反驳和复审通道。</strong>一个成熟 review agent 不应该假设自己永远正确。它需要允许作者反驳、允许 reviewer 标记 false positive、允许系统把这些结果沉淀成后续评估集。Sashiko 的 interactive local review 已经体现了这种思路。</p>
+
+<h2 id="清单">可迁移设计清单：把 Sashiko 的方法抽出来</h2>
+<p>从 Sashiko 中可以抽出一份通用的 agentic review 系统设计清单。</p>
+<p><strong>输入层：</strong>把邮件、PR、CLI、Webhook 等入口统一成内部事件，不让业务逻辑散落在每个入口里。</p>
+<p><strong>状态层：</strong>把 thread、message、patchset、patch、review、finding、interaction 和 outbox 全部持久化，避免任务只存在于内存或一次性日志中。</p>
+<p><strong>执行层：</strong>在模型介入之前，用确定性工具验证基础事实，例如 baseline 是否正确、patch 是否能应用、series final state 是否成立。</p>
+<p><strong>工具层：</strong>给模型足够的只读查询能力，但明确限制副作用。review agent 的核心能力应该是查证和表达，而不是未授权修改。</p>
+<p><strong>推理层：</strong>把复杂任务拆成多个可验证阶段。前段提高召回，后段去重、冲突解决、严重性判断和 false positive 过滤。</p>
+<p><strong>输出层：</strong>把模型结果转成目标社区或目标组织能接受的格式。对内可能是 PR comment，对外可能是邮件回复，对 CI 可能是 check status。</p>
+<p><strong>运营层：</strong>记录 token、耗时、工具调用、重试、失败类型、人工反馈和发送状态。没有运营数据，agent 系统就无法持续改进。</p>
+<p>这份清单比具体 prompt 更重要。prompt 会随着模型演进而变化，但“事件、状态、工具、阶段、证据、输出、运营”这条主线，才是可验证 agent 系统的长期骨架。</p>
+
 <h2 id="结论">结论：真正值得学习的是“可验证 agent 系统”的工程形态</h2>
 <p>Sashiko 最值得学习的地方，不是它用了哪个模型，也不是它能否在某个 benchmark 上找出多少 bug，而是它展示了一种可验证 agent 系统的工程形态。</p>
 <p>它没有把 LLM 当作万能黑盒，而是把 LLM 放在一个确定性的外壳里：输入被解析成事件，状态被写入数据库，baseline 被 git 验证，worktree 被隔离，工具是只读的，阶段输出有 schema，错误可以重试，token 可以统计，邮件输出有策略，结果可以在 Web UI 和 CLI 中追踪。</p>
@@ -198,7 +240,7 @@
       <div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
       <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
     </div>
-    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#定位">项目定位：它不是聊天机器人，而是内核补丁审查系统</a><a class="toc-link toc-level-2" href="#总览">总体架构：确定性工程外壳包住概率模型内核</a><a class="toc-link toc-level-2" href="#入口">三类入口：邮件列表、HTTP/API/CLI、Forge Webhook</a><a class="toc-link toc-level-2" href="#事件流">事件与状态流：从 raw event 到 pending patchset</a><a class="toc-link toc-level-2" href="#baseline">Baseline 与 Git Worktree：先证明补丁能应用，再谈审查</a><a class="toc-link toc-level-2" href="#provider">AI Provider 抽象：把 Gemini、Claude、OpenAI-compatible 和 CLI 后端统一起来</a><a class="toc-link toc-level-2" href="#toolbox">SessionRunner 与 ToolBox：让模型查证代码，而不是凭记忆猜</a><a class="toc-link toc-level-2" href="#pipeline">11 阶段审查流水线：先发散找问题，再收敛成证据</a><a class="toc-link toc-level-2" href="#data">数据模型：patchset、review、finding 与 interaction 的主链路</a><a class="toc-link toc-level-2" href="#cli">CLI 与本地审查：daemon 优先，本地 subprocess 兜底</a><a class="toc-link toc-level-2" href="#可靠性">可靠性设计：并发、恢复、限流、缓存和 embargo</a><a class="toc-link toc-level-2" href="#权衡">关键工程权衡：召回率、误报率、上下文成本和社区礼仪</a><a class="toc-link toc-level-2" href="#局限">局限与风险：Sashiko 解决了什么，仍然没有解决什么</a><a class="toc-link toc-level-2" href="#结论">结论：真正值得学习的是“可验证 agent 系统”的工程形态</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#读者">适合谁读：从项目解析进入可验证 Agent 工程</a><a class="toc-link toc-level-2" href="#定位">项目定位：它不是聊天机器人，而是内核补丁审查系统</a><a class="toc-link toc-level-2" href="#对比">与普通 Code Review Bot 的差异：从单轮评论到审查生产线</a><a class="toc-link toc-level-2" href="#总览">总体架构：确定性工程外壳包住概率模型内核</a><a class="toc-link toc-level-2" href="#入口">三类入口：邮件列表、HTTP/API/CLI、Forge Webhook</a><a class="toc-link toc-level-2" href="#事件流">事件与状态流：从 raw event 到 pending patchset</a><a class="toc-link toc-level-2" href="#baseline">Baseline 与 Git Worktree：先证明补丁能应用，再谈审查</a><a class="toc-link toc-level-2" href="#provider">AI Provider 抽象：把 Gemini、Claude、OpenAI-compatible 和 CLI 后端统一起来</a><a class="toc-link toc-level-2" href="#toolbox">SessionRunner 与 ToolBox：让模型查证代码，而不是凭记忆猜</a><a class="toc-link toc-level-2" href="#pipeline">11 阶段审查流水线：先发散找问题，再收敛成证据</a><a class="toc-link toc-level-2" href="#data">数据模型：patchset、review、finding 与 interaction 的主链路</a><a class="toc-link toc-level-2" href="#cli">CLI 与本地审查：daemon 优先，本地 subprocess 兜底</a><a class="toc-link toc-level-2" href="#可靠性">可靠性设计：并发、恢复、限流、缓存和 embargo</a><a class="toc-link toc-level-2" href="#权衡">关键工程权衡：召回率、误报率、上下文成本和社区礼仪</a><a class="toc-link toc-level-2" href="#局限">局限与风险：Sashiko 解决了什么，仍然没有解决什么</a><a class="toc-link toc-level-2" href="#落地">落地建议：从实验 demo 走向可运营系统</a><a class="toc-link toc-level-2" href="#清单">可迁移设计清单：把 Sashiko 的方法抽出来</a><a class="toc-link toc-level-2" href="#结论">结论：真正值得学习的是“可验证 agent 系统”的工程形态</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
     <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
   </div>
   <script src="/js/journal.js"></script>
