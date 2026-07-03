@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive">
+  <title>行业轮动的分析师因子：从预期修正到ETF配置的Beta策略 - zcxGGmu's Blog</title>
+  <meta name="description" content="分析师覆盖、盈利预期、首次覆盖后的量价反应、拥挤度和动量，共同构成一套行业与ETF轮动框架；关键不只是选对因子，还要识别因子的周期性。">
+  <meta name="author" content="zcxGGmu">
+  <meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/analyst-factor-industry-etf-rotation-beta-strategy/">
+  <meta property="og:site_name" content="zcxGGmu&#39;s Blog">
+  <meta property="og:title" content="行业轮动的分析师因子：从预期修正到ETF配置的Beta策略">
+  <meta property="og:description" content="分析师覆盖、盈利预期、首次覆盖后的量价反应、拥挤度和动量，共同构成一套行业与ETF轮动框架；关键不只是选对因子，还要识别因子的周期性。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zcxggmu.github.io/2026/analyst-factor-industry-etf-rotation-beta-strategy/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap">
+  <link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div id="app">
+    <div class="single-column-drawer-container" id="drawer">
+      <div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+    </div>
+    <div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&&(event.preventDefault(),toggleDrawer())'></div>
+    <nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+      <div id="navBackground" class="nav-background"></div>
+      <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button>
+        <a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a>
+        <button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button>
+      </div>
+    </nav>
+    <div class="single-column-header-container" id="pageHead">
+      <a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+    </div>
+    <div id="content">
+      <div id="streamContainer" class="stream-container" role="main">
+        <div id="main-content"></div>
+        <div class="post-list-container post-list-container-shadow">
+    <article class="post">
+      <div class="post-head-wrapper" style="background-image:url('/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/cover.png')">
+        <div class="post-title">行业轮动的分析师因子：从预期修正到ETF配置的Beta策略<div class="post-subtitle">分析师覆盖、盈利预期、首次覆盖后的量价反应、拥挤度和动量，共同构成一套行业与ETF轮动框架；关键不只是选对因子，还要识别因子的周期性。</div><div class="post-meta"><time itemprop="datePublished">2026-07-03</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E6%8A%95%E8%B5%84/">投资</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/%E8%A1%8C%E4%B8%9A%E8%BD%AE%E5%8A%A8/">行业轮动</a>&nbsp;<a href="/tags/ETF/">ETF</a>&nbsp;<a href="/tags/%E5%88%86%E6%9E%90%E5%B8%88%E5%9B%A0%E5%AD%90/">分析师因子</a>&nbsp;<a href="/tags/%E5%9B%A0%E5%AD%90%E6%8A%95%E8%B5%84/">因子投资</a>&nbsp;<a href="/tags/Beta%E7%AD%96%E7%95%A5/">Beta策略</a>&nbsp;<a href="/tags/%E9%A3%8E%E6%A0%BC%E5%88%87%E6%8D%A2/">风格切换</a>&nbsp;<a href="/tags/%E6%8B%A5%E6%8C%A4%E5%BA%A6/">拥挤度</a>&nbsp;<a href="/tags/%E5%8A%A8%E9%87%8F/">动量</a>&nbsp;<a href="/tags/%E6%99%AF%E6%B0%94%E5%BA%A6/">景气度</a>&nbsp;<a href="/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84/">量化投资</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 24 min</div></div>
+        </div>
+      <div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/cover.png" alt="行业轮动的分析师因子：从预期修正到ETF配置的Beta策略"></p>
+<p>今年的市场风格和行业行情相当极致，行业之间、风格之间、ETF之间的收益差距被明显拉开。在这种环境下，单纯讨论个股Alpha并不够，真正影响组合表现的，往往是Beta层面的方向选择：选对行业、选对风格、选对ETF资产池中的主线。</p>
+<p>ETF配置的重要性也在提升。ETF在市场成交和产品布局中的权重越来越高，很多资金已经从主动选股转向指数化、行业化、主题化配置。行业轮动不再只是研究行业强弱，而是要把因子信号转化成可以落地的ETF配置语言。</p>
+<p>分析师数据提供了一条新的观察维度。它不是单纯的财务数据，也不是纯粹的价格动量，而是夹在基本面、机构预期和市场反应之间。通过分析师覆盖、盈利预测变化、首次覆盖后的量价表现，可以构建一套行业与ETF轮动框架。但这套框架的关键不是“哪个因子永远有效”，而是理解因子在不同市场阶段的周期性。</p>
+
+<h2 id="开局">行业轮动的核心：在Beta层面寻找风格切换</h2>
+<p><img src="/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/rotation-map.png" alt="行业和ETF轮动框架"></p>
+<p>行业轮动的出发点，是市场并不总是均匀上涨。尤其当行情偏Beta、偏主题、偏风格切换时，收益差异会集中体现在行业和指数层面。此时，研究重点不只是判断一家公司的好坏，而是判断哪一类资产正在获得资金、基本面和情绪的共同支持。</p>
+<p>今年这种特征更明显：行业行情比较极致，板块间分化剧烈，ETF资金承接了大量Beta配置需求。只要行业选择不同，收益差距就会被迅速拉大。因此，需要一套能够同时服务行业轮动和ETF轮动的打分体系。</p>
+<p>分析师因子之所以值得加入，是因为它能补足传统景气、动量、拥挤度之外的信息。分析师覆盖和预测修正背后，包含了机构对基本面的重新评估；首次覆盖之后的成交放量，则反映了研究信息能否真正传导到交易层面。</p>
+<p>但分析师因子不是孤立使用的信号。它需要与景气、拥挤度、长短期动量一起放进Beta打分体系，最终服务于行业与ETF配置。</p>
+
+<h2 id="数据">分析师数据：从研报明细到结构化因子</h2>
+<p>分析师数据的基础，是研报明细数据。它包括报告发布时间、分析师机构、覆盖对象，以及报告中列出的营收、利润、预测年度等财务指标。深度报告和点评报告都会产生这类结构化信息。</p>
+<p>这些数据的价值在于，它不只是文本观点，而是可以被拆成可计算的因子。比如某家公司或某个行业的FY1、FY2、FY3盈利预测是否上调，分析师是否重新覆盖，覆盖后成交量和价格有没有反应，都可以转化为可比较的指标。</p>
+<p>与普通财务数据相比，分析师数据更接近市场预期。财务报表反映已经发生的经营结果，价格动量反映市场已经交易出来的结果，而分析师预期则处在两者之间：它既来自基本面判断，又会影响机构投资者的关注度。</p>
+<p>这也是分析师因子适合做行业轮动的原因。行业轮动本质上不是静态估值比较，而是寻找“预期正在改善、资金正在响应、但行情尚未完全透支”的方向。</p>
+
+<h2 id="覆盖度">覆盖度问题：大市值有效，指数层面需要填充</h2>
+<p><img src="/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/coverage-imputation.png" alt="分析师覆盖度和缺失值处理"></p>
+<p>分析师数据的第一个现实问题是覆盖度。主流选股范围内，尤其是中证800这类大市值股票，分析师覆盖长期在80%左右；全市场覆盖比例接近50%。这意味着，大市值和主流行业的分析师数据相对可用，但中小市值、冷门行业和部分指数成分会出现缺失。</p>
+<p>对于行业轮动，这个问题相对可控。因为行业指数的权重通常集中在大市值公司，而大市值公司分析师覆盖度更高。即使存在缺失，行业整体估计误差也不会无限放大。</p>
+<p>但对于ETF和指数型基金，问题会更复杂。ETF背后可能是行业指数、宽基指数、风格指数、主题指数。成分股覆盖度不同，会影响最终因子估计。如果直接把缺失值当成空白，就会让部分指数得分被低估或失真。</p>
+<p>因此，分析师因子进入行业和ETF轮动体系之前，必须先处理缺失值。缺失不是噪音，而是因子构建中的核心步骤。</p>
+
+<h2 id="构建">因子构建方法：标准化、行业填充与加权合成</h2>
+<p>构建行业或指数层面的分析师因子，第一步是对个股因子做标准化。极端值需要处理，然后再做减均值、除标准差的标准化，让不同股票、不同指标落在可比较的量纲上。</p>
+<p>第二步是缺失值填充。由于分析师数据存在覆盖缺口，可以按照三级行业、二级行业、一级行业的顺序，用行业中位数进行填充。这里隐含的假设是：行业属性对Beta层面的影响更重要，同一细分行业内缺失股票的分析师信号，可以用该行业中位水平近似替代。</p>
+<p>选择中位数而不是均值，是因为分析师数据并不总是正态分布。个别极端预测或极端覆盖行为，可能会拉动均值；中位数的波动更小，更适合做行业层面的缺失填补。</p>
+<p>第三步是指数加权。填充完成后，按照行业指数或ETF成分股权重，对个股因子加权求和，就能得到行业或指数层面的因子值。与普通财务因子相比，分析师因子多了一步填充；这一步决定了它在行业和ETF层面的稳定性。</p>
+
+<h2 id="三类因子">三类分析师因子：财报、预期和量价情绪</h2>
+<p><img src="/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/factor-families.png" alt="三类分析师因子"></p>
+<p>分析师因子可以分成三类。</p>
+<p>第一类是财报维度，也就是超预期或景气维度。它关注未来预测与当前或历史实际数据之间的差异，用来衡量行业基本面是否更景气。比如FY2相对FY1、FY3相对FY2的增长，可以反映分析师口径下未来盈利的变化。</p>
+<p>第二类是情绪维度，也就是预期增长或预测修正。它不直接比较未来与历史，而是比较同一预测口径在时间序列上的变化。比如某个行业FY1预测值相比上月是否上调，FY2预测值是否上调。这更接近机构对基本面判断的边际变化。</p>
+<p>第三类是量价情绪维度。它先通过分析师明细识别首次覆盖或重新覆盖，再观察覆盖后短期价格和成交量反应。如果首次覆盖后行业或个股出现明显放量，说明分析师信息被市场交易吸收，未来可能存在短期动量延续。</p>
+<p>三类因子分别对应基本面、机构情绪和交易情绪。它们都与分析师数据相关，但捕捉的不是同一种市场行为。</p>
+
+<h2 id="超预期">超预期因子：更稳健的基本面景气刻画</h2>
+<p>超预期因子的逻辑，是用分析师预测衡量行业基本面的景气程度。FY1、FY2、FY3之间的比较，能够刻画未来一年、两年甚至更长时间的盈利增长。</p>
+<p>回测表现显示，FY2相对FY1、FY3相对FY2这类同口径分析师预测之间的比较，效果更好；而如果用分析师预测去直接对比最新年报或估算年报，效果会打折扣。原因在于，分析师预测和实际财报天然存在量纲差异，分析师可能系统性地把盈利预期抬高一档，直接跨口径比较会引入偏差。</p>
+<p>同样使用分析师口径时，FY2比FY1往往比FY3比FY2更贴近当下。FY3看得太远，信息更模糊；FY2更接近可验证的未来，因子表现更好。</p>
+<p>从稳定性看，超预期因子有周期性，但回撤相对可控。2022年至2024年局部阶段可能走平或小幅回撤，但不像情绪类因子那样剧烈。这说明它更像基本面景气因子，适合作为轮动体系中的稳定底座。</p>
+
+<h2 id="预期增长">预期增长因子：收益更弹性，周期性也更强</h2>
+<p><img src="/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/cyclicality.png" alt="分析师预期因子的周期性"></p>
+<p>预期增长因子关注的是分析师一致预期自身的变化。比如同样是FY1预测，当前值相比过去是否上调；同样是FY2预测，当前值相比过去是否上调。它强调的是机构预期的边际变化，而不是静态增长水平。</p>
+<p>这个因子更能贴合市场情绪。预期上调意味着机构对行业或公司的未来判断正在改善，资金也更容易围绕这种边际改善进行交易。</p>
+<p>但它的周期性更强。2019年至2021年以及2025年这类成长偏强、高Beta占优的阶段，预期增长因子表现明显；但2022年至2024年，当市场情绪不能持续、成长风格受压时，预期增长因子会出现明显回撤。</p>
+<p>因此，预期增长不是一个可以无脑长期持有的普适因子。它解释力强，弹性也强，但对市场风险偏好高度敏感。只有在Beta环境、成长风格和资金情绪相对配合时，它的效果才会更突出。</p>
+
+<h2 id="首次覆盖">首次覆盖后的量价驱动：短窗口情绪更有效</h2>
+<p>首次覆盖因子的定义可以更严格：不仅包括分析师第一次发布某个公司的报告，也包括长时间没有覆盖后重新发布报告。若过去6个月没有跟踪，重新覆盖就代表机构关注度重新回到该标的。</p>
+<p>这个定义背后的逻辑很直观。分析师停止覆盖，说明该标的在机构关注中被边缘化；重新覆盖，则意味着关注度回升。真正重要的是，这种关注度回升能否在交易层面体现出来。</p>
+<p>因此，首次覆盖后要观察短期量价反应。经验上，成交量比价格更稳定，3至5个交易日窗口更有效。若首次覆盖后短时间内明显放量，说明分析师信息推动了市场关注，未来可能存在情绪延续。</p>
+<p>窗口不能拉得太长。10个交易日之后，初始情绪可能已经衰减，甚至被后续回调和噪音干扰。价格反应也比成交量更不稳定，因为价格可能在第一天就快速反映，随后进入震荡。因此，短窗口成交量是更适合刻画分析师驱动情绪的指标。</p>
+
+<h2 id="etf">从行业到ETF：轮动逻辑可以迁移，但口径更复杂</h2>
+<p><img src="/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/industry-etf-bridge.png" alt="行业轮动向ETF配置迁移"></p>
+<p>ETF层面大约有数百只权益指数跟踪产品。把行业轮动因子迁移到ETF配置，需要面对两个额外问题：ETF分类复杂，以及ETF背后不只有行业，还有宽基、风格、主题等不同属性。</p>
+<p>从结果看，分析师因子在ETF层面的表现与行业层面大体类似。超预期因子在同口径预测比较下更有效，预期增长因子周期性更强，首次覆盖后的短窗口成交放量更能刻画情绪。</p>
+<p>区别在于，ETF中会混入行业以外的风格因素。一个ETF可能同时受到行业景气、成长价值风格、市值风格、主题热度和流动性偏好的影响。因此，ETF因子的解释难度高于纯行业指数。</p>
+<p>这也意味着，ETF配置不能直接照搬行业打分，而要在行业、风格、主题三个层面同时理解信号。分析师因子可以提供方向，但还需要与其他Beta因子结合。</p>
+
+<h2 id="合成">多因子合成：低相关不等于能自然对冲</h2>
+<p>完整的行业轮动框架不能只依赖分析师因子，还需要纳入景气、拥挤度、长期动量、短期动量等维度。表面上看，这些因子之间相关性并不高，除分析师预期与分析师驱动相关性较高外，大多数因子相关性都不超过30%左右。</p>
+<p>但低相关不等于能自然对冲。因为很多因子虽然来源不同，却都偏动量逻辑。分析师预期是机构预期动量，景气是财务改善动量，长期动量和短期动量是价格动量，首次覆盖后的放量是交易情绪动量。</p>
+<p>唯一明显反向的维度是拥挤度。拥挤度越高，说明交易越活跃、风险越累积，因此它在打分体系中通常应当反向使用。换句话说，大多数因子是在寻找趋势延续，拥挤度是在提醒趋势可能过热。</p>
+<p>2022年至2024年的经验说明，当动量型Beta整体失效时，分析师、景气、动量等因子可能一起受损；此时，低相关并不能保护组合。真正需要管理的，是因子收益在时间序列上的共同周期。</p>
+
+<h2 id="权重">权重方法：介于等权和极端动量之间最优</h2>
+<p><img src="/images/posts/analyst-factor-industry-etf-rotation-beta-strategy/weighting-methods.png" alt="多因子合成权重方法"></p>
+<p>因子合成不能简单等权，也不能极端追逐过去最强的因子。等权的好处是分散，假设不同因子能相互对冲；但当多个因子在周期上同涨同跌时，等权并不能解决问题。</p>
+<p>另一种方法是剔除过去超额收益为负的因子，再对剩余因子等权。这样可以规避当下周期中明显失效的因子，但对强弱差异的表达仍然不够。</p>
+<p>更强的方法是按过去表现加权，表现越好权重越高，表现越差权重越低甚至剔除。这能体现因子收益的时间序列惯性，但如果权重过于极端，一旦风格反转，就会承受较大回撤。</p>
+<p>相对更有效的是排序加权：保留强弱排序，让强因子权重更高、弱因子权重更低，但不把差距拉得过大。这种方法介于等权和极端动量之间，既承认因子周期有惯性，又避免在周期反转时过度暴露。</p>
+<p>行业和ETF两个层面的结果都指向类似结论：因子合成需要适度使用时间序列信息，但不能把过去表现机械外推到极致。</p>
+
+<h2 id="结论">配置结论：用周期意识管理Beta动量</h2>
+<p>分析师因子为行业轮动和ETF配置提供了一个重要增量维度。它把基本面、机构预期和交易反应连接在一起，能够帮助识别哪些行业正在被重新关注、哪些方向的盈利预期正在改善、哪些研究信息正在被市场交易。</p>
+<p>三类分析师因子的定位不同：超预期因子更接近基本面景气，稳定性更好；预期增长因子更贴近机构情绪，弹性更高但周期性更强；首次覆盖后的量价驱动更偏短期交易情绪，成交量和3至5日窗口更有效。</p>
+<p>完整的轮动体系仍然要结合景气、动量和拥挤度。因为大多数有效因子都偏动量，真正的风险在于动量Beta集体失效。拥挤度是少数能提供反向风险提示的维度，不能忽视。</p>
+<p>最重要的结论是：因子不是静态答案，因子本身也有周期。行业轮动和ETF配置的关键，不只是找到有效因子，而是识别因子处于顺风期、钝化期还是反转期。用适度排序加权管理因子权重，比简单等权或极端追强更适合当前的Beta策略环境。</p>
+</div></div>
+      <nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/innovative-drugs-devices-valuation-inflection-haisco-rcbio/">上一篇<br>创新药械估值拐点：剪刀差修复与海思科、荣昌生物的重估逻辑</a></nav>
+    </article>
+  </div>
+      </div>
+    </div>
+    <div id="sideContainer" class="side-container">
+      <button class="sidebar-collapse-toggle" type="button" data-sidebar-collapse-toggle title="收起左侧边栏" aria-label="收起左侧边栏" aria-expanded="true">
+        <span class="material-icons sidebar-collapse-icon" aria-hidden="true">chevron_left</span>
+      </button>
+      <a class="a-block nav-head false" href="/">
+        <img class="site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy">
+        <div class="nav-title">zcxGGmu's Blog</div>
+        <div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+      </a>
+      <div class="theme-switcher theme-switcher-desktop"><button class="theme-toggle theme-toggle-desktop" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div>
+      <div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+      <div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+    </div>
+    <div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#开局">行业轮动的核心：在Beta层面寻找风格切换</a><a class="toc-link toc-level-2" href="#数据">分析师数据：从研报明细到结构化因子</a><a class="toc-link toc-level-2" href="#覆盖度">覆盖度问题：大市值有效，指数层面需要填充</a><a class="toc-link toc-level-2" href="#构建">因子构建方法：标准化、行业填充与加权合成</a><a class="toc-link toc-level-2" href="#三类因子">三类分析师因子：财报、预期和量价情绪</a><a class="toc-link toc-level-2" href="#超预期">超预期因子：更稳健的基本面景气刻画</a><a class="toc-link toc-level-2" href="#预期增长">预期增长因子：收益更弹性，周期性也更强</a><a class="toc-link toc-level-2" href="#首次覆盖">首次覆盖后的量价驱动：短窗口情绪更有效</a><a class="toc-link toc-level-2" href="#etf">从行业到ETF：轮动逻辑可以迁移，但口径更复杂</a><a class="toc-link toc-level-2" href="#合成">多因子合成：低相关不等于能自然对冲</a><a class="toc-link toc-level-2" href="#权重">权重方法：介于等权和极端动量之间最优</a><a class="toc-link toc-level-2" href="#结论">配置结论：用周期意识管理Beta动量</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+    <div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com" target="_blank" rel="noopener noreferrer">Email</a><br><a href="/index.xml" target="_blank" rel="noopener noreferrer">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>&copy; 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div>
+  </div>
+  <script src="/js/journal.js"></script>
+  <script src="/js/code-enhance.js"></script>
+  <script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+  <script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+  <script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+  <script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
