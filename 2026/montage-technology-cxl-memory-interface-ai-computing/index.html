@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>澜起科技：CXL 与内存互联芯片的 AI 算力卡位 - zcxGGmu's Blog</title>
+  <meta name="description" content="澜起科技的价值不只是服务器内存接口芯片，而是 JEDEC 标准卡位、DDR5 升级、CXL 内存扩展、AI 推理和国产算力生态共同形成的高速互联平台机会。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/montage-technology-cxl-memory-interface-ai-computing/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="澜起科技：CXL 与内存互联芯片的 AI 算力卡位"><meta property="og:description" content="澜起科技的价值不只是服务器内存接口芯片，而是 JEDEC 标准卡位、DDR5 升级、CXL 内存扩展、AI 推理和国产算力生态共同形成的高速互联平台机会。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/montage-technology-cxl-memory-interface-ai-computing/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/montage-technology-cxl-memory-interface-ai-computing/cover.png')"><div class="post-title">澜起科技：CXL 与内存互联芯片的 AI 算力卡位<div class="post-subtitle">澜起科技的价值不只是服务器内存接口芯片，而是 JEDEC 标准卡位、DDR5 升级、CXL 内存扩展、AI 推理和国产算力生态共同形成的高速互联平台机会。</div><div class="post-meta"><time itemprop="datePublished">2026-07-08</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E6%8A%95%E8%B5%84%E7%A0%94%E7%A9%B6/">投资研究</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/">澜起科技</a>&nbsp;<a href="/tags/CXL/">CXL</a>&nbsp;<a href="/tags/DDR5/">DDR5</a>&nbsp;<a href="/tags/%E9%AB%98%E9%80%9F%E4%BA%92%E8%81%94%E8%8A%AF%E7%89%87/">高速互联芯片</a>&nbsp;<a href="/tags/%E5%86%85%E5%AD%98%E6%8E%A5%E5%8F%A3%E8%8A%AF%E7%89%87/">内存接口芯片</a>&nbsp;<a href="/tags/AI%20%E7%AE%97%E5%8A%9B/">AI 算力</a>&nbsp;<a href="/tags/%E5%9B%BD%E4%BA%A7%E5%8C%96/">国产化</a>&nbsp;<a href="/tags/JEDEC/">JEDEC</a>&nbsp;<a href="/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/">半导体</a>&nbsp;<a href="/tags/%E6%8A%95%E8%B5%84%E7%A0%94%E7%A9%B6/">投资研究</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 12 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>澜起科技的核心价值，正在被 AI 算力、内存带宽瓶颈和国产算力基础设施共同重新定价。它不是一家业务摊得很开的芯片公司，而是一家高度聚焦内存互联芯片的企业。服务器 DDR5 替换、CXL 内存扩展、AI 推理集群增长，以及国产服务器生态建设，正在把这家公司推到一个更关键的位置。</p>
+
+<p>理解澜起科技，不能只看“高速互联芯片”这个标签，也不能只把它当作存储周期里的一个零部件供应商。真正重要的是，它在 JEDEC 国际标准、服务器内存接口芯片、CXL 新架构、国产化供应链和 AI 算力需求之间，形成了一个既有周期弹性、也有技术卡位的组合。</p>
+
+<h2 id="business-structure">一、业务结构：真正的利润核心是内存互联芯片</h2>
+
+<p>澜起科技的业务结构非常聚焦，核心是内存互联芯片。2025 年，这一板块贡献营收 51.39 亿元，占公司收入的 94.18%，毛利率达到 65.57%。这说明它不仅是收入主体，更是利润主体。</p>
+
+<p>相比之下，国产服务器配套 CPU 业务在 2025 年贡献收入 3.08 亿元，占比 5.65%，毛利率只有 7.42%。这一块的直接盈利能力并不强，更多意义在于完善国产算力生态，提高公司与国产服务器平台、数据中心客户和信创体系的协同深度。</p>
+
+<p>因此，澜起科技的投资逻辑不能分散理解。真正决定公司估值中枢和业绩弹性的，仍然是服务器内存互联芯片，以及围绕 DDR5、CXL、PCIe、HBM 配套互联芯片形成的高端产品迭代。</p>
+
+<h2 id="standard-position">二、标准卡位：参与 JEDEC 标准制定本身就是护城河</h2>
+
+<p>澜起科技在全球硬件标准中的位置，是它区别于普通芯片公司的关键。公司是 JEDEC 固态技术协会董事会成员，这一身份非常稀缺。国内企业能够深度参与这一层级标准制定的数量并不多。</p>
+
+<p>JEDEC 标准决定了 DDR 内存多代技术演进中的核心规范，包括传输速率、信号传输规则、接口规范和产业落地节奏。澜起科技能够参与多代 DDR 内存技术标准的起草和落地，意味着它可以更早掌握行业方向，更早启动新产品研发。</p>
+
+<p>很多企业只能等标准正式发布后再进行产品开发，而澜起科技能够在标准制定阶段就理解技术路线和未来需求。这种前置卡位，让它在产品迭代上更容易快人一步，也让它在全球内存互联芯片行业中具备更强不可替代性。</p>
+
+<h2 id="domestic-computing">三、国产算力：本土适配带来稳定需求缓冲</h2>
+
+<p>国内算力国产化趋势，正在给澜起科技提供更稳定的市场空间。无论是信创数据中心、智算中心，还是运营商云集群，都越来越强调本土硬件适配。本土服务器、存储模组、CPU 平台与互联芯片之间需要深度协同，单靠海外标准产品很难完全满足适配要求。</p>
+
+<p>澜起科技已经与国内存储原厂、AI 服务器厂商和国产服务器生态建立了紧密合作，共同推动互联芯片国产化。这种产业链协作会形成供应链粘性，也会让海外芯片厂商更难打入核心国产化项目。</p>
+
+<p>更重要的是，国产化需求不仅提供增量订单，还能在全球存储周期波动时形成缓冲。当海外存储市场下行时，国内数据中心、智算中心和国产替代项目仍可能支撑本土互联芯片需求，使澜起科技比纯海外周期敞口企业更具韧性。</p>
+
+<h2 id="financial-performance">四、经营表现：高端产品占比提升推高盈利能力</h2>
+
+<p>2025 年，澜起科技全年营收达到 54.56 亿元，同比增长 49.9%；归母净利润达到 22.36 亿元，同比增长 58.4%。到 2026 年第一季度，公司营收为 14.61 亿元，同比增长 19.5%；归母净利润为 8.47 亿元，同比增长 61.3%。</p>
+
+<p>收入增长和利润增长并不完全同步，利润增速更快，说明产品结构正在优化。服务器 DDR 产品渗透率提升、AI 算力相关高端芯片需求增加、高速互联芯片占比提高，共同推升了整体盈利水平。</p>
+
+<p>这也是澜起科技最值得关注的地方：它不只是随着服务器出货量增长而增长，更是在服务器内存架构升级过程中提升单机价值量。DDR5 替代 DDR4，AI 服务器增加内存通道和内存容量，高端互联芯片的价值量自然随之抬升。</p>
+
+<h2 id="fabless-model">五、Fabless 模式：轻资产提高效率，存货周期仍需警惕</h2>
+
+<p>澜起科技采用 Fabless 模式，没有自建晶圆厂，因此资产相对较轻，也没有很重的有息负债压力。这种模式让公司能够把资源集中在研发、产品定义、客户认证和供应链协同上，财务结构也更稳健。</p>
+
+<p>轻资产并不意味着没有风险。公司会根据行业景气度调整备货节奏。当行业上行、客户需求强劲时，增加存货有助于保障交付；但如果行业突然转弱，存货就可能面临减值压力。</p>
+
+<p>因此，观察澜起科技不能只看收入和利润，还要看存货变化、经营现金流、客户订单节奏和下游存储周期。如果利润在增长，但存货同步大幅上升，就需要判断这是合理备货，还是周期高点的风险累积。</p>
+
+<h2 id="ai-memory-bottleneck">六、AI 算力瓶颈：GPU 越强，内存互联越重要</h2>
+
+<p>AI 大模型训练和推理会显著放大数据交换需求。GPU 算力提升之后，CPU、GPU 与内存之间的数据交换量猛增，内存墙问题更加突出。算力越强，如果内存带宽、容量和调度效率跟不上，整体系统效率就会被卡住。</p>
+
+<p>为了缓解这一问题，服务器需要增加内存通道和内存容量。无论通用服务器还是 AI 服务器，内存条和高端内存模组都必须搭配更多、更高性能的内存缓冲芯片。于是，澜起科技所处的内存互联芯片行业，会同时受益于出货量增长和单颗价值提升。</p>
+
+<p>这就是 AI 算力对澜起科技的直接拉动：AI 不只是需要 GPU，也需要更大的内存池、更快的数据传输、更稳定的服务器内存模组，以及更先进的互联架构。</p>
+
+<h2 id="ddr5-upgrade">七、DDR5 替代：价值量提升是确定性主线</h2>
+
+<p>DDR5 正在逐步取代 DDR4，这是内存互联芯片行业最直接的增长主线。新一代 DDR 产品速率更高，对信号完整性、传输稳定性和缓冲芯片性能的要求也更高，因此对应芯片价值量同步提升。</p>
+
+<p>面向 AI 算力的高端内存模组占比不断提升，也会进一步改善行业盈利结构。对于澜起科技来说，DDR5 替代带来的不是单纯换代，而是市场空间扩张、产品单价提升和毛利结构优化。</p>
+
+<p>服务器内存升级通常不是短周期事件，而是伴随平台更新、数据中心建设和客户认证逐步推进。只要 DDR5 渗透率继续提升，澜起科技的服务器内存接口芯片就具备较强延续性。</p>
+
+<h2 id="cxl-architecture">八、CXL 架构：中长期算力基建的新刚需</h2>
+
+<p>CXL 是服务器互联架构的重要变化。它可以让多台服务器共享同一块内存资源，提高内存利用率，缓解 AI 服务器中内存容易闲置或浪费的问题。</p>
+
+<p>相比传统内存接口芯片，CXL 更像是面向未来算力基础设施的系统级升级。它不仅影响单台服务器，也影响数据中心资源池化、内存扩展、异构计算和云端调度效率。由于 CXL 更多受算力基础设施建设驱动，它对存储颗粒价格波动的敏感度相对更低，有助于平滑传统存储周期波动。</p>
+
+<p>目前，CXL 内存扩展控制器、PCIe Retimer 等新一代高速互联芯片已经进入量产和市场份额提升阶段。澜起科技如果能持续卡位 CXL 生态，就有机会从传统 DDR 接口芯片供应商，升级为 AI 数据中心内存互联架构的重要参与者。</p>
+
+<h2 id="competition">九、竞争格局：认证周期长，行业格局稳定</h2>
+
+<p>全球内存互联芯片行业门槛很高，既有技术门槛，也有供应链认证门槛。新玩家要进入核心供应链，光通过存储原厂认证就可能需要多年时间。服务器客户对稳定性、兼容性和可靠性的要求极高，这使行业格局天然更稳定。</p>
+
+<p>目前行业主要由少数厂商占据主导地位。国内厂商在国际标准制定和国产化配套方面具备优势，产品线逐步齐全，同时可以借助 A 股和港股等资本市场支持研发投入。海外厂商则依靠大量专利和 IP 授权，主要服务海外高端市场。日本厂商更多依托日韩本地产业链，也会布局车规级芯片，但在 CXL 等新技术推进上相对较慢。</p>
+
+<p>这样的竞争格局意味着，行业扩张时头部厂商更容易分享增量；行业波动时，具备标准制定能力、客户认证优势和本土生态绑定能力的企业更容易守住份额。</p>
+
+<h2 id="ai-inference">十、AI 推理：高端互联芯片打开新增量</h2>
+
+<p>AI 推理正在成为新的增长场景。推理集群、本地大模型、智能云调度和智能代理云端推理，都在持续放大高密度内存模组需求。这些设备不仅需要算力芯片，也需要高端内存模组和高速互联芯片来支撑数据吞吐。</p>
+
+<p>训练需求强调极致算力，推理需求强调规模化部署和持续运行。随着推理从云端大模型扩散到企业服务、智能终端、行业应用和代理系统，内存互联需求会从单点高端需求变成更广泛的基础设施需求。</p>
+
+<p>这对澜起科技意味着一个新的增量市场。只要 AI 推理集群继续扩张，高端内存模组需求就会提升，从而带动内存接口、CXL、PCIe 等高速互联芯片的出货和价值量。</p>
+
+<h2 id="capital-and-rd">十一、资本渠道：双重上市支持长期研发追赶</h2>
+
+<p>澜起科技同时拥有 A 股和港股资本平台，融资渠道相对畅通。这对高速互联芯片企业非常重要，因为下一代 PCIe、CXL、HBM 配套互联芯片都需要长期、持续、高强度研发投入。</p>
+
+<p>与依靠 IP 授权和轻资产运营的海外巨头相比，澜起科技在追赶高速传输芯片技术时研发压力更大。但持续资金投入可以缩小技术差距，也能支撑公司在新产品流片、客户验证和生态适配中保持节奏。</p>
+
+<p>高端芯片竞争不是一次性投入，而是每一代标准、每一个平台、每一次客户认证都要持续投入。资本渠道越稳定，越有利于公司穿越技术迭代周期。</p>
+
+<h2 id="cyclical-risk">十二、周期风险：DRAM 景气度仍会影响订单和利润</h2>
+
+<p>内存互联芯片市场需求与 DRAM 行业景气度直接相关。如果存储原厂大幅扩产，导致存储产品价格下跌，下游模组厂就可能进入去库存阶段。这个时候，芯片厂的订单和利润也会被压缩。</p>
+
+<p>当前行业盈利处在较高位置，如果周期反转，澜起科技也会面临盈利收缩压力。CXL 和国产化订单可以缓冲周期，但不能完全消除周期。</p>
+
+<p>所以，对澜起科技的判断不能只有长期乐观，也要跟踪短期存储周期。DRAM 价格、服务器出货、模组厂库存、存储原厂资本开支和客户拉货节奏，都会影响公司季度业绩表现。</p>
+
+<h2 id="architecture-risk">十三、新架构风险：HBM、存算一体和统一内存的长期冲击</h2>
+
+<p>新型硬件架构也可能改变传统内存接口芯片的市场空间。高端 GPU 已经开始集成 HBM，这会让服务器对部分本地 DDR 内存需求出现小幅下降。如果未来存算一体或统一内存架构大规模普及，传统内存接口芯片市场可能会被挤压。</p>
+
+<p>不过，从当前产业状态看，至少未来三年 HBM 很难完全取代 DDR。AI 算力集群仍然需要大量内存模组，CXL 互联架构也能在一定程度上缓冲新架构变化带来的冲击。</p>
+
+<p>因此，新架构不是立刻否定澜起科技逻辑的因素，而是一个必须长期跟踪的变量。关键在于公司能否从 DDR 接口芯片延伸到 CXL、PCIe、HBM 配套互联等更高价值环节。</p>
+
+<h2 id="external-risk">十四、外部不确定性：贸易环境、云厂商资本开支与新品落地</h2>
+
+<p>内存互联芯片供应链高度集中在少数海外存储原厂周围。如果国际贸易环境变化，或者大厂调整供应链策略，都会直接影响行业需求。海外云厂商如果削减资本开支，也会影响 AI 服务器和高端内存模组需求。</p>
+
+<p>汇率波动同样会给企业经营带来不确定性。对于参与全球供应链的芯片公司来说，收入、成本、代工、封测和客户结算都可能受到汇率变化影响。</p>
+
+<p>新品落地也是现实风险。市场对 CXL 和新一代高速互联芯片期待很高，但如果主流 CPU 平台对 CXL 生态支持推迟，或者芯片流片良率不理想，新品收入就可能低于预期，企业成长节奏也会被拖慢。</p>
+
+<h2 id="tracking-framework">十五、跟踪框架：看清澜起科技要盯住五条线</h2>
+
+<p>跟踪澜起科技，第一条线是 DDR5 渗透率和服务器内存接口芯片出货节奏。DDR5 替代越快，公司传统主业增长越有支撑。</p>
+
+<p>第二条线是 CXL 产品量产和客户导入进度。CXL 是公司从周期性内存接口芯片走向中长期算力基建的关键变量。</p>
+
+<p>第三条线是 AI 推理集群和国产智算中心建设强度。推理需求越广泛，高密度内存模组和高速互联芯片的需求越坚实。</p>
+
+<p>第四条线是存货、现金流和下游去库存风险。高增长阶段的备货并不可怕，但如果订单放缓而存货继续累积，就需要警惕减值和利润质量问题。</p>
+
+<p>第五条线是国际标准和客户认证。澜起科技的护城河不只来自技术参数，更来自标准制定、平台适配和客户认证的长期积累。</p>
+
+<h2 id="investment-view">十六、投资判断：技术卡位与周期波动并存</h2>
+
+<p>澜起科技的核心投资逻辑，是 AI 算力时代下内存互联价值量提升，以及国产算力生态中本土核心芯片供应商地位强化。DDR5 替代带来确定性主线，CXL 打开中长期空间，AI 推理和国产智算中心提供新增量。</p>
+
+<p>它的稀缺性在于三点：一是参与 JEDEC 标准制定，能够前置理解技术路线；二是内存互联芯片收入占比高、毛利率高，商业模式清晰；三是国内算力国产化和全球 AI 服务器升级同时提供需求支撑。</p>
+
+<p>但这家公司并不是没有周期。DRAM 景气度反转、模组厂去库存、HBM 等新架构变化、CXL 平台支持推迟、海外云厂商资本开支波动，都会影响阶段性业绩和估值。</p>
+
+<p>更合理的判断是，把澜起科技视为“AI 算力基础设施中的内存互联卡位企业”：短期看 DDR5 渗透、存储周期和业绩兑现；中期看 CXL 放量和国产服务器生态；长期看公司能否从内存接口芯片扩展到更完整的高速互联芯片平台。只要 AI 算力继续走向更高带宽、更大内存池和更强资源调度能力，澜起科技所处的位置就会越来越重要。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/yahua-lithium-cycle-q3-profit-risk/">上一篇<br>雅化集团：锂盐周期复苏中的利润弹性与三季度风险</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#business-structure">一、业务结构：真正的利润核心是内存互联芯片</a><a class="toc-link toc-level-2" href="#standard-position">二、标准卡位：参与 JEDEC 标准制定本身就是护城河</a><a class="toc-link toc-level-2" href="#domestic-computing">三、国产算力：本土适配带来稳定需求缓冲</a><a class="toc-link toc-level-2" href="#financial-performance">四、经营表现：高端产品占比提升推高盈利能力</a><a class="toc-link toc-level-2" href="#fabless-model">五、Fabless 模式：轻资产提高效率，存货周期仍需警惕</a><a class="toc-link toc-level-2" href="#ai-memory-bottleneck">六、AI 算力瓶颈：GPU 越强，内存互联越重要</a><a class="toc-link toc-level-2" href="#ddr5-upgrade">七、DDR5 替代：价值量提升是确定性主线</a><a class="toc-link toc-level-2" href="#cxl-architecture">八、CXL 架构：中长期算力基建的新刚需</a><a class="toc-link toc-level-2" href="#competition">九、竞争格局：认证周期长，行业格局稳定</a><a class="toc-link toc-level-2" href="#ai-inference">十、AI 推理：高端互联芯片打开新增量</a><a class="toc-link toc-level-2" href="#capital-and-rd">十一、资本渠道：双重上市支持长期研发追赶</a><a class="toc-link toc-level-2" href="#cyclical-risk">十二、周期风险：DRAM 景气度仍会影响订单和利润</a><a class="toc-link toc-level-2" href="#architecture-risk">十三、新架构风险：HBM、存算一体和统一内存的长期冲击</a><a class="toc-link toc-level-2" href="#external-risk">十四、外部不确定性：贸易环境、云厂商资本开支与新品落地</a><a class="toc-link toc-level-2" href="#tracking-framework">十五、跟踪框架：看清澜起科技要盯住五条线</a><a class="toc-link toc-level-2" href="#investment-view">十六、投资判断：技术卡位与周期波动并存</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
