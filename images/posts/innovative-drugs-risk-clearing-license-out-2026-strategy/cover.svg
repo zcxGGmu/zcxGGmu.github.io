@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="0.48" stop-color="#1e3a8a"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22c55e"/><stop offset="0.5" stop-color="#a7f3d0"/><stop offset="1" stop-color="#facc15"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.32"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#ffffff" fill="none"><path d="M120 650 C280 510 430 720 610 560 C780 410 920 470 1070 350 C1240 215 1380 260 1500 160" stroke-width="8"/><path d="M120 735 C330 640 510 690 710 610 C940 520 1100 560 1480 360" stroke-width="4"/></g>
+  <g filter="url(#shadow)">
+    <rect x="180" y="470" width="210" height="180" rx="18" fill="#dbeafe" opacity="0.96"/>
+    <rect x="430" y="390" width="210" height="260" rx="18" fill="#bfdbfe" opacity="0.96"/>
+    <rect x="680" y="330" width="210" height="320" rx="18" fill="#93c5fd" opacity="0.96"/>
+    <rect x="930" y="250" width="210" height="400" rx="18" fill="#86efac" opacity="0.96"/>
+    <rect x="1180" y="200" width="210" height="450" rx="18" fill="#fde68a" opacity="0.96"/>
+  </g>
+  <path d="M210 610 C370 560 500 530 650 470 C820 405 960 345 1125 280 C1255 230 1355 205 1450 160" fill="none" stroke="url(#line)" stroke-width="18" stroke-linecap="round" filter="url(#shadow)"/>
+  <circle cx="1450" cy="160" r="46" fill="#facc15" filter="url(#shadow)"/>
+  <text x="120" y="175" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">创新药风险出清了吗</text>
+  <text x="124" y="254" fill="#dbeafe" font-family="Noto Sans SC, PingFang SC, Arial" font-size="38" font-weight="700">出海趋势 · 政策扰动 · 下半年配置策略</text>
+  <g fill="#0f172a" font-family="Noto Sans SC, PingFang SC, Arial" font-size="30" font-weight="700">
+    <text x="214" y="575">BD</text><text x="458" y="505">医保</text><text x="713" y="455">CXO</text><text x="965" y="400">数据</text><text x="1208" y="352">分批</text>
+  </g>
+</svg>
