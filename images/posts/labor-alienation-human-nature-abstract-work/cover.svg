@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.55" stop-color="#4b5563"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#fff" stroke-width="3">
+    <path d="M0 690H1600"/><path d="M0 590H1600"/><path d="M0 490H1600"/>
+    <path d="M250 290v470"/><path d="M520 250v510"/><path d="M790 215v545"/><path d="M1060 250v510"/><path d="M1330 290v470"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="260" y="420" width="1080" height="86" rx="18" fill="#1f2937"/>
+    <rect x="260" y="548" width="1080" height="86" rx="18" fill="#1f2937"/>
+    <rect x="260" y="676" width="1080" height="86" rx="18" fill="#1f2937"/>
+    <circle cx="390" cy="462" r="48" fill="#fbbf24"/>
+    <circle cx="675" cy="590" r="48" fill="#fbbf24"/>
+    <circle cx="960" cy="718" r="48" fill="#fbbf24"/>
+    <path d="M390 462H1260M675 590H1260M960 718H1260" stroke="#fb923c" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <g fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial">
+    <text x="110" y="160" font-size="70" font-weight="800">劳动为什么从人的天性</text>
+    <text x="110" y="250" font-size="70" font-weight="800">变成了强制</text>
+    <text x="116" y="325" font-size="34" font-weight="700" fill="#fed7aa">泰勒制 · 流水线 · 抽象劳动 · 异化劳动</text>
+  </g>
+  <g fill="#111827" font-family="Noto Sans SC, PingFang SC, Arial" font-size="28" font-weight="800">
+    <text x="344" y="472">动作</text>
+    <text x="629" y="600">效率</text>
+    <text x="914" y="728">异化</text>
+  </g>
+</svg>
