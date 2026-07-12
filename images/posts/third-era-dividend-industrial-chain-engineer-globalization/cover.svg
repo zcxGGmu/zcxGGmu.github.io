@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.55" stop-color="#075985"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity="0.34"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#fff" fill="none">
+    <path d="M130 670 C300 540 450 610 620 480 C810 335 980 390 1150 260 C1300 145 1410 170 1500 95" stroke-width="8"/>
+    <path d="M120 740 C340 650 560 690 790 575 C1010 465 1230 485 1490 315" stroke-width="4"/>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="365" cy="520" r="92" fill="#fef3c7"/>
+    <circle cx="640" cy="455" r="92" fill="#bfdbfe"/>
+    <circle cx="915" cy="390" r="92" fill="#bbf7d0"/>
+    <circle cx="1190" cy="325" r="92" fill="#fde68a"/>
+    <path d="M450 500 L555 475 M725 435 L830 410 M1000 370 L1105 345" stroke="#e0f2fe" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <g fill="#0f172a" font-family="Noto Sans SC, PingFang SC, Arial" font-size="34" font-weight="800">
+    <text x="309" y="532">劳动</text>
+    <text x="584" y="467">土地</text>
+    <text x="859" y="402">链条</text>
+    <text x="1134" y="337">全球</text>
+  </g>
+  <text x="105" y="165" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">中国第三次时代红利</text>
+  <text x="110" y="245" fill="#dbeafe" font-family="Noto Sans SC, PingFang SC, Arial" font-size="38" font-weight="700">产业链 · 工程师 · 出海重估</text>
+  <text x="110" y="805" fill="#ecfeff" font-family="Noto Sans SC, PingFang SC, Arial" font-size="30" font-weight="700">从低估体系迁移到全球定价体系</text>
+</svg>
