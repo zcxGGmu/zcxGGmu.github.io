@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.52" stop-color="#7f1d1d"/>
+      <stop offset="1" stop-color="#92400e"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#fef3c7" stroke-width="4">
+    <path d="M95 690 H1505"/>
+    <path d="M95 570 H1505"/>
+    <path d="M95 450 H1505"/>
+    <path d="M95 330 H1505"/>
+    <path d="M260 230 V745"/>
+    <path d="M540 230 V745"/>
+    <path d="M820 230 V745"/>
+    <path d="M1100 230 V745"/>
+    <path d="M1380 230 V745"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="150" y="455" width="410" height="210" rx="26" fill="#fee2e2"/>
+    <rect x="182" y="490" width="190" height="24" rx="12" fill="#991b1b" opacity="0.65"/>
+    <rect x="182" y="535" width="300" height="18" rx="9" fill="#7f1d1d" opacity="0.28"/>
+    <rect x="182" y="575" width="250" height="18" rx="9" fill="#7f1d1d" opacity="0.22"/>
+    <path d="M505 455 L560 510 L505 510 Z" fill="#fecaca"/>
+    <path d="M610 625 C735 555 805 580 935 490 C1045 414 1152 394 1324 292" stroke="#fef3c7" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <path d="M1306 291 L1342 282 L1331 318" stroke="#fef3c7" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="680" cy="605" r="50" fill="#f59e0b"/>
+    <circle cx="935" cy="490" r="50" fill="#fbbf24"/>
+    <circle cx="1195" cy="365" r="50" fill="#fde68a"/>
+  </g>
+  <text x="108" y="155" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">死工资才是最大的风险</text>
+  <text x="112" y="238" fill="#fed7aa" font-family="Noto Sans SC, PingFang SC, Arial" font-size="40" font-weight="700">第二曲线 · 收入结构 · 长期现金流</text>
+  <text x="114" y="315" fill="#fee2e2" font-family="Noto Sans SC, PingFang SC, Arial" font-size="32" font-weight="600">不要把全部安全感押在一份工资上</text>
+</svg>
