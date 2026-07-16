@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.52" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity="0.34"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#ffffff" fill="none">
+    <path d="M180 680 C360 560 480 600 655 505 C820 415 930 415 1100 300 C1260 190 1395 190 1510 125" stroke-width="8"/>
+    <path d="M130 765 C370 650 560 700 800 590 C1040 480 1230 460 1490 300" stroke-width="4"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="220" y="610" width="1010" height="44" rx="22" fill="#94a3b8"/>
+    <rect x="345" y="540" width="1010" height="44" rx="22" fill="#cbd5e1"/>
+    <rect x="480" y="470" width="1010" height="44" rx="22" fill="#e2e8f0"/>
+    <circle cx="300" cy="632" r="44" fill="#fbbf24"/>
+    <circle cx="428" cy="562" r="44" fill="#f59e0b"/>
+    <circle cx="565" cy="492" r="44" fill="#facc15"/>
+    <path d="M1050 330 L1260 190 L1408 285" stroke="#fef3c7" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="1260" cy="190" r="48" fill="#fef3c7"/>
+  </g>
+  <text x="110" y="160" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">在看不到希望时</text>
+  <text x="110" y="242" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">坚持做难而正确的事</text>
+  <text x="116" y="318" fill="#dbeafe" font-family="Noto Sans SC, PingFang SC, Arial" font-size="36" font-weight="700">进度本身就是希望</text>
+</svg>

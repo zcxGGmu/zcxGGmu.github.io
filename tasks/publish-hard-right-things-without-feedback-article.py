@@ -1,0 +1,389 @@
+from pathlib import Path
+from urllib.parse import quote
+from email.utils import format_datetime
+from datetime import datetime, timezone, timedelta
+import html
+import re
+import xml.etree.ElementTree as ET
+
+ROOT = Path('/tmp/hermes-video-publish')
+SLUG = 'keep-doing-hard-right-things-without-feedback'
+URL_PATH = f'/2026/{SLUG}/'
+FULL_URL = 'https://zcxggmu.github.io' + URL_PATH
+TITLE = '在看不到希望时，怎样坚持做难而正确的事'
+DESC = '从许三多在草原上修路、安迪在高墙里凿洞，到老马和老布被环境驯化，理解虚无、体制化、反馈消失，以及为什么行动本身可以成为希望。'
+DATE = '2026-07-16'
+PUB_DT = datetime(2026, 7, 16, 10, 35, tzinfo=timezone(timedelta(hours=8)))
+PUB_RSS = format_datetime(PUB_DT)
+CATEGORY = '个人成长'
+SERIES = '长期主义'
+TAGS = ['长期主义', '希望', '体制化', '虚无感', '士兵突击', '肖申克的救赎', '许三多', '安迪', '精神自由', '自我修炼']
+READING_MIN = 12
+COVER = f'/images/posts/{SLUG}/cover.svg'
+OLDER_URL = '/2026/wealth-freedom-time-business-model-security-trap/'
+OLDER_TITLE = '财富自由的第一性原理：时间、注意力与个人商业模式'
+
+ARTICLE_HTML = r'''
+<p>《士兵突击》里，一个农村出身的兵被扔进无边无际的草原；《肖申克的救赎》里，一个银行家含冤入狱，被关进阴冷沉默的高墙。荒原消磨人的心气，高墙泯灭人的希望。两个故事看似完全不同，真正讨论的却是同一种处境：当环境不给反馈、生活看不到出口、努力没有回应时，一个人该怎样活下去。</p>
+
+<p>草原和监狱都是隐喻。它们象征每个人都会经历的人生阶段：无处可去，无事可做，无人在乎。做了什么和没做什么似乎没有区别，努力和放弃都得不到命运回应。日子像一潭死水，永远沉默，永远不给声响。</p>
+
+<h2 id="meaningless-time">一、最难熬的不是苦难，而是漫长无望的徒劳</h2>
+
+<p>人这一生最难熬的，往往不是轰轰烈烈的大苦大难，而是漫长、无望、看不到反馈的徒劳。当生活被抽空意义，时间就不再只是时间，而会变成一把钝刀，一点点磨损人的心气。</p>
+
+<p>真正的虚无感并不来自失败，而来自反馈的消失。失败至少意味着你和世界发生了碰撞，知道哪里错了，知道还能怎么改。可当一个人无论努力还是敷衍，都看不见任何差别时，他最容易慢慢接受平庸，习惯敷衍，最后只剩重复和消耗。</p>
+
+<p>真正的牢笼，也不是荒原或高墙，而是看不到希望、得不到反馈的环境。在这样的环境里，人会怀疑一切：认真有什么用？坚持有什么意义？做得更好又能怎样？一旦这些问题没有答案，生活就会变成一场看不见尽头的无期徒刑。</p>
+
+<h2 id="laoma-brooks">二、老马和老布：人不是一夜之间被毁掉的</h2>
+
+<p>老马刚到草原五班时，并不是一个混日子的人。他曾经是红三连最好的班长，带着热血，也想在荒原上干出点样子。可他很快发现，在这里没有人看见他，没有人管他，认真没有用，努力也白费，做得好与不好，甚至做与不做，都没有任何区别。</p>
+
+<p>老马不是一夜之间堕落的。他是在一次次徒劳无功里，一点点学会得过且过。今天妥协一点，明天放弃一点，等某天回过神来，自己早已活成了当初最讨厌的样子。</p>
+
+<p>老布也是这样。他在肖申克待了五十年，监狱的规矩就是他的规矩，监狱的秩序就是他的秩序。他不需要思考，只需要服从。他的身份、尊严和存在感都建立在高墙之内。五十年足以让一个人把牢笼当成整个世界。</p>
+
+<p>当老布终于获得假释，他没有真正的喜悦，只有巨大的惶恐。墙外世界对他而言不是自由和新生，而是陌生、茫然和失控。他不知道怎么过普通人的生活，不知道自己是谁，不知道该做什么。自由太大，反而让他彻底失去存在感。</p>
+
+<h2 id="institutionalization">三、体制化最可怕的地方，是封锁想象</h2>
+
+<p>老马和老布，一个在荒原中堕落，一个在自由中崩溃。他们的共同处境，是环境用时间、疲惫和失望，一点点磨掉人的心气和希望。当他们不再不满、不再质疑、不再反抗，甚至不再觉得自己被困，他们的精神就已经被驯服了。</p>
+
+<p>这就是体制化的过程。它不会总是带来撕心裂肺的痛苦，却能让一个人悄无声息地消失。环境允许你成为什么样，你就活成什么样；身边的人怎么活，你就怎么活。被环境驯服的人，只能顺着环境的惯性往下滑，而惯性的终点，就是把自己活成环境的一部分。</p>
+
+<p>体制化真正可怕的地方，不只是禁锢身体，而是封锁想象。它让人无法想象另一种活法，无法想象另一种人生。老马想象不到荒原上也可以认真做事，老布想象不到高墙外也可以重新生活。当一个人不再向往更好的生活，不再期待更好的自己，他才是真的被困住了。</p>
+
+<h2 id="resignation">四、认命，是一个人被困住的开始</h2>
+
+<p>体制化的本质，是一个人开始认命：生活只能这样，我也只能这样活。于是，草原五班的许多人选择混日子，肖申克里的许多人慢慢被同化。因为找不到属于自己的意义，所以只能相信，既然大家都这样，那我也只能这样。</p>
+
+<p>认命最危险的地方在于，它看起来很现实。它会伪装成成熟、清醒、识时务，告诉你不要做不该做的事情，甚至连想都不要想。它不是一下子摧毁人，而是先让人停止想象，再让人停止行动，最后让人接受一切。</p>
+
+<p>真正困住一个人的，从来不只是环境，而是内心枯竭的希望和绝望的想象力。只要一个人相信自己再也没有别的活法，他就已经被困在原地。</p>
+
+<h2 id="xusanduo-andy">五、许三多和安迪没有认命，他们把意义放回行动本身</h2>
+
+<p>许三多没有相信荒原的定义，安迪也没有接受监狱的定义。草原荒凉孤寂，监狱暗无天日，所有人都在妥协、沉沦，只有他们固执地做着别人眼里没有意义、没有镜头、没有回报的事情。</p>
+
+<p>没有人告诉许三多，修好那条路就能离开五班；甚至没有人觉得在荒原上修一条路有什么用。可他只是日复一日地搬石头、码齐、铺平，风雨无阻，认真踏实地做好手上的事。</p>
+
+<p>也没有人告诉安迪，凿通那堵墙就一定能出去。那件事随时可能被发现，随时可能带来惩罚。但他依然在十九年无数个夜晚里，靠一把藏在书里的小锤子，一点点凿着那堵看不见尽头的墙。</p>
+
+<p>他们都在做一件没有反馈、没有奖励，甚至可能没有结果的事。可他们没有放弃。原因很简单：他们把行动的意义，安放在行动本身，而不是行动结果上。</p>
+
+<h2 id="action-itself">六、行动本身，就是对虚无的抵抗</h2>
+
+<p>许三多修路，不是因为确定这条路会被谁看见，也不是为了换来调走的机会。他日复一日修路，是因为他真的觉得修路这件事本身就是正确的。安迪凿墙，也不是因为确定自己一定能逃出去，而是因为凿墙这件事本身，就是他对抗整个环境最有力的方式。</p>
+
+<p>他们不是在追求确定的结果，而是在抵抗过程的消失。一个人只有在做自己认定正确的事情时，才不会因为过程起伏和结果模糊而停止。修路和凿墙，都是在混乱无序的外部世界里，为自己建立一套稳定而坚韧的内在秩序。</p>
+
+<p>在草原五班，如果一个人什么都不做，就会被荒原慢慢吞没；在肖申克，如果一个人什么都不做，就会被高墙慢慢驯化。修路和凿墙，本质上是同一种选择：拒绝环境给予自己的身份和定义，用自己的双手创造另一种存在方式。</p>
+
+<h2 id="identity">七、做难而正确的事，是在重新定义自己是谁</h2>
+
+<p>修路让许三多不再只是一个被发配到五班的兵，而是一个能够坚守本分的兵。凿墙让安迪不再只是一个被关在监狱里的囚犯，而是一个拥有自由意志的人。</p>
+
+<p>当世界无法给予他们想要的身份，他们选择用行动塑造身份。这种确认自我的方式，不依赖外界反馈，也不需要他人认可，只依靠自己的选择和行动。</p>
+
+<p>安迪最后爬过隧洞，穿过污浊的下水道，站在暴雨中张开双臂。那一刻当然是自由的象征。但自由并不是在那一刻才突然获得的。在过去无数个深夜里，每一次凿向墙壁，每一次敲下石屑，他都已经把自己活成了一个自由的人。</p>
+
+<p>与其说许三多和安迪改变了命运，不如说他们在命运中成为了自己。他们没有变成环境想让他们变成的样子，而是时时刻刻都在成为自己想成为的人。</p>
+
+<h2 id="spiritual-freedom">八、肉身自由容易，精神自由最难</h2>
+
+<p>对普通人来说，获得肉体层面的自由并不总是最难；真正困难的是精神自由。任何环境，只要你身在其中却找不到意义，它就会变成囚禁精神的牢笼。</p>
+
+<p>许三多和安迪无法被剥夺精神自由，是因为他们的意义感不来自结果，而来自重复。修路和凿墙都是极其具体、枯燥、漫长的事，但许三多可以摸到一块又一块石头的棱角，安迪可以看见一点又一点墙壁粉末掉落。</p>
+
+<p>他们把最难熬、最空白的时间，通过微小而持续的行动，变成有方向、有形状、看得见、摸得着的路径。而这些路径，就是真实、清晰、具体的进度。</p>
+
+<p>进度本身就是希望。只要进度还在向前，就永远值得满怀希望。</p>
+
+<h2 id="progress-is-hope">九、希望不是情绪，而是结构</h2>
+
+<p>希望不是一种短暂情绪。情绪会起伏，会消失，会被现实打碎。真正的希望，是一种由选择和行动一点点构建起来的结构，是能够承受漫长黑暗的勇气和力量。</p>
+
+<p>不是要站在原地，等天亮了再走；而是走着走着，才慢慢看见光亮。不是等有了反馈再继续坚持；而是只有先坚持下去，命运才可能发出回应，生活才可能出现改变。</p>
+
+<p>许三多和安迪相信的，并不是隧道尽头一定有光，也不是路修完一定会被看见。他们真正相信的是：每用力向前凿一下，墙就薄一分；每认真铺一段，路就长一寸。这个确定性来自行动本身，而不是来自外界承诺。</p>
+
+<h2 id="useless-things">十、看似无用的事，守住的是自己的边界</h2>
+
+<p>世俗意义上的“有用”，往往意味着迎合环境规则，得到确定结果。环境驯化一个人最隐秘、最强大的方式，就是垄断“有用”的定义。它让人只做规则框架内被认可、被奖励、被看见的事情。久而久之，人就沦为系统零件和环境延伸。</p>
+
+<p>那些看似无用的事情，恰恰可能是由自己掌控的边界。即便这件事很小，小到别人不屑一顾，甚至嗤之以鼻，只要它由你选择、由你坚持、由你赋予意义，它就在无声宣告：你还拥有属于自己的选择。</p>
+
+<p>这个选择就是自由。它未必立刻改变世界，却可以防止你被世界改变。所谓自由，就是在任何处境中，都能做一件完全属于自己的事。</p>
+
+<h2 id="choice">十一、人不是当前处境，而是自身选择的合计</h2>
+
+<p>老马和老布把暂时境遇当成一生命运，许三多和安迪却在绝境中仍然保留选择。人不是当前处境本身，人是自身选择的合计。</p>
+
+<p>当许三多选择认真修路，他就不只是一个孬兵；当安迪选择继续凿墙，他就不只是一个囚犯。他们是自己行动累积起来的总和。每一次行动，都是对当前生活的一次微小越狱。</p>
+
+<p>一个人无法立刻改变环境，但可以通过选择，不让环境完全定义自己。只要还能选择一件正确的事去做，人就没有彻底输掉。</p>
+
+<h2 id="ordinary-life">十二、普通人的荒原和高墙，往往没有戏剧性</h2>
+
+<p>现实生活里的荒原和高墙，通常没有那么戏剧化。它们可能是一份看不到成长的工作，一段长期没有回应的努力，一个无人理解的目标，一段被重复和消耗填满的日子。</p>
+
+<p>你可能努力了很久，却没有掌声；坚持了很久，却没有结果；认真了很久，却没人看见。正是在这种时刻，人最容易被环境驯化，开始相信“算了，大家都这样”。</p>
+
+<p>但越是在无反馈的环境里，越需要找到一件完全属于自己的事。它可以是写作、训练、学习、打磨技术、照顾身体、整理作品、维护秩序，也可以只是每天向前推进一点点。重点不是它立刻有多大回报，而是它是否让你继续成为自己想成为的人。</p>
+
+<h2 id="conclusion">十三、结论：走下去本身，就是希望</h2>
+
+<p>一个人在无人问津的岁月和看不到希望的日子里，仍能坚持走下去，唯一可靠的原因，就是走下去本身已经成为希望。</p>
+
+<p>真正的坚持，不是盲目忍耐，也不是自我感动，而是在没有反馈时仍然选择正确的行动；在看不到结果时仍然维持内在秩序；在环境试图定义你时，仍然用行动塑造自己。</p>
+
+<p>生活不一定会立刻回应你，命运也不会每天给你掌声。但只要墙在一点点变薄，路在一寸寸变长，进度就还在，希望就还在。做难而正确的事，不是为了马上改变世界，而是为了不被世界改变。</p>
+'''
+
+
+def esc(s):
+    return html.escape(s, quote=True)
+
+
+def term_url(kind, term):
+    return f'/{kind}/{quote(term)}/'
+
+
+def meta_links():
+    cat = f'<a href="{term_url("categories", CATEGORY)}">{esc(CATEGORY)}</a>'
+    tag_links = '&nbsp;'.join(f'<a href="{term_url("tags", t)}">{esc(t)}</a>' for t in TAGS)
+    return f'<span class="meta-icon" aria-hidden="true">▣</span> {cat}&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> {tag_links}&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> {READING_MIN} min'
+
+
+def build_toc(body):
+    links = []
+    for m in re.finditer(r'<h2 id="([^"]+)">(.*?)</h2>', body):
+        links.append(f'<a class="toc-link toc-level-2" href="#{m.group(1)}">{m.group(2)}</a>')
+    return '<div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav>' + ''.join(links) + '</nav></div></div>'
+
+
+def make_cover():
+    d = ROOT / 'images/posts' / SLUG
+    d.mkdir(parents=True, exist_ok=True)
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.52" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity="0.34"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#ffffff" fill="none">
+    <path d="M180 680 C360 560 480 600 655 505 C820 415 930 415 1100 300 C1260 190 1395 190 1510 125" stroke-width="8"/>
+    <path d="M130 765 C370 650 560 700 800 590 C1040 480 1230 460 1490 300" stroke-width="4"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="220" y="610" width="1010" height="44" rx="22" fill="#94a3b8"/>
+    <rect x="345" y="540" width="1010" height="44" rx="22" fill="#cbd5e1"/>
+    <rect x="480" y="470" width="1010" height="44" rx="22" fill="#e2e8f0"/>
+    <circle cx="300" cy="632" r="44" fill="#fbbf24"/>
+    <circle cx="428" cy="562" r="44" fill="#f59e0b"/>
+    <circle cx="565" cy="492" r="44" fill="#facc15"/>
+    <path d="M1050 330 L1260 190 L1408 285" stroke="#fef3c7" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="1260" cy="190" r="48" fill="#fef3c7"/>
+  </g>
+  <text x="110" y="160" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">在看不到希望时</text>
+  <text x="110" y="242" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">坚持做难而正确的事</text>
+  <text x="116" y="318" fill="#dbeafe" font-family="Noto Sans SC, PingFang SC, Arial" font-size="36" font-weight="700">进度本身就是希望</text>
+</svg>'''
+    (d / 'cover.svg').write_text(svg, encoding='utf-8')
+
+
+def build_article_page():
+    template = (ROOT / OLDER_URL.strip('/') / 'index.html').read_text(encoding='utf-8')
+    head = template[:template.find('<article class="post">')]
+    tail = template[template.find('</article>', template.find('<article class="post">')) + len('</article>'):]
+    head = re.sub(r'<title>.*?</title>', f"<title>{esc(TITLE)} - zcxGGmu's Blog</title>", head, flags=re.S)
+    head = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{esc(DESC)}">', head)
+    head = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{esc(FULL_URL)}">', head)
+    head = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{esc(TITLE)}">', head)
+    head = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{esc(DESC)}">', head)
+    head = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{esc(FULL_URL)}">', head)
+    article = f'''<article class="post"><div class="post-head-wrapper" style="background-image:url('{COVER}')"><div class="post-title">{esc(TITLE)}<div class="post-subtitle">{esc(DESC)}</div><div class="post-meta"><time itemprop="datePublished">{DATE}</time>&nbsp;&nbsp;{meta_links()}</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>{ARTICLE_HTML}</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="{OLDER_URL}">上一篇<br>{esc(OLDER_TITLE)}</a></nav>
+    </article>'''
+    tail = re.sub(r'<div class="toc-wrapper">.*?</div></div>', build_toc(ARTICLE_HTML), tail, flags=re.S)
+    out = ROOT / '2026' / SLUG / 'index.html'
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(head + article + tail, encoding='utf-8')
+    older = ROOT / OLDER_URL.strip('/') / 'index.html'
+    txt = older.read_text(encoding='utf-8')
+    txt = re.sub(r'<a class="newer-posts">下一篇<br>没有更新的文章</a>', f'<a class="newer-posts" href="{URL_PATH}">下一篇<br>{esc(TITLE)}</a>', txt)
+    older.write_text(txt, encoding='utf-8')
+
+
+def home_card(url, title, desc, cover, minutes):
+    return f'''<a href="{url}" class="a-block">
+      <div class="post-item-wrapper ">
+        <div class="post-item post-item-no-divider">
+          <div class="post-item-info-wrapper">
+            <div class="post-item-title">{esc(title)}</div>
+            <div class="post-item-summary">{esc(desc)}</div>
+            <div class="post-item-meta">{DATE}&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> {minutes} min&nbsp;&nbsp;</div>
+          </div>
+          <div class="post-item-image-wrapper"><div class="post-item-image" style="background-image:url('{cover}')"></div></div>
+        </div>
+      </div>
+    </a>'''
+
+
+def update_home():
+    p = ROOT / 'index.html'
+    txt = p.read_text(encoding='utf-8')
+    if URL_PATH not in txt:
+        marker = f'<a href="{OLDER_URL}" class="a-block">'
+        pos = txt.find(marker)
+        if pos == -1:
+            raise RuntimeError('older homepage marker not found')
+        txt = txt[:pos] + home_card(URL_PATH, TITLE, DESC, COVER, READING_MIN) + '\n' + txt[pos:]
+    p.write_text(txt, encoding='utf-8')
+
+
+def update_rss():
+    p = ROOT / 'index.xml'
+    txt = p.read_text(encoding='utf-8')
+    txt = re.sub(r'<lastBuildDate>.*?</lastBuildDate>', f'<lastBuildDate>{PUB_RSS}</lastBuildDate>', txt)
+    item = f'''<item>
+<title>{esc(TITLE)}</title>
+<link>{FULL_URL}</link>
+<guid>{FULL_URL}</guid>
+<pubDate>{PUB_RSS}</pubDate>
+<description>{esc(DESC)}</description>
+</item>
+'''
+    if FULL_URL not in txt:
+        txt = txt.replace('<item>', item + '<item>', 1)
+    p.write_text(txt, encoding='utf-8')
+
+
+def update_archive():
+    p = ROOT / 'archive/index.html'
+    txt = p.read_text(encoding='utf-8')
+    if URL_PATH not in txt:
+        txt = re.sub(r'2026<span style="font-size:18px;color:#999;margin-left:10px;font-weight:400">(\d+) 篇</span>', lambda m: f'2026<span style="font-size:18px;color:#999;margin-left:10px;font-weight:400">{int(m.group(1)) + 1} 篇</span>', txt, count=1)
+        item = f'''<div style="padding:8px 0;font-size:15px">
+        <span style="color:#999">{DATE}</span>&nbsp;
+        <a href="{URL_PATH}">{esc(TITLE)}</a>
+        <span style="margin-left:10px"><span style="color:#999;font-size:12px">{esc(CATEGORY)}</span></span>
+      </div> '''
+        marker = f'<a href="{OLDER_URL}">'
+        pos = txt.find(marker)
+        if pos == -1:
+            raise RuntimeError('archive marker not found')
+        start = txt.rfind('<div style="padding:8px 0;font-size:15px">', 0, pos)
+        if start == -1:
+            raise RuntimeError('archive insertion point not found')
+        txt = txt[:start] + item + txt[start:]
+    p.write_text(txt, encoding='utf-8')
+
+
+def list_page(kind, term, title_prefix=None, emoji=''):
+    d = ROOT / kind / term
+    d.mkdir(parents=True, exist_ok=True)
+    p = d / 'index.html'
+    if p.exists():
+        txt = p.read_text(encoding='utf-8')
+        if URL_PATH not in txt:
+            txt = re.sub(r'共 (\d+) 篇文章', lambda m: f'共 {int(m.group(1)) + 1} 篇文章', txt, count=1)
+            item = f'''<div style="padding:12px 0;border-bottom:1px solid rgba(128,128,128,0.08)">
+        <a href="{URL_PATH}" style="font-size:16px;text-decoration:none">{esc(TITLE)}</a>
+        <span style="color:#999;font-size:13px;margin-left:10px">{DATE}</span>
+      </div> '''
+            insert = txt.find('<div style="padding:12px 0;border-bottom:1px solid rgba(128,128,128,0.08)">')
+            if insert == -1:
+                insert = txt.find('</div></div></div>')
+            txt = txt[:insert] + item + txt[insert:]
+        p.write_text(txt, encoding='utf-8')
+        return
+    label = f'{title_prefix}: {term}' if title_prefix else term
+    h1 = f'{emoji} {term}' if emoji else label
+    txt = f'''<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f8fafc"><meta name="description" content="{esc(label)}"><meta property="og:title" content="{esc(label)} - zcxGGmu's Blog"><link rel="canonical" href="https://zcxggmu.github.io/{kind}/{quote(term)}/"><link rel="stylesheet" href="/scss/journal.min.css"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap"><title>{esc(label)} - zcxGGmu's Blog</title></head><body><div class="stream-container"><div class="post-list-container" style="min-height:100vh"><div style="padding:40px 35px"><h1 style="font-size:30px;font-weight:500;margin-bottom:10px">{esc(h1)}</h1><p style="color:#999;margin-bottom:30px">共 1 篇文章</p><div style="padding:12px 0;border-bottom:1px solid rgba(128,128,128,0.08)">
+        <a href="{URL_PATH}" style="font-size:16px;text-decoration:none">{esc(TITLE)}</a>
+        <span style="color:#999;font-size:13px;margin-left:10px">{DATE}</span>
+      </div> </div></div></div><script src="/js/journal.js"></script></body></html>'''
+    p.write_text(txt, encoding='utf-8')
+
+
+def update_index_count(kind, term):
+    p = ROOT / kind / 'index.html'
+    if not p.exists():
+        return
+    txt = p.read_text(encoding='utf-8')
+    href = f'/{kind}/{quote(term)}/'
+    if href in txt:
+        pattern = re.compile(rf'(<a href="{re.escape(href)}"[^>]*>{re.escape(term)}<span style="color:#999[^>]*>\()(\d+)(\)</span></a>)')
+        txt = pattern.sub(lambda m: f'{m.group(1)}{int(m.group(2)) + 1}{m.group(3)}', txt, count=1)
+    else:
+        if kind == 'tags':
+            item = f'<a href="{href}" style="display:inline-block;margin:5px 8px;padding:4px 12px;background:rgba(25,118,210,0.06);border-radius:4px;font-size:15px">{esc(term)}<span style="color:#999;font-size:12px;margin-left:4px">(1)</span></a>\n'
+        else:
+            item = f'<a href="{href}" class="a-block" style="padding:8px 0;font-size:18px">{esc(term)}<span style="color:#999;margin-left:8px">(1)</span></a>\n'
+        marker = '</div></div></div>'
+        pos = txt.find(marker)
+        if pos == -1:
+            raise RuntimeError(f'{kind} index insertion marker not found')
+        txt = txt[:pos] + item + txt[pos:]
+    p.write_text(txt, encoding='utf-8')
+
+
+def update_taxonomy():
+    list_page('categories', CATEGORY, '分类')
+    update_index_count('categories', CATEGORY)
+    list_page('series', SERIES, None, '📚')
+    update_index_count('series', SERIES)
+    for tag in TAGS:
+        list_page('tags', tag, '标签', '🏷️')
+        update_index_count('tags', tag)
+
+
+def validate():
+    failures = []
+    article = ROOT / '2026' / SLUG / 'index.html'
+    txt = article.read_text(encoding='utf-8')
+    forbidden = ['B站', 'bilibili', '视频里', '视频中', '原视频', '音频里', '音频中', 'UP主', 'up主', '这期', '本期', '作者说', '他提到', '观看', '点赞', '下期', '欢迎收看', '感谢', '订阅', '老铁']
+    for w in forbidden:
+        if w in txt:
+            failures.append(f'forbidden word in article: {w}')
+    for concept in ['许三多', '安迪', '老马', '老布', '体制化', '虚无感', '行动本身', '进度本身就是希望', '精神自由']:
+        if concept not in txt:
+            failures.append(f'missing concept: {concept}')
+    for p in [article, ROOT / 'index.html', ROOT / 'index.xml', ROOT / 'archive/index.html', ROOT / 'categories' / CATEGORY / 'index.html', ROOT / 'series' / SERIES / 'index.html']:
+        if not p.exists():
+            failures.append(f'missing {p}')
+    home = (ROOT / 'index.html').read_text(encoding='utf-8')
+    links = re.findall(r'<a href="(/2026/[^"]+/)" class="a-block">', home)
+    expected = ['/2026/codeinsights-local-first-agent-workbench/', '/2026/what-you-need-to-learn-from-claw-code-repo/', '/2026/gaojingqi-investment-system/', '/2026/ai-revolution-permanent-underclass-career-selection/', '/2026/live-longer-than-earn-fast-investment-infinite-game/', URL_PATH, OLDER_URL]
+    if links[:7] != expected:
+        failures.append(f'homepage order mismatch: {links[:7]}')
+    older = (ROOT / OLDER_URL.strip('/') / 'index.html').read_text(encoding='utf-8')
+    if f'href="{URL_PATH}"' not in older:
+        failures.append('older article does not link to new article')
+    try:
+        ET.parse(ROOT / 'index.xml')
+    except Exception as e:
+        failures.append(f'rss xml parse failed: {e}')
+    if failures:
+        raise SystemExit('\n'.join(failures))
+    print('validation passed')
+
+
+def main():
+    make_cover()
+    build_article_page()
+    update_home()
+    update_rss()
+    update_archive()
+    update_taxonomy()
+    validate()
+    print('published local files for', FULL_URL)
+
+
+if __name__ == '__main__':
+    main()
