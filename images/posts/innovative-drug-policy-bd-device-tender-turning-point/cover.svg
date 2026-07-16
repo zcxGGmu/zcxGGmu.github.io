@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#052e2b"/>
+      <stop offset="0.52" stop-color="#134e4a"/>
+      <stop offset="1" stop-color="#4338ca"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#ccfbf1" stroke-width="4">
+    <path d="M120 705 H1480"/>
+    <path d="M120 585 H1480"/>
+    <path d="M120 465 H1480"/>
+    <path d="M120 345 H1480"/>
+    <path d="M300 250 V750"/>
+    <path d="M590 250 V750"/>
+    <path d="M880 250 V750"/>
+    <path d="M1170 250 V750"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="225" y="510" width="245" height="112" rx="56" fill="#f8fafc"/>
+    <rect x="346" y="510" width="124" height="112" rx="56" fill="#5eead4"/>
+    <circle cx="347" cy="566" r="36" fill="#0f766e"/>
+    <rect x="560" y="560" width="230" height="52" rx="26" fill="#bfdbfe"/>
+    <rect x="652" y="512" width="52" height="148" rx="26" fill="#bfdbfe"/>
+    <path d="M875 625 C980 540 1065 560 1155 450 C1238 348 1330 323 1468 245" stroke="#fef3c7" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M1448 244 L1483 237 L1473 271" stroke="#fef3c7" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="925" cy="596" r="42" fill="#34d399"/>
+    <circle cx="1155" cy="450" r="42" fill="#60a5fa"/>
+    <circle cx="1375" cy="300" r="42" fill="#facc15"/>
+  </g>
+  <text x="98" y="150" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="64" font-weight="800">医药投资的政策拐点</text>
+  <text x="102" y="232" fill="#ccfbf1" font-family="Noto Sans SC, PingFang SC, Arial" font-size="39" font-weight="700">创新药 · BD 出海 · 器械招投标</text>
+  <text x="104" y="308" fill="#dbeafe" font-family="Noto Sans SC, PingFang SC, Arial" font-size="32" font-weight="600">从主题修复进入基本面验证阶段</text>
+</svg>
