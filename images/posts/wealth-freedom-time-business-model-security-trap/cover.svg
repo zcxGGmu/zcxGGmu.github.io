@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.48" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity="0.34"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#fff" fill="none">
+    <path d="M130 720 C360 560 520 630 720 455 C925 275 1110 335 1480 130" stroke-width="8"/>
+    <path d="M120 610 C360 500 525 520 760 390 C980 268 1170 270 1490 80" stroke-width="4"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="190" y="512" width="220" height="170" rx="18" fill="#bfdbfe"/>
+    <rect x="460" y="442" width="220" height="240" rx="18" fill="#93c5fd"/>
+    <rect x="730" y="352" width="220" height="330" rx="18" fill="#fde68a"/>
+    <rect x="1000" y="252" width="220" height="430" rx="18" fill="#fbbf24"/>
+    <path d="M260 590 C430 535 585 475 745 395 C920 310 1080 245 1295 160" fill="none" stroke="#fef3c7" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="1295" cy="160" r="46" fill="#facc15"/>
+  </g>
+  <text x="110" y="160" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">财富自由的第一性原理</text>
+  <text x="114" y="240" fill="#dbeafe" font-family="Noto Sans SC, PingFang SC, Arial" font-size="38" font-weight="700">时间 · 注意力 · 复利 · 个人商业模式</text>
+  <g fill="#111827" font-family="Noto Sans SC, PingFang SC, Arial" font-size="30" font-weight="800">
+    <text x="238" y="610">时间</text>
+    <text x="502" y="565">注意力</text>
+    <text x="786" y="500">复利</text>
+    <text x="1038" y="435">自由</text>
+  </g>
+</svg>
