@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b1d0f"/>
+      <stop offset="0.52" stop-color="#9a3412"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity="0.32"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#fed7aa" stroke-width="4">
+    <path d="M120 700 H1480"/><path d="M120 580 H1480"/><path d="M120 460 H1480"/><path d="M120 340 H1480"/>
+    <path d="M300 250 V750"/><path d="M590 250 V750"/><path d="M880 250 V750"/><path d="M1170 250 V750"/>
+  </g>
+  <path d="M145 655 C310 610 430 650 600 555 C760 465 880 520 1010 410 C1180 265 1320 315 1485 185" fill="none" stroke="#fbbf24" stroke-width="18" stroke-linecap="round" filter="url(#shadow)"/>
+  <path d="M145 725 C350 650 520 735 745 630 C930 544 1080 610 1275 470 C1380 395 1455 372 1510 340" fill="none" stroke="#67e8f9" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1485" cy="185" r="52" fill="#fdba74" filter="url(#shadow)"/>
+  <circle cx="1275" cy="470" r="38" fill="#5eead4" filter="url(#shadow)"/>
+  <text x="100" y="164" fill="#fff7ed" font-family="Noto Sans SC, PingFang SC, Arial" font-size="66" font-weight="800">铜的中长期赔率</text>
+  <text x="104" y="246" fill="#ffedd5" font-family="Noto Sans SC, PingFang SC, Arial" font-size="40" font-weight="700">关税 · 库存 · AI 电力需求</text>
+  <text x="106" y="320" fill="#ccfbf1" font-family="Noto Sans SC, PingFang SC, Arial" font-size="31" font-weight="600">非美低库存与矿端扰动抬高价格重心</text>
+</svg>

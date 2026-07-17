@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="0.48" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000" flood-opacity="0.32"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.2" fill="none" stroke="#bfdbfe" stroke-width="4">
+    <path d="M205 675 C320 560 430 560 545 675 S770 790 885 675 S1110 560 1225 675 S1450 790 1565 675"/>
+    <path d="M205 555 C320 440 430 440 545 555 S770 670 885 555 S1110 440 1225 555 S1450 670 1565 555"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="238" y="505" width="300" height="122" rx="61" fill="#ecfeff"/>
+    <circle cx="306" cy="566" r="36" fill="#0f766e"/>
+    <circle cx="386" cy="566" r="36" fill="#3b82f6"/>
+    <circle cx="466" cy="566" r="36" fill="#14b8a6"/>
+    <path d="M690 635 C810 520 930 580 1040 440 C1135 320 1275 315 1415 235" stroke="#fde68a" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <circle cx="1040" cy="440" r="44" fill="#60a5fa"/>
+    <circle cx="1415" cy="235" r="54" fill="#facc15"/>
+  </g>
+  <text x="98" y="150" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="64" font-weight="800">中国创新药 2026 半年复盘</text>
+  <text x="102" y="232" fill="#ccfbf1" font-family="Noto Sans SC, PingFang SC, Arial" font-size="39" font-weight="700">政策底 · 业绩底 · 估值底</text>
+  <text x="104" y="308" fill="#dbeafe" font-family="Noto Sans SC, PingFang SC, Arial" font-size="32" font-weight="600">从普涨修复转向真创新与真业绩</text>
+</svg>
