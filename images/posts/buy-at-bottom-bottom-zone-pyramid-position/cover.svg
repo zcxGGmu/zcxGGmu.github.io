@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">买在底部：底部买入的艺术与 3% 金字塔建仓法</title>
+  <desc id="desc">底部不是一个点，而是量能、形态、估值与情绪共同验证出的区域。用 3% 金字塔建仓、仓位上限和止损纪律，把抄底从赌博变成计算。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111827"/><stop offset="0.58" stop-color="#991b1b"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.32"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.15" stroke="#fff" stroke-width="3">
+    <path d="M120 690 H1480"/><path d="M120 570 H1480"/><path d="M120 450 H1480"/><path d="M120 330 H1480"/>
+    <path d="M300 240 V760"/><path d="M600 240 V760"/><path d="M900 240 V760"/><path d="M1200 240 V760"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M160 680 C320 570 470 620 650 485 C825 350 960 455 1160 305 C1290 190 1410 205 1500 130" fill="none" stroke="#f8fafc" stroke-width="15" stroke-linecap="round" opacity="0.88"/>
+    <circle cx="650" cy="485" r="42" fill="#f59e0b"/><circle cx="1160" cy="305" r="50" fill="#f8fafc" opacity="0.92"/>
+    <rect x="112" y="590" width="500" height="118" rx="24" fill="#f8fafc" opacity="0.94"/>
+    <text x="152" y="665" fill="#991b1b" font-family="Noto Sans SC, PingFang SC, Arial" font-size="42" font-weight="800">买在底部</text>
+  </g>
+  <text x="96" y="155" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="58" font-weight="800">买在底部：</text><text x="96" y="227" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="50" font-weight="800">底部买入的艺术与 3% 金字塔建仓法</text>
+  <text x="100" y="315" fill="#f8fafc" opacity="0.92" font-family="Noto Sans SC, PingFang SC, Arial" font-size="36" font-weight="700">区域判断 · 量形情绪 · 金字塔建仓</text>
+  <text x="102" y="382" fill="#e5e7eb" font-family="Noto Sans SC, PingFang SC, Arial" font-size="28" font-weight="600">底部不是一个点，而是量能、形态、估值与情绪共同验证出的区域。用 3% 金字塔建仓、仓位上限和</text>
+</svg>
