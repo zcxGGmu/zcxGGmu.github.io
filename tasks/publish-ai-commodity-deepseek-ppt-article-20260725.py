@@ -31,7 +31,7 @@ TITLE = "像投资电厂一样投资 AI：大模型通用工业品化与 DeepSee
 def slide_img(name: str, caption: str) -> str:
     return (
         f'<figure class="article-figure">'
-        f'<img src="/images/posts/{SLUG}/{name}" alt="{base.esc(caption)}">'
+        f'<img src="/images/posts/{SLUG}/{name}?v=20260725-full" alt="{base.esc(caption)}">'
         f"<figcaption>{base.esc(caption)}</figcaption>"
         f"</figure>"
     )
@@ -141,10 +141,8 @@ def clean_and_copy_slides(post_slug: str) -> None:
         out = out_dir / source.name
         image = Image.open(source).convert("RGB")
         draw = ImageDraw.Draw(image)
-        # Remove source/watermark text in the top band and subtitle overlays at the bottom
-        # while preserving the PPT body.
-        draw.rectangle((0, 0, image.width, 56), fill=(17, 24, 39))
-        draw.rectangle((0, 428, image.width, image.height), fill=(17, 24, 39))
+        # Preserve the full PPT frame. Some source marks overlap actual slide
+        # titles, so any masking can make the slide appear incomplete.
         image.save(out, format="JPEG", quality=92, optimize=True)
         base.rec(out)
 
@@ -272,7 +270,7 @@ def extra_validate() -> None:
             failures.append(f"{post.slug}: missing required term {word}")
     if "source_id" in article or "BV1HBgv68E76" in article:
         failures.append(f"{post.slug}: source id leaked into article")
-    image_refs = re.findall(r'<img src="(/images/posts/[^"]+slide-\d+\.jpg)"', article)
+    image_refs = re.findall(r'<img src="(/images/posts/[^"?]+slide-\d+\.jpg)(?:\?[^"]*)?"', article)
     if len(image_refs) < 5:
         failures.append(f"{post.slug}: expected at least 5 slide images, found {len(image_refs)}")
     for ref in image_refs:
