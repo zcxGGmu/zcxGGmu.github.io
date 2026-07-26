@@ -1,0 +1,250 @@
+from __future__ import annotations
+
+import importlib.util
+import json
+import re
+import shutil
+import sys
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+
+ROOT = Path("/tmp/hermes-video-publish-20260721-triple")
+BASE_PATH = ROOT / "tasks" / "publish-physical-ai-three-article-batch.py"
+SCRIPT_NAME = "publish-openclaw-hermes-agent-comparison-article-20260727.py"
+MANIFEST_NAME = "publish-openclaw-hermes-agent-comparison-article-20260727-changed-files.json"
+
+
+spec = importlib.util.spec_from_file_location("base_publisher", BASE_PATH)
+if spec is None or spec.loader is None:
+    raise RuntimeError(f"cannot load base publisher: {BASE_PATH}")
+base = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = base
+spec.loader.exec_module(base)
+
+
+SLUG = "openclaw-hermes-agent-design-learning-ai-daily-skill"
+TITLE = "OpenClaw 与 Hermes：设计驱动和学习驱动的两种 Agent 路线"
+
+
+BODY_ARTICLE = f"""
+<p><img src="/images/posts/{SLUG}/cover.svg" alt="{TITLE}"></p>
+<p>讨论 OpenClaw 和 Hermes 时，最容易掉进一个误区：谁更强，谁更先进，谁更值得用。这个问题看似直接，实际上从一开始就把两个系统放进了错误的比较框架。它们并不是同一种 Agent，也不是在同一条能力轴上做线性竞争。</p>
+<p>OpenClaw 更关心的是怎样让 Agent 系统可控、可编排、可接入。它像一个面向业务场景的 Agent Gateway，把渠道、工具边界、任务路由、工作区、运行规则和审计链路组织起来，让 Agent 按照设计好的流程稳定执行。Hermes 更关心的是怎样让 Agent 会学习、会沉淀、会成长。它关注一次任务结束后经验是否留下，项目背景是否保留，踩过的坑能否转化为后续可复用的 Skill。</p>
+<p>因此，OpenClaw 与 Hermes 的核心差异可以概括为两条路线：OpenClaw 偏设计驱动，重点是“人先把系统设计清楚，Agent 按设计执行”；Hermes 偏学习驱动，重点是“Agent 在使用中沉淀经验，下一次执行得更贴近需求”。真正的问题不是谁取代谁，而是什么场景需要更强的流程控制，什么场景需要更强的经验复用。</p>
+
+<h2 id="wrong-question">先别问谁更强，先问要解决什么问题</h2>
+<p>Agent 系统的比较，不能只看名字、热度和演示效果。一个系统如果目标是接入多渠道消息、分发任务、控制工具权限、记录运行过程，它的价值就不在于“像不像一个会成长的人”，而在于是否稳定、可控、可审计、可部署。另一个系统如果目标是从对话和工具调用中学习经验、自动生成或更新 Skill、把过去的执行教训变成下一次的能力，它的价值就不在于“流程是否一开始就严密”，而在于是否能越用越契合。</p>
+<p>OpenClaw 与 Hermes 正好落在这两类需求上。OpenClaw 更像一套 Agent 系统工程框架，适合把业务入口、工具、角色、路由和运行边界提前规划好。Hermes 更像一个持续学习的个人工作台，适合在真实任务中边做边调，让经验逐渐沉淀成可复用的知识和操作规范。</p>
+<p>如果把二者硬放在同一个排名里，就会得到大量无意义争论。设计驱动的系统不应该被要求像学习驱动系统一样自动演化；学习驱动的系统也不应该被要求在没有足够使用反馈时立刻拥有完美流程。一个强调秩序，一个强调成长，评价标准天然不同。</p>
+
+<h2 id="design-driven">设计驱动：先画清楚系统，再让 Agent 执行</h2>
+<p>设计驱动的核心，是人先把系统结构想清楚。渠道从哪里进来，任务怎么分流，哪些工具可以调用，哪些工具不能调用，哪些工作区用于读写，哪些输出需要审计，哪些失败需要重试，哪些内容必须人工确认，这些都要提前定义。</p>
+<p>OpenClaw 的优势就在这里。它不只是把消息接进来，也不只是启动一个助手回答问题，而是把一个业务型 Agent 系统拆成可部署、可编排、可接入的结构。Gateway 接住消息，记录任务，把任务交给后面的 AI Assistant、Coding Agent 或工具工作流，再按照配置好的边界运行。</p>
+<p>这类系统的主线很清楚：先配置系统，再让 Agent 执行，最后审计结果。人负责设计边界和流程，Agent 负责在边界内完成任务。它的稳定性来自前置设计，而不是来自事后自我修正。</p>
+<p>在团队和业务场景中，这种方式非常重要。因为团队并不只关心某一次任务是否完成，还关心权限是否清晰、责任是否可追踪、输出是否可复核、流程是否可复制。越是进入正式业务，越不能只依赖“让 Agent 自由发挥”。</p>
+
+<h2 id="learning-driven">学习驱动：让经验沉淀为下一次能力</h2>
+<p>学习驱动的核心，是任务完成之后经验不应该消失。普通 Agent 做完一次任务，可能就结束了；下一次面对相似问题，又要重新解释背景、重新踩坑、重新调流程。Hermes 想解决的正是这个问题：这次执行的经验能不能留下，项目背景能不能保留，做过的流程能不能变成 Skill，未来任务能不能直接复用。</p>
+<p>Hermes 的关键机制，是围绕 Skill guidance、后台 review 和经验沉淀展开。Agent 在连续工具调用和对话历史中，能够判断是否出现值得保存的模式。如果发现某段流程、某个项目约束、某类错误修复方式、某个工作习惯值得复用，就可以创建、更新或删除 Skill，把临时经验变成后续能力。</p>
+<p>这条路线的价值，不是一次性配置出完美系统，而是在真实使用中逐渐贴近个人偏好和项目语境。一个人经常写某类文章，经常处理某类数据，经常发布到某个站点，经常遇到某些错误，Hermes 就有机会把这些重复经验沉淀下来，下次减少解释成本和重复试错。</p>
+<p>但学习驱动不是天然可靠。自动沉淀如果判断错了，错误经验也会被保存下来；Skill 如果长期不整理，可能堆积出重复内容、无效内容和过期内容；记忆如果不受控，就会产生漂移和经验污染。因此，Hermes 的重点不只是“会记住”，还包括记忆质量、Skill 可靠性和反馈可控性。</p>
+
+<h2 id="ai-daily-example">AI 日报 Skill：一个足够具体的对比样本</h2>
+<p>用一个 AI 日报 Skill，可以更直观地看懂两种 Agent 思路。这个 Skill 的目标很明确：每天筛选大模型更新、Agent 新功能和重要研究突破，帮助内容创作者快速了解 AI 领域的最新迭代，并产出可读、可信、及时的日报。</p>
+<p>这个任务看起来简单，其实很容易失败。日报最怕的不是内容少，而是看起来像真的假资料：来源不权威，时间不够新，链接打不开，标题和正文不一致，内容范围跑偏，把融资、财报、并购、营销稿混进来凑数。对使用者来说，日报不是随机摘要，而是一个稳定的信息过滤系统。</p>
+<p>因此，真正搭建 AI 日报 Skill 之前，必须先确定三件事：第一，只关注大模型更新、Agent 新功能和研究突破；第二，优先读取权威信息源，而不是零散搬运；第三，必须验证链接可打开、内容与摘要一致、时间满足日报要求。只有这三件事立住，日报才不会变成自动化垃圾信息。</p>
+
+<h2 id="openclaw-ai-daily">OpenClaw 的做法：先定义来源、范围、验证与输出</h2>
+<p>OpenClaw 路线下，搭建 AI 日报 Skill 的第一步不是让 Agent 写得漂亮，而是先把流程框架画清楚。信息源先定下来，优先级先定下来，哪些来源比较权威，哪些来源只能作为参考，哪些来源不该进入日报，都需要明确。</p>
+<p>第二步是时效性规则。既然是日报，就不能把几天前、十几天前的内容翻出来凑数。系统需要检查发布时间，判断是否属于当天或最近窗口内的更新。对信息密集的 AI 领域来说，时效性不是装饰，而是产品本身的一部分。</p>
+<p>第三步是内容范围。大模型发布、Agent 新功能、研究突破属于核心范围；融资、财报、并购、营销稿如果不服务于当天的技术更新，就先跳过。这个规则很关键，因为很多自动化日报会被高热度但低相关的商业新闻污染。</p>
+<p>第四步是验证。链接能不能打开，点进去会不会 404，链接内容和摘要是不是同一回事，标题有没有夸大，引用是否准确，都需要检查。发现问题后，再回到流程里优化筛选规则和验证规则。</p>
+<p>最后才是固定格式整理和定时推送。例如每天按固定结构生成简报，再发送到手机端或协作工具，方便阅读和复盘。这个过程体现了 OpenClaw 的特征：人先把流程写成模板，把工具调配和边界测试做好，Agent 再稳定执行。</p>
+
+<h2 id="hermes-ai-daily">Hermes 的做法：先让它跑，再用错误推动进化</h2>
+<p>Hermes 路线下，同一个 AI 日报 Skill 可以采用完全不同的起步方式。使用者不一定一开始就写出严密的流程、来源清单和验证规则，而是先用相对宽泛的提示描述目标：需要一个 AI 日报，关注大模型更新、Agent 新功能和研究突破，用于日常内容更新和快速了解行业迭代。</p>
+<p>第一次结果往往不会理想。它可能找到不够权威的信息源，抓到零散渠道而不是官方发布；可能时间判断不准，把五天前的新闻也当作日报内容；也可能出现链接内容与摘要表达不一致的问题。这些错误并不意外，因为约束还不够清晰。</p>
+<p>关键在于后续如何处理。使用者把实际要求逐步说明：来源要权威，时间要新，日报只保留三类技术内容，链接必须验证，摘要必须和原始内容一致。Hermes 在这个过程中不断优化自己的行为，把这次踩过的坑沉淀下来，并可能将局部经验扩展为更全局的行为指导。</p>
+<p>这就是学习驱动的价值。它不是一开始就完美，而是在真实交互里把错误变成经验，把经验变成 Skill，把 Skill 变成后续任务的默认能力。对个人用户和新手来说，这种方式更低门槛，因为不需要一上来就具备完整的系统设计能力。</p>
+
+<h2 id="where-openclaw-fits">OpenClaw 更适合什么场景</h2>
+<p>OpenClaw 更适合流程稳定、边界明确、团队协作、权限敏感、需要审计的场景。只要任务需要提前规定“去哪看、筛什么、用什么工具、怎么输出、谁来确认”，设计驱动就更稳。</p>
+<p>例如企业内部信息日报、客服工单分流、代码审查流水线、数据报表生成、内容发布系统、客户线索处理、跨工具自动化工作流，都更适合 OpenClaw 的思路。因为这些任务不只是追求完成，还要求结果一致、路径可追踪、错误可定位。</p>
+<p>有经验的使用者也更容易发挥 OpenClaw 的价值。因为他们知道业务流程里哪些环节容易出错，知道哪些信息源可靠，知道哪些工具需要限制权限，知道哪些输出需要人工确认。系统越规整，OpenClaw 越稳定。</p>
+<p>这并不意味着 OpenClaw 缺少智能，而是它把智能放进设计好的轨道里。它适合把 Agent 从“能做事”推进到“能在业务系统里长期稳定做事”。</p>
+
+<h2 id="where-hermes-fits">Hermes 更适合什么场景</h2>
+<p>Hermes 更适合个人工作流、探索性任务、需求不断变化、使用者还没完全想清楚流程的场景。很多个人用户并不知道一开始应该怎样写 Skill，也不知道信息源、筛选规则、输出格式和验证链路该如何设计。学习驱动允许先跑起来，再通过错误和反馈逐步收敛。</p>
+<p>例如个人研究助理、写作助手、项目知识库、代码习惯沉淀、长期资料整理、反复执行的发布流程、个人信息过滤系统，都适合 Hermes。因为这些任务最大的成本不是单次执行，而是长期重复解释背景、重复配置偏好、重复修正同类错误。</p>
+<p>Hermes 的吸引力在于“越使用越契合”。一个人用得越多，它越有机会理解这个人的工作方式、项目结构、输出偏好和常见陷阱。错误不是完全坏事，前提是错误被正确记录、整理和修正。</p>
+<p>但这也带来维护责任。Hermes 的记忆和 Skill 需要定期整理。否则配置文件和 Skill 内容会越堆越大，出现上下文过长、重复规则、无效内容、Token 消耗增加和幻觉概率上升等问题。学习驱动系统如果不做清理，成长也可能变成负担。</p>
+
+<h2 id="memory-risk">自动沉淀的风险：经验污染和上下文膨胀</h2>
+<p>自动沉淀最容易被低估的风险，是错误经验也会被沉淀。一次任务中的临时判断，未必适合所有后续任务；某个项目里的特殊规则，未必适合全局；一次失败后的修正，也未必是最优解。如果系统把这些内容无差别写入长期记忆，就会造成经验污染。</p>
+<p>另一个风险是上下文膨胀。Skill 内容、配置文件、项目背景和历史偏好如果不断累积，却没有压缩、去重和过期机制，最终会让 Agent 在越来越长的上下文里工作。上下文越长，成本越高，噪声越多，注意力越分散，幻觉和误用规则的概率也会增加。</p>
+<p>因此，Hermes 类系统必须配套记忆治理：定期删除重复 Skill，合并相似规则，标注适用范围，区分项目级经验和全局经验，清理已经过期的流程。真正成熟的学习驱动，不是无限保存一切，而是保存值得复用的东西，并持续提高记忆质量。</p>
+
+<h2 id="selection-framework">选择框架：流程确定用 OpenClaw，边用边调用 Hermes</h2>
+<p>判断该用哪一类系统，可以从四个问题开始。</p>
+<p>第一，流程是否已经清楚。如果已经知道去哪找信息、如何筛选、如何验证、如何输出，OpenClaw 更合适；如果只是有一个模糊目标，还需要在执行中逐步摸索，Hermes 更合适。</p>
+<p>第二，任务是否需要稳定复现。如果输出要给团队、客户、业务系统使用，且需要长期稳定运行，OpenClaw 的设计驱动更有优势；如果任务主要服务个人，允许试错和迭代，Hermes 的学习驱动更顺手。</p>
+<p>第三，错误的代价有多高。如果错误可能带来业务事故、权限风险、信息泄露或客户影响，就应该优先把流程和边界设计清楚；如果错误主要是个人效率损失，可以通过反馈让系统逐渐进化。</p>
+<p>第四，维护者是谁。如果维护者有经验，能设计流程、调工具、做审计，OpenClaw 会越规整越稳定；如果维护者是个人或新手，更需要系统在使用中理解偏好，Hermes 会越使用越契合。</p>
+
+<h2 id="hybrid">更现实的答案：两者可以互补</h2>
+<p>真正成熟的 Agent 工作流，不一定非要在 OpenClaw 和 Hermes 中二选一。更现实的结构，是把 OpenClaw 用作稳定入口和运行骨架，把 Hermes 用作经验沉淀和 Skill 进化层。</p>
+<p>例如 AI 日报任务可以先由 Hermes 在个人使用中反复试错，沉淀出可靠的信息源、筛选规则、验证标准和输出格式。等规则成熟后，再把这些流程固化进 OpenClaw，让它每天稳定执行、按固定渠道推送、保留日志和审计记录。</p>
+<p>反过来也可以成立。OpenClaw 在业务运行中发现常见失败、重复修正和流程改进点后，可以把这些经验反馈给 Hermes，由 Hermes 总结为更好的 Skill 和项目规范。一个负责工程化稳定，一个负责经验学习和迭代，二者并不冲突。</p>
+<p>这也是 Agent 系统未来更可能走向的形态：运行层需要可控、可编排、可审计；学习层需要沉淀、复用、成长。只强调控制，系统会僵硬；只强调成长，系统会漂移。把两者组合起来，才更接近可长期使用的智能工作流。</p>
+
+<h2 id="conclusion">结论：OpenClaw 重在设计，Hermes 重在学会</h2>
+<p>OpenClaw 与 Hermes 的差异，不是“谁更强”的差异，而是“解决什么问题”的差异。OpenClaw 的重点是让 Agent 按照人的设计稳定执行，适合流程明确、边界清楚、需要部署和审计的业务系统。Hermes 的重点是让经验沉淀为后续能力，适合个人工作流、探索性任务和长期偏好学习。</p>
+<p>用一句话概括：OpenClaw 重在你设计，Hermes 重在它学会。OpenClaw 越规整越稳定，Hermes 越使用越契合。前者像工程化骨架，后者像可成长的工作记忆。</p>
+<p>真正的选择不是追热点，而是回到任务本身。如果流程已经成熟，就把它设计清楚、部署稳定、严格验证；如果流程还在探索，就让系统边用边调、把错误沉淀成经验，并定期整理记忆。Agent 的价值不在于名字更响，而在于能否在真实工作里持续降低人的重复成本。</p>
+"""
+
+
+def configure() -> None:
+    base.__file__ = __file__
+    base.ROOT = ROOT
+    base.DATE = "2026-07-27"
+    base.BASE_DT = datetime(2026, 7, 27, 0, 30, tzinfo=timezone(timedelta(hours=8)))
+    base.PREV_EXISTING_URL = "/2026/money-psychology-utilitarian-education-wealth-freedom/"
+    base.PREV_EXISTING_TITLE = "金钱心理学：先给大脑排毒，财富才不会变成新的牢笼"
+    base.SCRIPT_NAME = SCRIPT_NAME
+    base.MANIFEST_NAME = MANIFEST_NAME
+    base.CHANGED = set()
+
+    post = base.Post(
+        source_id="BV16XLb6WEPg+BV1eNjP6VECB",
+        slug=SLUG,
+        title=TITLE,
+        desc="OpenClaw 更偏设计驱动，强调渠道、工具边界、任务路由和运行规则；Hermes 更偏学习驱动，强调经验沉淀、Skill 复用和长期成长。用 AI 日报 Skill 可以看清两种 Agent 路线的差异与互补关系。",
+        category="AI工具",
+        series="Agent 系统",
+        tags=["OpenClaw", "Hermes", "Agent", "AI日报", "Skill", "工作流", "自动化", "设计驱动", "学习驱动", "记忆管理"],
+        minutes=12,
+        body=BODY_ARTICLE,
+        cover_kicker="Agent 系统",
+        cover_line="设计驱动 · 学习驱动 · Skill 沉淀",
+        cover_theme=("#0f172a", "#1d4ed8", "#22c55e"),
+        duration=224.874688 + 314.325313,
+        segments=115 + 166,
+        chars=1288 + 1666,
+    )
+    base.INPUT_ORDER = [post]
+    base.PUBLISH_ORDER = [post]
+    base.copy_script_and_manifest = copy_script_and_manifest
+
+
+def copy_script_and_manifest() -> None:
+    tasks_dir = ROOT / "tasks"
+    tasks_dir.mkdir(parents=True, exist_ok=True)
+    src = Path(__file__).resolve()
+    dst = (tasks_dir / SCRIPT_NAME).resolve()
+    if src != dst:
+        shutil.copyfile(src, dst)
+    base.rec(tasks_dir / SCRIPT_NAME)
+    manifest_path = tasks_dir / MANIFEST_NAME
+    all_changed = sorted(
+        base.CHANGED
+        | {
+            "categories/index.html",
+            "series/index.html",
+            "tags/index.html",
+            f"tasks/{SCRIPT_NAME}",
+            f"tasks/{MANIFEST_NAME}",
+        }
+    )
+    manifest_path.write_text(json.dumps(all_changed, ensure_ascii=False, indent=2), encoding="utf-8")
+    base.rec(manifest_path)
+
+
+def extra_validate() -> None:
+    post = base.INPUT_ORDER[0]
+    article_path = ROOT / post.url_path.strip("/") / "index.html"
+    article = article_path.read_text(encoding="utf-8")
+    body_match = re.search(r'<div class="post-body" v-pre>(.*?)</div></div><nav', article, re.S)
+    body = body_match.group(1) if body_match else article
+    plain = re.sub(r"<[^>]+>", "", body)
+    forbidden = [
+        "B站",
+        "bilibili",
+        "哔哩",
+        "视频里",
+        "视频中",
+        "原视频",
+        "音频里",
+        "音频中",
+        "UP主",
+        "up主",
+        "这期",
+        "本期",
+        "作者说",
+        "他提到",
+        "观看",
+        "点赞",
+        "订阅",
+        "投币",
+        "收藏",
+        "下期",
+        "节目",
+        "收看",
+        "评论区",
+        "我是",
+        "猫逸",
+        "猫翼",
+        "BV16XLb6WEPg",
+        "BV1eNjP6VECB",
+        "source_id",
+    ]
+    required = [
+        "OpenClaw",
+        "Hermes",
+        "Agent",
+        "设计驱动",
+        "学习驱动",
+        "AI 日报",
+        "Skill",
+        "信息源",
+        "时效性",
+        "验证",
+        "经验沉淀",
+        "记忆管理",
+        "OpenClaw 重在你设计，Hermes 重在它学会",
+    ]
+    failures: list[str] = []
+    if len(plain) < 5200:
+        failures.append(f"{post.slug}: body too short {len(plain)}")
+    for word in forbidden:
+        if word in article:
+            failures.append(f"{post.slug}: forbidden wording {word}")
+    for word in required:
+        if word not in article:
+            failures.append(f"{post.slug}: missing required term {word}")
+    h2 = re.findall(r'<h2 id="([^"]+)">', article)
+    toc = re.findall(r'class="toc-link toc-level-2" href="#([^"]+)"', article)
+    if h2 != toc:
+        failures.append(f"{post.slug}: toc mismatch")
+    ET.fromstring((ROOT / "images/posts" / post.slug / "cover.svg").read_text(encoding="utf-8"))
+    manifest_path = ROOT / "tasks" / MANIFEST_NAME
+    manifest = set(json.loads(manifest_path.read_text(encoding="utf-8")))
+    missing = [p for p in base.CHANGED if p not in manifest]
+    if missing:
+        failures.append(f"manifest missing changed files: {missing[:10]}")
+    if failures:
+        raise SystemExit("\n".join(failures))
+
+
+def main() -> None:
+    configure()
+    for pycache in ROOT.rglob("__pycache__"):
+        shutil.rmtree(pycache)
+    base.main()
+    extra_validate()
+
+
+if __name__ == "__main__":
+    main()
