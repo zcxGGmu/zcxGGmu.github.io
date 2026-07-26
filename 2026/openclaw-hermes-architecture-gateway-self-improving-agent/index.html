@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>OpenClaw 与 Hermes 的架构分野：跨平台网关，还是自我进化 Agent - zcxGGmu's Blog</title>
+  <meta name="description" content="OpenClaw 更像跨平台个人 AI 助手网关，Hermes 更像自我改进的 AI Agent。二者在运行时、记忆、认证、插件生态、渠道覆盖和选型边界上完全不同。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/openclaw-hermes-architecture-gateway-self-improving-agent/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="OpenClaw 与 Hermes 的架构分野：跨平台网关，还是自我进化 Agent"><meta property="og:description" content="OpenClaw 更像跨平台个人 AI 助手网关，Hermes 更像自我改进的 AI Agent。二者在运行时、记忆、认证、插件生态、渠道覆盖和选型边界上完全不同。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/openclaw-hermes-architecture-gateway-self-improving-agent/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/openclaw-hermes-architecture-gateway-self-improving-agent/cover.svg')"><div class="post-title">OpenClaw 与 Hermes 的架构分野：跨平台网关，还是自我进化 Agent<div class="post-subtitle">OpenClaw 更像跨平台个人 AI 助手网关，Hermes 更像自我改进的 AI Agent。二者在运行时、记忆、认证、插件生态、渠道覆盖和选型边界上完全不同。</div><div class="post-meta"><time itemprop="datePublished">2026-07-27</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/OpenClaw/">OpenClaw</a>&nbsp;<a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/Agent/">Agent</a>&nbsp;<a href="/tags/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;<a href="/tags/%E8%BF%90%E8%A1%8C%E6%97%B6/">运行时</a>&nbsp;<a href="/tags/%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F/">记忆系统</a>&nbsp;<a href="/tags/%E6%8F%92%E4%BB%B6%E7%94%9F%E6%80%81/">插件生态</a>&nbsp;<a href="/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/">跨平台</a>&nbsp;<a href="/tags/ACP/">ACP</a>&nbsp;<a href="/tags/Skill/">Skill</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 13 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/openclaw-hermes-architecture-gateway-self-improving-agent/cover.svg" alt="OpenClaw 与 Hermes 的架构分野：跨平台网关，还是自我进化 Agent"></p>
+<p>OpenClaw 和 Hermes 经常被放在一起比较，因为它们都属于开源 AI Agent 工具，许可证也都足够宽松，名字看起来像同类竞品。但真正拆开架构之后会发现，二者并不是同一个方向的产品。</p>
+<p>OpenClaw 更像一个跨平台个人 AI 助手网关。它的重点不是让某一个 Agent 自己变聪明，而是把 Agent 接到日常使用的各种消息入口、运行时、工具和渠道里，让用户在 Telegram、Slack、微信、iMessage、Discord、网页面板、移动端伴侣应用等场景中都能调起同一套智能能力。</p>
+<p>Hermes 更像一个自我改进的 AI Agent。它强调的是在使用过程中持续学习，自动创建和管理 Skill，逐渐加深对用户和任务习惯的理解，并把长期会话、记忆、外部 memory provider、IDE 集成和 OpenAI 兼容 API 组织成一个持续成长的系统。</p>
+<p>所以，两者的根本差异不是技术栈，也不是谁的界面更好看，而是设计哲学完全不同：OpenClaw 向外铺，把 Agent 接到更多渠道；Hermes 向内生长，让 Agent 越用越贴近个人工作流。</p>
+
+<h2 id="positioning">定位差异：网关系统与自我成长系统</h2>
+<p>OpenClaw 的核心定位，是“自己的个人 AI 助手，接入任何平台”。这个定位决定了它首先关注入口、渠道、运行时调度和认证统一。它不是把所有能力都塞进一个单体 Agent，而是把 Agent 作为可以被调度、被接入、被替换的执行单元。</p>
+<p>Hermes 的核心定位，是“自我改进的 AI Agent”。这个定位决定了它更重视长期使用过程中的成长性：自动学习、自动生成 Skill、自动整理记忆、自动加深用户理解。它不是优先解决“接入多少渠道”，而是优先解决“系统能不能越用越懂”。</p>
+<p>这两个定位都会影响后续所有架构选择。OpenClaw 的问题意识是：如何让不同模型、不同运行时、不同消息入口、不同插件格式都能被统一调度。Hermes 的问题意识是：如何让一个 Agent 在长期任务、上下文、记忆和 Skill 中持续演化。</p>
+<p>因此，评价 OpenClaw 时，要看它的网关能力、运行时编排、渠道覆盖、配置透明度和权限边界；评价 Hermes 时，要看它的学习机制、Skill 生命周期、长期记忆质量、IDE 工作流和自我维护能力。用同一套标准比较，反而会误判。</p>
+
+<h2 id="runtime">运行时架构：多运行时调度与单原生循环</h2>
+<p>OpenClaw 把运行时当成一等公民。它内置多个 runtime，可以接自己的 Pi，可以接 Codex，可以接 Claude CLI，也可以通过 ACP 协议接外部 Agent。每个模型都可以通过配置指定走哪个 runtime：OpenAI 模型可以交给 Codex CLI 的 AppServer，Anthropic 模型可以交给 Claude CLI，外部 Agent 也可以通过协议接入。</p>
+<p>这种架构像一个窗口管理器或调度器。OpenClaw 自己不是必须亲自跑完所有 Agent Loop，而是负责把不同任务分发给不同运行时，让每个运行时在自己擅长的边界内工作。它的失败模式也更偏工程化：如果明确指定了某个 runtime，但系统找不到，就直接报错，而不是偷偷回退到另一个路径。</p>
+<p>Hermes 则主要依赖自己的原生 SyncAgent Loop 来跑所有模型。Codex AppServer 是一个后加的可选 runtime，通过命令开关启用。打开之后，OpenAI 模型的相关回合可以委托给 Codex 运行；关闭之后，Hermes 仍然依靠自己的原生循环完成任务。</p>
+<p>如果用一个比喻来理解，OpenClaw 像是一个多进程调度系统，核心能力是把不同 Agent runtime 纳入统一编排；Hermes 更像一个自带 Agent 能力的工作台，再通过扩展方式接入 Codex 这样的外部 runtime。一个是“调度多个独立执行器”，一个是“自己能跑，外部执行器是增强项”。</p>
+
+<h2 id="memory">记忆系统：可见文件与多层检索</h2>
+<p>OpenClaw 的记忆系统非常克制。长期记忆主要放在 `memory.md`，每日工作记忆按日期放在 markdown 文件里。它的原则很直接：模型只记得被保存到磁盘上的东西，没有隐藏状态。用户可以直接打开、阅读、修改和审计这些文件。</p>
+<p>这种设计的优点是透明。记忆在哪里、内容是什么、什么时候写入、是否应该保留，都可以被人检查。缺点是自动化程度没有那么强，需要用户愿意理解并维护文件结构。</p>
+<p>Hermes 的记忆系统更复杂。基础层有 `memory.md` 和 `user.md`，外层还套了 SQLite 与 FTS 全文检索的 Session 数据库，并且可以接入多个外部 memory provider，例如 Mem0、Langfuse、Supermemory、LangSmith 等。每个 provider 都会带来自己的工具与外部存储能力。</p>
+<p>这种设计的优点是能力上限更高，可以做更复杂的检索、外部记忆和长期上下文管理。风险则在于系统复杂度明显提高：外部 provider 的同步、重复、冲突、失效和权限问题，都会进入整体记忆链路。</p>
+
+<h2 id="promotion">记忆提升哲学：人工审核与自动策展</h2>
+<p>两者真正有意思的差异，不在“有没有记忆”，而在“观察如何升级为长期记忆”。OpenClaw 使用类似候选清单的方式：后台 sweep 会把日常观察整理成草稿，写入类似 `dreams.md` 的候选区域，但不会自动升级到长期记忆。是否进入 `memory.md`，由用户审核决定。</p>
+<p>这是一种 human in the loop 的哲学。OpenClaw 不替用户判断所有经验是否重要，只把候选信息摆出来，让用户决定哪些应该进入长期记忆。它牺牲了一部分自动化，换来更高的可控性和更少的污染风险。</p>
+<p>Hermes 的 curator release 走的是相反方向。后台 curator 会给 Agent 自己的 Skill 打分、精简、归档，尽量做到零用户参与。它更相信系统可以自动判断哪些 Skill 值得保留，哪些应该被淘汰。</p>
+<p>这正好对应二者的底层路线：OpenClaw 让用户把关，减少黑箱；Hermes 替用户整理，减少维护负担。前者更稳、更透明，后者更自动、更省心，但也更依赖自动判断的质量。</p>
+
+<h2 id="auth">认证机制：集中 token sync 与委托登录态</h2>
+<p>认证机制也体现了两种工程哲学。OpenClaw 把所有认证集中放在 auth profiles 的 JSON 文件里，官方把这种方式称为 token sync。一个配置文件里可以同时放 ChatGPT 账号的 auth token、OpenAI API key、Anthropic key，以及复用 Claude CLI 本地 auth 的信息，再分发给各个 runtime 使用。</p>
+<p>集中管理的好处是方便统一审计、统一备份、统一配置，也更适合网关系统的定位。所有入口、模型和 runtime 都围绕同一套认证配置运行。问题是安全责任也更集中：一旦这个文件管理不当，影响面会比较大。</p>
+<p>Hermes 走的是委托路线。Hermes 自己用 `hermes auth login` 管基础认证；如果启用 Codex runtime，Codex 相关认证就交给 Codex CLI 自己的 `auth.json`，绕过 Hermes。这样做减少了 Hermes 自己持有外部工具密钥的范围，也复用了外部 CLI 已有的认证机制。</p>
+<p>委托认证的代价是维护更分散。用户需要分别理解 Hermes、Codex、其他 provider 的登录状态和过期机制。集中管理更像一个平台，委托管理更像多个工具协作，各自有边界。</p>
+
+<h2 id="plugins">插件生态：Claw Hub 与 Python entrypoints</h2>
+<p>OpenClaw 的插件生态围绕官方注册中心 Claw Hub 展开，artifact 类型包括 skills、code plugins、bundle plugins，以及角色包形式的 source。除了 Claw Hub，它还支持安装 npm 包、Git 仓库和本地 link。更关键的是，它兼容 Codex、Claude、Cursor 等客户端的 bundle 格式，一份插件可以被多套客户端复用。</p>
+<p>这说明 OpenClaw 更关心“生态接入”和“跨客户端复用”。它要解决的不是一个工具内部的插件问题，而是不同 Agent 客户端、不同插件格式、不同工具生态如何被统一纳入。</p>
+<p>Hermes 则使用 Python entrypoints 发现机制，插件大类包括 general、memory、context、model providers。Skill 层面，它对齐 agentskills.io 这样的开放标准，不强行绑定自家格式。它还提供 `skill_manage` 一类工具，让 Agent 自己创建、修改、删除 Skill。</p>
+<p>这与 Hermes 的 self-improving 定位是配套的。OpenClaw 强在“外部生态整合”，Hermes 强在“内部 Skill 自我演化”。前者适合希望插件跨工具流动的用户，后者适合希望 Agent 在长期使用中主动维护能力的用户。</p>
+
+<h2 id="channels">渠道覆盖：横向更广与纵向更深</h2>
+<p>渠道分布上，OpenClaw 的优势非常明显。它覆盖大量 messaging 平台，从 Discord、Telegram、Slack 这样的主流渠道，到微信、飞书等国内协作渠道，再到 iMessage、电话接入、WebChat、Control UI、macOS、iOS、Android 三端伴侣应用。它的目标是让 Agent 成为一个真正跨平台的个人助手入口。</p>
+<p>Hermes 的 messaging 覆盖相对少一些，但它在开发者工作流上更深。它有 ACP 协议接入，可以把 Agent 接入 VS Code、Zed、JetBrains 等 IDE，也提供 OpenAI 兼容 API server，方便把 Hermes 作为后端能力嵌入其他工具。</p>
+<p>一句话概括：OpenClaw 横向铺得更广，Hermes 纵向接得更深。前者更像“到处都能叫得动的助手网关”，后者更像“深入开发工作流的自进化 Agent”。</p>
+<p>这也解释了为什么两者并不互相替代。如果需求是消息入口、移动端、跨平台触达、统一 runtime 调度，OpenClaw 更顺手；如果需求是 IDE、长期学习、Skill 自我管理、OpenAI 兼容服务，Hermes 更有吸引力。</p>
+
+<h2 id="selection">选型：主入口最好只选一个</h2>
+<p>OpenClaw 更适合需要广泛接入各种 messaging 平台、希望使用 ChatGPT 或 Claude 账号认证、重视本地透明可控、愿意手动维护配置文件的用户。它的优势在清晰、可控、横向覆盖和运行时调度。</p>
+<p>Hermes 更适合希望 Agent 长时间运行、能够自动学习、有 IDE 集成、自动管理 Skill 池、不断贴近个人习惯的用户。它的优势在自我改进、长期上下文、开发者工作流和自动整理。</p>
+<p>两者可以同时安装，也可以对比使用，但主入口最好只挑一个。因为 Session 数据库、记忆系统、Skill 系统和用户习惯都会各自管理。如果两个系统混着承担同一类核心任务，很容易出现上下文割裂、记忆不一致、Skill 分散、排障困难的问题。</p>
+<p>更合理的方式是明确边界：OpenClaw 做消息入口和 runtime 网关，Hermes 做专项开发工作流或长期自学习任务；或者反过来，让 Hermes 做个人主工作台，OpenClaw 只承担跨平台触达。关键不是谁更强，而是边界要清楚。</p>
+
+<h2 id="conclusion">结论：一个向外连接，一个向内成长</h2>
+<p>OpenClaw 与 Hermes 的本质差异，可以压缩成一句话：OpenClaw 向外连接，Hermes 向内成长。</p>
+<p>OpenClaw 的价值在于把 Agent 接到更多渠道、更多运行时、更多插件生态和更多平台入口里，让智能能力像网关一样被统一调度。它强调可见、可控、可配置、可审计，适合需要清晰工程边界的用户。</p>
+<p>Hermes 的价值在于让 Agent 在长期使用中沉淀 Skill、优化记忆、接入 IDE、理解用户习惯，逐步形成自我改进能力。它强调自动化、成长性、长期上下文和开发者工作流，适合愿意接受更高系统复杂度来换取更强自动化的人。</p>
+<p>选择时不要只看名称、许可证或热度，而要回到真实需求：需要跨平台入口和透明控制，就优先 OpenClaw；需要自我学习和深度开发工作流，就优先 Hermes。二者都值得研究，但它们解决的是两类完全不同的问题。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/hermes-openclaw-selection-skills-subagents-memory-production/">上一篇<br>Hermes 与 OpenClaw 选型实战：Skill、Sub Agent、Memory 与长期落地</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#positioning">定位差异：网关系统与自我成长系统</a><a class="toc-link toc-level-2" href="#runtime">运行时架构：多运行时调度与单原生循环</a><a class="toc-link toc-level-2" href="#memory">记忆系统：可见文件与多层检索</a><a class="toc-link toc-level-2" href="#promotion">记忆提升哲学：人工审核与自动策展</a><a class="toc-link toc-level-2" href="#auth">认证机制：集中 token sync 与委托登录态</a><a class="toc-link toc-level-2" href="#plugins">插件生态：Claw Hub 与 Python entrypoints</a><a class="toc-link toc-level-2" href="#channels">渠道覆盖：横向更广与纵向更深</a><a class="toc-link toc-level-2" href="#selection">选型：主入口最好只选一个</a><a class="toc-link toc-level-2" href="#conclusion">结论：一个向外连接，一个向内成长</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>

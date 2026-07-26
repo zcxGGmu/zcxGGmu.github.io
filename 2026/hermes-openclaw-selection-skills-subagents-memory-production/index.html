@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>Hermes 与 OpenClaw 选型实战：Skill、Sub Agent、Memory 与长期落地 - zcxGGmu's Blog</title>
+  <meta name="description" content="Hermes 上手快但长期维护依赖 Skill、Memory 和 profile 治理；OpenClaw 门槛更高但更适合多 Agent 协作、权限编排和生产级长期落地。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/hermes-openclaw-selection-skills-subagents-memory-production/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="Hermes 与 OpenClaw 选型实战：Skill、Sub Agent、Memory 与长期落地"><meta property="og:description" content="Hermes 上手快但长期维护依赖 Skill、Memory 和 profile 治理；OpenClaw 门槛更高但更适合多 Agent 协作、权限编排和生产级长期落地。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/hermes-openclaw-selection-skills-subagents-memory-production/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/hermes-openclaw-selection-skills-subagents-memory-production/cover.svg')"><div class="post-title">Hermes 与 OpenClaw 选型实战：Skill、Sub Agent、Memory 与长期落地<div class="post-subtitle">Hermes 上手快但长期维护依赖 Skill、Memory 和 profile 治理；OpenClaw 门槛更高但更适合多 Agent 协作、权限编排和生产级长期落地。</div><div class="post-meta"><time itemprop="datePublished">2026-07-27</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/OpenClaw/">OpenClaw</a>&nbsp;<a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/Agent/">Agent</a>&nbsp;<a href="/tags/%E5%A4%9AAgent/">多Agent</a>&nbsp;<a href="/tags/Sub%20Agent/">Sub Agent</a>&nbsp;<a href="/tags/Memory/">Memory</a>&nbsp;<a href="/tags/Skill/">Skill</a>&nbsp;<a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>&nbsp;<a href="/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>&nbsp;<a href="/tags/%E9%80%89%E5%9E%8B/">选型</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 14 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/hermes-openclaw-selection-skills-subagents-memory-production/cover.svg" alt="Hermes 与 OpenClaw 选型实战：Skill、Sub Agent、Memory 与长期落地"></p>
+<p>Hermes 和 OpenClaw 的选型，不能停留在“谁更先进”“谁更智能”“谁宣传得更强”这种层面。真正落地以后，决定体验的往往不是演示效果，而是 Skill 生命周期、Sub Agent 协作机制、Memory 稳定性、权限编排、维护成本和长期可控性。</p>
+<p>Hermes 的优势很明显：上手门槛低，对新手友好，前期能承接大量重复性工作，自动创建 Skill、持续学习、记忆增强等概念也很吸引人。但使用时间一长，底层设计的硬伤就会逐渐暴露：Skill 只增不减、profile 隔离不等于真正多 Agent 协同、记忆系统复杂且容易混乱。</p>
+<p>OpenClaw 的特点恰好相反。它上手门槛更高，配置和工程概念更多，但底层更偏严谨、可控和长期落地。尤其在多 Agent 协作、任务委托、结果聚合、权限编排、记忆可追溯等方面，它更像一个面向生产场景的 Agent 架构底座。</p>
+
+<h2 id="hermes-strength">Hermes 的优势：低门槛、快上手、适合轻量自动化</h2>
+<p>Hermes 最大的吸引力，是用户不需要一开始就设计完整的多 Agent 架构。安装、登录、配置之后，它就能承担大量个人自动化任务。对于只想让 Agent 帮忙整理资料、执行简单流程、生成内容、维护少量 Skill 的用户来说，这种低门槛非常重要。</p>
+<p>它的 self-improving 叙事也很符合直觉：用得越多，系统越了解用户；工具调用越多，系统越能总结经验；任务试错越多，系统越能生成和修正 Skill。这个方向本身没有问题，问题在于长期使用时，自动化能力必须配套治理机制。</p>
+<p>如果只有创建，没有删除；只有积累，没有冲突检测；只有自动归档，没有使用追踪；只有记忆写入，没有严格去重和更新规则，那么“越用越聪明”很容易变成“越用越乱”。智能系统不是记得越多越好，而是要记得准确、适用、可追溯、可维护。</p>
+
+<h2 id="skill-problem">Skill 系统：贵精不贵多</h2>
+<p>Hermes 的 Skill 系统最容易让人兴奋，也最容易形成维护负担。自动创建机制可能由多次工具调用、试错模式、用户纠正有效性等信号触发。短期看，这能让 Agent 很快沉淀经验；长期看，如果没有负反馈、冲突检测和使用追踪，就会造成 Skill 泛滥。</p>
+<p>两个 Skill 功能重复，只要名字不同，就可能同时存在。一个旧 Skill 已经过期，如果没有有效淘汰机制，仍然可能影响后续决策。多个 Skill 对同一任务给出不同规则，Agent 就可能在执行时冲突、犹豫或走错路径。最后，用户看到的是系统越来越“有记忆”，但实际体验是越来越难排障。</p>
+<p>治理 Skill 的核心原则是：贵精不贵多。自动创建可以保留，但阈值要提高；无关或低频 Skill 要定期清理；功能模块要分类；高优先级 Skill 要明确适用边界；重复 Skill 要合并；冲突 Skill 要删除或重写。</p>
+<p>更稳的方式，是把自动创建从默认行为改成受控行为。可以关闭自动创建，或者只在特定项目、特定任务类型里开启；也可以要求所有新 Skill 进入候选区，经过人工审核再进入长期池。没有维护机制的自动创建，最终会从资产变成负债。</p>
+
+<h2 id="subagent-limitation">Profile 隔离不是多 Agent 协作</h2>
+<p>Hermes 的 profile 隔离容易被误解为多 Agent 协作。实际上，profile 更接近独立进程隔离：不同 profile 可以有不同配置、不同上下文、不同执行环境，但它们并不天然具备原生子代理调度、消息互通、任务委托和结果聚合能力。</p>
+<p>真正的多 Agent 协作，不只是“多个进程同时跑”。它需要主 Agent 拆分任务，需要子 Agent 动态创建，需要不同角色之间传递上下文，需要任务完成后聚合结果，需要失败时重试或回滚，还需要权限边界和资源隔离。</p>
+<p>如果 Hermes 要承担复杂多 Agent 架构，就必须额外设计通信方式，例如共享文件、API 调用、消息队列或外部调度器。这样当然可以做，但落地成本会明显增加，很多能力不再是系统原生提供，而是用户自己搭出来的。</p>
+<p>因此，Hermes 更适合单角色、轻协作、个人自动化和专项工作流。它可以承担很多任务，但不适合作为复杂多 Agent 团队架构的唯一调度底座。</p>
+
+<h2 id="memory-disorder">Memory 风险：复杂记忆必须有治理</h2>
+<p>Hermes 的记忆系统看起来层次丰富，但复杂度也高。长期使用时，记忆问题不只是“加载时机不合理”，还可能来自 `memory.md` 超载、旧信息被重新写入、上下文压缩误入记忆、nudge interval 长期累积，以及外部 memory provider 缺少去重和冲突校验。</p>
+<p>当 `memory.md` 内容超过某个实际可承受阈值，模型读取就会变得不稳定。旧信息如果在压缩过程中被重新写入，就会出现新旧信息不同步。外部记忆系统如果没有严格去重，重复信息会被多次召回；如果没有冲突消解，过期规则和新规则会同时影响任务。</p>
+<p>记忆混乱最麻烦的地方，是它不像报错那样清晰。用户看到的往往是 Agent 变得奇怪：忽略新要求，重复旧习惯，调用错误 Skill，对同一事实前后不一致，或者在任务中突然引入无关上下文。表面看像模型幻觉，底层可能是记忆污染。</p>
+<p>治理记忆的原则与治理 Skill 类似：分层、去重、限长、冲突检测、定期清理。个人偏好、项目规则、临时任务、历史经验不能全部混在一起。越是长期运行的 Agent，越需要把记忆当成数据库来维护，而不是当成无限扩容的笔记本。</p>
+
+<h2 id="openclaw-subagents">OpenClaw 的优势：原生多 Agent 协作</h2>
+<p>OpenClaw 从底层就更偏多 Agent 协作。它提供 session spawn 与 ACP spawn 链，支持子代理动态创建、任务委托、结果聚合和权限编排。主 Agent 可以做总管，子 Agent 可以做执行，专门角色可以处理专项任务，职责划分更清楚。</p>
+<p>这种设计与 Hermes 的 profile 隔离有本质不同。OpenClaw 的重点不是让多个隔离环境各自运行，而是让多角色在同一套任务结构里协作。任务拆分、执行、回收、聚合和权限控制，是架构的一部分，而不是用户事后自己补上去的外部流程。</p>
+<p>对于复杂工作流，这一点非常关键。比如一个长期研究任务，可能需要资料搜集 Agent、代码分析 Agent、写作 Agent、审校 Agent、发布 Agent、验证 Agent。单 Agent 可以做，但上下文会膨胀，职责会混乱；多 Agent 原生协作，可以把任务切成更清晰的角色边界。</p>
+<p>OpenClaw 更适合搭建私有 Agent 生态、做多角色分工、跑长期运营任务和支撑复杂团队结构。它不是最省事的选择，但更像可以长期扩展的底座。</p>
+
+<h2 id="openclaw-memory">OpenClaw 的记忆：显式、可追溯、可查证</h2>
+<p>OpenClaw 的记忆设计更强调工程化约束。每一条记忆写入都应当显式、可追溯、可查证。会话记忆和全局记忆分层隔离，检索和合并要经过明确规则，外部记忆也不能随意污染主记忆。</p>
+<p>这类设计看起来没有自动记忆那么炫，但更适合长期落地。因为真正的长期使用，最怕的不是“系统没有记住”，而是“系统记错了还不知道哪里错了”。可追溯性比自动化更重要。</p>
+<p>如果记忆写入有来源、时间、适用范围和冲突规则，排障时就可以定位问题；如果记忆只是自动堆积在多个层里，一旦出错，很难判断到底是哪个 provider、哪次压缩、哪个旧 Skill 或哪段全局记忆造成影响。</p>
+<p>稳定不是保守，而是复杂系统的基本要求。Agent 越像生产工具，越不能只追求自动化；必须让关键状态可见、关键决策可查、关键记忆可改。</p>
+
+<h2 id="selection-summary">选型结论：轻量任务用 Hermes，长期架构用 OpenClaw</h2>
+<p>Hermes 适合新手、轻度使用、个人简单自动化场景。它上手快，不用一开始就设计复杂架构，能快速解决基础需求。如果主要任务是个人资料整理、简单自动化、少量 Skill 管理、IDE 辅助和轻量工作流，Hermes 足够好用。</p>
+<p>但 Hermes 的深层短板也要看清楚：Skill 缺少完整负反馈机制，profile 隔离不等于多 Agent 协作，记忆系统复杂且存在污染风险。这些问题在轻量使用时不明显，进入复杂多 Agent 架构和长期迭代后会被放大。</p>
+<p>OpenClaw 更适合想搭建私有 Agent 生态、做多角色分工、长期运行工作流、追求稳定可控的用户。它上手门槛更高，但底层架构更严谨，原生支持多 Agent 协作，记忆和 Skill 系统更偏工程化，更能支撑复杂场景的长期迭代。</p>
+<p>简单总结：随便玩玩、轻度使用、快速自动化，选 Hermes；认真搭建多 Agent 架构、做智能体分工、长期落地，优先 OpenClaw。</p>
+
+<h2 id="hybrid-architecture">混合架构：OpenClaw 总管，Hermes 专项执行</h2>
+<p>更现实的方案不是非黑即白。复杂 Agent 架构里，单 Agent 统筹所有并不现实，多 Agent 才是核心。可以让 OpenClaw 做全局总管和调度层，负责角色分工、任务委托、权限编排、结果聚合；让 Hermes 承担某些专项任务，例如个人辅助、IDE 深度工作流、轻量自动化和特定 Skill 维护。</p>
+<p>这种混合架构的关键，是边界清楚。OpenClaw 不必替代 Hermes 的全部能力，Hermes 也不必承担全局调度。一个做总管，一个做专项执行；一个强调工程化编排，一个强调自我改进和个人工作流。</p>
+<p>同时，运维角色必须单独存在。多 Agent 架构不能只关注“能不能完成任务”，还要关注配置是否漂移、记忆是否污染、Skill 是否冲突、进程是否异常、日志是否可查、权限是否越界。没有运维角色，多 Agent 系统越复杂，越容易在无人维护时失控。</p>
+<p>后续真正需要打磨的，是跨进程通信、任务分配、上下文传递、结果聚合和权限边界。混合架构不是把两个工具随便装在一起，而是把职责边界设计清楚，让每个系统只做自己最适合的部分。</p>
+
+<h2 id="marketing-gap">警惕过度预期：自动变聪明不是免维护</h2>
+<p>Agent 工具最容易被神话的功能，就是自动创建 Skill 和越用越聪明。这个方向本身没有错，但如果宣传把预期拉得太高，用户就会忽略维护成本。真正落地后会发现，看似全自动的系统，往往只是把问题延后了：Skill 多了要整理，记忆多了要清理，配置多了要审计，外部 provider 多了要排障。</p>
+<p>Hermes 的问题不是功能错误，而是自动化需要治理。没有治理的自动化，最终会积累技术债。OpenClaw 的吸引力，也不只是功能清单，而是它更强调稳定性、工程化设计和长期可控，不用花哨概念掩盖维护成本。</p>
+<p>选型时不要被“智能”“自动”“自我进化”这些词带着走。要问更实际的问题：Skill 怎么删除？冲突怎么检测？记忆怎么追溯？子代理怎么调度？任务失败怎么恢复？权限怎么限制？日志怎么审计？长期维护谁负责？</p>
+<p>能回答这些问题的系统，才更适合作为长期生产底座。不能回答这些问题的系统，也许适合轻量使用，但不该直接承担复杂业务。</p>
+
+<h2 id="implementation-checklist">落地检查清单：先问维护问题，再选框架</h2>
+<p>真正开始部署之前，可以先列一张检查清单。第一，Skill 是否有创建、审核、合并、删除和优先级规则；第二，记忆是否分成全局、项目、会话和临时信息；第三，子代理是否有明确的创建、委托、回收和结果聚合流程；第四，认证信息是否集中管理或清晰委托；第五，外部插件和 memory provider 出错时是否有降级方案。</p>
+<p>如果这些问题都没有答案，系统还不适合作为长期底座。轻量使用可以先跑起来，但一旦进入多角色分工、长期任务、核心业务或高频自动化，就必须把维护机制补齐。否则，早期省下的配置成本，会在后期以排障、冲突、记忆污染和不可复现的形式还回来。</p>
+<p>Hermes 的合理使用方式，是限制自动膨胀：少量高质量 Skill、清晰的 memory 边界、定期清理、谨慎开启外部记忆，并把 profile 当成隔离环境，而不是天然协同层。OpenClaw 的合理使用方式，是把它当成调度骨架：先设计角色、权限、任务链和运行时，再逐步扩展渠道与插件。</p>
+<p>框架选型不是一次性决定，而是一个持续治理过程。今天适合轻量自动化的工具，未必适合明天的多 Agent 团队；今天看起来复杂的工程化底座，可能会在长期运行中节省大量维护成本。判断标准不应是演示是否惊艳，而是半年后还能不能稳定、可查、可控地运行。</p>
+
+<h2 id="conclusion">结论：真正的 Agent 选型，是维护成本的选择</h2>
+<p>Hermes 和 OpenClaw 的差异，不只是功能差异，而是维护哲学差异。Hermes 把很多事情自动化，让用户前期更轻松；OpenClaw 把很多边界工程化，让用户后期更可控。</p>
+<p>如果任务轻、周期短、协作少、容错高，Hermes 的低门槛和自动化体验很有价值。它可以快速帮助个人跑起来，承接重复性工作，建立简单自动化流程。</p>
+<p>如果任务复杂、周期长、角色多、对稳定性和可追溯要求高，OpenClaw 更适合作为底座。它的价值不在于最省事，而在于更适合长期迭代、多人协作、多 Agent 分工和生产级运行。</p>
+<p>最终，真正的 Agent 选型不是选择一个“更聪明”的工具，而是选择一套长期维护成本。短期省事和长期可控，经常不能同时最大化。看清这一点，才不会在框架热度、自动化想象和落地现实之间反复摇摆。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/openclaw-hermes-architecture-gateway-self-improving-agent/">下一篇<br>OpenClaw 与 Hermes 的架构分野：跨平台网关，还是自我进化 Agent</a><a class="older-posts" href="/2026/deepseek-dao-goodwill-restraint-open-source-agi/">上一篇<br>DeepSeek 的道：善意、克制、开源与 AGI 主线</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#hermes-strength">Hermes 的优势：低门槛、快上手、适合轻量自动化</a><a class="toc-link toc-level-2" href="#skill-problem">Skill 系统：贵精不贵多</a><a class="toc-link toc-level-2" href="#subagent-limitation">Profile 隔离不是多 Agent 协作</a><a class="toc-link toc-level-2" href="#memory-disorder">Memory 风险：复杂记忆必须有治理</a><a class="toc-link toc-level-2" href="#openclaw-subagents">OpenClaw 的优势：原生多 Agent 协作</a><a class="toc-link toc-level-2" href="#openclaw-memory">OpenClaw 的记忆：显式、可追溯、可查证</a><a class="toc-link toc-level-2" href="#selection-summary">选型结论：轻量任务用 Hermes，长期架构用 OpenClaw</a><a class="toc-link toc-level-2" href="#hybrid-architecture">混合架构：OpenClaw 总管，Hermes 专项执行</a><a class="toc-link toc-level-2" href="#marketing-gap">警惕过度预期：自动变聪明不是免维护</a><a class="toc-link toc-level-2" href="#implementation-checklist">落地检查清单：先问维护问题，再选框架</a><a class="toc-link toc-level-2" href="#conclusion">结论：真正的 Agent 选型，是维护成本的选择</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
