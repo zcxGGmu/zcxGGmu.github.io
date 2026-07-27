@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-07-27T04:09:07.112230Z",
+  "model": "deepseek-v4-flash",
+  "personas": [
+    {
+      "id": "cynic",
+      "name": "毒舌评论员"
+    },
+    {
+      "id": "paper-police",
+      "name": "较真党"
+    },
+    {
+      "id": "pragmatic",
+      "name": "实用派"
+    }
+  ],
+  "items": [
+    {
+      "story_id": "story_87f4abb6708f",
+      "title": "浪费20亿Token后，我开源了帮Agent定义目标的Leader.skill",
+      "url": "https://mp.weixin.qq.com/s/AwOk3di8m6eVeIUjzNftgg",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 62,
+          "review": "20亿Token烧出个开源skill？成本够拍十场发布会了。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "仅公众号宣称开源，未见论文与评测，需查证代码仓库。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "开源即用，帮你省掉试错成本，Agent开发者赶紧clone。"
+        }
+      }
+    },
+    {
+      "story_id": "story_8c2285d406e4",
+      "title": "​Midjourney 推出 V8.2 图像模型：审美更锋利、废片大减，个性化更懂你的口味",
+      "url": "https://www.aibase.com/news/29896",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "废片大减？请定义下‘废片’，是你们觉得还是我觉得？审美这玩意儿别吹太玄。"
+        },
+        "paper-police": {
+          "score": 8,
+          "review": "仅新闻报道，无论文无代码无benchmark，信源不可验证。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "订阅用户直接升级，废片减少提效明显。"
+        }
+      }
+    },
+    {
+      "story_id": "story_b171ba4f1505",
+      "title": "Suno 推出多项新功能，含MIDI导出等 / We've been building faster than ever！ 🚀 Here's a quick look at what's new across web & mobile： • …",
+      "url": "https://x.com/suno/status/2081443050312843765",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 70,
+          "review": "MIDI导出是实用更新，但遮不住版权官司的阴影。"
+        },
+        "paper-police": {
+          "score": 18,
+          "review": "只有官方推文，没有论文、代码和评测，无法验证。"
+        },
+        "pragmatic": {
+          "score": 75,
+          "review": "MIDI导出实用，音乐制作工作流能串起来了。"
+        }
+      }
+    }
+  ]
+}

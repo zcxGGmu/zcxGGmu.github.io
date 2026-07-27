@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI News Radar</title>
+  <desc id="desc">24 小时 AI 更新雷达置顶入口</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/><stop offset="0.55" stop-color="#064e3b"/><stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#000" flood-opacity="0.28"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#f8fafc" stroke-width="3">
+    <path d="M120 710 H1480"/><path d="M120 570 H1480"/><path d="M120 430 H1480"/><path d="M120 290 H1480"/>
+    <path d="M260 180 V780"/><path d="M530 180 V780"/><path d="M800 180 V780"/><path d="M1070 180 V780"/><path d="M1340 180 V780"/>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="1210" cy="390" r="190" fill="#f8fafc" opacity="0.92"/>
+    <circle cx="1210" cy="390" r="126" fill="#10b981" opacity="0.92"/>
+    <path d="M1125 390 L1190 455 L1305 320" fill="none" stroke="#ffffff" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M170 635 C330 520 470 570 630 460 C795 346 940 405 1080 320" fill="none" stroke="#f8fafc" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="630" cy="460" r="36" fill="#fbbf24"/><circle cx="1080" cy="320" r="42" fill="#f8fafc"/>
+  </g>
+  <text x="112" y="210" fill="#f8fafc" font-family="Inter, Noto Sans SC, PingFang SC, Arial" font-size="88" font-weight="900">AI News Radar</text>
+  <text x="118" y="296" fill="#d1fae5" font-family="Noto Sans SC, PingFang SC, Arial" font-size="42" font-weight="800">24 小时 AI 更新雷达</text>
+  <text x="120" y="380" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="34" font-weight="700">精选 / 全量 · 模型 / 产品 / 开发者 / 行业 / 论文</text>
+  <text x="120" y="448" fill="#e5e7eb" font-family="Noto Sans SC, PingFang SC, Arial" font-size="28" font-weight="600">静态部署在 zcxggmu.github.io，直接读取项目内 data/*.json</text>
+</svg>
