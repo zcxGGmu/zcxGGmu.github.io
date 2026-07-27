@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="920" viewBox="0 0 1800 920" role="img" aria-labelledby="title desc">
+  <title id="title">OpenClaw 与 Hermes 的协作关系</title><desc id="desc">展示 AgentTeams 中 OpenClaw、QwenPaw 和 Hermes 的角色分工。</desc>
+  <rect width="1800" height="920" fill="#f8fafc"/>
+  <text x="72" y="86" font-family="Noto Sans SC, PingFang SC, Arial" font-size="42" font-weight="800" fill="#0f172a">OpenClaw / QwenPaw / Hermes：不是替代，而是分工</text>
+  <text x="72" y="126" font-family="Noto Sans SC, PingFang SC, Arial" font-size="22" fill="#475569">AgentTeams 用统一房间、文件、凭据和生命周期控制，把不同 runtime 组织成可协作的团队。</text>
+  <g font-family="Noto Sans SC, PingFang SC, Arial">
+    <rect x="110" y="220" width="390" height="520" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+    <text x="150" y="285" font-size="34" font-weight="800" fill="#1e3a8a">OpenClaw</text>
+    <text x="150" y="335" font-size="24" font-weight="700" fill="#1e3a8a">适合：Manager / Team Leader</text>
+    <text x="150" y="392" font-size="22" fill="#1e40af">多渠道入口</text>
+    <text x="150" y="432" font-size="22" fill="#1e40af">Matrix 房间协议</text>
+    <text x="150" y="472" font-size="22" fill="#1e40af">技能和任务管理</text>
+    <text x="150" y="512" font-size="22" fill="#1e40af">Heartbeat 与恢复路径</text>
+    <text x="150" y="552" font-size="22" fill="#1e40af">协调 Worker 和人类决策</text>
+
+    <rect x="705" y="205" width="390" height="550" rx="24" fill="#ecfeff" stroke="#0891b2" stroke-width="3"/>
+    <text x="745" y="270" font-size="34" font-weight="800" fill="#155e75">AgentTeams</text>
+    <text x="745" y="320" font-size="24" font-weight="700" fill="#155e75">统一协作层</text>
+    <text x="745" y="378" font-size="22" fill="#155e75">Matrix 身份和房间</text>
+    <text x="745" y="418" font-size="22" fill="#155e75">MinIO/OSS 任务文件</text>
+    <text x="745" y="458" font-size="22" fill="#155e75">Higress 模型和 MCP 网关</text>
+    <text x="745" y="498" font-size="22" fill="#155e75">CRD + Reconciler</text>
+    <text x="745" y="538" font-size="22" fill="#155e75">runtime.yaml / openclaw.json</text>
+    <text x="745" y="578" font-size="22" fill="#155e75">Docker / Kubernetes backend</text>
+
+    <rect x="1300" y="220" width="390" height="520" rx="24" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+    <text x="1340" y="285" font-size="34" font-weight="800" fill="#92400e">Hermes</text>
+    <text x="1340" y="335" font-size="24" font-weight="700" fill="#92400e">适合：自治执行 Worker</text>
+    <text x="1340" y="392" font-size="22" fill="#92400e">代码和自动化长任务</text>
+    <text x="1340" y="432" font-size="22" fill="#92400e">容器内 YOLO 执行</text>
+    <text x="1340" y="472" font-size="22" fill="#92400e">.hermes 状态与策略</text>
+    <text x="1340" y="512" font-size="22" fill="#92400e">读取共享任务目录</text>
+    <text x="1340" y="552" font-size="22" fill="#92400e">写 result / progress 回存储</text>
+
+    <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+    <path d="M500 445 H705" stroke="#334155" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M1095 445 H1300" stroke="#334155" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M1300 600 C1120 815 670 815 500 600" fill="none" stroke="#334155" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="548" y="420" font-size="21" font-weight="700" fill="#334155">分解任务 / 协调</text>
+    <text x="1138" y="420" font-size="21" font-weight="700" fill="#334155">统一协议 / 凭据</text>
+    <text x="750" y="840" font-size="21" font-weight="700" fill="#334155">产物、进度和状态回流</text>
+  </g>
+</svg>

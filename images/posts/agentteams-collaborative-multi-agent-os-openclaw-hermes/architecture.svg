@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980" role="img" aria-labelledby="title desc">
+  <title id="title">AgentTeams 总体架构</title><desc id="desc">展示 Human、Element、Matrix、Controller、MinIO、Higress 与多种 Agent runtime 的关系。</desc>
+  <rect width="1800" height="980" fill="#f8fafc"/>
+  <text x="72" y="86" font-family="Noto Sans SC, PingFang SC, Arial" font-size="42" font-weight="800" fill="#0f172a">AgentTeams 总体架构</text>
+  <text x="72" y="126" font-family="Noto Sans SC, PingFang SC, Arial" font-size="22" fill="#475569">协作面承载消息与审计，控制面收敛资源，数据面提供模型、工具和共享文件，运行时负责实际执行。</text>
+  <g font-family="Noto Sans SC, PingFang SC, Arial">
+    <rect x="70" y="190" width="350" height="210" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+    <text x="105" y="250" font-size="30" font-weight="800" fill="#1e3a8a">人类交互层</text>
+    <text x="105" y="302" font-size="23" fill="#1e3a8a">Human Admin / Team Admin</text>
+    <text x="105" y="342" font-size="23" fill="#1e3a8a">Element Web / 其他渠道</text>
+
+    <rect x="505" y="190" width="440" height="210" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+    <text x="540" y="250" font-size="30" font-weight="800" fill="#166534">协作通信层</text>
+    <text x="540" y="302" font-size="23" fill="#166534">Tuwunel Matrix Homeserver</text>
+    <text x="540" y="342" font-size="23" fill="#166534">DM · Worker Room · Team Room</text>
+
+    <rect x="1030" y="190" width="690" height="210" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="1065" y="250" font-size="30" font-weight="800" fill="#5b21b6">控制面</text>
+    <text x="1065" y="302" font-size="23" fill="#5b21b6">agentteams-controller · REST API · agt CLI</text>
+    <text x="1065" y="342" font-size="23" fill="#5b21b6">Worker / Manager / Team / Human CRD + Reconciler</text>
+
+    <rect x="70" y="500" width="510" height="250" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+    <text x="105" y="560" font-size="30" font-weight="800" fill="#92400e">共享文件系统</text>
+    <text x="105" y="612" font-size="23" fill="#92400e">MinIO / OSS</text>
+    <text x="105" y="652" font-size="23" fill="#92400e">agents/&lt;name&gt; · shared/tasks · runtime.yaml</text>
+    <text x="105" y="692" font-size="23" fill="#92400e">spec · plan · progress · result</text>
+
+    <rect x="665" y="500" width="430" height="250" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+    <text x="700" y="560" font-size="30" font-weight="800" fill="#991b1b">网关与工具</text>
+    <text x="700" y="612" font-size="23" fill="#991b1b">Higress AI Gateway</text>
+    <text x="700" y="652" font-size="23" fill="#991b1b">LLM Provider · MCP Server</text>
+    <text x="700" y="692" font-size="23" fill="#991b1b">Consumer Key · Route Auth</text>
+
+    <rect x="1180" y="500" width="540" height="250" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+    <text x="1215" y="560" font-size="30" font-weight="800" fill="#075985">运行时容器 / Pod</text>
+    <text x="1215" y="612" font-size="23" fill="#075985">Manager: OpenClaw / QwenPaw</text>
+    <text x="1215" y="652" font-size="23" fill="#075985">Workers: OpenClaw · QwenPaw/CoPaw · Hermes</text>
+    <text x="1215" y="692" font-size="23" fill="#075985">Docker backend · Kubernetes backend</text>
+
+    <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+    <path d="M420 295 H505" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M945 295 H1030" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M1375 400 V500" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M1180 625 H1095" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M665 625 H580" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M725 400 V500" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M325 500 V400 H245" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="760" viewBox="0 0 1800 760" role="img" aria-labelledby="title desc">
+  <title id="title">AgentTeams Worker 生命周期流程</title><desc id="desc">从创建 Worker CR 到执行任务并收集结果的流程。</desc>
+  <rect width="1800" height="760" fill="#f8fafc"/>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+  <text x="72" y="88" font-family="Noto Sans SC, PingFang SC, Arial" font-size="42" font-weight="800" fill="#0f172a">Worker 生命周期：声明式收敛 + 房间任务流</text>
+  <text x="72" y="130" font-family="Noto Sans SC, PingFang SC, Arial" font-size="22" fill="#475569">控制器负责身份、房间、网关、配置和容器；Manager 负责任务登记、通知、结果收集和人类同步。</text>
+  <path d="M280 380 H318" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/><path d="M518 380 H556" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/><path d="M756 380 H794" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/><path d="M994 380 H1032" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/><path d="M1232 380 H1270" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/><path d="M1470 380 H1508" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+  <g>
+  <rect x="80" y="265" width="200" height="230" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="180" cy="320" r="36" fill="#0f766e"/><text x="170" y="333" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff">1</text>
+  <text x="108" y="385" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="800" fill="#0f172a">创建 Worker CR</text>
+  <foreignObject x="104" y="410" width="152" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Noto Sans SC,PingFang SC,Arial;font-size:18px;line-height:1.45;color:#475569;text-align:center">人类/Manager/agt 声明期望资源</div></foreignObject>
+</g><g>
+  <rect x="318" y="265" width="200" height="230" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="418" cy="320" r="36" fill="#0f766e"/><text x="408" y="333" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff">2</text>
+  <text x="346" y="385" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="800" fill="#0f172a">Provision Infra</text>
+  <foreignObject x="342" y="410" width="152" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Noto Sans SC,PingFang SC,Arial;font-size:18px;line-height:1.45;color:#475569;text-align:center">Matrix 账号、房间、MinIO 用户、Gateway consumer</div></foreignObject>
+</g><g>
+  <rect x="556" y="265" width="200" height="230" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="656" cy="320" r="36" fill="#0f766e"/><text x="646" y="333" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff">3</text>
+  <text x="584" y="385" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="800" fill="#0f172a">Deploy Config</text>
+  <foreignObject x="580" y="410" width="152" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Noto Sans SC,PingFang SC,Arial;font-size:18px;line-height:1.45;color:#475569;text-align:center">openclaw.json / runtime.yaml / AGENTS / skills / MCP</div></foreignObject>
+</g><g>
+  <rect x="794" y="265" width="200" height="230" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="894" cy="320" r="36" fill="#0f766e"/><text x="884" y="333" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff">4</text>
+  <text x="822" y="385" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="800" fill="#0f172a">Create Runtime</text>
+  <foreignObject x="818" y="410" width="152" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Noto Sans SC,PingFang SC,Arial;font-size:18px;line-height:1.45;color:#475569;text-align:center">Docker 容器或 Kubernetes Pod</div></foreignObject>
+</g><g>
+  <rect x="1032" y="265" width="200" height="230" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="1132" cy="320" r="36" fill="#0f766e"/><text x="1122" y="333" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff">5</text>
+  <text x="1060" y="385" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="800" fill="#0f172a">Assign Task</text>
+  <foreignObject x="1056" y="410" width="152" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Noto Sans SC,PingFang SC,Arial;font-size:18px;line-height:1.45;color:#475569;text-align:center">写 shared/tasks，再在正确房间 @mention</div></foreignObject>
+</g><g>
+  <rect x="1270" y="265" width="200" height="230" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="1370" cy="320" r="36" fill="#0f766e"/><text x="1360" y="333" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff">6</text>
+  <text x="1298" y="385" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="800" fill="#0f172a">Execute &amp; Sync</text>
+  <foreignObject x="1294" y="410" width="152" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Noto Sans SC,PingFang SC,Arial;font-size:18px;line-height:1.45;color:#475569;text-align:center">Worker 执行、写 progress/result、同步对象存储</div></foreignObject>
+</g><g>
+  <rect x="1508" y="265" width="200" height="230" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="3"/>
+  <circle cx="1608" cy="320" r="36" fill="#0f766e"/><text x="1598" y="333" font-family="Arial" font-size="34" font-weight="800" fill="#ffffff">7</text>
+  <text x="1536" y="385" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="800" fill="#0f172a">Collect Result</text>
+  <foreignObject x="1532" y="410" width="152" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Noto Sans SC,PingFang SC,Arial;font-size:18px;line-height:1.45;color:#475569;text-align:center">Manager 读取结果、更新 meta/state、通知人类</div></foreignObject>
+</g>
+  <rect x="80" y="590" width="1640" height="80" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="112" y="640" font-family="Noto Sans SC, PingFang SC, Arial" font-size="24" font-weight="700" fill="#075985">关键原则：先写共享文件，再 @mention；Worker 完成后 Manager 必须读取 result、更新 meta/state、写 memory，再通知人类。</text>
+</svg>
