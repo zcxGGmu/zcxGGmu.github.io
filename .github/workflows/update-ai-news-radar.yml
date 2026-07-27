@@ -1,0 +1,50 @@
+name: Update AI News Radar
+
+"on":
+  workflow_dispatch:
+  schedule:
+    # Beijing time: 08:30, 12:30, 18:30, 23:30.
+    - cron: "30 0,4,10,15 * * *"
+
+concurrency:
+  group: update-ai-news-radar-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh static AI News Radar snapshot
+        run: python .github/scripts/update_ai_news_radar.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ai-news-radar/ images/posts/ai-news-radar/ index.html
+          if git diff --cached --quiet; then
+            echo "No AI News Radar changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update ai news radar snapshot"
+          for attempt in 1 2 3; do
+            git push && exit 0
+            echo "push rejected (attempt $attempt), rebasing onto latest gh-pages..."
+            git pull --rebase origin gh-pages
+          done
+          git push
