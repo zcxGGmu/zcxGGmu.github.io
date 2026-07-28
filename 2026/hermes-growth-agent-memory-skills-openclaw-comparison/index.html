@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>为什么 Hermes 比 OpenClaw 更顺手：成长式 AI Agent 的五个核心差异 - zcxGGmu's Blog</title>
+  <meta name="description" content="Hermes 的核心不是多一个 Agent 外壳，而是把记忆策展、技能生成、自我改进和产品化体验放进默认路径，让 Agent 在长期使用中越用越顺手。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/hermes-growth-agent-memory-skills-openclaw-comparison/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="为什么 Hermes 比 OpenClaw 更顺手：成长式 AI Agent 的五个核心差异"><meta property="og:description" content="Hermes 的核心不是多一个 Agent 外壳，而是把记忆策展、技能生成、自我改进和产品化体验放进默认路径，让 Agent 在长期使用中越用越顺手。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/hermes-growth-agent-memory-skills-openclaw-comparison/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/hermes-growth-agent-memory-skills-openclaw-comparison/cover.svg')"><div class="post-title">为什么 Hermes 比 OpenClaw 更顺手：成长式 AI Agent 的五个核心差异<div class="post-subtitle">Hermes 的核心不是多一个 Agent 外壳，而是把记忆策展、技能生成、自我改进和产品化体验放进默认路径，让 Agent 在长期使用中越用越顺手。</div><div class="post-meta"><time itemprop="datePublished">2026-07-28</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E7%A8%8B/">AI工程</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/OpenClaw/">OpenClaw</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E8%87%AA%E6%88%91%E6%94%B9%E8%BF%9B/">自我改进</a>&nbsp;<a href="/tags/%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F/">技能系统</a>&nbsp;<a href="/tags/%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86/">长期记忆</a>&nbsp;<a href="/tags/user.md/">user.md</a>&nbsp;<a href="/tags/memory.md/">memory.md</a>&nbsp;<a href="/tags/Kanban/">Kanban</a>&nbsp;<a href="/tags/%E4%B8%AA%E4%BA%BAAI%E5%8A%A9%E6%89%8B/">个人AI助手</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 33 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/hermes-growth-agent-memory-skills-openclaw-comparison/cover.svg" alt="为什么 Hermes 比 OpenClaw 更顺手：成长式 AI Agent 的五个核心差异"></p>
+<p>Hermes 最吸引人的地方，不是又多了一个 Agent 外壳，而是它试图让 Agent 随着使用而成长。第一天的 Agent 只是一个刚入职的助手；第三十天的 Agent 应该更懂用户、更懂环境、更懂任务，也更少重复过去的错误。这一点，正是很多人从 OpenClaw 转向 Hermes 的根本原因。</p>
+<p>OpenClaw 很强，能把模型接到工具、消息入口和本地环境中。但很多实践会遇到同一个问题：系统越用越像一个工程项目，记忆变臃肿，技能依赖外部市场，升级可能带来破坏，普通家庭成员或非技术用户很难放心交给它长期运行。Hermes 的差异，是把体验做得更像产品，而不是一堆需要持续维修的脚手架。</p>
+<p>从安装、记忆、技能、自我改进到稳定性，Hermes 展示的是一种更成熟的 Agent 设计哲学：不要把所有复杂度都交给用户；让模型保持聪明，让框架提供恰到好处的手、脚、记忆和反馈。</p>
+
+<h2 id="why-switch">一、从“能用”到“愿意长期交给它用”</h2>
+<p>很多 Agent demo 都能让人兴奋：它能调用工具，能打开网页，能执行命令，能连接消息入口，能把任务拆给子代理。但 demo 成功和长期使用是两回事。一个真正可用的个人 Agent，必须稳定、可控、可理解，也必须在反复使用中变得更顺手。</p>
+<p>Hermes 的定位更像一个常驻助手。它可以运行在本地，也可以运行在云端；可以通过命令行交互，也可以接入 Telegram 等消息入口；可以使用不同模型作为大脑，也可以把工具、技能、记忆和后台服务串在一起。</p>
+<p>更关键的是，它不是只追求功能数量。它选择少数更顺的路径，把安装、初始化、消息接入、用户限制、后台服务、默认技能和记忆文件都串成相对完整的体验。这里的差异并不花哨，但会直接决定一个工具能否从“折腾玩具”变成“日常基础设施”。</p>
+
+<h2 id="installation">二、安装体验：轻量、云端友好，也能和旧系统并行</h2>
+<p>Hermes 的安装方式相对直接：一条命令启动，按步骤选择推理模型、终端后端和消息入口，再配置对应的 bot token 与允许访问的用户 ID。它可以跑在本地，也可以跑在 VPS 上。云端部署的优势，是 Agent 长期在线、稳定可访问，不依赖个人电脑是否开机。</p>
+<p>推理模型方面，Hermes 更像一个 harness，而不是单一模型产品。它可以接 OpenAI、OpenRouter、本地 LLM Studio，也可以接其他兼容模型。模型是大脑，Hermes 是把大脑接到工具、记忆、消息和任务流程上的身体。</p>
+<p>消息入口并不一定要支持越多越好。Hermes 的思路更偏向把少数入口做顺，而不是把每个集成都塞进去。Telegram 这类入口配置简单、权限清晰，适合快速跑通第一条链路。安全上，它允许限制可对话用户，避免任何人拿到 bot 就能操控 Agent。</p>
+<p>如果已经有 OpenClaw，也不必立即拆掉。Hermes 可以与 OpenClaw 并行部署，迁移也可以分阶段进行。先让两者在同一台云主机或同一套环境里并排运行，用真实任务测试谁更稳、谁更省心，比直接凭概念迁移更可靠。</p>
+
+<h2 id="memory">三、记忆差异：不是有没有 memory.md，而是如何管住它</h2>
+<p>Hermes 和 OpenClaw 都可以使用类似的记忆文件，例如关于用户的 <code>user.md</code>，以及关于环境、偏好和任务上下文的 <code>memory.md</code>。新会话启动时，这些信息会被加载进系统提示词，让模型不是完全从空白状态开始。</p>
+<p>真正的差异，在于 Hermes 对记忆有更强的默认约束。用户文件和记忆文件都有硬限制，系统会迫使 Agent 精炼信息、删除不重要内容、保留真正影响未来交互的事实。这个设计非常关键，因为长期 Agent 最怕记忆膨胀。</p>
+<p>没有限制的记忆看起来很美：什么都能记，什么都不丢。但放进系统提示词时，冗余、过时和低价值信息会不断挤占上下文。Agent 表面上记得更多，实际却更容易混乱。Hermes 的硬限制让记忆必须被策展，这会让第三十天的 Agent 仍然轻，而不是越来越臃肿。</p>
+<p>此外，Hermes 会在会话过程中主动检查是否需要更新记忆，而不是只在压缩上下文或开启新会话时才处理。它更像一个边工作边整理笔记的助手：对话发生时，就在后台判断哪些事实值得留下，哪些只是临时噪音。</p>
+
+<h2 id="personal-context">四、长期个人上下文：内置记忆与外部画像可以组合</h2>
+<p>内置记忆负责基础上下文，但长期个人代理需要更灵活的个性化理解。Hermes 可以结合外部记忆服务，把每次交互送入一个更长期的用户画像系统，再在下一次对话时检索当前最相关的背景。</p>
+<p>这种组合的意义在于，系统提示词不必塞满全部人生简历。Agent 只需要拿到眼前任务所需的上下文：用户是谁，当前偏好是什么，最近发生了什么，哪类沟通方式更适合，哪些事实会影响当前任务。</p>
+<p>这类记忆会让 Agent 更像长期助手。它不只是知道“用户名字是什么”，而是逐渐理解用户的习惯、技术偏好、拖延模式、家庭场景、工作节奏和反复出现的问题。对个人代理来说，这种上下文比多一个工具按钮更重要。</p>
+<p>当然，这也带来隐私和控制问题。越是长期记忆，越要关注数据在哪里、如何删除、如何修正、是否能导出、哪些内容不应该进入记忆。Hermes 的优势在于把记忆当作一等能力，但任何长期个人代理都不能绕开数据治理。</p>
+
+<h2 id="identity">五、身份与人格：soul.md 让 Agent 有稳定角色</h2>
+<p>Hermes 的 <code>soul.md</code> 很有代表性。它用于定义 Agent 的身份、语气、职责和角色边界。一个 IT 助手可以被设定成系统管理员，一个家庭助手可以被设定成日程与家务协调者，一个研究助手可以被设定成资料整理与推理伙伴。</p>
+<p>角色稳定并不是为了好玩，而是为了减少每次交互中的重复提示。如果 Agent 每次都要重新理解“你是谁、你负责什么、你应该用什么语气、你能访问哪些东西”，那就不可能形成长期协作。soul、user 和 memory 三类文件组合起来，构成了 Agent 的基本人格、用户画像和环境记忆。</p>
+<p>OpenClaw 也能通过文件保存类似信息，区别在于 Hermes 更鼓励 Agent 自己维护这些文件，并通过界面和工具链把它们变成日常使用的一部分。角色、用户和环境不再只是一次性 prompt，而是常驻状态。</p>
+
+<h2 id="skills">六、技能系统：Hermes 的核心不是找技能，而是长出技能</h2>
+<p>Hermes 最重要的差异，是 skill 系统。OpenClaw 更容易给人一种“去市场找技能”的感觉：需要某个能力，就下载或启用一个社区 skill。这个模式有价值，但也天然引入质量、安全和维护问题。技能越多，信任边界越复杂。</p>
+<p>Hermes 更强调“从使用中长出技能”。Agent 做了一件复杂事情，发现某个流程未来还会复用，就可以把经验结晶成 skill。这个 skill 不是人类教程，而是 Agent 下次遇到相似任务时可以读取的操作手册。</p>
+<p>例如，第一次配置某个 VPN 客户端、连接某套网络设备、排查某类基础设施问题时，Agent 需要摸索。完成后，它可以生成一个与该环境相关的操作 skill。下一次再遇到类似问题，就不需要从头查资料、从头试命令、从头犯错。</p>
+<p>这就是成长式 Agent 的核心：不是一次任务做完就结束，而是把任务经验变成未来能力。人也是这样工作的。第一次解决问题很笨拙，第二次开始总结路径，第三次变成方法论。Hermes 试图把这个循环内置进 Agent。</p>
+
+<h2 id="curator">七、自我改进循环：技能也需要策展、淘汰和归档</h2>
+<p>自动生成 skill 还有另一个问题：如果每次都生成、从不清理，技能库很快也会变成垃圾堆。Hermes 的方向，是让后台 curator 定期审查技能，判断哪些仍然活跃，哪些已经陈旧，哪些应该归档或改进。</p>
+<p>这点很关键。一个长期运行的 Agent 不只会记忆膨胀，也会技能膨胀。旧环境变了，旧 API 失效了，旧流程不再适用，如果 skill 不更新，就会把过去经验变成未来错误。</p>
+<p>因此，真正的自我改进不是“越记越多”，而是“越用越精”。记忆要精炼，技能要策展，流程要迭代，失败路径要被淘汰。Hermes 的优势，正是在默认设计里把这些长期维护问题考虑进去。</p>
+
+<h2 id="it-admin-case">八、IT 助手案例：像带新人一样带 Agent</h2>
+<p>一个很典型的用法，是把 Hermes 当作 IT 管理助手。先给它明确身份：负责某个家庭、工作室或小团队的网络、设备和自动化系统；再给它必要访问，例如云主机、VPN、Home Assistant、UniFi 或其他管理界面；最后让它自己探索、记录、生成 skill。</p>
+<p>关键不是提前替 Agent 写完所有技能，而是像带一个聪明新人一样给任务：“这是你要管理的系统，先了解它；这是你需要连接的网络，去配置；这是新的 API key，继续排查。”模型足够聪明时，过度预设反而会束缚它。</p>
+<p>Hermes 的哲学是给模型足够好的手、脚、反馈和边界，然后尽量少挡路。模型负责推理和学习，harness 负责让它安全地接触世界。这个思路比堆满固定脚本更适合快速变化的个人环境。</p>
+<p>家庭自动化也是同一逻辑。Agent 可以接 Home Assistant，控制灯、窗帘、设备状态，也可以在多个入口同时处理不同任务。一个长期家庭助手，不能只是回答问题；它要能理解家里的设备、人的偏好、日常任务和当前上下文。</p>
+
+<h2 id="product-feel">九、产品感：少一点脚手架，多一点默认可用</h2>
+<p>OpenClaw 的强项是开放和可折腾，但这也让它更像项目。初次搭起来时很兴奋，后面升级、依赖、插件、安全和稳定性都需要维护。对技术用户来说，这种可折腾性不是问题；对普通用户或家庭成员来说，它会变成门槛。</p>
+<p>Hermes 给人的差异，是更像产品。它不是没有可配置项，也不是不能深入折腾，而是默认路径更顺：安装、记忆、技能、消息入口、后台服务、dashboard、任务看板都围绕长期使用组织起来。</p>
+<p>这并不意味着 Hermes 永远比 OpenClaw 强。OpenClaw 仍然适合需要强网关、多入口、多工具编排的用户。但如果目标是把 Agent 交给非技术用户、家庭成员或小团队长期使用，稳定和默认体验会比功能清单更重要。</p>
+
+<h2 id="dashboard-kanban">十、Dashboard、Kanban 与多模型协作</h2>
+<p>Hermes 的新功能也在强化产品感。Dashboard 可以查看技能、插件、profile、模型配置和辅助模型；Kanban 可以把任务变成可跟踪的事项，让 Agent 执行过程中展示进度、遇到限制时请求人类输入。</p>
+<p>辅助模型的概念也很实用。一个大模型负责主推理，另一个模型负责研究，另一个模型负责委派或轻量任务。长期看，Agent 不会只是一条单模型链路，而会是多个模型、多个角色和多个工具的组合系统。</p>
+<p>计算机控制能力也在进入这一类系统。Agent 不只是在命令行或 API 里行动，还会逐渐控制图形界面、本地应用和真实工作环境。越往这个方向走，权限、审计和人为介入点越重要。</p>
+
+<h2 id="safety">十一、安全边界：越强的 Agent 越需要约束</h2>
+<p>Hermes 的“让模型自己学、自己整理、自己生成 skill”很强，但也不能浪漫化。只要 Agent 能访问网络、文件、API key、家庭自动化和本地设备，就必须设计权限边界。</p>
+<p>至少要有四层保护：第一，限制谁能和 Agent 对话；第二，限制 Agent 能访问哪些系统和密钥；第三，关键动作需要确认或审批；第四，所有技能和记忆都应可查看、可修改、可删除。成长式 Agent 必须可审计，否则成长也可能变成漂移。</p>
+<p>相比外部社区技能市场，自生成 skill 在供应链安全上更可控，因为它来自自己的环境和任务；但自生成并不等于一定安全。生成后的 skill 仍然需要策展、验证和定期清理。</p>
+
+<h2 id="comparison">十二、和 OpenClaw 的真实差异</h2>
+<p>OpenClaw 更像一个开放网关和执行工程，适合愿意折腾、多入口、多工具、强自定义的用户。Hermes 更像一个成长式个人 Agent 产品，适合希望系统自己维护记忆、沉淀技能、稳定运行的人。</p>
+<p>OpenClaw 的问题不是不能做，而是长期维护成本更高。记忆容易膨胀，技能质量参差，系统更新可能带来破坏，普通用户更难理解哪里出错。Hermes 的优势，是把很多长期维护问题内建到默认路径里。</p>
+<p>最准确的比较不是“谁替代谁”，而是“谁更适合当前场景”。如果要搭一个强大的工具入口中控，OpenClaw 仍然值得看；如果要一个更顺手、更会沉淀经验、更容易交给家人或团队成员使用的长期 Agent，Hermes 的产品方向更清晰。</p>
+
+<h2 id="how-to-adopt">十三、采用策略：不要迁移信仰，先迁移任务</h2>
+<p>最稳妥的方式，不是立刻把所有东西从旧系统搬走，而是挑三类任务试 Hermes。</p>
+<p>第一类是重复性技术任务，比如项目检查、PR review、环境配置、脚本维护、基础设施排障。看它能否把经验沉淀成 skill，并在下一次复用。</p>
+<p>第二类是个人长期任务，比如家庭安排、学习计划、饮食计划、项目管理。看它的 user.md、memory.md 和外部记忆能否真正减少重复解释。</p>
+<p>第三类是工具联动任务，比如云主机、VPN、Home Assistant、GitHub、日程或消息入口。看它能否在权限清晰的前提下稳定执行。</p>
+<p>跑完这些任务，再决定是否迁移。Agent 工具的选择不应该靠热度，而应该靠连续使用两三周后的维护成本、失败率、上下文质量和复用能力。</p>
+
+<h2 id="conclusion">十四、结论：成长式 Agent 的关键，是让经验留下来</h2>
+<p>Hermes 的价值不只是更好看、更好装，也不是单纯功能更多。它真正打中的，是长期 Agent 的核心矛盾：第一天很聪明不够，第三十天必须更顺手；会执行一次不够，必须把经验留下来；能记东西不够，必须控制记忆质量；能生成技能不够，必须会策展和淘汰。</p>
+<p>OpenClaw 代表的是把 AI 接到真实工具和入口的方向，Hermes 代表的是让 AI 在使用中成长的方向。两者都重要，但如果目标是一个长期可托付、能逐渐理解人和环境的个人 Agent，Hermes 更接近下一阶段的答案。</p>
+<p>未来的 Agent 不是一个聊天框，而是一套有记忆、有技能、有任务板、有工具边界、有自我改进循环的长期系统。Hermes 值得关注，正是因为它把这个方向做得更像可以每天使用的产品。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/openclaw-hermes-openhuman-agent-choice-framework/">下一篇<br>OpenClaw、Hermes 与 OpenHuman 怎么选：养爪、养马还是养人</a><a class="older-posts" href="/2026/loss-aversion-trading-psychology-rules-watch-frequency/">上一篇<br>亏损为什么比盈利更上头：损失厌恶、看盘频率与交易规则</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#why-switch">一、从“能用”到“愿意长期交给它用”</a><a class="toc-link toc-level-2" href="#installation">二、安装体验：轻量、云端友好，也能和旧系统并行</a><a class="toc-link toc-level-2" href="#memory">三、记忆差异：不是有没有 memory.md，而是如何管住它</a><a class="toc-link toc-level-2" href="#personal-context">四、长期个人上下文：内置记忆与外部画像可以组合</a><a class="toc-link toc-level-2" href="#identity">五、身份与人格：soul.md 让 Agent 有稳定角色</a><a class="toc-link toc-level-2" href="#skills">六、技能系统：Hermes 的核心不是找技能，而是长出技能</a><a class="toc-link toc-level-2" href="#curator">七、自我改进循环：技能也需要策展、淘汰和归档</a><a class="toc-link toc-level-2" href="#it-admin-case">八、IT 助手案例：像带新人一样带 Agent</a><a class="toc-link toc-level-2" href="#product-feel">九、产品感：少一点脚手架，多一点默认可用</a><a class="toc-link toc-level-2" href="#dashboard-kanban">十、Dashboard、Kanban 与多模型协作</a><a class="toc-link toc-level-2" href="#safety">十一、安全边界：越强的 Agent 越需要约束</a><a class="toc-link toc-level-2" href="#comparison">十二、和 OpenClaw 的真实差异</a><a class="toc-link toc-level-2" href="#how-to-adopt">十三、采用策略：不要迁移信仰，先迁移任务</a><a class="toc-link toc-level-2" href="#conclusion">十四、结论：成长式 Agent 的关键，是让经验留下来</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>

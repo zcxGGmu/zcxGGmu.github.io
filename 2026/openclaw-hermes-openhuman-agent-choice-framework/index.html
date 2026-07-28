@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>OpenClaw、Hermes 与 OpenHuman 怎么选：养爪、养马还是养人 - zcxGGmu's Blog</title>
+  <meta name="description" content="OpenClaw、Hermes 与 OpenHuman 不是简单谁更强，而是分别解决入口工具、经验复用和长期上下文三层问题；选择 Agent 先看自己最痛的是哪一层。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/openclaw-hermes-openhuman-agent-choice-framework/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="OpenClaw、Hermes 与 OpenHuman 怎么选：养爪、养马还是养人"><meta property="og:description" content="OpenClaw、Hermes 与 OpenHuman 不是简单谁更强，而是分别解决入口工具、经验复用和长期上下文三层问题；选择 Agent 先看自己最痛的是哪一层。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/openclaw-hermes-openhuman-agent-choice-framework/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/openclaw-hermes-openhuman-agent-choice-framework/cover.svg')"><div class="post-title">OpenClaw、Hermes 与 OpenHuman 怎么选：养爪、养马还是养人<div class="post-subtitle">OpenClaw、Hermes 与 OpenHuman 不是简单谁更强，而是分别解决入口工具、经验复用和长期上下文三层问题；选择 Agent 先看自己最痛的是哪一层。</div><div class="post-meta"><time itemprop="datePublished">2026-07-28</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E7%A8%8B/">AI工程</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/OpenClaw/">OpenClaw</a>&nbsp;<a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/OpenHuman/">OpenHuman</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E4%B8%AA%E4%BA%BAAI%E5%8A%A9%E6%89%8B/">个人AI助手</a>&nbsp;<a href="/tags/%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86/">长期记忆</a>&nbsp;<a href="/tags/%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F/">技能系统</a>&nbsp;<a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>&nbsp;<a href="/tags/Gateway/">Gateway</a>&nbsp;<a href="/tags/Agent%E6%9E%B6%E6%9E%84/">Agent架构</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 15 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/openclaw-hermes-openhuman-agent-choice-framework/cover.svg" alt="OpenClaw、Hermes 与 OpenHuman 怎么选：养爪、养马还是养人"></p>
+<p>AI Agent 的新项目越来越多，名字也越来越容易混在一起。OpenClaw、Hermes Agent、OpenHuman 放在同一张桌面上时，最常见的问题不是“谁更强”，而是“我到底应该先试哪一个”。如果已经在用 Claude、Codex、Cursor 或其他 Agent 工具，这个问题会更具体：是不是应该切过去？是不是又要重新搭一套系统？</p>
+<p>更好的判断方式，是先把三者看成三种能力路线：OpenClaw 更像“养爪”，重点是给 AI 双手，让它接入真实入口和工具；Hermes 更像“养马”，重点是让 Agent 会跑、会学、会把经验沉淀成技能；OpenHuman 更像“养人”，重点是让 AI 先认识你、记住你、理解你的长期上下文。</p>
+<p>这不是严格分类。OpenClaw 和 Hermes 都会涉及工具调用、任务执行、工作流和长期运行；OpenHuman 也不只是一套静态记忆库。但这个框架足够帮助个人用户做第一轮选择：缺入口，就看 OpenClaw；缺流程复用，就看 Hermes；缺长期理解，就看 OpenHuman。</p>
+
+<h2 id="three-routes">一、三个项目，其实对应 Agent 的三条路线</h2>
+<p>OpenClaw 解决的问题很直接：AI 不应该永远关在网页聊天框里。它更像一个常驻在本地设备或服务器上的个人 AI 中控，前面接微信、飞书、Slack、Telegram、Discord 等日常沟通入口，后面接浏览器、文件、工作区、工具和技能。</p>
+<p>Hermes Agent 的重点不同。它更关心 Agent 如何从任务中学习，如何把做过的事情沉淀成 skill，如何避免每次都像新来的实习生一样从零开始。一个重复出现的流程，如果每次都重新搜索、重新踩坑、重新解释，那就说明 Agent 还没有真正成长。</p>
+<p>OpenHuman 则从另一个方向切入：AI 能不能先理解人。邮件、聊天、文档、代码库、日程和各种集成散落在不同地方，模型本身再聪明，也不知道你是谁、最近在做什么、项目背景是什么、上次说到哪里。OpenHuman 试图把这些资料变成可供 AI 使用的长期上下文底座。</p>
+
+<h2 id="openclaw">二、OpenClaw：让 AI 从聊天框走进真实工具</h2>
+<p>OpenClaw 的核心价值，是把 AI 从单独网页里放出来，接到真实工作流里。它不是只让模型回答问题，而是让 AI 可以被日常沟通入口唤起，可以访问文件、浏览器和工作区，可以执行一些重复任务，再把结果回传给用户。</p>
+<p>这里的关键概念是 Gateway。它可以理解为常驻控制面：前端连接各种消息入口，后端连接浏览器、文件、工具、技能和工作区。用户从某个聊天入口发一句话进来，Gateway 判断这是哪个会话、能访问什么工具、应该交给哪个执行流程。</p>
+<p>所以 OpenClaw 的第一印象不是“模型更聪明”，而是“AI 更靠近真实环境”。如果一个人平时就在 Slack、飞书、Telegram、微信里处理大量事情，不想每天打开十几个 AI 网页，也不想在多个工具之间复制粘贴上下文，OpenClaw 这一类系统就很有吸引力。</p>
+
+<h2 id="openclaw-fit">三、谁适合优先看 OpenClaw</h2>
+<p>第一类是多入口用户。工作沟通本来就分散在多个 IM、协作平台和设备里，希望 AI 能在原本的入口被叫起来，而不是要求人迁移到另一个网页应用。</p>
+<p>第二类是愿意折腾常驻服务的人。OpenClaw 更像自己养一个 AI 中控，需要设备、服务器、权限、网关和后台服务。它不是一个轻量的问答按钮，而是一个要长期运行的个人基础设施。</p>
+<p>第三类是很在意 AI 能不能真正碰到工具的人。比如查文件、跑浏览器、读取工作区、处理重复任务、跨系统转发信息。只要需求进入真实工具层，OpenClaw 的价值就比普通聊天工具更明显。</p>
+<p>但它也有成本。AI 一旦有了“手”，安全、权限、会话隔离、审计、错误操作和工具边界都会变成必须面对的问题。入口越多，权限越复杂；工具越多，误操作风险越大。对只想偶尔问答、写写文本的人来说，这套东西可能过重。</p>
+
+<h2 id="hermes">四、Hermes：让 Agent 从“会做一次”变成“越用越会做”</h2>
+<p>Hermes 的关键不在入口，而在执行闭环和技能沉淀。很多 Agent 第一次做任务时看起来很聪明，但下一次仍然重复同样的摸索：配置项目查一遍文档，踩一遍坑，修一遍环境；用户纠正一次，当前会话记住了，换一个会话又忘了。</p>
+<p>Hermes 想解决的就是“经验不沉淀”的问题。它强调 self-improvement loop，也就是任务完成后把流程、教训和成功路径整理成 skill。这里的 skill 不是给人看的介绍文档，而是给 Agent 自己看的工作手册：遇到某类任务应该先读什么，按什么步骤走，哪些坑不要踩，做到什么程度才算完成。</p>
+<p>这就是“养马”的含义。马不只是有手，它能跑远路、记路线、被训练，也能在相似任务中复用过去经验。Hermes 的价值要在重复任务中显现：维护项目、写脚本、改文档、跑测试、做数据整理、执行固定检查清单，都很适合通过 skill 沉淀。</p>
+
+<h2 id="hermes-fit">五、谁适合优先看 Hermes</h2>
+<p>第一类是经常做重复但不完全相同任务的人。比如每次都要处理代码仓库、生成报告、整理资料、跑自动化脚本、更新文档。这些任务不值得完全手写程序固化，但又不该每次从零提示模型。</p>
+<p>第二类是希望 Agent 逐渐适应个人工作方式的人。每个人都有固定代码风格、提交习惯、输出格式、检查清单和偏好。如果这些偏好每次都要重说，AI 只是临时工具；如果可以沉淀为 skill，AI 才开始像长期助手。</p>
+<p>第三类是已经不满足于一次性回答的人。Hermes 的价值不是多答一个问题，而是让流程越跑越顺。它适合把“这件事以后还会出现”当作默认假设，然后让 Agent 把经验整理进可复用能力。</p>
+<p>如果主要需求只是临时问答、一次性写作、灵感生成，Hermes 的优势不会立刻显现。它真正值得投入的地方，是工作流会反复出现、并且每次都需要一点判断的场景。</p>
+
+<h2 id="openhuman">六、OpenHuman：让 AI 先认识你，再帮你工作</h2>
+<p>OpenHuman 的起点不是“AI 怎么做事”，而是“AI 知不知道你是谁”。大模型默认没有你的生活和工作背景，不知道最近在做哪个项目，不知道邮件里发生了什么，不知道聊天记录、GitHub、Notion、日程和文档之间有什么关系。</p>
+<p>所以每次使用普通 AI 工具时，人都要重新解释：我是谁，我在忙什么，这个项目的背景是什么，上次说到哪里，哪些资料可以参考。OpenHuman 试图把这些信息组织成长期记忆底座，让 AI 在帮助你之前，先有机会理解你的世界。</p>
+<p>它的关键词是 Memory Tree。邮件、聊天、文档、集成数据可以被整理成本地知识库、主题树、全局记忆和用户画像信号。AI 不只是临时查一下某个文件，而是持续从这些来源建立上下文。</p>
+
+<h2 id="openhuman-fit">七、谁适合优先看 OpenHuman</h2>
+<p>第一类是资料密度很高的人。邮件、聊天、文档、代码、日程、会议记录到处都是，真正的痛点不是让 AI 写一段话，而是让 AI 帮自己回忆、整理、连接上下文。</p>
+<p>第二类是需要长期个人助手的人。不是一次性问答，而是希望 AI 知道自己的项目、偏好、资料位置、长期目标和当前状态。这样的助手如果没有长期上下文，每次都会像第一次见面。</p>
+<p>第三类是希望跨系统整合的人。Gmail、Slack、GitHub、Notion、Calendar 等不只是资料来源，也可以是触发来源、工具来源和用户画像信号。OpenHuman 的想象空间就在于把这些散点连接起来。</p>
+<p>但这个方向也最需要谨慎。长期记忆越丰富，隐私、权限、数据编辑、删除权和错误记忆修正就越重要。愿不愿意把大量个人数据接入系统，系统成熟度能否支撑真实工作，都需要亲自验证。</p>
+
+<h2 id="not-who-stronger">八、不要问谁更强，要问主要矛盾是什么</h2>
+<p>把三者放在一起比较时，“谁更强”是一个容易误导的问题。更好的问题是：当前最痛的是哪一层？</p>
+<p>如果缺的是入口和工具触达，希望 AI 能从日常沟通入口被叫起来，能碰到浏览器、文件和工作区，优先看 OpenClaw。它解决的是 AI 如何进入真实工作环境。</p>
+<p>如果缺的是流程复用，希望 Agent 不要每次都像新手，希望它把经验沉淀成 skill，下次少走弯路，优先看 Hermes。它解决的是 AI 如何通过任务成长。</p>
+<p>如果缺的是长期上下文，希望 AI 不要每次忘记你是谁，不要每次重新解释背景，优先看 OpenHuman。它解决的是 AI 如何理解长期的人和资料。</p>
+
+<h2 id="not-exclusive">九、它们不是完全互斥，而是切入点不同</h2>
+<p>OpenClaw 和 Hermes 尤其不应该被看成两个完全不同物种。两者都会涉及工具执行、工作流、技能和长期运行，只是切入点不同。OpenClaw 更像从入口和控制面出发，先解决 AI 怎么被叫起来、怎么接到工具；Hermes 更像从执行与沉淀出发，先解决任务怎么跑顺、经验怎么复用。</p>
+<p>OpenHuman 也不是单纯的资料库。长期记忆本身会影响执行质量，执行过程也会生成新的记忆。未来更自然的形态，可能是入口、技能和记忆组合起来：OpenClaw 类系统负责入口和工具，Hermes 类系统负责经验沉淀，OpenHuman 类系统负责长期上下文。</p>
+<p>所以选择时不必想着一次性全切。普通用户最容易犯的错，是看到新概念就想全部部署。入口越多，安全越复杂；技能越多，维护越复杂；记忆越多，隐私越复杂。先选最痛的一层，才是更稳的方式。</p>
+
+<h2 id="combination">十、组合部署：入口、执行与记忆可以分层协作</h2>
+<p>更成熟的个人 Agent 系统，最后很可能不是单一项目包打天下，而是分层协作。入口层负责接收人的意图，执行层负责把任务跑完，记忆层负责把长期上下文组织好。三层分开后，每个项目的价值反而更清楚。</p>
+<p>一个实际组合可以这样设计：日常入口由 OpenClaw 类网关承接，把来自聊天工具、浏览器或本地工作区的请求路由到合适任务；重复执行流程交给 Hermes 类系统，让它把项目维护、资料整理、脚本运行、测试检查沉淀成 skill；个人背景、邮件、日程和跨项目知识由 OpenHuman 类记忆底座提供。</p>
+<p>这种组合并不意味着一开始就要全上。更稳的方式是从一个真实任务出发。如果最痛的是“AI 够不到我的工具”，先把入口接起来；如果最痛的是“每次都要重教它”，先做 skill 沉淀；如果最痛的是“它完全不懂我的背景”，先做长期记忆。等单层跑顺，再考虑组合。</p>
+
+<h2 id="risk-boundary">十一、风险边界：Agent 越接近真实世界，越要先想权限</h2>
+<p>入口、技能和记忆都在把 AI 推向真实世界，但每一步都会带来风险。入口意味着更多人和系统可以触达 Agent；工具意味着 Agent 能修改文件、调用 API、打开网页、执行命令；记忆意味着大量个人资料可能被长期保存和检索。</p>
+<p>所以选择项目时不能只看“能不能做”，还要看“出了错怎么收住”。至少要问四个问题：谁能唤起 Agent？Agent 能访问哪些工具？哪些动作需要人工确认？记忆能否查看、修改、删除和导出？这些问题没有答案时，功能越强越危险。</p>
+<p>OpenClaw 的重点在入口和工具，因此要重视网关权限、会话隔离和操作审计；Hermes 的重点在技能，因此要重视 skill 的生成、策展和过期清理；OpenHuman 的重点在记忆，因此要重视数据源授权、隐私边界和错误记忆修正。工具选择不是只比能力，而是同时比能力与控制面。</p>
+
+<h2 id="agent-next-stage">十二、Agent 下一阶段：入口、技能、记忆缺一不可</h2>
+<p>过去很多人把 Agent 理解成“会调用工具的聊天机器人”。但真正能长期工作的 Agent，至少需要三类能力。</p>
+<p>第一是入口。它要出现在人真正工作的地方，而不是永远躲在一个网页窗口里。工作发生在聊天、邮件、代码仓库、文档、浏览器和本地文件系统中，AI 如果不能进入这些入口，就只能停留在问答层。</p>
+<p>第二是技能。它要把做过的事情沉淀下来，避免每次都从零开始。否则 Agent 只是一个聪明但失忆的临时工。</p>
+<p>第三是记忆。它要理解用户的长期上下文，知道为谁做、为什么做、之前做过什么、哪些偏好不能忘。没有记忆，AI 再会执行也很难成为长期助手。</p>
+
+<h2 id="decision-checklist">十三、选择清单：先判断自己到底想养什么</h2>
+<p>想让 AI 更容易被叫起来，够得到工具和文件，优先看 OpenClaw。这是在补“手”和“入口”。</p>
+<p>想让 AI 越用越熟，下次少走弯路，优先看 Hermes。这是在补“经验”和“技能”。</p>
+<p>想让 AI 更懂你，理解你的资料、项目和上下文，优先看 OpenHuman。这是在补“长期记忆”和“个人上下文”。</p>
+<p>三个方向都很有价值，但适合的人不同。真正实用的判断方式，不是追最新名字，而是找当前工作中最烦、最反复、最消耗注意力的那一层。缺手补入口，缺经验补技能，缺长期理解补记忆。这样选 Agent，才不会被概念牵着走。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/hermes-growth-agent-memory-skills-openclaw-comparison/">上一篇<br>为什么 Hermes 比 OpenClaw 更顺手：成长式 AI Agent 的五个核心差异</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#three-routes">一、三个项目，其实对应 Agent 的三条路线</a><a class="toc-link toc-level-2" href="#openclaw">二、OpenClaw：让 AI 从聊天框走进真实工具</a><a class="toc-link toc-level-2" href="#openclaw-fit">三、谁适合优先看 OpenClaw</a><a class="toc-link toc-level-2" href="#hermes">四、Hermes：让 Agent 从“会做一次”变成“越用越会做”</a><a class="toc-link toc-level-2" href="#hermes-fit">五、谁适合优先看 Hermes</a><a class="toc-link toc-level-2" href="#openhuman">六、OpenHuman：让 AI 先认识你，再帮你工作</a><a class="toc-link toc-level-2" href="#openhuman-fit">七、谁适合优先看 OpenHuman</a><a class="toc-link toc-level-2" href="#not-who-stronger">八、不要问谁更强，要问主要矛盾是什么</a><a class="toc-link toc-level-2" href="#not-exclusive">九、它们不是完全互斥，而是切入点不同</a><a class="toc-link toc-level-2" href="#combination">十、组合部署：入口、执行与记忆可以分层协作</a><a class="toc-link toc-level-2" href="#risk-boundary">十一、风险边界：Agent 越接近真实世界，越要先想权限</a><a class="toc-link toc-level-2" href="#agent-next-stage">十二、Agent 下一阶段：入口、技能、记忆缺一不可</a><a class="toc-link toc-level-2" href="#decision-checklist">十三、选择清单：先判断自己到底想养什么</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
