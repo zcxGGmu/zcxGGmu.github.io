@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>Hermes Agent 架构拆解：从 Agent Loop 到 Gateway、Memory 与 Cron Jobs - zcxGGmu's Blog</title>
+  <meta name="description" content="Hermes 的核心是一个简单 Agent Loop，外围由 Gateway、多层 Memory、上下文压缩、工具与技能、Cron Jobs 共同组成常驻型个人自动化系统。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/hermes-agent-architecture-agent-loop-gateway-memory-cron/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="Hermes Agent 架构拆解：从 Agent Loop 到 Gateway、Memory 与 Cron Jobs"><meta property="og:description" content="Hermes 的核心是一个简单 Agent Loop，外围由 Gateway、多层 Memory、上下文压缩、工具与技能、Cron Jobs 共同组成常驻型个人自动化系统。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/hermes-agent-architecture-agent-loop-gateway-memory-cron/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/hermes-agent-architecture-agent-loop-gateway-memory-cron/cover.svg')"><div class="post-title">Hermes Agent 架构拆解：从 Agent Loop 到 Gateway、Memory 与 Cron Jobs<div class="post-subtitle">Hermes 的核心是一个简单 Agent Loop，外围由 Gateway、多层 Memory、上下文压缩、工具与技能、Cron Jobs 共同组成常驻型个人自动化系统。</div><div class="post-meta"><time itemprop="datePublished">2026-07-28</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E7%A8%8B/">AI工程</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/Agent%E6%9E%B6%E6%9E%84/">Agent架构</a>&nbsp;<a href="/tags/Agent%20Loop/">Agent Loop</a>&nbsp;<a href="/tags/Gateway/">Gateway</a>&nbsp;<a href="/tags/Memory/">Memory</a>&nbsp;<a href="/tags/Cron%20Jobs/">Cron Jobs</a>&nbsp;<a href="/tags/SQLite/">SQLite</a>&nbsp;<a href="/tags/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9/">上下文压缩</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 28 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/hermes-agent-architecture-agent-loop-gateway-memory-cron/cover.svg" alt="Hermes Agent 架构拆解：从 Agent Loop 到 Gateway、Memory 与 Cron Jobs"></p>
+<p>Hermes 的核心并不神秘。它不是一个只会对话的聊天壳，而是一个围绕 Agent Loop、上下文构建、工具调用、记忆系统、Gateway、多端消息接入和 Cron Jobs 组织起来的常驻型个人 Agent。理解它的关键，是把它拆成几个稳定模块：入口层、核心循环、上下文层、记忆层、工具与技能层、网关层、定时任务层。</p>
+<p>这套架构的价值在于，它把“和模型聊天”推进到“让一个持续运行的智能体替人处理任务”。CLI 可以直接进入交互，Gateway 可以把 Telegram、邮件、Slack、短信、WhatsApp 等消息系统接进来，API 可以作为程序化入口，Cron Jobs 可以让任务按时间自动触发，Memory 则让 Agent 在多次会话之间不断积累用户信息、工作流和经验。</p>
+<p>因此，Hermes 更像一个轻量级个人智能操作系统：LLM 是推理核心，工具和技能是行动能力，Markdown 与 SQLite 是长期状态，Gateway 是外部世界接口，Cron 是自动化触发器。</p>
+
+<h2 id="bird-view">一、整体视图：核心 Agent 加多入口、多服务</h2>
+<p>从鸟瞰视角看，Hermes 的中心是 AI Agent Core，也就是 Agent Loop。所有入口最终都会把用户消息送到这个核心循环里：命令行输入、Gateway 收到的消息、API 调用，都只是不同入口形式。</p>
+<p>核心 Agent 周围连接着几类服务。第一类是工具，负责真正执行动作，例如搜索、读写文件、调用外部接口、更新本地内容。第二类是 Skills，负责把可复用工作流、方法论、提示模板和领域能力纳入上下文。第三类是 Memory，既包括本地 Markdown 文件，也包括 SQLite 会话记录，还可以接入外部记忆服务。</p>
+<p>这是一种“简单核心 + 可插拔能力”的架构。核心循环并不复杂，但外层连接方式很多。一个 Agent 之所以有用，不只是因为模型会推理，而是因为它能接收消息、整理上下文、使用工具、保存经验，并在未来任务里复用这些经验。</p>
+
+<h2 id="agent-loop">二、Agent Loop：消息、上下文、模型、工具、记忆更新</h2>
+<p>Hermes 的 Agent Loop 很直接。第一步，用户发送消息。第二步，Hermes 构建上下文，把系统提示、人格文件、用户文件、记忆、技能描述、工具描述和消息历史组织起来。第三步，把完整上下文发给 LLM。</p>
+<p>LLM 收到上下文后，可以选择直接回答，也可以调用工具。如果调用工具，Hermes 执行工具，把结果再返回给 LLM。这个过程可以循环多次，直到模型认为任务完成，并给出最终响应。</p>
+<p>最终响应之后，还有一个关键步骤：记忆更新。Hermes 会分析本轮交互，判断是否有值得长期保存的信息。如果发现用户偏好、工作方式、常用事实、工具经验或未来可能复用的知识，就会写入记忆系统。正是这一层，让 Hermes 不只是一次性问答工具，而是能随使用逐步学习的 Agent。</p>
+<pre><code>用户消息 → 构建上下文 → 调用 LLM → 工具调用循环 → 最终响应 → 记忆更新</code></pre>
+
+<h2 id="context">三、上下文：Soul、User、Memory、Skills、Tools 与消息历史</h2>
+<p>Hermes 的上下文构建非常关键，因为 LLM 每次行动都依赖当前上下文。它并不是把一句用户消息直接发给模型，而是把一组文件、历史和能力说明拼成完整任务环境。</p>
+<p><code>soul.md</code> 是 Agent 的人格文件，用来描述 Agent 的目标、语气、价值观、行为风格和工作方式。刚安装时，这个文件通常为空；如果没有手动设置或让 Hermes 自己生成，就会使用默认系统提示。真正想让 Agent 变得“像自己的助手”，就需要认真定制这个文件。</p>
+<p><code>user.md</code> 保存用户画像。Hermes 会在对话中自动更新它，例如用户的职业、偏好、正在做的项目、习惯的表达方式和长期目标。<code>memory.md</code> 则更像任意事实与工作流记忆，可以记录工具使用经验、项目背景、反复出现的问题和对未来有帮助的信息。</p>
+<p>除了 Markdown 文件，上下文还会包含技能描述、工具描述和最近消息历史。如果消息历史过长，Hermes 会触发摘要压缩，把旧消息总结成结构化摘要，再放回上下文中，避免会话超出模型上下文窗口。</p>
+
+<h2 id="compression">四、上下文压缩：默认 50% 阈值与两类检查点</h2>
+<p>长会话必然遇到上下文窗口限制。Hermes 在设置时会询问什么时候触发压缩，默认一般是在上下文使用达到 50% 时进行。如果使用的是上下文较小的模型，也可以把阈值调整到 70% 或 80%。</p>
+<p>压缩发生在两个时刻。第一，在每一轮调用 LLM 之前检查。如果当前消息历史已经超过设定阈值，就先总结旧内容，再继续任务。第二，在模型返回上下文超限错误时检查，这时需要立即压缩并重试。</p>
+<p>第一次调用模型之前，Hermes 并不知道精确 token 数，因此会用字符数除以 4 的方式估算上下文大小。模型响应之后，如果供应商返回 usage 信息，就可以用更准确的 token 用量做判断。这种设计不追求完美精确，而是在成本和可靠性之间取一个足够好的工程折中。</p>
+<p>压缩提示并不只是“总结一下”。它会要求提取目标、约束、已完成动作、当前状态、阻塞点、关键决策、已解决问题、相关文件、关键上下文、历史进度和下一步需要纳入的信息。这样压缩后，Agent 仍能延续任务，而不是丢失任务结构。</p>
+
+<h2 id="gateway">五、Gateway：让 Agent 进入 Telegram、邮件、Slack 与更多消息系统</h2>
+<p>Gateway 是 Hermes 变得实用的重要原因。它让 Agent 不只存在于命令行里，而是能通过 Telegram、邮件、Slack、Discord、短信、WhatsApp 等消息系统接收任务和回复结果。</p>
+<p>Gateway 的工作不是简单转发消息。不同消息系统有不同接入方式：有的使用 webhook，有的需要每秒轮询 API，有的通过 WebSocket。Hermes 为每种 integration 单独配置入口，并在 Gateway 里持续运行异步循环，监听或拉取新消息。</p>
+<p>当 Gateway 收到消息时，它必须把外部消息转换成 Hermes 能理解的内部格式，并重建对话上下文。以 Telegram 为例，Gateway 会用 gateway 名称、外部 session ID 和其他标识构造内部会话 ID，然后到本地 SQLite 中拉取这条会话的历史消息，再与当前消息一起送入 Agent Loop。</p>
+<p>这意味着 Gateway 维护了多端消息的连续性。用户在 Telegram 里发送一句话，Hermes 不只是看到这一句，还能根据 session ID 找回这个聊天线程过去的内容。没有这一步，外部消息入口就只能做无上下文的一问一答。</p>
+
+<h2 id="session-manager">六、Session Manager：排队、打断与 steer</h2>
+<p>Gateway 还需要处理并发和会话控制。如果用户在 Agent 正在执行任务时又发来一条消息，系统必须判断这条消息是要排队、打断当前任务，还是作为 steering 指令改变当前任务方向。</p>
+<p>Hermes 的 session manager 承担这项工作。普通消息可以进入队列等待，<code>/interrupt</code> 可以打断正在运行的任务，<code>/steer</code> 可以在不中断上下文的情况下改变执行方向。这个机制让远程消息入口更接近真实助手，而不是一个阻塞式命令行。</p>
+<p>对长期运行 Agent 来说，这一点很重要。真实任务经常持续数十秒甚至数分钟，如果没有排队和打断机制，用户只能等待任务结束，或者造成多个任务互相污染。Session manager 提供了基本任务调度能力。</p>
+
+<h2 id="memory">七、Memory：Markdown、SQLite 与外部记忆三层结构</h2>
+<p>Hermes 的记忆分三层。第一层是 Markdown 文件，包括 <code>soul.md</code>、<code>user.md</code> 和 <code>memory.md</code>。这些文件会稳定进入上下文，适合保存人格、用户画像、长期偏好、常用事实和工作流。</p>
+<p>第二层是 SQLite。Hermes 会把每一次会话和每条消息存入本地 SQLite 数据库。Gateway 中不同来源的会话历史，也依赖 SQLite 按 session ID 查询。数据库里还会保留文本化表，方便做简单检索或相似度搜索。</p>
+<p>第三层是外部记忆。Hermes 支持 Mem0、Supermemory、Honcho 等外部 memory provider。它们并非默认开启，但一旦接入，就能提供更智能的跨会话回忆能力。不同 provider 的实现方式不同，有的偏语义搜索，有的需要把完整对话发过去再由模型提取记忆。</p>
+<p>外部记忆不是第一条消息就一定生效。常见机制是在第一轮对话后，Agent 已经理解当前话题，再去查询外部记忆，推测下一轮可能需要哪些历史信息。因此如果一开始没有回忆起某件事，可以先描述问题，再追问一次，外部记忆往往会在后续轮次进入上下文。</p>
+
+<h2 id="cron">八、Cron Jobs：让 Agent 从被动响应变成主动执行</h2>
+<p>Cron Jobs 是 Hermes 自动化能力的关键。它让用户可以安排周期性任务，例如每天早上发送 AI 新闻摘要，每周五给某个团队发送进展邮件，每天固定时间整理市场信息，或定期执行某个工作流。</p>
+<p>Hermes 的 cron 并不是直接依赖系统级 cron 进程，而是自己维护一个每分钟运行一次的循环。这个循环调用 <code>tick</code> 函数，检查当前分钟是否有任务需要执行。如果有，就启动对应 job。</p>
+<p>文档和实际代码之间有一个容易混淆的点：Cron Jobs 并不一定存储在 SQLite 中。实际观察到的实现是，任务列表以 JSON 形式存放在 <code>~/.hermes/cron/jobs.json</code>。每次 tick 时读取这个 JSON，判断是否有任务到点运行。</p>
+<p>执行结果则写入 cron output 目录。每个 job 有自己的 job ID 目录，每次运行会生成对应的 Markdown 结果文件。这让定时任务不仅能执行，也能留下可审计的运行记录。</p>
+
+<h2 id="home-channel">九、Cron 的通知不是工具调用，而是 Home Integration</h2>
+<p>定时任务完成后，Hermes 会把通知发到用户设置的 home messaging platform。这个 home 集成通常在 Gateway 设置时指定，例如把某个 Telegram user ID、Slack 或 Discord 入口设置为 home。</p>
+<p>这和 Agent 主动调用 send message tool 不同。Cron 结果通知是系统层面的交付，而不是模型在任务中决定调用一个发送消息工具。这个区别很重要，因为它决定了定时任务的可靠性：任务执行完毕后，系统会按 home integration 投递，而不是依赖模型自己记得发送。</p>
+<p>因此，Hermes 的自动化并不是“模型想起来才提醒”，而是“调度系统触发任务，Agent 执行，系统按配置投递”。这更接近服务器自动化，也更适合长期运行。</p>
+
+<h2 id="minimalism">十、为什么这个架构有效：核心简单，边界清楚</h2>
+<p>Hermes 架构有效的原因，是核心循环足够简单，外围能力边界清楚。Agent Loop 只负责消息、上下文、模型、工具、结果和记忆更新；Gateway 负责外部消息接入和会话重建；Memory 负责跨轮次状态；Cron 负责定时触发；Skills 和 Tools 负责方法与行动能力。</p>
+<p>这种拆分让系统既可理解，也可扩展。要接入新的消息平台，就扩展 Gateway；要新增自动化任务，就写 Cron Job；要改变 Agent 性格，就改 <code>soul.md</code>；要保存用户信息，就进入 <code>user.md</code>；要增强工具能力，就注册新工具；要加强长期记忆，就接外部 memory provider。</p>
+<p>相比把所有逻辑揉进一个巨大 prompt，这种结构更工程化，也更适合持续演化。它把 Agent 从“提示词技巧”提升到“状态机 + 工具系统 + 记忆系统 + 外部接口”的组合。</p>
+
+<h2 id="build-your-own">十一、从 Hermes 学到的 Agent 设计原则</h2>
+<p>第一，Agent 必须有清晰循环。无论模型多强，都需要明确的消息入口、上下文构建、工具调用、错误处理和最终响应机制。没有 loop，就只是聊天；有 loop，才开始像 Agent。</p>
+<p>第二，长期状态必须外置。人格、用户、通用记忆、会话历史、外部记忆都不应该只塞在一次 prompt 里。Markdown 适合人类可读的长期设定，SQLite 适合完整会话记录，外部 memory provider 适合跨会话语义召回。</p>
+<p>第三，入口要和核心解耦。CLI、Telegram、邮件、Slack、API 都可以接入，但它们不应该改变 Agent Core 的本质。入口层只负责把消息整理成统一格式，核心循环负责真正推理和行动。</p>
+<p>第四，自动化需要调度层。Cron Jobs 把 Agent 从被动响应变成主动执行，让它能在固定时间替人完成任务。真正有生产力的个人 Agent，必须能被动回答，也能主动提醒、整理、执行和交付。</p>
+<p>第五，压缩和记忆决定长任务能力。上下文窗口再大也会耗尽，真正可用的 Agent 必须知道什么时候压缩、压缩什么、如何保留目标和状态，以及如何在未来任务中召回过去经验。</p>
+
+<h2 id="conclusion">结论：Hermes 是一个常驻型个人 Agent 的工程样板</h2>
+<p>Hermes 的架构并不靠神秘复杂取胜。它的核心是一个朴素但完整的 Agent Loop，外围用 Gateway 连接消息世界，用 Memory 保存长期状态，用 Cron Jobs 做定时自动化，用 Tools 和 Skills 扩展行动能力。</p>
+<p>这套架构说明，个人 Agent 真正有用的地方不只是会回答问题，而是能持续运行、跨平台接收任务、记住用户和历史、在需要时调用工具，并在固定时间主动执行工作流。</p>
+<p>未来构建类似系统时，最值得复用的不是某一段代码，而是这套边界清晰的工程思路：核心循环保持简单，状态持久化，入口可插拔，工具可扩展，记忆可召回，任务可调度。做到这些，一个 Agent 才能从“聊天窗口”变成真正可依赖的个人自动化系统。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/simple-investing-buy-stock-as-company-honesty-valuation/">下一篇<br>最简单的投资方法，往往最有效：买股票就是买公司</a><a class="older-posts" href="/2026/equity-finance-local-government-debt-changxin-k-shaped-divergence/">上一篇<br>股权财政此路不通：长鑫神话、地方债务与国资投资的K型分化</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#bird-view">一、整体视图：核心 Agent 加多入口、多服务</a><a class="toc-link toc-level-2" href="#agent-loop">二、Agent Loop：消息、上下文、模型、工具、记忆更新</a><a class="toc-link toc-level-2" href="#context">三、上下文：Soul、User、Memory、Skills、Tools 与消息历史</a><a class="toc-link toc-level-2" href="#compression">四、上下文压缩：默认 50% 阈值与两类检查点</a><a class="toc-link toc-level-2" href="#gateway">五、Gateway：让 Agent 进入 Telegram、邮件、Slack 与更多消息系统</a><a class="toc-link toc-level-2" href="#session-manager">六、Session Manager：排队、打断与 steer</a><a class="toc-link toc-level-2" href="#memory">七、Memory：Markdown、SQLite 与外部记忆三层结构</a><a class="toc-link toc-level-2" href="#cron">八、Cron Jobs：让 Agent 从被动响应变成主动执行</a><a class="toc-link toc-level-2" href="#home-channel">九、Cron 的通知不是工具调用，而是 Home Integration</a><a class="toc-link toc-level-2" href="#minimalism">十、为什么这个架构有效：核心简单，边界清楚</a><a class="toc-link toc-level-2" href="#build-your-own">十一、从 Hermes 学到的 Agent 设计原则</a><a class="toc-link toc-level-2" href="#conclusion">结论：Hermes 是一个常驻型个人 Agent 的工程样板</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
