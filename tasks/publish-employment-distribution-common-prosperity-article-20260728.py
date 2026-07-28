@@ -1,0 +1,251 @@
+from __future__ import annotations
+
+import html
+import importlib.util
+import json
+import re
+import shutil
+import sys
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+
+BASE_PATH = Path(__file__).with_name("publish-physical-ai-three-article-batch.py")
+spec = importlib.util.spec_from_file_location("base_publisher", BASE_PATH)
+if spec is None or spec.loader is None:
+    raise RuntimeError(f"Unable to load base publisher: {BASE_PATH}")
+base = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = base
+spec.loader.exec_module(base)
+_BASE_VALIDATE = base.validate
+
+
+BODY = """
+<p><img src="/images/posts/employment-crisis-wealth-concentration-common-prosperity-distribution/cover.svg" alt="就业困境的根源：财富集中、降本增效与共同富裕的再分配命题"></p>
+<p>就业困难不是凭空出现的。它表面上是岗位变少、毕业生变多、裁员频繁、招聘门槛提高，深层却是财富和责任的错位：社会生产创造出来的财富不断向少数人集中，基层劳动者承担了企业、家庭、社会和国家的多重压力，却很难分享到增长本应带来的稳定生活。</p>
+<p>一个普通劳动者真正想要的东西并不奢侈：一份稳定工作，一个月六千元左右的收入，不被随时裁掉，不被无止境加班，不被所谓“一岗多能”压成十个人的工作量，不需要天天陷在失业焦虑、跳槽焦虑、降薪焦虑里。如果这条底线能够守住，消费、买车、买房、结婚、生育、赡养和长期规划才会重新变得可能。</p>
+<p>问题在于，许多企业在经营顺利时想的是降本增效，经营承压时想的还是降本增效，亏损时依然把降本增效放在第一位。成本降在员工身上，效率增在企业账上，风险却被包装成劳动者应该承担的“责任感”。这套机制持续运行，最终不仅制造就业焦虑，也掏空了消费能力。</p>
+
+<h2 id="no-money-no-consumption">卖不动的根本原因，是普通人手里没有钱</h2>
+<p>很多行业在讨论需求不足时，喜欢把问题归因于油价、车型、产品更新、市场偏好、年轻人观念变化，或者所谓消费信心不足。但最直观的解释往往更简单：普通人手里没有钱。</p>
+<p>车卖不动，不是因为所有人都不想买车；房子卖不动，不是因为所有人都不想改善居住；服务消费起不来，也不是因为普通人天然节俭。真正的问题是，工资长期被压在低位，就业稳定性下降，未来收入不可预期，家庭存款无法覆盖风险，普通人当然不敢消费。</p>
+<p>如果一家企业销售额从十亿增长到一百亿，员工工资却长期停在五千元附近，那么这家企业的增长并没有转化为基层购买力。企业的利润被资本所有者集中拿走，员工只能拿固定低薪，社会消费能力自然被抽干。消费不足不是一句口号可以解决，它必须回到收入分配本身。</p>
+<p>所谓“内需不足”，本质上往往是基层收入不足。所谓“市场不景气”，往往是劳动报酬没有跟上企业和资本积累。一个社会不能指望九成以上的人口缺乏安全感，却依然持续贡献强劲消费。</p>
+
+<h2 id="first-rich-responsibility">先富带后富不是装饰性口号</h2>
+<p>先富带后富的逻辑，从来不是让少数人永久掌握社会财富，然后把共同富裕变成一句空话。政策给予第一批企业家土地、融资、市场、税收、产业链、劳动力和社会支持，是希望他们在发展之后承担更大的社会责任，而不是把公共支持沉淀为不可触碰的私人堡垒。</p>
+<p>企业家的财富并不是在真空中产生的。没有国家基础设施，没有产业政策，没有庞大的劳动者群体，没有消费者市场，没有教育系统培养出来的员工，没有基层家庭长期承担的隐性成本，所谓个人财富不可能凭空出现。</p>
+<p>因此，当个人资产不断累积到百亿、千亿级别时，问题就不是“人家的钱凭什么拿出来”，而是这些财富到底来自哪里，是否履行了应有的社会回流责任。共同富裕不是平均主义，也不是否定企业家贡献，而是要求先富者不能只享受发展红利，却把就业、工资、消费、生育、养老和社会稳定的责任全部甩给普通人。</p>
+<p>真正的爱国企业家，不能只在叙事上爱国，也不能只在需要政策和市场时强调民族产业。更实际的责任，是先从增加岗位、提高工资、取消两班倒三班倒的恶劣制度、保障八小时工作底线、改善基层岗位待遇开始。</p>
+
+<h2 id="wealth-concentration">财富集中正在削弱社会循环</h2>
+<p>富人数量增加本身可以是好事，也可以不是好事。关键不在于富人有多少，而在于富人是否愿意把财富重新投入社会，是否愿意通过工资、岗位、税收、消费、研发和公共责任带动更多人富起来。</p>
+<p>当极少数人掌握过多财富，普通家庭储蓄却长期偏低，社会循环就会变得脆弱。高净值群体多买几套豪宅、多做一些海外配置，并不能替代亿万普通人的日常消费。真正支撑经济的是大多数家庭有稳定收入、有稳定预期、有基本存款、有对未来的信心。</p>
+<p>一些财富分配数据揭示了这种结构性矛盾：顶部极小比例人群和中产群体占据了绝大多数私人财富，而绝大多数普通群众只能分享很小一部分。家庭存款中位数和个人存款中位数都不高，意味着大量家庭在失业、疾病、房贷、教育和养老面前缺乏缓冲。</p>
+<p>这时再要求普通人买车、买房、生孩子、提升消费、承担社会责任，就显得极其矛盾。没有收入基础的责任要求，最终只会变成道德压力；没有财富回流的共同富裕，最终只会变成空洞口号。</p>
+
+<h2 id="distribution-not-broken-execution-broken">分配制度的问题，首先出在执行环节被破坏</h2>
+<p>不能简单说分配制度本身没有方向。按劳分配为主体、多种分配方式并存，提高居民收入比重，健全最低工资标准调整机制，这些方向本身是清楚的。真正的问题是，在执行过程中，少数企业和资本力量把分配机制扭曲了。</p>
+<p>企业亏损，员工要降薪；企业效益不好，员工要加班；企业需要转型，员工要一岗多能；企业想维持利润，员工要接受低底薪、高强度、少保障。可是另一边，部分企业家个人财富却可以连年增长，甚至在企业经营承压时继续扩大个人资产。</p>
+<p>这不是正常的按劳分配，而是把集体劳动成果集中到少数人手里。员工创造价值，却只能拿最低固定工资；企业利润增长，却没有同步变成工资增长；企业经营风险，却被转嫁给劳动者。这种执行层面的破坏，才是普通人感到分配不公的根源。</p>
+<p>一个合理的企业财富结构，不应该是老板个人财富远远高于员工群体的安全感。至少在社会责任层面，员工集体财富、工资总额、福利改善和岗位稳定性，应当随着企业发展同步提高。</p>
+
+<h2 id="cost-reduction">“降本增效”为什么会成为就业恶化的核心机制</h2>
+<p>降本增效原本不是坏词。技术进步、流程优化、管理改善，都可以提高效率。但当它被企业当成压低劳动报酬、减少岗位、延长工时、压缩福利的万能理由时，它就会变成就业环境恶化的核心机制。</p>
+<p>很多企业的所谓降本，不是减少浪费，不是提升管理，不是优化组织，而是降工资、裁人员、缩福利、加工作量。很多企业的所谓增效，也不是让技术解放人，而是让一个人干三个人的活，让十个人的项目压到一个人身上。</p>
+<p>这就是“一岗多能”最残酷的一面。它听起来像能力提升，实际上经常是岗位压缩。原来一个部门十个人完成的任务，被企业包装成一个人也应该承担；原来需要合理协作的工作，被强行塞给少数员工；原来应该增加岗位的业务，被当成提高效率的理由取消岗位。</p>
+<p>如果全社会都用这种方式运转，就业岗位当然会变少。不是没有工作需要人做，而是企业通过超负荷劳动把岗位合并掉了。于是留下来的人被压榨，没留下来的人找不到工作，消费和生育预期一起下降。</p>
+
+<h2 id="ai-should-liberate">AI 和技术革命不应该被用来制造就业恐慌</h2>
+<p>AI、机器和自动化最初的意义，是解放生产力，提高效率，让人从重复劳动和危险岗位中解放出来。但如果技术被放进错误的分配机制里，它就会被用来制造新的就业恐慌。</p>
+<p>当企业把 AI 理解为“少雇人”“压工资”“让员工随时可替代”，技术进步就不再自动等于社会进步。技术越强，普通人反而越焦虑；效率越高，基层劳动者反而越没有安全感；产出越大，工资和岗位却没有同步改善。</p>
+<p>这不是 AI 本身的问题，而是技术收益归属的问题。技术提高了生产率，收益可以用来缩短工时、提高工资、增加公共服务，也可以被少数资本完全吸收。如果后者成为常态，AI 就会从解放生产力的工具，变成降本增效的武器。</p>
+<p>真正健康的技术革命，应该让八小时工作制更稳固，让双休更普遍，让危险岗位更少，让普通人的收入和闲暇同步改善。否则，所谓产业升级只是把旧的压榨逻辑换了一层更先进的外壳。</p>
+
+<h2 id="job-anxiety">就业焦虑是被设计出来的竞争结构</h2>
+<p>制造就业焦虑，对资本是有利的。当劳动者团结起来，他们会把矛头指向伤害劳动权益的制度和企业；当劳动者被迫互相竞争，他们就会把注意力放在抢那一块越来越小、越来越差的岗位上。</p>
+<p>资本最擅长的规则，是把一块质量很差的肉扔到台下，让普通人互相争抢。抢到的人以为自己赢了，抢不到的人被告知是自己不够努力。于是劳动者之间互相内卷、互相比较、互相消耗，却很少再追问：为什么肉越来越少，为什么条件越来越差，为什么劳动法规定的底线也能被包装成福利。</p>
+<p>外卖、网约车、职场白领、年轻毕业生，都被卷进这种竞争结构。竞争越激烈，资本给出的条件越差；条件越差，劳动者越不敢拒绝；越不敢拒绝，企业越可以继续压低底线。</p>
+<p>当企业把社保、双休、加班费、法定工资发放等劳动法底线包装成福利时，劳动者必须保持清醒。合法不是福利，合法只是底线。一个公司不能因为没有违法，就要求员工感恩。</p>
+
+<h2 id="supervision">招聘前置监督：让企业的不当记录暴露在阳光下</h2>
+<p>改善就业环境，不能只靠劳动者个体勇敢，也不能只靠事后维权。更有效的方式，是把企业用工记录前置到招聘环节，让劳动者在投递简历之前就看到企业是否存在劳动争议、行政处罚、工商异常、欠薪纠纷、仲裁记录和不当用工行为。</p>
+<p>招聘软件不应该只展示薪资区间、岗位描述和公司包装，也应该展示企业真实用工信用。一个企业如果反复发生劳动仲裁，如果长期存在处罚记录，如果招聘描述和实际待遇严重不符，求职者就应该提前知道。</p>
+<p>这种监督不是为了打击企业，而是为了让企业承担基本规则成本。国家监督企业，人民也应该能监督企业。只有当企业的不当行为会影响招聘、影响声誉、影响用工吸引力，劳动关系才会更趋向规范。</p>
+<p>过去很多企业能够维持恶劣用工环境，是因为信息不对称。员工入职后才发现问题，离职维权成本高，个体难以对抗组织。把信息公开前置，至少可以减少一部分求职陷阱，也能让真正规范经营的企业获得更高信任。</p>
+
+<h2 id="graduates-pressure">青年就业高峰是一场长期压力测试</h2>
+<p>高校毕业生规模持续走高，让就业问题不再是短期波动。2020 年普通高校毕业生约 874 万，2021 年约 909 万，2022 年突破 1000 万，随后继续攀升。2024 年约 1179 万，2025 年约 1222 万，后续年份仍将维持在千万级别。</p>
+<p>如果一个经济体已经有数千万失业或待业压力，再叠加每年上千万新毕业生，就业市场自然会变得极其紧张。更严峻的是，很多毕业生一旦错过校招窗口，就会迅速被推入社会招聘、灵活就业、低薪岗位和长期待业的夹缝。</p>
+<p>90 后和 00 后承受的不是普通竞争，而是长周期就业高峰下的生存竞争。口号上大家都希望八小时、双休、停止内卷、体面劳动，但在失业压力面前，很多人不得不主动加入内卷，以换取一份并不理想的稳定。</p>
+<p>过去一些人还能把外卖、网约车、保安等岗位视为退路，如今这些退路也逐渐拥挤。外卖员无单可送、网约车司机收入下降、保安岗位被更早一代劳动者占据，意味着所谓灵活就业并不能无限吸纳压力。</p>
+
+<h2 id="lost-generation">日本“失落一代”的警示</h2>
+<p>经济下行时，一个社会会面临艰难选择：保企业，还是保青年；保既有营商环境，还是保新进入劳动市场的人。日本泡沫破裂后的选择提供了沉重样本。</p>
+<p>在泡沫冲击后，日本企业通过降本增效、缩减招聘和一岗多能维持经营稳定。老员工因为年功序列制度被优先保护，大学毕业生成为最大的牺牲者。1993 年到 2013 年之间的大量毕业生，被长期挡在稳定就业之外，后来被称为“失落的一代”。</p>
+<p>这个代价极其深远。青年错过初始就业窗口，收入、婚姻、生育、资产积累和社会参与都会被连锁影响。一个时代的企业被保住了，但一代人的人生轨迹被改变了。</p>
+<p>这种经验必须被认真对待。当社会把青年当作发展代价，后果不会只停留在就业市场。它会变成低结婚率、低生育率、消费疲弱、阶层固化、心理压力和长期社会信任下降。</p>
+
+<h2 id="common-prosperity-measures">共同富裕要落到工资、岗位和工时</h2>
+<p>共同富裕不能停在抽象层面。它必须变成可衡量的制度和行为：提高最低工资标准，增加基层岗位数量，减少恶性两班倒三班倒，严格执行八小时工作制，保障加班费和社保，扩大劳动者收入在初次分配中的比重。</p>
+<p>对富人和大型企业而言，最直接的社会责任不是办几场仪式，也不是做几次形象宣传，而是把资产和利润的一部分真实回流到劳动者身上。提高岗位工资、增加岗位数量、改善劳动环境，比空泛口号更能促进消费。</p>
+<p>当基层收入提高，普通人会自然消费；当岗位稳定，年轻人才敢结婚生育；当工时合理，家庭生活和社会参与才会恢复；当企业利润不再只向少数人集中，经济循环才会重新顺畅。</p>
+<p>共同富裕不是剥夺创造者，而是纠正财富过度集中之后造成的社会失衡。先富如果不能带后富，先富就会逐渐变成社会循环的堵点。</p>
+
+<h2 id="conclusion">结论：就业问题的核心，是让财富重新流向创造财富的人</h2>
+<p>当前就业困境不能简单归因于青年不努力、产业升级太快、AI 替代人类，或者普通人消费观念变化。更深层的矛盾，是财富分配和用工机制让普通劳动者越来越难获得稳定收入和未来预期。</p>
+<p>企业不能一边依靠国家政策、社会市场和劳动者创造财富，一边在富起来之后拒绝承担带动责任。富人不能一边享受社会支持形成的资产，一边把共同富裕视为与自己无关的口号。技术不能一边提高生产率，一边只服务于裁员和压薪。</p>
+<p>就业要真正改善，必须把财富重新流向创造财富的人。工资要涨，岗位要稳，工时要降，企业用工记录要透明，富人和企业家的社会责任要从口号变成现实。只有普通人手里重新有钱、有时间、有安全感，经济循环才会重新启动，共同富裕才不会停留在纸面上。</p>
+"""
+
+
+def _plain_text(html_text: str) -> str:
+    return re.sub(r"<[^>]+>", "", html.unescape(html_text))
+
+
+def validate() -> None:
+    _BASE_VALIDATE()
+    post = base.INPUT_ORDER[0]
+    article_path = base.ROOT / post.url_path.strip("/") / "index.html"
+    article = article_path.read_text(encoding="utf-8")
+    plain = _plain_text(re.search(r'<div class="post-body" v-pre>(.*?)</div></div><nav', article, re.S).group(1))
+    failures: list[str] = []
+
+    if len(plain) < 5000:
+        failures.append(f"body too short: {len(plain)}")
+    forbidden = [
+        "B站",
+        "bilibili",
+        "哔哩",
+        "视频里",
+        "视频中",
+        "原视频",
+        "音频里",
+        "音频中",
+        "UP主",
+        "up主",
+        "这期",
+        "本期",
+        "作者说",
+        "他提到",
+        "观看",
+        "点赞",
+        "订阅",
+        "投币",
+        "收藏",
+        "下期",
+        "BV1",
+    ]
+    for word in forbidden:
+        if word in article:
+            failures.append(f"forbidden/source wording present: {word}")
+    required = [
+        "就业困难",
+        "财富集中",
+        "共同富裕",
+        "降本增效",
+        "一岗多能",
+        "劳动法",
+        "毕业生",
+        "失落的一代",
+        "消费能力",
+        "企业责任",
+    ]
+    for word in required:
+        if word not in article:
+            failures.append(f"missing required topic: {word}")
+    h2 = re.findall(r'<h2 id="([^"]+)">', article)
+    links = re.findall(r'class="toc-link toc-level-2" href="#([^"]+)"', article)
+    if h2 != links or len(h2) < 10:
+        failures.append(f"toc mismatch or too few h2: h2={len(h2)} links={len(links)}")
+
+    home = (base.ROOT / "index.html").read_text(encoding="utf-8")
+    cards = re.findall(r'<a href="([^"]+)" class="a-block">', home)
+    expected = [
+        "/ai-news-radar/",
+        "/2026/codeinsights-local-first-agent-workbench/",
+        "/2026/what-you-need-to-learn-from-claw-code-repo/",
+        "/2026/gaojingqi-investment-system/",
+        "/2026/ai-revolution-permanent-underclass-career-selection/",
+        "/2026/live-longer-than-earn-fast-investment-infinite-game/",
+        post.url_path,
+        base.PREV_EXISTING_URL,
+    ]
+    if cards[: len(expected)] != expected:
+        failures.append(f"homepage order mismatch: {cards[:len(expected)]}")
+
+    for rel in ["archive/index.html", "index.xml"]:
+        path = base.ROOT / rel
+        if post.url_path not in path.read_text(encoding="utf-8"):
+            failures.append(f"{rel} missing article")
+    taxonomy_expectations = [
+        ("categories/index.html", post.category),
+        ("series/index.html", post.series),
+        ("tags/index.html", post.tags[0]),
+        (f"categories/{post.category}/index.html", post.url_path),
+        (f"series/{post.series}/index.html", post.url_path),
+        (f"tags/{post.tags[0]}/index.html", post.url_path),
+    ]
+    for rel, expected_text in taxonomy_expectations:
+        path = base.ROOT / rel
+        if expected_text not in path.read_text(encoding="utf-8"):
+            failures.append(f"{rel} missing {expected_text}")
+
+    ET.fromstring((base.ROOT / "images/posts" / post.slug / "cover.svg").read_text(encoding="utf-8"))
+    ET.parse(base.ROOT / "index.xml")
+    if failures:
+        raise SystemExit("\n".join(failures))
+
+
+def copy_script_and_manifest() -> None:
+    tasks_dir = base.ROOT / "tasks"
+    tasks_dir.mkdir(parents=True, exist_ok=True)
+    script_path = tasks_dir / base.SCRIPT_NAME
+    source_script = Path(__file__)
+    if source_script.resolve() != script_path.resolve():
+        shutil.copyfile(source_script, script_path)
+    base.rec(script_path)
+    for rel in ["categories/index.html", "series/index.html", "tags/index.html"]:
+        base.rec(base.ROOT / rel)
+    manifest_path = tasks_dir / base.MANIFEST_NAME
+    all_changed = sorted(base.CHANGED | {f"tasks/{base.SCRIPT_NAME}", f"tasks/{base.MANIFEST_NAME}"})
+    manifest_path.write_text(json.dumps(all_changed, ensure_ascii=False, indent=2), encoding="utf-8")
+    base.rec(manifest_path)
+
+
+base.ROOT = Path("/tmp/bv1ka-bv169-sparse.Nkhbld")
+base.DATE = "2026-07-28"
+base.BASE_DT = datetime(2026, 7, 28, 23, 20, tzinfo=timezone(timedelta(hours=8)))
+base.PREV_EXISTING_URL = "/2026/fed-high-rates-a-share-wallet-protection/"
+base.PREV_EXISTING_TITLE = "高利率时代的美联储剪刀：A股投资者如何守住钱包"
+base.SCRIPT_NAME = "publish-employment-distribution-common-prosperity-article-20260728.py"
+base.MANIFEST_NAME = "publish-employment-distribution-common-prosperity-article-20260728-changed-files.json"
+base.CHANGED = set()
+base.INPUT_ORDER = [
+    base.Post(
+        source_id="six-public-audio-items-20260728",
+        slug="employment-crisis-wealth-concentration-common-prosperity-distribution",
+        title="就业困境的根源：财富集中、降本增效与共同富裕的再分配命题",
+        desc="就业困难的核心不只是岗位数量，而是财富过度集中、基层收入不足、企业降本增效和共同富裕责任缺位共同造成的循环失衡。",
+        category="社会观察",
+        series="就业与分配",
+        tags=["就业困境", "共同富裕", "财富分配", "贫富差距", "降本增效", "一岗多能", "青年就业", "劳动法", "消费能力", "企业责任"],
+        minutes=18,
+        body=BODY,
+        cover_kicker="就业与分配",
+        cover_line="财富集中 · 降本增效 · 共同富裕",
+        cover_theme=("#111827", "#991b1b", "#f97316"),
+        duration=1590.9146875,
+        segments=876,
+        chars=9274,
+    )
+]
+base.PUBLISH_ORDER = list(base.INPUT_ORDER)
+base.validate = validate
+base.copy_script_and_manifest = copy_script_and_manifest
+
+
+if __name__ == "__main__":
+    shutil.rmtree(Path(__file__).with_name("__pycache__"), ignore_errors=True)
+    base.main()
