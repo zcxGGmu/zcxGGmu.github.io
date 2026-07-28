@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>Hermes 与 OpenClaw：执行、反思与经验记忆的 Agent 分工 - zcxGGmu's Blog</title>
+  <meta name="description" content="OpenClaw 负责系统级执行，Hermes 负责任务级反思，经验记忆负责长期成长；三者组合起来才是更完整的 Agent 架构。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/hermes-openclaw-agent-execution-reflection-experience-memory/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="Hermes 与 OpenClaw：执行、反思与经验记忆的 Agent 分工"><meta property="og:description" content="OpenClaw 负责系统级执行，Hermes 负责任务级反思，经验记忆负责长期成长；三者组合起来才是更完整的 Agent 架构。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/hermes-openclaw-agent-execution-reflection-experience-memory/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/hermes-openclaw-agent-execution-reflection-experience-memory/cover.svg')"><div class="post-title">Hermes 与 OpenClaw：执行、反思与经验记忆的 Agent 分工<div class="post-subtitle">OpenClaw 负责系统级执行，Hermes 负责任务级反思，经验记忆负责长期成长；三者组合起来才是更完整的 Agent 架构。</div><div class="post-meta"><time itemprop="datePublished">2026-07-28</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E7%A8%8B/">AI工程</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/OpenClaw/">OpenClaw</a>&nbsp;<a href="/tags/Agent/">Agent</a>&nbsp;<a href="/tags/%E7%BB%8F%E9%AA%8C%E8%AE%B0%E5%BF%86/">经验记忆</a>&nbsp;<a href="/tags/%E6%8A%80%E8%83%BD%E6%B2%89%E6%B7%80/">技能沉淀</a>&nbsp;<a href="/tags/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">自我反思</a>&nbsp;<a href="/tags/%E5%A4%9AAgent/">多Agent</a>&nbsp;<a href="/tags/OpenMemo/">OpenMemo</a>&nbsp;<a href="/tags/%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C/">任务执行</a>&nbsp;<a href="/tags/AI%E5%B7%A5%E4%BD%9C%E6%B5%81/">AI工作流</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 14 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/hermes-openclaw-agent-execution-reflection-experience-memory/cover.svg" alt="Hermes 与 OpenClaw：执行、反思与经验记忆的 Agent 分工"></p>
+<p>Hermes 的热度来自一个很直接的变化：Agent 不再只是执行一次任务，而是开始具备反思、沉淀技能和复用经验的能力。这个变化很重要，但它并不意味着 Hermes 要取代 OpenClaw。二者解决的问题不在同一层，真正的价值在于互补。</p>
+<p>OpenClaw 更像执行系统，负责让事情发生；Hermes 更像任务级思考系统，负责让事情变得更好；而真正的长期进化，还需要经验记忆层，把大量任务历史、成功路径、失败教训和技能效果沉淀下来，形成可持续学习的闭环。</p>
+
+<h2 id="why-hot">一、Hermes 为什么突然变得重要</h2>
+<p>传统 Agent 的最大痛点，不是完全不能执行任务，而是执行之后很少反思。一次任务成功或失败，往往只是留下一段日志、一份对话或一个文件，下次再执行时仍然像从零开始。模型本身不会因为这一次执行就真正成长，策略也不会稳定自我优化。</p>
+<p>Hermes 之所以引发关注，是因为它把任务执行后的反思放到了更核心的位置。任务完成后，它会分析过程中的问题，识别哪些步骤有效，哪些路径可以复用，哪些经验应该沉淀成技能。下次遇到类似任务时，就不只是重新提示模型，而是可以调用已经生成的 skill。</p>
+<p>这带来了一个重要转变：Agent 的价值从“完成一次任务”开始走向“累积能力”。完成任务仍然重要，但更重要的是，完成后的经验能否在未来继续发挥作用。</p>
+
+<h2 id="traditional-agent-pain">二、传统 Agent 的短板：有记忆，不等于有经验</h2>
+<p>很多 Agent 都声称拥有长期记忆，但大量实现本质上只是把记忆写进文档，再在下一次任务时喂给模型。这个机制有用，却不等于经验。</p>
+<p>记忆记录的是“发生过什么”和“应该注意什么”；经验则进一步回答“哪些路径成功过、为什么成功、在什么条件下可以复用、失败时应该如何调整”。如果只有记忆，没有经验，Agent 仍然会在每个任务里重复探索。</p>
+<p>随着记忆文档越来越大，另一个问题也会出现：为了减少 token 消耗，不得不压缩记忆；一压缩，关键细节可能丢失；细节丢失后，同样任务的执行质量就会波动。记忆越多，未必越聪明，除非记忆能够被结构化为经验和技能。</p>
+
+<h2 id="openclaw-position">三、OpenClaw 的定位：系统级执行与规模化协作</h2>
+<p>OpenClaw 的强项是系统级执行。它像一个工厂流水线，可以把复杂任务拆成标准化步骤，分配给多个 Agent 协同处理，再把结果汇总成可交付成果。它适合规模化、自动化、工程化的任务执行。</p>
+<p>这种模式的核心优势是稳定和扩展。复杂任务可以被拆成多个子任务，多 Agent 可以分工协作，标准化输入输出让流程更容易落地。对代码生成、内容系统、运营流水线、数据处理和多步骤工作流来说，这是非常重要的基础设施能力。</p>
+<p>但它的短板也很明显：任务一、任务二、任务三之间未必能自然形成经验复用。每次执行都像一次新的开始，系统能保存流程和上下文，却未必能识别“这次成功的关键路径”，更未必能把它转化为下次可调用的能力。</p>
+
+<h2 id="hermes-position">四、Hermes 的定位：任务级反思与技能沉淀</h2>
+<p>Hermes 更像任务级思考者。它关注的不是大规模调度，而是一个任务如何被理解、执行、反思和优化。它的典型路径是：识别问题，选择行动，观察结果，再思考，最后把有效路径沉淀为 skill。</p>
+<p>这种机制让 Hermes 在“让事情变得更好”上更有优势。一次任务做完之后，它不会只停在结果，而是追问过程：哪些步骤有价值，哪些判断可以复用，哪些错误应该避免，哪些经验可以写成可调用技能。</p>
+<p>因此，Hermes 的意义不是替代执行系统，而是把执行系统产生的过程数据进一步加工成经验。它像一个复盘者、策略师和技能生成器，能让同类任务下次做得更准、更快、更稳定。</p>
+
+<h2 id="not-replacement">五、为什么 Hermes 不能简单替代 OpenClaw</h2>
+<p>Hermes 很像一个大脑，但还缺少足够强的身体。它能够思考任务，能够复盘过程，也能生成技能，但要把大规模、多任务、多 Agent、跨系统的复杂工作真正落地，仍然需要执行层和调度层。</p>
+<p>OpenClaw 的价值正在这里：它提供底层系统支持、跨任务协同、流程编排和规模化执行能力。Hermes 可以让某个任务变得更聪明，但它并不天然具备完整操作系统级的任务调度能力。</p>
+<p>所以两者不是替代关系，而是分工关系。OpenClaw 负责执行与协作，Hermes 负责反思与优化。一个让事情发生，一个让事情变好。</p>
+
+<h2 id="experience-memory">六、真正缺失的拼图：经验记忆</h2>
+<p>即便有 OpenClaw 和 Hermes，完整 Agent 系统仍然缺一块：经验记忆。所谓经验记忆，不只是把对话和文档存起来，而是把所有 Agent 的执行交互历史、成功路径、失败路径、任务上下文和最终效果保存下来，并在未来任务中可检索、可评估、可调用。</p>
+<p>经验记忆需要知道三件事：第一，一个任务当时是怎么做成的；第二，哪些步骤真正贡献了成功；第三，这套路径能不能迁移到别的任务。只有做到这一点，Agent 才不只是“记得很多”，而是“真的变强”。</p>
+<p>这也是 OpenMemo 这类记忆系统的意义。它不是简单文本仓库，而是成长层：保存经验数据，提供上下文支持，帮助技能迭代，并根据成功率和失败率反过来优化执行策略。</p>
+
+<h2 id="complete-architecture">七、完整架构：执行层、思考层、成长层</h2>
+<p>一个更完整的 Agent 架构可以拆成三层。第一层是执行层，由 OpenClaw 承担，负责流程编排、任务拆解、多 Agent 协作和系统级执行。</p>
+<p>第二层是思考层，由 Hermes 承担，负责理解任务、选择策略、复盘过程、生成 skill，并判断哪些经验应该沉淀下来。</p>
+<p>第三层是成长层，由经验记忆系统承担，负责保存跨任务的交互历史、成功经验、失败教训和效果指标。它把“做过的事情”变成“未来可用的能力”。</p>
+<p>只有这三层合在一起，Agent 才有机会从执行工具升级为会持续迭代的系统。没有执行层，想法落不了地；没有思考层，任务做完就结束；没有成长层，经验无法跨任务复用。</p>
+
+<h2 id="division-of-labor">八、分工原则：把每层的失败模式控制住</h2>
+<p>执行层最怕不稳定。OpenClaw 这类系统如果任务拆分不清、状态不可恢复、日志不可追踪，就会让规模化执行变成规模化混乱。因此执行层的第一原则不是聪明，而是可控：输入清楚、输出清楚、失败可重试、结果可验收。</p>
+<p>思考层最怕幻觉式总结。Hermes 可以反思，但反思必须基于真实执行记录，而不是根据最终结果倒推一个听起来合理的解释。它需要拿到任务链路、工具输出、失败点和人工反馈，才能判断哪些经验真的值得沉淀。</p>
+<p>成长层最怕记忆污染。经验记忆不是把所有东西都永久保存，而是要持续淘汰无效经验。一次成功不代表普遍规律，一次失败也不代表路径不可用。经验系统需要记录条件、上下文和效果，才能避免把偶然性当成规律。</p>
+<p>只有把这三类失败模式分别控制住，Agent 系统才会稳步进化。否则，执行层越大越难调试，思考层越聪明越会自圆其说，记忆层越丰富越容易污染上下文。</p>
+
+<h2 id="case-study">九、内容系统里的经验技能：从成功路径到可调用能力</h2>
+<p>在内容或获客系统中，Agent 会经历线索挖掘、信息补全、打分、触达和结果反馈等环节。每一次执行都会产生大量路径：有些线索第一次就找准了，有些路径浪费了很多时间，有些评分规则更有效，有些触达方式更容易成功。</p>
+<p>如果这些过程只是日志，它们的价值很快就会消失。更好的方式，是把成功路径提取出来，让 Hermes 分析哪些步骤有价值，再把它生成经验技能。下一次执行时，OpenClaw 可以把这个 skill 加入流程，让同类任务直接复用过去的成功路径。</p>
+<p>进一步，还可以记录每个经验技能的成功率、失败率、线索转化率和执行效率。数据再反馈回学习中心，由大模型帮助判断哪些技能应该保留、合并、改写或淘汰。这样，经验不只是沉淀，而是在迭代。</p>
+
+<h2 id="skill-loop">十、从任务到 skill，再从 skill 到系统优化</h2>
+<p>真正有效的技能沉淀，不应该只靠人工总结。理想流程是：执行系统完成任务，Hermes 复盘任务，经验记忆保存路径，技能库生成可调用 skill，下一轮任务调用 skill，执行结果再反馈给经验系统。</p>
+<p>这个闭环的关键是效果指标。如果一个技能加入后，客户挖掘成功率、建联成功率或任务完成质量明显提升，它就应该被强化；如果效果不稳定，就需要重写或降权。没有指标，技能库会越来越臃肿；有指标，技能库才会进化。</p>
+<p>这也是“持续学习”的真实含义。不是每次都把更多文字塞进上下文，而是把成功经验转成结构化技能，并通过结果数据持续筛选。</p>
+
+<h2 id="engineering-boundary">十一、工程边界：反思不能替代执行可靠性</h2>
+<p>Hermes 的反思能力很有价值，但反思不能替代执行可靠性。一个 Agent 系统要落地，仍然需要任务队列、权限控制、日志审计、失败重试、状态恢复、并发调度和结果验收。没有这些系统能力，单个任务再聪明，也难以支撑生产级工作流。</p>
+<p>OpenClaw 的强项正是这些工程边界。它可以把任务拆开，把多个 Agent 组织起来，把输入输出标准化，把流程做成可复用管线。Hermes 可以嵌入其中做策略判断、复盘和技能生成，但不能把所有系统责任都压给一个思考型 Agent。</p>
+<p>因此，一个成熟架构应该让每一层只承担自己最擅长的职责：OpenClaw 负责稳定执行，Hermes 负责反思优化，经验记忆负责长期沉淀，人工或评测系统负责最终验收。边界清楚，系统才不会因为某一层能力扩大而变得脆弱。</p>
+
+<h2 id="failure-modes">十二、几个容易踩的坑</h2>
+<p>第一个坑，是把“生成 skill”当成进化本身。Skill 只是经验的载体，真正重要的是它是否提升成功率。如果没有指标验证，skill 越多越可能制造噪声。</p>
+<p>第二个坑，是把长期记忆做成无限追加的文本。文本越长，检索越难，压缩越粗糙，关键细节越容易丢失。经验记忆必须结构化，至少要包含任务目标、路径、结果、适用条件、失败条件和效果指标。</p>
+<p>第三个坑，是让 Hermes 同时做执行、调度、记忆、评测和业务逻辑。这样短期看起来简单，长期会变成一个巨大黑盒。真正可维护的 Agent 系统一定是分层的，能让每个模块被单独替换和验证。</p>
+<p>第四个坑，是忽略人工反馈。Agent 可以自动总结，但业务成功与否往往需要人或外部指标确认。没有反馈，经验系统会把偶然成功当成普遍规律；有反馈，经验才能逐步收敛。</p>
+
+<h2 id="implementation-path">十三、落地路径：先做闭环，再谈进化</h2>
+<p>第一步，先把执行闭环跑通。任务从哪里来、如何拆解、交给哪个 Agent、结果如何验收、失败如何重试，这些问题必须先解决。没有稳定执行闭环，反思系统只能分析混乱数据。</p>
+<p>第二步，记录完整任务轨迹。每个任务的输入、上下文、工具调用、关键中间结果、人工修改、最终结果和验收结论，都应该被保存。经验记忆不是事后写一句总结，而是建立在完整轨迹上的结构化提取。</p>
+<p>第三步，再让 Hermes 提取 skill。它应该从成功任务中抽取稳定路径，从失败任务中抽取避坑规则，再把这些内容写成可调用、可评估、可淘汰的技能，而不是生成一堆没有效果指标的提示词。</p>
+<p>第四步，把 skill 放回执行系统验证。只有当 OpenClaw 在后续任务中调用这些 skill，并且成功率、耗时、成本或质量有改善，才能说明经验真的产生了价值。进化不是口号，而是结果指标变好。</p>
+<p>第五步，保留人工校准。业务方需要定期审查技能库，删除过期经验，合并重复技能，标记高价值路径。Agent 可以提高复盘效率，但不能替代业务判断。越是关键流程，越需要把自动学习和人工验收放在同一条链路里。最终要看的不是生成了多少技能，而是同类任务的成功率、稳定性和交付成本是否持续改善；只有指标持续变好，才说明经验真正进入了系统能力，也才值得继续扩大到更多业务链路和真实生产环境。</p>
+
+<h2 id="conclusion">结论：OpenClaw 负责发生，Hermes 负责变好，经验记忆负责成长</h2>
+<p>Hermes 和 OpenClaw 的关系，不是新工具取代旧工具，而是 Agent 系统开始分层。OpenClaw 是执行中枢，负责把任务落地；Hermes 是思考与复盘中枢，负责让任务更好；经验记忆是成长中枢，负责把成功和失败转成未来能力。</p>
+<p>真正有价值的方向，不是纠结谁替代谁，而是把三者组合起来：用 OpenClaw 做规模化执行，用 Hermes 做任务反思和 skill 生成，用 OpenMemo 这类经验记忆系统做长期学习。这样，Agent 才可能从一次性自动化工具，走向持续进化的工作系统。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/fiscal-debt-resolution-2-market-rotation-resource-dividend-ai-equipment/">下一篇<br>财政三重分化下的市场切换：化债2.0、城投压力与资源红利</a><a class="older-posts" href="/2026/codex-hermes-workspace-human-agent-boundary/">上一篇<br>不要在 Codex 和 Hermes 之间二选一：工程交付与个人代理的边界</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#why-hot">一、Hermes 为什么突然变得重要</a><a class="toc-link toc-level-2" href="#traditional-agent-pain">二、传统 Agent 的短板：有记忆，不等于有经验</a><a class="toc-link toc-level-2" href="#openclaw-position">三、OpenClaw 的定位：系统级执行与规模化协作</a><a class="toc-link toc-level-2" href="#hermes-position">四、Hermes 的定位：任务级反思与技能沉淀</a><a class="toc-link toc-level-2" href="#not-replacement">五、为什么 Hermes 不能简单替代 OpenClaw</a><a class="toc-link toc-level-2" href="#experience-memory">六、真正缺失的拼图：经验记忆</a><a class="toc-link toc-level-2" href="#complete-architecture">七、完整架构：执行层、思考层、成长层</a><a class="toc-link toc-level-2" href="#division-of-labor">八、分工原则：把每层的失败模式控制住</a><a class="toc-link toc-level-2" href="#case-study">九、内容系统里的经验技能：从成功路径到可调用能力</a><a class="toc-link toc-level-2" href="#skill-loop">十、从任务到 skill，再从 skill 到系统优化</a><a class="toc-link toc-level-2" href="#engineering-boundary">十一、工程边界：反思不能替代执行可靠性</a><a class="toc-link toc-level-2" href="#failure-modes">十二、几个容易踩的坑</a><a class="toc-link toc-level-2" href="#implementation-path">十三、落地路径：先做闭环，再谈进化</a><a class="toc-link toc-level-2" href="#conclusion">结论：OpenClaw 负责发生，Hermes 负责变好，经验记忆负责成长</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>

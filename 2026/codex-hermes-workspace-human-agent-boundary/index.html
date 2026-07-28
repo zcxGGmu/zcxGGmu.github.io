@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>不要在 Codex 和 Hermes 之间二选一：工程交付与个人代理的边界 - zcxGGmu's Blog</title>
+  <meta name="description" content="Codex 的主语是 workspace 和 repo，Hermes 的主语是人和长期上下文；二者不是竞品，而是工程交付与个人代理的不同层级。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/codex-hermes-workspace-human-agent-boundary/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="不要在 Codex 和 Hermes 之间二选一：工程交付与个人代理的边界"><meta property="og:description" content="Codex 的主语是 workspace 和 repo，Hermes 的主语是人和长期上下文；二者不是竞品，而是工程交付与个人代理的不同层级。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/codex-hermes-workspace-human-agent-boundary/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/codex-hermes-workspace-human-agent-boundary/cover.svg')"><div class="post-title">不要在 Codex 和 Hermes 之间二选一：工程交付与个人代理的边界<div class="post-subtitle">Codex 的主语是 workspace 和 repo，Hermes 的主语是人和长期上下文；二者不是竞品，而是工程交付与个人代理的不同层级。</div><div class="post-meta"><time itemprop="datePublished">2026-07-28</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E7%A8%8B/">AI工程</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Codex/">Codex</a>&nbsp;<a href="/tags/Hermes/">Hermes</a>&nbsp;<a href="/tags/Agent/">Agent</a>&nbsp;<a href="/tags/%E4%B8%AA%E4%BA%BA%E4%BB%A3%E7%90%86/">个人代理</a>&nbsp;<a href="/tags/Workspace/">Workspace</a>&nbsp;<a href="/tags/Memory/">Memory</a>&nbsp;<a href="/tags/%E5%A4%9A%E6%B8%A0%E9%81%93/">多渠道</a>&nbsp;<a href="/tags/%E5%B7%A5%E7%A8%8B%E4%BA%A4%E4%BB%98/">工程交付</a>&nbsp;<a href="/tags/Skill/">Skill</a>&nbsp;<a href="/tags/AI%E5%8A%A9%E6%89%8B/">AI助手</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 18 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre>
+<p><img src="/images/posts/codex-hermes-workspace-human-agent-boundary/cover.svg" alt="不要在 Codex 和 Hermes 之间二选一：工程交付与个人代理的边界"></p>
+<p>“Codex 和 Hermes 应该选哪一个”这个问题，本身就带着一个错误前提：它默认二者处在同一层、解决同一种问题、可以互相替代。它们确实都是 Agent，但关注的主语不同、记忆不同、生命周期不同、入口不同、抽象层级也不同。</p>
+<p>Codex 的主语是 workspace，是 repo，是一个具体工程；Hermes 的主语是人，是长期目标，是跨项目、跨生活、跨渠道的个人上下文。前者更擅长把代码工程交付完成，后者更像一个围绕人持续成长的个人代理。</p>
+
+<h2 id="wrong-question">一、问题不在“选谁”，而在“你要什么”</h2>
+<p>只有两个东西处在同一层，才需要二选一。Codex、Claude Code、OpenCode 这类工程型 Agent，可以放在一起比较；Hermes 则更像另一层的个人代理系统。它可以调用工程型 Agent，也可以管理个人任务、消息渠道、长期记忆和自动化工作流。</p>
+<p>因此，真正的问题不是“Codex 好还是 Hermes 好”，而是“当前目标是什么”。如果目标是完成某个代码工程、修改 repo、跑测试、提交变更，Codex 很合适。如果目标是拥有一个长期理解自己、能跨渠道沟通、能管理个人上下文的助手，Hermes 的想象空间更大。</p>
+<p>很多工具并不冲突。一个人完全可以同时使用 Codex、Hermes、DeepSeek、ChatGPT 或其他 Agent，因为它们擅长的场景不同。把所有 Agent 都当成同一类聊天工具，反而会看不清真正的边界。</p>
+
+<h2 id="subject">二、主语不同：Codex 关注项目，Hermes 关注人</h2>
+<p>打开 Codex 时，通常要选择一个项目目录、一个代码仓库或一个工作区。它从一开始就围绕 repo 展开：读取文件、理解代码、修改实现、运行测试、生成 diff、提交成果。它的世界中心是 workspace。</p>
+<p>Hermes 也有自己的 workspace，也可以操作代码仓库、GitHub、OpenCode 或其他工具，但这些都只是它能力的一部分。Hermes 的中心是用户本人。它的目标不是只把某个 repo 做完，而是围绕人的目标、习惯、偏好、项目、生活和长期计划提供帮助。</p>
+<p>这也是 Hermes “和你一起成长”的意义。它不是只记住一个项目怎么跑，而是试图理解你这个人：你在做什么，最近关心什么，长期目标是什么，喜欢怎样沟通，哪些事情需要提醒，哪些工作流可以自动化。</p>
+
+<h2 id="memory">三、记忆不同：Task Memory 与 Human Memory</h2>
+<p>Codex 的记忆更接近 Task Memory。它会沉淀项目相关知识，例如某个框架怎么启动，测试命令怎么跑，团队提交规范是什么，某类错误如何修复，某个 SSO 文件放在哪里，某个函数该如何调用。这些记忆对工程交付非常有价值。</p>
+<p>但这些记忆的核心仍然是任务和项目。它们帮助 Codex 更好地完成工程动作，而不是完整理解用户生活与工作全貌。</p>
+<p>Hermes 的记忆更接近 Human Memory。它会记录用户的职业、主业、副业、正在维护的产品、日常作息、健康目标、健身安排、兴趣偏好、阅读习惯、心理状态和长期计划。它也可以记录项目细节，但更大的焦点是人。</p>
+<p>这两类记忆没有高低之分，只是用途不同。Task Memory 让工程交付更快，Human Memory 让个人代理更懂你。把二者混在一起，就会误判工具能力。</p>
+
+<h2 id="lifecycle">四、生命周期不同：任务制与长期陪伴</h2>
+<p>Codex 的生命周期通常是任务制。一个需求单、一个 bug、一个 feature、一次重构，进入工作区后被拆解、实现、测试、提交，任务结束后这个会话就告一段落。下一次再来一个新任务，再重新进入类似流程。</p>
+<p>Hermes 的生命周期更长。今天谈过的事情，明天可能进入 <code>user.md</code>、<code>memory.md</code> 或某个 skill；今天形成的偏好，未来会影响它如何建议、如何提醒、如何编排任务。用得越久，它越了解用户，也越能把过去的上下文带到新的场景里。</p>
+<p>这并不意味着 Codex 没有记忆机制，也不意味着 Hermes 每次都比工程型 Agent 更强。区别在于成长方向：Codex 在工程任务中变得更顺手，Hermes 在个人代理关系中变得更贴近用户。</p>
+
+<h2 id="channels">五、入口不同：开发环境与多消息渠道</h2>
+<p>Codex 的入口主要在开发环境里：终端、IDE、专用客户端、移动端应用。它希望用户在 Codex 的环境里使用 Codex，并围绕代码工程形成闭环。</p>
+<p>Hermes 的入口更分散。它可以连接 Telegram、Discord、飞书、微信、钉钉、企微等消息渠道。用户从不同入口进入，面对的仍然是同一个长期代理，消息也能沉淀为上下文。</p>
+<p>这个差异很关键。Codex 更像开发者工作台，Hermes 更像跨渠道个人助手。前者在工程上下文里效率最高，后者在日常沟通、任务管理和自动化编排中更自然。</p>
+
+<h2 id="abstraction">六、抽象层不同：执行层与编排层</h2>
+<p>Codex 工作在执行层。它以 repo 为单位，完成代码读取、方案规划、文件修改、构建测试和交付闭环。它的成果通常是一个具体变更。</p>
+<p>Hermes 更接近编排层。它可以先理解用户目标，再决定是自己执行、调用工具、委派给 Codex、调用 OpenCode，还是安排一个长期自动化流程。它像一个包工头，知道什么时候该找工程型 Agent，什么时候该自己处理，什么时候该记录成记忆或 skill。</p>
+<p>这也是为什么强行用 Codex 模拟 Hermes，或者强行用 Hermes 取代 Codex，都不够自然。产品设计一开始就服务于不同目标：一个围绕工程交付，一个围绕个人代理。</p>
+
+<h2 id="simulate">七、能不能用 Codex 模拟 Hermes</h2>
+<p>理论上可以。可以给 Codex 加 MCP，加记忆文件，加定时任务，加消息接口，加编排逻辑，让它连接飞书、微信或其他渠道。只要工程能力足够强，几乎什么都可以硬做出来。</p>
+<p>但这意味着一直在和产品设计方向对抗。Codex 的官方体验更希望用户在 Codex 环境里完成工程任务，而不是把它改造成跨渠道生活助手。类似扩展更多会来自社区方案，而不太会成为核心产品路径。</p>
+<p>Hermes 从一开始就围绕多渠道、个人上下文、记忆和自动化编排设计。它不一定在每个工程任务上比 Codex 强，但它更适合成为长期个人代理。</p>
+
+<h2 id="not-model">八、差异不在底层模型，而在 Agent 机制</h2>
+<p>如果底层都接同一个大模型，二者为什么表现仍然不同？答案在 Agent 机制：上下文组织方式、工具链、记忆系统、任务生命周期、入口渠道和默认工作流。</p>
+<p>Codex 的闭环是工程交付闭环：读 repo，理解需求，规划修改，编辑代码，运行测试，生成变更，提交或交付。它把模型能力组织成工程生产力。</p>
+<p>Hermes 的闭环是个人代理闭环：理解用户，匹配目标，加载用户记忆、个人记忆、Agent 设定、工具、MCP 和 Skills，再决定执行方式。执行完成后，它还会思考是否需要更新记忆或生成 skill。它把模型能力组织成长期助手能力。</p>
+
+<h2 id="selection">九、怎么选择：按场景，而不是按信仰</h2>
+<p>如果要把一个代码工程做好，修改现有项目，修 bug，写测试，跑构建，处理 PR/MR，Codex 是更直接的选择。它就是为工程交付设计的，路径短、目标清晰、结果可验证。</p>
+<p>如果需要一个更像 Jarvis 的个人助手，能帮忙管理事情、理解长期上下文、关注健康和心理状态、做项目管理、推荐书影音、整合多个消息渠道，并且越用越懂自己，Hermes 更接近这个方向。</p>
+<p>实际使用时，两者可以同时存在。写代码交给 Codex，长期个人编排交给 Hermes；Hermes 需要工程执行时，可以再委派给 Codex。真正好的工作流不是二选一，而是让每个 Agent 做自己最擅长的部分。</p>
+
+<h2 id="evaluation">十、评价标准：不要用同一把尺子量两类系统</h2>
+<p>评价 Codex，要看工程结果。它是否读懂了 repo，是否修改了正确文件，是否遵守项目约束，是否跑通测试，是否留下可审查的 diff，是否能在失败后定位根因。这些指标非常具体，也非常适合工程交付。</p>
+<p>评价 Hermes，要看长期代理质量。它是否越来越理解用户，是否能在不同渠道保持同一个上下文，是否能主动管理任务，是否能把反复出现的事情沉淀为 skill，是否能在个人目标、健康、项目、研究和沟通之间形成连续性。</p>
+<p>如果用工程测试通过率评价 Hermes，会低估它的长期价值；如果用“是否懂我”评价 Codex，也会误解它的产品定位。正确的比较方式，是先确定任务属于哪一层，再选择对应工具。</p>
+<p>这也是很多误解出现的原因。一个工程型 Agent 如果没有跨渠道陪伴能力，并不代表它差；一个个人代理如果不亲自写完所有代码，也不代表它弱。它们的好坏，要放回各自目标里判断。</p>
+
+<h2 id="workflow-examples">十一、三个更自然的组合工作流</h2>
+<p>第一个工作流是工程交付。Hermes 先理解用户的目标和背景，判断这个需求属于某个项目，然后把明确的工程任务委派给 Codex。Codex 在 repo 中完成修改、测试和交付，Hermes 再把结果总结回用户上下文，并判断是否需要沉淀成未来可复用的工作流。</p>
+<p>第二个工作流是个人项目管理。用户在任意消息渠道里告诉 Hermes 最近要推进的产品、文章、客户或研究任务。Hermes 根据长期记忆拆出待办、提醒时间、相关上下文和需要调用的工具。如果其中某一步涉及代码实现，再交给 Codex；如果只是资料整理、提醒或沟通，则 Hermes 自己完成。</p>
+<p>第三个工作流是生活与工作混合场景。健康计划、健身总结、读书计划、旅行安排、产品迭代、文章写作和代码开发，其实都围绕同一个人展开。Codex 不适合成为这些长期生活上下文的中心，但 Hermes 可以把它们串起来，并在需要工程能力时调用 Codex。</p>
+
+<h2 id="limits">十二、边界意识：不要让工具错位</h2>
+<p>Codex 不适合作为所有个人记忆的中心。它当然可以存一些偏好，也可以通过文件模拟长期助手，但它的默认能力仍然围绕工程交付。把它改造成跨渠道个人代理，会让大量工作变成额外工程。</p>
+<p>Hermes 也不适合替代专业工程 Agent。它可以委派、监工、总结和编排，但真正进入复杂 repo、运行测试、处理依赖、修复构建错误、提交变更时，Codex 这类工程型 Agent 更自然。</p>
+<p>边界清楚之后，使用体验反而更好。Codex 不需要背负个人助手的全部责任，Hermes 也不需要亲自完成所有代码细节。一个做深，一个做长，组合起来比互相替代更合理。</p>
+
+<h2 id="future">十三、未来的 Agent 会越来越分层</h2>
+<p>Agent 不会只有一种形态。工程有工程 Agent，个人有个人 Agent，企业有企业 Agent，销售、运营、研究、财务、客服、代码、健康管理都会有适合自己的 Agent。</p>
+<p>越往后看，重要的不是某个 Agent 通吃所有场景，而是不同层级之间如何协作。工程型 Agent 负责交付，个人代理负责编排，经验记忆负责成长，消息渠道负责触达，自动化调度负责长期运行。</p>
+<p>Codex 和 Hermes 的差异，正好展示了这个趋势：一个把工程任务做深，一个把个人上下文做长。两者并列存在，反而说明 Agent 生态正在从单点工具，走向分层系统。</p>
+
+<h2 id="team-practice">十四、团队实践：把两类 Agent 放在正确位置</h2>
+<p>在团队里，Codex 更适合进入工程规范。它可以绑定仓库、测试命令、提交规范、代码风格和评审流程，成为开发链路中的执行者。团队应该要求它留下 diff、验证证据和清晰交付记录。</p>
+<p>Hermes 更适合进入个人和团队编排。它可以记录成员偏好、项目背景、会议结论、长期目标和跨渠道任务，帮助把分散信息变成可行动计划。它不必亲自写完所有代码，但可以决定什么时候该调用 Codex。</p>
+<p>最理想的方式，是让 Hermes 站在任务入口，负责理解人和目标；让 Codex 站在工程现场，负责把代码改好；让记忆系统记录哪些决策有效，哪些流程需要改进。这样，团队得到的是协作系统，而不是一堆互相竞争的工具。</p>
+
+<h2 id="conclusion">结论：Codex 是工作台，Hermes 是个人代理</h2>
+<p>Codex 和 Hermes 不应该被放进简单的二选一问题里。Codex 是工程工作台，适合围绕 repo 完成具体任务；Hermes 是个人代理，适合围绕人建立长期上下文和跨渠道自动化。</p>
+<p>真正高效的用法，是让 Codex 做工程交付，让 Hermes 做个人编排。需要代码时，Hermes 可以委派；需要长期记忆、跨渠道沟通和个人助手时，Codex 并不是最自然的形态。</p>
+<p>问题不是谁取代谁，而是谁处在什么层。理解这一点，选择就会变得很简单：工程交给工程型 Agent，长期个人上下文交给个人代理。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/hermes-openclaw-agent-execution-reflection-experience-memory/">下一篇<br>Hermes 与 OpenClaw：执行、反思与经验记忆的 Agent 分工</a><a class="older-posts" href="/2026/simple-investing-buy-stock-as-company-honesty-valuation/">上一篇<br>最简单的投资方法，往往最有效：买股票就是买公司</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#wrong-question">一、问题不在“选谁”，而在“你要什么”</a><a class="toc-link toc-level-2" href="#subject">二、主语不同：Codex 关注项目，Hermes 关注人</a><a class="toc-link toc-level-2" href="#memory">三、记忆不同：Task Memory 与 Human Memory</a><a class="toc-link toc-level-2" href="#lifecycle">四、生命周期不同：任务制与长期陪伴</a><a class="toc-link toc-level-2" href="#channels">五、入口不同：开发环境与多消息渠道</a><a class="toc-link toc-level-2" href="#abstraction">六、抽象层不同：执行层与编排层</a><a class="toc-link toc-level-2" href="#simulate">七、能不能用 Codex 模拟 Hermes</a><a class="toc-link toc-level-2" href="#not-model">八、差异不在底层模型，而在 Agent 机制</a><a class="toc-link toc-level-2" href="#selection">九、怎么选择：按场景，而不是按信仰</a><a class="toc-link toc-level-2" href="#evaluation">十、评价标准：不要用同一把尺子量两类系统</a><a class="toc-link toc-level-2" href="#workflow-examples">十一、三个更自然的组合工作流</a><a class="toc-link toc-level-2" href="#limits">十二、边界意识：不要让工具错位</a><a class="toc-link toc-level-2" href="#future">十三、未来的 Agent 会越来越分层</a><a class="toc-link toc-level-2" href="#team-practice">十四、团队实践：把两类 Agent 放在正确位置</a><a class="toc-link toc-level-2" href="#conclusion">结论：Codex 是工作台，Hermes 是个人代理</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
