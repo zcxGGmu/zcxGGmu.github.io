@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T15:22:38.146323Z",
+  "generated_at": "2026-07-28T03:42:44.568020Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_1ea579ee44b6",
-      "title": "Claude分享链接配置翻车：用户私钥、公司机密被Google公开收录",
-      "url": "https://www.aibase.com/news/29917",
+      "story_id": "story_112bcb1d3a8b",
+      "title": "Kimi K3 开源：2.8T MoE 模型与技术报告 / Releasing the model weights and technical report of Kimi K3. Kimi K3 is our most capable model： a 2…",
+      "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 25,
-          "review": "安全配置当摆设，机密直接上搜索引擎，这波公关文案写得再好也没用了。"
+          "score": 90,
+          "review": "2.8T的参数是实打实的大，但你先告诉我要多少显存才能跑起来。"
         },
         "paper-police": {
-          "score": 5,
-          "review": "安全事件报道，无论文无代码无验证，可信度全靠媒体。"
+          "score": 55,
+          "review": "权重和技术报告已公开，但缺独立benchmark验证，需等第三方复现。"
         },
         "pragmatic": {
           "score": 92,
-          "review": "立即检查Claude分享链接权限，避免机密外泄。"
+          "review": "2.8T MoE 权重和技术报告已开源，可直接下载部署，今天就能上手实验。"
         }
       }
     },
     {
-      "story_id": "story_71876d6c1e78",
-      "title": "灵光APP上线“一键部署”:支持Codex、Claude Code、Cursor等AI应用直接发布",
-      "url": "https://www.aibase.com/news/29912",
+      "story_id": "story_6a580af5bd08",
+      "title": "SGLang 和 Miles 为月之暗面 2.8T 参数 Kimi K3 模型提供发布当日支持 / Blog SGLang and Miles Add Day-0 Support for Kimi K3 We are excited to announce Day-0 support for Kimi K3 in SGLang and Miles. K3 is the first open-source model in the 3-trillion-parameter class， and its hybrid architecture departs from convention in al… SGLang Team",
+      "url": "https://www.lmsys.org/blog/2026-07-27-kimi-k3-day0-support",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 35,
-          "review": "又给现成工具套了层壳，“一键”按钮后面藏着多少环境依赖？"
+          "score": 85,
+          "review": "3万亿参数开源诚意足，但推理成本可不是闹着玩的。"
         },
         "paper-police": {
-          "score": 8,
-          "review": "只有上线新闻，无论文无代码无评测，无法验证功能真实性。"
+          "score": 20,
+          "review": "仅博客宣称支持，无论文代码或独立验证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "一键部署省去配置麻烦，直接上手发布AI应用，对开发者是实在的效率提升。"
+          "score": 92,
+          "review": "SGLang和Miles当天支持K3模型，有大规模部署需求的团队可以直接用。"
         }
       }
     },
     {
-      "story_id": "story_87f4abb6708f",
-      "title": "浪费20亿Token后，我开源了帮Agent定义目标的Leader.skill",
-      "url": "https://mp.weixin.qq.com/s/AwOk3di8m6eVeIUjzNftgg",
+      "story_id": "story_fdb39a7d1547",
+      "title": "GitHub Copilot 发布\"Harness\"工作流：用单一工具完成原型、规划、实现与代码审查 / The harness is all you need (mostly)",
+      "url": "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 62,
-          "review": "20亿Token烧出个开源skill？成本够拍十场发布会了。"
+          "score": 70,
+          "review": "单一工具搞定一切？先看看它能不能搞定我代码里那些优雅的bug吧。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "仅公众号宣称开源，未见论文与评测，需查证代码仓库。"
+          "score": 20,
+          "review": "只有博客公告，无测试数据或代码可验证，缺乏独立证据。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "开源即用，帮你省掉试错成本，Agent开发者赶紧clone。"
+          "score": 75,
+          "review": "减少工具切换，今天就能在IDE里体验全流程。建议开启试用看是否适配你的项目。"
         }
       }
     }

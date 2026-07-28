@@ -3471,9 +3471,9 @@
     },
     "story_2d4e47d50fc6|pragmatic|0a5c5b24": {
       "score": 90,
-      "review": "模型已开源，直接下载就能跑推理，今天可用。",
-      "title_hash": "884bbe65",
-      "scored_at": "2026-07-27T11:46:50.093175Z"
+      "review": "模型已开源可下载，安全场景可直接替换测试。",
+      "title_hash": "1aea189f",
+      "scored_at": "2026-07-27T18:53:42.313552Z"
     },
     "story_0ba9f6334b31|pragmatic|0a5c5b24": {
       "score": 20,
@@ -3612,6 +3612,180 @@
       "review": "书籍销毁影响训练数据质量，但短期内不必担忧。",
       "title_hash": "551cefbb",
       "scored_at": "2026-07-27T15:22:38.146141Z"
+    },
+    "story_2a8e05bf7e66|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "官方教程，新多人协作功能可直接上手试，适合团队探索。",
+      "title_hash": "638b98aa",
+      "scored_at": "2026-07-27T17:19:52.663220Z"
+    },
+    "story_5dcea5dd076a|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "SEO流量将被挤压，做内容分发的需留意，但今天不用动。",
+      "title_hash": "7aac385c",
+      "scored_at": "2026-07-27T17:19:55.665781Z"
+    },
+    "story_112bcb1d3a8b|pragmatic|0a5c5b24": {
+      "score": 92,
+      "review": "2.8T MoE 权重和技术报告已开源，可直接下载部署，今天就能上手实验。",
+      "title_hash": "d960df7b",
+      "scored_at": "2026-07-27T17:19:57.863396Z"
+    },
+    "story_e85da4d1892f|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "新模型上线算个信号，没开源没价格前先观望。",
+      "title_hash": "93d5447a",
+      "scored_at": "2026-07-27T17:20:03.658907Z"
+    },
+    "story_45205b48cfd8|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "开源仓库可直接 clone，分布式智能体环境开箱即用。",
+      "title_hash": "f6d55bcb",
+      "scored_at": "2026-07-27T17:20:05.944874Z"
+    },
+    "story_36a4cddafb16|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "游说花钱多不代表产品好，对写代码没任何影响。",
+      "title_hash": "52d7bdac",
+      "scored_at": "2026-07-27T17:20:07.648652Z"
+    },
+    "story_112bcb1d3a8b|cynic|f4237a62": {
+      "score": 90,
+      "review": "2.8T的参数是实打实的大，但你先告诉我要多少显存才能跑起来。",
+      "title_hash": "d960df7b",
+      "scored_at": "2026-07-27T17:20:12.980342Z"
+    },
+    "story_112bcb1d3a8b|paper-police|966065bf": {
+      "score": 55,
+      "review": "权重和技术报告已公开，但缺独立benchmark验证，需等第三方复现。",
+      "title_hash": "d960df7b",
+      "scored_at": "2026-07-27T17:20:17.682128Z"
+    },
+    "story_ebe3ddd20f67|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "金融Agent设计教程，有代码和MCP连接器，做相关开发的可以直接抄方案。",
+      "title_hash": "114ead3d",
+      "scored_at": "2026-07-27T18:53:37.153312Z"
+    },
+    "story_6a580af5bd08|pragmatic|0a5c5b24": {
+      "score": 92,
+      "review": "SGLang和Miles当天支持K3模型，有大规模部署需求的团队可以直接用。",
+      "title_hash": "65df3a1a",
+      "scored_at": "2026-07-27T18:53:39.878905Z"
+    },
+    "story_eb7b6b649c03|pragmatic|0a5c5b24": {
+      "score": 10,
+      "review": "纯嘴炮预测，没代码没工具，跟开发无关。",
+      "title_hash": "bc9ba99a",
+      "scored_at": "2026-07-27T18:53:43.942824Z"
+    },
+    "story_6a580af5bd08|cynic|f4237a62": {
+      "score": 85,
+      "review": "3万亿参数开源诚意足，但推理成本可不是闹着玩的。",
+      "title_hash": "65df3a1a",
+      "scored_at": "2026-07-27T18:53:49.245065Z"
+    },
+    "story_6a580af5bd08|paper-police|966065bf": {
+      "score": 20,
+      "review": "仅博客宣称支持，无论文代码或独立验证。",
+      "title_hash": "65df3a1a",
+      "scored_at": "2026-07-27T18:53:54.801570Z"
+    },
+    "story_fdb39a7d1547|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "减少工具切换，今天就能在IDE里体验全流程。建议开启试用看是否适配你的项目。",
+      "title_hash": "1c6bfecf",
+      "scored_at": "2026-07-27T20:49:42.358594Z"
+    },
+    "story_c08b86727d06|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "现象观察，无直接可用工具，看看就好。",
+      "title_hash": "0eeed371",
+      "scored_at": "2026-07-27T20:49:44.420620Z"
+    },
+    "story_ed4f738c2dbe|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "新基准上线，做视觉感知评测的多一个选择，但暂且观望。",
+      "title_hash": "67fc68f4",
+      "scored_at": "2026-07-27T20:49:46.190693Z"
+    },
+    "story_3aa98e967d5f|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "团队管理员可收紧Copilot第三方应用权限，避免数据泄露风险。",
+      "title_hash": "800d9062",
+      "scored_at": "2026-07-27T22:23:52.205656Z"
+    },
+    "story_7284fe0b61a4|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "企业IT管理员可在Copilot应用和云代理中统一管控设置，减少运维风险。",
+      "title_hash": "e87d1bac",
+      "scored_at": "2026-07-27T22:23:55.461813Z"
+    },
+    "story_f4def218d9f8|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "立场澄清不改变现状，开源自用不受影响，继续关注后续政策。",
+      "title_hash": "9f3db8d2",
+      "scored_at": "2026-07-28T00:15:39.855927Z"
+    },
+    "story_f92b1e3fa24a|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "赶紧去检查你的Claude共享内容，记得设为私有。现成的安全启示，今天就能查漏补缺。",
+      "title_hash": "47b2927b",
+      "scored_at": "2026-07-28T00:15:42.660400Z"
+    },
+    "story_8540d88057a6|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "JetBrains 用户可升级，OpenTelemetry 监控方便团队追踪，模型管理切换灵活。",
+      "title_hash": "f7764a8c",
+      "scored_at": "2026-07-28T03:42:20.071934Z"
+    },
+    "story_d1e2d40dd895|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "如果你用Claude桌面版，立刻检查版本并限制权限，等官方补丁。",
+      "title_hash": "a5f83687",
+      "scored_at": "2026-07-28T03:42:24.646870Z"
+    },
+    "story_77247128b4fd|pragmatic|0a5c5b24": {
+      "score": 42,
+      "review": "政策表态而非产品，对日常开发零影响，等落地细则再关注。",
+      "title_hash": "427533a0",
+      "scored_at": "2026-07-28T03:42:27.748528Z"
+    },
+    "story_3d28a7a92444|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "选型参考，但没新数据，自己跑压测更准。",
+      "title_hash": "7426d4e0",
+      "scored_at": "2026-07-28T03:42:30.282153Z"
+    },
+    "story_47c2e9f94796|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "检查Claude共享设置，避免敏感对话被公开收录。",
+      "title_hash": "ba844eb3",
+      "scored_at": "2026-07-28T03:42:33.890610Z"
+    },
+    "story_da00c303388c|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "融资愿景，无产品无仓库，等能拧旋钮再关注。",
+      "title_hash": "ec6feb7c",
+      "scored_at": "2026-07-28T03:42:36.032266Z"
+    },
+    "story_e89dbd30d87a|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "浏览器AI花活，开发价值有限，看看就好。",
+      "title_hash": "d3be6675",
+      "scored_at": "2026-07-28T03:42:38.874809Z"
+    },
+    "story_fdb39a7d1547|cynic|f4237a62": {
+      "score": 70,
+      "review": "单一工具搞定一切？先看看它能不能搞定我代码里那些优雅的bug吧。",
+      "title_hash": "1c6bfecf",
+      "scored_at": "2026-07-28T03:42:42.071792Z"
+    },
+    "story_fdb39a7d1547|paper-police|966065bf": {
+      "score": 20,
+      "review": "只有博客公告，无测试数据或代码可验证，缺乏独立证据。",
+      "title_hash": "1c6bfecf",
+      "scored_at": "2026-07-28T03:42:44.567966Z"
     }
   }
 }
