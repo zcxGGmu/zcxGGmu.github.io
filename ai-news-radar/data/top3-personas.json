@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T03:42:44.568020Z",
+  "generated_at": "2026-07-28T06:45:34.980503Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,10 +17,30 @@
   ],
   "items": [
     {
+      "story_id": "story_c3c7b4228b8c",
+      "title": "Kimi K3 开放日：模型权重、技术报告和关键 Infra 技术同步开放",
+      "url": "https://mp.weixin.qq.com/s/IW9BdyA3hLvuuiX_aMCJEQ",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 82,
+          "review": "权重报告都给了，抄作业门槛还在显卡上，算有诚意但别高兴太早。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "仅公众号宣称开放权重和技术报告，无论文无代码无第三方验证。"
+        },
+        "pragmatic": {
+          "score": 92,
+          "review": "权重和Infra开源，今天就能本地部署或微调，生产力工具。"
+        }
+      }
+    },
+    {
       "story_id": "story_112bcb1d3a8b",
       "title": "Kimi K3 开源：2.8T MoE 模型与技术报告 / Releasing the model weights and technical report of Kimi K3. Kimi K3 is our most capable model： a 2…",
       "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
-      "rank": 1,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 90,
@@ -40,7 +60,7 @@
       "story_id": "story_6a580af5bd08",
       "title": "SGLang 和 Miles 为月之暗面 2.8T 参数 Kimi K3 模型提供发布当日支持 / Blog SGLang and Miles Add Day-0 Support for Kimi K3 We are excited to announce Day-0 support for Kimi K3 in SGLang and Miles. K3 is the first open-source model in the 3-trillion-parameter class， and its hybrid architecture departs from convention in al… SGLang Team",
       "url": "https://www.lmsys.org/blog/2026-07-27-kimi-k3-day0-support",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 85,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 92,
           "review": "SGLang和Miles当天支持K3模型，有大规模部署需求的团队可以直接用。"
-        }
-      }
-    },
-    {
-      "story_id": "story_fdb39a7d1547",
-      "title": "GitHub Copilot 发布\"Harness\"工作流：用单一工具完成原型、规划、实现与代码审查 / The harness is all you need (mostly)",
-      "url": "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 70,
-          "review": "单一工具搞定一切？先看看它能不能搞定我代码里那些优雅的bug吧。"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "只有博客公告，无测试数据或代码可验证，缺乏独立证据。"
-        },
-        "pragmatic": {
-          "score": 75,
-          "review": "减少工具切换，今天就能在IDE里体验全流程。建议开启试用看是否适配你的项目。"
         }
       }
     }
