@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T14:48:16.414769Z",
+  "generated_at": "2026-07-28T23:31:53.243199Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_c3c7b4228b8c",
-      "title": "Kimi K3 开放日：模型权重、技术报告和关键 Infra 技术同步开放",
-      "url": "https://mp.weixin.qq.com/s/IW9BdyA3hLvuuiX_aMCJEQ",
+      "story_id": "story_c1632a302b6e",
+      "title": "Gemini API Managed Agents 默认升级为 3.6 Flash，新增环境钩子与免费套餐 / Gemini API Managed Agents: 3.6 Flash, hooks, and more",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 82,
-          "review": "权重报告都给了，抄作业门槛还在显卡上，算有诚意但别高兴太早。"
+          "score": 70,
+          "review": "默认升级 3.6 Flash 不错，免费套餐配额敢不敢晒出来？"
         },
         "paper-police": {
-          "score": 25,
-          "review": "仅公众号宣称开放权重和技术报告，无论文无代码无第三方验证。"
+          "score": 35,
+          "review": "仅官方博客宣称，无论文无代码无第三方评测，等独立验证。"
         },
         "pragmatic": {
           "score": 92,
-          "review": "权重和Infra开源，今天就能本地部署或微调，生产力工具。"
+          "review": "免费套餐+新模型，今天就能测试，降低开发成本。"
         }
       }
     },
     {
-      "story_id": "story_112bcb1d3a8b",
-      "title": "Kimi K3 开源：2.8T MoE 模型与技术报告 / Releasing the model weights and technical report of Kimi K3. Kimi K3 is our most capable model： a 2…",
-      "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "story_id": "story_f3ef249ddb56",
+      "title": "LFM2.5-Encoders：在CPU上实现快速长上下文推理 / LFM2.5-Encoders for Fast Long-Context Inference on CPU",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 90,
-          "review": "2.8T的参数是实打实的大，但你先告诉我要多少显存才能跑起来。"
+          "score": 72,
+          "review": "CPU跑长上下文是好事，但别光说‘快’，把延迟、吞吐量和上下文长度亮出来。"
         },
         "paper-police": {
-          "score": 55,
-          "review": "权重和技术报告已公开，但缺独立benchmark验证，需等第三方复现。"
+          "score": 45,
+          "review": "博客有细节数字但无独立验证，需等论文或开源代码。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "2.8T MoE 权重和技术报告已开源，可直接下载部署，今天就能上手实验。"
+          "score": 90,
+          "review": "直接省GPU成本，长文本任务可在CPU上跑，今天就能试。"
         }
       }
     },
     {
-      "story_id": "story_6a580af5bd08",
-      "title": "SGLang 和 Miles 为月之暗面 2.8T 参数 Kimi K3 模型提供发布当日支持 / Blog SGLang and Miles Add Day-0 Support for Kimi K3 We are excited to announce Day-0 support for Kimi K3 in SGLang and Miles. K3 is the first open-source model in the 3-trillion-parameter class， and its hybrid architecture departs from convention in al… SGLang Team",
-      "url": "https://www.lmsys.org/blog/2026-07-27-kimi-k3-day0-support",
+      "story_id": "story_dab11bf31a39",
+      "title": "Dependabot 对更多生态系统中的恶意软件包发出警报 / Dependabot alerts on malicious packages across more ecosystems",
+      "url": "https://github.blog/changelog/2026-07-28-dependabot-alerts-on-malicious-packages-across-more-ecosystems",
       "rank": 3,
       "reviews": {
         "cynic": {
           "score": 85,
-          "review": "3万亿参数开源诚意足，但推理成本可不是闹着玩的。"
+          "review": "总算记得给其他生态系统也加把锁，别光顾着刷存在感。"
         },
         "paper-police": {
           "score": 20,
-          "review": "仅博客宣称支持，无论文代码或独立验证。"
+          "review": "官方公告证实功能扩展，但无代码或第三方验证，可信度有限。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "SGLang和Miles当天支持K3模型，有大规模部署需求的团队可以直接用。"
+          "score": 90,
+          "review": "Dependabot 覆盖更多生态，直接减少被恶意包坑的风险，今天就能开。"
         }
       }
     }
