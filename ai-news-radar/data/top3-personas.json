@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T23:31:53.243199Z",
+  "generated_at": "2026-07-29T06:52:45.425214Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -57,22 +57,22 @@
       }
     },
     {
-      "story_id": "story_dab11bf31a39",
-      "title": "Dependabot 对更多生态系统中的恶意软件包发出警报 / Dependabot alerts on malicious packages across more ecosystems",
-      "url": "https://github.blog/changelog/2026-07-28-dependabot-alerts-on-malicious-packages-across-more-ecosystems",
+      "story_id": "story_877f0f256fb6",
+      "title": "OpenAI 推出两款新转录模型 API / We're introducing two new transcription models in the API： • GPT-Live-Transcribe： built for low-lat…",
+      "url": "https://x.com/OpenAIDevs/status/2082201169443905798",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 85,
-          "review": "总算记得给其他生态系统也加把锁，别光顾着刷存在感。"
+          "score": 70,
+          "review": "低延迟是多大？别又是PPT上的3ms，实际跑起来卡成狗。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "官方公告证实功能扩展，但无代码或第三方验证，可信度有限。"
+          "score": 25,
+          "review": "只有官方推文，无论文代码和独立评测，等公开benchmark再认。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "Dependabot 覆盖更多生态，直接减少被恶意包坑的风险，今天就能开。"
+          "review": "新转录 API 今天可用，低延迟版本适合实时场景，直接集成省事。"
         }
       }
     }
