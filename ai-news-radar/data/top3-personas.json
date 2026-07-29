@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T09:57:24.960712Z",
+  "generated_at": "2026-07-29T15:27:53.547949Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,30 +37,10 @@
       }
     },
     {
-      "story_id": "story_f3ef249ddb56",
-      "title": "LFM2.5-Encoders：在CPU上实现快速长上下文推理 / LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 72,
-          "review": "CPU跑长上下文是好事，但别光说‘快’，把延迟、吞吐量和上下文长度亮出来。"
-        },
-        "paper-police": {
-          "score": 45,
-          "review": "博客有细节数字但无独立验证，需等论文或开源代码。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "直接省GPU成本，长文本任务可在CPU上跑，今天就能试。"
-        }
-      }
-    },
-    {
       "story_id": "story_877f0f256fb6",
       "title": "OpenAI 推出两款新转录模型 API / We're introducing two new transcription models in the API： • GPT-Live-Transcribe： built for low-lat…",
       "url": "https://x.com/OpenAIDevs/status/2082201169443905798",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 70,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 90,
           "review": "新转录 API 今天可用，低延迟版本适合实时场景，直接集成省事。"
+        }
+      }
+    },
+    {
+      "story_id": "story_3a40efc29328",
+      "title": "OpenAI 发布 Codex 安全 CLI 与 SDK / More opensource goodness. We have just released a CLI and TypeScript SDK for finding， validating， an…",
+      "url": "https://x.com/thsottiaux/status/2082241164850364555",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "开源安全工具是好事，建议先给自己模型跑一遍。"
+        },
+        "paper-police": {
+          "score": 20,
+          "review": "缺论文、代码仓库和benchmark，仅推文自述不可信。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "直接能用的安全工具，找漏洞和验证，今天就能集成到流水线。"
         }
       }
     }

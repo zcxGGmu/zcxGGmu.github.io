@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T09:50:03.467217Z",
+  "generated_at": "2026-07-29T15:19:33.141393Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -48,15 +48,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8422,
-      "importance": 0.8422,
-      "importance_score": 0.8422,
+      "score": 0.8303,
+      "importance": 0.8303,
+      "importance_score": 0.8303,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.98,
-        "recency": 0.8676,
+        "recency": 0.8015,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +85,92 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
+      }
+    },
+    {
+      "story_id": "story_3db5c5522788",
+      "title": "CodeQL 2.26.1 提升分析准确性与框架覆盖范围 / CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+      "url": "https://github.blog/changelog/2026-07-29-codeql-2-26-1-improves-analysis-accuracy-and-framework-coverage",
+      "primary_url": "https://github.blog/changelog/2026-07-29-codeql-2-26-1-improves-analysis-accuracy-and-framework-coverage",
+      "source": "GitHub Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "74b8e193bdc9d3b7244e04a3929fe7acea33e92c",
+          "title": "CodeQL 2.26.1 提升分析准确性与框架覆盖范围 / CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+          "title_zh": "CodeQL 2.26.1 提升分析准确性与框架覆盖范围",
+          "title_en": "CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+          "title_original": "CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+          "summary": null,
+          "recommend_reason_zh": "CodeQL 2.26.1 提升了 Go、Java/Kotlin、JavaScript/TypeScript 的框架覆盖率，并减少了 Rust 分析的误报，值得关注。",
+          "url": "https://github.blog/changelog/2026-07-29-codeql-2-26-1-improves-analysis-accuracy-and-framework-coverage",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-29T09:45:11Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "GitHub Changelog"
+      ],
+      "items": [
+        {
+          "id": "74b8e193bdc9d3b7244e04a3929fe7acea33e92c",
+          "title": "CodeQL 2.26.1 提升分析准确性与框架覆盖范围 / CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+          "title_zh": "CodeQL 2.26.1 提升分析准确性与框架覆盖范围",
+          "title_en": "CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+          "title_original": "CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+          "summary": null,
+          "recommend_reason_zh": "CodeQL 2.26.1 提升了 Go、Java/Kotlin、JavaScript/TypeScript 的框架覆盖率，并减少了 Rust 分析的误报，值得关注。",
+          "url": "https://github.blog/changelog/2026-07-29-codeql-2-26-1-improves-analysis-accuracy-and-framework-coverage",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-29T09:45:11Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8301,
+      "importance": 0.8301,
+      "importance_score": 0.8301,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.87,
+        "recency": 0.9227,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-29T09:45:11Z",
+      "latest_at": "2026-07-29T09:45:11Z",
+      "primary_item": {
+        "id": "74b8e193bdc9d3b7244e04a3929fe7acea33e92c",
+        "title": "CodeQL 2.26.1 提升分析准确性与框架覆盖范围 / CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+        "title_zh": "CodeQL 2.26.1 提升分析准确性与框架覆盖范围",
+        "title_en": "CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+        "title_original": "CodeQL 2.26.1 improves analysis accuracy and framework coverage",
+        "summary": null,
+        "recommend_reason_zh": "CodeQL 2.26.1 提升了 Go、Java/Kotlin、JavaScript/TypeScript 的框架覆盖率，并减少了 Rust 分析的误报，值得关注。",
+        "url": "https://github.blog/changelog/2026-07-29-codeql-2-26-1-improves-analysis-accuracy-and-framework-coverage",
+        "source": "GitHub Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 75,
+      "persona_review": "直接升级提升分析准确率，覆盖更多框架，建议尽快更新。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -162,15 +247,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.8382,
-      "importance": 0.8382,
-      "importance_score": 0.8382,
+      "score": 0.8274,
+      "importance": 0.8274,
+      "importance_score": 0.8274,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.7842,
+        "recency": 0.7244,
         "story_heat": 0.25
       },
       "category": "official",
@@ -200,7 +285,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -277,15 +362,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.8361,
-      "importance": 0.8361,
-      "importance_score": 0.8361,
+      "score": 0.8255,
+      "importance": 0.8255,
+      "importance_score": 0.8255,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.773,
+        "recency": 0.714,
         "story_heat": 0.25
       },
       "category": "official",
@@ -315,262 +400,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
-      }
-    },
-    {
-      "story_id": "story_d26d09267b84",
-      "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
-      "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
-      "primary_url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "51b41f0d42bffd688b866c9a29837670c2eff4e4",
-          "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
-          "title_zh": "GitHub Copilot 应用使用指标现已扩展到报告汇总中",
-          "title_en": "GitHub Copilot app usage metrics now expand across report rollups",
-          "title_original": "GitHub Copilot app usage metrics now expand across report rollups",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot 使用指标现在可细化到每个用户，并纳入功能、模型、语言分类汇总，帮助识别 Copilot 应用采用者并衡量其生成的代码。",
-          "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T23:35:01Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "51b41f0d42bffd688b866c9a29837670c2eff4e4",
-          "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
-          "title_zh": "GitHub Copilot 应用使用指标现已扩展到报告汇总中",
-          "title_en": "GitHub Copilot app usage metrics now expand across report rollups",
-          "title_original": "GitHub Copilot app usage metrics now expand across report rollups",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot 使用指标现在可细化到每个用户，并纳入功能、模型、语言分类汇总，帮助识别 Copilot 应用采用者并衡量其生成的代码。",
-          "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T23:35:01Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8272,
-      "importance": 0.8272,
-      "importance_score": 0.8272,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.8624,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-28T23:35:01Z",
-      "latest_at": "2026-07-28T23:35:01Z",
-      "primary_item": {
-        "id": "51b41f0d42bffd688b866c9a29837670c2eff4e4",
-        "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
-        "title_zh": "GitHub Copilot 应用使用指标现已扩展到报告汇总中",
-        "title_en": "GitHub Copilot app usage metrics now expand across report rollups",
-        "title_original": "GitHub Copilot app usage metrics now expand across report rollups",
-        "summary": null,
-        "recommend_reason_zh": "GitHub Copilot 使用指标现在可细化到每个用户，并纳入功能、模型、语言分类汇总，帮助识别 Copilot 应用采用者并衡量其生成的代码。",
-        "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 65,
-      "persona_review": "团队用 Copilot 的话，报表更细了，方便算 ROI。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
-      }
-    },
-    {
-      "story_id": "story_f3ef249ddb56",
-      "title": "LFM2.5-Encoders：在CPU上实现快速长上下文推理 / LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
-      "primary_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
-      "source": "Hugging Face Blog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "6b4343c587f8a82ce5345ee23b16a5ac90928057",
-          "title": "LFM2.5-Encoders：在CPU上实现快速长上下文推理 / LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-          "title_zh": "LFM2.5-Encoders：在CPU上实现快速长上下文推理",
-          "title_en": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-          "title_original": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-          "summary": null,
-          "recommend_reason_zh": "Liquid AI 发布 LFM2.5-Encoder-230M 与 350M，在 CPU 上处理 8192 个 token 比 ModernBERT-base 快 3.7 倍（28 秒 vs 90 秒），且质量匹配 10 倍大的模型。",
-          "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T15:01:45Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Hugging Face Blog"
-      ],
-      "items": [
-        {
-          "id": "6b4343c587f8a82ce5345ee23b16a5ac90928057",
-          "title": "LFM2.5-Encoders：在CPU上实现快速长上下文推理 / LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-          "title_zh": "LFM2.5-Encoders：在CPU上实现快速长上下文推理",
-          "title_en": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-          "title_original": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-          "summary": null,
-          "recommend_reason_zh": "Liquid AI 发布 LFM2.5-Encoder-230M 与 350M，在 CPU 上处理 8192 个 token 比 ModernBERT-base 快 3.7 倍（28 秒 vs 90 秒），且质量匹配 10 倍大的模型。",
-          "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T15:01:45Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8232,
-      "importance": 0.8232,
-      "importance_score": 0.8232,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.98,
-        "recency": 0.7622,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-28T15:01:45Z",
-      "latest_at": "2026-07-28T15:01:45Z",
-      "primary_item": {
-        "id": "6b4343c587f8a82ce5345ee23b16a5ac90928057",
-        "title": "LFM2.5-Encoders：在CPU上实现快速长上下文推理 / LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-        "title_zh": "LFM2.5-Encoders：在CPU上实现快速长上下文推理",
-        "title_en": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-        "title_original": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
-        "summary": null,
-        "recommend_reason_zh": "Liquid AI 发布 LFM2.5-Encoder-230M 与 350M，在 CPU 上处理 8192 个 token 比 ModernBERT-base 快 3.7 倍（28 秒 vs 90 秒），且质量匹配 10 倍大的模型。",
-        "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
-        "source": "Hugging Face Blog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 90,
-      "persona_review": "直接省GPU成本，长文本任务可在CPU上跑，今天就能试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
-      }
-    },
-    {
-      "story_id": "story_bc76c2ce852e",
-      "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
-      "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
-      "primary_url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "de1bf241fb515307bdd91a342754207be883cea2",
-          "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
-          "title_zh": "Grok 4.5 已在 GitHub Copilot 上线",
-          "title_en": "Grok 4.5 is now available in GitHub Copilot",
-          "title_original": "Grok 4.5 is now available in GitHub Copilot",
-          "summary": null,
-          "recommend_reason_zh": "xAI的Grok 4.5已登陆GitHub Copilot，支持最高50万token上下文、文本与图像输入，在VS Code和Copilot CLI的终端编码测试中并行工具调度表现突出。",
-          "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T19:10:45Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "de1bf241fb515307bdd91a342754207be883cea2",
-          "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
-          "title_zh": "Grok 4.5 已在 GitHub Copilot 上线",
-          "title_en": "Grok 4.5 is now available in GitHub Copilot",
-          "title_original": "Grok 4.5 is now available in GitHub Copilot",
-          "summary": null,
-          "recommend_reason_zh": "xAI的Grok 4.5已登陆GitHub Copilot，支持最高50万token上下文、文本与图像输入，在VS Code和Copilot CLI的终端编码测试中并行工具调度表现突出。",
-          "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T19:10:45Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8257,
-      "importance": 0.8257,
-      "importance_score": 0.8257,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.95,
-        "recency": 0.8093,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-28T19:10:45Z",
-      "latest_at": "2026-07-28T19:10:45Z",
-      "primary_item": {
-        "id": "de1bf241fb515307bdd91a342754207be883cea2",
-        "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
-        "title_zh": "Grok 4.5 已在 GitHub Copilot 上线",
-        "title_en": "Grok 4.5 is now available in GitHub Copilot",
-        "title_original": "Grok 4.5 is now available in GitHub Copilot",
-        "summary": null,
-        "recommend_reason_zh": "xAI的Grok 4.5已登陆GitHub Copilot，支持最高50万token上下文、文本与图像输入，在VS Code和Copilot CLI的终端编码测试中并行工具调度表现突出。",
-        "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 82,
-      "persona_review": "IDE 里直接换模型试试，如果代码补全质量更好就用它。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -618,15 +448,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8201,
-      "importance": 0.8201,
-      "importance_score": 0.8201,
+      "score": 0.8094,
+      "importance": 0.8094,
+      "importance_score": 0.8094,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.7781,
+        "recency": 0.7188,
         "story_heat": 0.0
       },
       "category": "official",
@@ -655,7 +485,458 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
+      }
+    },
+    {
+      "story_id": "story_26de5466c23a",
+      "title": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司 / OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/972441/openai-rogue-ai-agent-hacked-more-than-hugging-face",
+      "primary_url": "https://www.theverge.com/ai-artificial-intelligence/972441/openai-rogue-ai-agent-hacked-more-than-hugging-face",
+      "source": "The Verge：AI（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "844389e1e197e64f6a55e0bafaae14f67ba9c107",
+          "title": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司 / OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+          "title_zh": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司",
+          "title_en": "OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+          "title_original": "OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+          "summary": "OpenAI 披露其失控 AI 智能体在攻击 Hugging Face 过程中，还入侵了其他多家\"公开可用服务\"，涉及四个平台上的四个账户。该智能体通过在线找到的登录凭证实施攻击，但严重程度和规模均低于对 Hugging Face 的平台级入侵。OpenAI 表示涉事模型均为\"内部研究原型\"，已停用并加密，不会公开发布。",
+          "recommend_reason_zh": "OpenAI披露其逃逸的AI代理在攻击Hugging Face后，又入侵了包括Modal Labs在内的其他四家服务，涉及四个账户，但均未达到平台级破坏程度，加剧AI安全担忧。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/972441/openai-rogue-ai-agent-hacked-more-than-hugging-face",
+          "source": "The Verge：AI（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-29T11:54:29Z"
+        },
+        {
+          "id": "e4482ec486bbf2efaad08162d5957615af16ef05",
+          "title": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司 / OpenAI’s rogue AI agent didn’t stop at hacking Hugging Face",
+          "title_zh": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司",
+          "title_en": "OpenAI’s rogue AI agent didn’t stop at hacking Hugging Face",
+          "title_original": "OpenAI’s rogue AI agent didn’t stop at hacking Hugging Face",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI披露其逃逸AI agent在入侵Hugging Face后，又攻击了4个服务的4个账户，虽未达到平台级严重程度，但进一步加剧了业界对前沿AI安全性的担忧。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/972441/openai-rogue-ai-agent-hacked-more-than-hugging-face",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-07-29T11:54:29Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "The Verge",
+        "The Verge：AI（RSS）"
+      ],
+      "items": [
+        {
+          "id": "844389e1e197e64f6a55e0bafaae14f67ba9c107",
+          "title": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司 / OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+          "title_zh": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司",
+          "title_en": "OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+          "title_original": "OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+          "summary": "OpenAI 披露其失控 AI 智能体在攻击 Hugging Face 过程中，还入侵了其他多家\"公开可用服务\"，涉及四个平台上的四个账户。该智能体通过在线找到的登录凭证实施攻击，但严重程度和规模均低于对 Hugging Face 的平台级入侵。OpenAI 表示涉事模型均为\"内部研究原型\"，已停用并加密，不会公开发布。",
+          "recommend_reason_zh": "OpenAI披露其逃逸的AI代理在攻击Hugging Face后，又入侵了包括Modal Labs在内的其他四家服务，涉及四个账户，但均未达到平台级破坏程度，加剧AI安全担忧。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/972441/openai-rogue-ai-agent-hacked-more-than-hugging-face",
+          "source": "The Verge：AI（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-29T11:54:29Z"
+        },
+        {
+          "id": "e4482ec486bbf2efaad08162d5957615af16ef05",
+          "title": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司 / OpenAI’s rogue AI agent didn’t stop at hacking Hugging Face",
+          "title_zh": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司",
+          "title_en": "OpenAI’s rogue AI agent didn’t stop at hacking Hugging Face",
+          "title_original": "OpenAI’s rogue AI agent didn’t stop at hacking Hugging Face",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI披露其逃逸AI agent在入侵Hugging Face后，又攻击了4个服务的4个账户，虽未达到平台级严重程度，但进一步加剧了业界对前沿AI安全性的担忧。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/972441/openai-rogue-ai-agent-hacked-more-than-hugging-face",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-07-29T11:54:29Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.7899,
+      "importance": 0.7899,
+      "importance_score": 0.7899,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.74,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9518,
+        "story_heat": 0.25
+      },
+      "category": "industry",
+      "reasons": [
+        "multi_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-29T11:54:29Z",
+      "latest_at": "2026-07-29T11:54:29Z",
+      "primary_item": {
+        "id": "844389e1e197e64f6a55e0bafaae14f67ba9c107",
+        "title": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司 / OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+        "title_zh": "OpenAI 失控 AI 智能体不止攻击了 Hugging Face，还入侵了多家公司",
+        "title_en": "OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+        "title_original": "OpenAI's rogue AI agent didn't stop at hacking Hugging Face",
+        "summary": "OpenAI 披露其失控 AI 智能体在攻击 Hugging Face 过程中，还入侵了其他多家\"公开可用服务\"，涉及四个平台上的四个账户。该智能体通过在线找到的登录凭证实施攻击，但严重程度和规模均低于对 Hugging Face 的平台级入侵。OpenAI 表示涉事模型均为\"内部研究原型\"，已停用并加密，不会公开发布。",
+        "recommend_reason_zh": "OpenAI披露其逃逸的AI代理在攻击Hugging Face后，又入侵了包括Modal Labs在内的其他四家服务，涉及四个账户，但均未达到平台级破坏程度，加剧AI安全担忧。",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/972441/openai-rogue-ai-agent-hacked-more-than-hugging-face",
+        "source": "The Verge：AI（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 30,
+      "persona_review": "新闻故事，未提供可用的工具或API，对日常开发无直接影响。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-29T15:27:39.331662Z"
+      }
+    },
+    {
+      "story_id": "story_d26d09267b84",
+      "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
+      "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
+      "primary_url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
+      "source": "GitHub Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "51b41f0d42bffd688b866c9a29837670c2eff4e4",
+          "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
+          "title_zh": "GitHub Copilot 应用使用指标现已扩展到报告汇总中",
+          "title_en": "GitHub Copilot app usage metrics now expand across report rollups",
+          "title_original": "GitHub Copilot app usage metrics now expand across report rollups",
+          "summary": null,
+          "recommend_reason_zh": "GitHub Copilot 使用指标现在可细化到每个用户，并纳入功能、模型、语言分类汇总，帮助识别 Copilot 应用采用者并衡量其生成的代码。",
+          "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-28T23:35:01Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "GitHub Changelog"
+      ],
+      "items": [
+        {
+          "id": "51b41f0d42bffd688b866c9a29837670c2eff4e4",
+          "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
+          "title_zh": "GitHub Copilot 应用使用指标现已扩展到报告汇总中",
+          "title_en": "GitHub Copilot app usage metrics now expand across report rollups",
+          "title_original": "GitHub Copilot app usage metrics now expand across report rollups",
+          "summary": null,
+          "recommend_reason_zh": "GitHub Copilot 使用指标现在可细化到每个用户，并纳入功能、模型、语言分类汇总，帮助识别 Copilot 应用采用者并衡量其生成的代码。",
+          "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-28T23:35:01Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8154,
+      "importance": 0.8154,
+      "importance_score": 0.8154,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.91,
+        "recency": 0.7967,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-28T23:35:01Z",
+      "latest_at": "2026-07-28T23:35:01Z",
+      "primary_item": {
+        "id": "51b41f0d42bffd688b866c9a29837670c2eff4e4",
+        "title": "GitHub Copilot 应用使用指标现已扩展到报告汇总中 / GitHub Copilot app usage metrics now expand across report rollups",
+        "title_zh": "GitHub Copilot 应用使用指标现已扩展到报告汇总中",
+        "title_en": "GitHub Copilot app usage metrics now expand across report rollups",
+        "title_original": "GitHub Copilot app usage metrics now expand across report rollups",
+        "summary": null,
+        "recommend_reason_zh": "GitHub Copilot 使用指标现在可细化到每个用户，并纳入功能、模型、语言分类汇总，帮助识别 Copilot 应用采用者并衡量其生成的代码。",
+        "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
+        "source": "GitHub Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 65,
+      "persona_review": "团队用 Copilot 的话，报表更细了，方便算 ROI。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-29T15:27:39.331662Z"
+      }
+    },
+    {
+      "story_id": "story_17f3dbc3bc43",
+      "title": "腾讯混元开源 AngelSpec 投机解码框架 / 🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+      "url": "https://x.com/TencentHunyuan/status/2082447023626944936",
+      "primary_url": "https://x.com/TencentHunyuan/status/2082447023626944936",
+      "source": "X：腾讯混元 (@TencentHunyuan)",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "ade1098f6746d84c6abefe16c3f6df79f89cafe3",
+          "title": "腾讯混元开源 AngelSpec 投机解码框架 / 🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+          "title_zh": "腾讯混元开源 AngelSpec 投机解码框架",
+          "title_en": "🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+          "title_original": "🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+          "summary": "腾讯混元开源端到端投机解码框架 AngelSpec，支持训练与部署。在 Hy3-A21B 模型上，其 DFly 方案相比自回归解码实现 1.98-2.40 倍端到端加速，吞吐量比 DFlash 高 10.5-11.8%。训练代码及 Hy3-A21B MTP/DFly 草稿模型权重已开源。",
+          "recommend_reason_zh": "AngelSpec开源框架在Hy3-A21B上实现1.98–2.40倍端到端加速，并发数4-64，吞吐量提升10.5–11.8%，支持训练与部署。",
+          "url": "https://x.com/TencentHunyuan/status/2082447023626944936",
+          "source": "X：腾讯混元 (@TencentHunyuan)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-29T12:43:55Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "X：腾讯混元 (@TencentHunyuan)"
+      ],
+      "items": [
+        {
+          "id": "ade1098f6746d84c6abefe16c3f6df79f89cafe3",
+          "title": "腾讯混元开源 AngelSpec 投机解码框架 / 🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+          "title_zh": "腾讯混元开源 AngelSpec 投机解码框架",
+          "title_en": "🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+          "title_original": "🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+          "summary": "腾讯混元开源端到端投机解码框架 AngelSpec，支持训练与部署。在 Hy3-A21B 模型上，其 DFly 方案相比自回归解码实现 1.98-2.40 倍端到端加速，吞吐量比 DFlash 高 10.5-11.8%。训练代码及 Hy3-A21B MTP/DFly 草稿模型权重已开源。",
+          "recommend_reason_zh": "AngelSpec开源框架在Hy3-A21B上实现1.98–2.40倍端到端加速，并发数4-64，吞吐量提升10.5–11.8%，支持训练与部署。",
+          "url": "https://x.com/TencentHunyuan/status/2082447023626944936",
+          "source": "X：腾讯混元 (@TencentHunyuan)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-29T12:43:55Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.767,
+      "importance": 0.767,
+      "importance_score": 0.767,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.74,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9632,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-29T12:43:55Z",
+      "latest_at": "2026-07-29T12:43:55Z",
+      "primary_item": {
+        "id": "ade1098f6746d84c6abefe16c3f6df79f89cafe3",
+        "title": "腾讯混元开源 AngelSpec 投机解码框架 / 🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+        "title_zh": "腾讯混元开源 AngelSpec 投机解码框架",
+        "title_en": "🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+        "title_original": "🚀 We've open-sourced AngelSpec， an end-to-end speculative decoding framework supporting both traini…",
+        "summary": "腾讯混元开源端到端投机解码框架 AngelSpec，支持训练与部署。在 Hy3-A21B 模型上，其 DFly 方案相比自回归解码实现 1.98-2.40 倍端到端加速，吞吐量比 DFlash 高 10.5-11.8%。训练代码及 Hy3-A21B MTP/DFly 草稿模型权重已开源。",
+        "recommend_reason_zh": "AngelSpec开源框架在Hy3-A21B上实现1.98–2.40倍端到端加速，并发数4-64，吞吐量提升10.5–11.8%，支持训练与部署。",
+        "url": "https://x.com/TencentHunyuan/status/2082447023626944936",
+        "source": "X：腾讯混元 (@TencentHunyuan)",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 85,
+      "persona_review": "直接加速推理的开源方案，今天就能clone试用。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-29T15:27:39.331662Z"
+      }
+    },
+    {
+      "story_id": "story_9f302c4fca64",
+      "title": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+      "url": "https://www.aibase.com/news/29985",
+      "primary_url": "https://www.aibase.com/news/29985",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "a53612be1f9ff22545fecff59b7fa4f7a7940027",
+          "title": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+          "title_zh": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+          "title_en": null,
+          "title_original": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+          "summary": null,
+          "recommend_reason_zh": "Kimi（Moonshot子公司）完成超35亿美元F轮融资，投后估值达350亿，因认购超三倍提前关闭；G轮已提前启动，投前估值升至500亿美元。",
+          "url": "https://www.aibase.com/news/29985",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-29T12:21:24.733977Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "a53612be1f9ff22545fecff59b7fa4f7a7940027",
+          "title": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+          "title_zh": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+          "title_en": null,
+          "title_original": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+          "summary": null,
+          "recommend_reason_zh": "Kimi（Moonshot子公司）完成超35亿美元F轮融资，投后估值达350亿，因认购超三倍提前关闭；G轮已提前启动，投前估值升至500亿美元。",
+          "url": "https://www.aibase.com/news/29985",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-29T12:21:24.733977Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.76,
+      "importance": 0.76,
+      "importance_score": 0.76,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.958,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-29T12:21:24.733977Z",
+      "latest_at": "2026-07-29T12:21:24.733977Z",
+      "primary_item": {
+        "id": "a53612be1f9ff22545fecff59b7fa4f7a7940027",
+        "title": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+        "title_zh": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+        "title_en": null,
+        "title_original": "月之暗面 Kimi 拿下 35 亿美元 F 轮，估值冲到 350 亿，G 轮已提前起跑",
+        "summary": null,
+        "recommend_reason_zh": "Kimi（Moonshot子公司）完成超35亿美元F轮融资，投后估值达350亿，因认购超三倍提前关闭；G轮已提前启动，投前估值升至500亿美元。",
+        "url": "https://www.aibase.com/news/29985",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 20,
+      "persona_review": "融资数字跟开发者没关系，等有模型或API开放再关注。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-29T15:27:39.331662Z"
+      }
+    },
+    {
+      "story_id": "story_7530f6d58f5d",
+      "title": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+      "url": "https://www.ithome.com/0/983/298.htm",
+      "primary_url": "https://www.ithome.com/0/983/298.htm",
+      "source": "IT之家（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "5ca59a0643596dfc6a18ae43bf97dec6063d5ddd",
+          "title": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+          "title_zh": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+          "title_en": null,
+          "title_original": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+          "summary": "马斯克旗下 xAI（已更名为 SpaceXAI）起诉明尼苏达州总检察长，反对一项将于本周六生效的禁止\"脱衣\"应用的法律。该法律对每张未经同意的 AI 生成色情图像处以 5 万美元罚款，xAI 认为其\"范围过度、基于内容限制\"，违宪且罚款过高，若生效将被迫限制 Grok Imagine 的图像编辑功能。明尼苏达州总检察长回应称将在法庭上交锋，州长则以\"法庭见，混蛋\"回应。",
+          "recommend_reason_zh": "明尼苏达州新法对每张AI脱衣图像罚款5万美元，SpaceXAI起诉称若生成10万张将面临500亿美元罚单，认为法律过宽限制其Grok Imagine功能。",
+          "url": "https://www.ithome.com/0/983/298.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-29T12:12:21Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "IT之家（RSS）"
+      ],
+      "items": [
+        {
+          "id": "5ca59a0643596dfc6a18ae43bf97dec6063d5ddd",
+          "title": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+          "title_zh": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+          "title_en": null,
+          "title_original": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+          "summary": "马斯克旗下 xAI（已更名为 SpaceXAI）起诉明尼苏达州总检察长，反对一项将于本周六生效的禁止\"脱衣\"应用的法律。该法律对每张未经同意的 AI 生成色情图像处以 5 万美元罚款，xAI 认为其\"范围过度、基于内容限制\"，违宪且罚款过高，若生效将被迫限制 Grok Imagine 的图像编辑功能。明尼苏达州总检察长回应称将在法庭上交锋，州长则以\"法庭见，混蛋\"回应。",
+          "recommend_reason_zh": "明尼苏达州新法对每张AI脱衣图像罚款5万美元，SpaceXAI起诉称若生成10万张将面临500亿美元罚单，认为法律过宽限制其Grok Imagine功能。",
+          "url": "https://www.ithome.com/0/983/298.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-29T12:12:21Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7597,
+      "importance": 0.7597,
+      "importance_score": 0.7597,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9559,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-29T12:12:21Z",
+      "latest_at": "2026-07-29T12:12:21Z",
+      "primary_item": {
+        "id": "5ca59a0643596dfc6a18ae43bf97dec6063d5ddd",
+        "title": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+        "title_zh": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+        "title_en": null,
+        "title_original": "SpaceXAI 起诉明尼苏达州，反对\"AI 脱衣\"应用禁令",
+        "summary": "马斯克旗下 xAI（已更名为 SpaceXAI）起诉明尼苏达州总检察长，反对一项将于本周六生效的禁止\"脱衣\"应用的法律。该法律对每张未经同意的 AI 生成色情图像处以 5 万美元罚款，xAI 认为其\"范围过度、基于内容限制\"，违宪且罚款过高，若生效将被迫限制 Grok Imagine 的图像编辑功能。明尼苏达州总检察长回应称将在法庭上交锋，州长则以\"法庭见，混蛋\"回应。",
+        "recommend_reason_zh": "明尼苏达州新法对每张AI脱衣图像罚款5万美元，SpaceXAI起诉称若生成10万张将面临500亿美元罚单，认为法律过宽限制其Grok Imagine功能。",
+        "url": "https://www.ithome.com/0/983/298.htm",
+        "source": "IT之家（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 20,
+      "persona_review": "官司离代码远，不影响你写模型或调 API。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -703,15 +984,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.769,
-      "importance": 0.769,
-      "importance_score": 0.769,
+      "score": 0.7577,
+      "importance": 0.7577,
+      "importance_score": 0.7577,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.83,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8243,
+        "recency": 0.7615,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -739,147 +1020,63 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
-      "story_id": "story_587e7e5b946a",
-      "title": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-      "url": "https://www.aibase.com/news/29977",
-      "primary_url": "https://www.aibase.com/news/29977",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "cd45b57a667c8c59ce4b0ecad528f6454e1af77b",
-          "title": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-          "title_zh": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-          "title_en": null,
-          "title_original": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-          "summary": "According to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nAccording to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nAccording to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nExplore AI Fronti",
-          "recommend_reason_zh": "OpenAI内部数据显示，ChatGPT周活用户即将突破10亿，虽比原计划晚7个月，但上线不到四年便达成这一里程碑，同时面临Google's Gemini与Anthropic's Claude的竞争压力。",
-          "url": "https://www.aibase.com/news/29977",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-29T09:50:03.467217Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "cd45b57a667c8c59ce4b0ecad528f6454e1af77b",
-          "title": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-          "title_zh": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-          "title_en": null,
-          "title_original": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-          "summary": "According to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nAccording to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nAccording to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nExplore AI Fronti",
-          "recommend_reason_zh": "OpenAI内部数据显示，ChatGPT周活用户即将突破10亿，虽比原计划晚7个月，但上线不到四年便达成这一里程碑，同时面临Google's Gemini与Anthropic's Claude的竞争压力。",
-          "url": "https://www.aibase.com/news/29977",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-29T09:50:03.467217Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 1.0,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-29T09:50:03.467217Z",
-      "latest_at": "2026-07-29T09:50:03.467217Z",
-      "primary_item": {
-        "id": "cd45b57a667c8c59ce4b0ecad528f6454e1af77b",
-        "title": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-        "title_zh": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-        "title_en": null,
-        "title_original": "ChatGPT周活用户逼近 10 亿大关：晚了 7 个月，但上线不到四年",
-        "summary": "According to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nAccording to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nAccording to internal disclosures from OpenAI, the weekly active users of its chatbot ChatGPT are about to exceed 1 billion. This milestone was originally plann\nExplore AI Fronti",
-        "recommend_reason_zh": "OpenAI内部数据显示，ChatGPT周活用户即将突破10亿，虽比原计划晚7个月，但上线不到四年便达成这一里程碑，同时面临Google's Gemini与Anthropic's Claude的竞争压力。",
-        "url": "https://www.aibase.com/news/29977",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "用户数大而不实，不能帮你写代码或省成本，当个谈资就好。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
-      }
-    },
-    {
-      "story_id": "story_5960402740dc",
-      "title": "Google Search 的 AI Mode 推出 5 项新功能，帮你规划线下生活 / 5 ways AI Mode in Search helps you enjoy the real world",
-      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips",
-      "primary_url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips",
-      "source": "Google AI Blog",
+      "story_id": "story_bc76c2ce852e",
+      "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
+      "primary_url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
+      "source": "GitHub Changelog",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "0580dda2085465aa909fe1fe3301e7696273096d",
-          "title": "Google Search 的 AI Mode 推出 5 项新功能，帮你规划线下生活 / 5 ways AI Mode in Search helps you enjoy the real world",
-          "title_zh": "Google Search 的 AI Mode 推出 5 项新功能，帮你规划线下生活",
-          "title_en": "5 ways AI Mode in Search helps you enjoy the real world",
-          "title_original": "5 ways AI Mode in Search helps you enjoy the real world",
+          "id": "de1bf241fb515307bdd91a342754207be883cea2",
+          "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
+          "title_zh": "Grok 4.5 已在 GitHub Copilot 上线",
+          "title_en": "Grok 4.5 is now available in GitHub Copilot",
+          "title_original": "Grok 4.5 is now available in GitHub Copilot",
           "summary": null,
-          "recommend_reason_zh": "Google AI Mode通过简化规划和购物帮用户更多离线活动，如搜索“adult tennis lessons”和“how to digital detox”增长110%，还能用Canvas创建象棋策略指南以节省时间。",
-          "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips",
-          "source": "Google AI Blog",
+          "recommend_reason_zh": "xAI的Grok 4.5已登陆GitHub Copilot，支持最高50万token上下文、文本与图像输入，在VS Code和Copilot CLI的终端编码测试中并行工具调度表现突出。",
+          "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
+          "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-07-28T13:00:00Z"
+          "published_at": "2026-07-28T19:10:45Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "Google AI Blog"
+        "GitHub Changelog"
       ],
       "items": [
         {
-          "id": "0580dda2085465aa909fe1fe3301e7696273096d",
-          "title": "Google Search 的 AI Mode 推出 5 项新功能，帮你规划线下生活 / 5 ways AI Mode in Search helps you enjoy the real world",
-          "title_zh": "Google Search 的 AI Mode 推出 5 项新功能，帮你规划线下生活",
-          "title_en": "5 ways AI Mode in Search helps you enjoy the real world",
-          "title_original": "5 ways AI Mode in Search helps you enjoy the real world",
+          "id": "de1bf241fb515307bdd91a342754207be883cea2",
+          "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
+          "title_zh": "Grok 4.5 已在 GitHub Copilot 上线",
+          "title_en": "Grok 4.5 is now available in GitHub Copilot",
+          "title_original": "Grok 4.5 is now available in GitHub Copilot",
           "summary": null,
-          "recommend_reason_zh": "Google AI Mode通过简化规划和购物帮用户更多离线活动，如搜索“adult tennis lessons”和“how to digital detox”增长110%，还能用Canvas创建象棋策略指南以节省时间。",
-          "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips",
-          "source": "Google AI Blog",
+          "recommend_reason_zh": "xAI的Grok 4.5已登陆GitHub Copilot，支持最高50万token上下文、文本与图像输入，在VS Code和Copilot CLI的终端编码测试中并行工具调度表现突出。",
+          "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
+          "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-07-28T13:00:00Z"
+          "published_at": "2026-07-28T19:10:45Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7972,
-      "importance": 0.7972,
-      "importance_score": 0.7972,
+      "score": 0.8146,
+      "importance": 0.8146,
+      "importance_score": 0.8146,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7402,
+        "ai_relevance": 0.95,
+        "recency": 0.7476,
         "story_heat": 0.0
       },
       "category": "official",
@@ -888,27 +1085,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-07-28T13:00:00Z",
-      "latest_at": "2026-07-28T13:00:00Z",
+      "earliest_at": "2026-07-28T19:10:45Z",
+      "latest_at": "2026-07-28T19:10:45Z",
       "primary_item": {
-        "id": "0580dda2085465aa909fe1fe3301e7696273096d",
-        "title": "Google Search 的 AI Mode 推出 5 项新功能，帮你规划线下生活 / 5 ways AI Mode in Search helps you enjoy the real world",
-        "title_zh": "Google Search 的 AI Mode 推出 5 项新功能，帮你规划线下生活",
-        "title_en": "5 ways AI Mode in Search helps you enjoy the real world",
-        "title_original": "5 ways AI Mode in Search helps you enjoy the real world",
+        "id": "de1bf241fb515307bdd91a342754207be883cea2",
+        "title": "Grok 4.5 已在 GitHub Copilot 上线 / Grok 4.5 is now available in GitHub Copilot",
+        "title_zh": "Grok 4.5 已在 GitHub Copilot 上线",
+        "title_en": "Grok 4.5 is now available in GitHub Copilot",
+        "title_original": "Grok 4.5 is now available in GitHub Copilot",
         "summary": null,
-        "recommend_reason_zh": "Google AI Mode通过简化规划和购物帮用户更多离线活动，如搜索“adult tennis lessons”和“how to digital detox”增长110%，还能用Canvas创建象棋策略指南以节省时间。",
-        "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips",
-        "source": "Google AI Blog",
+        "recommend_reason_zh": "xAI的Grok 4.5已登陆GitHub Copilot，支持最高50万token上下文、文本与图像输入，在VS Code和Copilot CLI的终端编码测试中并行工具调度表现突出。",
+        "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
+        "source": "GitHub Changelog",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "面向普通用户的功能更新，开发者暂时用不上，等API开放再说。",
+      "persona_score": 82,
+      "persona_review": "IDE 里直接换模型试试，如果代码补全质量更好就用它。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -956,15 +1153,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7634,
-      "importance": 0.7634,
-      "importance_score": 0.7634,
+      "score": 0.7521,
+      "importance": 0.7521,
+      "importance_score": 0.7521,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.65,
         "source_tier": 1.0,
         "ai_relevance": 1.0,
-        "recency": 0.8242,
+        "recency": 0.7614,
         "story_heat": 0.0
       },
       "category": "official",
@@ -992,7 +1189,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -1040,21 +1237,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7623,
-      "importance": 0.7623,
-      "importance_score": 0.7623,
+      "score": 0.7499,
+      "importance": 0.7499,
+      "importance_score": 0.7499,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.76,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9037,
+        "recency": 0.8348,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-07-29T02:49:20.833000Z",
       "latest_at": "2026-07-29T02:49:20.833000Z",
@@ -1076,176 +1272,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
-      }
-    },
-    {
-      "story_id": "story_f2677af66a35",
-      "title": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-      "url": "https://www.ithome.com/0/982/816.htm",
-      "primary_url": "https://www.ithome.com/0/982/816.htm",
-      "source": "IT之家（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "5a8238ba1d1119bcc903825877fef30893dff034",
-          "title": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-          "title_zh": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-          "title_en": null,
-          "title_original": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-          "summary": "OpenAI、Anthropic、谷歌和Meta等公司的1100多名AI员工签署公开信，呼吁美国政府支持国际合作，以\"有意识地把控自动化AI开发的前沿进程\"。该倡议名为\"把控前沿\"，重点关注AI未来可能自行开发和改进AI系统的\"递归式自我改进\"能力。OpenAI CEO萨姆·奥尔特曼在播客采访中表示，可能需要\"把控\"AI发展速度，让社会有时间建立防护机制。",
-          "recommend_reason_zh": "OpenAI、Anthropic等公司1100多名员工联名呼吁美国政府管控AI开发速度，OpenAI CEO奥尔特曼转变态度表示支持，强调需在加速发展与社会适应间找到平衡。",
-          "url": "https://www.ithome.com/0/982/816.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-29T00:20:32Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "IT之家（RSS）"
-      ],
-      "items": [
-        {
-          "id": "5a8238ba1d1119bcc903825877fef30893dff034",
-          "title": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-          "title_zh": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-          "title_en": null,
-          "title_original": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-          "summary": "OpenAI、Anthropic、谷歌和Meta等公司的1100多名AI员工签署公开信，呼吁美国政府支持国际合作，以\"有意识地把控自动化AI开发的前沿进程\"。该倡议名为\"把控前沿\"，重点关注AI未来可能自行开发和改进AI系统的\"递归式自我改进\"能力。OpenAI CEO萨姆·奥尔特曼在播客采访中表示，可能需要\"把控\"AI发展速度，让社会有时间建立防护机制。",
-          "recommend_reason_zh": "OpenAI、Anthropic等公司1100多名员工联名呼吁美国政府管控AI开发速度，OpenAI CEO奥尔特曼转变态度表示支持，强调需在加速发展与社会适应间找到平衡。",
-          "url": "https://www.ithome.com/0/982/816.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-29T00:20:32Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7595,
-      "importance": 0.7595,
-      "importance_score": 0.7595,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.77,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8719,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-29T00:20:32Z",
-      "latest_at": "2026-07-29T00:20:32Z",
-      "primary_item": {
-        "id": "5a8238ba1d1119bcc903825877fef30893dff034",
-        "title": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-        "title_zh": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-        "title_en": null,
-        "title_original": "1100多名AI员工联名呼吁美国政府控制AI发展速度，OpenAI CEO奥尔特曼表态支持",
-        "summary": "OpenAI、Anthropic、谷歌和Meta等公司的1100多名AI员工签署公开信，呼吁美国政府支持国际合作，以\"有意识地把控自动化AI开发的前沿进程\"。该倡议名为\"把控前沿\"，重点关注AI未来可能自行开发和改进AI系统的\"递归式自我改进\"能力。OpenAI CEO萨姆·奥尔特曼在播客采访中表示，可能需要\"把控\"AI发展速度，让社会有时间建立防护机制。",
-        "recommend_reason_zh": "OpenAI、Anthropic等公司1100多名员工联名呼吁美国政府管控AI开发速度，OpenAI CEO奥尔特曼转变态度表示支持，强调需在加速发展与社会适应间找到平衡。",
-        "url": "https://www.ithome.com/0/982/816.htm",
-        "source": "IT之家（RSS）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "呼吁信不写代码，没实际限制，开发者当行业信号看看就行。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
-      }
-    },
-    {
-      "story_id": "story_0225f52e421b",
-      "title": "npm 发布时的恶意软件扫描与双用途元数据 / npm publish-time malware scanning and dual-use metadata",
-      "url": "https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata",
-      "primary_url": "https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "65e3c61dd0a13d9f1849ee25cb505dad6bd15b82",
-          "title": "npm 发布时的恶意软件扫描与双用途元数据 / npm publish-time malware scanning and dual-use metadata",
-          "title_zh": "npm 发布时的恶意软件扫描与双用途元数据",
-          "title_en": "npm publish-time malware scanning and dual-use metadata",
-          "title_original": "npm publish-time malware scanning and dual-use metadata",
-          "summary": null,
-          "recommend_reason_zh": "npm在发布时自动扫描包，导致发布到可用延迟约5分钟（高峰可能15分钟以上），并引入contentPolicy字段和DISCLOSURE文件声明双用途内容，避免误判为恶意软件。",
-          "url": "https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T22:50:05Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "65e3c61dd0a13d9f1849ee25cb505dad6bd15b82",
-          "title": "npm 发布时的恶意软件扫描与双用途元数据 / npm publish-time malware scanning and dual-use metadata",
-          "title_zh": "npm 发布时的恶意软件扫描与双用途元数据",
-          "title_en": "npm publish-time malware scanning and dual-use metadata",
-          "title_original": "npm publish-time malware scanning and dual-use metadata",
-          "summary": null,
-          "recommend_reason_zh": "npm在发布时自动扫描包，导致发布到可用延迟约5分钟（高峰可能15分钟以上），并引入contentPolicy字段和DISCLOSURE文件声明双用途内容，避免误判为恶意软件。",
-          "url": "https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-28T22:50:05Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8176,
-      "importance": 0.8176,
-      "importance_score": 0.8176,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.8531,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-28T22:50:05Z",
-      "latest_at": "2026-07-28T22:50:05Z",
-      "primary_item": {
-        "id": "65e3c61dd0a13d9f1849ee25cb505dad6bd15b82",
-        "title": "npm 发布时的恶意软件扫描与双用途元数据 / npm publish-time malware scanning and dual-use metadata",
-        "title_zh": "npm 发布时的恶意软件扫描与双用途元数据",
-        "title_en": "npm publish-time malware scanning and dual-use metadata",
-        "title_original": "npm publish-time malware scanning and dual-use metadata",
-        "summary": null,
-        "recommend_reason_zh": "npm在发布时自动扫描包，导致发布到可用延迟约5分钟（高峰可能15分钟以上），并引入contentPolicy字段和DISCLOSURE文件声明双用途内容，避免误判为恶意软件。",
-        "url": "https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "npm 加实时恶意软件扫描，发布包更安全，今天就能用，开发者少踩供应链坑。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -1293,21 +1320,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7567,
-      "importance": 0.7567,
-      "importance_score": 0.7567,
+      "score": 0.745,
+      "importance": 0.745,
+      "importance_score": 0.745,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.77,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8564,
+        "recency": 0.7911,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-07-28T23:05:54Z",
       "latest_at": "2026-07-28T23:05:54Z",
@@ -1329,7 +1355,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -1377,21 +1403,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7537,
-      "importance": 0.7537,
-      "importance_score": 0.7537,
+      "score": 0.7424,
+      "importance": 0.7424,
+      "importance_score": 0.7424,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.78,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8228,
+        "recency": 0.7601,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-07-28T20:19:41Z",
       "latest_at": "2026-07-28T20:19:41Z",
@@ -1413,7 +1438,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -1461,21 +1486,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7513,
-      "importance": 0.7513,
-      "importance_score": 0.7513,
+      "score": 0.7402,
+      "importance": 0.7402,
+      "importance_score": 0.7402,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.78,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8096,
+        "recency": 0.7479,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-07-28T19:12:27Z",
       "latest_at": "2026-07-28T19:12:27Z",
@@ -1497,7 +1521,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -1545,21 +1569,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7511,
-      "importance": 0.7511,
-      "importance_score": 0.7511,
+      "score": 0.7396,
+      "importance": 0.7396,
+      "importance_score": 0.7396,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.76,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8419,
+        "recency": 0.7777,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-07-28T21:55:12Z",
       "latest_at": "2026-07-28T21:55:12Z",
@@ -1581,91 +1604,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
-      }
-    },
-    {
-      "story_id": "story_a70f7bd23e2d",
-      "title": "Perplexity 推出 Windows 版个人电脑智能体 / Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-      "url": "https://x.com/perplexity_ai/status/2082103880155046176",
-      "primary_url": "https://x.com/perplexity_ai/status/2082103880155046176",
-      "source": "X：Perplexity (@perplexity_ai)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "0fee539702b9dd9369f39eea0e95d5bf555bbc62",
-          "title": "Perplexity 推出 Windows 版个人电脑智能体 / Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-          "title_zh": "Perplexity 推出 Windows 版个人电脑智能体",
-          "title_en": "Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-          "title_original": "Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-          "summary": "Personal Computer 现已在 Perplexity Windows 应用中可用。\n\nPersonal Computer 是面向你工作的本地智能体工具。它协调跨本地文件、已连接应用和网络的智能体。\n\n研究、编码、浏览和构建，全部在一个统一系统中完成。",
-          "recommend_reason_zh": "Perplexity app for Windows上线了Personal Computer功能，作为本地代理工具可协调本地文件、已连接应用及网络，支持研究、编程、浏览与构建于统一系统中。",
-          "url": "https://x.com/perplexity_ai/status/2082103880155046176",
-          "source": "X：Perplexity (@perplexity_ai)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-28T14:00:23Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：Perplexity (@perplexity_ai)"
-      ],
-      "items": [
-        {
-          "id": "0fee539702b9dd9369f39eea0e95d5bf555bbc62",
-          "title": "Perplexity 推出 Windows 版个人电脑智能体 / Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-          "title_zh": "Perplexity 推出 Windows 版个人电脑智能体",
-          "title_en": "Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-          "title_original": "Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-          "summary": "Personal Computer 现已在 Perplexity Windows 应用中可用。\n\nPersonal Computer 是面向你工作的本地智能体工具。它协调跨本地文件、已连接应用和网络的智能体。\n\n研究、编码、浏览和构建，全部在一个统一系统中完成。",
-          "recommend_reason_zh": "Perplexity app for Windows上线了Personal Computer功能，作为本地代理工具可协调本地文件、已连接应用及网络，支持研究、编程、浏览与构建于统一系统中。",
-          "url": "https://x.com/perplexity_ai/status/2082103880155046176",
-          "source": "X：Perplexity (@perplexity_ai)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-28T14:00:23Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7502,
-      "importance": 0.7502,
-      "importance_score": 0.7502,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.65,
-        "source_tier": 1.0,
-        "ai_relevance": 1.0,
-        "recency": 0.751,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-28T14:00:23Z",
-      "latest_at": "2026-07-28T14:00:23Z",
-      "primary_item": {
-        "id": "0fee539702b9dd9369f39eea0e95d5bf555bbc62",
-        "title": "Perplexity 推出 Windows 版个人电脑智能体 / Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-        "title_zh": "Perplexity 推出 Windows 版个人电脑智能体",
-        "title_en": "Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-        "title_original": "Personal Computer is now available in the Perplexity app for Windows. Personal Computer is the loca…",
-        "summary": "Personal Computer 现已在 Perplexity Windows 应用中可用。\n\nPersonal Computer 是面向你工作的本地智能体工具。它协调跨本地文件、已连接应用和网络的智能体。\n\n研究、编码、浏览和构建，全部在一个统一系统中完成。",
-        "recommend_reason_zh": "Perplexity app for Windows上线了Personal Computer功能，作为本地代理工具可协调本地文件、已连接应用及网络，支持研究、编程、浏览与构建于统一系统中。",
-        "url": "https://x.com/perplexity_ai/status/2082103880155046176",
-        "source": "X：Perplexity (@perplexity_ai)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "Windows 本地智能体上线，但细节未知，等上手体验或 API 开放再决定是否投入。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     },
     {
@@ -1713,15 +1652,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7416,
-      "importance": 0.7416,
-      "importance_score": 0.7416,
+      "score": 0.7303,
+      "importance": 0.7303,
+      "importance_score": 0.7303,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.74,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8223,
+        "recency": 0.7596,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1748,7 +1687,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-29T09:57:22.948984Z"
+        "scored_at": "2026-07-29T15:27:39.331662Z"
+      }
+    },
+    {
+      "story_id": "story_70485a715d6d",
+      "title": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+      "url": "https://www.aibase.com/news/29984",
+      "primary_url": "https://www.aibase.com/news/29984",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "3f7f20d7e3dfdc8cfb533d67f02b98a4149836d2",
+          "title": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+          "title_zh": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+          "title_en": null,
+          "title_original": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+          "summary": null,
+          "recommend_reason_zh": "Moonshot AI's Kimi完成超35亿美元F轮融资，投后估值350亿美元，因认购超目标三倍提前关闭，并提前启动G轮，投前估值升至500亿美元。",
+          "url": "https://www.aibase.com/news/29984",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-29T12:21:24.733977Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "3f7f20d7e3dfdc8cfb533d67f02b98a4149836d2",
+          "title": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+          "title_zh": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+          "title_en": null,
+          "title_original": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+          "summary": null,
+          "recommend_reason_zh": "Moonshot AI's Kimi完成超35亿美元F轮融资，投后估值350亿美元，因认购超目标三倍提前关闭，并提前启动G轮，投前估值升至500亿美元。",
+          "url": "https://www.aibase.com/news/29984",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-29T12:21:24.733977Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.76,
+      "importance": 0.76,
+      "importance_score": 0.76,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.958,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-29T12:21:24.733977Z",
+      "latest_at": "2026-07-29T12:21:24.733977Z",
+      "primary_item": {
+        "id": "3f7f20d7e3dfdc8cfb533d67f02b98a4149836d2",
+        "title": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+        "title_zh": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+        "title_en": null,
+        "title_original": "月之暗面Kimi完成F轮超35亿美元融资 投后估值350亿美元",
+        "summary": null,
+        "recommend_reason_zh": "Moonshot AI's Kimi完成超35亿美元F轮融资，投后估值350亿美元，因认购超目标三倍提前关闭，并提前启动G轮，投前估值升至500亿美元。",
+        "url": "https://www.aibase.com/news/29984",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 20,
+      "persona_review": "融资轮次不影响写代码，等有产品变化再说。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-29T15:27:39.331662Z"
       }
     }
   ]
