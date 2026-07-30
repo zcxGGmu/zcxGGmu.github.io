@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T15:27:53.547949Z",
+  "generated_at": "2026-07-30T03:38:37.990408Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_c1632a302b6e",
-      "title": "Gemini API Managed Agents 默认升级为 3.6 Flash，新增环境钩子与免费套餐 / Gemini API Managed Agents: 3.6 Flash, hooks, and more",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks",
+      "story_id": "story_407f953ae8e0",
+      "title": "Copilot代码审查：Agent技能和MCP现已正式推出 / Copilot code review: Agent skills and MCP now generally available",
+      "url": "https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "默认升级 3.6 Flash 不错，免费套餐配额敢不敢晒出来？"
+          "score": 65,
+          "review": "Agent技能和MCP都是之前预告过的，正式版就是补个票。"
         },
         "paper-police": {
-          "score": 35,
-          "review": "仅官方博客宣称，无论文无代码无第三方评测，等独立验证。"
+          "score": 28,
+          "review": "官方公告但无论文代码和benchmark，只有功能描述无法独立验证。"
         },
         "pragmatic": {
           "score": 92,
-          "review": "免费套餐+新模型，今天就能测试，降低开发成本。"
+          "review": "GitHub Copilot代码审查的Agent技能和MCP正式上线，今天就能集成到工作流中提效。"
         }
       }
     },
     {
-      "story_id": "story_877f0f256fb6",
-      "title": "OpenAI 推出两款新转录模型 API / We're introducing two new transcription models in the API： • GPT-Live-Transcribe： built for low-lat…",
-      "url": "https://x.com/OpenAIDevs/status/2082201169443905798",
+      "story_id": "story_54430aee701b",
+      "title": "启用两项 API 设置使 GPT-5.6 在 ARC-AGI-3 基准测试得分提升三倍 / How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
+      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "低延迟是多大？别又是PPT上的3ms，实际跑起来卡成狗。"
+          "score": 45,
+          "review": "三倍提升？先报基数是0.1还是100吧。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "只有官方推文，无论文代码和独立评测，等公开benchmark再认。"
+          "score": 30,
+          "review": "官方博客声称提升三倍，但无论文无开源无第三方复现，等待验证。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "新转录 API 今天可用，低延迟版本适合实时场景，直接集成省事。"
+          "review": "两个新设置直接拉高推理得分，需高准确率的任务立即调整API参数。"
         }
       }
     },
     {
-      "story_id": "story_3a40efc29328",
-      "title": "OpenAI 发布 Codex 安全 CLI 与 SDK / More opensource goodness. We have just released a CLI and TypeScript SDK for finding， validating， an…",
-      "url": "https://x.com/thsottiaux/status/2082241164850364555",
+      "story_id": "story_8e9a39b56823",
+      "title": "Copilot Business和Enterprise默认启用模型 / Default model enablement for Copilot Business and Enterprise",
+      "url": "https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "开源安全工具是好事，建议先给自己模型跑一遍。"
+          "score": 55,
+          "review": "默认勾选也算新闻？用户想关还得再点两下。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "缺论文、代码仓库和benchmark，仅推文自述不可信。"
+          "score": 30,
+          "review": "只有官方公告，无论文无代码无第三方评测。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "直接能用的安全工具，找漏洞和验证，今天就能集成到流水线。"
+          "review": "默认模型改了，检查你的 Copilot 设置，确保不影响已有项目习惯。"
         }
       }
     }

@@ -4146,6 +4146,204 @@
       "review": "缺论文、代码仓库和benchmark，仅推文自述不可信。",
       "title_hash": "2c353006",
       "scored_at": "2026-07-29T15:27:53.547898Z"
+    },
+    "story_8e9a39b56823|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "默认模型改了，检查你的 Copilot 设置，确保不影响已有项目习惯。",
+      "title_hash": "5b52b420",
+      "scored_at": "2026-07-29T17:48:00.125405Z"
+    },
+    "story_70e050c45970|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "面向学术群体的应用更新，通用开发者暂时用不上，观望即可。",
+      "title_hash": "7cd2171d",
+      "scored_at": "2026-07-29T17:48:04.564048Z"
+    },
+    "story_a9f249526c20|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "封闭产品更新，非通用工具，无法直接用于你的项目。",
+      "title_hash": "8ddb6dfc",
+      "scored_at": "2026-07-29T19:52:42.826760Z"
+    },
+    "story_c13bb8dc3de1|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "第三方登录新选项，减少开发认证工作，今天就能接入试水。",
+      "title_hash": "983bdbc7",
+      "scored_at": "2026-07-29T17:48:10.565869Z"
+    },
+    "story_0b6f3b872327|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "直接可用，Agent 检测场景今天就能拉下来用。",
+      "title_hash": "41618452",
+      "scored_at": "2026-07-29T17:48:13.164676Z"
+    },
+    "story_3a391e5248cc|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "名人创业产品，没开源没API，等上线实测再说。",
+      "title_hash": "d95b7c03",
+      "scored_at": "2026-07-29T17:48:16.245896Z"
+    },
+    "story_b76147d8f088|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "直接 clone 仓库，M 芯片 Mac 上跑 26B 模型，2GB 内存就能用。",
+      "title_hash": "33a31f1c",
+      "scored_at": "2026-07-29T17:48:18.678035Z"
+    },
+    "story_d99dae36e1ee|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "概念大于实用，没看到可用的工具或API，等细节出来再评价。",
+      "title_hash": "2039436f",
+      "scored_at": "2026-07-29T17:48:23.448305Z"
+    },
+    "story_bfae1ca34e04|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "长期成本预警，但今天不影响选型，等真涨价再调整。",
+      "title_hash": "7dceccbe",
+      "scored_at": "2026-07-29T17:48:26.254010Z"
+    },
+    "story_597bf2d3fcc7|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "学术研究者快去申请，免费用前沿模型做实验，省下大笔API费用。",
+      "title_hash": "32dbb0b9",
+      "scored_at": "2026-07-29T17:48:29.470672Z"
+    },
+    "story_8e9a39b56823|cynic|f4237a62": {
+      "score": 55,
+      "review": "默认勾选也算新闻？用户想关还得再点两下。",
+      "title_hash": "5b52b420",
+      "scored_at": "2026-07-29T17:48:31.464427Z"
+    },
+    "story_8e9a39b56823|paper-police|966065bf": {
+      "score": 30,
+      "review": "只有官方公告，无论文无代码无第三方评测。",
+      "title_hash": "5b52b420",
+      "scored_at": "2026-07-29T17:48:34.159375Z"
+    },
+    "story_0b6f3b872327|cynic|f4237a62": {
+      "score": 78,
+      "review": "开源检测层？先看看能不能拦住自家那些花哨的agent。",
+      "title_hash": "41618452",
+      "scored_at": "2026-07-29T17:48:41.835525Z"
+    },
+    "story_0b6f3b872327|paper-police|966065bf": {
+      "score": 68,
+      "review": "开源声明已发，等代码仓库和 benchmark 验证，暂缺独立评测。",
+      "title_hash": "41618452",
+      "scored_at": "2026-07-29T17:48:44.702201Z"
+    },
+    "story_b76147d8f088|cynic|f4237a62": {
+      "score": 70,
+      "review": "2GB 跑 26B 模型？先告诉我这得量化到几位，每秒吐几个字。",
+      "title_hash": "33a31f1c",
+      "scored_at": "2026-07-29T17:48:48.250287Z"
+    },
+    "story_b76147d8f088|paper-police|966065bf": {
+      "score": 70,
+      "review": "开源代码存在，但缺论文和benchmark，能否2GB跑Gemma4 26B待验证。",
+      "title_hash": "33a31f1c",
+      "scored_at": "2026-07-29T17:48:52.921089Z"
+    },
+    "story_6332fb1f933f|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "Blackwell 低精度 RL 方案，硬件还没普及，等能跑再试。",
+      "title_hash": "c82f9a02",
+      "scored_at": "2026-07-29T19:52:46.602499Z"
+    },
+    "story_329997b20bc2|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "实验室里的行为实验，离实际应用还远，当八卦看看就行。",
+      "title_hash": "26b2645d",
+      "scored_at": "2026-07-29T19:52:48.551431Z"
+    },
+    "story_aa4a42f08412|pragmatic|0a5c5b24": {
+      "score": 93,
+      "review": "新模型已开放，Sol、Terra、Luna三款可选，立即试用看性价比和特色能力。",
+      "title_hash": "55666d86",
+      "scored_at": "2026-07-29T21:20:58.831450Z"
+    },
+    "story_714eae7f3642|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "Replit 新增设计功能，全栈开发者可快速出 UI，但需实测可用性。",
+      "title_hash": "42a00fff",
+      "scored_at": "2026-07-29T21:21:03.828663Z"
+    },
+    "story_aa4a42f08412|cynic|f4237a62": {
+      "score": 42,
+      "review": "三个名字倒挺科幻，换个壳就说融合前沿，先跑个第三方基准再说？",
+      "title_hash": "55666d86",
+      "scored_at": "2026-07-29T21:21:06.866326Z"
+    },
+    "story_aa4a42f08412|paper-police|966065bf": {
+      "score": 25,
+      "review": "官方博客宣称性能，无论文无代码，无法独立验证。",
+      "title_hash": "55666d86",
+      "scored_at": "2026-07-29T21:21:10.453326Z"
+    },
+    "story_407f953ae8e0|pragmatic|0a5c5b24": {
+      "score": 92,
+      "review": "GitHub Copilot代码审查的Agent技能和MCP正式上线，今天就能集成到工作流中提效。",
+      "title_hash": "02914ae1",
+      "scored_at": "2026-07-29T22:20:58.698805Z"
+    },
+    "story_407f953ae8e0|cynic|f4237a62": {
+      "score": 65,
+      "review": "Agent技能和MCP都是之前预告过的，正式版就是补个票。",
+      "title_hash": "02914ae1",
+      "scored_at": "2026-07-29T22:21:00.678176Z"
+    },
+    "story_407f953ae8e0|paper-police|966065bf": {
+      "score": 28,
+      "review": "官方公告但无论文代码和benchmark，只有功能描述无法独立验证。",
+      "title_hash": "02914ae1",
+      "scored_at": "2026-07-29T22:21:04.370727Z"
+    },
+    "story_54430aee701b|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "两个新设置直接拉高推理得分，需高准确率的任务立即调整API参数。",
+      "title_hash": "4ef7396e",
+      "scored_at": "2026-07-30T00:20:44.734345Z"
+    },
+    "story_a314f7fdcee9|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "安全威胁案例，提醒排查自有空间权限，但无具体工具可抄。",
+      "title_hash": "73ef3eaa",
+      "scored_at": "2026-07-30T00:20:47.279574Z"
+    },
+    "story_54430aee701b|cynic|f4237a62": {
+      "score": 45,
+      "review": "三倍提升？先报基数是0.1还是100吧。",
+      "title_hash": "4ef7396e",
+      "scored_at": "2026-07-30T00:20:50.886849Z"
+    },
+    "story_54430aee701b|paper-police|966065bf": {
+      "score": 30,
+      "review": "官方博客声称提升三倍，但无论文无开源无第三方复现，等待验证。",
+      "title_hash": "4ef7396e",
+      "scored_at": "2026-07-30T00:20:53.500236Z"
+    },
+    "story_daff13293afd|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "学术突破，但无开箱即用的工具，等落地再看。",
+      "title_hash": "b8f97a37",
+      "scored_at": "2026-07-30T03:38:30.047282Z"
+    },
+    "story_ddb7cb80fe3f|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "安全研究案例，无工具或API变化，普通开发者暂时不用管。",
+      "title_hash": "8043dc66",
+      "scored_at": "2026-07-30T03:38:32.595969Z"
+    },
+    "story_e76306f88f86|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "大佬画饼，对写代码没帮助，不如看篇技术博客。",
+      "title_hash": "b3f32e57",
+      "scored_at": "2026-07-30T03:38:34.548392Z"
+    },
+    "story_6a3a550a61b4|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "承认乱表示有坑，年底才改，现用不如换。",
+      "title_hash": "f3c91454",
+      "scored_at": "2026-07-30T03:38:37.990284Z"
     }
   }
 }
