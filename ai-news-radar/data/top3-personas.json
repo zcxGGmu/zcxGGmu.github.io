@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T06:47:00.539338Z",
+  "generated_at": "2026-07-30T09:50:11.199666Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,10 +17,30 @@
   ],
   "items": [
     {
+      "story_id": "story_9845586b3e05",
+      "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
+      "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 48,
+          "review": "92%削减靠的是只喂目录吧？投喂整本《战争与和平》试试。"
+        },
+        "paper-police": {
+          "score": 28,
+          "review": "开源无链接，宣称数字但无代码无评测，无法验证。"
+        },
+        "pragmatic": {
+          "score": 95,
+          "review": "开源即用，处理PDF省大钱，今天就能部署。"
+        }
+      }
+    },
+    {
       "story_id": "story_407f953ae8e0",
       "title": "Copilot代码审查：Agent技能和MCP现已正式推出 / Copilot code review: Agent skills and MCP now generally available",
       "url": "https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available",
-      "rank": 1,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 65,
@@ -40,7 +60,7 @@
       "story_id": "story_54430aee701b",
       "title": "启用两项 API 设置使 GPT-5.6 在 ARC-AGI-3 基准测试得分提升三倍 / How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
       "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 45,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 90,
           "review": "两个新设置直接拉高推理得分，需高准确率的任务立即调整API参数。"
-        }
-      }
-    },
-    {
-      "story_id": "story_8e9a39b56823",
-      "title": "Copilot Business和Enterprise默认启用模型 / Default model enablement for Copilot Business and Enterprise",
-      "url": "https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 55,
-          "review": "默认勾选也算新闻？用户想关还得再点两下。"
-        },
-        "paper-police": {
-          "score": 30,
-          "review": "只有官方公告，无论文无代码无第三方评测。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "默认模型改了，检查你的 Copilot 设置，确保不影响已有项目习惯。"
         }
       }
     }
