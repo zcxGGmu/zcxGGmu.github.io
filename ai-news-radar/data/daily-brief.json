@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T03:54:07.834259Z",
+  "generated_at": "2026-07-31T09:59:50.996855Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -40,7 +40,7 @@
           "published_at": "2026-07-30T18:01:26.158000Z"
         },
         {
-          "id": "af8f1b1d31789a420e865923da8400555fad0207",
+          "id": "b74b369c1be9830ab665025163066c81a864b3c2",
           "title": "GPT-5.6 如何推进性价比前沿 / Advancing the price-performance frontier with GPT‑5.6",
           "title_zh": "GPT-5.6 如何推进性价比前沿",
           "title_en": "Advancing the price-performance frontier with GPT‑5.6",
@@ -48,15 +48,15 @@
           "summary": null,
           "recommend_reason_zh": "OpenAI将GPT-5.6 Luna降价80%、Terra降价20%，并推出Fast mode使Sol速度提升2.5倍，帮助企业以更低成本部署大规模AI工作流。",
           "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
           "published_at": "2026-07-30T17:15:51Z"
         }
       ],
       "source_count": 3,
       "source_names": [
-        "Hacker News",
+        "Hacker News (黑客新闻)",
         "OpenAI News",
         "openai.com"
       ],
@@ -90,7 +90,7 @@
           "published_at": "2026-07-30T18:01:26.158000Z"
         },
         {
-          "id": "af8f1b1d31789a420e865923da8400555fad0207",
+          "id": "b74b369c1be9830ab665025163066c81a864b3c2",
           "title": "GPT-5.6 如何推进性价比前沿 / Advancing the price-performance frontier with GPT‑5.6",
           "title_zh": "GPT-5.6 如何推进性价比前沿",
           "title_en": "Advancing the price-performance frontier with GPT‑5.6",
@@ -98,23 +98,23 @@
           "summary": null,
           "recommend_reason_zh": "OpenAI将GPT-5.6 Luna降价80%、Terra降价20%，并推出Fast mode使Sol速度提升2.5倍，帮助企业以更低成本部署大规模AI工作流。",
           "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
           "published_at": "2026-07-30T17:15:51Z"
         }
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.869,
-      "importance": 0.869,
-      "importance_score": 0.869,
+      "score": 0.8573,
+      "importance": 0.8573,
+      "importance_score": 0.8573,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.7722,
+        "recency": 0.7071,
         "story_heat": 0.5
       },
       "category": "official",
@@ -144,7 +144,179 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
+      }
+    },
+    {
+      "story_id": "story_c8fe6d7c36db",
+      "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+      "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+      "primary_url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "30991f97bf0f8d90c3e956f81625ef377ba92bda",
+          "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "title_en": null,
+          "title_original": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "summary": "一项受控实验表明，用深度审查的中国模型 DeepSeek V4 Flash 的输出训练美国模型 GPT-OSS-120B，可显著提升其金融推理能力，但审查行为并未迁移。",
+          "recommend_reason_zh": "DeepSeek V4 Flash在中国敏感问题上审查评分高45.45分，但将其蒸馏进GPT-OSS-120B后审查未转移，财务推理达83.61%，超Kimi K3，成本低160倍。",
+          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T04:57:18.494000Z"
+        },
+        {
+          "id": "d16a12a7d756f24b6b9333a4d75260566b0628d0",
+          "title": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
+          "title_zh": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
+          "title_en": null,
+          "title_original": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+          "source": "www.ctgt.ai",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-07-31T04:57:18.494000Z"
+        },
+        {
+          "id": "55fb76fec5df85d31a652b9de8edd8996a0d724f",
+          "title": "Show HN: 将DeepSeek蒸馏到GPT-OSS不会转移审查机制。试试看 / Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_zh": "Show HN: 将DeepSeek蒸馏到GPT-OSS不会转移审查机制。试试看",
+          "title_en": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_original": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49113599",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-07-30T20:35:32.743000Z"
+        },
+        {
+          "id": "78f35006a1ff22846b633f893aa370e44f4f71d4",
+          "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制 / Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "title_en": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_original": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "summary": null,
+          "recommend_reason_zh": "DeepSeek V4 Flash在涉华敏感问题上比对照组多出45分审查，但将其蒸馏到GPT-OSS-120B后，审查行为并未转移，金融推理得分83.61%，成本仅为Kimi K3的1/160。",
+          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-07-30T18:13:06Z"
+        }
+      ],
+      "source_count": 4,
+      "source_names": [
+        "Hacker News (黑客新闻)",
+        "Hacker News 热门（buzzing.cc 中文翻译）",
+        "hackernews",
+        "www.ctgt.ai"
+      ],
+      "items": [
+        {
+          "id": "30991f97bf0f8d90c3e956f81625ef377ba92bda",
+          "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "title_en": null,
+          "title_original": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "summary": "一项受控实验表明，用深度审查的中国模型 DeepSeek V4 Flash 的输出训练美国模型 GPT-OSS-120B，可显著提升其金融推理能力，但审查行为并未迁移。",
+          "recommend_reason_zh": "DeepSeek V4 Flash在中国敏感问题上审查评分高45.45分，但将其蒸馏进GPT-OSS-120B后审查未转移，财务推理达83.61%，超Kimi K3，成本低160倍。",
+          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T04:57:18.494000Z"
+        },
+        {
+          "id": "d16a12a7d756f24b6b9333a4d75260566b0628d0",
+          "title": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
+          "title_zh": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
+          "title_en": null,
+          "title_original": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+          "source": "www.ctgt.ai",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-07-31T04:57:18.494000Z"
+        },
+        {
+          "id": "55fb76fec5df85d31a652b9de8edd8996a0d724f",
+          "title": "Show HN: 将DeepSeek蒸馏到GPT-OSS不会转移审查机制。试试看 / Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_zh": "Show HN: 将DeepSeek蒸馏到GPT-OSS不会转移审查机制。试试看",
+          "title_en": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_original": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49113599",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-07-30T20:35:32.743000Z"
+        },
+        {
+          "id": "78f35006a1ff22846b633f893aa370e44f4f71d4",
+          "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制 / Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+          "title_en": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "title_original": "Show HN: Distilling DeepSeek into GPT-OSS doesn't transfer censorship. Try it",
+          "summary": null,
+          "recommend_reason_zh": "DeepSeek V4 Flash在涉华敏感问题上比对照组多出45分审查，但将其蒸馏到GPT-OSS-120B后，审查行为并未转移，金融推理得分83.61%，成本仅为Kimi K3的1/160。",
+          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-07-30T18:13:06Z"
+        }
+      ],
+      "item_count": 4,
+      "duplicate_count": 4,
+      "score": 0.848,
+      "importance": 0.848,
+      "importance_score": 0.848,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.78,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9298,
+        "story_heat": 0.75
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-30T18:13:06Z",
+      "latest_at": "2026-07-31T04:57:18.494000Z",
+      "primary_item": {
+        "id": "30991f97bf0f8d90c3e956f81625ef377ba92bda",
+        "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+        "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+        "title_en": null,
+        "title_original": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
+        "summary": "一项受控实验表明，用深度审查的中国模型 DeepSeek V4 Flash 的输出训练美国模型 GPT-OSS-120B，可显著提升其金融推理能力，但审查行为并未迁移。",
+        "recommend_reason_zh": "DeepSeek V4 Flash在中国敏感问题上审查评分高45.45分，但将其蒸馏进GPT-OSS-120B后审查未转移，财务推理达83.61%，超Kimi K3，成本低160倍。",
+        "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
+        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "结论若属实，私有化部署DeepSeek可少一层审查顾虑。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -221,15 +393,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.8584,
-      "importance": 0.8584,
-      "importance_score": 0.8584,
+      "score": 0.8458,
+      "importance": 0.8458,
+      "importance_score": 0.8458,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.97,
-        "recency": 0.8302,
+        "recency": 0.7603,
         "story_heat": 0.25
       },
       "category": "official",
@@ -259,7 +431,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -307,15 +479,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8357,
-      "importance": 0.8357,
-      "importance_score": 0.8357,
+      "score": 0.8231,
+      "importance": 0.8231,
+      "importance_score": 0.8231,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.98,
-        "recency": 0.8318,
+        "recency": 0.7618,
         "story_heat": 0.0
       },
       "category": "official",
@@ -344,7 +516,92 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
+      }
+    },
+    {
+      "story_id": "story_077a06a5fc28",
+      "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+      "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+      "primary_url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
+          "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+          "title_zh": "欧洲推动负责任的AI",
+          "title_en": "Advancing responsible AI across Europe",
+          "title_original": "Advancing responsible AI across Europe",
+          "summary": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.\nOpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.\nOpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as th",
+          "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
+          "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-31T15:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "OpenAI News"
+      ],
+      "items": [
+        {
+          "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
+          "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+          "title_zh": "欧洲推动负责任的AI",
+          "title_en": "Advancing responsible AI across Europe",
+          "title_original": "Advancing responsible AI across Europe",
+          "summary": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.\nOpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.\nOpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as th",
+          "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
+          "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-31T15:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.852,
+      "importance": 0.852,
+      "importance_score": 0.852,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.91,
+        "recency": 1.0,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-31T09:59:50.996855Z",
+      "latest_at": "2026-07-31T09:59:50.996855Z",
+      "primary_item": {
+        "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
+        "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+        "title_zh": "欧洲推动负责任的AI",
+        "title_en": "Advancing responsible AI across Europe",
+        "title_original": "Advancing responsible AI across Europe",
+        "summary": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.\nOpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.\nOpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as th",
+        "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
+        "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 30,
+      "persona_review": "政策表态不写代码，开发者等具体工具和接口变化再动。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -392,15 +649,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8269,
-      "importance": 0.8269,
-      "importance_score": 0.8269,
+      "score": 0.8139,
+      "importance": 0.8139,
+      "importance_score": 0.8139,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8606,
+        "recency": 0.7881,
         "story_heat": 0.0
       },
       "category": "official",
@@ -429,7 +686,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -477,15 +734,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8228,
-      "importance": 0.8228,
-      "importance_score": 0.8228,
+      "score": 0.8095,
+      "importance": 0.8095,
+      "importance_score": 0.8095,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8824,
+        "recency": 0.8081,
         "story_heat": 0.0
       },
       "category": "official",
@@ -514,7 +771,92 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
+      }
+    },
+    {
+      "story_id": "story_d83536587724",
+      "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
+      "url": "https://openai.com/index/unive",
+      "primary_url": "https://openai.com/index/unive",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "4dabd3013738d25515192e1f33862f429d47f0c4",
+          "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
+          "title_zh": "Univé构建AI就绪的员工队伍",
+          "title_en": "Univé builds an AI-ready workforce",
+          "title_original": "Univé builds an AI-ready workforce",
+          "summary": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.\nSee how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.\nSee how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform wo",
+          "recommend_reason_zh": "Univé借助ChatGPT Enterprise实现97%许可激活、85%周活跃，员工创建约1500个自定义GPT，将宠物保险理赔处理从小时缩短至分钟，展现全员AI转型的落地路径。",
+          "url": "https://openai.com/index/unive",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-31T07:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "OpenAI News"
+      ],
+      "items": [
+        {
+          "id": "4dabd3013738d25515192e1f33862f429d47f0c4",
+          "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
+          "title_zh": "Univé构建AI就绪的员工队伍",
+          "title_en": "Univé builds an AI-ready workforce",
+          "title_original": "Univé builds an AI-ready workforce",
+          "summary": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.\nSee how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.\nSee how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform wo",
+          "recommend_reason_zh": "Univé借助ChatGPT Enterprise实现97%许可激活、85%周活跃，员工创建约1500个自定义GPT，将宠物保险理赔处理从小时缩短至分钟，展现全员AI转型的落地路径。",
+          "url": "https://openai.com/index/unive",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-07-31T07:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8444,
+      "importance": 0.8444,
+      "importance_score": 0.8444,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.91,
+        "recency": 0.9576,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-31T07:00:00Z",
+      "latest_at": "2026-07-31T07:00:00Z",
+      "primary_item": {
+        "id": "4dabd3013738d25515192e1f33862f429d47f0c4",
+        "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
+        "title_zh": "Univé构建AI就绪的员工队伍",
+        "title_en": "Univé builds an AI-ready workforce",
+        "title_original": "Univé builds an AI-ready workforce",
+        "summary": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.\nSee how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.\nSee how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform wo",
+        "recommend_reason_zh": "Univé借助ChatGPT Enterprise实现97%许可激活、85%周活跃，员工创建约1500个自定义GPT，将宠物保险理赔处理从小时缩短至分钟，展现全员AI转型的落地路径。",
+        "url": "https://openai.com/index/unive",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "企业培训案例，不涉及新API或工具，开发者可跳过。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -562,15 +904,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8215,
-      "importance": 0.8215,
-      "importance_score": 0.8215,
+      "score": 0.8089,
+      "importance": 0.8089,
+      "importance_score": 0.8089,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8304,
+        "recency": 0.7604,
         "story_heat": 0.0
       },
       "category": "official",
@@ -599,7 +941,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
+      }
+    },
+    {
+      "story_id": "story_1719034ca604",
+      "title": "DeepSeek V4 Flash 0731 发布，智能指数跃升 10 分 / DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+      "url": "https://x.com/ArtificialAnlys/status/2083123180869496865",
+      "primary_url": "https://x.com/ArtificialAnlys/status/2083123180869496865",
+      "source": "X：Artificial Analysis (@ArtificialAnlys)",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "c9ea765a549630b1225f52ace49b6d1c6619d979",
+          "title": "DeepSeek V4 Flash 0731 发布，智能指数跃升 10 分 / DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+          "title_zh": "DeepSeek V4 Flash 0731 发布，智能指数跃升 10 分",
+          "title_en": "DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+          "title_original": "DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+          "summary": "DeepSeek V4 Flash 0731 在 Artificial Analysis 智能指数上得 50 分，较 4 月版提升 10 分，领先 V4 Pro 6 分，并进入智能与成本帕累托前沿。",
+          "recommend_reason_zh": "DeepSeek V4 Flash 0731在Artificial Analysis Intelligence Index得分50，较4月版跃升10分、领先V4 Pro达6分，且架构与定价保持不变，值得关注。",
+          "url": "https://x.com/ArtificialAnlys/status/2083123180869496865",
+          "source": "X：Artificial Analysis (@ArtificialAnlys)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T09:30:43Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "X：Artificial Analysis (@ArtificialAnlys)"
+      ],
+      "items": [
+        {
+          "id": "c9ea765a549630b1225f52ace49b6d1c6619d979",
+          "title": "DeepSeek V4 Flash 0731 发布，智能指数跃升 10 分 / DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+          "title_zh": "DeepSeek V4 Flash 0731 发布，智能指数跃升 10 分",
+          "title_en": "DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+          "title_original": "DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+          "summary": "DeepSeek V4 Flash 0731 在 Artificial Analysis 智能指数上得 50 分，较 4 月版提升 10 分，领先 V4 Pro 6 分，并进入智能与成本帕累托前沿。",
+          "recommend_reason_zh": "DeepSeek V4 Flash 0731在Artificial Analysis Intelligence Index得分50，较4月版跃升10分、领先V4 Pro达6分，且架构与定价保持不变，值得关注。",
+          "url": "https://x.com/ArtificialAnlys/status/2083123180869496865",
+          "source": "X：Artificial Analysis (@ArtificialAnlys)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T09:30:43Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7783,
+      "importance": 0.7783,
+      "importance_score": 0.7783,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.76,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.993,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-31T09:30:43Z",
+      "latest_at": "2026-07-31T09:30:43Z",
+      "primary_item": {
+        "id": "c9ea765a549630b1225f52ace49b6d1c6619d979",
+        "title": "DeepSeek V4 Flash 0731 发布，智能指数跃升 10 分 / DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+        "title_zh": "DeepSeek V4 Flash 0731 发布，智能指数跃升 10 分",
+        "title_en": "DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+        "title_original": "DeepSeek V4 Flash 0731 scores 50 on the Artificial Analysis Intelligence Index， a 10-point jump over…",
+        "summary": "DeepSeek V4 Flash 0731 在 Artificial Analysis 智能指数上得 50 分，较 4 月版提升 10 分，领先 V4 Pro 6 分，并进入智能与成本帕累托前沿。",
+        "recommend_reason_zh": "DeepSeek V4 Flash 0731在Artificial Analysis Intelligence Index得分50，较4月版跃升10分、领先V4 Pro达6分，且架构与定价保持不变，值得关注。",
+        "url": "https://x.com/ArtificialAnlys/status/2083123180869496865",
+        "source": "X：Artificial Analysis (@ArtificialAnlys)",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 75,
+      "persona_review": "新模型指数涨10分，API若已开放，拿现有任务跑一测就知道值不值。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -647,15 +1073,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7825,
-      "importance": 0.7825,
-      "importance_score": 0.7825,
+      "score": 0.7699,
+      "importance": 0.7699,
+      "importance_score": 0.7699,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.71,
         "source_tier": 1.0,
         "ai_relevance": 1.0,
-        "recency": 0.8304,
+        "recency": 0.7604,
         "story_heat": 0.0
       },
       "category": "official",
@@ -683,7 +1109,175 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
+      }
+    },
+    {
+      "story_id": "story_5695031e97d0",
+      "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+      "url": "https://www.aibase.com/news/30047",
+      "primary_url": "https://www.aibase.com/news/30047",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "865ead062f6e78ac5bc67d5f8972eadab1335405",
+          "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+          "title_zh": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+          "title_en": null,
+          "title_original": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+          "summary": "DeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nDeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nDeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nExplore AI Fronti",
+          "recommend_reason_zh": "DeepSeek V4官方版疑定档8月3日，Silicon Valley Flow宣布自该日起将缓存命中价从每百万tokens 0.1元升至1元，且API已能答对Claude Opus 4.5等新题，信号强烈。",
+          "url": "https://www.aibase.com/news/30047",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-31T09:59:50.996855Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "865ead062f6e78ac5bc67d5f8972eadab1335405",
+          "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+          "title_zh": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+          "title_en": null,
+          "title_original": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+          "summary": "DeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nDeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nDeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nExplore AI Fronti",
+          "recommend_reason_zh": "DeepSeek V4官方版疑定档8月3日，Silicon Valley Flow宣布自该日起将缓存命中价从每百万tokens 0.1元升至1元，且API已能答对Claude Opus 4.5等新题，信号强烈。",
+          "url": "https://www.aibase.com/news/30047",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-31T09:59:50.996855Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 1.0,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-31T09:59:50.996855Z",
+      "latest_at": "2026-07-31T09:59:50.996855Z",
+      "primary_item": {
+        "id": "865ead062f6e78ac5bc67d5f8972eadab1335405",
+        "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+        "title_zh": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+        "title_en": null,
+        "title_original": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
+        "summary": "DeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nDeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nDeepSeek V4's official version was delayed after its gradual testing started in mid-July, and the official has not yet announced the exact release date. However\nExplore AI Fronti",
+        "recommend_reason_zh": "DeepSeek V4官方版疑定档8月3日，Silicon Valley Flow宣布自该日起将缓存命中价从每百万tokens 0.1元升至1元，且API已能答对Claude Opus 4.5等新题，信号强烈。",
+        "url": "https://www.aibase.com/news/30047",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 52,
+      "persona_review": "还是传闻，API没正式开放前别调依赖，等发布再看。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-31T10:25:28.796152Z"
+      }
+    },
+    {
+      "story_id": "story_e921ef2eca88",
+      "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+      "url": "https://www.ithome.com/0/984/116.htm",
+      "primary_url": "https://www.ithome.com/0/984/116.htm",
+      "source": "IT之家（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "f3bfb890e7b8504fbb65058e06fed6aedd040717",
+          "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "title_zh": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "title_en": null,
+          "title_original": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "summary": "DeepSeek 今日宣布 DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力大幅增强，Terminal Bench 2.1 得分 82.7，NL2Repo 54.2，Cybergym 76.7，DeepSWE 54.4，Toolathlon verified 70.3，多项基准远超 V4-Pro-Preview。",
+          "recommend_reason_zh": "DeepSeek-V4-Flash正式版API上线公测，Agent能力大幅增强，Terminal Bench 2.1达82.7、NL2Repo达54.2等基准测试结果全面超越V4-Pro-Preview，并原生支持Responses API格式且适配Codex。",
+          "url": "https://www.ithome.com/0/984/116.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T06:02:05Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "IT之家（RSS）"
+      ],
+      "items": [
+        {
+          "id": "f3bfb890e7b8504fbb65058e06fed6aedd040717",
+          "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "title_zh": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "title_en": null,
+          "title_original": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "summary": "DeepSeek 今日宣布 DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力大幅增强，Terminal Bench 2.1 得分 82.7，NL2Repo 54.2，Cybergym 76.7，DeepSWE 54.4，Toolathlon verified 70.3，多项基准远超 V4-Pro-Preview。",
+          "recommend_reason_zh": "DeepSeek-V4-Flash正式版API上线公测，Agent能力大幅增强，Terminal Bench 2.1达82.7、NL2Repo达54.2等基准测试结果全面超越V4-Pro-Preview，并原生支持Responses API格式且适配Codex。",
+          "url": "https://www.ithome.com/0/984/116.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T06:02:05Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7636,
+      "importance": 0.7636,
+      "importance_score": 0.7636,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.74,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9444,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-07-31T06:02:05Z",
+      "latest_at": "2026-07-31T06:02:05Z",
+      "primary_item": {
+        "id": "f3bfb890e7b8504fbb65058e06fed6aedd040717",
+        "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+        "title_zh": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+        "title_en": null,
+        "title_original": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+        "summary": "DeepSeek 今日宣布 DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力大幅增强，Terminal Bench 2.1 得分 82.7，NL2Repo 54.2，Cybergym 76.7，DeepSWE 54.4，Toolathlon verified 70.3，多项基准远超 V4-Pro-Preview。",
+        "recommend_reason_zh": "DeepSeek-V4-Flash正式版API上线公测，Agent能力大幅增强，Terminal Bench 2.1达82.7、NL2Repo达54.2等基准测试结果全面超越V4-Pro-Preview，并原生支持Responses API格式且适配Codex。",
+        "url": "https://www.ithome.com/0/984/116.htm",
+        "source": "IT之家（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 88,
+      "persona_review": "API 公测可直连，Agent 场景换新模型提效果，今天就能试。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -760,15 +1354,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.7772,
-      "importance": 0.7772,
-      "importance_score": 0.7772,
+      "score": 0.7636,
+      "importance": 0.7636,
+      "importance_score": 0.7636,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8979,
+        "recency": 0.8222,
         "story_heat": 0.25
       },
       "category": "industry",
@@ -797,63 +1391,63 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
-      "story_id": "story_274d1f8b0993",
-      "title": "国家发改委：将加快《人工智能法》立法进程",
-      "url": "https://www.ithome.com/0/983/974.htm",
-      "primary_url": "https://www.ithome.com/0/983/974.htm",
-      "source": "IT之家（RSS）",
+      "story_id": "story_089bf3c63623",
+      "title": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
+      "url": "https://seed.bytedance.com/zh/blog/%E4%B8%80%E9%95%9C%E6%88%90%E7%89%87-%E9%9A%8F%E5%BF%83%E5%8F%82%E8%80%83-seedance-2-5-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83",
+      "primary_url": "https://seed.bytedance.com/zh/blog/%E4%B8%80%E9%95%9C%E6%88%90%E7%89%87-%E9%9A%8F%E5%BF%83%E5%8F%82%E8%80%83-seedance-2-5-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83",
+      "source": "字节 Seed：Research Feed（网页内嵌数据）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "96f8a210f6ec3e094fa97bbe422488013d4d710e",
-          "title": "国家发改委：将加快《人工智能法》立法进程",
-          "title_zh": "国家发改委：将加快《人工智能法》立法进程",
+          "id": "6d9b4c34043c6868841e634ff88d5579ce934753",
+          "title": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
+          "title_zh": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
           "title_en": null,
-          "title_original": "国家发改委：将加快《人工智能法》立法进程",
-          "summary": "国家发展改革委在7月31日发布会上表示，上半年国产大模型全球下载量突破100亿次，深度求索、月之暗面等本土企业已发布参数规模达\"万亿\"级别的开源大模型。下一步将加快自主创新、推动应用中试基地布局，并加快《人工智能法》立法进程，强化风险监测防控体系。",
-          "recommend_reason_zh": "本文报道国家发改委将加快《人工智能法》立法进程，并披露上半年国产大模型全球下载量突破100亿次，深度求索、月之暗面等发布万亿参数开源大模型，值得关注。",
-          "url": "https://www.ithome.com/0/983/974.htm",
-          "source": "IT之家（RSS）",
+          "title_original": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
+          "summary": "字节跳动今日正式发布新一代视频创作模型 Seedance 2.5，单次视频生成时长从 15 秒提升至 30 秒，并支持多轮延长，可产出数分钟连贯内容。模型支持单次输入最多 30 张图片、10 段视频和 10 段音频作为参考素材，并升级白模参考、运动参考及绿幕编辑、时间戳精准编辑等能力。Seedance 2.5 已陆续上线即梦 AI、豆包专业版等平台，API 服务近期将上线火山方舟。",
+          "recommend_reason_zh": "Seedance 2.5 将单次生成时长提升至30秒，支持多轮延长与最多30张图、10段视频、10段音频的多模态参考，并新增时间戳精准编辑，让长叙事和复杂剪辑更可控。",
+          "url": "https://seed.bytedance.com/zh/blog/%E4%B8%80%E9%95%9C%E6%88%90%E7%89%87-%E9%9A%8F%E5%BF%83%E5%8F%82%E8%80%83-seedance-2-5-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83",
+          "source": "字节 Seed：Research Feed（网页内嵌数据）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-07-31T02:48:12Z"
+          "published_at": "2026-07-30T16:00:00Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "IT之家（RSS）"
+        "字节 Seed：Research Feed（网页内嵌数据）"
       ],
       "items": [
         {
-          "id": "96f8a210f6ec3e094fa97bbe422488013d4d710e",
-          "title": "国家发改委：将加快《人工智能法》立法进程",
-          "title_zh": "国家发改委：将加快《人工智能法》立法进程",
+          "id": "6d9b4c34043c6868841e634ff88d5579ce934753",
+          "title": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
+          "title_zh": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
           "title_en": null,
-          "title_original": "国家发改委：将加快《人工智能法》立法进程",
-          "summary": "国家发展改革委在7月31日发布会上表示，上半年国产大模型全球下载量突破100亿次，深度求索、月之暗面等本土企业已发布参数规模达\"万亿\"级别的开源大模型。下一步将加快自主创新、推动应用中试基地布局，并加快《人工智能法》立法进程，强化风险监测防控体系。",
-          "recommend_reason_zh": "本文报道国家发改委将加快《人工智能法》立法进程，并披露上半年国产大模型全球下载量突破100亿次，深度求索、月之暗面等发布万亿参数开源大模型，值得关注。",
-          "url": "https://www.ithome.com/0/983/974.htm",
-          "source": "IT之家（RSS）",
+          "title_original": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
+          "summary": "字节跳动今日正式发布新一代视频创作模型 Seedance 2.5，单次视频生成时长从 15 秒提升至 30 秒，并支持多轮延长，可产出数分钟连贯内容。模型支持单次输入最多 30 张图片、10 段视频和 10 段音频作为参考素材，并升级白模参考、运动参考及绿幕编辑、时间戳精准编辑等能力。Seedance 2.5 已陆续上线即梦 AI、豆包专业版等平台，API 服务近期将上线火山方舟。",
+          "recommend_reason_zh": "Seedance 2.5 将单次生成时长提升至30秒，支持多轮延长与最多30张图、10段视频、10段音频的多模态参考，并新增时间戳精准编辑，让长叙事和复杂剪辑更可控。",
+          "url": "https://seed.bytedance.com/zh/blog/%E4%B8%80%E9%95%9C%E6%88%90%E7%89%87-%E9%9A%8F%E5%BF%83%E5%8F%82%E8%80%83-seedance-2-5-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83",
+          "source": "字节 Seed：Research Feed（网页内嵌数据）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-07-31T02:48:12Z"
+          "published_at": "2026-07-30T16:00:00Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7738,
-      "importance": 0.7738,
-      "importance_score": 0.7738,
+      "score": 0.7504,
+      "importance": 0.7504,
+      "importance_score": 0.7504,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.75,
+        "editorial": 0.8,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9843,
+        "recency": 0.7711,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -861,111 +1455,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-07-31T02:48:12Z",
-      "latest_at": "2026-07-31T02:48:12Z",
+      "earliest_at": "2026-07-30T16:00:00Z",
+      "latest_at": "2026-07-30T16:00:00Z",
       "primary_item": {
-        "id": "96f8a210f6ec3e094fa97bbe422488013d4d710e",
-        "title": "国家发改委：将加快《人工智能法》立法进程",
-        "title_zh": "国家发改委：将加快《人工智能法》立法进程",
+        "id": "6d9b4c34043c6868841e634ff88d5579ce934753",
+        "title": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
+        "title_zh": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
         "title_en": null,
-        "title_original": "国家发改委：将加快《人工智能法》立法进程",
-        "summary": "国家发展改革委在7月31日发布会上表示，上半年国产大模型全球下载量突破100亿次，深度求索、月之暗面等本土企业已发布参数规模达\"万亿\"级别的开源大模型。下一步将加快自主创新、推动应用中试基地布局，并加快《人工智能法》立法进程，强化风险监测防控体系。",
-        "recommend_reason_zh": "本文报道国家发改委将加快《人工智能法》立法进程，并披露上半年国产大模型全球下载量突破100亿次，深度求索、月之暗面等发布万亿参数开源大模型，值得关注。",
-        "url": "https://www.ithome.com/0/983/974.htm",
-        "source": "IT之家（RSS）",
+        "title_original": "字节发布 Seedance 2.5：单次生成 30 秒视频，支持多模态参考与精准编辑",
+        "summary": "字节跳动今日正式发布新一代视频创作模型 Seedance 2.5，单次视频生成时长从 15 秒提升至 30 秒，并支持多轮延长，可产出数分钟连贯内容。模型支持单次输入最多 30 张图片、10 段视频和 10 段音频作为参考素材，并升级白模参考、运动参考及绿幕编辑、时间戳精准编辑等能力。Seedance 2.5 已陆续上线即梦 AI、豆包专业版等平台，API 服务近期将上线火山方舟。",
+        "recommend_reason_zh": "Seedance 2.5 将单次生成时长提升至30秒，支持多轮延长与最多30张图、10段视频、10段音频的多模态参考，并新增时间戳精准编辑，让长叙事和复杂剪辑更可控。",
+        "url": "https://seed.bytedance.com/zh/blog/%E4%B8%80%E9%95%9C%E6%88%90%E7%89%87-%E9%9A%8F%E5%BF%83%E5%8F%82%E8%80%83-seedance-2-5-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83",
+        "source": "字节 Seed：Research Feed（网页内嵌数据）",
         "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "政策风向而已，短期不碍开发，数据合规方向可提前留意。",
+      "persona_score": 85,
+      "persona_review": "新视频模型已发布，做短视频或编辑的可以直接试，多模态参考省不少事。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
-      }
-    },
-    {
-      "story_id": "story_79215688a7fe",
-      "title": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-      "url": "https://www.aibase.com/news/30016",
-      "primary_url": "https://www.aibase.com/news/30016",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "610322e6b8850b28347e43f7621c4eea4e574497",
-          "title": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-          "title_zh": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-          "title_en": null,
-          "title_original": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-          "summary": "A new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nA new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nA new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nExplore AI Fronti",
-          "recommend_reason_zh": "Apollo Global Management白皮书追踪321个职业发现，2023年以来AI暴露最高岗位平均工资增长下降6.7%，服务工作者收入降24.3%，低收入群体首当其冲，程序员也难幸免。",
-          "url": "https://www.aibase.com/news/30016",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T03:54:07.834259Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "610322e6b8850b28347e43f7621c4eea4e574497",
-          "title": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-          "title_zh": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-          "title_en": null,
-          "title_original": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-          "summary": "A new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nA new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nA new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nExplore AI Fronti",
-          "recommend_reason_zh": "Apollo Global Management白皮书追踪321个职业发现，2023年以来AI暴露最高岗位平均工资增长下降6.7%，服务工作者收入降24.3%，低收入群体首当其冲，程序员也难幸免。",
-          "url": "https://www.aibase.com/news/30016",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T03:54:07.834259Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 1.0,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-31T03:54:07.834259Z",
-      "latest_at": "2026-07-31T03:54:07.834259Z",
-      "primary_item": {
-        "id": "610322e6b8850b28347e43f7621c4eea4e574497",
-        "title": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-        "title_zh": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-        "title_en": null,
-        "title_original": "AI 的真正威胁不是失业，而是让你的工资涨不动了",
-        "summary": "A new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nA new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nA new white paper released by Apollo Global Management presents an counterintuitive conclusion: AI may not directly take people's jobs, but it could first depre\nExplore AI Fronti",
-        "recommend_reason_zh": "Apollo Global Management白皮书追踪321个职业发现，2023年以来AI暴露最高岗位平均工资增长下降6.7%，服务工作者收入降24.3%，低收入群体首当其冲，程序员也难幸免。",
-        "url": "https://www.aibase.com/news/30016",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "宏观评论不提供抓手，涨不涨工资看行业不看这篇。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -1013,15 +1523,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8193,
-      "importance": 0.8193,
-      "importance_score": 0.8193,
+      "score": 0.8062,
+      "importance": 0.8062,
+      "importance_score": 0.8062,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8625,
+        "recency": 0.7899,
         "story_heat": 0.0
       },
       "category": "official",
@@ -1050,121 +1560,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
-      "story_id": "story_9845586b3e05",
-      "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-      "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-      "primary_url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-      "source": "MarkTechPost（RSS）",
-      "source_name": "AI HOT",
+      "story_id": "story_a8a5dd7a485b",
+      "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+      "url": "https://www.aibase.com/news/30044",
+      "primary_url": "https://www.aibase.com/news/30044",
+      "source": "AIbase",
+      "source_name": "AIbase",
       "sources": [
         {
-          "id": "faa3723bd4e32fd587c1d3a5b3732658213b4a85",
-          "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_zh": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展",
-          "title_en": "Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_original": "Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "summary": "Marktechpost AI 团队发布 Token Saver，一款面向 Claude Desktop 的开源 MCP 扩展，通过本地混合 RAG 在设备端检索 PDF，无需上传文件。该工具将 token 消耗削减 92%-99%，并保证数据隐私，设置无需 Python 环境或终端配置。",
-          "recommend_reason_zh": "Marktechpost推出的Token Saver是一款开源MCP扩展，通过本地Hybrid RAG将Claude处理PDF的token成本削减90%-99%，测试中512页文档每次提问可节省10.5万token，且无需上传文件、无需Python环境。",
-          "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-          "source": "MarkTechPost（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T07:43:29Z"
-        },
-        {
-          "id": "ae4dcc41e0f294185dab4f2e03d87b670b7472f0",
-          "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver: An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_zh": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展",
-          "title_en": "Meet Token Saver: An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_original": "Meet Token Saver: An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "summary": null,
-          "recommend_reason_zh": "Token Saver是一款开源MCP扩展，通过本地混合RAG将Claude分析PDF的token消耗削减92%-99%，且文件不出本地，无需配置Python环境。",
-          "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-          "source": "MarkTechPost Research",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-07-30T07:43:29Z"
+          "id": "36da0614f523ee93147d5c8ff1a64b83cf429bcf",
+          "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "title_zh": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "title_en": null,
+          "title_original": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "summary": "The tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nThe tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nThe tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nExplore AI Fronti",
+          "recommend_reason_zh": "字节跳动Seed团队发布的Seedance2.5模型支持单次生成30秒视频，可多轮无缝扩展，并允许一次输入30张图、10个视频片段和10个音频片段，大幅提升复杂叙事与多模态创作效率。",
+          "url": "https://www.aibase.com/news/30044",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-31T09:59:50.996855Z"
         }
       ],
-      "source_count": 2,
+      "source_count": 1,
       "source_names": [
-        "MarkTechPost Research",
-        "MarkTechPost（RSS）"
+        "AIbase"
       ],
       "items": [
         {
-          "id": "faa3723bd4e32fd587c1d3a5b3732658213b4a85",
-          "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_zh": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展",
-          "title_en": "Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_original": "Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "summary": "Marktechpost AI 团队发布 Token Saver，一款面向 Claude Desktop 的开源 MCP 扩展，通过本地混合 RAG 在设备端检索 PDF，无需上传文件。该工具将 token 消耗削减 92%-99%，并保证数据隐私，设置无需 Python 环境或终端配置。",
-          "recommend_reason_zh": "Marktechpost推出的Token Saver是一款开源MCP扩展，通过本地Hybrid RAG将Claude处理PDF的token成本削减90%-99%，测试中512页文档每次提问可节省10.5万token，且无需上传文件、无需Python环境。",
-          "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-          "source": "MarkTechPost（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T07:43:29Z"
-        },
-        {
-          "id": "ae4dcc41e0f294185dab4f2e03d87b670b7472f0",
-          "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver: An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_zh": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展",
-          "title_en": "Meet Token Saver: An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "title_original": "Meet Token Saver: An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-          "summary": null,
-          "recommend_reason_zh": "Token Saver是一款开源MCP扩展，通过本地混合RAG将Claude分析PDF的token消耗削减92%-99%，且文件不出本地，无需配置Python环境。",
-          "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-          "source": "MarkTechPost Research",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-07-30T07:43:29Z"
+          "id": "36da0614f523ee93147d5c8ff1a64b83cf429bcf",
+          "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "title_zh": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "title_en": null,
+          "title_original": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "summary": "The tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nThe tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nThe tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nExplore AI Fronti",
+          "recommend_reason_zh": "字节跳动Seed团队发布的Seedance2.5模型支持单次生成30秒视频，可多轮无缝扩展，并允许一次输入30张图、10个视频片段和10个音频片段，大幅提升复杂叙事与多模态创作效率。",
+          "url": "https://www.aibase.com/news/30044",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-07-31T09:59:50.996855Z"
         }
       ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7531,
-      "importance": 0.7531,
-      "importance_score": 0.7531,
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.74,
+        "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7472,
-        "story_heat": 0.25
+        "recency": 1.0,
+        "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "multi_source",
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-07-30T07:43:29Z",
-      "latest_at": "2026-07-30T07:43:29Z",
+      "earliest_at": "2026-07-31T09:59:50.996855Z",
+      "latest_at": "2026-07-31T09:59:50.996855Z",
       "primary_item": {
-        "id": "faa3723bd4e32fd587c1d3a5b3732658213b4a85",
-        "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-        "title_zh": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展",
-        "title_en": "Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-        "title_original": "Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-        "summary": "Marktechpost AI 团队发布 Token Saver，一款面向 Claude Desktop 的开源 MCP 扩展，通过本地混合 RAG 在设备端检索 PDF，无需上传文件。该工具将 token 消耗削减 92%-99%，并保证数据隐私，设置无需 Python 环境或终端配置。",
-        "recommend_reason_zh": "Marktechpost推出的Token Saver是一款开源MCP扩展，通过本地Hybrid RAG将Claude处理PDF的token成本削减90%-99%，测试中512页文档每次提问可节省10.5万token，且无需上传文件、无需Python环境。",
-        "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-        "source": "MarkTechPost（RSS）",
-        "source_name": "AI HOT"
+        "id": "36da0614f523ee93147d5c8ff1a64b83cf429bcf",
+        "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+        "title_zh": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+        "title_en": null,
+        "title_original": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+        "summary": "The tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nThe tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nThe tech industry is witnessing a new round of efficiency revolution. The Seed team under ByteDance has officially launched the Seedance2.5 audio-visual joint g\nExplore AI Fronti",
+        "recommend_reason_zh": "字节跳动Seed团队发布的Seedance2.5模型支持单次生成30秒视频，可多轮无缝扩展，并允许一次输入30张图、10个视频片段和10个音频片段，大幅提升复杂叙事与多模态创作效率。",
+        "url": "https://www.aibase.com/news/30044",
+        "source": "AIbase",
+        "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 95,
-      "persona_review": "开源即用，处理PDF省大钱，今天就能部署。",
+      "persona_score": 88,
+      "persona_review": "API公测已开放，Agent能力增强，今天就能上手测，适合接入现有流程。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
@@ -1212,15 +1692,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7464,
-      "importance": 0.7464,
-      "importance_score": 0.7464,
+      "score": 0.7323,
+      "importance": 0.7323,
+      "importance_score": 0.7323,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.69,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9322,
+        "recency": 0.8537,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1247,312 +1727,63 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
-      "story_id": "story_a63efd000889",
-      "title": "Gemini Spark 集成 Chrome 自动浏览功能 / Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-      "url": "https://x.com/GeminiApp/status/2082923048362299629",
-      "primary_url": "https://x.com/GeminiApp/status/2082923048362299629",
-      "source": "X：Gemini (@GeminiApp)",
+      "story_id": "story_47a367770bd1",
+      "title": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
+      "url": "https://www.ithome.com/0/984/130.htm",
+      "primary_url": "https://www.ithome.com/0/984/130.htm",
+      "source": "IT之家（RSS）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "a86878c3c4aba63600699821e27811ceebaa75ce",
-          "title": "Gemini Spark 集成 Chrome 自动浏览功能 / Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-          "title_zh": "Gemini Spark 集成 Chrome 自动浏览功能",
-          "title_en": "Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-          "title_original": "Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-          "summary": "Gemini Spark 🤝 @GoogleChrome\n\nGemini Spark 现已与 Google Chrome 的自动浏览功能集成。经你许可，Spark 可直接在你的 Chrome 浏览器中处理网页任务，例如预约看房或自动填写航班信息。",
-          "recommend_reason_zh": "Gemini Spark已与Google Chrome集成，凭借auto browse功能，可在用户授权下自动处理网页任务，如安排公寓看房或自动填写航班信息，提升浏览效率。",
-          "url": "https://x.com/GeminiApp/status/2082923048362299629",
-          "source": "X：Gemini (@GeminiApp)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T20:15:28Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：Gemini (@GeminiApp)"
-      ],
-      "items": [
-        {
-          "id": "a86878c3c4aba63600699821e27811ceebaa75ce",
-          "title": "Gemini Spark 集成 Chrome 自动浏览功能 / Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-          "title_zh": "Gemini Spark 集成 Chrome 自动浏览功能",
-          "title_en": "Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-          "title_original": "Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-          "summary": "Gemini Spark 🤝 @GoogleChrome\n\nGemini Spark 现已与 Google Chrome 的自动浏览功能集成。经你许可，Spark 可直接在你的 Chrome 浏览器中处理网页任务，例如预约看房或自动填写航班信息。",
-          "recommend_reason_zh": "Gemini Spark已与Google Chrome集成，凭借auto browse功能，可在用户授权下自动处理网页任务，如安排公寓看房或自动填写航班信息，提升浏览效率。",
-          "url": "https://x.com/GeminiApp/status/2082923048362299629",
-          "source": "X：Gemini (@GeminiApp)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T20:15:28Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7428,
-      "importance": 0.7428,
-      "importance_score": 0.7428,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.7,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8955,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-30T20:15:28Z",
-      "latest_at": "2026-07-30T20:15:28Z",
-      "primary_item": {
-        "id": "a86878c3c4aba63600699821e27811ceebaa75ce",
-        "title": "Gemini Spark 集成 Chrome 自动浏览功能 / Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-        "title_zh": "Gemini Spark 集成 Chrome 自动浏览功能",
-        "title_en": "Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-        "title_original": "Gemini Spark 🤝 @GoogleChrome Gemini Spark is now integrated with auto browse in Google Chrome. Wit…",
-        "summary": "Gemini Spark 🤝 @GoogleChrome\n\nGemini Spark 现已与 Google Chrome 的自动浏览功能集成。经你许可，Spark 可直接在你的 Chrome 浏览器中处理网页任务，例如预约看房或自动填写航班信息。",
-        "recommend_reason_zh": "Gemini Spark已与Google Chrome集成，凭借auto browse功能，可在用户授权下自动处理网页任务，如安排公寓看房或自动填写航班信息，提升浏览效率。",
-        "url": "https://x.com/GeminiApp/status/2082923048362299629",
-        "source": "X：Gemini (@GeminiApp)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "自动浏览集成Chrome，省去手动操作，适合自动化场景，但接口细节待查。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
-      }
-    },
-    {
-      "story_id": "story_085bdc6ab154",
-      "title": "Replit Design 推出数百设计模板 / Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-      "url": "https://x.com/Replit/status/2082979584799060267",
-      "primary_url": "https://x.com/Replit/status/2082979584799060267",
-      "source": "X：Replit (@Replit)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "1576e93d57dd15e04534aaf8abeb638fa46900af",
-          "title": "Replit Design 推出数百设计模板 / Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-          "title_zh": "Replit Design 推出数百设计模板",
-          "title_en": "Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-          "title_original": "Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-          "summary": "再也不用从空白页开始了。\n\nReplit Design 内置了由真实设计师制作的数百个模板，涵盖手机界面、落地页到社交媒体帖子。\n\n可以拖入一个模板开始，或在项目中遇到瓶颈时随时添加一个。\n\n立即尝试：http://replit.com/design",
-          "recommend_reason_zh": "Replit Design内置数百款由真实设计师制作的模板，覆盖移动端、落地页和社媒帖子，既能从模板起步，也能在项目中途卡壳时随时加入。",
-          "url": "https://x.com/Replit/status/2082979584799060267",
-          "source": "X：Replit (@Replit)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T00:00:07Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：Replit (@Replit)"
-      ],
-      "items": [
-        {
-          "id": "1576e93d57dd15e04534aaf8abeb638fa46900af",
-          "title": "Replit Design 推出数百设计模板 / Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-          "title_zh": "Replit Design 推出数百设计模板",
-          "title_en": "Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-          "title_original": "Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-          "summary": "再也不用从空白页开始了。\n\nReplit Design 内置了由真实设计师制作的数百个模板，涵盖手机界面、落地页到社交媒体帖子。\n\n可以拖入一个模板开始，或在项目中遇到瓶颈时随时添加一个。\n\n立即尝试：http://replit.com/design",
-          "recommend_reason_zh": "Replit Design内置数百款由真实设计师制作的模板，覆盖移动端、落地页和社媒帖子，既能从模板起步，也能在项目中途卡壳时随时加入。",
-          "url": "https://x.com/Replit/status/2082979584799060267",
-          "source": "X：Replit (@Replit)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T00:00:07Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7397,
-      "importance": 0.7397,
-      "importance_score": 0.7397,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.66,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9452,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-31T00:00:07Z",
-      "latest_at": "2026-07-31T00:00:07Z",
-      "primary_item": {
-        "id": "1576e93d57dd15e04534aaf8abeb638fa46900af",
-        "title": "Replit Design 推出数百设计模板 / Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-        "title_zh": "Replit Design 推出数百设计模板",
-        "title_en": "Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-        "title_original": "Never start from a blank page again. Replit Design ships with hundreds of templates made by real de…",
-        "summary": "再也不用从空白页开始了。\n\nReplit Design 内置了由真实设计师制作的数百个模板，涵盖手机界面、落地页到社交媒体帖子。\n\n可以拖入一个模板开始，或在项目中遇到瓶颈时随时添加一个。\n\n立即尝试：http://replit.com/design",
-        "recommend_reason_zh": "Replit Design内置数百款由真实设计师制作的模板，覆盖移动端、落地页和社媒帖子，既能从模板起步，也能在项目中途卡壳时随时加入。",
-        "url": "https://x.com/Replit/status/2082979584799060267",
-        "source": "X：Replit (@Replit)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 66,
-      "persona_review": "模板能省起步时间，用 Replit 的可以试试，但别指望质变。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
-      }
-    },
-    {
-      "story_id": "story_646726dd33dc",
-      "title": "llm-chat-completions-server 0.1a0 发布 / llm-chat-completions-server 0.1a0",
-      "url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server",
-      "primary_url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server",
-      "source": "Simon Willison 博客",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "bc69c45baa33f1a1b22b7b83b587006c9212c77d",
-          "title": "llm-chat-completions-server 0.1a0 发布 / llm-chat-completions-server 0.1a0",
-          "title_zh": "llm-chat-completions-server 0.1a0 发布",
-          "title_en": "llm-chat-completions-server 0.1a0",
-          "title_original": "llm-chat-completions-server 0.1a0",
-          "summary": "Simon Willison 发布 llm-chat-completions-server 0.1a0 插件，可在本地 9001 端口启动一个兼容 OpenAI Chat Completions API 的服务器，暴露 LLM 工具中所有已安装的模型。",
-          "recommend_reason_zh": "这个插件让 LLM 在 localhost:9001 提供 OpenAI Chat Completions 兼容端点，暴露全部已安装模型，整个代码由 GPT-5.6 Sol 编写，实测了新内容寻址日志对消息去重的效果。",
-          "url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server",
-          "source": "Simon Willison 博客",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T15:43:16Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Simon Willison 博客"
-      ],
-      "items": [
-        {
-          "id": "bc69c45baa33f1a1b22b7b83b587006c9212c77d",
-          "title": "llm-chat-completions-server 0.1a0 发布 / llm-chat-completions-server 0.1a0",
-          "title_zh": "llm-chat-completions-server 0.1a0 发布",
-          "title_en": "llm-chat-completions-server 0.1a0",
-          "title_original": "llm-chat-completions-server 0.1a0",
-          "summary": "Simon Willison 发布 llm-chat-completions-server 0.1a0 插件，可在本地 9001 端口启动一个兼容 OpenAI Chat Completions API 的服务器，暴露 LLM 工具中所有已安装的模型。",
-          "recommend_reason_zh": "这个插件让 LLM 在 localhost:9001 提供 OpenAI Chat Completions 兼容端点，暴露全部已安装模型，整个代码由 GPT-5.6 Sol 编写，实测了新内容寻址日志对消息去重的效果。",
-          "url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server",
-          "source": "Simon Willison 博客",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T15:43:16Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7386,
-      "importance": 0.7386,
-      "importance_score": 0.7386,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8387,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-30T15:43:16Z",
-      "latest_at": "2026-07-30T15:43:16Z",
-      "primary_item": {
-        "id": "bc69c45baa33f1a1b22b7b83b587006c9212c77d",
-        "title": "llm-chat-completions-server 0.1a0 发布 / llm-chat-completions-server 0.1a0",
-        "title_zh": "llm-chat-completions-server 0.1a0 发布",
-        "title_en": "llm-chat-completions-server 0.1a0",
-        "title_original": "llm-chat-completions-server 0.1a0",
-        "summary": "Simon Willison 发布 llm-chat-completions-server 0.1a0 插件，可在本地 9001 端口启动一个兼容 OpenAI Chat Completions API 的服务器，暴露 LLM 工具中所有已安装的模型。",
-        "recommend_reason_zh": "这个插件让 LLM 在 localhost:9001 提供 OpenAI Chat Completions 兼容端点，暴露全部已安装模型，整个代码由 GPT-5.6 Sol 编写，实测了新内容寻址日志对消息去重的效果。",
-        "url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server",
-        "source": "Simon Willison 博客",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "新工具能clone试，但0.1a0太早，别上生产，等稳定版。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
-      }
-    },
-    {
-      "story_id": "story_d42b908c4e75",
-      "title": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
-      "url": "https://www.aibase.com/news/30017",
-      "primary_url": "https://www.aibase.com/news/30017",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "40f3bc14fd6d871014cdbe094bfabfcc8ab04b27",
-          "title": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
-          "title_zh": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
+          "id": "c862842096f6825a1c5a6b60a9c5bf81d4181471",
+          "title": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
+          "title_zh": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
           "title_en": null,
-          "title_original": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
-          "summary": "At a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nAt a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nAt a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nExplore AI Fronti",
-          "recommend_reason_zh": "DeepMind发布Gemini Robotics ER 2，首次在技术层面解锁多机协同，支持机器人在保持运动的同时规划下一步，并集成实时语音交互，推动人形机器人部署加速。",
-          "url": "https://www.aibase.com/news/30017",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T03:54:07.834259Z"
+          "title_original": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
+          "summary": "国家发展改革委在 7 月新闻发布会上介绍，上半年人工智能自主创新加快，首个全国产 10 万卡人工智能超集群正式投用，截至 6 月底全国智能算力规模达去年同期 2.8 倍。深度求索、月之暗面等本土企业发布多个万亿级参数开源大模型，国产大模型全球总下载量突破 100 亿次。相关行业保持 30% 以上高增长，上半年规模以上工业企业集成电路产量同比增长 23.1%，出口额同比增长 88.7%。",
+          "recommend_reason_zh": "国家发改委数据揭示AI产业强劲势头：智能算力规模达去年同期2.8倍，相关行业保持30%以上高增长，国产大模型下载量破100亿次，集成电路出口额同比增88.7%。",
+          "url": "https://www.ithome.com/0/984/130.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T06:38:54Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "AIbase"
+        "IT之家（RSS）"
       ],
       "items": [
         {
-          "id": "40f3bc14fd6d871014cdbe094bfabfcc8ab04b27",
-          "title": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
-          "title_zh": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
+          "id": "c862842096f6825a1c5a6b60a9c5bf81d4181471",
+          "title": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
+          "title_zh": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
           "title_en": null,
-          "title_original": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
-          "summary": "At a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nAt a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nAt a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nExplore AI Fronti",
-          "recommend_reason_zh": "DeepMind发布Gemini Robotics ER 2，首次在技术层面解锁多机协同，支持机器人在保持运动的同时规划下一步，并集成实时语音交互，推动人形机器人部署加速。",
-          "url": "https://www.aibase.com/news/30017",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T03:54:07.834259Z"
+          "title_original": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
+          "summary": "国家发展改革委在 7 月新闻发布会上介绍，上半年人工智能自主创新加快，首个全国产 10 万卡人工智能超集群正式投用，截至 6 月底全国智能算力规模达去年同期 2.8 倍。深度求索、月之暗面等本土企业发布多个万亿级参数开源大模型，国产大模型全球总下载量突破 100 亿次。相关行业保持 30% 以上高增长，上半年规模以上工业企业集成电路产量同比增长 23.1%，出口额同比增长 88.7%。",
+          "recommend_reason_zh": "国家发改委数据揭示AI产业强劲势头：智能算力规模达去年同期2.8倍，相关行业保持30%以上高增长，国产大模型下载量破100亿次，集成电路出口额同比增88.7%。",
+          "url": "https://www.ithome.com/0/984/130.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T06:38:54Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
+      "score": 0.7621,
+      "importance": 0.7621,
+      "importance_score": 0.7621,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.72,
+        "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 1.0,
+        "recency": 0.9528,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1560,276 +1791,110 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-07-31T03:54:07.834259Z",
-      "latest_at": "2026-07-31T03:54:07.834259Z",
+      "earliest_at": "2026-07-31T06:38:54Z",
+      "latest_at": "2026-07-31T06:38:54Z",
       "primary_item": {
-        "id": "40f3bc14fd6d871014cdbe094bfabfcc8ab04b27",
-        "title": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
-        "title_zh": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
+        "id": "c862842096f6825a1c5a6b60a9c5bf81d4181471",
+        "title": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
+        "title_zh": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
         "title_en": null,
-        "title_original": "DeepMind发布Gemini Robotics ER 2，首次解锁多机协同",
-        "summary": "At a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nAt a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nAt a time when humanoid robots are accelerating their deployment, the iteration speed of AI \"brains\" has once again refreshed industry perceptions. A relevant t\nExplore AI Fronti",
-        "recommend_reason_zh": "DeepMind发布Gemini Robotics ER 2，首次在技术层面解锁多机协同，支持机器人在保持运动的同时规划下一步，并集成实时语音交互，推动人形机器人部署加速。",
-        "url": "https://www.aibase.com/news/30017",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "多机协同是实打实的新能力，做机器人集成的可先评估接口。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
-      }
-    },
-    {
-      "story_id": "story_4500861bbc86",
-      "title": "Google Earth 集成 Nano Banana 2 图像生成 / What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-      "url": "https://x.com/GoogleAI/status/2082902334984609936",
-      "primary_url": "https://x.com/GoogleAI/status/2082902334984609936",
-      "source": "X：Google AI (@GoogleAI)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "0868d412089140b46edc3f1649b972040bed8699",
-          "title": "Google Earth 集成 Nano Banana 2 图像生成 / What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-          "title_zh": "Google Earth 集成 Nano Banana 2 图像生成",
-          "title_en": "What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-          "title_original": "What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-          "summary": "Google Earth 网页版上线基于 Nano Banana 2 的图像生成功能，用户可通过文本提示词将卫星与 3D 影像结合，重新想象全球任意地点（如百年前的城市风貌或社区新球场）。该功能现已面向所有用户开放。",
-          "recommend_reason_zh": "Google Earth网页版引入Nano Banana 2图像生成能力，让你可视化城市百年前面貌或社区中心的新篮球场，历史与想象触手可及。",
-          "url": "https://x.com/GoogleAI/status/2082902334984609936",
-          "source": "X：Google AI (@GoogleAI)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T18:53:09Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：Google AI (@GoogleAI)"
-      ],
-      "items": [
-        {
-          "id": "0868d412089140b46edc3f1649b972040bed8699",
-          "title": "Google Earth 集成 Nano Banana 2 图像生成 / What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-          "title_zh": "Google Earth 集成 Nano Banana 2 图像生成",
-          "title_en": "What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-          "title_original": "What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-          "summary": "Google Earth 网页版上线基于 Nano Banana 2 的图像生成功能，用户可通过文本提示词将卫星与 3D 影像结合，重新想象全球任意地点（如百年前的城市风貌或社区新球场）。该功能现已面向所有用户开放。",
-          "recommend_reason_zh": "Google Earth网页版引入Nano Banana 2图像生成能力，让你可视化城市百年前面貌或社区中心的新篮球场，历史与想象触手可及。",
-          "url": "https://x.com/GoogleAI/status/2082902334984609936",
-          "source": "X：Google AI (@GoogleAI)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T18:53:09Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7366,
-      "importance": 0.7366,
-      "importance_score": 0.7366,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.69,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8779,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-30T18:53:09Z",
-      "latest_at": "2026-07-30T18:53:09Z",
-      "primary_item": {
-        "id": "0868d412089140b46edc3f1649b972040bed8699",
-        "title": "Google Earth 集成 Nano Banana 2 图像生成 / What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-        "title_zh": "Google Earth 集成 Nano Banana 2 图像生成",
-        "title_en": "What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-        "title_original": "What if you could see a city as it looked 100 years ago， or visualize a new basketball court at your…",
-        "summary": "Google Earth 网页版上线基于 Nano Banana 2 的图像生成功能，用户可通过文本提示词将卫星与 3D 影像结合，重新想象全球任意地点（如百年前的城市风貌或社区新球场）。该功能现已面向所有用户开放。",
-        "recommend_reason_zh": "Google Earth网页版引入Nano Banana 2图像生成能力，让你可视化城市百年前面貌或社区中心的新篮球场，历史与想象触手可及。",
-        "url": "https://x.com/GoogleAI/status/2082902334984609936",
-        "source": "X：Google AI (@GoogleAI)",
+        "title_original": "国家发改委：人工智能相关行业保持 30% 以上高增长，全国智能算力规模达去年同期 2.8 倍",
+        "summary": "国家发展改革委在 7 月新闻发布会上介绍，上半年人工智能自主创新加快，首个全国产 10 万卡人工智能超集群正式投用，截至 6 月底全国智能算力规模达去年同期 2.8 倍。深度求索、月之暗面等本土企业发布多个万亿级参数开源大模型，国产大模型全球总下载量突破 100 亿次。相关行业保持 30% 以上高增长，上半年规模以上工业企业集成电路产量同比增长 23.1%，出口额同比增长 88.7%。",
+        "recommend_reason_zh": "国家发改委数据揭示AI产业强劲势头：智能算力规模达去年同期2.8倍，相关行业保持30%以上高增长，国产大模型下载量破100亿次，集成电路出口额同比增88.7%。",
+        "url": "https://www.ithome.com/0/984/130.htm",
+        "source": "IT之家（RSS）",
         "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
       "persona_score": 45,
-      "persona_review": "功能更新但无API或源码，除非你开发Google Earth插件，否则看看就好。",
+      "persona_review": "宏观增长数据，不提供新工具接口，开发者不用行动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     },
     {
-      "story_id": "story_cbb764ee9dd7",
-      "title": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格 / GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-      "url": "https://x.com/OpenRouter/status/2082882158574911564",
-      "primary_url": "https://x.com/OpenRouter/status/2082882158574911564",
-      "source": "X：OpenRouter (@OpenRouter)",
+      "story_id": "story_22e399480259",
+      "title": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级 / 🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+      "url": "https://x.com/deepseek_ai/status/2083084415157022911",
+      "primary_url": "https://x.com/deepseek_ai/status/2083084415157022911",
+      "source": "X：DeepSeek (@deepseek_ai)",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "d7be7168fbb415576642561539fb592c1ba3b13e",
-          "title": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格 / GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-          "title_zh": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格",
-          "title_en": "GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-          "title_original": "GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-          "summary": "GPT-5.6 Terra 和 Luna 刚刚获得了 @OpenAI 的降价。\n\nOpenRouter 的价格仍然更低。我们的 50% 独家折扣在此基础上适用，使 Luna 输入降至 $0.1/M、输出降至 $0.6/M，Terra 输入降至 $1/M、输出降至 $6/M。\n\n使用 luna 扩展你的工作负载：https://openrouter.ai/openai/gpt-5.6-luna",
-          "recommend_reason_zh": "OpenAI 对 GPT-5.6 Terra 和 Luna 降价后，OpenRouter 再提供 50% 独家折扣，使 Luna 输入降至 $0.1/M、输出 $0.6/M，Terra 输入 $1/M、输出 $6/M，性价比突出。",
-          "url": "https://x.com/OpenRouter/status/2082882158574911564",
-          "source": "X：OpenRouter (@OpenRouter)",
+          "id": "53bec70486733b445e4fe4ec7169886d8a6ac08f",
+          "title": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级 / 🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+          "title_zh": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级",
+          "title_en": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+          "title_original": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+          "summary": "🚀 DeepSeek-V4-Flash 官方 API 现已上线公测！\n\n🔷 我们大幅升级了其 Agent 能力--基准测试分数现已远超 V4-Pro-Preview。查看下方巨大的性能飞跃！👇 🔷 官方 V4-Flash 现已原生支持 Responses API 格式，并已完全适配 Codex！\n\n查看我们官方 API 文档中的配置详情：https://api-docs.deepseek.com/quick_start/agent_integrations/codex",
+          "recommend_reason_zh": "DeepSeek-V4-Flash官方API公开测试版上线，Agent能力大幅升级，基准测试得分已远超V4-Pro-Preview，这一性能飞跃更值得开发者跟进体验。",
+          "url": "https://x.com/deepseek_ai/status/2083084415157022911",
+          "source": "X：DeepSeek (@deepseek_ai)",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-07-30T17:32:59Z"
+          "published_at": "2026-07-31T06:56:41Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "X：OpenRouter (@OpenRouter)"
+        "X：DeepSeek (@deepseek_ai)"
       ],
       "items": [
         {
-          "id": "d7be7168fbb415576642561539fb592c1ba3b13e",
-          "title": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格 / GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-          "title_zh": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格",
-          "title_en": "GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-          "title_original": "GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-          "summary": "GPT-5.6 Terra 和 Luna 刚刚获得了 @OpenAI 的降价。\n\nOpenRouter 的价格仍然更低。我们的 50% 独家折扣在此基础上适用，使 Luna 输入降至 $0.1/M、输出降至 $0.6/M，Terra 输入降至 $1/M、输出降至 $6/M。\n\n使用 luna 扩展你的工作负载：https://openrouter.ai/openai/gpt-5.6-luna",
-          "recommend_reason_zh": "OpenAI 对 GPT-5.6 Terra 和 Luna 降价后，OpenRouter 再提供 50% 独家折扣，使 Luna 输入降至 $0.1/M、输出 $0.6/M，Terra 输入 $1/M、输出 $6/M，性价比突出。",
-          "url": "https://x.com/OpenRouter/status/2082882158574911564",
-          "source": "X：OpenRouter (@OpenRouter)",
+          "id": "53bec70486733b445e4fe4ec7169886d8a6ac08f",
+          "title": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级 / 🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+          "title_zh": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级",
+          "title_en": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+          "title_original": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+          "summary": "🚀 DeepSeek-V4-Flash 官方 API 现已上线公测！\n\n🔷 我们大幅升级了其 Agent 能力--基准测试分数现已远超 V4-Pro-Preview。查看下方巨大的性能飞跃！👇 🔷 官方 V4-Flash 现已原生支持 Responses API 格式，并已完全适配 Codex！\n\n查看我们官方 API 文档中的配置详情：https://api-docs.deepseek.com/quick_start/agent_integrations/codex",
+          "recommend_reason_zh": "DeepSeek-V4-Flash官方API公开测试版上线，Agent能力大幅升级，基准测试得分已远超V4-Pro-Preview，这一性能飞跃更值得开发者跟进体验。",
+          "url": "https://x.com/deepseek_ai/status/2083084415157022911",
+          "source": "X：DeepSeek (@deepseek_ai)",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-07-30T17:32:59Z"
+          "published_at": "2026-07-31T06:56:41Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7366,
-      "importance": 0.7366,
-      "importance_score": 0.7366,
+      "score": 0.7298,
+      "importance": 0.7298,
+      "importance_score": 0.7298,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.7,
+        "editorial": 0.62,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8611,
+        "recency": 0.9569,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
         "high_ai_relevance"
       ],
-      "earliest_at": "2026-07-30T17:32:59Z",
-      "latest_at": "2026-07-30T17:32:59Z",
+      "earliest_at": "2026-07-31T06:56:41Z",
+      "latest_at": "2026-07-31T06:56:41Z",
       "primary_item": {
-        "id": "d7be7168fbb415576642561539fb592c1ba3b13e",
-        "title": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格 / GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-        "title_zh": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格",
-        "title_en": "GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-        "title_original": "GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-        "summary": "GPT-5.6 Terra 和 Luna 刚刚获得了 @OpenAI 的降价。\n\nOpenRouter 的价格仍然更低。我们的 50% 独家折扣在此基础上适用，使 Luna 输入降至 $0.1/M、输出降至 $0.6/M，Terra 输入降至 $1/M、输出降至 $6/M。\n\n使用 luna 扩展你的工作负载：https://openrouter.ai/openai/gpt-5.6-luna",
-        "recommend_reason_zh": "OpenAI 对 GPT-5.6 Terra 和 Luna 降价后，OpenRouter 再提供 50% 独家折扣，使 Luna 输入降至 $0.1/M、输出 $0.6/M，Terra 输入 $1/M、输出 $6/M，性价比突出。",
-        "url": "https://x.com/OpenRouter/status/2082882158574911564",
-        "source": "X：OpenRouter (@OpenRouter)",
+        "id": "53bec70486733b445e4fe4ec7169886d8a6ac08f",
+        "title": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级 / 🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+        "title_zh": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级",
+        "title_en": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+        "title_original": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+        "summary": "🚀 DeepSeek-V4-Flash 官方 API 现已上线公测！\n\n🔷 我们大幅升级了其 Agent 能力--基准测试分数现已远超 V4-Pro-Preview。查看下方巨大的性能飞跃！👇 🔷 官方 V4-Flash 现已原生支持 Responses API 格式，并已完全适配 Codex！\n\n查看我们官方 API 文档中的配置详情：https://api-docs.deepseek.com/quick_start/agent_integrations/codex",
+        "recommend_reason_zh": "DeepSeek-V4-Flash官方API公开测试版上线，Agent能力大幅升级，基准测试得分已远超V4-Pro-Preview，这一性能飞跃更值得开发者跟进体验。",
+        "url": "https://x.com/deepseek_ai/status/2083084415157022911",
+        "source": "X：DeepSeek (@deepseek_ai)",
         "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 92,
-      "persona_review": "API降价50%，跑推理的今天就能切换省钱。",
+      "persona_score": 90,
+      "persona_review": "API已公测，Agent任务今天就能换上去跑，成本效果实测见分晓。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
-      }
-    },
-    {
-      "story_id": "story_4aa9103f23d7",
-      "title": "FCC 禁止进口中国新型机器人与联网逆变器 / FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-      "url": "https://the-decoder.com/fcc-bans-new-chinese-robots-and-power-inverters-to-protect-us-ai-buildout-from-foreign-threats",
-      "primary_url": "https://the-decoder.com/fcc-bans-new-chinese-robots-and-power-inverters-to-protect-us-ai-buildout-from-foreign-threats",
-      "source": "The Decoder：AI News（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "a8113028fa06783c59f2d39ef2decd2d3a97666d",
-          "title": "FCC 禁止进口中国新型机器人与联网逆变器 / FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-          "title_zh": "FCC 禁止进口中国新型机器人与联网逆变器",
-          "title_en": "FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-          "title_original": "FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-          "summary": "美国 FCC 自 7 月 28 日起禁止进口中国新型\"先进机器人设备\"和联网电源逆变器，理由包括防止供应链中断、数据窃取和网络攻击。禁令覆盖几乎所有重量超 2 公斤、具备无线连接和感知能力的软件控制地面机器人，但已上市型号不受影响。",
-          "recommend_reason_zh": "FCC新规于2026年7月28日生效，不仅禁用人形机器人和机器狗，连Roomba、割草机器人也中招，文中还详述了2026年初数千台机器人被远程入侵、2025年中国机器狗发现预装后门等具体安全案例。",
-          "url": "https://the-decoder.com/fcc-bans-new-chinese-robots-and-power-inverters-to-protect-us-ai-buildout-from-foreign-threats",
-          "source": "The Decoder：AI News（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T12:47:46Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "The Decoder：AI News（RSS）"
-      ],
-      "items": [
-        {
-          "id": "a8113028fa06783c59f2d39ef2decd2d3a97666d",
-          "title": "FCC 禁止进口中国新型机器人与联网逆变器 / FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-          "title_zh": "FCC 禁止进口中国新型机器人与联网逆变器",
-          "title_en": "FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-          "title_original": "FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-          "summary": "美国 FCC 自 7 月 28 日起禁止进口中国新型\"先进机器人设备\"和联网电源逆变器，理由包括防止供应链中断、数据窃取和网络攻击。禁令覆盖几乎所有重量超 2 公斤、具备无线连接和感知能力的软件控制地面机器人，但已上市型号不受影响。",
-          "recommend_reason_zh": "FCC新规于2026年7月28日生效，不仅禁用人形机器人和机器狗，连Roomba、割草机器人也中招，文中还详述了2026年初数千台机器人被远程入侵、2025年中国机器狗发现预装后门等具体安全案例。",
-          "url": "https://the-decoder.com/fcc-bans-new-chinese-robots-and-power-inverters-to-protect-us-ai-buildout-from-foreign-threats",
-          "source": "The Decoder：AI News（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-30T12:47:46Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7323,
-      "importance": 0.7323,
-      "importance_score": 0.7323,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.804,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-30T12:47:46Z",
-      "latest_at": "2026-07-30T12:47:46Z",
-      "primary_item": {
-        "id": "a8113028fa06783c59f2d39ef2decd2d3a97666d",
-        "title": "FCC 禁止进口中国新型机器人与联网逆变器 / FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-        "title_zh": "FCC 禁止进口中国新型机器人与联网逆变器",
-        "title_en": "FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-        "title_original": "FCC bans new Chinese robots and power inverters to protect US AI buildout from foreign threats",
-        "summary": "美国 FCC 自 7 月 28 日起禁止进口中国新型\"先进机器人设备\"和联网电源逆变器，理由包括防止供应链中断、数据窃取和网络攻击。禁令覆盖几乎所有重量超 2 公斤、具备无线连接和感知能力的软件控制地面机器人，但已上市型号不受影响。",
-        "recommend_reason_zh": "FCC新规于2026年7月28日生效，不仅禁用人形机器人和机器狗，连Roomba、割草机器人也中招，文中还详述了2026年初数千台机器人被远程入侵、2025年中国机器狗发现预装后门等具体安全案例。",
-        "url": "https://the-decoder.com/fcc-bans-new-chinese-robots-and-power-inverters-to-protect-us-ai-buildout-from-foreign-threats",
-        "source": "The Decoder：AI News（RSS）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "政策动向，做机器人和逆变器相关AI的看替代方案，其他人暂时不用动。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-07-31T04:12:26.755050Z"
+        "scored_at": "2026-07-31T10:25:28.796152Z"
       }
     }
   ]

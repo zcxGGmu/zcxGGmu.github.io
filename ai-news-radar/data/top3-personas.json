@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T04:12:51.890748Z",
+  "generated_at": "2026-07-31T10:26:13.167343Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_9845586b3e05",
-      "title": "Token Saver：用本地混合 RAG 将 Claude PDF token 消耗削减 92%-99% 的开源 MCP 扩展 / Meet Token Saver： An Open-Source MCP Extension Using Local Hybrid RAG to Cut Claude PDF Token Costs 90-99%",
-      "url": "https://www.marktechpost.com/2026/07/30/token-saver-an-open-source-mcp-extension-using-local-hybrid-rag",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 48,
-          "review": "92%削减靠的是只喂目录吧？投喂整本《战争与和平》试试。"
-        },
-        "paper-police": {
-          "score": 28,
-          "review": "开源无链接，宣称数字但无代码无评测，无法验证。"
-        },
-        "pragmatic": {
-          "score": 95,
-          "review": "开源即用，处理PDF省大钱，今天就能部署。"
-        }
-      }
-    },
-    {
       "story_id": "story_4960da0a8a33",
       "title": "GitHub Copilot 应用新增堆叠会话与拉取请求功能 / Stacked sessions and pull requests in the GitHub Copilot app",
       "url": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 75,
@@ -57,22 +37,42 @@
       }
     },
     {
-      "story_id": "story_cbb764ee9dd7",
-      "title": "OpenRouter 下调 GPT-5.6 Terra/Luna 价格 / GPT-5.6 Terra and Luna just got price cuts from @OpenAI. OpenRouter is cheaper still. Our 50% exclu…",
-      "url": "https://x.com/OpenRouter/status/2082882158574911564",
-      "rank": 3,
+      "story_id": "story_22e399480259",
+      "title": "DeepSeek-V4-Flash API公测上线，Agent能力大幅升级 / 🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta！ 🔷 We've massively upgraded its Agent…",
+      "url": "https://x.com/deepseek_ai/status/2083084415157022911",
+      "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "降价是真的，但“独家”优惠人人可领，独家二字有点虚。"
+          "score": 55,
+          "review": "公测就说大幅升级，基准测试和具体参数敢不敢晒一下？"
         },
         "paper-police": {
           "score": 20,
-          "review": "只有官方降价推文，无评测数据或代码支撑，价格数字无法独立验证。"
+          "review": "官方公测只一句能力升级，无论文无评测，等第三方跑分再说。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "API降价50%，跑推理的今天就能切换省钱。"
+          "score": 90,
+          "review": "API已公测，Agent任务今天就能换上去跑，成本效果实测见分晓。"
+        }
+      }
+    },
+    {
+      "story_id": "story_a8a5dd7a485b",
+      "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+      "url": "https://www.aibase.com/news/30044",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 25,
+          "review": "V4还没影就吹Agent爆发，查官网还是V3，改名蹭热度倒是熟练。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "公测可试但无论文无benchmark，Agent能力无证据支撑。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "API公测已开放，Agent能力增强，今天就能上手测，适合接入现有流程。"
         }
       }
     }
