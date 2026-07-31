@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T14:41:22.796861Z",
+  "generated_at": "2026-07-31T00:23:46.412490Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_407f953ae8e0",
-      "title": "Copilot代码审查：Agent技能和MCP现已正式推出 / Copilot code review: Agent skills and MCP now generally available",
-      "url": "https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available",
+      "story_id": "story_4960da0a8a33",
+      "title": "GitHub Copilot 应用新增堆叠会话与拉取请求功能 / Stacked sessions and pull requests in the GitHub Copilot app",
+      "url": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "Agent技能和MCP都是之前预告过的，正式版就是补个票。"
+          "score": 75,
+          "review": "堆叠会话听起来高级，实际不就是多开几个标签页？"
         },
         "paper-police": {
-          "score": 28,
-          "review": "官方公告但无论文代码和benchmark，只有功能描述无法独立验证。"
+          "score": 30,
+          "review": "官方博客有细节，但无论文代码，第三方无法复现功能，仅为产品发布。"
         },
         "pragmatic": {
           "score": 92,
-          "review": "GitHub Copilot代码审查的Agent技能和MCP正式上线，今天就能集成到工作流中提效。"
+          "review": "堆叠会话和PR功能直接提升协作效率，更新后即可体验。"
         }
       }
     },
     {
-      "story_id": "story_54430aee701b",
-      "title": "启用两项 API 设置使 GPT-5.6 在 ARC-AGI-3 基准测试得分提升三倍 / How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
-      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "story_id": "story_790c059d6976",
+      "title": "堆叠拉取请求现已公开预览 / Stacked pull requests are now in public preview",
+      "url": "https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "三倍提升？先报基数是0.1还是100吧。"
+          "score": 72,
+          "review": "GitHub终于发现PR也能叠罗汉了，不是新发明，但至少能用了。"
         },
         "paper-police": {
-          "score": 30,
-          "review": "官方博客声称提升三倍，但无论文无开源无第三方复现，等待验证。"
+          "score": 25,
+          "review": "官方宣布功能，但无论文代码或评测，无法独立验证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "两个新设置直接拉高推理得分，需高准确率的任务立即调整API参数。"
+          "score": 92,
+          "review": "GitHub官方开放，大型PR拆分利器，今天就能用上。"
         }
       }
     }
