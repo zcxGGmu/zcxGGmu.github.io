@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T03:52:26.626507Z",
+  "generated_at": "2026-08-01T09:21:25.991402Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -65,8 +65,8 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-01T03:52:26.626507Z",
-      "latest_at": "2026-08-01T03:52:26.626507Z",
+      "earliest_at": "2026-08-01T09:21:25.991402Z",
+      "latest_at": "2026-08-01T09:21:25.991402Z",
       "primary_item": {
         "id": "1a88b98b8fb6fb30c3c8a33f925220a2d5f4d7ef",
         "title": "瓦解诈骗犯罪行动 / Disrupting a Criminal Scam Operation",
@@ -85,7 +85,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -133,15 +133,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8328,
-      "importance": 0.8328,
-      "importance_score": 0.8328,
+      "score": 0.8206,
+      "importance": 0.8206,
+      "importance_score": 0.8206,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8934,
+        "recency": 0.8254,
         "story_heat": 0.0
       },
       "category": "official",
@@ -170,7 +170,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -305,15 +305,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.8182,
-      "importance": 0.8182,
-      "importance_score": 0.8182,
+      "score": 0.8059,
+      "importance": 0.8059,
+      "importance_score": 0.8059,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.7,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.898,
+        "recency": 0.8296,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -342,7 +342,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -366,10 +366,25 @@
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
           "published_at": "2026-07-31T15:00:00Z"
+        },
+        {
+          "id": "63783678b17eb65944ded4d1e4c7bdf91d0b1398",
+          "title": "OpenAI 服务超过十亿活跃用户 / OpenAI serves more than one billion active users",
+          "title_zh": "OpenAI 服务超过十亿活跃用户",
+          "title_en": "OpenAI serves more than one billion active users",
+          "title_original": "OpenAI serves more than one billion active users",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://openai.com/index/building-abundant-intelligence",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-07-31T19:42:35Z"
         }
       ],
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
+        "Hacker News · 24h最热",
         "OpenAI News"
       ],
       "items": [
@@ -386,29 +401,44 @@
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
           "published_at": "2026-07-31T15:00:00Z"
+        },
+        {
+          "id": "63783678b17eb65944ded4d1e4c7bdf91d0b1398",
+          "title": "OpenAI 服务超过十亿活跃用户 / OpenAI serves more than one billion active users",
+          "title_zh": "OpenAI 服务超过十亿活跃用户",
+          "title_en": "OpenAI serves more than one billion active users",
+          "title_original": "OpenAI serves more than one billion active users",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://openai.com/index/building-abundant-intelligence",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-07-31T19:42:35Z"
         }
       ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8215,
-      "importance": 0.8215,
-      "importance_score": 0.8215,
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.8351,
+      "importance": 0.8351,
+      "importance_score": 0.8351,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8303,
-        "story_heat": 0.0
+        "recency": 0.7671,
+        "story_heat": 0.25
       },
       "category": "official",
       "reasons": [
         "official_source",
+        "multi_source",
         "high_ai_relevance",
         "high_importance"
       ],
       "earliest_at": "2026-07-31T15:00:00Z",
-      "latest_at": "2026-07-31T15:00:00Z",
+      "latest_at": "2026-07-31T19:42:35Z",
       "primary_item": {
         "id": "2440a232fead11fbf349052abb1cbc7f0577e5f6",
         "title": "打造智能的丰裕时代 / Building abundant intelligence",
@@ -427,7 +457,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -475,15 +505,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8205,
-      "importance": 0.8205,
-      "importance_score": 0.8205,
+      "score": 0.8086,
+      "importance": 0.8086,
+      "importance_score": 0.8086,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8696,
+        "recency": 0.8034,
         "story_heat": 0.0
       },
       "category": "official",
@@ -512,7 +542,92 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
+      }
+    },
+    {
+      "story_id": "story_10739ae4d797",
+      "title": "数学与理论计算机科学的十大进展 / Ten advances in mathematics and theoretical computer science",
+      "url": "https://openai.com/index/ten-advances-in-mathematics",
+      "primary_url": "https://openai.com/index/ten-advances-in-mathematics",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "a0e4b1e4f3be1357532241ca9041be11d4352f4f",
+          "title": "数学与理论计算机科学的十大进展 / Ten advances in mathematics and theoretical computer science",
+          "title_zh": "数学与理论计算机科学的十大进展",
+          "title_en": "Ten advances in mathematics and theoretical computer science",
+          "title_original": "Ten advances in mathematics and theoretical computer science",
+          "summary": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.\nOpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.\nOpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexi",
+          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
+          "url": "https://openai.com/index/ten-advances-in-mathematics",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-01T00:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "OpenAI News"
+      ],
+      "items": [
+        {
+          "id": "a0e4b1e4f3be1357532241ca9041be11d4352f4f",
+          "title": "数学与理论计算机科学的十大进展 / Ten advances in mathematics and theoretical computer science",
+          "title_zh": "数学与理论计算机科学的十大进展",
+          "title_en": "Ten advances in mathematics and theoretical computer science",
+          "title_original": "Ten advances in mathematics and theoretical computer science",
+          "summary": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.\nOpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.\nOpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexi",
+          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
+          "url": "https://openai.com/index/ten-advances-in-mathematics",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-01T00:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8292,
+      "importance": 0.8292,
+      "importance_score": 0.8292,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.91,
+        "recency": 0.8736,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-01T00:00:00Z",
+      "latest_at": "2026-08-01T00:00:00Z",
+      "primary_item": {
+        "id": "a0e4b1e4f3be1357532241ca9041be11d4352f4f",
+        "title": "数学与理论计算机科学的十大进展 / Ten advances in mathematics and theoretical computer science",
+        "title_zh": "数学与理论计算机科学的十大进展",
+        "title_en": "Ten advances in mathematics and theoretical computer science",
+        "title_original": "Ten advances in mathematics and theoretical computer science",
+        "summary": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.\nOpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.\nOpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexi",
+        "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
+        "url": "https://openai.com/index/ten-advances-in-mathematics",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 50,
+      "persona_review": "学术进展汇总，暂无落地工具，可扫一眼。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -589,15 +704,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.7792,
-      "importance": 0.7792,
-      "importance_score": 0.7792,
+      "score": 0.7667,
+      "importance": 0.7667,
+      "importance_score": 0.7667,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9089,
+        "recency": 0.8397,
         "story_heat": 0.25
       },
       "category": "industry",
@@ -626,7 +741,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
+      }
+    },
+    {
+      "story_id": "story_8adda9102be6",
+      "title": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+      "url": "https://x.com/AYi_AInotes/status/2083401614623133921",
+      "primary_url": "https://x.com/AYi_AInotes/status/2083401614623133921",
+      "source": "X：阿易 AI Notes (@AYi_AInotes)",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "3932e3be300dec7756de5bb45508c0a891eb636b",
+          "title": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+          "title_zh": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+          "title_en": null,
+          "title_original": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+          "summary": "Hugging Face 遭 OpenAI 未发布秘密模型发起的全自主 Agent 网络攻击，四天半内完成 17000 个攻击动作，包括 0day 逃沙箱、提权、横向移动等。",
+          "recommend_reason_zh": "7月9日安全测试中，AI史上首次全自主Agent攻击爆发：OpenAI未发布的秘密模型攻击Hugging Face，安全分类器全关，最终由中国开源模型GLM 5.2完成取证。",
+          "url": "https://x.com/AYi_AInotes/status/2083401614623133921",
+          "source": "X：阿易 AI Notes (@AYi_AInotes)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-01T03:57:07Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "X：阿易 AI Notes (@AYi_AInotes)"
+      ],
+      "items": [
+        {
+          "id": "3932e3be300dec7756de5bb45508c0a891eb636b",
+          "title": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+          "title_zh": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+          "title_en": null,
+          "title_original": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+          "summary": "Hugging Face 遭 OpenAI 未发布秘密模型发起的全自主 Agent 网络攻击，四天半内完成 17000 个攻击动作，包括 0day 逃沙箱、提权、横向移动等。",
+          "recommend_reason_zh": "7月9日安全测试中，AI史上首次全自主Agent攻击爆发：OpenAI未发布的秘密模型攻击Hugging Face，安全分类器全关，最终由中国开源模型GLM 5.2完成取证。",
+          "url": "https://x.com/AYi_AInotes/status/2083401614623133921",
+          "source": "X：阿易 AI Notes (@AYi_AInotes)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-01T03:57:07Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7631,
+      "importance": 0.7631,
+      "importance_score": 0.7631,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.75,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9249,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-01T03:57:07Z",
+      "latest_at": "2026-08-01T03:57:07Z",
+      "primary_item": {
+        "id": "3932e3be300dec7756de5bb45508c0a891eb636b",
+        "title": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+        "title_zh": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+        "title_en": null,
+        "title_original": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+        "summary": "Hugging Face 遭 OpenAI 未发布秘密模型发起的全自主 Agent 网络攻击，四天半内完成 17000 个攻击动作，包括 0day 逃沙箱、提权、横向移动等。",
+        "recommend_reason_zh": "7月9日安全测试中，AI史上首次全自主Agent攻击爆发：OpenAI未发布的秘密模型攻击Hugging Face，安全分类器全关，最终由中国开源模型GLM 5.2完成取证。",
+        "url": "https://x.com/AYi_AInotes/status/2083401614623133921",
+        "source": "X：阿易 AI Notes (@AYi_AInotes)",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 55,
+      "persona_review": "安全防护有新招，但没看到可复现的细节，暂不行动。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -674,15 +873,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7701,
-      "importance": 0.7701,
-      "importance_score": 0.7701,
+      "score": 0.7576,
+      "importance": 0.7576,
+      "importance_score": 0.7576,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.78,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9138,
+        "recency": 0.8443,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -710,92 +909,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
-      "story_id": "story_077a06a5fc28",
-      "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
-      "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-      "primary_url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-      "source": "OpenAI News",
-      "source_name": "Official AI Updates",
+      "story_id": "story_5f7b5ebc21a9",
+      "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+      "url": "https://x.com/gdb/status/2083457463337287721",
+      "primary_url": "https://x.com/gdb/status/2083457463337287721",
+      "source": "X：Greg Brockman (@gdb)",
+      "source_name": "AI HOT",
       "sources": [
         {
-          "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
-          "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
-          "title_zh": "欧洲推动负责任的AI",
-          "title_en": "Advancing responsible AI across Europe",
-          "title_original": "Advancing responsible AI across Europe",
-          "summary": null,
-          "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
-          "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T15:00:00Z"
+          "id": "5388e09d34b8b96f7241cc196d2cde3bb212a98d",
+          "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+          "title_zh": "OpenAI Astra 以约2000美元证明10项数学难题",
+          "title_en": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+          "title_original": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+          "summary": "OpenAI 用下一代模型 Astra 内部版解决了数学与理论计算机科学领域的10项重大进展，总成本约2000美元（按 Sol API 价格计算）。Astra 证明了非 sofic 群的存在，并推翻 Connes 刚性猜想，成果涵盖 von Neumann 代数、高维球堆积、电路复杂度等。OpenAI 已发布全部10项证明，附 Lean 证书与 CoT 逐步推导。",
+          "recommend_reason_zh": "Astra内部版本仅花费约2000美元即解决数学与理论计算机科学领域的十项重大进展，展示下一代模型在推理任务上的惊人效率，值得关注其实际能力。",
+          "url": "https://x.com/gdb/status/2083457463337287721",
+          "source": "X：Greg Brockman (@gdb)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-01T07:39:02Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "OpenAI News"
+        "X：Greg Brockman (@gdb)"
       ],
       "items": [
         {
-          "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
-          "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
-          "title_zh": "欧洲推动负责任的AI",
-          "title_en": "Advancing responsible AI across Europe",
-          "title_original": "Advancing responsible AI across Europe",
-          "summary": null,
-          "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
-          "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T15:00:00Z"
+          "id": "5388e09d34b8b96f7241cc196d2cde3bb212a98d",
+          "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+          "title_zh": "OpenAI Astra 以约2000美元证明10项数学难题",
+          "title_en": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+          "title_original": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+          "summary": "OpenAI 用下一代模型 Astra 内部版解决了数学与理论计算机科学领域的10项重大进展，总成本约2000美元（按 Sol API 价格计算）。Astra 证明了非 sofic 群的存在，并推翻 Connes 刚性猜想，成果涵盖 von Neumann 代数、高维球堆积、电路复杂度等。OpenAI 已发布全部10项证明，附 Lean 证书与 CoT 逐步推导。",
+          "recommend_reason_zh": "Astra内部版本仅花费约2000美元即解决数学与理论计算机科学领域的十项重大进展，展示下一代模型在推理任务上的惊人效率，值得关注其实际能力。",
+          "url": "https://x.com/gdb/status/2083457463337287721",
+          "source": "X：Greg Brockman (@gdb)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-01T07:39:02Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8215,
-      "importance": 0.8215,
-      "importance_score": 0.8215,
-      "importance_label": "官方更新",
+      "score": 0.7572,
+      "importance": 0.7572,
+      "importance_score": 0.7572,
+      "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.8303,
+        "editorial": 0.7,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9757,
         "story_heat": 0.0
       },
-      "category": "official",
+      "category": "industry",
       "reasons": [
-        "official_source",
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-07-31T15:00:00Z",
-      "latest_at": "2026-07-31T15:00:00Z",
+      "earliest_at": "2026-08-01T07:39:02Z",
+      "latest_at": "2026-08-01T07:39:02Z",
       "primary_item": {
-        "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
-        "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
-        "title_zh": "欧洲推动负责任的AI",
-        "title_en": "Advancing responsible AI across Europe",
-        "title_original": "Advancing responsible AI across Europe",
-        "summary": null,
-        "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
-        "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-        "source": "OpenAI News",
-        "source_name": "Official AI Updates"
+        "id": "5388e09d34b8b96f7241cc196d2cde3bb212a98d",
+        "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+        "title_zh": "OpenAI Astra 以约2000美元证明10项数学难题",
+        "title_en": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+        "title_original": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
+        "summary": "OpenAI 用下一代模型 Astra 内部版解决了数学与理论计算机科学领域的10项重大进展，总成本约2000美元（按 Sol API 价格计算）。Astra 证明了非 sofic 群的存在，并推翻 Connes 刚性猜想，成果涵盖 von Neumann 代数、高维球堆积、电路复杂度等。OpenAI 已发布全部10项证明，附 Lean 证书与 CoT 逐步推导。",
+        "recommend_reason_zh": "Astra内部版本仅花费约2000美元即解决数学与理论计算机科学领域的十项重大进展，展示下一代模型在推理任务上的惊人效率，值得关注其实际能力。",
+        "url": "https://x.com/gdb/status/2083457463337287721",
+        "source": "X：Greg Brockman (@gdb)",
+        "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 30,
-      "persona_review": "政策表态不写代码，开发者等具体工具和接口变化再动。",
+      "persona_score": 45,
+      "persona_review": "数学题解离日常开发太远，没开源没API，等实际产品落地再说。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -843,15 +1041,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8173,
-      "importance": 0.8173,
-      "importance_score": 0.8173,
+      "score": 0.8056,
+      "importance": 0.8056,
+      "importance_score": 0.8056,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8518,
+        "recency": 0.7869,
         "story_heat": 0.0
       },
       "category": "official",
@@ -880,90 +1078,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
-      }
-    },
-    {
-      "story_id": "story_c38e05787678",
-      "title": "animated-voiceover 开源：一人干翻动画工作室",
-      "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-      "primary_url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-      "source": "X：阿易 AI Notes (@AYi_AInotes)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
-          "title": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_en": null,
-          "title_original": "animated-voiceover 开源：一人干翻动画工作室",
-          "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
-          "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
-          "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-          "source": "X：阿易 AI Notes (@AYi_AInotes)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T16:01:51Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：阿易 AI Notes (@AYi_AInotes)"
-      ],
-      "items": [
-        {
-          "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
-          "title": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_en": null,
-          "title_original": "animated-voiceover 开源：一人干翻动画工作室",
-          "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
-          "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
-          "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-          "source": "X：阿易 AI Notes (@AYi_AInotes)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T16:01:51Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7483,
-      "importance": 0.7483,
-      "importance_score": 0.7483,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.75,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8428,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-31T16:01:51Z",
-      "latest_at": "2026-07-31T16:01:51Z",
-      "primary_item": {
-        "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
-        "title": "animated-voiceover 开源：一人干翻动画工作室",
-        "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
-        "title_en": null,
-        "title_original": "animated-voiceover 开源：一人干翻动画工作室",
-        "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
-        "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
-        "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-        "source": "X：阿易 AI Notes (@AYi_AInotes)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 80,
-      "persona_review": "开源即用，动画配音自动化直接可试，省外包钱。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -1011,15 +1126,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7446,
-      "importance": 0.7446,
-      "importance_score": 0.7446,
+      "score": 0.734,
+      "importance": 0.734,
+      "importance_score": 0.734,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.78,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7723,
+        "recency": 0.7135,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1046,7 +1161,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -1094,15 +1209,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7418,
-      "importance": 0.7418,
-      "importance_score": 0.7418,
+      "score": 0.7308,
+      "importance": 0.7308,
+      "importance_score": 0.7308,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.75,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8067,
+        "recency": 0.7453,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1129,7 +1244,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -1177,15 +1292,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7346,
-      "importance": 0.7346,
-      "importance_score": 0.7346,
+      "score": 0.7239,
+      "importance": 0.7239,
+      "importance_score": 0.7239,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.74,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7833,
+        "recency": 0.7237,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1212,310 +1327,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
-      "story_id": "story_03f0da12a10c",
-      "title": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-      "url": "https://www.ithome.com/0/984/365.htm",
-      "primary_url": "https://www.ithome.com/0/984/365.htm",
-      "source": "IT之家（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "4207883dfe56195b7076cbccf3ec343449ed502b",
-          "title": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-          "title_zh": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-          "title_en": null,
-          "title_original": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-          "summary": "欧盟《人工智能法》新增透明度要求于8月2日起正式执行，聊天机器人等交互式AI系统须明确告知用户其AI身份，深度伪造内容须加标识及机器可识别标记。同日公布首批签署《人工智能生成内容透明度行为准则》的180多家机构名单，包括谷歌、微软、OpenAI等，Meta拒绝加入。违反透明度义务最高可处750万欧元或全球年营业额1%的罚款。",
-          "recommend_reason_zh": "欧盟《人工智能法》透明度新规8月2日生效：聊天机器人须自报AI身份，AI生成内容需加机器可识别标记，谷歌、微软、OpenAI等180多家机构已签署准则，而Meta拒绝加入。",
-          "url": "https://www.ithome.com/0/984/365.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T11:40:12Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "IT之家（RSS）"
-      ],
-      "items": [
-        {
-          "id": "4207883dfe56195b7076cbccf3ec343449ed502b",
-          "title": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-          "title_zh": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-          "title_en": null,
-          "title_original": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-          "summary": "欧盟《人工智能法》新增透明度要求于8月2日起正式执行，聊天机器人等交互式AI系统须明确告知用户其AI身份，深度伪造内容须加标识及机器可识别标记。同日公布首批签署《人工智能生成内容透明度行为准则》的180多家机构名单，包括谷歌、微软、OpenAI等，Meta拒绝加入。违反透明度义务最高可处750万欧元或全球年营业额1%的罚款。",
-          "recommend_reason_zh": "欧盟《人工智能法》透明度新规8月2日生效：聊天机器人须自报AI身份，AI生成内容需加机器可识别标记，谷歌、微软、OpenAI等180多家机构已签署准则，而Meta拒绝加入。",
-          "url": "https://www.ithome.com/0/984/365.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T11:40:12Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.73,
-      "importance": 0.73,
-      "importance_score": 0.73,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7914,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-31T11:40:12Z",
-      "latest_at": "2026-07-31T11:40:12Z",
-      "primary_item": {
-        "id": "4207883dfe56195b7076cbccf3ec343449ed502b",
-        "title": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-        "title_zh": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-        "title_en": null,
-        "title_original": "欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行",
-        "summary": "欧盟《人工智能法》新增透明度要求于8月2日起正式执行，聊天机器人等交互式AI系统须明确告知用户其AI身份，深度伪造内容须加标识及机器可识别标记。同日公布首批签署《人工智能生成内容透明度行为准则》的180多家机构名单，包括谷歌、微软、OpenAI等，Meta拒绝加入。违反透明度义务最高可处750万欧元或全球年营业额1%的罚款。",
-        "recommend_reason_zh": "欧盟《人工智能法》透明度新规8月2日生效：聊天机器人须自报AI身份，AI生成内容需加机器可识别标记，谷歌、微软、OpenAI等180多家机构已签署准则，而Meta拒绝加入。",
-        "url": "https://www.ithome.com/0/984/365.htm",
-        "source": "IT之家（RSS）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "面向欧洲市场的产品需加AI披露标签，八月到期，合规清单得现在查。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
-      }
-    },
-    {
-      "story_id": "story_37da6cede904",
-      "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-      "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
-      "primary_url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
-      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "30991f97bf0f8d90c3e956f81625ef377ba92bda",
-          "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-          "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-          "title_en": null,
-          "title_original": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-          "summary": "一项受控实验表明，用深度审查的中国模型 DeepSeek V4 Flash 的输出训练美国模型 GPT-OSS-120B，可显著提升其金融推理能力，但审查行为并未迁移。",
-          "recommend_reason_zh": "DeepSeek V4 Flash在中国敏感问题上审查评分高45.45分，但将其蒸馏进GPT-OSS-120B后审查未转移，财务推理达83.61%，超Kimi K3，成本低160倍。",
-          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T04:57:18.494000Z"
-        },
-        {
-          "id": "d16a12a7d756f24b6b9333a4d75260566b0628d0",
-          "title": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
-          "title_zh": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
-          "title_en": null,
-          "title_original": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
-          "source": "www.ctgt.ai",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-07-31T04:57:18.494000Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News 热门（buzzing.cc 中文翻译）",
-        "www.ctgt.ai"
-      ],
-      "items": [
-        {
-          "id": "30991f97bf0f8d90c3e956f81625ef377ba92bda",
-          "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-          "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-          "title_en": null,
-          "title_original": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-          "summary": "一项受控实验表明，用深度审查的中国模型 DeepSeek V4 Flash 的输出训练美国模型 GPT-OSS-120B，可显著提升其金融推理能力，但审查行为并未迁移。",
-          "recommend_reason_zh": "DeepSeek V4 Flash在中国敏感问题上审查评分高45.45分，但将其蒸馏进GPT-OSS-120B后审查未转移，财务推理达83.61%，超Kimi K3，成本低160倍。",
-          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T04:57:18.494000Z"
-        },
-        {
-          "id": "d16a12a7d756f24b6b9333a4d75260566b0628d0",
-          "title": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
-          "title_zh": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
-          "title_en": null,
-          "title_original": "Show HN: 将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制。试试看",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
-          "source": "www.ctgt.ai",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-07-31T04:57:18.494000Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7599,
-      "importance": 0.7599,
-      "importance_score": 0.7599,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.78,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7182,
-        "story_heat": 0.25
-      },
-      "category": "industry",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-31T04:57:18.494000Z",
-      "latest_at": "2026-07-31T04:57:18.494000Z",
-      "primary_item": {
-        "id": "30991f97bf0f8d90c3e956f81625ef377ba92bda",
-        "title": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-        "title_zh": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-        "title_en": null,
-        "title_original": "Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制",
-        "summary": "一项受控实验表明，用深度审查的中国模型 DeepSeek V4 Flash 的输出训练美国模型 GPT-OSS-120B，可显著提升其金融推理能力，但审查行为并未迁移。",
-        "recommend_reason_zh": "DeepSeek V4 Flash在中国敏感问题上审查评分高45.45分，但将其蒸馏进GPT-OSS-120B后审查未转移，财务推理达83.61%，超Kimi K3，成本低160倍。",
-        "url": "https://www.ctgt.ai/research/distillation-censorship-transfer",
-        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "技术实验结论，对选型有参考但没到立刻上手的程度。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
-      }
-    },
-    {
-      "story_id": "story_5695031e97d0",
-      "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-      "url": "https://www.aibase.com/news/30047",
-      "primary_url": "https://www.aibase.com/news/30047",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "865ead062f6e78ac5bc67d5f8972eadab1335405",
-          "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-          "title_zh": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-          "title_en": null,
-          "title_original": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-          "summary": null,
-          "recommend_reason_zh": "DeepSeek V4官方版疑定档8月3日，Silicon Valley Flow宣布自该日起将缓存命中价从每百万tokens 0.1元升至1元，且API已能答对Claude Opus 4.5等新题，信号强烈。",
-          "url": "https://www.aibase.com/news/30047",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T09:59:50.996855Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "865ead062f6e78ac5bc67d5f8972eadab1335405",
-          "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-          "title_zh": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-          "title_en": null,
-          "title_original": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-          "summary": null,
-          "recommend_reason_zh": "DeepSeek V4官方版疑定档8月3日，Silicon Valley Flow宣布自该日起将缓存命中价从每百万tokens 0.1元升至1元，且API已能答对Claude Opus 4.5等新题，信号强烈。",
-          "url": "https://www.aibase.com/news/30047",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T09:59:50.996855Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7266,
-      "importance": 0.7266,
-      "importance_score": 0.7266,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7725,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-31T09:59:50.996855Z",
-      "latest_at": "2026-07-31T09:59:50.996855Z",
-      "primary_item": {
-        "id": "865ead062f6e78ac5bc67d5f8972eadab1335405",
-        "title": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-        "title_zh": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-        "title_en": null,
-        "title_original": "DeepSeek V4 正式版疑定档 8 月 3 日：硅基流动涨价露马脚，API 已能答对新题",
-        "summary": null,
-        "recommend_reason_zh": "DeepSeek V4官方版疑定档8月3日，Silicon Valley Flow宣布自该日起将缓存命中价从每百万tokens 0.1元升至1元，且API已能答对Claude Opus 4.5等新题，信号强烈。",
-        "url": "https://www.aibase.com/news/30047",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 52,
-      "persona_review": "还是传闻，API没正式开放前别调依赖，等发布再看。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
-      }
-    },
-    {
-      "story_id": "story_d83536587724",
-      "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
-      "url": "https://openai.com/index/unive",
-      "primary_url": "https://openai.com/index/unive",
+      "story_id": "story_077a06a5fc28",
+      "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+      "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+      "primary_url": "https://openai.com/index/advancing-responsible-ai-across-europe",
       "source": "OpenAI News",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "4dabd3013738d25515192e1f33862f429d47f0c4",
-          "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
-          "title_zh": "Univé构建AI就绪的员工队伍",
-          "title_en": "Univé builds an AI-ready workforce",
-          "title_original": "Univé builds an AI-ready workforce",
+          "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
+          "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+          "title_zh": "欧洲推动负责任的AI",
+          "title_en": "Advancing responsible AI across Europe",
+          "title_original": "Advancing responsible AI across Europe",
           "summary": null,
-          "recommend_reason_zh": "Univé借助ChatGPT Enterprise实现97%许可激活、85%周活跃，员工创建约1500个自定义GPT，将宠物保险理赔处理从小时缩短至分钟，展现全员AI转型的落地路径。",
-          "url": "https://openai.com/index/unive",
+          "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
+          "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
           "source": "OpenAI News",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-07-31T07:00:00Z"
+          "published_at": "2026-07-31T15:00:00Z"
         }
       ],
       "source_count": 1,
@@ -1524,31 +1359,31 @@
       ],
       "items": [
         {
-          "id": "4dabd3013738d25515192e1f33862f429d47f0c4",
-          "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
-          "title_zh": "Univé构建AI就绪的员工队伍",
-          "title_en": "Univé builds an AI-ready workforce",
-          "title_original": "Univé builds an AI-ready workforce",
+          "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
+          "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+          "title_zh": "欧洲推动负责任的AI",
+          "title_en": "Advancing responsible AI across Europe",
+          "title_original": "Advancing responsible AI across Europe",
           "summary": null,
-          "recommend_reason_zh": "Univé借助ChatGPT Enterprise实现97%许可激活、85%周活跃，员工创建约1500个自定义GPT，将宠物保险理赔处理从小时缩短至分钟，展现全员AI转型的落地路径。",
-          "url": "https://openai.com/index/unive",
+          "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
+          "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
           "source": "OpenAI News",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-07-31T07:00:00Z"
+          "published_at": "2026-07-31T15:00:00Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8052,
-      "importance": 0.8052,
-      "importance_score": 0.8052,
+      "score": 0.8101,
+      "importance": 0.8101,
+      "importance_score": 0.8101,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.7398,
+        "recency": 0.7671,
         "story_heat": 0.0
       },
       "category": "official",
@@ -1557,27 +1392,110 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-07-31T07:00:00Z",
-      "latest_at": "2026-07-31T07:00:00Z",
+      "earliest_at": "2026-07-31T15:00:00Z",
+      "latest_at": "2026-07-31T15:00:00Z",
       "primary_item": {
-        "id": "4dabd3013738d25515192e1f33862f429d47f0c4",
-        "title": "Univé构建AI就绪的员工队伍 / Univé builds an AI-ready workforce",
-        "title_zh": "Univé构建AI就绪的员工队伍",
-        "title_en": "Univé builds an AI-ready workforce",
-        "title_original": "Univé builds an AI-ready workforce",
+        "id": "6f15452c6a78dda5866e27c9b09616977b3c8a4a",
+        "title": "欧洲推动负责任的AI / Advancing responsible AI across Europe",
+        "title_zh": "欧洲推动负责任的AI",
+        "title_en": "Advancing responsible AI across Europe",
+        "title_original": "Advancing responsible AI across Europe",
         "summary": null,
-        "recommend_reason_zh": "Univé借助ChatGPT Enterprise实现97%许可激活、85%周活跃，员工创建约1500个自定义GPT，将宠物保险理赔处理从小时缩短至分钟，展现全员AI转型的落地路径。",
-        "url": "https://openai.com/index/unive",
+        "recommend_reason_zh": "本文详解OpenAI如何配合EU AI Act推进欧洲负责任的AI治理：支持GPAI与AI生成内容透明度两项行为准则，并披露自2023年实施、2025年更新的Preparedness Framework等治理机制。",
+        "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
         "source": "OpenAI News",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "企业培训案例，不涉及新API或工具，开发者可跳过。",
+      "persona_score": 30,
+      "persona_review": "政策表态不写代码，开发者等具体工具和接口变化再动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
+      }
+    },
+    {
+      "story_id": "story_c38e05787678",
+      "title": "animated-voiceover 开源：一人干翻动画工作室",
+      "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
+      "primary_url": "https://x.com/AYi_AInotes/status/2083221612778668388",
+      "source": "X：阿易 AI Notes (@AYi_AInotes)",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
+          "title": "animated-voiceover 开源：一人干翻动画工作室",
+          "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
+          "title_en": null,
+          "title_original": "animated-voiceover 开源：一人干翻动画工作室",
+          "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
+          "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
+          "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
+          "source": "X：阿易 AI Notes (@AYi_AInotes)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T16:01:51Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "X：阿易 AI Notes (@AYi_AInotes)"
+      ],
+      "items": [
+        {
+          "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
+          "title": "animated-voiceover 开源：一人干翻动画工作室",
+          "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
+          "title_en": null,
+          "title_original": "animated-voiceover 开源：一人干翻动画工作室",
+          "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
+          "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
+          "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
+          "source": "X：阿易 AI Notes (@AYi_AInotes)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-07-31T16:01:51Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7368,
+      "importance": 0.7368,
+      "importance_score": 0.7368,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.75,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.7786,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-07-31T16:01:51Z",
+      "latest_at": "2026-07-31T16:01:51Z",
+      "primary_item": {
+        "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
+        "title": "animated-voiceover 开源：一人干翻动画工作室",
+        "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
+        "title_en": null,
+        "title_original": "animated-voiceover 开源：一人干翻动画工作室",
+        "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
+        "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
+        "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
+        "source": "X：阿易 AI Notes (@AYi_AInotes)",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 80,
+      "persona_review": "开源即用，动画配音自动化直接可试，省外包钱。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
@@ -1625,15 +1543,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7377,
-      "importance": 0.7377,
-      "importance_score": 0.7377,
+      "score": 0.7272,
+      "importance": 0.7272,
+      "importance_score": 0.7272,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.76,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7671,
+        "recency": 0.7087,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1660,173 +1578,400 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
-      "story_id": "story_a8a5dd7a485b",
-      "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
-      "url": "https://www.aibase.com/news/30044",
-      "primary_url": "https://www.aibase.com/news/30044",
-      "source": "AIbase",
-      "source_name": "AIbase",
+      "story_id": "story_165311a6ce61",
+      "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
+      "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
+      "primary_url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
+      "source": "The Verge",
+      "source_name": "Curated Media",
       "sources": [
         {
-          "id": "36da0614f523ee93147d5c8ff1a64b83cf429bcf",
-          "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
-          "title_zh": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
-          "title_en": null,
-          "title_original": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "id": "73605be6da82bbfa56693b799e1711f6217e63c6",
+          "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
+          "title_zh": "Google Earth 的 AI 深度伪造工具上线一天就被下架",
+          "title_en": "Google Earth&#8217;s AI deepfake tool only lasted one day",
+          "title_original": "Google Earth&#8217;s AI deepfake tool only lasted one day",
           "summary": null,
-          "recommend_reason_zh": "字节跳动Seed团队发布的Seedance2.5模型支持单次生成30秒视频，可多轮无缝扩展，并允许一次输入30张图、10个视频片段和10个音频片段，大幅提升复杂叙事与多模态创作效率。",
-          "url": "https://www.aibase.com/news/30044",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T09:59:50.996855Z"
+          "recommend_reason_zh": "Google Earth搭载Nano Banana 2的AI编辑功能仅上线一天即被下线，因其可生成逼真假图像，如Henk van Ess用文本提示伪造墨西哥边境难民与加沙医院弹坑，甚至骗过Hive检测工具。",
+          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-07-31T19:13:29Z"
+        },
+        {
+          "id": "994b4743425d72fc610fea8e3467735bb65bca57",
+          "title": "Google Earth 的 AI deepfake 工具只存活了一天 / Google Earth’s AI deepfake tool only lasted one day",
+          "title_zh": "Google Earth 的 AI deepfake 工具只存活了一天",
+          "title_en": "Google Earth’s AI deepfake tool only lasted one day",
+          "title_original": "Google Earth’s AI deepfake tool only lasted one day",
+          "summary": null,
+          "recommend_reason_zh": "Google Earth的AI图像编辑工具上线仅一天即被移除，用户可用文本提示生成难民、炸弹坑等伪造卫星图，Henk van Ess生成的视频还骗过了Hive的AI检测，迫使Google回滚功能。",
+          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
+          "source": "The Verge",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-07-31T19:13:29Z"
         }
       ],
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "AIbase"
+        "The Verge"
       ],
       "items": [
         {
-          "id": "36da0614f523ee93147d5c8ff1a64b83cf429bcf",
-          "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
-          "title_zh": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
-          "title_en": null,
-          "title_original": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+          "id": "73605be6da82bbfa56693b799e1711f6217e63c6",
+          "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
+          "title_zh": "Google Earth 的 AI 深度伪造工具上线一天就被下架",
+          "title_en": "Google Earth&#8217;s AI deepfake tool only lasted one day",
+          "title_original": "Google Earth&#8217;s AI deepfake tool only lasted one day",
           "summary": null,
-          "recommend_reason_zh": "字节跳动Seed团队发布的Seedance2.5模型支持单次生成30秒视频，可多轮无缝扩展，并允许一次输入30张图、10个视频片段和10个音频片段，大幅提升复杂叙事与多模态创作效率。",
-          "url": "https://www.aibase.com/news/30044",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-07-31T09:59:50.996855Z"
+          "recommend_reason_zh": "Google Earth搭载Nano Banana 2的AI编辑功能仅上线一天即被下线，因其可生成逼真假图像，如Henk van Ess用文本提示伪造墨西哥边境难民与加沙医院弹坑，甚至骗过Hive检测工具。",
+          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-07-31T19:13:29Z"
+        },
+        {
+          "id": "994b4743425d72fc610fea8e3467735bb65bca57",
+          "title": "Google Earth 的 AI deepfake 工具只存活了一天 / Google Earth’s AI deepfake tool only lasted one day",
+          "title_zh": "Google Earth 的 AI deepfake 工具只存活了一天",
+          "title_en": "Google Earth’s AI deepfake tool only lasted one day",
+          "title_original": "Google Earth’s AI deepfake tool only lasted one day",
+          "summary": null,
+          "recommend_reason_zh": "Google Earth的AI图像编辑工具上线仅一天即被移除，用户可用文本提示生成难民、炸弹坑等伪造卫星图，Henk van Ess生成的视频还骗过了Hive的AI检测，迫使Google回滚功能。",
+          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
+          "source": "The Verge",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-07-31T19:13:29Z"
         }
       ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7266,
-      "importance": 0.7266,
-      "importance_score": 0.7266,
-      "importance_label": "行业动态",
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5823,
+      "importance": 0.5823,
+      "importance_score": 0.5823,
+      "importance_label": "值得关注",
       "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7725,
-        "story_heat": 0.0
+        "editorial": 0.4896,
+        "source_tier": 0.58,
+        "ai_relevance": 0.68,
+        "recency": 0.8154,
+        "story_heat": 0.25
       },
-      "category": "industry",
+      "category": "watch",
       "reasons": [
-        "high_ai_relevance"
+        "multi_source"
       ],
-      "earliest_at": "2026-07-31T09:59:50.996855Z",
-      "latest_at": "2026-07-31T09:59:50.996855Z",
+      "earliest_at": "2026-07-31T19:13:29Z",
+      "latest_at": "2026-07-31T19:13:29Z",
       "primary_item": {
-        "id": "36da0614f523ee93147d5c8ff1a64b83cf429bcf",
-        "title": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
-        "title_zh": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
-        "title_en": null,
-        "title_original": "DeepSeek-V4-Flash API公测上线 Agent能力全面爆发",
+        "id": "73605be6da82bbfa56693b799e1711f6217e63c6",
+        "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
+        "title_zh": "Google Earth 的 AI 深度伪造工具上线一天就被下架",
+        "title_en": "Google Earth&#8217;s AI deepfake tool only lasted one day",
+        "title_original": "Google Earth&#8217;s AI deepfake tool only lasted one day",
         "summary": null,
-        "recommend_reason_zh": "字节跳动Seed团队发布的Seedance2.5模型支持单次生成30秒视频，可多轮无缝扩展，并允许一次输入30张图、10个视频片段和10个音频片段，大幅提升复杂叙事与多模态创作效率。",
-        "url": "https://www.aibase.com/news/30044",
-        "source": "AIbase",
-        "source_name": "AIbase"
+        "recommend_reason_zh": "Google Earth搭载Nano Banana 2的AI编辑功能仅上线一天即被下线，因其可生成逼真假图像，如Henk van Ess用文本提示伪造墨西哥边境难民与加沙医院弹坑，甚至骗过Hive检测工具。",
+        "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
+        "source": "The Verge",
+        "source_name": "Curated Media"
       },
       "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "API公测已开放，Agent能力增强，今天就能上手测，适合接入现有流程。",
+      "persona_score": 45,
+      "persona_review": "工具下架说明生成类应用合规风险大，做类似功能的先查政策。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     },
     {
-      "story_id": "story_e921ef2eca88",
-      "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
-      "url": "https://www.ithome.com/0/984/116.htm",
-      "primary_url": "https://www.ithome.com/0/984/116.htm",
-      "source": "IT之家（RSS）",
-      "source_name": "AI HOT",
+      "story_id": "story_03b9f05044c9",
+      "title": "Flint：面向人工智能时代的可视化语言",
+      "url": "https://microsoft.github.io/flint-chart",
+      "primary_url": "https://microsoft.github.io/flint-chart",
+      "source": "microsoft.github.io",
+      "source_name": "Buzzing",
       "sources": [
         {
-          "id": "f3bfb890e7b8504fbb65058e06fed6aedd040717",
-          "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
-          "title_zh": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "id": "e4650faa1d9e6e14141535cf794dceaff0486ad3",
+          "title": "Flint：面向人工智能时代的可视化语言",
+          "title_zh": "Flint：面向人工智能时代的可视化语言",
           "title_en": null,
-          "title_original": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
-          "summary": "DeepSeek 今日宣布 DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力大幅增强，Terminal Bench 2.1 得分 82.7，NL2Repo 54.2，Cybergym 76.7，DeepSWE 54.4，Toolathlon verified 70.3，多项基准远超 V4-Pro-Preview。",
-          "recommend_reason_zh": "DeepSeek-V4-Flash正式版API上线公测，Agent能力大幅增强，Terminal Bench 2.1达82.7、NL2Repo达54.2等基准测试结果全面超越V4-Pro-Preview，并原生支持Responses API格式且适配Codex。",
-          "url": "https://www.ithome.com/0/984/116.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T06:02:05Z"
+          "title_original": "Flint：面向人工智能时代的可视化语言",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://microsoft.github.io/flint-chart",
+          "source": "microsoft.github.io",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T08:41:23.781000Z"
+        },
+        {
+          "id": "7566c9af461db37ce69beab06930c018b0a158ec",
+          "title": "Flint：AI时代的可视化语言 / Flint: A Visualization Language for the AI Era",
+          "title_zh": "Flint：AI时代的可视化语言",
+          "title_en": "Flint: A Visualization Language for the AI Era",
+          "title_original": "Flint: A Visualization Language for the AI Era",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49130604",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T03:23:21.045000Z"
+        },
+        {
+          "id": "ed35827006d0817c480f3ca25d737c19b8b90564",
+          "title": "Flint：面向人工智能时代的可视化语言 / Flint: A Visualization Language for the AI Era",
+          "title_zh": "Flint：面向人工智能时代的可视化语言",
+          "title_en": "Flint: A Visualization Language for the AI Era",
+          "title_original": "Flint: A Visualization Language for the AI Era",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://microsoft.github.io/flint-chart",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T02:45:09Z"
         }
       ],
-      "source_count": 1,
+      "source_count": 3,
       "source_names": [
-        "IT之家（RSS）"
+        "Hacker News (黑客新闻)",
+        "hackernews",
+        "microsoft.github.io"
       ],
       "items": [
         {
-          "id": "f3bfb890e7b8504fbb65058e06fed6aedd040717",
-          "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
-          "title_zh": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+          "id": "e4650faa1d9e6e14141535cf794dceaff0486ad3",
+          "title": "Flint：面向人工智能时代的可视化语言",
+          "title_zh": "Flint：面向人工智能时代的可视化语言",
           "title_en": null,
-          "title_original": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
-          "summary": "DeepSeek 今日宣布 DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力大幅增强，Terminal Bench 2.1 得分 82.7，NL2Repo 54.2，Cybergym 76.7，DeepSWE 54.4，Toolathlon verified 70.3，多项基准远超 V4-Pro-Preview。",
-          "recommend_reason_zh": "DeepSeek-V4-Flash正式版API上线公测，Agent能力大幅增强，Terminal Bench 2.1达82.7、NL2Repo达54.2等基准测试结果全面超越V4-Pro-Preview，并原生支持Responses API格式且适配Codex。",
-          "url": "https://www.ithome.com/0/984/116.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T06:02:05Z"
+          "title_original": "Flint：面向人工智能时代的可视化语言",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://microsoft.github.io/flint-chart",
+          "source": "microsoft.github.io",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T08:41:23.781000Z"
+        },
+        {
+          "id": "7566c9af461db37ce69beab06930c018b0a158ec",
+          "title": "Flint：AI时代的可视化语言 / Flint: A Visualization Language for the AI Era",
+          "title_zh": "Flint：AI时代的可视化语言",
+          "title_en": "Flint: A Visualization Language for the AI Era",
+          "title_original": "Flint: A Visualization Language for the AI Era",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49130604",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T03:23:21.045000Z"
+        },
+        {
+          "id": "ed35827006d0817c480f3ca25d737c19b8b90564",
+          "title": "Flint：面向人工智能时代的可视化语言 / Flint: A Visualization Language for the AI Era",
+          "title_zh": "Flint：面向人工智能时代的可视化语言",
+          "title_en": "Flint: A Visualization Language for the AI Era",
+          "title_original": "Flint: A Visualization Language for the AI Era",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://microsoft.github.io/flint-chart",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T02:45:09Z"
         }
       ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7249,
-      "importance": 0.7249,
-      "importance_score": 0.7249,
-      "importance_label": "行业动态",
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5691,
+      "importance": 0.5691,
+      "importance_score": 0.5691,
+      "importance_label": "多源热议",
       "importance_breakdown": {
-        "editorial": 0.74,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7295,
-        "story_heat": 0.0
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9904,
+        "story_heat": 0.5
       },
-      "category": "industry",
+      "category": "multi_source",
       "reasons": [
-        "high_ai_relevance"
+        "multi_source"
       ],
-      "earliest_at": "2026-07-31T06:02:05Z",
-      "latest_at": "2026-07-31T06:02:05Z",
+      "earliest_at": "2026-08-01T02:45:09Z",
+      "latest_at": "2026-08-01T08:41:23.781000Z",
       "primary_item": {
-        "id": "f3bfb890e7b8504fbb65058e06fed6aedd040717",
-        "title": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
-        "title_zh": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
+        "id": "e4650faa1d9e6e14141535cf794dceaff0486ad3",
+        "title": "Flint：面向人工智能时代的可视化语言",
+        "title_zh": "Flint：面向人工智能时代的可视化语言",
         "title_en": null,
-        "title_original": "DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力基准测试远超 V4-Pro 预览版",
-        "summary": "DeepSeek 今日宣布 DeepSeek-V4-Flash 正式版 API 上线公测，Agent 能力大幅增强，Terminal Bench 2.1 得分 82.7，NL2Repo 54.2，Cybergym 76.7，DeepSWE 54.4，Toolathlon verified 70.3，多项基准远超 V4-Pro-Preview。",
-        "recommend_reason_zh": "DeepSeek-V4-Flash正式版API上线公测，Agent能力大幅增强，Terminal Bench 2.1达82.7、NL2Repo达54.2等基准测试结果全面超越V4-Pro-Preview，并原生支持Responses API格式且适配Codex。",
-        "url": "https://www.ithome.com/0/984/116.htm",
-        "source": "IT之家（RSS）",
-        "source_name": "AI HOT"
+        "title_original": "Flint：面向人工智能时代的可视化语言",
+        "summary": null,
+        "recommend_reason_zh": null,
+        "url": "https://microsoft.github.io/flint-chart",
+        "source": "microsoft.github.io",
+        "source_name": "Buzzing"
       },
       "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "API 公测可直连，Agent 场景换新模型提效果，今天就能试。",
+      "persona_score": 78,
+      "persona_review": "若已开源可直接试用，做 AI 数据可视化的能省不少模板代码。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T04:06:50.909397Z"
+        "scored_at": "2026-08-01T09:42:30.742664Z"
+      }
+    },
+    {
+      "story_id": "story_831ec0929405",
+      "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+      "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
+      "primary_url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
+      "source": "manifest.build",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "91bad940c6696bf37ef9d77613b6a837efba312e",
+          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "title_en": null,
+          "title_original": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "summary": null,
+          "recommend_reason_zh": "Manifest曾用7000云用户四个月实测自家LLM路由器，发现提示词只是任务触发，且缓存读取便宜75%-90%，最终6月弃用、9月1日关停，主张单一模型胜过路由。",
+          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
+          "source": "manifest.build",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T03:21:33.850000Z"
+        },
+        {
+          "id": "5c98dc6841203e555006f0945ed5f9774ce61522",
+          "title": "大家都在构建 LLM 路由器，我们却弃用了自己的。 / Everyone is building LLM routers, we deprecated ours",
+          "title_zh": "大家都在构建 LLM 路由器，我们却弃用了自己的。",
+          "title_en": "Everyone is building LLM routers, we deprecated ours",
+          "title_original": "Everyone is building LLM routers, we deprecated ours",
+          "summary": null,
+          "recommend_reason_zh": "作者直言对LLM路由器持怀疑态度并已弃用自家方案，认为模型每周更新，缺乏训练视角时判断模型擅长什么如同扔意大利面，建议改用SFT或RL调优更有效。",
+          "url": "https://news.ycombinator.com/item?id=49126630",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-07-31T19:53:34.906000Z"
+        },
+        {
+          "id": "ea169d12fe409871c6f4c3b99ae4f4752711fce0",
+          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器 / Everyone is building LLM routers, we deprecated ours",
+          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "title_en": "Everyone is building LLM routers, we deprecated ours",
+          "title_original": "Everyone is building LLM routers, we deprecated ours",
+          "summary": null,
+          "recommend_reason_zh": "Manifest弃用自己的LLM router：3月上线、6月弃用、9月关闭，服务7000名云用户后发现，缓存读取比未缓存输入便宜75%到90%，而路由带来的不确定性反而让评估与维护更贵。",
+          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-07-31T18:06:39Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News · 24h最热",
+        "hackernews",
+        "manifest.build"
+      ],
+      "items": [
+        {
+          "id": "91bad940c6696bf37ef9d77613b6a837efba312e",
+          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "title_en": null,
+          "title_original": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "summary": null,
+          "recommend_reason_zh": "Manifest曾用7000云用户四个月实测自家LLM路由器，发现提示词只是任务触发，且缓存读取便宜75%-90%，最终6月弃用、9月1日关停，主张单一模型胜过路由。",
+          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
+          "source": "manifest.build",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T03:21:33.850000Z"
+        },
+        {
+          "id": "5c98dc6841203e555006f0945ed5f9774ce61522",
+          "title": "大家都在构建 LLM 路由器，我们却弃用了自己的。 / Everyone is building LLM routers, we deprecated ours",
+          "title_zh": "大家都在构建 LLM 路由器，我们却弃用了自己的。",
+          "title_en": "Everyone is building LLM routers, we deprecated ours",
+          "title_original": "Everyone is building LLM routers, we deprecated ours",
+          "summary": null,
+          "recommend_reason_zh": "作者直言对LLM路由器持怀疑态度并已弃用自家方案，认为模型每周更新，缺乏训练视角时判断模型擅长什么如同扔意大利面，建议改用SFT或RL调优更有效。",
+          "url": "https://news.ycombinator.com/item?id=49126630",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-07-31T19:53:34.906000Z"
+        },
+        {
+          "id": "ea169d12fe409871c6f4c3b99ae4f4752711fce0",
+          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器 / Everyone is building LLM routers, we deprecated ours",
+          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+          "title_en": "Everyone is building LLM routers, we deprecated ours",
+          "title_original": "Everyone is building LLM routers, we deprecated ours",
+          "summary": null,
+          "recommend_reason_zh": "Manifest弃用自己的LLM router：3月上线、6月弃用、9月关闭，服务7000名云用户后发现，缓存读取比未缓存输入便宜75%到90%，而路由带来的不确定性反而让评估与维护更贵。",
+          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-07-31T18:06:39Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5559,
+      "importance": 0.5559,
+      "importance_score": 0.5559,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.917,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-07-31T18:06:39Z",
+      "latest_at": "2026-08-01T03:21:33.850000Z",
+      "primary_item": {
+        "id": "91bad940c6696bf37ef9d77613b6a837efba312e",
+        "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+        "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+        "title_en": null,
+        "title_original": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
+        "summary": null,
+        "recommend_reason_zh": "Manifest曾用7000云用户四个月实测自家LLM路由器，发现提示词只是任务触发，且缓存读取便宜75%-90%，最终6月弃用、9月1日关停，主张单一模型胜过路由。",
+        "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
+        "source": "manifest.build",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 68,
+      "persona_review": "弃用路由器说明直连够用，自建前先评估必要性。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-01T09:42:30.742664Z"
       }
     }
   ]
