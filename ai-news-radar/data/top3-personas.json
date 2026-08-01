@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T09:42:50.069305Z",
+  "generated_at": "2026-08-01T15:31:35.351350Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_559c84081a7e",
-      "title": "MiniMax H3 发布：开源全能多模态生成模型，支持 2K 原生立体声视频 / MiniMax H3： An Open Model Breaking the Boundaries Between Tasks and Modalities",
-      "url": "https://www.minimax.io/blog/minimax-h3",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 52,
-          "review": "开源口号响亮，但训练数据和license细则敢晒出来吗？"
-        },
-        "paper-police": {
-          "score": 50,
-          "review": "官方博客宣称开源，但无论文无代码链接，等仓库和评测复现再定论。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "开源可克隆，多模态生成今天就能跑，视频带立体声是亮点。"
-        }
-      }
-    },
-    {
       "story_id": "story_af28dcb2d4df",
       "title": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三 / DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
       "url": "https://x.com/ArtificialAnlys/status/2083306229074739285",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 30,
@@ -60,7 +40,7 @@
       "story_id": "story_c38e05787678",
       "title": "animated-voiceover 开源：一人干翻动画工作室",
       "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 55,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 80,
           "review": "开源即用，动画配音自动化直接可试，省外包钱。"
+        }
+      }
+    },
+    {
+      "story_id": "story_03b9f05044c9",
+      "title": "Flint：面向人工智能时代的可视化语言",
+      "url": "https://microsoft.github.io/flint-chart",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "可视化语言不算新，但微软肯开源落地就算实诚；AI时代四个字有点虚。"
+        },
+        "paper-police": {
+          "score": 35,
+          "review": "官方页面有介绍但无论文和代码仓库，无法验证。"
+        },
+        "pragmatic": {
+          "score": 78,
+          "review": "若已开源可直接试用，做 AI 数据可视化的能省不少模板代码。"
         }
       }
     }
