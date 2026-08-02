@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-02T06:46:19.826239Z",
+  "generated_at": "2026-08-02T11:34:38.530396Z",
   "window_hours": 24,
-  "total_items": 15,
+  "total_items": 14,
   "items": [
     {
       "story_id": "story_cd21c6fddb56",
@@ -65,8 +65,8 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-02T06:46:19.826239Z",
-      "latest_at": "2026-08-02T06:46:19.826239Z",
+      "earliest_at": "2026-08-02T11:34:38.530396Z",
+      "latest_at": "2026-08-02T11:34:38.530396Z",
       "primary_item": {
         "id": "1a88b98b8fb6fb30c3c8a33f925220a2d5f4d7ef",
         "title": "瓦解诈骗犯罪行动 / Disrupting a Criminal Scam Operation",
@@ -85,7 +85,83 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
+        "scored_at": "2026-08-02T11:36:53.642290Z"
+      }
+    },
+    {
+      "story_id": "story_df555478b2e0",
+      "title": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+      "url": "https://x.com/AYi_AInotes/status/2083867265179537565",
+      "primary_url": "https://x.com/AYi_AInotes/status/2083867265179537565",
+      "source": "X：阿易 AI Notes (@AYi_AInotes)",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "fd132bb8303e23d13ed295718428aba04a0d3b98",
+          "title": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+          "title_zh": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+          "title_en": null,
+          "title_original": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+          "summary": "Codex 高阶玩法：让 Sol 在 `~/.codex/agents/` 下创建 `luna-worker.toml` 子代理，模型设 `gpt-5.6-luna`、reasoning effort 设 max，Sol 负责拆任务与审代码，具体实现自动委托给 Luna Max。",
+          "recommend_reason_zh": null,
+          "url": "https://x.com/AYi_AInotes/status/2083867265179537565",
+          "source": "X：阿易 AI Notes (@AYi_AInotes)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-02T10:47:27Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "X：阿易 AI Notes (@AYi_AInotes)"
+      ],
+      "items": [
+        {
+          "id": "fd132bb8303e23d13ed295718428aba04a0d3b98",
+          "title": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+          "title_zh": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+          "title_en": null,
+          "title_original": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+          "summary": "Codex 高阶玩法：让 Sol 在 `~/.codex/agents/` 下创建 `luna-worker.toml` 子代理，模型设 `gpt-5.6-luna`、reasoning effort 设 max，Sol 负责拆任务与审代码，具体实现自动委托给 Luna Max。",
+          "recommend_reason_zh": null,
+          "url": "https://x.com/AYi_AInotes/status/2083867265179537565",
+          "source": "X：阿易 AI Notes (@AYi_AInotes)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-02T10:47:27Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7746,
+      "importance": 0.7746,
+      "importance_score": 0.7746,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.75,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9887,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-02T10:47:27Z",
+      "latest_at": "2026-08-02T10:47:27Z",
+      "primary_item": {
+        "id": "fd132bb8303e23d13ed295718428aba04a0d3b98",
+        "title": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+        "title_zh": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+        "title_en": null,
+        "title_original": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
+        "summary": "Codex 高阶玩法：让 Sol 在 `~/.codex/agents/` 下创建 `luna-worker.toml` 子代理，模型设 `gpt-5.6-luna`、reasoning effort 设 max，Sol 负责拆任务与审代码，具体实现自动委托给 Luna Max。",
+        "recommend_reason_zh": null,
+        "url": "https://x.com/AYi_AInotes/status/2083867265179537565",
+        "source": "X：阿易 AI Notes (@AYi_AInotes)",
+        "source_name": "AI HOT"
       }
     },
     {
@@ -133,15 +209,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7666,
-      "importance": 0.7666,
-      "importance_score": 0.7666,
+      "score": 0.7546,
+      "importance": 0.7546,
+      "importance_score": 0.7546,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9946,
+        "recency": 0.9279,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -162,120 +238,6 @@
         "url": "https://x.com/elonmusk/status/2083800942927839307",
         "source": "X：Elon Musk (@elonmusk, xAI)",
         "source_name": "AI HOT"
-      }
-    },
-    {
-      "story_id": "story_e2eeec323e5b",
-      "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩 / German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-      "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
-      "primary_url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
-      "source": "The Decoder：AI News（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "9f12f4c8ffc6b7e21a4c1f3894f70fd58b5aad37",
-          "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩 / German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-          "title_zh": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩",
-          "title_en": "German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-          "title_original": "German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-          "summary": "慕尼黑法院裁定，AI音乐生成器Suno在训练过程及输出结果中均侵犯版权，并驳回其合理使用抗辩。法院认定Suno 3.5和4版本模型可复现六首知名歌曲的原创元素，构成\"记忆化\"侵权，且责任归于Suno而非用户。该判决还认定美国版权法下的合理使用不适用于此案，目前尚未最终生效。",
-          "recommend_reason_zh": "慕尼黑法院裁定AI音乐生成器Suno训练与输出均侵权，认定六首歌曲被可复制存储，驳回德国文本数据挖掘例外与美国fair use抗辩，对AI音乐行业影响重大。",
-          "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
-          "source": "The Decoder：AI News（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-01T10:40:50Z"
-        },
-        {
-          "id": "2cc809b0a77054825de745d64e2dce91c47b83e6",
-          "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩 / German court rules AI music generator Suno violated copyrights, rejects fair use defense",
-          "title_zh": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩",
-          "title_en": "German court rules AI music generator Suno violated copyrights, rejects fair use defense",
-          "title_original": "German court rules AI music generator Suno violated copyrights, rejects fair use defense",
-          "summary": null,
-          "recommend_reason_zh": "慕尼黑法院裁定AI音乐生成器Suno在训练和输出环节均侵犯版权，认定六首歌曲被可复制地存储在3.5与4模型中，并否决德国文本与数据挖掘例外和美国合理使用抗辩。",
-          "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
-          "source": "The Decoder AI News",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-08-01T10:40:50Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "The Decoder AI News",
-        "The Decoder：AI News（RSS）"
-      ],
-      "items": [
-        {
-          "id": "9f12f4c8ffc6b7e21a4c1f3894f70fd58b5aad37",
-          "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩 / German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-          "title_zh": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩",
-          "title_en": "German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-          "title_original": "German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-          "summary": "慕尼黑法院裁定，AI音乐生成器Suno在训练过程及输出结果中均侵犯版权，并驳回其合理使用抗辩。法院认定Suno 3.5和4版本模型可复现六首知名歌曲的原创元素，构成\"记忆化\"侵权，且责任归于Suno而非用户。该判决还认定美国版权法下的合理使用不适用于此案，目前尚未最终生效。",
-          "recommend_reason_zh": "慕尼黑法院裁定AI音乐生成器Suno训练与输出均侵权，认定六首歌曲被可复制存储，驳回德国文本数据挖掘例外与美国fair use抗辩，对AI音乐行业影响重大。",
-          "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
-          "source": "The Decoder：AI News（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-01T10:40:50Z"
-        },
-        {
-          "id": "2cc809b0a77054825de745d64e2dce91c47b83e6",
-          "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩 / German court rules AI music generator Suno violated copyrights, rejects fair use defense",
-          "title_zh": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩",
-          "title_en": "German court rules AI music generator Suno violated copyrights, rejects fair use defense",
-          "title_original": "German court rules AI music generator Suno violated copyrights, rejects fair use defense",
-          "summary": null,
-          "recommend_reason_zh": "慕尼黑法院裁定AI音乐生成器Suno在训练和输出环节均侵犯版权，认定六首歌曲被可复制地存储在3.5与4模型中，并否决德国文本与数据挖掘例外和美国合理使用抗辩。",
-          "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
-          "source": "The Decoder AI News",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-08-01T10:40:50Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7503,
-      "importance": 0.7503,
-      "importance_score": 0.7503,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.73,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7482,
-        "story_heat": 0.25
-      },
-      "category": "industry",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-01T10:40:50Z",
-      "latest_at": "2026-08-01T10:40:50Z",
-      "primary_item": {
-        "id": "9f12f4c8ffc6b7e21a4c1f3894f70fd58b5aad37",
-        "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩 / German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-        "title_zh": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩",
-        "title_en": "German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-        "title_original": "German court rules AI music generator Suno violated copyrights， rejects fair use defense",
-        "summary": "慕尼黑法院裁定，AI音乐生成器Suno在训练过程及输出结果中均侵犯版权，并驳回其合理使用抗辩。法院认定Suno 3.5和4版本模型可复现六首知名歌曲的原创元素，构成\"记忆化\"侵权，且责任归于Suno而非用户。该判决还认定美国版权法下的合理使用不适用于此案，目前尚未最终生效。",
-        "recommend_reason_zh": "慕尼黑法院裁定AI音乐生成器Suno训练与输出均侵权，认定六首歌曲被可复制存储，驳回德国文本数据挖掘例外与美国fair use抗辩，对AI音乐行业影响重大。",
-        "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
-        "source": "The Decoder：AI News（RSS）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 62,
-      "persona_review": "做音乐生成或商用AI音频的注意，版权风险实锤了，合规审查要提前。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
       }
     },
     {
@@ -466,15 +428,15 @@
       ],
       "item_count": 6,
       "duplicate_count": 6,
-      "score": 0.6135,
-      "importance": 0.6135,
-      "importance_score": 0.6135,
+      "score": 0.6019,
+      "importance": 0.6019,
+      "importance_score": 0.6019,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9595,
+        "recency": 0.8952,
         "story_heat": 1.0
       },
       "category": "multi_source",
@@ -628,15 +590,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.5661,
-      "importance": 0.5661,
-      "importance_score": 0.5661,
+      "score": 0.556,
+      "importance": 0.556,
+      "importance_score": 0.556,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8351,
+        "recency": 0.7791,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -663,7 +625,111 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
+        "scored_at": "2026-08-02T11:36:53.642290Z"
+      }
+    },
+    {
+      "story_id": "story_e28f2fbd5da2",
+      "title": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+      "url": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+      "primary_url": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+      "source": "www.wafer.ai",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "5dc5d5699a7685cee97651f148c279b16b74bf5a",
+          "title": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "title_zh": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "title_en": null,
+          "title_original": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+          "source": "www.wafer.ai",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-02T07:21:18.343000Z"
+        },
+        {
+          "id": "95e23b427b192e05cc5a370652a74c10f28ab940",
+          "title": "在 MI355X 上运行 Kimi K3，其性价比优于 B300 / Running Kimi K3 on MI355X at Better Performance per Dollar Than B300",
+          "title_zh": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "title_en": "Running Kimi K3 on MI355X at Better Performance per Dollar Than B300",
+          "title_original": "Running Kimi K3 on MI355X at Better Performance per Dollar Than B300",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-02T04:21:14Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News",
+        "www.wafer.ai"
+      ],
+      "items": [
+        {
+          "id": "5dc5d5699a7685cee97651f148c279b16b74bf5a",
+          "title": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "title_zh": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "title_en": null,
+          "title_original": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+          "source": "www.wafer.ai",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-02T07:21:18.343000Z"
+        },
+        {
+          "id": "95e23b427b192e05cc5a370652a74c10f28ab940",
+          "title": "在 MI355X 上运行 Kimi K3，其性价比优于 B300 / Running Kimi K3 on MI355X at Better Performance per Dollar Than B300",
+          "title_zh": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+          "title_en": "Running Kimi K3 on MI355X at Better Performance per Dollar Than B300",
+          "title_original": "Running Kimi K3 on MI355X at Better Performance per Dollar Than B300",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-02T04:21:14Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5352,
+      "importance": 0.5352,
+      "importance_score": 0.5352,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9408,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-02T04:21:14Z",
+      "latest_at": "2026-08-02T07:21:18.343000Z",
+      "primary_item": {
+        "id": "5dc5d5699a7685cee97651f148c279b16b74bf5a",
+        "title": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+        "title_zh": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+        "title_en": null,
+        "title_original": "在 MI355X 上运行 Kimi K3，其性价比优于 B300",
+        "summary": null,
+        "recommend_reason_zh": null,
+        "url": "https://www.wafer.ai/blog/kimi-k3-mi355x",
+        "source": "www.wafer.ai",
+        "source_name": "Buzzing"
       }
     },
     {
@@ -769,15 +835,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.5394,
-      "importance": 0.5394,
-      "importance_score": 0.5394,
+      "score": 0.5294,
+      "importance": 0.5294,
+      "importance_score": 0.5294,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8255,
+        "recency": 0.7701,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -804,148 +870,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
-      }
-    },
-    {
-      "story_id": "story_38cfb64c6a71",
-      "title": "人工智能无法生成可用的产品，这仍然是你的工作",
-      "url": "https://weeraman.com/the-prototype-isnt-the-product",
-      "primary_url": "https://weeraman.com/the-prototype-isnt-the-product",
-      "source": "weeraman.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "35d0d2be42f141daa5899f5588b0cf48c1146021",
-          "title": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "title_zh": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "title_en": null,
-          "title_original": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "summary": null,
-          "recommend_reason_zh": "本文指出AI虽加速了首个可用版本的生成，却未缩短其到生产级系统的距离；并以AI生成代码会在五千万行表上全表扫描为例，说明工程判断力依然是人类不可替代的核心。",
-          "url": "https://weeraman.com/the-prototype-isnt-the-product",
-          "source": "weeraman.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T11:05:25.825000Z"
-        },
-        {
-          "id": "0327dc4de97b5e0cb0ae3765b12eee1bdb53f4f0",
-          "title": "AI 不会生成能用的产品，这仍然是你的工作 / AI doesn't generate working products, that's still your job",
-          "title_zh": "AI 不会生成能用的产品，这仍然是你的工作",
-          "title_en": "AI doesn't generate working products, that's still your job",
-          "title_original": "AI doesn't generate working products, that's still your job",
-          "summary": null,
-          "recommend_reason_zh": "本文指出Gen AI在封闭系统中常生成比人类更逻辑一致的代码，建议程序员转向用代数数据类型设计闭环系统，并点出AI代码与人类代码存在类似ORM和SQL的阻抗不匹配。",
-          "url": "https://news.ycombinator.com/item?id=49132130",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-01T09:21:46.404000Z"
-        },
-        {
-          "id": "234538b9d17e12b9fce41e961fc8cd7eb2050379",
-          "title": "人工智能无法生成可用的产品，这仍然是你的工作 / AI doesn't generate working products, that's still your job",
-          "title_zh": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "title_en": "AI doesn't generate working products, that's still your job",
-          "title_original": "AI doesn't generate working products, that's still your job",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章指出AI虽能在几分钟内生成可运行原型，但原型可能泄露API tokens、加入第二个用户就崩溃；它强调从原型到生产级的距离并未缩短，计算机科学教育培养的系统思维仍是关键。",
-          "url": "https://weeraman.com/the-prototype-isnt-the-product",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-01T07:52:10Z"
-        }
-      ],
-      "source_count": 3,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "hackernews",
-        "weeraman.com"
-      ],
-      "items": [
-        {
-          "id": "35d0d2be42f141daa5899f5588b0cf48c1146021",
-          "title": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "title_zh": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "title_en": null,
-          "title_original": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "summary": null,
-          "recommend_reason_zh": "本文指出AI虽加速了首个可用版本的生成，却未缩短其到生产级系统的距离；并以AI生成代码会在五千万行表上全表扫描为例，说明工程判断力依然是人类不可替代的核心。",
-          "url": "https://weeraman.com/the-prototype-isnt-the-product",
-          "source": "weeraman.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T11:05:25.825000Z"
-        },
-        {
-          "id": "0327dc4de97b5e0cb0ae3765b12eee1bdb53f4f0",
-          "title": "AI 不会生成能用的产品，这仍然是你的工作 / AI doesn't generate working products, that's still your job",
-          "title_zh": "AI 不会生成能用的产品，这仍然是你的工作",
-          "title_en": "AI doesn't generate working products, that's still your job",
-          "title_original": "AI doesn't generate working products, that's still your job",
-          "summary": null,
-          "recommend_reason_zh": "本文指出Gen AI在封闭系统中常生成比人类更逻辑一致的代码，建议程序员转向用代数数据类型设计闭环系统，并点出AI代码与人类代码存在类似ORM和SQL的阻抗不匹配。",
-          "url": "https://news.ycombinator.com/item?id=49132130",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-01T09:21:46.404000Z"
-        },
-        {
-          "id": "234538b9d17e12b9fce41e961fc8cd7eb2050379",
-          "title": "人工智能无法生成可用的产品，这仍然是你的工作 / AI doesn't generate working products, that's still your job",
-          "title_zh": "人工智能无法生成可用的产品，这仍然是你的工作",
-          "title_en": "AI doesn't generate working products, that's still your job",
-          "title_original": "AI doesn't generate working products, that's still your job",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章指出AI虽能在几分钟内生成可运行原型，但原型可能泄露API tokens、加入第二个用户就崩溃；它强调从原型到生产级的距离并未缩短，计算机科学教育培养的系统思维仍是关键。",
-          "url": "https://weeraman.com/the-prototype-isnt-the-product",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-01T07:52:10Z"
-        }
-      ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5263,
-      "importance": 0.5263,
-      "importance_score": 0.5263,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7526,
-        "story_heat": 0.5
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-01T07:52:10Z",
-      "latest_at": "2026-08-01T11:05:25.825000Z",
-      "primary_item": {
-        "id": "35d0d2be42f141daa5899f5588b0cf48c1146021",
-        "title": "人工智能无法生成可用的产品，这仍然是你的工作",
-        "title_zh": "人工智能无法生成可用的产品，这仍然是你的工作",
-        "title_en": null,
-        "title_original": "人工智能无法生成可用的产品，这仍然是你的工作",
-        "summary": null,
-        "recommend_reason_zh": "本文指出AI虽加速了首个可用版本的生成，却未缩短其到生产级系统的距离；并以AI生成代码会在五千万行表上全表扫描为例，说明工程判断力依然是人类不可替代的核心。",
-        "url": "https://weeraman.com/the-prototype-isnt-the-product",
-        "source": "weeraman.com",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "提醒AI只能出原型，落地还得靠你，别指望全自动交付。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
+        "scored_at": "2026-08-02T11:36:53.642290Z"
       }
     },
     {
@@ -1022,15 +947,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5263,
-      "importance": 0.5263,
-      "importance_score": 0.5263,
+      "score": 0.5156,
+      "importance": 0.5156,
+      "importance_score": 0.5156,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8918,
+        "recency": 0.832,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1050,6 +975,110 @@
         "url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
         "source": "Hacker News (黑客新闻)",
         "source_name": "Info Flow"
+      }
+    },
+    {
+      "story_id": "story_2686ce80dcaa",
+      "title": "人工智能：Ars Notoria 和即时知识的承诺 / Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+      "url": "https://news.ycombinator.com/item?id=49143001",
+      "primary_url": "https://news.ycombinator.com/item?id=49143001",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "f5caf82e06932eaf157b381a7a92ea25ab4c6357",
+          "title": "人工智能：Ars Notoria 和即时知识的承诺 / Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_zh": "人工智能：Ars Notoria 和即时知识的承诺",
+          "title_en": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_original": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "summary": "Why is \"Chaldean\" in scare-quotes? Ah, TIL: https://en.wikipedia.org/wiki/Biblical_Aramaic#Chaldean_misn... ( \"Chaldean language (misnomer)\") (I think I might(?) have seen the same confusion in the wild. Voltaire's preface to Zadig (1747), the fantasy satire set in ancient Babylon, purports to translate a found manuscript written in Chaldean).\nhttps://en.wikipedia.org/wiki/Biblical_Aramaic#Chaldean_misn... ( \"Chaldean language (misnomer)\") (I think I might(?) have seen the same confusion in the ",
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49143001",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-02T11:23:25.394000Z"
+        },
+        {
+          "id": "448465f8e3efbcbdbc6b0875972fea9f5c7b8c4b",
+          "title": "人工智能：Ars Notoria 和即时知识的承诺 / Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_zh": "人工智能：Ars Notoria 和即时知识的承诺",
+          "title_en": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_original": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "summary": "Centuries before Neo instantly mastered Kung Fu in The Matrix, medieval scholars found a shortcut to years of difficult study: a magical manuscript that promised to fast-track advanced learning. Anne Lawrence-Mathers investigates the Ars notoria, its supposed powers, and the demonic influence it had upon some users.\nCenturies before Neo instantly mastered Kung Fu in *The Matrix*, medieval scholars found a shortcut to years of difficult study: a magical manuscript that promised to fast-track adva",
+          "recommend_reason_zh": null,
+          "url": "https://publicdomainreview.org/essay/ars-notoria",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-02T10:18:24Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "f5caf82e06932eaf157b381a7a92ea25ab4c6357",
+          "title": "人工智能：Ars Notoria 和即时知识的承诺 / Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_zh": "人工智能：Ars Notoria 和即时知识的承诺",
+          "title_en": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_original": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "summary": "Why is \"Chaldean\" in scare-quotes? Ah, TIL: https://en.wikipedia.org/wiki/Biblical_Aramaic#Chaldean_misn... ( \"Chaldean language (misnomer)\") (I think I might(?) have seen the same confusion in the wild. Voltaire's preface to Zadig (1747), the fantasy satire set in ancient Babylon, purports to translate a found manuscript written in Chaldean).\nhttps://en.wikipedia.org/wiki/Biblical_Aramaic#Chaldean_misn... ( \"Chaldean language (misnomer)\") (I think I might(?) have seen the same confusion in the ",
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49143001",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-02T11:23:25.394000Z"
+        },
+        {
+          "id": "448465f8e3efbcbdbc6b0875972fea9f5c7b8c4b",
+          "title": "人工智能：Ars Notoria 和即时知识的承诺 / Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_zh": "人工智能：Ars Notoria 和即时知识的承诺",
+          "title_en": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "title_original": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+          "summary": "Centuries before Neo instantly mastered Kung Fu in The Matrix, medieval scholars found a shortcut to years of difficult study: a magical manuscript that promised to fast-track advanced learning. Anne Lawrence-Mathers investigates the Ars notoria, its supposed powers, and the demonic influence it had upon some users.\nCenturies before Neo instantly mastered Kung Fu in *The Matrix*, medieval scholars found a shortcut to years of difficult study: a magical manuscript that promised to fast-track adva",
+          "recommend_reason_zh": null,
+          "url": "https://publicdomainreview.org/essay/ars-notoria",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-02T10:18:24Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5453,
+      "importance": 0.5453,
+      "importance_score": 0.5453,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9973,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-02T10:18:24Z",
+      "latest_at": "2026-08-02T11:23:25.394000Z",
+      "primary_item": {
+        "id": "f5caf82e06932eaf157b381a7a92ea25ab4c6357",
+        "title": "人工智能：Ars Notoria 和即时知识的承诺 / Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+        "title_zh": "人工智能：Ars Notoria 和即时知识的承诺",
+        "title_en": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+        "title_original": "Artificial Intelligence: Ars Notoria and the Promise of Instant Knowledge",
+        "summary": "Why is \"Chaldean\" in scare-quotes? Ah, TIL: https://en.wikipedia.org/wiki/Biblical_Aramaic#Chaldean_misn... ( \"Chaldean language (misnomer)\") (I think I might(?) have seen the same confusion in the wild. Voltaire's preface to Zadig (1747), the fantasy satire set in ancient Babylon, purports to translate a found manuscript written in Chaldean).\nhttps://en.wikipedia.org/wiki/Biblical_Aramaic#Chaldean_misn... ( \"Chaldean language (misnomer)\") (I think I might(?) have seen the same confusion in the ",
+        "recommend_reason_zh": null,
+        "url": "https://news.ycombinator.com/item?id=49143001",
+        "source": "hackernews",
+        "source_name": "NewsNow"
       }
     },
     {
@@ -1075,7 +1104,7 @@
           "published_at": "2026-08-02T03:54:42.560000Z"
         },
         {
-          "id": "a464cc9c391a2d0a3f82a308418e84e489b2da68",
+          "id": "e479f96c2299848e12f537f3352467eb3eaf1aed",
           "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
           "title_zh": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器",
           "title_en": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
@@ -1083,15 +1112,15 @@
           "summary": null,
           "recommend_reason_zh": null,
           "url": "https://costperprompt.com",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
           "published_at": "2026-08-02T01:56:44Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News (黑客新闻)",
+        "Hacker News",
         "hackernews"
       ],
       "items": [
@@ -1110,7 +1139,7 @@
           "published_at": "2026-08-02T03:54:42.560000Z"
         },
         {
-          "id": "a464cc9c391a2d0a3f82a308418e84e489b2da68",
+          "id": "e479f96c2299848e12f537f3352467eb3eaf1aed",
           "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
           "title_zh": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器",
           "title_en": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
@@ -1118,23 +1147,23 @@
           "summary": null,
           "recommend_reason_zh": null,
           "url": "https://costperprompt.com",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
           "published_at": "2026-08-02T01:56:44Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5385,
-      "importance": 0.5385,
-      "importance_score": 0.5385,
+      "score": 0.5269,
+      "importance": 0.5269,
+      "importance_score": 0.5269,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9595,
+        "recency": 0.8952,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1154,110 +1183,6 @@
         "url": "https://news.ycombinator.com/item?id=49140340",
         "source": "hackernews",
         "source_name": "NewsNow"
-      }
-    },
-    {
-      "story_id": "story_10739ae4d797",
-      "title": "数学与理论计算机科学领域的十大进展",
-      "url": "https://openai.com/index/ten-advances-in-mathematics",
-      "primary_url": "https://openai.com/index/ten-advances-in-mathematics",
-      "source": "openai.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
-          "title": "数学与理论计算机科学领域的十大进展",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": null,
-          "title_original": "数学与理论计算机科学领域的十大进展",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "openai.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T10:17:30.122000Z"
-        },
-        {
-          "id": "e44665178ec4140c0f5a67877b906ac10188bcc3",
-          "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": "Ten advances in mathematics and theoretical computer science",
-          "title_original": "Ten advances in mathematics and theoretical computer science",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-01T07:37:44Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "openai.com"
-      ],
-      "items": [
-        {
-          "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
-          "title": "数学与理论计算机科学领域的十大进展",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": null,
-          "title_original": "数学与理论计算机科学领域的十大进展",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "openai.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T10:17:30.122000Z"
-        },
-        {
-          "id": "e44665178ec4140c0f5a67877b906ac10188bcc3",
-          "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": "Ten advances in mathematics and theoretical computer science",
-          "title_original": "Ten advances in mathematics and theoretical computer science",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-01T07:37:44Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.4997,
-      "importance": 0.4997,
-      "importance_score": 0.4997,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.744,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-01T07:37:44Z",
-      "latest_at": "2026-08-01T10:17:30.122000Z",
-      "primary_item": {
-        "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
-        "title": "数学与理论计算机科学领域的十大进展",
-        "title_zh": "数学与理论计算机科学领域的十大进展",
-        "title_en": null,
-        "title_original": "数学与理论计算机科学领域的十大进展",
-        "summary": null,
-        "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
-        "url": "https://openai.com/index/ten-advances-in-mathematics",
-        "source": "openai.com",
-        "source_name": "Buzzing"
       }
     },
     {
@@ -1334,15 +1259,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5242,
-      "importance": 0.5242,
-      "importance_score": 0.5242,
+      "score": 0.5136,
+      "importance": 0.5136,
+      "importance_score": 0.5136,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8799,
+        "recency": 0.8209,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1438,15 +1363,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5219,
-      "importance": 0.5219,
-      "importance_score": 0.5219,
+      "score": 0.5114,
+      "importance": 0.5114,
+      "importance_score": 0.5114,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8672,
+        "recency": 0.8091,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1542,15 +1467,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5089,
-      "importance": 0.5089,
-      "importance_score": 0.5089,
+      "score": 0.4993,
+      "importance": 0.4993,
+      "importance_score": 0.4993,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.795,
+        "recency": 0.7417,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1577,7 +1502,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
+        "scored_at": "2026-08-02T11:36:53.642290Z"
       }
     },
     {
@@ -1654,15 +1579,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.507,
-      "importance": 0.507,
-      "importance_score": 0.507,
+      "score": 0.4975,
+      "importance": 0.4975,
+      "importance_score": 0.4975,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.7842,
+        "recency": 0.7316,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1689,119 +1614,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
-      }
-    },
-    {
-      "story_id": "story_cb70a765bd5d",
-      "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
-      "url": "https://news.ycombinator.com/item?id=49132341",
-      "primary_url": "https://news.ycombinator.com/item?id=49132341",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "7486e821c90af531ddb5b3bd905bc7e2dd491eed",
-          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
-          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "summary": null,
-          "recommend_reason_zh": "欧盟将从8月2日起强制为逼真AI内容加标签，本文围绕此事展开辩论：一边认为这难阻俄罗斯等别有用心者，反成罚big tech的工具；一边认为这是打击虚假信息的法律杠杆，且频繁隐瞒AI身份会毁掉声誉。",
-          "url": "https://news.ycombinator.com/item?id=49132341",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-01T11:07:58.137000Z"
-        },
-        {
-          "id": "202e2ee3bb16183ae87f4d80e594848b6635d4ee",
-          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
-          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "summary": null,
-          "recommend_reason_zh": "欧盟8月2日起强制要求AI生成并拟真内容加数字水印，违者最高罚年营收3%；个人与讽刺作品豁免，存量系统宽限四个月，Google SynthID已标注超1000亿张图。",
-          "url": "https://www.engadget.com/2227966/eu-mandate-labels-on-authentic-looking-ai-content",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-01T08:26:55Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "7486e821c90af531ddb5b3bd905bc7e2dd491eed",
-          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
-          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "summary": null,
-          "recommend_reason_zh": "欧盟将从8月2日起强制为逼真AI内容加标签，本文围绕此事展开辩论：一边认为这难阻俄罗斯等别有用心者，反成罚big tech的工具；一边认为这是打击虚假信息的法律杠杆，且频繁隐瞒AI身份会毁掉声誉。",
-          "url": "https://news.ycombinator.com/item?id=49132341",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-01T11:07:58.137000Z"
-        },
-        {
-          "id": "202e2ee3bb16183ae87f4d80e594848b6635d4ee",
-          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
-          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
-          "summary": null,
-          "recommend_reason_zh": "欧盟8月2日起强制要求AI生成并拟真内容加数字水印，违者最高罚年营收3%；个人与讽刺作品豁免，存量系统宽限四个月，Google SynthID已标注超1000亿张图。",
-          "url": "https://www.engadget.com/2227966/eu-mandate-labels-on-authentic-looking-ai-content",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-01T08:26:55Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5014,
-      "importance": 0.5014,
-      "importance_score": 0.5014,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7531,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-01T08:26:55Z",
-      "latest_at": "2026-08-01T11:07:58.137000Z",
-      "primary_item": {
-        "id": "7486e821c90af531ddb5b3bd905bc7e2dd491eed",
-        "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
-        "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
-        "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
-        "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
-        "summary": null,
-        "recommend_reason_zh": "欧盟将从8月2日起强制为逼真AI内容加标签，本文围绕此事展开辩论：一边认为这难阻俄罗斯等别有用心者，反成罚big tech的工具；一边认为这是打击虚假信息的法律杠杆，且频繁隐瞒AI身份会毁掉声誉。",
-        "url": "https://news.ycombinator.com/item?id=49132341",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "做内容平台的得提前规划标签方案，但具体技术标准还没落地，先观望。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-02T06:48:26.666683Z"
+        "scored_at": "2026-08-02T11:36:53.642290Z"
       }
     }
   ]
