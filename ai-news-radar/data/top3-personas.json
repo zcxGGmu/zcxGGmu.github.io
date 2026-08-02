@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T15:31:35.351350Z",
+  "generated_at": "2026-08-02T03:56:33.120553Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,38 @@
   ],
   "items": [
     {
-      "story_id": "story_af28dcb2d4df",
-      "title": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三 / DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-      "url": "https://x.com/ArtificialAnlys/status/2083306229074739285",
+      "story_id": "story_e2eeec323e5b",
+      "title": "德国法院裁定AI音乐生成器Suno侵犯版权，驳回合理使用抗辩 / German court rules AI music generator Suno violated copyrights， rejects fair use defense",
+      "url": "https://the-decoder.com/german-court-rules-ai-music-generator-suno-violated-copyrights-rejects-fair-use-defense",
       "rank": 1,
       "reviews": {
-        "cynic": {
-          "score": 30,
-          "review": "开源前三的榜单是谁排的？跑分和复现代码晒出来再喊。"
-        },
-        "paper-police": {
-          "score": 8,
-          "review": "仅一条推文称开源，无论文无代码链接无评测，无从验证。"
-        },
         "pragmatic": {
-          "score": 88,
-          "review": "权重已放，能直接跑推理，开源前三值得换上去试试。"
+          "score": 62,
+          "review": "做音乐生成或商用AI音频的注意，版权风险实锤了，合规审查要提前。"
         }
       }
     },
     {
-      "story_id": "story_c38e05787678",
-      "title": "animated-voiceover 开源：一人干翻动画工作室",
-      "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
+      "story_id": "story_8adda9102be6",
+      "title": "GLM 5.2 助 Hugging Face 抵御秘密模型攻击",
+      "url": "https://x.com/AYi_AInotes/status/2083401614623133921",
       "rank": 2,
       "reviews": {
-        "cynic": {
-          "score": 55,
-          "review": "开源可能属实，但“干翻工作室”的 demo 挑了几个镜头？"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "仅一条推文宣称开源，无代码仓库无评测，真实性待验证。"
-        },
         "pragmatic": {
-          "score": 80,
-          "review": "开源即用，动画配音自动化直接可试，省外包钱。"
+          "score": 55,
+          "review": "安全防护有新招，但没看到可复现的细节，暂不行动。"
         }
       }
     },
     {
-      "story_id": "story_03b9f05044c9",
-      "title": "Flint：面向人工智能时代的可视化语言",
-      "url": "https://microsoft.github.io/flint-chart",
+      "story_id": "story_817116dbd893",
+      "title": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+      "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
       "rank": 3,
       "reviews": {
-        "cynic": {
-          "score": 72,
-          "review": "可视化语言不算新，但微软肯开源落地就算实诚；AI时代四个字有点虚。"
-        },
-        "paper-police": {
-          "score": 35,
-          "review": "官方页面有介绍但无论文和代码仓库，无法验证。"
-        },
         "pragmatic": {
-          "score": 78,
-          "review": "若已开源可直接试用，做 AI 数据可视化的能省不少模板代码。"
+          "score": 55,
+          "review": "成本透明性下降，用Cursor的企业得自己记账了。"
         }
       }
     }

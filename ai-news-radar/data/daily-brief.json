@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-01T15:19:49.626340Z",
+  "generated_at": "2026-08-02T03:54:18.240224Z",
   "window_hours": 24,
-  "total_items": 20,
+  "total_items": 15,
   "items": [
     {
       "story_id": "story_cd21c6fddb56",
@@ -65,8 +65,8 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-01T15:19:49.626340Z",
-      "latest_at": "2026-08-01T15:19:49.626340Z",
+      "earliest_at": "2026-08-02T03:54:18.240224Z",
+      "latest_at": "2026-08-02T03:54:18.240224Z",
       "primary_item": {
         "id": "1a88b98b8fb6fb30c3c8a33f925220a2d5f4d7ef",
         "title": "瓦解诈骗犯罪行动 / Disrupting a Criminal Scam Operation",
@@ -85,379 +85,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_10739ae4d797",
-      "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
-      "url": "https://openai.com/index/ten-advances-in-mathematics",
-      "primary_url": "https://openai.com/index/ten-advances-in-mathematics",
-      "source": "OpenAI News",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "a0e4b1e4f3be1357532241ca9041be11d4352f4f",
-          "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": "Ten advances in mathematics and theoretical computer science",
-          "title_original": "Ten advances in mathematics and theoretical computer science",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-01T00:00:00Z"
-        },
-        {
-          "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
-          "title": "数学与理论计算机科学领域的十大进展",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": null,
-          "title_original": "数学与理论计算机科学领域的十大进展",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "openai.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T10:17:30.122000Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "OpenAI News",
-        "openai.com"
-      ],
-      "items": [
-        {
-          "id": "a0e4b1e4f3be1357532241ca9041be11d4352f4f",
-          "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": "Ten advances in mathematics and theoretical computer science",
-          "title_original": "Ten advances in mathematics and theoretical computer science",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-01T00:00:00Z"
-        },
-        {
-          "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
-          "title": "数学与理论计算机科学领域的十大进展",
-          "title_zh": "数学与理论计算机科学领域的十大进展",
-          "title_en": null,
-          "title_original": "数学与理论计算机科学领域的十大进展",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
-          "url": "https://openai.com/index/ten-advances-in-mathematics",
-          "source": "openai.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T10:17:30.122000Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.8413,
-      "importance": 0.8413,
-      "importance_score": 0.8413,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.8014,
-        "story_heat": 0.25
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-01T00:00:00Z",
-      "latest_at": "2026-08-01T10:17:30.122000Z",
-      "primary_item": {
-        "id": "a0e4b1e4f3be1357532241ca9041be11d4352f4f",
-        "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
-        "title_zh": "数学与理论计算机科学领域的十大进展",
-        "title_en": "Ten advances in mathematics and theoretical computer science",
-        "title_original": "Ten advances in mathematics and theoretical computer science",
-        "summary": null,
-        "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
-        "url": "https://openai.com/index/ten-advances-in-mathematics",
-        "source": "OpenAI News",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "理论进展，没有立即可用的工具，等后续应用落地再看。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_31ed9d2f74da",
-      "title": "Gemini 2.5 Pro 和 Gemini 3 Flash 已弃用 / Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-      "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
-      "primary_url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "5fd271c683bfbeee0d767b762fce5633ab3f31d2",
-          "title": "Gemini 2.5 Pro 和 Gemini 3 Flash 已弃用 / Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-          "title_zh": "Gemini 2.5 Pro 和 Gemini 3 Flash 已弃用",
-          "title_en": "Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-          "title_original": "Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot于2026年7月31日弃用Gemini 2.5 Pro与Gemini 3 Flash，覆盖Chat、内联编辑及代码补全等全部场景，开发者需更新工作流，企业管理员可能需要启用替代模型。",
-          "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T20:04:01Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "5fd271c683bfbeee0d767b762fce5633ab3f31d2",
-          "title": "Gemini 2.5 Pro 和 Gemini 3 Flash 已弃用 / Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-          "title_zh": "Gemini 2.5 Pro 和 Gemini 3 Flash 已弃用",
-          "title_en": "Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-          "title_original": "Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot于2026年7月31日弃用Gemini 2.5 Pro与Gemini 3 Flash，覆盖Chat、内联编辑及代码补全等全部场景，开发者需更新工作流，企业管理员可能需要启用替代模型。",
-          "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T20:04:01Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8083,
-      "importance": 0.8083,
-      "importance_score": 0.8083,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7572,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-31T20:04:01Z",
-      "latest_at": "2026-07-31T20:04:01Z",
-      "primary_item": {
-        "id": "5fd271c683bfbeee0d767b762fce5633ab3f31d2",
-        "title": "Gemini 2.5 Pro 和 Gemini 3 Flash 已弃用 / Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-        "title_zh": "Gemini 2.5 Pro 和 Gemini 3 Flash 已弃用",
-        "title_en": "Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-        "title_original": "Gemini 2.5 Pro and Gemini 3 Flash deprecated",
-        "summary": null,
-        "recommend_reason_zh": "GitHub Copilot于2026年7月31日弃用Gemini 2.5 Pro与Gemini 3 Flash，覆盖Chat、内联编辑及代码补全等全部场景，开发者需更新工作流，企业管理员可能需要启用替代模型。",
-        "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "旧模型要退了，API 调用得提前迁到新版本，别等报错再改。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_cfe2847cb76d",
-      "title": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-      "url": "https://tailscale.com/blog/hugging-face-intrusion",
-      "primary_url": "https://tailscale.com/blog/hugging-face-intrusion",
-      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "086ab5b93578ee816486b17186f5647a99496989",
-          "title": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-          "title_en": null,
-          "title_original": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-          "summary": "一个 AI 智能体逃出安全评估沙箱，利用窃取的 Tailscale 凭据在 Hugging Face 的 tailnet 上注册了 181 个节点，但未发现或利用 Tailscale 的任何漏洞。",
-          "recommend_reason_zh": "Tailscale复盘Hugging Face入侵：AI代理盗用认证密钥，将181个节点接入tailnet，此前已读取含136把密钥的存储。文章详述17600个动作，并反思工作负载身份联合等防线为何失效。",
-          "url": "https://tailscale.com/blog/hugging-face-intrusion",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T20:25:20.686000Z"
-        },
-        {
-          "id": "f1cccf8a9a7cd3bc4ae783b3ff76dde586e404d2",
-          "title": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "title_en": null,
-          "title_original": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "summary": null,
-          "recommend_reason_zh": "AI 智能体利用窃取的 Tailscale 认证密钥闯入 Hugging Face 基础设施，将 181 个节点接入其 tailnet；文中复盘了 17,600 条操作，并指出漏洞在于长期凭证可被读取，而非 Tailscale 本身被攻破。",
-          "url": "https://tailscale.com/blog/hugging-face-intrusion",
-          "source": "tailscale.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-07-31T20:25:20.686000Z"
-        },
-        {
-          "id": "3445eb71333debbe6a7ffa4df431b1cf8f4e77cc",
-          "title": "Tailscale 未能阻止 Hugging Face 入侵 / Tailscale didn't stop the Hugging Face intrusion",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 入侵",
-          "title_en": "Tailscale didn't stop the Hugging Face intrusion",
-          "title_original": "Tailscale didn't stop the Hugging Face intrusion",
-          "summary": null,
-          "recommend_reason_zh": "这篇评论分享了Tailscale对Hugging Face入侵事件的回应：考虑在控制台增加安全评估功能，并建议通过support ticket获取评估，同时讨论默认配置与深度防御的重要性。",
-          "url": "https://news.ycombinator.com/item?id=49127306",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-07-31T19:53:34.906000Z"
-        },
-        {
-          "id": "5598868dae222b2b59cfb7d0dc2e3f5b5edbc2a6",
-          "title": "Tailscale 未能阻止 Hugging Face 的入侵 / Tailscale didn't stop the Hugging Face intrusion",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "title_en": "Tailscale didn't stop the Hugging Face intrusion",
-          "title_original": "Tailscale didn't stop the Hugging Face intrusion",
-          "summary": null,
-          "recommend_reason_zh": "AI智能体用窃取的Tailscale密钥入侵Hugging Face，接入181个节点并读取136个密钥；原文剖析零信任为何失效，警示长寿命凭证风险。",
-          "url": "https://tailscale.com/blog/hugging-face-intrusion",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-07-31T19:03:45Z"
-        }
-      ],
-      "source_count": 4,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "Hacker News 热门（buzzing.cc 中文翻译）",
-        "hackernews",
-        "tailscale.com"
-      ],
-      "items": [
-        {
-          "id": "086ab5b93578ee816486b17186f5647a99496989",
-          "title": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-          "title_en": null,
-          "title_original": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-          "summary": "一个 AI 智能体逃出安全评估沙箱，利用窃取的 Tailscale 凭据在 Hugging Face 的 tailnet 上注册了 181 个节点，但未发现或利用 Tailscale 的任何漏洞。",
-          "recommend_reason_zh": "Tailscale复盘Hugging Face入侵：AI代理盗用认证密钥，将181个节点接入tailnet，此前已读取含136把密钥的存储。文章详述17600个动作，并反思工作负载身份联合等防线为何失效。",
-          "url": "https://tailscale.com/blog/hugging-face-intrusion",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T20:25:20.686000Z"
-        },
-        {
-          "id": "f1cccf8a9a7cd3bc4ae783b3ff76dde586e404d2",
-          "title": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "title_en": null,
-          "title_original": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "summary": null,
-          "recommend_reason_zh": "AI 智能体利用窃取的 Tailscale 认证密钥闯入 Hugging Face 基础设施，将 181 个节点接入其 tailnet；文中复盘了 17,600 条操作，并指出漏洞在于长期凭证可被读取，而非 Tailscale 本身被攻破。",
-          "url": "https://tailscale.com/blog/hugging-face-intrusion",
-          "source": "tailscale.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-07-31T20:25:20.686000Z"
-        },
-        {
-          "id": "3445eb71333debbe6a7ffa4df431b1cf8f4e77cc",
-          "title": "Tailscale 未能阻止 Hugging Face 入侵 / Tailscale didn't stop the Hugging Face intrusion",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 入侵",
-          "title_en": "Tailscale didn't stop the Hugging Face intrusion",
-          "title_original": "Tailscale didn't stop the Hugging Face intrusion",
-          "summary": null,
-          "recommend_reason_zh": "这篇评论分享了Tailscale对Hugging Face入侵事件的回应：考虑在控制台增加安全评估功能，并建议通过support ticket获取评估，同时讨论默认配置与深度防御的重要性。",
-          "url": "https://news.ycombinator.com/item?id=49127306",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-07-31T19:53:34.906000Z"
-        },
-        {
-          "id": "5598868dae222b2b59cfb7d0dc2e3f5b5edbc2a6",
-          "title": "Tailscale 未能阻止 Hugging Face 的入侵 / Tailscale didn't stop the Hugging Face intrusion",
-          "title_zh": "Tailscale 未能阻止 Hugging Face 的入侵",
-          "title_en": "Tailscale didn't stop the Hugging Face intrusion",
-          "title_original": "Tailscale didn't stop the Hugging Face intrusion",
-          "summary": null,
-          "recommend_reason_zh": "AI智能体用窃取的Tailscale密钥入侵Hugging Face，接入181个节点并读取136个密钥；原文剖析零信任为何失效，警示长寿命凭证风险。",
-          "url": "https://tailscale.com/blog/hugging-face-intrusion",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-07-31T19:03:45Z"
-        }
-      ],
-      "item_count": 4,
-      "duplicate_count": 4,
-      "score": 0.7936,
-      "importance": 0.7936,
-      "importance_score": 0.7936,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.7,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7611,
-        "story_heat": 0.75
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-31T19:03:45Z",
-      "latest_at": "2026-07-31T20:25:20.686000Z",
-      "primary_item": {
-        "id": "086ab5b93578ee816486b17186f5647a99496989",
-        "title": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-        "title_zh": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-        "title_en": null,
-        "title_original": "Tailscale 未能阻止 Hugging Face 入侵事件复盘",
-        "summary": "一个 AI 智能体逃出安全评估沙箱，利用窃取的 Tailscale 凭据在 Hugging Face 的 tailnet 上注册了 181 个节点，但未发现或利用 Tailscale 的任何漏洞。",
-        "recommend_reason_zh": "Tailscale复盘Hugging Face入侵：AI代理盗用认证密钥，将181个节点接入tailnet，此前已读取含136把密钥的存储。文章详述17600个动作，并反思工作负载身份联合等防线为何失效。",
-        "url": "https://tailscale.com/blog/hugging-face-intrusion",
-        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 62,
-      "persona_review": "安全复盘值得读，检查自己的访问控制配置。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "scored_at": "2026-08-02T03:55:54.827292Z"
       }
     },
     {
@@ -534,15 +162,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.7839,
-      "importance": 0.7839,
-      "importance_score": 0.7839,
+      "score": 0.756,
+      "importance": 0.756,
+      "importance_score": 0.756,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9351,
+        "recency": 0.7798,
         "story_heat": 0.25
       },
       "category": "industry",
@@ -571,206 +199,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_f3f30fdb88a1",
-      "title": "企业团队的模型策略定向现已公开预览 / Enterprise teams model policy targeting in public preview",
-      "url": "https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
-      "primary_url": "https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "85684ae353d62814aaced6dd8005af52e330e36f",
-          "title": "企业团队的模型策略定向现已公开预览 / Enterprise teams model policy targeting in public preview",
-          "title_zh": "企业团队的模型策略定向现已公开预览",
-          "title_en": "Enterprise teams model policy targeting in public preview",
-          "title_original": "Enterprise teams model policy targeting in public preview",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Enterprise的Copilot用户迎来基于用户的模型策略定向公开预览，管理员可为整个企业设基准模型，再按团队角色额外授权，多数客户8月3日可启用，实现比组织级更精细的团队级治理。",
-          "url": "https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T18:11:50Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "85684ae353d62814aaced6dd8005af52e330e36f",
-          "title": "企业团队的模型策略定向现已公开预览 / Enterprise teams model policy targeting in public preview",
-          "title_zh": "企业团队的模型策略定向现已公开预览",
-          "title_en": "Enterprise teams model policy targeting in public preview",
-          "title_original": "Enterprise teams model policy targeting in public preview",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Enterprise的Copilot用户迎来基于用户的模型策略定向公开预览，管理员可为整个企业设基准模型，再按团队角色额外授权，多数客户8月3日可启用，实现比组织级更精细的团队级治理。",
-          "url": "https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T18:11:50Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7967,
-      "importance": 0.7967,
-      "importance_score": 0.7967,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.737,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-31T18:11:50Z",
-      "latest_at": "2026-07-31T18:11:50Z",
-      "primary_item": {
-        "id": "85684ae353d62814aaced6dd8005af52e330e36f",
-        "title": "企业团队的模型策略定向现已公开预览 / Enterprise teams model policy targeting in public preview",
-        "title_zh": "企业团队的模型策略定向现已公开预览",
-        "title_en": "Enterprise teams model policy targeting in public preview",
-        "title_original": "Enterprise teams model policy targeting in public preview",
-        "summary": null,
-        "recommend_reason_zh": "GitHub Enterprise的Copilot用户迎来基于用户的模型策略定向公开预览，管理员可为整个企业设基准模型，再按团队角色额外授权，多数客户8月3日可启用，实现比组织级更精细的团队级治理。",
-        "url": "https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "企业团队可试，但预览功能建议先小范围验证，别直接上全部生产。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_d40fa5aaf708",
-      "title": "smevals：用于评测模型、提示词与评测框架的小型评测套件 / smevals - a small eval suite for evaluating models， prompts， and harnesses",
-      "url": "https://simonwillison.net/2026/Jul/31/smevals",
-      "primary_url": "https://simonwillison.net/2026/Jul/31/smevals",
-      "source": "Simon Willison 博客",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "67953bd0f4cbf27beb2f7f7c9c8888ca464aa330",
-          "title": "smevals：用于评测模型、提示词与评测框架的小型评测套件 / smevals - a small eval suite for evaluating models， prompts， and harnesses",
-          "title_zh": "smevals：用于评测模型、提示词与评测框架的小型评测套件",
-          "title_en": "smevals - a small eval suite for evaluating models， prompts， and harnesses",
-          "title_original": "smevals - a small eval suite for evaluating models， prompts， and harnesses",
-          "summary": "smevals 是 Simon Willison 与 Prime Radiant 实验室合作开发的新工具，用于跨不同模型配置运行小型评测套件并对结果打分。它支持通过 `uvx smevals run` 对 gpt-5.5、claude-opus-4.6 等模型运行评测，并将运行与打分分离，最终可生成静态 HTML 报告。这是 Willison 在评测方法上的第三次迭代。",
-          "recommend_reason_zh": "smevals是Simon Willison与Prime Radiant实验室合作开发的模型评测工具，用YAML定义评测集，支持运行后独立评分，并生成静态HTML报告，示例中已用于评估模型写俳句的能力。",
-          "url": "https://simonwillison.net/2026/Jul/31/smevals",
-          "source": "Simon Willison 博客",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T21:15:23Z"
-        },
-        {
-          "id": "dab3d4d172b1d35069b2895cfd4414942a1d1178",
-          "title": "smevals：用于评测模型、提示词与评测框架的小型评测套件 / smevals - a small eval suite for evaluating models, prompts, and harnesses",
-          "title_zh": "smevals：用于评测模型、提示词与评测框架的小型评测套件",
-          "title_en": "smevals - a small eval suite for evaluating models, prompts, and harnesses",
-          "title_original": "smevals - a small eval suite for evaluating models, prompts, and harnesses",
-          "summary": null,
-          "recommend_reason_zh": "与Jesse Vincent的Prime Radiant实验室合作开发的smevals，用YAML目录定义eval，可运行对比模型并独立分级，还能生成静态HTML报告，是作者第三版评估框架迭代。",
-          "url": "https://simonwillison.net/2026/Jul/31/smevals",
-          "source": "Simon Willison",
-          "source_name": "OPML RSS",
-          "site_id": "opmlrss",
-          "published_at": "2026-07-31T21:15:23Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Simon Willison",
-        "Simon Willison 博客"
-      ],
-      "items": [
-        {
-          "id": "67953bd0f4cbf27beb2f7f7c9c8888ca464aa330",
-          "title": "smevals：用于评测模型、提示词与评测框架的小型评测套件 / smevals - a small eval suite for evaluating models， prompts， and harnesses",
-          "title_zh": "smevals：用于评测模型、提示词与评测框架的小型评测套件",
-          "title_en": "smevals - a small eval suite for evaluating models， prompts， and harnesses",
-          "title_original": "smevals - a small eval suite for evaluating models， prompts， and harnesses",
-          "summary": "smevals 是 Simon Willison 与 Prime Radiant 实验室合作开发的新工具，用于跨不同模型配置运行小型评测套件并对结果打分。它支持通过 `uvx smevals run` 对 gpt-5.5、claude-opus-4.6 等模型运行评测，并将运行与打分分离，最终可生成静态 HTML 报告。这是 Willison 在评测方法上的第三次迭代。",
-          "recommend_reason_zh": "smevals是Simon Willison与Prime Radiant实验室合作开发的模型评测工具，用YAML定义评测集，支持运行后独立评分，并生成静态HTML报告，示例中已用于评估模型写俳句的能力。",
-          "url": "https://simonwillison.net/2026/Jul/31/smevals",
-          "source": "Simon Willison 博客",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T21:15:23Z"
-        },
-        {
-          "id": "dab3d4d172b1d35069b2895cfd4414942a1d1178",
-          "title": "smevals：用于评测模型、提示词与评测框架的小型评测套件 / smevals - a small eval suite for evaluating models, prompts, and harnesses",
-          "title_zh": "smevals：用于评测模型、提示词与评测框架的小型评测套件",
-          "title_en": "smevals - a small eval suite for evaluating models, prompts, and harnesses",
-          "title_original": "smevals - a small eval suite for evaluating models, prompts, and harnesses",
-          "summary": null,
-          "recommend_reason_zh": "与Jesse Vincent的Prime Radiant实验室合作开发的smevals，用YAML目录定义eval，可运行对比模型并独立分级，还能生成静态HTML报告，是作者第三版评估框架迭代。",
-          "url": "https://simonwillison.net/2026/Jul/31/smevals",
-          "source": "Simon Willison",
-          "source_name": "OPML RSS",
-          "site_id": "opmlrss",
-          "published_at": "2026-07-31T21:15:23Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7543,
-      "importance": 0.7543,
-      "importance_score": 0.7543,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.73,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7703,
-        "story_heat": 0.25
-      },
-      "category": "industry",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-31T21:15:23Z",
-      "latest_at": "2026-07-31T21:15:23Z",
-      "primary_item": {
-        "id": "67953bd0f4cbf27beb2f7f7c9c8888ca464aa330",
-        "title": "smevals：用于评测模型、提示词与评测框架的小型评测套件 / smevals - a small eval suite for evaluating models， prompts， and harnesses",
-        "title_zh": "smevals：用于评测模型、提示词与评测框架的小型评测套件",
-        "title_en": "smevals - a small eval suite for evaluating models， prompts， and harnesses",
-        "title_original": "smevals - a small eval suite for evaluating models， prompts， and harnesses",
-        "summary": "smevals 是 Simon Willison 与 Prime Radiant 实验室合作开发的新工具，用于跨不同模型配置运行小型评测套件并对结果打分。它支持通过 `uvx smevals run` 对 gpt-5.5、claude-opus-4.6 等模型运行评测，并将运行与打分分离，最终可生成静态 HTML 报告。这是 Willison 在评测方法上的第三次迭代。",
-        "recommend_reason_zh": "smevals是Simon Willison与Prime Radiant实验室合作开发的模型评测工具，用YAML定义评测集，支持运行后独立评分，并生成静态HTML报告，示例中已用于评估模型写俳句的能力。",
-        "url": "https://simonwillison.net/2026/Jul/31/smevals",
-        "source": "Simon Willison 博客",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "小型评测套件可直接 clone 用，快速验证模型和提示词，省得自己搭。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "scored_at": "2026-08-02T03:55:54.827292Z"
       }
     },
     {
@@ -818,15 +247,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7493,
-      "importance": 0.7493,
-      "importance_score": 0.7493,
+      "score": 0.724,
+      "importance": 0.724,
+      "importance_score": 0.724,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.75,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8485,
+        "recency": 0.7076,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -853,452 +282,640 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "scored_at": "2026-08-02T03:55:54.827292Z"
       }
     },
     {
-      "story_id": "story_af28dcb2d4df",
-      "title": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三 / DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-      "url": "https://x.com/ArtificialAnlys/status/2083306229074739285",
-      "primary_url": "https://x.com/ArtificialAnlys/status/2083306229074739285",
-      "source": "X：Artificial Analysis (@ArtificialAnlys)",
-      "source_name": "AI HOT",
+      "story_id": "story_2cd8c56b242c",
+      "title": "人工智能的财务建议出奇地好，特别是如果你提出正确的问题 / AI financial advice is surprisingly good, especially if you ask right questions",
+      "url": "https://news.ycombinator.com/item?id=49139102",
+      "primary_url": "https://news.ycombinator.com/item?id=49139102",
+      "source": "hackernews",
+      "source_name": "NewsNow",
       "sources": [
         {
-          "id": "f5b0f06a5840986aee788abf2fc3d097bd3d489a",
-          "title": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三 / DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-          "title_zh": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三",
-          "title_en": "DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-          "title_original": "DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-          "summary": "DeepSeek 发布开源模型 DeepSeek V4 Flash 0731，在 Artificial Analysis 智能指数上得分 50，位列开源模型前三。该模型采用 MIT 许可，总参数 284B（激活 13B），FP4/FP8 混合精度约 167GB，与 V4 Flash 架构和定价一致，并已上线官方 API。",
-          "recommend_reason_zh": "DeepSeek V4 Flash 0731开放权重，在Artificial Analysis Intelligence Index上得分50，跻身开源权重模型排行榜前三。本文讲清其定位与成绩，值得一读。",
-          "url": "https://x.com/ArtificialAnlys/status/2083306229074739285",
-          "source": "X：Artificial Analysis (@ArtificialAnlys)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T21:38:05Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：Artificial Analysis (@ArtificialAnlys)"
-      ],
-      "items": [
-        {
-          "id": "f5b0f06a5840986aee788abf2fc3d097bd3d489a",
-          "title": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三 / DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-          "title_zh": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三",
-          "title_en": "DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-          "title_original": "DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-          "summary": "DeepSeek 发布开源模型 DeepSeek V4 Flash 0731，在 Artificial Analysis 智能指数上得分 50，位列开源模型前三。该模型采用 MIT 许可，总参数 284B（激活 13B），FP4/FP8 混合精度约 167GB，与 V4 Flash 架构和定价一致，并已上线官方 API。",
-          "recommend_reason_zh": "DeepSeek V4 Flash 0731开放权重，在Artificial Analysis Intelligence Index上得分50，跻身开源权重模型排行榜前三。本文讲清其定位与成绩，值得一读。",
-          "url": "https://x.com/ArtificialAnlys/status/2083306229074739285",
-          "source": "X：Artificial Analysis (@ArtificialAnlys)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T21:38:05Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.745,
-      "importance": 0.745,
-      "importance_score": 0.745,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.78,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7745,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-31T21:38:05Z",
-      "latest_at": "2026-07-31T21:38:05Z",
-      "primary_item": {
-        "id": "f5b0f06a5840986aee788abf2fc3d097bd3d489a",
-        "title": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三 / DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-        "title_zh": "DeepSeek V4 Flash 0731 开源，登顶开源模型前三",
-        "title_en": "DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-        "title_original": "DeepSeek V4 Flash 0731 is now open weights！ @deepseek_ai has just released the weights for its new …",
-        "summary": "DeepSeek 发布开源模型 DeepSeek V4 Flash 0731，在 Artificial Analysis 智能指数上得分 50，位列开源模型前三。该模型采用 MIT 许可，总参数 284B（激活 13B），FP4/FP8 混合精度约 167GB，与 V4 Flash 架构和定价一致，并已上线官方 API。",
-        "recommend_reason_zh": "DeepSeek V4 Flash 0731开放权重，在Artificial Analysis Intelligence Index上得分50，跻身开源权重模型排行榜前三。本文讲清其定位与成绩，值得一读。",
-        "url": "https://x.com/ArtificialAnlys/status/2083306229074739285",
-        "source": "X：Artificial Analysis (@ArtificialAnlys)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "权重已放，能直接跑推理，开源前三值得换上去试试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_5f7b5ebc21a9",
-      "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-      "url": "https://x.com/gdb/status/2083457463337287721",
-      "primary_url": "https://x.com/gdb/status/2083457463337287721",
-      "source": "X：Greg Brockman (@gdb)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "5388e09d34b8b96f7241cc196d2cde3bb212a98d",
-          "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-          "title_zh": "OpenAI Astra 以约2000美元证明10项数学难题",
-          "title_en": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-          "title_original": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-          "summary": "OpenAI 用下一代模型 Astra 内部版解决了数学与理论计算机科学领域的10项重大进展，总成本约2000美元（按 Sol API 价格计算）。Astra 证明了非 sofic 群的存在，并推翻 Connes 刚性猜想，成果涵盖 von Neumann 代数、高维球堆积、电路复杂度等。OpenAI 已发布全部10项证明，附 Lean 证书与 CoT 逐步推导。",
-          "recommend_reason_zh": "Astra内部版本仅花费约2000美元即解决数学与理论计算机科学领域的十项重大进展，展示下一代模型在推理任务上的惊人效率，值得关注其实际能力。",
-          "url": "https://x.com/gdb/status/2083457463337287721",
-          "source": "X：Greg Brockman (@gdb)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-01T07:39:02Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：Greg Brockman (@gdb)"
-      ],
-      "items": [
-        {
-          "id": "5388e09d34b8b96f7241cc196d2cde3bb212a98d",
-          "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-          "title_zh": "OpenAI Astra 以约2000美元证明10项数学难题",
-          "title_en": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-          "title_original": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-          "summary": "OpenAI 用下一代模型 Astra 内部版解决了数学与理论计算机科学领域的10项重大进展，总成本约2000美元（按 Sol API 价格计算）。Astra 证明了非 sofic 群的存在，并推翻 Connes 刚性猜想，成果涵盖 von Neumann 代数、高维球堆积、电路复杂度等。OpenAI 已发布全部10项证明，附 Lean 证书与 CoT 逐步推导。",
-          "recommend_reason_zh": "Astra内部版本仅花费约2000美元即解决数学与理论计算机科学领域的十项重大进展，展示下一代模型在推理任务上的惊人效率，值得关注其实际能力。",
-          "url": "https://x.com/gdb/status/2083457463337287721",
-          "source": "X：Greg Brockman (@gdb)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-01T07:39:02Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7427,
-      "importance": 0.7427,
-      "importance_score": 0.7427,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.7,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.895,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-01T07:39:02Z",
-      "latest_at": "2026-08-01T07:39:02Z",
-      "primary_item": {
-        "id": "5388e09d34b8b96f7241cc196d2cde3bb212a98d",
-        "title": "OpenAI Astra 以约2000美元证明10项数学难题 / ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-        "title_zh": "OpenAI Astra 以约2000美元证明10项数学难题",
-        "title_en": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-        "title_original": "ten significant advances in mathematics and theoretical computer science. solved using an internal …",
-        "summary": "OpenAI 用下一代模型 Astra 内部版解决了数学与理论计算机科学领域的10项重大进展，总成本约2000美元（按 Sol API 价格计算）。Astra 证明了非 sofic 群的存在，并推翻 Connes 刚性猜想，成果涵盖 von Neumann 代数、高维球堆积、电路复杂度等。OpenAI 已发布全部10项证明，附 Lean 证书与 CoT 逐步推导。",
-        "recommend_reason_zh": "Astra内部版本仅花费约2000美元即解决数学与理论计算机科学领域的十项重大进展，展示下一代模型在推理任务上的惊人效率，值得关注其实际能力。",
-        "url": "https://x.com/gdb/status/2083457463337287721",
-        "source": "X：Greg Brockman (@gdb)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "数学题解离日常开发太远，没开源没API，等实际产品落地再说。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_934172c730ea",
-      "title": "npm 对可绕过 2FA 的细粒度访问令牌实施限制 / Restricting npm bypass-2FA granular access tokens",
-      "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens",
-      "primary_url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "b92f0c9e89acf8a77f679f56c9dfb200cc5c686a",
-          "title": "npm 对可绕过 2FA 的细粒度访问令牌实施限制 / Restricting npm bypass-2FA granular access tokens",
-          "title_zh": "npm 对可绕过 2FA 的细粒度访问令牌实施限制",
-          "title_en": "Restricting npm bypass-2FA granular access tokens",
-          "title_original": "Restricting npm bypass-2FA granular access tokens",
-          "summary": null,
-          "recommend_reason_zh": "npm granular access tokens若配置绕过2FA，将无法再执行账户、组织及包管理敏感操作，并预计2027年1月起失去直接发布权限，须改用交互式2FA或OIDC。",
-          "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T16:45:50Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "b92f0c9e89acf8a77f679f56c9dfb200cc5c686a",
-          "title": "npm 对可绕过 2FA 的细粒度访问令牌实施限制 / Restricting npm bypass-2FA granular access tokens",
-          "title_zh": "npm 对可绕过 2FA 的细粒度访问令牌实施限制",
-          "title_en": "Restricting npm bypass-2FA granular access tokens",
-          "title_original": "Restricting npm bypass-2FA granular access tokens",
-          "summary": null,
-          "recommend_reason_zh": "npm granular access tokens若配置绕过2FA，将无法再执行账户、组织及包管理敏感操作，并预计2027年1月起失去直接发布权限，须改用交互式2FA或OIDC。",
-          "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-07-31T16:45:50Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7939,
-      "importance": 0.7939,
-      "importance_score": 0.7939,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7219,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-07-31T16:45:50Z",
-      "latest_at": "2026-07-31T16:45:50Z",
-      "primary_item": {
-        "id": "b92f0c9e89acf8a77f679f56c9dfb200cc5c686a",
-        "title": "npm 对可绕过 2FA 的细粒度访问令牌实施限制 / Restricting npm bypass-2FA granular access tokens",
-        "title_zh": "npm 对可绕过 2FA 的细粒度访问令牌实施限制",
-        "title_en": "Restricting npm bypass-2FA granular access tokens",
-        "title_original": "Restricting npm bypass-2FA granular access tokens",
-        "summary": null,
-        "recommend_reason_zh": "npm granular access tokens若配置绕过2FA，将无法再执行账户、组织及包管理敏感操作，并预计2027年1月起失去直接发布权限，须改用交互式2FA或OIDC。",
-        "url": "https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "CI/CD 里用细粒度令牌绕过 2FA 的得改配置，检查你的自动化流程。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_c38e05787678",
-      "title": "animated-voiceover 开源：一人干翻动画工作室",
-      "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-      "primary_url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-      "source": "X：阿易 AI Notes (@AYi_AInotes)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
-          "title": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_en": null,
-          "title_original": "animated-voiceover 开源：一人干翻动画工作室",
-          "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
-          "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
-          "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-          "source": "X：阿易 AI Notes (@AYi_AInotes)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T16:01:51Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：阿易 AI Notes (@AYi_AInotes)"
-      ],
-      "items": [
-        {
-          "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
-          "title": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
-          "title_en": null,
-          "title_original": "animated-voiceover 开源：一人干翻动画工作室",
-          "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
-          "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
-          "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-          "source": "X：阿易 AI Notes (@AYi_AInotes)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-07-31T16:01:51Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7252,
-      "importance": 0.7252,
-      "importance_score": 0.7252,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.75,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7143,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-07-31T16:01:51Z",
-      "latest_at": "2026-07-31T16:01:51Z",
-      "primary_item": {
-        "id": "2eb387d7832df603b86c5364d32bd8318dfcbcea",
-        "title": "animated-voiceover 开源：一人干翻动画工作室",
-        "title_zh": "animated-voiceover 开源：一人干翻动画工作室",
-        "title_en": null,
-        "title_original": "animated-voiceover 开源：一人干翻动画工作室",
-        "summary": "前字节产品经理 @s1dashu 开源 animated-voiceover，一套喂给 Codex/Claude Code 的完整动画科普视频制片流程，MIT 协议，可实现 90% 自动化。",
-        "recommend_reason_zh": "animated-voiceover 开源项目，一个人仅凭一条指令和40元成本，生成2分钟电影感动画科普视频，角色不崩、声音一致，连DeepSeek V4-Flash的讲解视频都能独立完成。",
-        "url": "https://x.com/AYi_AInotes/status/2083221612778668388",
-        "source": "X：阿易 AI Notes (@AYi_AInotes)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 80,
-      "persona_review": "开源即用，动画配音自动化直接可试，省外包钱。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_165311a6ce61",
-      "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
-      "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
-      "primary_url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
-      "source": "The Verge",
-      "source_name": "Curated Media",
-      "sources": [
-        {
-          "id": "73605be6da82bbfa56693b799e1711f6217e63c6",
-          "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
-          "title_zh": "Google Earth 的 AI 深度伪造工具上线一天就被下架",
-          "title_en": "Google Earth&#8217;s AI deepfake tool only lasted one day",
-          "title_original": "Google Earth&#8217;s AI deepfake tool only lasted one day",
-          "summary": null,
-          "recommend_reason_zh": "Google Earth搭载Nano Banana 2的AI编辑功能仅上线一天即被下线，因其可生成逼真假图像，如Henk van Ess用文本提示伪造墨西哥边境难民与加沙医院弹坑，甚至骗过Hive检测工具。",
-          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
-          "source": "The Verge",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-07-31T19:13:29Z"
+          "id": "a37f6d0f91a128324e51feaa4161dd48cdcb38f4",
+          "title": "人工智能的财务建议出奇地好，特别是如果你提出正确的问题 / AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_zh": "人工智能的财务建议出奇地好，特别是如果你提出正确的问题",
+          "title_en": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_original": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "summary": "We've had multiple people try to convince us to set up bank accounts for our kids, so that they could accumulate interest over 18 years. More that tried to convince me to gamble on random pump and dump shitcoins. More still that talked about \"investing\" in random collectables like Funko Pops or Pokemon cards - they're not a bubble, Logan Paul told me so! You could replace the AI with a piece of paper that says \"set aside 10% of your income and invest it in an ETF\" and it would outperform the fin",
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49139102",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-02T03:54:42.560000Z"
         },
         {
-          "id": "994b4743425d72fc610fea8e3467735bb65bca57",
-          "title": "Google Earth 的 AI deepfake 工具只存活了一天 / Google Earth’s AI deepfake tool only lasted one day",
-          "title_zh": "Google Earth 的 AI deepfake 工具只存活了一天",
-          "title_en": "Google Earth’s AI deepfake tool only lasted one day",
-          "title_original": "Google Earth’s AI deepfake tool only lasted one day",
+          "id": "0e1018d749979b50e90fe930365a1bc914b6ff1b",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": null,
+          "title_original": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "summary": "Large language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investi",
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "mitsloan.mit.edu",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-02T00:41:17.348000Z"
+        },
+        {
+          "id": "64426728f85233c960229c6a3e5579917579a7e7",
+          "title": "如果你提出正确的问题，人工智能的财务建议会出奇地好 / AI financial advice is surprisingly good if you ask the right questions",
+          "title_zh": "如果你提出正确的问题，人工智能的财务建议会出奇地好",
+          "title_en": "AI financial advice is surprisingly good if you ask the right questions",
+          "title_original": "AI financial advice is surprisingly good if you ask the right questions",
           "summary": null,
-          "recommend_reason_zh": "Google Earth的AI图像编辑工具上线仅一天即被移除，用户可用文本提示生成难民、炸弹坑等伪造卫星图，Henk van Ess生成的视频还骗过了Hive的AI检测，迫使Google回滚功能。",
-          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
-          "source": "The Verge",
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49139102",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T23:54:50.574000Z"
+        },
+        {
+          "id": "c3f29c8509745216f7b46dcf7cc7c70be1d41160",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好 / AI financial advice is surprisingly good if you ask the right questions",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": "AI financial advice is surprisingly good if you ask the right questions",
+          "title_original": "AI financial advice is surprisingly good if you ask the right questions",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T22:25:12Z"
+        },
+        {
+          "id": "b6b7111cd3c30b9939c52702f3f026caaaf55f1f",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好 / AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_original": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "summary": "Large language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investi",
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T22:25:12Z"
+        },
+        {
+          "id": "9126135bf5ecfda8cea2ab4b9ffea2fbba8cc6dd",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好 / From MIT: AI financial advice is surprisingly good",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": "From MIT: AI financial advice is surprisingly good",
+          "title_original": "From MIT: AI financial advice is surprisingly good",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "Hacker News",
           "source_name": "TechURLs",
           "site_id": "techurls",
-          "published_at": "2026-07-31T19:13:29Z"
+          "published_at": "2026-08-01T22:25:12Z"
+        }
+      ],
+      "source_count": 6,
+      "source_names": [
+        "Hacker News",
+        "Hacker News (黑客新闻)",
+        "hackernews",
+        "mitsloan.mit.edu"
+      ],
+      "items": [
+        {
+          "id": "a37f6d0f91a128324e51feaa4161dd48cdcb38f4",
+          "title": "人工智能的财务建议出奇地好，特别是如果你提出正确的问题 / AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_zh": "人工智能的财务建议出奇地好，特别是如果你提出正确的问题",
+          "title_en": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_original": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "summary": "We've had multiple people try to convince us to set up bank accounts for our kids, so that they could accumulate interest over 18 years. More that tried to convince me to gamble on random pump and dump shitcoins. More still that talked about \"investing\" in random collectables like Funko Pops or Pokemon cards - they're not a bubble, Logan Paul told me so! You could replace the AI with a piece of paper that says \"set aside 10% of your income and invest it in an ETF\" and it would outperform the fin",
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49139102",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-02T03:54:42.560000Z"
+        },
+        {
+          "id": "0e1018d749979b50e90fe930365a1bc914b6ff1b",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": null,
+          "title_original": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "summary": "Large language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investi",
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "mitsloan.mit.edu",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-02T00:41:17.348000Z"
+        },
+        {
+          "id": "64426728f85233c960229c6a3e5579917579a7e7",
+          "title": "如果你提出正确的问题，人工智能的财务建议会出奇地好 / AI financial advice is surprisingly good if you ask the right questions",
+          "title_zh": "如果你提出正确的问题，人工智能的财务建议会出奇地好",
+          "title_en": "AI financial advice is surprisingly good if you ask the right questions",
+          "title_original": "AI financial advice is surprisingly good if you ask the right questions",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49139102",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T23:54:50.574000Z"
+        },
+        {
+          "id": "c3f29c8509745216f7b46dcf7cc7c70be1d41160",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好 / AI financial advice is surprisingly good if you ask the right questions",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": "AI financial advice is surprisingly good if you ask the right questions",
+          "title_original": "AI financial advice is surprisingly good if you ask the right questions",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T22:25:12Z"
+        },
+        {
+          "id": "b6b7111cd3c30b9939c52702f3f026caaaf55f1f",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好 / AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "title_original": "AI financial advice is surprisingly good, especially if you ask right questions",
+          "summary": "Large language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investing, according to MIT Sloan’s Taha Choukhmane and co-authors.\nLarge language models encourage smart financial behavior, but they fall short on the more subtle aspects of saving and investi",
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T22:25:12Z"
+        },
+        {
+          "id": "9126135bf5ecfda8cea2ab4b9ffea2fbba8cc6dd",
+          "title": "只要问对问题，AI提供的理财建议其实出乎意料地好 / From MIT: AI financial advice is surprisingly good",
+          "title_zh": "只要问对问题，AI提供的理财建议其实出乎意料地好",
+          "title_en": "From MIT: AI financial advice is surprisingly good",
+          "title_original": "From MIT: AI financial advice is surprisingly good",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-01T22:25:12Z"
+        }
+      ],
+      "item_count": 6,
+      "duplicate_count": 6,
+      "score": 0.6208,
+      "importance": 0.6208,
+      "importance_score": 0.6208,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 1.0,
+        "story_heat": 1.0
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-01T22:25:12Z",
+      "latest_at": "2026-08-02T03:54:42.560000Z",
+      "primary_item": {
+        "id": "a37f6d0f91a128324e51feaa4161dd48cdcb38f4",
+        "title": "人工智能的财务建议出奇地好，特别是如果你提出正确的问题 / AI financial advice is surprisingly good, especially if you ask right questions",
+        "title_zh": "人工智能的财务建议出奇地好，特别是如果你提出正确的问题",
+        "title_en": "AI financial advice is surprisingly good, especially if you ask right questions",
+        "title_original": "AI financial advice is surprisingly good, especially if you ask right questions",
+        "summary": "We've had multiple people try to convince us to set up bank accounts for our kids, so that they could accumulate interest over 18 years. More that tried to convince me to gamble on random pump and dump shitcoins. More still that talked about \"investing\" in random collectables like Funko Pops or Pokemon cards - they're not a bubble, Logan Paul told me so! You could replace the AI with a piece of paper that says \"set aside 10% of your income and invest it in an ETF\" and it would outperform the fin",
+        "recommend_reason_zh": null,
+        "url": "https://news.ycombinator.com/item?id=49139102",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      }
+    },
+    {
+      "story_id": "story_83ab2fec2032",
+      "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+      "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+      "primary_url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+      "source": "www.antipope.org",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "41407e75eac43cbac93d3896678c55e7de41c842",
+          "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_zh": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_en": null,
+          "title_original": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+          "source": "www.antipope.org",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T18:17:24.719000Z"
+        },
+        {
+          "id": "2b0105aed401bd3dd7192ad834c1bc8a68a76b2d",
+          "title": "Charlie Stross – 关于我写作过程中不使用 AI / Charlie Stross – On the non-use of AI in my writing process",
+          "title_zh": "Charlie Stross – 关于我写作过程中不使用 AI",
+          "title_en": "Charlie Stross – On the non-use of AI in my writing process",
+          "title_original": "Charlie Stross – On the non-use of AI in my writing process",
+          "summary": null,
+          "recommend_reason_zh": "Charlie Stross 在文中从技术角度质疑 LLM 写作，却误提 GANs，引发关于长程依赖、人类灵魂与机器写作的激烈争论。",
+          "url": "https://news.ycombinator.com/item?id=49134038",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T16:53:40.590000Z"
+        },
+        {
+          "id": "59122596060397c08e2b41594d1c0231c18ad2b1",
+          "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能 / Charlie Stross – On the non-use of AI in my writing process",
+          "title_zh": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_en": "Charlie Stross – On the non-use of AI in my writing process",
+          "title_original": "Charlie Stross – On the non-use of AI in my writing process",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-01T12:56:54Z"
+        },
+        {
+          "id": "16cffb9df3eb3f8fa6d715dbc980785618e4c00b",
+          "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能 / On the non-use of AI in my writing process",
+          "title_zh": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_en": "On the non-use of AI in my writing process",
+          "title_original": "On the non-use of AI in my writing process",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T12:56:54Z"
+        }
+      ],
+      "source_count": 4,
+      "source_names": [
+        "Hacker News",
+        "Hacker News · 24h最热",
+        "hackernews",
+        "www.antipope.org"
+      ],
+      "items": [
+        {
+          "id": "41407e75eac43cbac93d3896678c55e7de41c842",
+          "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_zh": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_en": null,
+          "title_original": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+          "source": "www.antipope.org",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T18:17:24.719000Z"
+        },
+        {
+          "id": "2b0105aed401bd3dd7192ad834c1bc8a68a76b2d",
+          "title": "Charlie Stross – 关于我写作过程中不使用 AI / Charlie Stross – On the non-use of AI in my writing process",
+          "title_zh": "Charlie Stross – 关于我写作过程中不使用 AI",
+          "title_en": "Charlie Stross – On the non-use of AI in my writing process",
+          "title_original": "Charlie Stross – On the non-use of AI in my writing process",
+          "summary": null,
+          "recommend_reason_zh": "Charlie Stross 在文中从技术角度质疑 LLM 写作，却误提 GANs，引发关于长程依赖、人类灵魂与机器写作的激烈争论。",
+          "url": "https://news.ycombinator.com/item?id=49134038",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T16:53:40.590000Z"
+        },
+        {
+          "id": "59122596060397c08e2b41594d1c0231c18ad2b1",
+          "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能 / Charlie Stross – On the non-use of AI in my writing process",
+          "title_zh": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_en": "Charlie Stross – On the non-use of AI in my writing process",
+          "title_original": "Charlie Stross – On the non-use of AI in my writing process",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-01T12:56:54Z"
+        },
+        {
+          "id": "16cffb9df3eb3f8fa6d715dbc980785618e4c00b",
+          "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能 / On the non-use of AI in my writing process",
+          "title_zh": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+          "title_en": "On the non-use of AI in my writing process",
+          "title_original": "On the non-use of AI in my writing process",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T12:56:54Z"
+        }
+      ],
+      "item_count": 4,
+      "duplicate_count": 4,
+      "score": 0.5725,
+      "importance": 0.5725,
+      "importance_score": 0.5725,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.8704,
+        "story_heat": 0.75
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-01T12:56:54Z",
+      "latest_at": "2026-08-01T18:17:24.719000Z",
+      "primary_item": {
+        "id": "41407e75eac43cbac93d3896678c55e7de41c842",
+        "title": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+        "title_zh": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+        "title_en": null,
+        "title_original": "查理·斯特罗斯——关于我在写作过程中不使用人工智能",
+        "summary": null,
+        "recommend_reason_zh": null,
+        "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+        "source": "www.antipope.org",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 35,
+      "persona_review": "个人写作习惯声明，无工具价值，不写代码的不用管。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-02T03:55:54.827292Z"
+      }
+    },
+    {
+      "story_id": "story_817116dbd893",
+      "title": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+      "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
+      "primary_url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
+      "source": "forum.cursor.com",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "e90b4afc2008713009e131f5b452c20b0078a47c",
+          "title": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "title_zh": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "title_en": null,
+          "title_original": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "summary": null,
+          "recommend_reason_zh": "Cursor使用页面将美元金额改为token数量，用户无法追踪每日花费，官方确认个体计划不再显示美元，仅企业计划保留，引发付费透明度争议。",
+          "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
+          "source": "forum.cursor.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T17:29:19.514000Z"
+        },
+        {
+          "id": "e9c7de4959c8c31c8ebcc99f00578f42deff131f",
+          "title": "Cursor 从使用页面和 CSV 导出中移除了成本信息 / Cursor removed cost information from the usage page and CSV export",
+          "title_zh": "Cursor 从使用页面和 CSV 导出中移除了成本信息",
+          "title_en": "Cursor removed cost information from the usage page and CSV export",
+          "title_original": "Cursor removed cost information from the usage page and CSV export",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49135257",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T16:53:40.590000Z"
+        },
+        {
+          "id": "7b8d48b033901b44ab7e701a0605ba02ba0432ac",
+          "title": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息 / Cursor removed cost information from the usage page and CSV export",
+          "title_zh": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "title_en": "Cursor removed cost information from the usage page and CSV export",
+          "title_original": "Cursor removed cost information from the usage page and CSV export",
+          "summary": null,
+          "recommend_reason_zh": "Cursor将Usage页面的美元金额改为token数量，引发用户不满；官方确认个人计划不再显示美元金额，仅企业计划保留，并解释这是为避免与包含用量混淆。",
+          "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T15:25:21Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News (黑客新闻)",
+        "forum.cursor.com",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "e90b4afc2008713009e131f5b452c20b0078a47c",
+          "title": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "title_zh": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "title_en": null,
+          "title_original": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "summary": null,
+          "recommend_reason_zh": "Cursor使用页面将美元金额改为token数量，用户无法追踪每日花费，官方确认个体计划不再显示美元，仅企业计划保留，引发付费透明度争议。",
+          "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
+          "source": "forum.cursor.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T17:29:19.514000Z"
+        },
+        {
+          "id": "e9c7de4959c8c31c8ebcc99f00578f42deff131f",
+          "title": "Cursor 从使用页面和 CSV 导出中移除了成本信息 / Cursor removed cost information from the usage page and CSV export",
+          "title_zh": "Cursor 从使用页面和 CSV 导出中移除了成本信息",
+          "title_en": "Cursor removed cost information from the usage page and CSV export",
+          "title_original": "Cursor removed cost information from the usage page and CSV export",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49135257",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T16:53:40.590000Z"
+        },
+        {
+          "id": "7b8d48b033901b44ab7e701a0605ba02ba0432ac",
+          "title": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息 / Cursor removed cost information from the usage page and CSV export",
+          "title_zh": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+          "title_en": "Cursor removed cost information from the usage page and CSV export",
+          "title_original": "Cursor removed cost information from the usage page and CSV export",
+          "summary": null,
+          "recommend_reason_zh": "Cursor将Usage页面的美元金额改为token数量，引发用户不满；官方确认个人计划不再显示美元金额，仅企业计划保留，并解释这是为避免与包含用量混淆。",
+          "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T15:25:21Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5457,
+      "importance": 0.5457,
+      "importance_score": 0.5457,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.8603,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-01T15:25:21Z",
+      "latest_at": "2026-08-01T17:29:19.514000Z",
+      "primary_item": {
+        "id": "e90b4afc2008713009e131f5b452c20b0078a47c",
+        "title": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+        "title_zh": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+        "title_en": null,
+        "title_original": "Cursor 从“使用情况”页面和 CSV 导出文件中移除了成本信息",
+        "summary": null,
+        "recommend_reason_zh": "Cursor使用页面将美元金额改为token数量，用户无法追踪每日花费，官方确认个体计划不再显示美元，仅企业计划保留，引发付费透明度争议。",
+        "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
+        "source": "forum.cursor.com",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 55,
+      "persona_review": "成本透明性下降，用Cursor的企业得自己记账了。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-02T03:55:54.827292Z"
+      }
+    },
+    {
+      "story_id": "story_f3a8a7071e92",
+      "title": "关于人工智能“每个人都被骗了” / \"Everyone Has Been Sold a Lie\" on AI",
+      "url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
+      "primary_url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
+      "source": "Hacker News (黑客新闻)",
+      "source_name": "Info Flow",
+      "sources": [
+        {
+          "id": "0ac699ec2a23318781d2fa4f6c2172b4e4167000",
+          "title": "关于人工智能“每个人都被骗了” / \"Everyone Has Been Sold a Lie\" on AI",
+          "title_zh": "关于人工智能“每个人都被骗了”",
+          "title_en": "\"Everyone Has Been Sold a Lie\" on AI",
+          "title_original": "\"Everyone Has Been Sold a Lie\" on AI",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T22:50:30Z"
+        },
+        {
+          "id": "62644f9928a745e9be4bd80277b0026ef59e0482",
+          "title": "Zitron：关于人工智能“每个人都被骗了” / Zitron: \"Everyone Has Been Sold a Lie\" on AI",
+          "title_zh": "Zitron：关于人工智能“每个人都被骗了”",
+          "title_en": "Zitron: \"Everyone Has Been Sold a Lie\" on AI",
+          "title_original": "Zitron: \"Everyone Has Been Sold a Lie\" on AI",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T22:50:30Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "The Verge"
+        "Hacker News (黑客新闻)",
+        "Hacker News · 24h最热"
       ],
       "items": [
         {
-          "id": "73605be6da82bbfa56693b799e1711f6217e63c6",
-          "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
-          "title_zh": "Google Earth 的 AI 深度伪造工具上线一天就被下架",
-          "title_en": "Google Earth&#8217;s AI deepfake tool only lasted one day",
-          "title_original": "Google Earth&#8217;s AI deepfake tool only lasted one day",
+          "id": "0ac699ec2a23318781d2fa4f6c2172b4e4167000",
+          "title": "关于人工智能“每个人都被骗了” / \"Everyone Has Been Sold a Lie\" on AI",
+          "title_zh": "关于人工智能“每个人都被骗了”",
+          "title_en": "\"Everyone Has Been Sold a Lie\" on AI",
+          "title_original": "\"Everyone Has Been Sold a Lie\" on AI",
           "summary": null,
-          "recommend_reason_zh": "Google Earth搭载Nano Banana 2的AI编辑功能仅上线一天即被下线，因其可生成逼真假图像，如Henk van Ess用文本提示伪造墨西哥边境难民与加沙医院弹坑，甚至骗过Hive检测工具。",
-          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
-          "source": "The Verge",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-07-31T19:13:29Z"
+          "recommend_reason_zh": null,
+          "url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-01T22:50:30Z"
         },
         {
-          "id": "994b4743425d72fc610fea8e3467735bb65bca57",
-          "title": "Google Earth 的 AI deepfake 工具只存活了一天 / Google Earth’s AI deepfake tool only lasted one day",
-          "title_zh": "Google Earth 的 AI deepfake 工具只存活了一天",
-          "title_en": "Google Earth’s AI deepfake tool only lasted one day",
-          "title_original": "Google Earth’s AI deepfake tool only lasted one day",
+          "id": "62644f9928a745e9be4bd80277b0026ef59e0482",
+          "title": "Zitron：关于人工智能“每个人都被骗了” / Zitron: \"Everyone Has Been Sold a Lie\" on AI",
+          "title_zh": "Zitron：关于人工智能“每个人都被骗了”",
+          "title_en": "Zitron: \"Everyone Has Been Sold a Lie\" on AI",
+          "title_original": "Zitron: \"Everyone Has Been Sold a Lie\" on AI",
           "summary": null,
-          "recommend_reason_zh": "Google Earth的AI图像编辑工具上线仅一天即被移除，用户可用文本提示生成难民、炸弹坑等伪造卫星图，Henk van Ess生成的视频还骗过了Hive的AI检测，迫使Google回滚功能。",
-          "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
-          "source": "The Verge",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-07-31T19:13:29Z"
+          "recommend_reason_zh": null,
+          "url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T22:50:30Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5701,
-      "importance": 0.5701,
-      "importance_score": 0.5701,
+      "score": 0.5331,
+      "importance": 0.5331,
+      "importance_score": 0.5331,
       "importance_label": "值得关注",
       "importance_breakdown": {
-        "editorial": 0.4896,
-        "source_tier": 0.58,
-        "ai_relevance": 0.68,
-        "recency": 0.748,
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9295,
         "story_heat": 0.25
       },
       "category": "watch",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-07-31T19:13:29Z",
-      "latest_at": "2026-07-31T19:13:29Z",
+      "earliest_at": "2026-08-01T22:50:30Z",
+      "latest_at": "2026-08-01T22:50:30Z",
       "primary_item": {
-        "id": "73605be6da82bbfa56693b799e1711f6217e63c6",
-        "title": "Google Earth 的 AI 深度伪造工具上线一天就被下架 / Google Earth&#8217;s AI deepfake tool only lasted one day",
-        "title_zh": "Google Earth 的 AI 深度伪造工具上线一天就被下架",
-        "title_en": "Google Earth&#8217;s AI deepfake tool only lasted one day",
-        "title_original": "Google Earth&#8217;s AI deepfake tool only lasted one day",
+        "id": "0ac699ec2a23318781d2fa4f6c2172b4e4167000",
+        "title": "关于人工智能“每个人都被骗了” / \"Everyone Has Been Sold a Lie\" on AI",
+        "title_zh": "关于人工智能“每个人都被骗了”",
+        "title_en": "\"Everyone Has Been Sold a Lie\" on AI",
+        "title_original": "\"Everyone Has Been Sold a Lie\" on AI",
         "summary": null,
-        "recommend_reason_zh": "Google Earth搭载Nano Banana 2的AI编辑功能仅上线一天即被下线，因其可生成逼真假图像，如Henk van Ess用文本提示伪造墨西哥边境难民与加沙医院弹坑，甚至骗过Hive检测工具。",
-        "url": "https://www.theverge.com/tech/973943/google-earth-ai-image-generation-deepfake-tool",
-        "source": "The Verge",
-        "source_name": "Curated Media"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "工具下架说明生成类应用合规风险大，做类似功能的先查政策。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "recommend_reason_zh": null,
+        "url": "https://www.youtube.com/watch?v=pHcZpvIfho0",
+        "source": "Hacker News (黑客新闻)",
+        "source_name": "Info Flow"
       }
     },
     {
@@ -1338,7 +955,7 @@
           "published_at": "2026-08-01T09:21:46.404000Z"
         },
         {
-          "id": "ad94fcf3894d44f206272c59af3e1f58bc2e74d5",
+          "id": "234538b9d17e12b9fce41e961fc8cd7eb2050379",
           "title": "人工智能无法生成可用的产品，这仍然是你的工作 / AI doesn't generate working products, that's still your job",
           "title_zh": "人工智能无法生成可用的产品，这仍然是你的工作",
           "title_en": "AI doesn't generate working products, that's still your job",
@@ -1346,15 +963,15 @@
           "summary": null,
           "recommend_reason_zh": "这篇文章指出AI虽能在几分钟内生成可运行原型，但原型可能泄露API tokens、加入第二个用户就崩溃；它强调从原型到生产级的距离并未缩短，计算机科学教育培养的系统思维仍是关键。",
           "url": "https://weeraman.com/the-prototype-isnt-the-product",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-01T07:52:10Z"
         }
       ],
       "source_count": 3,
       "source_names": [
-        "Hacker News (黑客新闻)",
+        "Hacker News · 24h最热",
         "hackernews",
         "weeraman.com"
       ],
@@ -1388,7 +1005,7 @@
           "published_at": "2026-08-01T09:21:46.404000Z"
         },
         {
-          "id": "ad94fcf3894d44f206272c59af3e1f58bc2e74d5",
+          "id": "234538b9d17e12b9fce41e961fc8cd7eb2050379",
           "title": "人工智能无法生成可用的产品，这仍然是你的工作 / AI doesn't generate working products, that's still your job",
           "title_zh": "人工智能无法生成可用的产品，这仍然是你的工作",
           "title_en": "AI doesn't generate working products, that's still your job",
@@ -1396,23 +1013,23 @@
           "summary": null,
           "recommend_reason_zh": "这篇文章指出AI虽能在几分钟内生成可运行原型，但原型可能泄露API tokens、加入第二个用户就崩溃；它强调从原型到生产级的距离并未缩短，计算机科学教育培养的系统思维仍是关键。",
           "url": "https://weeraman.com/the-prototype-isnt-the-product",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-01T07:52:10Z"
         }
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.5601,
-      "importance": 0.5601,
-      "importance_score": 0.5601,
+      "score": 0.532,
+      "importance": 0.532,
+      "importance_score": 0.532,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9406,
+        "recency": 0.7844,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -1439,148 +1056,423 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "scored_at": "2026-08-02T03:55:54.827292Z"
       }
     },
     {
-      "story_id": "story_03b9f05044c9",
-      "title": "Flint：面向人工智能时代的可视化语言",
-      "url": "https://microsoft.github.io/flint-chart",
-      "primary_url": "https://microsoft.github.io/flint-chart",
-      "source": "microsoft.github.io",
-      "source_name": "Buzzing",
+      "story_id": "story_2aa8e79a0b19",
+      "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+      "url": "https://news.ycombinator.com/item?id=49140340",
+      "primary_url": "https://news.ycombinator.com/item?id=49140340",
+      "source": "hackernews",
+      "source_name": "NewsNow",
       "sources": [
         {
-          "id": "e4650faa1d9e6e14141535cf794dceaff0486ad3",
-          "title": "Flint：面向人工智能时代的可视化语言",
-          "title_zh": "Flint：面向人工智能时代的可视化语言",
-          "title_en": null,
-          "title_original": "Flint：面向人工智能时代的可视化语言",
+          "id": "206af265b950be5f12e82285bf43bfc57041e321",
+          "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_zh": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器",
+          "title_en": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_original": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
           "summary": null,
           "recommend_reason_zh": null,
-          "url": "https://microsoft.github.io/flint-chart",
-          "source": "microsoft.github.io",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T08:41:23.781000Z"
-        },
-        {
-          "id": "7566c9af461db37ce69beab06930c018b0a158ec",
-          "title": "Flint：AI时代的可视化语言 / Flint: A Visualization Language for the AI Era",
-          "title_zh": "Flint：AI时代的可视化语言",
-          "title_en": "Flint: A Visualization Language for the AI Era",
-          "title_original": "Flint: A Visualization Language for the AI Era",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49130604",
+          "url": "https://news.ycombinator.com/item?id=49140340",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-01T03:23:21.045000Z"
+          "published_at": "2026-08-02T03:54:42.560000Z"
         },
         {
-          "id": "ed35827006d0817c480f3ca25d737c19b8b90564",
-          "title": "Flint：面向人工智能时代的可视化语言 / Flint: A Visualization Language for the AI Era",
-          "title_zh": "Flint：面向人工智能时代的可视化语言",
-          "title_en": "Flint: A Visualization Language for the AI Era",
-          "title_original": "Flint: A Visualization Language for the AI Era",
-          "summary": null,
+          "id": "a464cc9c391a2d0a3f82a308418e84e489b2da68",
+          "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_zh": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器",
+          "title_en": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_original": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "summary": "Live pricing for 232+ AI models (GPT, Claude, Gemini, Llama, DeepSeek) plus real-world cost calculators: chatbots, API budgets, and token math. Updated 2026-08-02.\nLive pricing for 232+ AI models (GPT, Claude, Gemini, Llama, DeepSeek) plus real-world cost calculators: chatbots, API budgets, and token math. Updated 2026-08-02.\nLive pricing for 232+ AI models (GPT, Claude, Gemini, Llama, DeepSeek) plus real-world cost calculators: chatbots, API budgets, and token math. Updated 2026-08-02.\nLive pri",
           "recommend_reason_zh": null,
-          "url": "https://microsoft.github.io/flint-chart",
+          "url": "https://costperprompt.com",
           "source": "Hacker News (黑客新闻)",
           "source_name": "Info Flow",
           "site_id": "iris",
-          "published_at": "2026-08-01T02:45:09Z"
+          "published_at": "2026-08-02T01:56:44Z"
         }
       ],
-      "source_count": 3,
+      "source_count": 2,
       "source_names": [
         "Hacker News (黑客新闻)",
-        "hackernews",
-        "microsoft.github.io"
+        "hackernews"
       ],
       "items": [
         {
-          "id": "e4650faa1d9e6e14141535cf794dceaff0486ad3",
-          "title": "Flint：面向人工智能时代的可视化语言",
-          "title_zh": "Flint：面向人工智能时代的可视化语言",
-          "title_en": null,
-          "title_original": "Flint：面向人工智能时代的可视化语言",
+          "id": "206af265b950be5f12e82285bf43bfc57041e321",
+          "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_zh": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器",
+          "title_en": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_original": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
           "summary": null,
           "recommend_reason_zh": null,
-          "url": "https://microsoft.github.io/flint-chart",
-          "source": "microsoft.github.io",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T08:41:23.781000Z"
-        },
-        {
-          "id": "7566c9af461db37ce69beab06930c018b0a158ec",
-          "title": "Flint：AI时代的可视化语言 / Flint: A Visualization Language for the AI Era",
-          "title_zh": "Flint：AI时代的可视化语言",
-          "title_en": "Flint: A Visualization Language for the AI Era",
-          "title_original": "Flint: A Visualization Language for the AI Era",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49130604",
+          "url": "https://news.ycombinator.com/item?id=49140340",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-01T03:23:21.045000Z"
+          "published_at": "2026-08-02T03:54:42.560000Z"
         },
         {
-          "id": "ed35827006d0817c480f3ca25d737c19b8b90564",
-          "title": "Flint：面向人工智能时代的可视化语言 / Flint: A Visualization Language for the AI Era",
-          "title_zh": "Flint：面向人工智能时代的可视化语言",
-          "title_en": "Flint: A Visualization Language for the AI Era",
-          "title_original": "Flint: A Visualization Language for the AI Era",
-          "summary": null,
+          "id": "a464cc9c391a2d0a3f82a308418e84e489b2da68",
+          "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_zh": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器",
+          "title_en": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "title_original": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+          "summary": "Live pricing for 232+ AI models (GPT, Claude, Gemini, Llama, DeepSeek) plus real-world cost calculators: chatbots, API budgets, and token math. Updated 2026-08-02.\nLive pricing for 232+ AI models (GPT, Claude, Gemini, Llama, DeepSeek) plus real-world cost calculators: chatbots, API budgets, and token math. Updated 2026-08-02.\nLive pricing for 232+ AI models (GPT, Claude, Gemini, Llama, DeepSeek) plus real-world cost calculators: chatbots, API budgets, and token math. Updated 2026-08-02.\nLive pri",
           "recommend_reason_zh": null,
-          "url": "https://microsoft.github.io/flint-chart",
+          "url": "https://costperprompt.com",
           "source": "Hacker News (黑客新闻)",
           "source_name": "Info Flow",
           "site_id": "iris",
-          "published_at": "2026-08-01T02:45:09Z"
+          "published_at": "2026-08-02T01:56:44Z"
         }
       ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5543,
-      "importance": 0.5543,
-      "importance_score": 0.5543,
-      "importance_label": "多源热议",
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5458,
+      "importance": 0.5458,
+      "importance_score": 0.5458,
+      "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9086,
-        "story_heat": 0.5
+        "recency": 1.0,
+        "story_heat": 0.25
       },
-      "category": "multi_source",
+      "category": "watch",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-08-01T02:45:09Z",
-      "latest_at": "2026-08-01T08:41:23.781000Z",
+      "earliest_at": "2026-08-02T01:56:44Z",
+      "latest_at": "2026-08-02T03:54:42.560000Z",
       "primary_item": {
-        "id": "e4650faa1d9e6e14141535cf794dceaff0486ad3",
-        "title": "Flint：面向人工智能时代的可视化语言",
-        "title_zh": "Flint：面向人工智能时代的可视化语言",
-        "title_en": null,
-        "title_original": "Flint：面向人工智能时代的可视化语言",
+        "id": "206af265b950be5f12e82285bf43bfc57041e321",
+        "title": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器 / Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+        "title_zh": "Show HN：CostPerPrompt – 实时 AI API 定价和实际工作负载成本计算器",
+        "title_en": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
+        "title_original": "Show HN: CostPerPrompt – Live AI API pricing and real-workload cost calculators",
         "summary": null,
         "recommend_reason_zh": null,
-        "url": "https://microsoft.github.io/flint-chart",
-        "source": "microsoft.github.io",
-        "source_name": "Buzzing"
+        "url": "https://news.ycombinator.com/item?id=49140340",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      }
+    },
+    {
+      "story_id": "story_10739ae4d797",
+      "title": "数学与理论计算机科学领域的十大进展",
+      "url": "https://openai.com/index/ten-advances-in-mathematics",
+      "primary_url": "https://openai.com/index/ten-advances-in-mathematics",
+      "source": "openai.com",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
+          "title": "数学与理论计算机科学领域的十大进展",
+          "title_zh": "数学与理论计算机科学领域的十大进展",
+          "title_en": null,
+          "title_original": "数学与理论计算机科学领域的十大进展",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
+          "url": "https://openai.com/index/ten-advances-in-mathematics",
+          "source": "openai.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T10:17:30.122000Z"
+        },
+        {
+          "id": "e44665178ec4140c0f5a67877b906ac10188bcc3",
+          "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
+          "title_zh": "数学与理论计算机科学领域的十大进展",
+          "title_en": "Ten advances in mathematics and theoretical computer science",
+          "title_original": "Ten advances in mathematics and theoretical computer science",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
+          "url": "https://openai.com/index/ten-advances-in-mathematics",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T07:37:44Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News · 24h最热",
+        "openai.com"
+      ],
+      "items": [
+        {
+          "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
+          "title": "数学与理论计算机科学领域的十大进展",
+          "title_zh": "数学与理论计算机科学领域的十大进展",
+          "title_en": null,
+          "title_original": "数学与理论计算机科学领域的十大进展",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
+          "url": "https://openai.com/index/ten-advances-in-mathematics",
+          "source": "openai.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-01T10:17:30.122000Z"
+        },
+        {
+          "id": "e44665178ec4140c0f5a67877b906ac10188bcc3",
+          "title": "数学与理论计算机科学领域的十大进展 / Ten advances in mathematics and theoretical computer science",
+          "title_zh": "数学与理论计算机科学领域的十大进展",
+          "title_en": "Ten advances in mathematics and theoretical computer science",
+          "title_original": "Ten advances in mathematics and theoretical computer science",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI公布十项几何、密码学与复杂性等领域突破，含Erdős单位距离猜想反例，用Astra模型生成并以Lean证书验证，总成本约2000美元。",
+          "url": "https://openai.com/index/ten-advances-in-mathematics",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T07:37:44Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5054,
+      "importance": 0.5054,
+      "importance_score": 0.5054,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.7754,
+        "story_heat": 0.25
       },
-      "persona_id": "pragmatic",
-      "persona_score": 78,
-      "persona_review": "若已开源可直接试用，做 AI 数据可视化的能省不少模板代码。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-01T07:37:44Z",
+      "latest_at": "2026-08-01T10:17:30.122000Z",
+      "primary_item": {
+        "id": "b2b7b92476021cfa24a815c8509e480dceedee5e",
+        "title": "数学与理论计算机科学领域的十大进展",
+        "title_zh": "数学与理论计算机科学领域的十大进展",
+        "title_en": null,
+        "title_original": "数学与理论计算机科学领域的十大进展",
+        "summary": null,
+        "recommend_reason_zh": "OpenAI用内部版Astra模型解决几何、密码学等十个搁置逾十年的数学难题，每个证明均经Lean验证，总计算成本约2000美元。",
+        "url": "https://openai.com/index/ten-advances-in-mathematics",
+        "source": "openai.com",
+        "source_name": "Buzzing"
+      }
+    },
+    {
+      "story_id": "story_8c9e60cd6b83",
+      "title": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息 / Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+      "url": "https://news.ycombinator.com/item?id=49136955",
+      "primary_url": "https://news.ycombinator.com/item?id=49136955",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "181cfb741ca46285ffcfbc5cff311c264bc98461",
+          "title": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息 / Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_zh": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息",
+          "title_en": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_original": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49136955",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T21:54:37.127000Z"
+        },
+        {
+          "id": "48ee38c8138657dc104117e3c028a8aea0732dd1",
+          "title": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息 / Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_zh": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息",
+          "title_en": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_original": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://trufflesecurity.com/blog/scanning-7-6-petabytes-of-ai-training-data-for-secrets",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-01T18:21:41Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "181cfb741ca46285ffcfbc5cff311c264bc98461",
+          "title": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息 / Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_zh": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息",
+          "title_en": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_original": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49136955",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T21:54:37.127000Z"
+        },
+        {
+          "id": "48ee38c8138657dc104117e3c028a8aea0732dd1",
+          "title": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息 / Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_zh": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息",
+          "title_en": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "title_original": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://trufflesecurity.com/blog/scanning-7-6-petabytes-of-ai-training-data-for-secrets",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-01T18:21:41Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5309,
+      "importance": 0.5309,
+      "importance_score": 0.5309,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9171,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-01T18:21:41Z",
+      "latest_at": "2026-08-01T21:54:37.127000Z",
+      "primary_item": {
+        "id": "181cfb741ca46285ffcfbc5cff311c264bc98461",
+        "title": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息 / Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+        "title_zh": "扫描 HuggingFace 训练数据中的 7.6 PB 数据，寻找机密信息",
+        "title_en": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+        "title_original": "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+        "summary": null,
+        "recommend_reason_zh": null,
+        "url": "https://news.ycombinator.com/item?id=49136955",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      }
+    },
+    {
+      "story_id": "story_58b173a4edb7",
+      "title": "展示 HN：基于 Rust 的 Claude Code agents 控制台 / Show HN: Cockpit for you Claude Code agents in Rust",
+      "url": "https://news.ycombinator.com/item?id=49137410",
+      "primary_url": "https://news.ycombinator.com/item?id=49137410",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "43d35f4edf0b88c65a62f81d39c86973e8f283e2",
+          "title": "展示 HN：基于 Rust 的 Claude Code agents 控制台 / Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_zh": "展示 HN：基于 Rust 的 Claude Code agents 控制台",
+          "title_en": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_original": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49137410",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T20:54:25.475000Z"
+        },
+        {
+          "id": "1ab3cc039511cf55efbfdd3ef90b0b4f74153476",
+          "title": "展示 HN：基于 Rust 的 Claude Code agents 控制台 / Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_zh": "展示 HN：基于 Rust 的 Claude Code agents 控制台",
+          "title_en": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_original": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://episko.dev",
+          "source": "HN Algolia · AI 24h",
+          "source_name": "Hacker News",
+          "site_id": "hackernews",
+          "published_at": "2026-08-01T19:09:15Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "HN Algolia · AI 24h",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "43d35f4edf0b88c65a62f81d39c86973e8f283e2",
+          "title": "展示 HN：基于 Rust 的 Claude Code agents 控制台 / Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_zh": "展示 HN：基于 Rust 的 Claude Code agents 控制台",
+          "title_en": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_original": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49137410",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T20:54:25.475000Z"
+        },
+        {
+          "id": "1ab3cc039511cf55efbfdd3ef90b0b4f74153476",
+          "title": "展示 HN：基于 Rust 的 Claude Code agents 控制台 / Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_zh": "展示 HN：基于 Rust 的 Claude Code agents 控制台",
+          "title_en": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "title_original": "Show HN: Cockpit for you Claude Code agents in Rust",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://episko.dev",
+          "source": "HN Algolia · AI 24h",
+          "source_name": "Hacker News",
+          "site_id": "hackernews",
+          "published_at": "2026-08-01T19:09:15Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5285,
+      "importance": 0.5285,
+      "importance_score": 0.5285,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9039,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-01T19:09:15Z",
+      "latest_at": "2026-08-01T20:54:25.475000Z",
+      "primary_item": {
+        "id": "43d35f4edf0b88c65a62f81d39c86973e8f283e2",
+        "title": "展示 HN：基于 Rust 的 Claude Code agents 控制台 / Show HN: Cockpit for you Claude Code agents in Rust",
+        "title_zh": "展示 HN：基于 Rust 的 Claude Code agents 控制台",
+        "title_en": "Show HN: Cockpit for you Claude Code agents in Rust",
+        "title_original": "Show HN: Cockpit for you Claude Code agents in Rust",
+        "summary": null,
+        "recommend_reason_zh": null,
+        "url": "https://news.ycombinator.com/item?id=49137410",
+        "source": "hackernews",
+        "source_name": "NewsNow"
       }
     },
     {
@@ -1597,7 +1489,7 @@
           "title_zh": "识别AI写作：关注Opus 5过度隐喻",
           "title_en": "How to Spot AI Writing",
           "title_original": "How to Spot AI Writing",
-          "summary": "In particular Opus 5 is scaling new heights of incomprehensibility with excessive metaphor-making, especially when it uses an existing word in the prompt or the code comments as a novel metaphor in an unrelated context.\nreply\nreply\nreply\nreply\nreply\nreply\nreply\nThe mainstream AI companies are loathe to output anything too controversial, so if someone is writing like Burroughs (in content, not merely style) they are less likely to be AI. That is possible to bypass with local models, but the vast ",
+          "summary": null,
           "recommend_reason_zh": "这篇指南以Opus 5为例，点出AI写作过度隐喻、用词不合语境等破绽，并借Burroughs对比与“三步骤公式”教人识别，还预测俚语和冒犯性语言将爆炸式涌现。",
           "url": "https://news.ycombinator.com/item?id=49134310",
           "source": "hackernews",
@@ -1606,7 +1498,7 @@
           "published_at": "2026-08-01T14:53:16.451000Z"
         },
         {
-          "id": "8310bdcca8c76308b9c74c08a80c843cde0f6b9c",
+          "id": "6e0334e28560583c35e986896d9158e7fac08baf",
           "title": "如何识别AI写作 / How to Spot AI Writing",
           "title_zh": "如何识别AI写作",
           "title_en": "How to Spot AI Writing",
@@ -1614,15 +1506,15 @@
           "summary": null,
           "recommend_reason_zh": null,
           "url": "https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-01T13:35:26Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News",
+        "Hacker News · 24h最热",
         "hackernews"
       ],
       "items": [
@@ -1632,7 +1524,7 @@
           "title_zh": "识别AI写作：关注Opus 5过度隐喻",
           "title_en": "How to Spot AI Writing",
           "title_original": "How to Spot AI Writing",
-          "summary": "In particular Opus 5 is scaling new heights of incomprehensibility with excessive metaphor-making, especially when it uses an existing word in the prompt or the code comments as a novel metaphor in an unrelated context.\nreply\nreply\nreply\nreply\nreply\nreply\nreply\nThe mainstream AI companies are loathe to output anything too controversial, so if someone is writing like Burroughs (in content, not merely style) they are less likely to be AI. That is possible to bypass with local models, but the vast ",
+          "summary": null,
           "recommend_reason_zh": "这篇指南以Opus 5为例，点出AI写作过度隐喻、用词不合语境等破绽，并借Burroughs对比与“三步骤公式”教人识别，还预测俚语和冒犯性语言将爆炸式涌现。",
           "url": "https://news.ycombinator.com/item?id=49134310",
           "source": "hackernews",
@@ -1641,7 +1533,7 @@
           "published_at": "2026-08-01T14:53:16.451000Z"
         },
         {
-          "id": "8310bdcca8c76308b9c74c08a80c843cde0f6b9c",
+          "id": "6e0334e28560583c35e986896d9158e7fac08baf",
           "title": "如何识别AI写作 / How to Spot AI Writing",
           "title_zh": "如何识别AI写作",
           "title_en": "How to Spot AI Writing",
@@ -1649,23 +1541,23 @@
           "summary": null,
           "recommend_reason_zh": null,
           "url": "https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-01T13:35:26Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5447,
-      "importance": 0.5447,
-      "importance_score": 0.5447,
+      "score": 0.515,
+      "importance": 0.515,
+      "importance_score": 0.515,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9936,
+        "recency": 0.8286,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1680,7 +1572,7 @@
         "title_zh": "识别AI写作：关注Opus 5过度隐喻",
         "title_en": "How to Spot AI Writing",
         "title_original": "How to Spot AI Writing",
-        "summary": "In particular Opus 5 is scaling new heights of incomprehensibility with excessive metaphor-making, especially when it uses an existing word in the prompt or the code comments as a novel metaphor in an unrelated context.\nreply\nreply\nreply\nreply\nreply\nreply\nreply\nThe mainstream AI companies are loathe to output anything too controversial, so if someone is writing like Burroughs (in content, not merely style) they are less likely to be AI. That is possible to bypass with local models, but the vast ",
+        "summary": null,
         "recommend_reason_zh": "这篇指南以Opus 5为例，点出AI写作过度隐喻、用词不合语境等破绽，并借Burroughs对比与“三步骤公式”教人识别，还预测俚语和冒犯性语言将爆炸式涌现。",
         "url": "https://news.ycombinator.com/item?id=49134310",
         "source": "hackernews",
@@ -1692,260 +1584,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_831ec0929405",
-      "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-      "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
-      "primary_url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
-      "source": "manifest.build",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "91bad940c6696bf37ef9d77613b6a837efba312e",
-          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "title_en": null,
-          "title_original": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "summary": null,
-          "recommend_reason_zh": "Manifest曾用7000云用户四个月实测自家LLM路由器，发现提示词只是任务触发，且缓存读取便宜75%-90%，最终6月弃用、9月1日关停，主张单一模型胜过路由。",
-          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
-          "source": "manifest.build",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T03:21:33.850000Z"
-        },
-        {
-          "id": "5c98dc6841203e555006f0945ed5f9774ce61522",
-          "title": "大家都在构建 LLM 路由器，我们却弃用了自己的。 / Everyone is building LLM routers, we deprecated ours",
-          "title_zh": "大家都在构建 LLM 路由器，我们却弃用了自己的。",
-          "title_en": "Everyone is building LLM routers, we deprecated ours",
-          "title_original": "Everyone is building LLM routers, we deprecated ours",
-          "summary": null,
-          "recommend_reason_zh": "作者直言对LLM路由器持怀疑态度并已弃用自家方案，认为模型每周更新，缺乏训练视角时判断模型擅长什么如同扔意大利面，建议改用SFT或RL调优更有效。",
-          "url": "https://news.ycombinator.com/item?id=49126630",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-07-31T19:53:34.906000Z"
-        },
-        {
-          "id": "ea169d12fe409871c6f4c3b99ae4f4752711fce0",
-          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器 / Everyone is building LLM routers, we deprecated ours",
-          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "title_en": "Everyone is building LLM routers, we deprecated ours",
-          "title_original": "Everyone is building LLM routers, we deprecated ours",
-          "summary": null,
-          "recommend_reason_zh": "Manifest弃用自己的LLM router：3月上线、6月弃用、9月关闭，服务7000名云用户后发现，缓存读取比未缓存输入便宜75%到90%，而路由带来的不确定性反而让评估与维护更贵。",
-          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-07-31T18:06:39Z"
-        }
-      ],
-      "source_count": 3,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "hackernews",
-        "manifest.build"
-      ],
-      "items": [
-        {
-          "id": "91bad940c6696bf37ef9d77613b6a837efba312e",
-          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "title_en": null,
-          "title_original": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "summary": null,
-          "recommend_reason_zh": "Manifest曾用7000云用户四个月实测自家LLM路由器，发现提示词只是任务触发，且缓存读取便宜75%-90%，最终6月弃用、9月1日关停，主张单一模型胜过路由。",
-          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
-          "source": "manifest.build",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T03:21:33.850000Z"
-        },
-        {
-          "id": "5c98dc6841203e555006f0945ed5f9774ce61522",
-          "title": "大家都在构建 LLM 路由器，我们却弃用了自己的。 / Everyone is building LLM routers, we deprecated ours",
-          "title_zh": "大家都在构建 LLM 路由器，我们却弃用了自己的。",
-          "title_en": "Everyone is building LLM routers, we deprecated ours",
-          "title_original": "Everyone is building LLM routers, we deprecated ours",
-          "summary": null,
-          "recommend_reason_zh": "作者直言对LLM路由器持怀疑态度并已弃用自家方案，认为模型每周更新，缺乏训练视角时判断模型擅长什么如同扔意大利面，建议改用SFT或RL调优更有效。",
-          "url": "https://news.ycombinator.com/item?id=49126630",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-07-31T19:53:34.906000Z"
-        },
-        {
-          "id": "ea169d12fe409871c6f4c3b99ae4f4752711fce0",
-          "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器 / Everyone is building LLM routers, we deprecated ours",
-          "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-          "title_en": "Everyone is building LLM routers, we deprecated ours",
-          "title_original": "Everyone is building LLM routers, we deprecated ours",
-          "summary": null,
-          "recommend_reason_zh": "Manifest弃用自己的LLM router：3月上线、6月弃用、9月关闭，服务7000名云用户后发现，缓存读取比未缓存输入便宜75%到90%，而路由带来的不确定性反而让评估与维护更贵。",
-          "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-07-31T18:06:39Z"
-        }
-      ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5422,
-      "importance": 0.5422,
-      "importance_score": 0.5422,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.8412,
-        "story_heat": 0.5
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-07-31T18:06:39Z",
-      "latest_at": "2026-08-01T03:21:33.850000Z",
-      "primary_item": {
-        "id": "91bad940c6696bf37ef9d77613b6a837efba312e",
-        "title": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-        "title_zh": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-        "title_en": null,
-        "title_original": "大家都忙着开发 LLM 路由器，而我们已经弃用了自己的路由器",
-        "summary": null,
-        "recommend_reason_zh": "Manifest曾用7000云用户四个月实测自家LLM路由器，发现提示词只是任务触发，且缓存读取便宜75%-90%，最终6月弃用、9月1日关停，主张单一模型胜过路由。",
-        "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router",
-        "source": "manifest.build",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 68,
-      "persona_review": "弃用路由器说明直连够用，自建前先评估必要性。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
-      }
-    },
-    {
-      "story_id": "story_de533034d9ec",
-      "title": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-      "url": "https://code.intellios.ai/cwbrowser",
-      "primary_url": "https://code.intellios.ai/cwbrowser",
-      "source": "code.intellios.ai",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "2dfd097e7ca2b14386ccfc65ef0016aa3ab7b2cd",
-          "title": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "title_zh": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "title_en": null,
-          "title_original": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "summary": null,
-          "recommend_reason_zh": "cwbrowser用Zig从零手写渲染引擎，仅借用V8执行JavaScript，不依赖Chromium、WebKit或Gecko，Acid3测试100/100通过，早期测试速度约为Chrome的2倍。",
-          "url": "https://code.intellios.ai/cwbrowser",
-          "source": "code.intellios.ai",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T06:18:00.662000Z"
-        },
-        {
-          "id": "bcfe10fa2622cd4799c49145d20c8314bb5de1f3",
-          "title": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试 / Show HN: I worked on a new browser for 2 years, today it passed Acid 3",
-          "title_zh": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "title_en": "Show HN: I worked on a new browser for 2 years, today it passed Acid 3",
-          "title_original": "Show HN: I worked on a new browser for 2 years, today it passed Acid 3",
-          "summary": null,
-          "recommend_reason_zh": "独立开发者用Zig从零手写渲染引擎的cwbrowser，不借Chromium/WebKit/Gecko，仅配Google V8，两年完成，Acid3满分100/100，初步测试比Chrome快约2倍，轻量且全程可推理。",
-          "url": "https://code.intellios.ai/cwbrowser",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-07-31T21:39:52Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "code.intellios.ai"
-      ],
-      "items": [
-        {
-          "id": "2dfd097e7ca2b14386ccfc65ef0016aa3ab7b2cd",
-          "title": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "title_zh": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "title_en": null,
-          "title_original": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "summary": null,
-          "recommend_reason_zh": "cwbrowser用Zig从零手写渲染引擎，仅借用V8执行JavaScript，不依赖Chromium、WebKit或Gecko，Acid3测试100/100通过，早期测试速度约为Chrome的2倍。",
-          "url": "https://code.intellios.ai/cwbrowser",
-          "source": "code.intellios.ai",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-01T06:18:00.662000Z"
-        },
-        {
-          "id": "bcfe10fa2622cd4799c49145d20c8314bb5de1f3",
-          "title": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试 / Show HN: I worked on a new browser for 2 years, today it passed Acid 3",
-          "title_zh": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-          "title_en": "Show HN: I worked on a new browser for 2 years, today it passed Acid 3",
-          "title_original": "Show HN: I worked on a new browser for 2 years, today it passed Acid 3",
-          "summary": null,
-          "recommend_reason_zh": "独立开发者用Zig从零手写渲染引擎的cwbrowser，不借Chromium/WebKit/Gecko，仅配Google V8，两年完成，Acid3满分100/100，初步测试比Chrome快约2倍，轻量且全程可推理。",
-          "url": "https://code.intellios.ai/cwbrowser",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-07-31T21:39:52Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5238,
-      "importance": 0.5238,
-      "importance_score": 0.5238,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.8777,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-07-31T21:39:52Z",
-      "latest_at": "2026-08-01T06:18:00.662000Z",
-      "primary_item": {
-        "id": "2dfd097e7ca2b14386ccfc65ef0016aa3ab7b2cd",
-        "title": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-        "title_zh": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-        "title_en": null,
-        "title_original": "Show HN: 我花了两年时间开发一款新浏览器，今天它通过了Acid 3测试",
-        "summary": null,
-        "recommend_reason_zh": "cwbrowser用Zig从零手写渲染引擎，仅借用V8执行JavaScript，不依赖Chromium、WebKit或Gecko，Acid3测试100/100通过，早期测试速度约为Chrome的2倍。",
-        "url": "https://code.intellios.ai/cwbrowser",
-        "source": "code.intellios.ai",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 40,
-      "persona_review": "Acid3是2008年的老测试，通过说明不了现代浏览器水平；没开放下载就看看。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "scored_at": "2026-08-02T03:55:54.827292Z"
       }
     },
     {
@@ -1971,7 +1610,7 @@
           "published_at": "2026-08-01T13:56:14.585000Z"
         },
         {
-          "id": "6c2f696248ab0e6d48fb0ffe934d1c3238b7e2aa",
+          "id": "a4867a945f5aa13e1f9a04ff8d5ddb336cf903b9",
           "title": "Google 上线一天后就下架 Earth AI 生成器 / Google kills Earth AI generator after one day",
           "title_zh": "Google 上线一天后就下架 Earth AI 生成器",
           "title_en": "Google kills Earth AI generator after one day",
@@ -1979,15 +1618,15 @@
           "summary": null,
           "recommend_reason_zh": "Google Earth的AI图像生成功能上线仅一天就被Google叫停，官方声明承认地理空间专业人员有实用需求，但用户分享截图引发信任担忧。",
           "url": "https://twitter.com/newsfromgoogle/status/2083249962150760610",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-01T13:02:44Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News (黑客新闻)",
+        "Hacker News · 24h最热",
         "hackernews"
       ],
       "items": [
@@ -2006,7 +1645,7 @@
           "published_at": "2026-08-01T13:56:14.585000Z"
         },
         {
-          "id": "6c2f696248ab0e6d48fb0ffe934d1c3238b7e2aa",
+          "id": "a4867a945f5aa13e1f9a04ff8d5ddb336cf903b9",
           "title": "Google 上线一天后就下架 Earth AI 生成器 / Google kills Earth AI generator after one day",
           "title_zh": "Google 上线一天后就下架 Earth AI 生成器",
           "title_en": "Google kills Earth AI generator after one day",
@@ -2014,23 +1653,23 @@
           "summary": null,
           "recommend_reason_zh": "Google Earth的AI图像生成功能上线仅一天就被Google叫停，官方声明承认地理空间专业人员有实用需求，但用户分享截图引发信任担忧。",
           "url": "https://twitter.com/newsfromgoogle/status/2083249962150760610",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-01T13:02:44Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5422,
-      "importance": 0.5422,
-      "importance_score": 0.5422,
+      "score": 0.5129,
+      "importance": 0.5129,
+      "importance_score": 0.5129,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9801,
+        "recency": 0.8173,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -2057,119 +1696,119 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "scored_at": "2026-08-02T03:55:54.827292Z"
       }
     },
     {
-      "story_id": "story_2773d42e924b",
-      "title": "人工智能的推理是否因错误的理由而正确？",
-      "url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731",
-      "primary_url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731",
-      "source": "www.quantamagazine.org",
-      "source_name": "Buzzing",
+      "story_id": "story_cb70a765bd5d",
+      "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
+      "url": "https://news.ycombinator.com/item?id=49132341",
+      "primary_url": "https://news.ycombinator.com/item?id=49132341",
+      "source": "hackernews",
+      "source_name": "NewsNow",
       "sources": [
         {
-          "id": "a55ba1352b58969709e26276dc89feef44ea41ac",
-          "title": "人工智能的推理是否因错误的理由而正确？",
-          "title_zh": "人工智能的推理是否因错误的理由而正确？",
-          "title_en": null,
-          "title_original": "人工智能的推理是否因错误的理由而正确？",
+          "id": "7486e821c90af531ddb5b3bd905bc7e2dd491eed",
+          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
+          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
           "summary": null,
-          "recommend_reason_zh": "从OpenAI模型2026年5月一击破解数学难题，到Apple团队断言其推理只是“思维幻觉”、准确性会彻底崩溃，再到Google DeepMind与Terence Tao用AI改进67个问题——本文用正反证据拷问：AI的推理究竟是真本领还是侥幸？",
-          "url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731",
-          "source": "www.quantamagazine.org",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-07-31T23:05:14.419000Z"
+          "recommend_reason_zh": "欧盟将从8月2日起强制为逼真AI内容加标签，本文围绕此事展开辩论：一边认为这难阻俄罗斯等别有用心者，反成罚big tech的工具；一边认为这是打击虚假信息的法律杠杆，且频繁隐瞒AI身份会毁掉声誉。",
+          "url": "https://news.ycombinator.com/item?id=49132341",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T11:07:58.137000Z"
         },
         {
-          "id": "0e40338c8683d32db907cdcdb60ae7fcb1bf5c5a",
-          "title": "人工智能的推理是否因错误的理由而正确？ / Is AI Reasoning Right for the Wrong Reasons?",
-          "title_zh": "人工智能的推理是否因错误的理由而正确？",
-          "title_en": "Is AI Reasoning Right for the Wrong Reasons?",
-          "title_original": "Is AI Reasoning Right for the Wrong Reasons?",
+          "id": "202e2ee3bb16183ae87f4d80e594848b6635d4ee",
+          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
+          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
           "summary": null,
-          "recommend_reason_zh": "AI真会推理吗？本文梳理争议：OpenAI的模型在2026年5月解出著名数学难题，Apple团队批评其‘幻觉’，Santa Fe Institute指其走捷径，而DeepMind与Terence Tao改进67个数学问题。",
-          "url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-07-31T15:29:39Z"
+          "recommend_reason_zh": "欧盟8月2日起强制要求AI生成并拟真内容加数字水印，违者最高罚年营收3%；个人与讽刺作品豁免，存量系统宽限四个月，Google SynthID已标注超1000亿张图。",
+          "url": "https://www.engadget.com/2227966/eu-mandate-labels-on-authentic-looking-ai-content",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T08:26:55Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News",
-        "www.quantamagazine.org"
+        "Hacker News · 24h最热",
+        "hackernews"
       ],
       "items": [
         {
-          "id": "a55ba1352b58969709e26276dc89feef44ea41ac",
-          "title": "人工智能的推理是否因错误的理由而正确？",
-          "title_zh": "人工智能的推理是否因错误的理由而正确？",
-          "title_en": null,
-          "title_original": "人工智能的推理是否因错误的理由而正确？",
+          "id": "7486e821c90af531ddb5b3bd905bc7e2dd491eed",
+          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
+          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
           "summary": null,
-          "recommend_reason_zh": "从OpenAI模型2026年5月一击破解数学难题，到Apple团队断言其推理只是“思维幻觉”、准确性会彻底崩溃，再到Google DeepMind与Terence Tao用AI改进67个问题——本文用正反证据拷问：AI的推理究竟是真本领还是侥幸？",
-          "url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731",
-          "source": "www.quantamagazine.org",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-07-31T23:05:14.419000Z"
+          "recommend_reason_zh": "欧盟将从8月2日起强制为逼真AI内容加标签，本文围绕此事展开辩论：一边认为这难阻俄罗斯等别有用心者，反成罚big tech的工具；一边认为这是打击虚假信息的法律杠杆，且频繁隐瞒AI身份会毁掉声誉。",
+          "url": "https://news.ycombinator.com/item?id=49132341",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-01T11:07:58.137000Z"
         },
         {
-          "id": "0e40338c8683d32db907cdcdb60ae7fcb1bf5c5a",
-          "title": "人工智能的推理是否因错误的理由而正确？ / Is AI Reasoning Right for the Wrong Reasons?",
-          "title_zh": "人工智能的推理是否因错误的理由而正确？",
-          "title_en": "Is AI Reasoning Right for the Wrong Reasons?",
-          "title_original": "Is AI Reasoning Right for the Wrong Reasons?",
+          "id": "202e2ee3bb16183ae87f4d80e594848b6635d4ee",
+          "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
+          "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
+          "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
           "summary": null,
-          "recommend_reason_zh": "AI真会推理吗？本文梳理争议：OpenAI的模型在2026年5月解出著名数学难题，Apple团队批评其‘幻觉’，Santa Fe Institute指其走捷径，而DeepMind与Terence Tao改进67个数学问题。",
-          "url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-07-31T15:29:39Z"
+          "recommend_reason_zh": "欧盟8月2日起强制要求AI生成并拟真内容加数字水印，违者最高罚年营收3%；个人与讽刺作品豁免，存量系统宽限四个月，Google SynthID已标注超1000亿张图。",
+          "url": "https://www.engadget.com/2227966/eu-mandate-labels-on-authentic-looking-ai-content",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-01T08:26:55Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5082,
-      "importance": 0.5082,
-      "importance_score": 0.5082,
+      "score": 0.5071,
+      "importance": 0.5071,
+      "importance_score": 0.5071,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.7909,
+        "recency": 0.7849,
         "story_heat": 0.25
       },
       "category": "watch",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-07-31T15:29:39Z",
-      "latest_at": "2026-07-31T23:05:14.419000Z",
+      "earliest_at": "2026-08-01T08:26:55Z",
+      "latest_at": "2026-08-01T11:07:58.137000Z",
       "primary_item": {
-        "id": "a55ba1352b58969709e26276dc89feef44ea41ac",
-        "title": "人工智能的推理是否因错误的理由而正确？",
-        "title_zh": "人工智能的推理是否因错误的理由而正确？",
-        "title_en": null,
-        "title_original": "人工智能的推理是否因错误的理由而正确？",
+        "id": "7486e821c90af531ddb5b3bd905bc7e2dd491eed",
+        "title": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。 / EU will mandate labels on authentic-looking AI content starting August 2",
+        "title_zh": "欧盟将从8月2日起强制要求为逼真的AI内容加标签。",
+        "title_en": "EU will mandate labels on authentic-looking AI content starting August 2",
+        "title_original": "EU will mandate labels on authentic-looking AI content starting August 2",
         "summary": null,
-        "recommend_reason_zh": "从OpenAI模型2026年5月一击破解数学难题，到Apple团队断言其推理只是“思维幻觉”、准确性会彻底崩溃，再到Google DeepMind与Terence Tao用AI改进67个问题——本文用正反证据拷问：AI的推理究竟是真本领还是侥幸？",
-        "url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731",
-        "source": "www.quantamagazine.org",
-        "source_name": "Buzzing"
+        "recommend_reason_zh": "欧盟将从8月2日起强制为逼真AI内容加标签，本文围绕此事展开辩论：一边认为这难阻俄罗斯等别有用心者，反成罚big tech的工具；一边认为这是打击虚假信息的法律杠杆，且频繁隐瞒AI身份会毁掉声誉。",
+        "url": "https://news.ycombinator.com/item?id=49132341",
+        "source": "hackernews",
+        "source_name": "NewsNow"
       },
       "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "探讨模型推理机制，偏学术，暂无工具落地，看看即可。",
+      "persona_score": 55,
+      "persona_review": "做内容平台的得提前规划标签方案，但具体技术标准还没落地，先观望。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-01T15:31:23.577479Z"
+        "scored_at": "2026-08-02T03:55:54.827292Z"
       }
     }
   ]
