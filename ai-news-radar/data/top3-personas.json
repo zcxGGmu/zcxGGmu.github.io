@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T10:02:28.361450Z",
+  "generated_at": "2026-08-04T15:59:02.654516Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,14 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_cd21c6fddb56",
-      "title": "瓦解诈骗犯罪行动 / Disrupting a Criminal Scam Operation",
-      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
+      "story_id": "story_05bcbbcf4f82",
+      "title": "在单颗 AMD MI300X 上运行 DeepSeek V4 Flash",
+      "url": "https://github.com/ryanzhou/deepseek-v4-flash-mi300x",
       "rank": 1,
       "reviews": {
+        "cynic": {
+          "score": 52,
+          "review": "跑通是第一步，拿不出性能对比就是白嫖算力。"
+        },
+        "paper-police": {
+          "score": 70,
+          "review": "代码仓库可查，但缺论文和独立跑分，能否复现待验证。"
+        },
         "pragmatic": {
-          "score": 40,
-          "review": "安全行动新闻，对开发者无直接工具价值，了解即可。"
+          "score": 90,
+          "review": "单卡就能跑V4 Flash，部署成本直接拉低，手头有MI300X的今天就能试。"
+        }
+      }
+    },
+    {
+      "story_id": "story_9dc2cb12e04f",
+      "title": "GPT-5.6 Luna降价80%永久生效 / Some fine folks apparently misunderstood， but the GPT-5.6 Luna price reduction by 80% is not a tempo…",
+      "url": "https://x.com/thsottiaux/status/2084506501834829833",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 45,
+          "review": "降价80%？先晒原价和算力消耗，别拿虚高定价当诚意。"
+        },
+        "paper-police": {
+          "score": 12,
+          "review": "只有X帖子宣称永久降价，无官方公告或第三方验证，证据不足。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "API直接降价80%，跑大批量的今天就能换，省下的钱实实在在。"
+        }
+      }
+    },
+    {
+      "story_id": "story_494ad8597a8c",
+      "title": "蚂蚁百灵发布Ling-3.0-flash开源权重 / Today， we're releasing the open weights for Ling-3.0-flash. 🎉 Official BF16 and FP8-quantized vers…",
+      "url": "https://x.com/AntLingAGI/status/2084656533489754475",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 65,
+          "review": "权重开源是好事，但训练细节和评测基线呢？光有模型跑不出说服力。"
+        },
+        "paper-police": {
+          "score": 68,
+          "review": "权重开源可自测，缺论文和基准分，等第三方评测再说。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "开源权重可下载，BF16和FP8直接部署，跑推理的今天就能换。"
         }
       }
     }
