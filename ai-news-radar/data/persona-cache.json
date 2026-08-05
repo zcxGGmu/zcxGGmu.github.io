@@ -1,36 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_81b83ca2954b|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "合作消息，暂无具体SDK，等苹果官方发布再动手。",
-      "title_hash": "fdc8fff0",
-      "scored_at": "2026-07-15T11:56:51.438869Z"
-    },
-    "story_3a15e0febf2d|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "合作落地前没实际接口可用，等具体接入方案再评估。",
-      "title_hash": "3f99e2d9",
-      "scored_at": "2026-07-15T11:56:53.902339Z"
-    },
-    "story_98bd6134807d|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "备案合规消息，产品未上市，对开发者无实际影响。",
-      "title_hash": "dc773a2f",
-      "scored_at": "2026-07-15T11:56:56.107848Z"
-    },
-    "story_c0a807b15b53|pragmatic|0a5c5b24": {
-      "score": 70,
-      "review": "做虚拟伴侣产品的今天就得改用户验证，别的方向暂时不用慌。",
-      "title_hash": "3e74b332",
-      "scored_at": "2026-07-15T11:56:58.511773Z"
-    },
-    "story_e87a72b3d6ec|pragmatic|0a5c5b24": {
-      "score": 88,
-      "review": "量化语音AI拟人度，今天就能用来评估和优化模型。",
-      "title_hash": "e5847db3",
-      "scored_at": "2026-07-15T14:20:24.323553Z"
-    },
     "story_720e8881c84d|pragmatic|0a5c5b24": {
       "score": 55,
       "review": "经验总结而非工具，可当案例参考，今天用不上。",
@@ -4980,6 +4950,72 @@
       "review": "方向性建议，不产生新工具或API，做本地化中小模型的可参考，但今天不用动。",
       "title_hash": "16a3bff8",
       "scored_at": "2026-08-05T10:10:01.897229Z"
+    },
+    "story_d00dceec4346|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "现有Assistant集成要迁移，尽早检查Gemini兼容性和接口变更。",
+      "title_hash": "89ced6e1",
+      "scored_at": "2026-08-05T12:39:11.965368Z"
+    },
+    "story_e2cae4e7f2b3|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "购物智能体回归亚马逊，对开发者无直接接口价值，关注后续 API 再说。",
+      "title_hash": "e4bb0707",
+      "scored_at": "2026-08-05T12:39:13.756455Z"
+    },
+    "story_5e8e5c7c94d4|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "省token的实操技巧，跑Codex和Claude Code任务的可直接参考。",
+      "title_hash": "b80de7f7",
+      "scored_at": "2026-08-05T12:39:16.926729Z"
+    },
+    "story_f70d268aa3c8|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "法规先行，L3落地有据可依，但离量产上车还远，做相关开发的可以盯细则。",
+      "title_hash": "c37d7052",
+      "scored_at": "2026-08-05T12:39:20.099852Z"
+    },
+    "story_788cae258ab4|cynic|f4237a62": {
+      "score": 68,
+      "review": "3B 单卡能跑是真本事，'开源 SOTA'记得标注是自家榜单的 SOTA。",
+      "title_hash": "8a053ed5",
+      "scored_at": "2026-08-05T12:39:34.452942Z"
+    },
+    "story_788cae258ab4|paper-police|966065bf": {
+      "score": 10,
+      "review": "只有官方宣称，无论文无代码无第三方评测，开源SOTA无从验证。",
+      "title_hash": "8a053ed5",
+      "scored_at": "2026-08-05T12:39:36.180061Z"
+    },
+    "story_880f77f03b61|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "开放平台框架值得看，但没给接入细节前先别改架构。",
+      "title_hash": "447092cc",
+      "scored_at": "2026-08-05T14:56:06.956446Z"
+    },
+    "story_609acf8848f0|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "现状总结，不提供可上手方案，等有突破再说。",
+      "title_hash": "e1ca7136",
+      "scored_at": "2026-08-05T14:56:09.355080Z"
+    },
+    "story_f817e433f480|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "概念提案，没给可clone代码，等落地再看。",
+      "title_hash": "eff04b9a",
+      "scored_at": "2026-08-05T14:56:17.585133Z"
+    },
+    "story_3739c8d6bfe4|cynic|f4237a62": {
+      "score": 45,
+      "review": "“活人感”全凭自我感觉，敢不敢把前后对比稿贴出来？",
+      "title_hash": "1eba601e",
+      "scored_at": "2026-08-05T14:56:21.013967Z"
+    },
+    "story_3739c8d6bfe4|paper-police|966065bf": {
+      "score": 25,
+      "review": "仅称开源但未见仓库地址和评测，无法验证，等代码和样本再议。",
+      "title_hash": "1eba601e",
+      "scored_at": "2026-08-05T14:56:24.700014Z"
     }
   }
 }
