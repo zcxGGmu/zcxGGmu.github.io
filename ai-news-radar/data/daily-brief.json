@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T06:42:16.095853Z",
+  "generated_at": "2026-08-05T09:49:30.138942Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -77,15 +77,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.861,
-      "importance": 0.861,
-      "importance_score": 0.861,
+      "score": 0.8543,
+      "importance": 0.8543,
+      "importance_score": 0.8543,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.97,
-        "recency": 0.8445,
+        "recency": 0.8073,
         "story_heat": 0.25
       },
       "category": "official",
@@ -115,7 +115,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -163,15 +163,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8244,
-      "importance": 0.8244,
-      "importance_score": 0.8244,
+      "score": 0.8176,
+      "importance": 0.8176,
+      "importance_score": 0.8176,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8464,
+        "recency": 0.8091,
         "story_heat": 0.0
       },
       "category": "official",
@@ -200,7 +200,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -248,15 +248,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8241,
-      "importance": 0.8241,
-      "importance_score": 0.8241,
+      "score": 0.8174,
+      "importance": 0.8174,
+      "importance_score": 0.8174,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.845,
+        "recency": 0.8078,
         "story_heat": 0.0
       },
       "category": "official",
@@ -285,7 +285,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -333,15 +333,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8214,
-      "importance": 0.8214,
-      "importance_score": 0.8214,
+      "score": 0.8151,
+      "importance": 0.8151,
+      "importance_score": 0.8151,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.7854,
+        "recency": 0.7508,
         "story_heat": 0.0
       },
       "category": "official",
@@ -370,7 +370,121 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
+      }
+    },
+    {
+      "story_id": "story_ef28a1340614",
+      "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+      "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+      "primary_url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+      "source": "MarkTechPost（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "b12c4fe282e82a37bd26f037f6b19fe64d9dab67",
+          "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_zh": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型",
+          "title_en": "NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_original": "NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "summary": "NVIDIA 发布 Alpamayo 2 Super，一款 34B 参数的视觉-语言-动作（VLA）模型，专为自动驾驶长尾事件设计，权重采用 Linux 基金会 OpenMDW-1.1 许可，代码为 Apache 2.0，发布首日即可商用。",
+          "recommend_reason_zh": "NVIDIA发布开源商用自动驾驶VLA模型Alpamayo 2 Super，34B参数，LingoQA得分79.2，较GPT-4o高23.2分，可同时输出规划轨迹与因果解释，加速长尾场景处理。",
+          "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+          "source": "MarkTechPost（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-05T08:25:11Z"
+        },
+        {
+          "id": "a34bae8b0cb986763e63c3ebb6e7c26017b06202",
+          "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super: A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_zh": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型",
+          "title_en": "NVIDIA Releases Alpamayo 2 Super: A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_original": "NVIDIA Releases Alpamayo 2 Super: A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "summary": "NVIDIA released Alpamayo 2 Super, a 34B open vision-language-action model for autonomous driving, under a commercial OpenMDW-1.1 license\nNVIDIA released Alpamayo 2 Super, a 34B open vision-language-action model for autonomous driving, under a commercial OpenMDW-1.1 license\nNVIDIA has released Alpamayo 2 Super , a 34B-parameter vision-language-action (VLA) mode l for autonomous driving, under an open commercial license. The stated design target is the long-tail events: rare, multi-agent situation",
+          "recommend_reason_zh": "NVIDIA发布34B开源模型Alpamayo 2 Super，针对自动驾驶罕见长尾事件，可输出轨迹与因果解释。训练数据含11.5万小时视频和370万条CoC，LingoQA得分79.2，采用商用许可OpenMDW-1.1。",
+          "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+          "source": "MarkTechPost Research",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-05T08:25:11Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "MarkTechPost Research",
+        "MarkTechPost（RSS）"
+      ],
+      "items": [
+        {
+          "id": "b12c4fe282e82a37bd26f037f6b19fe64d9dab67",
+          "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_zh": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型",
+          "title_en": "NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_original": "NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "summary": "NVIDIA 发布 Alpamayo 2 Super，一款 34B 参数的视觉-语言-动作（VLA）模型，专为自动驾驶长尾事件设计，权重采用 Linux 基金会 OpenMDW-1.1 许可，代码为 Apache 2.0，发布首日即可商用。",
+          "recommend_reason_zh": "NVIDIA发布开源商用自动驾驶VLA模型Alpamayo 2 Super，34B参数，LingoQA得分79.2，较GPT-4o高23.2分，可同时输出规划轨迹与因果解释，加速长尾场景处理。",
+          "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+          "source": "MarkTechPost（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-05T08:25:11Z"
+        },
+        {
+          "id": "a34bae8b0cb986763e63c3ebb6e7c26017b06202",
+          "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super: A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_zh": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型",
+          "title_en": "NVIDIA Releases Alpamayo 2 Super: A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "title_original": "NVIDIA Releases Alpamayo 2 Super: A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+          "summary": "NVIDIA released Alpamayo 2 Super, a 34B open vision-language-action model for autonomous driving, under a commercial OpenMDW-1.1 license\nNVIDIA released Alpamayo 2 Super, a 34B open vision-language-action model for autonomous driving, under a commercial OpenMDW-1.1 license\nNVIDIA has released Alpamayo 2 Super , a 34B-parameter vision-language-action (VLA) mode l for autonomous driving, under an open commercial license. The stated design target is the long-tail events: rare, multi-agent situation",
+          "recommend_reason_zh": "NVIDIA发布34B开源模型Alpamayo 2 Super，针对自动驾驶罕见长尾事件，可输出轨迹与因果解释。训练数据含11.5万小时视频和370万条CoC，LingoQA得分79.2，采用商用许可OpenMDW-1.1。",
+          "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+          "source": "MarkTechPost Research",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-05T08:25:11Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.81,
+      "importance": 0.81,
+      "importance_score": 0.81,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.79,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9799,
+        "story_heat": 0.25
+      },
+      "category": "industry",
+      "reasons": [
+        "multi_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-05T08:25:11Z",
+      "latest_at": "2026-08-05T08:25:11Z",
+      "primary_item": {
+        "id": "b12c4fe282e82a37bd26f037f6b19fe64d9dab67",
+        "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+        "title_zh": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型",
+        "title_en": "NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+        "title_original": "NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+        "summary": "NVIDIA 发布 Alpamayo 2 Super，一款 34B 参数的视觉-语言-动作（VLA）模型，专为自动驾驶长尾事件设计，权重采用 Linux 基金会 OpenMDW-1.1 许可，代码为 Apache 2.0，发布首日即可商用。",
+        "recommend_reason_zh": "NVIDIA发布开源商用自动驾驶VLA模型Alpamayo 2 Super，34B参数，LingoQA得分79.2，较GPT-4o高23.2分，可同时输出规划轨迹与因果解释，加速长尾场景处理。",
+        "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+        "source": "MarkTechPost（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 75,
+      "persona_review": "开源 34B VLA 模型，做自动驾驶的能直接试，通用开发者先观望。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -418,15 +532,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8034,
-      "importance": 0.8034,
-      "importance_score": 0.8034,
+      "score": 0.7973,
+      "importance": 0.7973,
+      "importance_score": 0.7973,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.7744,
+        "recency": 0.7403,
         "story_heat": 0.0
       },
       "category": "official",
@@ -455,7 +569,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -532,15 +646,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.7969,
-      "importance": 0.7969,
-      "importance_score": 0.7969,
+      "score": 0.7897,
+      "importance": 0.7897,
+      "importance_score": 0.7897,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.79,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9074,
+        "recency": 0.8674,
         "story_heat": 0.25
       },
       "category": "industry",
@@ -569,7 +683,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -675,15 +789,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.7889,
-      "importance": 0.7889,
-      "importance_score": 0.7889,
+      "score": 0.7827,
+      "importance": 0.7827,
+      "importance_score": 0.7827,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.76,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7738,
+        "recency": 0.7397,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -712,7 +826,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -760,15 +874,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8166,
-      "importance": 0.8166,
-      "importance_score": 0.8166,
+      "score": 0.8098,
+      "importance": 0.8098,
+      "importance_score": 0.8098,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8476,
+        "recency": 0.8103,
         "story_heat": 0.0
       },
       "category": "official",
@@ -797,30 +911,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
-      "story_id": "story_fb0068c9767a",
-      "title": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
-      "url": "https://www.aibase.com/news/30130",
-      "primary_url": "https://www.aibase.com/news/30130",
+      "story_id": "story_788cae258ab4",
+      "title": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
+      "url": "https://www.aibase.com/news/30132",
+      "primary_url": "https://www.aibase.com/news/30132",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "45d71f070884471c1302c577a523eae2763a2385",
-          "title": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
-          "title_zh": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
+          "id": "d863f5b2ef0f856624b1ce3cea30354a0a6dc2f7",
+          "title": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
+          "title_zh": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
           "title_en": null,
-          "title_original": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
-          "summary": "Payment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nPayment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nPayment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nExplore AI Fronti",
-          "recommend_reason_zh": "Visa 以 24 亿美元现金收购 AI 防诈公司 BioCatch，后者每月分析 190 亿次用户交互，服务 21 国超 350 家金融机构，从行为与设备信号源头识别账户盗用与虚假申请，交易预计 2027 年 3 月底完成。",
-          "url": "https://www.aibase.com/news/30130",
+          "title_original": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
+          "summary": "Mistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nMistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nMistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nExplore AI Fronti",
+          "recommend_reason_zh": "Mistral于8月4日发布开源审核模型Shieldstral，仅3B参数即可在单张16GB GPU上运行，支持12种语言，将审核策略写入输入而非权重，宣称多模态审核性能达到SOTA，可媲美七倍大的模型。",
+          "url": "https://www.aibase.com/news/30132",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-05T06:42:16.095853Z"
+          "published_at": "2026-08-05T09:49:30.138942Z"
         }
       ],
       "source_count": 1,
@@ -829,18 +943,18 @@
       ],
       "items": [
         {
-          "id": "45d71f070884471c1302c577a523eae2763a2385",
-          "title": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
-          "title_zh": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
+          "id": "d863f5b2ef0f856624b1ce3cea30354a0a6dc2f7",
+          "title": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
+          "title_zh": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
           "title_en": null,
-          "title_original": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
-          "summary": "Payment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nPayment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nPayment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nExplore AI Fronti",
-          "recommend_reason_zh": "Visa 以 24 亿美元现金收购 AI 防诈公司 BioCatch，后者每月分析 190 亿次用户交互，服务 21 国超 350 家金融机构，从行为与设备信号源头识别账户盗用与虚假申请，交易预计 2027 年 3 月底完成。",
-          "url": "https://www.aibase.com/news/30130",
+          "title_original": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
+          "summary": "Mistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nMistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nMistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nExplore AI Fronti",
+          "recommend_reason_zh": "Mistral于8月4日发布开源审核模型Shieldstral，仅3B参数即可在单张16GB GPU上运行，支持12种语言，将审核策略写入输入而非权重，宣称多模态审核性能达到SOTA，可媲美七倍大的模型。",
+          "url": "https://www.aibase.com/news/30132",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-05T06:42:16.095853Z"
+          "published_at": "2026-08-05T09:49:30.138942Z"
         }
       ],
       "item_count": 1,
@@ -861,27 +975,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-05T06:42:16.095853Z",
-      "latest_at": "2026-08-05T06:42:16.095853Z",
+      "earliest_at": "2026-08-05T09:49:30.138942Z",
+      "latest_at": "2026-08-05T09:49:30.138942Z",
       "primary_item": {
-        "id": "45d71f070884471c1302c577a523eae2763a2385",
-        "title": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
-        "title_zh": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
+        "id": "d863f5b2ef0f856624b1ce3cea30354a0a6dc2f7",
+        "title": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
+        "title_zh": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
         "title_en": null,
-        "title_original": "Visa 豪掷 24 亿美元收购 AI 防诈公司 BioCatch：每月分析 190 亿次交互，从源头掐断金融诈骗",
-        "summary": "Payment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nPayment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nPayment giant Visa has announced that it will acquire Israeli artificial intelligence financial fraud prevention company BioCatch for $2.4 billion (approximatel\nExplore AI Fronti",
-        "recommend_reason_zh": "Visa 以 24 亿美元现金收购 AI 防诈公司 BioCatch，后者每月分析 190 亿次用户交互，服务 21 国超 350 家金融机构，从行为与设备信号源头识别账户盗用与虚假申请，交易预计 2027 年 3 月底完成。",
-        "url": "https://www.aibase.com/news/30130",
+        "title_original": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
+        "summary": "Mistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nMistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nMistral AI dropped a &quot;reviewing nuclear bomb&quot; on August 4th - the Shieldstral content review model, with a total of 3B (3 billion) parameters, uses op\nExplore AI Fronti",
+        "recommend_reason_zh": "Mistral于8月4日发布开源审核模型Shieldstral，仅3B参数即可在单张16GB GPU上运行，支持12种语言，将审核策略写入输入而非权重，宣称多模态审核性能达到SOTA，可媲美七倍大的模型。",
+        "url": "https://www.aibase.com/news/30132",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 20,
-      "persona_review": "收购案离代码很远，不改变任何 API 或工具，等整合出产品再看。",
+      "persona_score": 88,
+      "persona_review": "3B开源审核模型能单卡跑，过滤场景今天就能替换云端API。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -929,15 +1043,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7668,
-      "importance": 0.7668,
-      "importance_score": 0.7668,
+      "score": 0.7594,
+      "importance": 0.7594,
+      "importance_score": 0.7594,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.76,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9289,
+        "recency": 0.8879,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -965,7 +1079,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -1013,21 +1127,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7512,
-      "importance": 0.7512,
-      "importance_score": 0.7512,
+      "score": 0.7448,
+      "importance": 0.7448,
+      "importance_score": 0.7448,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.78,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8087,
+        "recency": 0.7731,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-04T16:00:00Z",
       "latest_at": "2026-08-04T16:00:00Z",
@@ -1049,7 +1162,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -1097,21 +1210,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7502,
-      "importance": 0.7502,
-      "importance_score": 0.7502,
+      "score": 0.7437,
+      "importance": 0.7437,
+      "importance_score": 0.7437,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.61,
         "source_tier": 1.0,
         "ai_relevance": 1.0,
-        "recency": 0.8175,
+        "recency": 0.7815,
         "story_heat": 0.0
       },
       "category": "official",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-04T16:45:02.138000Z",
       "latest_at": "2026-08-04T16:45:02.138000Z",
@@ -1133,7 +1245,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -1181,15 +1293,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8094,
-      "importance": 0.8094,
-      "importance_score": 0.8094,
+      "score": 0.803,
+      "importance": 0.803,
+      "importance_score": 0.803,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8077,
+        "recency": 0.7721,
         "story_heat": 0.0
       },
       "category": "official",
@@ -1218,7 +1330,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -1266,15 +1378,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.749,
-      "importance": 0.749,
-      "importance_score": 0.749,
+      "score": 0.7427,
+      "importance": 0.7427,
+      "importance_score": 0.7427,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.78,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7968,
+        "recency": 0.7617,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1301,7 +1413,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -1349,15 +1461,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7454,
-      "importance": 0.7454,
-      "importance_score": 0.7454,
+      "score": 0.7379,
+      "importance": 0.7379,
+      "importance_score": 0.7379,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.68,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9435,
+        "recency": 0.9019,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1384,7 +1496,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
+      }
+    },
+    {
+      "story_id": "story_b37eb09fb6a2",
+      "title": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+      "url": "https://www.aibase.com/news/30134",
+      "primary_url": "https://www.aibase.com/news/30134",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "720ea29c877b647278422f2bd6badd24b0b46327",
+          "title": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+          "title_zh": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+          "title_en": null,
+          "title_original": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+          "summary": "The World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nThe World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nThe World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nExplore AI Fronti",
+          "recommend_reason_zh": "世界银行最新报告给新兴经济体指路：与其砸钱建数据中心和大模型，不如推广本地化小工具改善医疗教育，并称AI更可能是工人帮手而非取代者。",
+          "url": "https://www.aibase.com/news/30134",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-05T09:49:30.138942Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "720ea29c877b647278422f2bd6badd24b0b46327",
+          "title": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+          "title_zh": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+          "title_en": null,
+          "title_original": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+          "summary": "The World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nThe World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nThe World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nExplore AI Fronti",
+          "recommend_reason_zh": "世界银行最新报告给新兴经济体指路：与其砸钱建数据中心和大模型，不如推广本地化小工具改善医疗教育，并称AI更可能是工人帮手而非取代者。",
+          "url": "https://www.aibase.com/news/30134",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-05T09:49:30.138942Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 1.0,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-05T09:49:30.138942Z",
+      "latest_at": "2026-08-05T09:49:30.138942Z",
+      "primary_item": {
+        "id": "720ea29c877b647278422f2bd6badd24b0b46327",
+        "title": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+        "title_zh": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+        "title_en": null,
+        "title_original": "世界银行喊话新兴经济体：别跟富裕国拼数据中心和大模型，本地化小工具才是正道",
+        "summary": "The World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nThe World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nThe World Bank has outlined a clear path for developing economies in its latest report: adopt artificial intelligence into government governance and business op\nExplore AI Fronti",
+        "recommend_reason_zh": "世界银行最新报告给新兴经济体指路：与其砸钱建数据中心和大模型，不如推广本地化小工具改善医疗教育，并称AI更可能是工人帮手而非取代者。",
+        "url": "https://www.aibase.com/news/30134",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 50,
+      "persona_review": "方向性建议，不产生新工具或API，做本地化中小模型的可参考，但今天不用动。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -1432,15 +1628,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7436,
-      "importance": 0.7436,
-      "importance_score": 0.7436,
+      "score": 0.7359,
+      "importance": 0.7359,
+      "importance_score": 0.7359,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.66,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9668,
+        "recency": 0.9242,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1467,257 +1663,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
-      }
-    },
-    {
-      "story_id": "story_9cef6c59681e",
-      "title": "Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅 / Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-      "url": "https://www.marktechpost.com/2026/08/04/reflex-open-sources-xy-a-rust-backed-super-fast-python-charting-library-that-keeps-100-million-point-charts-interactive",
-      "primary_url": "https://www.marktechpost.com/2026/08/04/reflex-open-sources-xy-a-rust-backed-super-fast-python-charting-library-that-keeps-100-million-point-charts-interactive",
-      "source": "MarkTechPost（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "6676da1c0816f6c83fae984e4a133542cf2fe647",
-          "title": "Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅 / Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-          "title_zh": "Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅",
-          "title_en": "Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-          "title_original": "Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-          "summary": "Reflex AI 发布 Apache-2.0 许可的 Python 交互式 2D 绘图库 XY，通过 Rust 原生核心、二进制缓冲传输和 WebGL2 渲染，在 1 万至 1 亿点范围内保持约 0.08 秒的渲染时间。",
-          "recommend_reason_zh": null,
-          "url": "https://www.marktechpost.com/2026/08/04/reflex-open-sources-xy-a-rust-backed-super-fast-python-charting-library-that-keeps-100-million-point-charts-interactive",
-          "source": "MarkTechPost（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-04T08:57:47Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "MarkTechPost（RSS）"
-      ],
-      "items": [
-        {
-          "id": "6676da1c0816f6c83fae984e4a133542cf2fe647",
-          "title": "Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅 / Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-          "title_zh": "Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅",
-          "title_en": "Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-          "title_original": "Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-          "summary": "Reflex AI 发布 Apache-2.0 许可的 Python 交互式 2D 绘图库 XY，通过 Rust 原生核心、二进制缓冲传输和 WebGL2 渲染，在 1 万至 1 亿点范围内保持约 0.08 秒的渲染时间。",
-          "recommend_reason_zh": null,
-          "url": "https://www.marktechpost.com/2026/08/04/reflex-open-sources-xy-a-rust-backed-super-fast-python-charting-library-that-keeps-100-million-point-charts-interactive",
-          "source": "MarkTechPost（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-04T08:57:47Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7401,
-      "importance": 0.7401,
-      "importance_score": 0.7401,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.79,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7305,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-04T08:57:47Z",
-      "latest_at": "2026-08-04T08:57:47Z",
-      "primary_item": {
-        "id": "6676da1c0816f6c83fae984e4a133542cf2fe647",
-        "title": "Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅 / Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-        "title_zh": "Reflex 开源 XY：基于 Rust 的超快 Python 绘图库，可保持 1 亿点图表交互流畅",
-        "title_en": "Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-        "title_original": "Reflex Open Sources XY： A Rust-Backed Super-Fast Python Charting Library That Keeps 100 Million Point Charts Interactive",
-        "summary": "Reflex AI 发布 Apache-2.0 许可的 Python 交互式 2D 绘图库 XY，通过 Rust 原生核心、二进制缓冲传输和 WebGL2 渲染，在 1 万至 1 亿点范围内保持约 0.08 秒的渲染时间。",
-        "recommend_reason_zh": null,
-        "url": "https://www.marktechpost.com/2026/08/04/reflex-open-sources-xy-a-rust-backed-super-fast-python-charting-library-that-keeps-100-million-point-charts-interactive",
-        "source": "MarkTechPost（RSS）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 82,
-      "persona_review": "百万点级交互绘图，Rust 加速可落地，做数据可视化的值得试跑。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
-      }
-    },
-    {
-      "story_id": "story_b6ffefc0c657",
-      "title": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-      "url": "https://www.aibase.com/news/30129",
-      "primary_url": "https://www.aibase.com/news/30129",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "c374674091da5da5a5a915fcee284957e7033ec5",
-          "title": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-          "title_zh": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-          "title_en": null,
-          "title_original": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-          "summary": "On August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nOn August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nOn August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nExplore AI Fronti",
-          "recommend_reason_zh": "Autonavi Technology启动科创板IPO初步询价，拟发行4044.64万股募资42.02亿元，市场预期估值超400亿元，发行价预估破百元，人形机器人龙头上市进程迎来关键节点。",
-          "url": "https://www.aibase.com/news/30129",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-05T06:42:16.095853Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "c374674091da5da5a5a915fcee284957e7033ec5",
-          "title": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-          "title_zh": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-          "title_en": null,
-          "title_original": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-          "summary": "On August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nOn August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nOn August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nExplore AI Fronti",
-          "recommend_reason_zh": "Autonavi Technology启动科创板IPO初步询价，拟发行4044.64万股募资42.02亿元，市场预期估值超400亿元，发行价预估破百元，人形机器人龙头上市进程迎来关键节点。",
-          "url": "https://www.aibase.com/news/30129",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-05T06:42:16.095853Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 1.0,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-05T06:42:16.095853Z",
-      "latest_at": "2026-08-05T06:42:16.095853Z",
-      "primary_item": {
-        "id": "c374674091da5da5a5a915fcee284957e7033ec5",
-        "title": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-        "title_zh": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-        "title_en": null,
-        "title_original": "一签约5.2万元!机器人独角兽宇树科技冲击科创板，发行价预估超百元",
-        "summary": "On August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nOn August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nOn August 5, the leading humanoid robot company in China, Autonavi Technology, officially launched the preliminary inquiry for its IPO on the Sci-Tech Innovatio\nExplore AI Fronti",
-        "recommend_reason_zh": "Autonavi Technology启动科创板IPO初步询价，拟发行4044.64万股募资42.02亿元，市场预期估值超400亿元，发行价预估破百元，人形机器人龙头上市进程迎来关键节点。",
-        "url": "https://www.aibase.com/news/30129",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "IPO和估值不写代码，等产品开售再看。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
-      }
-    },
-    {
-      "story_id": "story_48187a538519",
-      "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-      "url": "https://x.com/Replit/status/2084761337570144424",
-      "primary_url": "https://x.com/Replit/status/2084761337570144424",
-      "source": "X：Replit (@Replit)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "bb9042948d345786f700efe61ab211a4b2f753a8",
-          "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-          "title_zh": "Replit 环境智能：免提示词自动生成设计",
-          "title_en": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-          "title_original": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-          "summary": "你无需提示词，也无需设计语言。\n\n环境智能（Ambient Intelligence）会在每个画面旁显示建议卡片，每张卡片都指向你的设计的一个不同方向。点击你喜欢的那张，即可看到它生成一个新的画面。\n\n你再也不必纠结下一步该做什么。\n\n立即在 http://replit.com/design 体验。",
-          "recommend_reason_zh": "无需提示词与设计语言，Ambient Intelligence 在每帧旁展示建议卡片，点击即可生成新帧，让你不再纠结下一步设计方向。",
-          "url": "https://x.com/Replit/status/2084761337570144424",
-          "source": "X：Replit (@Replit)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-04T22:00:10Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：Replit (@Replit)"
-      ],
-      "items": [
-        {
-          "id": "bb9042948d345786f700efe61ab211a4b2f753a8",
-          "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-          "title_zh": "Replit 环境智能：免提示词自动生成设计",
-          "title_en": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-          "title_original": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-          "summary": "你无需提示词，也无需设计语言。\n\n环境智能（Ambient Intelligence）会在每个画面旁显示建议卡片，每张卡片都指向你的设计的一个不同方向。点击你喜欢的那张，即可看到它生成一个新的画面。\n\n你再也不必纠结下一步该做什么。\n\n立即在 http://replit.com/design 体验。",
-          "recommend_reason_zh": "无需提示词与设计语言，Ambient Intelligence 在每帧旁展示建议卡片，点击即可生成新帧，让你不再纠结下一步设计方向。",
-          "url": "https://x.com/Replit/status/2084761337570144424",
-          "source": "X：Replit (@Replit)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-04T22:00:10Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7373,
-      "importance": 0.7373,
-      "importance_score": 0.7373,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.69,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8819,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-04T22:00:10Z",
-      "latest_at": "2026-08-04T22:00:10Z",
-      "primary_item": {
-        "id": "bb9042948d345786f700efe61ab211a4b2f753a8",
-        "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-        "title_zh": "Replit 环境智能：免提示词自动生成设计",
-        "title_en": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-        "title_original": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
-        "summary": "你无需提示词，也无需设计语言。\n\n环境智能（Ambient Intelligence）会在每个画面旁显示建议卡片，每张卡片都指向你的设计的一个不同方向。点击你喜欢的那张，即可看到它生成一个新的画面。\n\n你再也不必纠结下一步该做什么。\n\n立即在 http://replit.com/design 体验。",
-        "recommend_reason_zh": "无需提示词与设计语言，Ambient Intelligence 在每帧旁展示建议卡片，点击即可生成新帧，让你不再纠结下一步设计方向。",
-        "url": "https://x.com/Replit/status/2084761337570144424",
-        "source": "X：Replit (@Replit)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 48,
-      "persona_review": "宣传大于落地，没给可试用的接口或仓库，等真上线再说。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     },
     {
@@ -1765,15 +1711,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7371,
-      "importance": 0.7371,
-      "importance_score": 0.7371,
+      "score": 0.7305,
+      "importance": 0.7305,
+      "importance_score": 0.7305,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8306,
+        "recency": 0.794,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1800,7 +1746,90 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-05T06:53:17.412008Z"
+        "scored_at": "2026-08-05T10:09:55.947547Z"
+      }
+    },
+    {
+      "story_id": "story_48187a538519",
+      "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+      "url": "https://x.com/Replit/status/2084761337570144424",
+      "primary_url": "https://x.com/Replit/status/2084761337570144424",
+      "source": "X：Replit (@Replit)",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "bb9042948d345786f700efe61ab211a4b2f753a8",
+          "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+          "title_zh": "Replit 环境智能：免提示词自动生成设计",
+          "title_en": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+          "title_original": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+          "summary": "你无需提示词，也无需设计语言。\n\n环境智能（Ambient Intelligence）会在每个画面旁显示建议卡片，每张卡片都指向你的设计的一个不同方向。点击你喜欢的那张，即可看到它生成一个新的画面。\n\n你再也不必纠结下一步该做什么。\n\n立即在 http://replit.com/design 体验。",
+          "recommend_reason_zh": "无需提示词与设计语言，Ambient Intelligence 在每帧旁展示建议卡片，点击即可生成新帧，让你不再纠结下一步设计方向。",
+          "url": "https://x.com/Replit/status/2084761337570144424",
+          "source": "X：Replit (@Replit)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-04T22:00:10Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "X：Replit (@Replit)"
+      ],
+      "items": [
+        {
+          "id": "bb9042948d345786f700efe61ab211a4b2f753a8",
+          "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+          "title_zh": "Replit 环境智能：免提示词自动生成设计",
+          "title_en": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+          "title_original": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+          "summary": "你无需提示词，也无需设计语言。\n\n环境智能（Ambient Intelligence）会在每个画面旁显示建议卡片，每张卡片都指向你的设计的一个不同方向。点击你喜欢的那张，即可看到它生成一个新的画面。\n\n你再也不必纠结下一步该做什么。\n\n立即在 http://replit.com/design 体验。",
+          "recommend_reason_zh": "无需提示词与设计语言，Ambient Intelligence 在每帧旁展示建议卡片，点击即可生成新帧，让你不再纠结下一步设计方向。",
+          "url": "https://x.com/Replit/status/2084761337570144424",
+          "source": "X：Replit (@Replit)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-04T22:00:10Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7304,
+      "importance": 0.7304,
+      "importance_score": 0.7304,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.69,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.8431,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-04T22:00:10Z",
+      "latest_at": "2026-08-04T22:00:10Z",
+      "primary_item": {
+        "id": "bb9042948d345786f700efe61ab211a4b2f753a8",
+        "title": "Replit 环境智能：免提示词自动生成设计 / You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+        "title_zh": "Replit 环境智能：免提示词自动生成设计",
+        "title_en": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+        "title_original": "You don't need to prompt. You don't need design language. Ambient Intelligence surfaces suggestion …",
+        "summary": "你无需提示词，也无需设计语言。\n\n环境智能（Ambient Intelligence）会在每个画面旁显示建议卡片，每张卡片都指向你的设计的一个不同方向。点击你喜欢的那张，即可看到它生成一个新的画面。\n\n你再也不必纠结下一步该做什么。\n\n立即在 http://replit.com/design 体验。",
+        "recommend_reason_zh": "无需提示词与设计语言，Ambient Intelligence 在每帧旁展示建议卡片，点击即可生成新帧，让你不再纠结下一步设计方向。",
+        "url": "https://x.com/Replit/status/2084761337570144424",
+        "source": "X：Replit (@Replit)",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 48,
+      "persona_review": "宣传大于落地，没给可试用的接口或仓库，等真上线再说。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-05T10:09:55.947547Z"
       }
     }
   ]
