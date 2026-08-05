@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T23:39:15.014369Z",
+  "generated_at": "2026-08-05T06:53:30.160097Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_07b0df6b2011",
-      "title": "Soup v0.72.4：在4 GB显存笔记本GPU上微调8B模型",
-      "url": "https://github.com/MakazhanAlpamys/Soup",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 65,
-          "review": "4GB跑8B不稀奇，稀奇的是敢晒出微调后的效果。"
-        },
-        "paper-police": {
-          "score": 68,
-          "review": "代码开源可复现，但缺公开benchmark和独立验证，需自行实测。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "低显存微调8B模型，个人开发者的福音，今天就能试试。"
-        }
-      }
-    },
-    {
       "story_id": "story_05bcbbcf4f82",
       "title": "在单颗 AMD MI300X 上运行 DeepSeek V4 Flash",
       "url": "https://github.com/ryanzhou/deepseek-v4-flash-mi300x",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 52,
@@ -53,6 +33,26 @@
         "pragmatic": {
           "score": 90,
           "review": "单卡就能跑V4 Flash，部署成本直接拉低，手头有MI300X的今天就能试。"
+        }
+      }
+    },
+    {
+      "story_id": "story_406d5f9dbdc1",
+      "title": "Grok 4.5 免费体验，推荐 Build 工具链 / Best way to use Grok is via our Build harness. Download at http://X.ai/cli",
+      "url": "https://x.com/elonmusk/status/2084857373555101726",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 25,
+          "review": "免费体验是引流，Build工具链详情只字未提，先跑个benchmark再喊话。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "仅推特宣称免费体验，无论文无代码无benchmark，性能无从验证。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "CLI 可直接下载体验新模型，想试新工具链的今天就能上手。"
         }
       }
     },
