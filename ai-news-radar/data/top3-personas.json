@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T15:59:02.654516Z",
+  "generated_at": "2026-08-04T23:39:15.014369Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,10 +17,30 @@
   ],
   "items": [
     {
+      "story_id": "story_07b0df6b2011",
+      "title": "Soup v0.72.4：在4 GB显存笔记本GPU上微调8B模型",
+      "url": "https://github.com/MakazhanAlpamys/Soup",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 65,
+          "review": "4GB跑8B不稀奇，稀奇的是敢晒出微调后的效果。"
+        },
+        "paper-police": {
+          "score": 68,
+          "review": "代码开源可复现，但缺公开benchmark和独立验证，需自行实测。"
+        },
+        "pragmatic": {
+          "score": 92,
+          "review": "低显存微调8B模型，个人开发者的福音，今天就能试试。"
+        }
+      }
+    },
+    {
       "story_id": "story_05bcbbcf4f82",
       "title": "在单颗 AMD MI300X 上运行 DeepSeek V4 Flash",
       "url": "https://github.com/ryanzhou/deepseek-v4-flash-mi300x",
-      "rank": 1,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 52,
@@ -37,42 +57,22 @@
       }
     },
     {
-      "story_id": "story_9dc2cb12e04f",
-      "title": "GPT-5.6 Luna降价80%永久生效 / Some fine folks apparently misunderstood， but the GPT-5.6 Luna price reduction by 80% is not a tempo…",
-      "url": "https://x.com/thsottiaux/status/2084506501834829833",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 45,
-          "review": "降价80%？先晒原价和算力消耗，别拿虚高定价当诚意。"
-        },
-        "paper-police": {
-          "score": 12,
-          "review": "只有X帖子宣称永久降价，无官方公告或第三方验证，证据不足。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "API直接降价80%，跑大批量的今天就能换，省下的钱实实在在。"
-        }
-      }
-    },
-    {
-      "story_id": "story_494ad8597a8c",
-      "title": "蚂蚁百灵发布Ling-3.0-flash开源权重 / Today， we're releasing the open weights for Ling-3.0-flash. 🎉 Official BF16 and FP8-quantized vers…",
-      "url": "https://x.com/AntLingAGI/status/2084656533489754475",
+      "story_id": "story_bcfdafe93ce8",
+      "title": "用 LFM2.5-2.6B 随处部署本地 Agent / Deploy local agents everywhere with LFM2.5-2.6B",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "权重开源是好事，但训练细节和评测基线呢？光有模型跑不出说服力。"
+          "score": 72,
+          "review": "本地部署是真的，'随处'就夸大了，先跑个基准看看。"
         },
         "paper-police": {
-          "score": 68,
-          "review": "权重开源可自测，缺论文和基准分，等第三方评测再说。"
+          "score": 55,
+          "review": "官方博客给了模型和数字，但无论文，缺独立评测验证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "开源权重可下载，BF16和FP8直接部署，跑推理的今天就能换。"
+          "score": 88,
+          "review": "2.6B 本地跑 Agent，隐私和推理成本都省了，今天就能动手试。"
         }
       }
     }
