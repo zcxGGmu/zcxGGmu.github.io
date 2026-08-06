@@ -1,162 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_720e8881c84d|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "经验总结而非工具，可当案例参考，今天用不上。",
-      "title_hash": "9bb5ee55",
-      "scored_at": "2026-07-15T17:48:51.982927Z"
-    },
-    "story_dbadffdd21c6|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "内部工具未开放，短期无直接影响，可关注后续接口。",
-      "title_hash": "01957885",
-      "scored_at": "2026-07-16T00:19:56.869886Z"
-    },
-    "story_7f12fb220449|pragmatic|0a5c5b24": {
-      "score": 73,
-      "review": "模型路由选型避坑指南，部署多模型时可参考，非今天能直接用。",
-      "title_hash": "61c5bfd4",
-      "scored_at": "2026-07-15T17:48:57.316195Z"
-    },
-    "story_ac16bc5670b9|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "政策动向需关注合规，但无即时工具可用。",
-      "title_hash": "8dd77aaf",
-      "scored_at": "2026-07-15T17:48:59.349077Z"
-    },
-    "story_dce0062539c4|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "修复更新前别乱点仓库，代码安全第一。",
-      "title_hash": "bd86314d",
-      "scored_at": "2026-07-15T19:45:37.861447Z"
-    },
-    "story_9906209d7282|pragmatic|0a5c5b24": {
-      "score": 88,
-      "review": "今天就能用，部署 Telegram AI Bot 的官方指导，省去自己搭服务器。",
-      "title_hash": "6c43ef5d",
-      "scored_at": "2026-07-15T19:45:41.008177Z"
-    },
-    "story_9555e4e5c4d9|pragmatic|0a5c5b24": {
-      "score": 65,
-      "review": "新工具发布，但细节不多，等API或源码出来再评估。",
-      "title_hash": "c12e089e",
-      "scored_at": "2026-07-15T19:45:46.156762Z"
-    },
-    "story_183d53d9be78|cynic|f4237a62": {
-      "score": 60,
-      "review": "第一？先看看对比了哪几家、测试条件是不是自家后院。",
-      "title_hash": "eb51b691",
-      "scored_at": "2026-07-15T19:45:49.645397Z"
-    },
-    "story_183d53d9be78|paper-police|966065bf": {
-      "score": 30,
-      "review": "仅有官方宣称，无论文无代码，排名需第三方验证。",
-      "title_hash": "eb51b691",
-      "scored_at": "2026-07-15T19:45:51.755051Z"
-    },
-    "story_e87a72b3d6ec|cynic|f4237a62": {
-      "score": 65,
-      "review": "人类质感这个词被用烂了，先证明它不是另一个自嗨的指标。",
-      "title_hash": "e5847db3",
-      "scored_at": "2026-07-15T19:45:57.153108Z"
-    },
-    "story_e87a72b3d6ec|paper-police|966065bf": {
-      "score": 20,
-      "review": "只有博客宣称，无论文代码和第三方评测，无法验证人类质感指标。",
-      "title_hash": "e5847db3",
-      "scored_at": "2026-07-15T19:46:00.781258Z"
-    },
-    "story_9906209d7282|cynic|f4237a62": {
-      "score": 75,
-      "review": "无服务器三个字被你们说烂了，不过这次至少是个真能用上的功能，不是画饼。",
-      "title_hash": "6c43ef5d",
-      "scored_at": "2026-07-15T19:46:05.966961Z"
-    },
-    "story_9906209d7282|paper-police|966065bf": {
-      "score": 20,
-      "review": "官方文档有架构描述，但无论文、代码和benchmark，无法独立验证。",
-      "title_hash": "6c43ef5d",
-      "scored_at": "2026-07-15T19:46:08.058242Z"
-    },
-    "story_c44773c93215|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "电费涨了云成本可能跟涨，但今天没变化，先记着。",
-      "title_hash": "eecf62f4",
-      "scored_at": "2026-07-15T22:23:20.958242Z"
-    },
-    "story_85928d22c4fa|pragmatic|0a5c5b24": {
-      "score": 78,
-      "review": "扫密钥更准了，CICD 里加个扫描步骤今天就能防泄漏。",
-      "title_hash": "959eb705",
-      "scored_at": "2026-07-15T23:23:35.696392Z"
-    },
-    "story_a297969d5314|pragmatic|0a5c5b24": {
-      "score": 95,
-      "review": "能直接clone仓库看源码了，想魔改或自部署的今天就能动手。",
-      "title_hash": "c295d531",
-      "scored_at": "2026-07-16T00:19:58.480583Z"
-    },
-    "story_d0f563033be1|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "提醒注意AI语音安全，无直接工具或方案可用。",
-      "title_hash": "74faa8fe",
-      "scored_at": "2026-07-16T00:20:01.155311Z"
-    },
-    "story_cb1391ebd37c|pragmatic|0a5c5b24": {
-      "score": 88,
-      "review": "在Claude Code里直接调MCP连接器做应用，今天就能试。",
-      "title_hash": "186fbb54",
-      "scored_at": "2026-07-16T00:20:04.835688Z"
-    },
-    "story_ddd1632f9351|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "内部安全测试工具，暂无直接用途，等后续模型安全更新再说。",
-      "title_hash": "a42067ac",
-      "scored_at": "2026-07-16T00:20:07.210587Z"
-    },
-    "story_3340fcf57dbe|pragmatic|0a5c5b24": {
-      "score": 30,
-      "review": "研究论文，揭示潜在对齐问题，暂不直接影响日常开发。",
-      "title_hash": "7e0c7c58",
-      "scored_at": "2026-07-16T00:20:09.585836Z"
-    },
-    "story_ce19941f8cdf|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "发布不等于可用，等API或开源再试。",
-      "title_hash": "eae7ce4b",
-      "scored_at": "2026-07-16T00:20:11.997344Z"
-    },
-    "story_60c0396d28c0|pragmatic|0a5c5b24": {
-      "score": 82,
-      "review": "开源方案可 clone 试，SSH 同步省去手动传模型步骤。",
-      "title_hash": "c335b7cf",
-      "scored_at": "2026-07-16T00:20:14.854078Z"
-    },
-    "story_a297969d5314|cynic|f4237a62": {
-      "score": 35,
-      "review": "又是“开源”一勺？权重和训练数据藏哪了？",
-      "title_hash": "c295d531",
-      "scored_at": "2026-07-16T00:20:18.775986Z"
-    },
-    "story_a297969d5314|paper-police|966065bf": {
-      "score": 70,
-      "review": "代码已开源，但缺论文和独立评测，有待验证性能。",
-      "title_hash": "c295d531",
-      "scored_at": "2026-07-16T00:20:22.070651Z"
-    },
-    "story_cb1391ebd37c|cynic|f4237a62": {
-      "score": 55,
-      "review": "MCP连接器听起来很牛，但能连几个真有用的服务？",
-      "title_hash": "186fbb54",
-      "scored_at": "2026-07-16T00:20:23.754930Z"
-    },
-    "story_cb1391ebd37c|paper-police|966065bf": {
-      "score": 25,
-      "review": "只有官方推文声称功能，无论文无代码无评测，无法验证。",
-      "title_hash": "186fbb54",
-      "scored_at": "2026-07-16T00:20:26.351956Z"
-    },
     "story_affed1a668e3|pragmatic|0a5c5b24": {
       "score": 72,
       "review": "小版本更新，升级看 changelog 再决定是否值得更新。",
@@ -5016,6 +4860,120 @@
       "review": "仅称开源但未见仓库地址和评测，无法验证，等代码和样本再议。",
       "title_hash": "1eba601e",
       "scored_at": "2026-08-05T14:56:24.700014Z"
+    },
+    "story_533217fe758f|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "数学理论突破，暂无工具或代码可用，围观即可。",
+      "title_hash": "3350fc70",
+      "scored_at": "2026-08-05T17:12:49.758189Z"
+    },
+    "story_3d42f575454c|pragmatic|0a5c5b24": {
+      "score": 60,
+      "review": "小版本迭代，具体变动需查 changelog，常用才值得升级。",
+      "title_hash": "0a296141",
+      "scored_at": "2026-08-05T17:12:53.905572Z"
+    },
+    "story_a22d5ba3f7a7|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "人事变动不影响接口和模型，等新战略落地再看。",
+      "title_hash": "5385fb04",
+      "scored_at": "2026-08-05T17:12:55.803969Z"
+    },
+    "story_049173f25374|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "太空算力听着远，Vera Rubin 还没量产，等真上天再关心。",
+      "title_hash": "48f6792c",
+      "scored_at": "2026-08-05T17:12:57.728285Z"
+    },
+    "story_62f2df441b10|cynic|f4237a62": {
+      "score": 68,
+      "review": "Pro后缀越来越廉价，基准测试和部署成本敢不敢一起晒？",
+      "title_hash": "05d22606",
+      "scored_at": "2026-08-05T17:13:01.477804Z"
+    },
+    "story_62f2df441b10|paper-police|966065bf": {
+      "score": 25,
+      "review": "仅官方推特上线消息，无论文无代码无跑分，证据不足。",
+      "title_hash": "05d22606",
+      "scored_at": "2026-08-05T17:13:06.199621Z"
+    },
+    "story_d7cf46c6af61|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "大神离职是行业信号，但新公司没产品，今天不用改代码。",
+      "title_hash": "a21f6dc3",
+      "scored_at": "2026-08-05T19:07:19.380277Z"
+    },
+    "story_2d7cb4009c8c|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "高层换人不改现有 API，短期无影响，长期看方向再动。",
+      "title_hash": "a593435a",
+      "scored_at": "2026-08-05T19:07:21.152607Z"
+    },
+    "story_d002c5a4cf70|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "CEO 换人短期内不影响 API，等战略调整再看。",
+      "title_hash": "8b576142",
+      "scored_at": "2026-08-05T19:07:22.853032Z"
+    },
+    "story_20b80d150b2a|cynic|f4237a62": {
+      "score": 82,
+      "review": "功能都真，但推理轨迹和工具调用早该有了，别当大新闻。",
+      "title_hash": "e0b82e84",
+      "scored_at": "2026-08-05T19:07:30.689600Z"
+    },
+    "story_20b80d150b2a|paper-police|966065bf": {
+      "score": 50,
+      "review": "博客列了功能明细，但无代码或评测证据，待独立验证。",
+      "title_hash": "e0b82e84",
+      "scored_at": "2026-08-05T19:07:50.501072Z"
+    },
+    "story_be2586b7721a|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "演示模型生成游戏的能力，但未见开放接口或可复现代码，暂时不用行动。",
+      "title_hash": "ee1f45d6",
+      "scored_at": "2026-08-05T20:55:07.415169Z"
+    },
+    "story_d7b19b7f654d|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "平台审核漏洞，对开发者无直接工具影响，但涉合规风险需留意。",
+      "title_hash": "9d17f7ed",
+      "scored_at": "2026-08-05T22:42:42.364353Z"
+    },
+    "story_0e6536a40e43|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "用Rovo的团队今天就要检查权限配置，别等补丁。",
+      "title_hash": "0a238809",
+      "scored_at": "2026-08-05T22:42:44.737747Z"
+    },
+    "story_ad49186cedfd|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "开源工具可直接跑，做广告预算归因的团队能上手试。",
+      "title_hash": "f8640b36",
+      "scored_at": "2026-08-05T22:42:47.287119Z"
+    },
+    "story_671b284df7c7|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "安全传闻，没官方细节，短期不影响选型，先观望。",
+      "title_hash": "ed606dab",
+      "scored_at": "2026-08-06T00:24:27.341235Z"
+    },
+    "story_f35b1af635e4|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "安全事件提醒，检查你自己 agent 的沙箱和权限控制。",
+      "title_hash": "8e1a4b2e",
+      "scored_at": "2026-08-06T00:24:29.912961Z"
+    },
+    "story_ef28a1340614|cynic|f4237a62": {
+      "score": 72,
+      "review": "开源参数可查，但'Super'与Robotaxi之间隔着一个真实世界，先上路测再说。",
+      "title_hash": "fe8d97e1",
+      "scored_at": "2026-08-06T00:24:34.171830Z"
+    },
+    "story_ef28a1340614|paper-police|966065bf": {
+      "score": 25,
+      "review": "媒体通稿称开源但无代码无评测，缺实质证据难采信。",
+      "title_hash": "fe8d97e1",
+      "scored_at": "2026-08-06T00:24:39.343720Z"
     }
   }
 }

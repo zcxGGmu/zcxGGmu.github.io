@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T14:56:24.700068Z",
+  "generated_at": "2026-08-06T00:24:39.343778Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_07b0df6b2011",
-      "title": "Soup v0.72.4：在4 GB显存笔记本GPU上微调8B模型",
-      "url": "https://github.com/MakazhanAlpamys/Soup",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 65,
-          "review": "4GB跑8B不稀奇，稀奇的是敢晒出微调后的效果。"
-        },
-        "paper-police": {
-          "score": 68,
-          "review": "代码开源可复现，但缺公开benchmark和独立验证，需自行实测。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "低显存微调8B模型，个人开发者的福音，今天就能试试。"
-        }
-      }
-    },
-    {
       "story_id": "story_788cae258ab4",
       "title": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
       "url": "https://www.aibase.com/news/30132",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 68,
@@ -60,7 +40,7 @@
       "story_id": "story_3739c8d6bfe4",
       "title": "开源「活人感写作.skill」：一个帮你写出没有AI味的文字的通用写作技能",
       "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647684946&idx=1&sn=ae7edcc572b998dc4e1ac3591977aa85",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 45,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 88,
           "review": "开源可用，文字工作者直接上手，能减少AI腔调，今天就能试。"
+        }
+      }
+    },
+    {
+      "story_id": "story_ef28a1340614",
+      "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
+      "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "开源参数可查，但'Super'与Robotaxi之间隔着一个真实世界，先上路测再说。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "媒体通稿称开源但无代码无评测，缺实质证据难采信。"
+        },
+        "pragmatic": {
+          "score": 75,
+          "review": "开源 34B VLA 模型，做自动驾驶的能直接试，通用开发者先观望。"
         }
       }
     }
