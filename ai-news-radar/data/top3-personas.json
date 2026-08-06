@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T06:59:20.776534Z",
+  "generated_at": "2026-08-06T10:19:50.964405Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -57,22 +57,22 @@
       }
     },
     {
-      "story_id": "story_e08c8df1529a",
-      "title": "Cloudflare 开源 AI 智能体工作空间：让每个员工都能零代码搭建专属工作流",
-      "url": "https://www.aibase.com/news/30161",
+      "story_id": "story_0e6536a40e43",
+      "title": "Atlassian Rovo 被曝存在数据窃取漏洞，可绕过安全控制",
+      "url": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "开源算实诚，但“每个员工零代码”通常意味着文档得先读三遍。"
+          "score": 75,
+          "review": "急着把AI功能塞进产品，安全测试倒是没跟上，老戏码了。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "标题称开源但无仓库链接无评测，需见代码库和复现结果。"
+          "score": 50,
+          "review": "安全公司披露了细节，但无公开PoC和独立验证，等复现或官方确认。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "开源可自部署，零代码搭工作流，行政运营也能直接上手。"
+          "score": 72,
+          "review": "用Rovo的团队今天就要检查权限配置，别等补丁。"
         }
       }
     }
