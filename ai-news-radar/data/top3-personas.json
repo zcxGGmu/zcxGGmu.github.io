@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T00:24:39.343778Z",
+  "generated_at": "2026-08-06T06:59:20.776534Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_788cae258ab4",
-      "title": "Mistral 推出 Shieldstral：3B 小模型单卡 16GB 跑起多模态审核，号称拿下开源 SOTA",
-      "url": "https://www.aibase.com/news/30132",
+      "story_id": "story_f1559602cda7",
+      "title": "Qwen-Image-3.0 发布：高分辨率低至 0.03 美元 / Qwen-Image-3.0 is production-ready. 4.5K-token prompts. 100%+ text accuracy （no broken logos）. Nativ…",
+      "url": "https://x.com/alibaba_cloud/status/2085247637734002848",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 68,
-          "review": "3B 单卡能跑是真本事，'开源 SOTA'记得标注是自家榜单的 SOTA。"
-        },
-        "paper-police": {
-          "score": 10,
-          "review": "只有官方宣称，无论文无代码无第三方评测，开源SOTA无从验证。"
-        },
-        "pragmatic": {
-          "score": 88,
-          "review": "3B开源审核模型能单卡跑，过滤场景今天就能替换云端API。"
-        }
-      }
-    },
-    {
-      "story_id": "story_3739c8d6bfe4",
-      "title": "开源「活人感写作.skill」：一个帮你写出没有AI味的文字的通用写作技能",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647684946&idx=1&sn=ae7edcc572b998dc4e1ac3591977aa85",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
           "score": 45,
-          "review": "“活人感”全凭自我感觉，敢不敢把前后对比稿贴出来？"
+          "review": "100%准确率是自家测试集吧？0.03美元怕不是只够出缩略图。"
         },
         "paper-police": {
           "score": 25,
-          "review": "仅称开源但未见仓库地址和评测，无法验证，等代码和样本再议。"
+          "review": "只有官方推文宣称性能，无论文无代码无测评，等公开细节再验证。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "开源可用，文字工作者直接上手，能减少AI腔调，今天就能试。"
+          "score": 90,
+          "review": "新模型已上线，价格便宜且文本准确率高，适合做图像生成任务的今天就能换。"
         }
       }
     },
     {
-      "story_id": "story_ef28a1340614",
-      "title": "NVIDIA 发布 Alpamayo 2 Super：面向 Robotaxi 与自动驾驶的 34B 开源视觉-语言-动作模型 / NVIDIA Releases Alpamayo 2 Super： A 34B Open Vision-Language-Action Model for Robotaxis and Autonomous Driving Under OpenMDW-1.1",
-      "url": "https://www.marktechpost.com/2026/08/05/nvidia-alpamayo-2-super-open-vla-model-autonomous-driving",
+      "story_id": "story_365bb32d4726",
+      "title": "OpenAI 开源 Codex Security：Vibe Coding 产品必备的安全扫描插件",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647684990&idx=1&sn=86a6d71b133589916b49a9d57046c127",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "开源安全扫描是好事，但'必备'说得像保险推销，先看扫描覆盖率再说。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "仅公众号宣称开源，无仓库无评测，需官方链接验证。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "插件今天就能装，给AI生成代码加道安全闸，写原型时省心。"
+        }
+      }
+    },
+    {
+      "story_id": "story_e08c8df1529a",
+      "title": "Cloudflare 开源 AI 智能体工作空间：让每个员工都能零代码搭建专属工作流",
+      "url": "https://www.aibase.com/news/30161",
       "rank": 3,
       "reviews": {
         "cynic": {
           "score": 72,
-          "review": "开源参数可查，但'Super'与Robotaxi之间隔着一个真实世界，先上路测再说。"
+          "review": "开源算实诚，但“每个员工零代码”通常意味着文档得先读三遍。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "媒体通稿称开源但无代码无评测，缺实质证据难采信。"
+          "score": 20,
+          "review": "标题称开源但无仓库链接无评测，需见代码库和复现结果。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "开源 34B VLA 模型，做自动驾驶的能直接试，通用开发者先观望。"
+          "score": 88,
+          "review": "开源可自部署，零代码搭工作流，行政运营也能直接上手。"
         }
       }
     }
