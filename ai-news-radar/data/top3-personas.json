@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T10:19:50.964405Z",
+  "generated_at": "2026-08-07T00:40:17.581173Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -57,22 +57,22 @@
       }
     },
     {
-      "story_id": "story_0e6536a40e43",
-      "title": "Atlassian Rovo 被曝存在数据窃取漏洞，可绕过安全控制",
-      "url": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
+      "story_id": "story_355aa101c777",
+      "title": "OpenAI 优化 ChatGPT 中的 GPT-5.6 Sol，并扩大免费用户对 GPT-5.6 Luna 的访问权限 / Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 75,
-          "review": "急着把AI功能塞进产品，安全测试倒是没跟上，老戏码了。"
+          "score": 65,
+          "review": "扩大免费访问是好事，但'优化'不列数据，和没说一样。"
         },
         "paper-police": {
           "score": 50,
-          "review": "安全公司披露了细节，但无公开PoC和独立验证，等复现或官方确认。"
+          "review": "官方博客给了细节和数字，但无论文无代码，等第三方跑分再定论。"
         },
         "pragmatic": {
-          "score": 72,
-          "review": "用Rovo的团队今天就要检查权限配置，别等补丁。"
+          "score": 86,
+          "review": "免费用户能用 Luna 了，Sol 也优化了，直接去 ChatGPT 试。"
         }
       }
     }
