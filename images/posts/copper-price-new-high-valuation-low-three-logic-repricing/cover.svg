@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">铜价新高、估值新低：铜板块三重逻辑共振下的重估窗口</title>
+  <desc id="desc">铜矿供应负增长、美国关税预期下的库存搬运、国内旺季和低库存共同推动铜板块进入估值再平衡阶段。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f1b12"/><stop offset="0.58" stop-color="#8b3f16"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.28"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#ffedd5" stroke-width="3">
+    <path d="M120 690 H1480"/><path d="M120 570 H1480"/><path d="M120 450 H1480"/><path d="M120 330 H1480"/>
+    <path d="M300 240 V760"/><path d="M600 240 V760"/><path d="M900 240 V760"/><path d="M1200 240 V760"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M150 675 C310 610 455 625 610 505 C780 370 930 455 1090 320 C1245 188 1385 215 1505 128" fill="none" stroke="#fff7ed" stroke-width="15" stroke-linecap="round" opacity="0.88"/>
+    <circle cx="610" cy="505" r="40" fill="#fed7aa"/><circle cx="1090" cy="320" r="48" fill="#ffedd5" opacity="0.96"/>
+    <rect x="102" y="590" width="500" height="122" rx="24" fill="#fff7ed" opacity="0.95"/>
+    <text x="142" y="665" fill="#7c2d12" font-family="Noto Sans SC, PingFang SC, Arial" font-size="42" font-weight="800">16.4 倍 PE</text>
+    <text x="142" y="705" fill="#9a3412" font-family="Noto Sans SC, PingFang SC, Arial" font-size="25" font-weight="700">近十年约 27% 分位</text>
+  </g>
+  <g opacity="0.92">
+    <rect x="930" y="610" width="410" height="94" rx="20" fill="#451a03" opacity="0.66"/>
+    <text x="964" y="670" fill="#ffedd5" font-family="Noto Sans SC, PingFang SC, Arial" font-size="34" font-weight="800">供给 · 库存 · 旺季</text>
+  </g>
+  <text x="96" y="150" fill="#fff7ed" font-family="Noto Sans SC, PingFang SC, Arial" font-size="58" font-weight="800">铜价新高、估值新低：</text><text x="96" y="222" fill="#fff7ed" font-family="Noto Sans SC, PingFang SC, Arial" font-size="50" font-weight="800">铜板块三重逻辑共振下的重估窗口</text>
+  <text x="100" y="316" fill="#ffedd5" opacity="0.95" font-family="Noto Sans SC, PingFang SC, Arial" font-size="35" font-weight="700">铜矿负增长 · 美国关税 · 非美低库存</text>
+  <text x="102" y="382" fill="#fed7aa" font-family="Noto Sans SC, PingFang SC, Arial" font-size="28" font-weight="600">铜矿供应负增长、美国关税预期下的库存搬运、国内旺季和低库存共同推动铜板块进入估值再平衡阶段。</text>
+</svg>
