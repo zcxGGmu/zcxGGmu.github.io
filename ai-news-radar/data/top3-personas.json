@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T03:39:21.719319Z",
+  "generated_at": "2026-08-07T10:31:50.417748Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_f1559602cda7",
-      "title": "Qwen-Image-3.0 发布：高分辨率低至 0.03 美元 / Qwen-Image-3.0 is production-ready. 4.5K-token prompts. 100%+ text accuracy （no broken logos）. Nativ…",
-      "url": "https://x.com/alibaba_cloud/status/2085247637734002848",
+      "story_id": "story_3e94f4d6faf0",
+      "title": "Seedance 2.5 API上线，视频生成开启「电影级长叙事」",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI0NzU1NzI5NQ%3D%3D&mid=2247543416&idx=1&sn=badeafc780a939033a1e4cb0bba4221c",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "100%准确率是自家测试集吧？0.03美元怕不是只够出缩略图。"
+          "score": 32,
+          "review": "“电影级”全靠形容词撑着，样片和上下文窗口敢晒出来吗？"
         },
         "paper-police": {
           "score": 25,
-          "review": "只有官方推文宣称性能，无论文无代码无测评，等公开细节再验证。"
+          "review": "仅公众号宣称电影级，无论文无代码无第三方评测，证据不足。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "新模型已上线，价格便宜且文本准确率高，适合做图像生成任务的今天就能换。"
+          "review": "API已开放，做视频生成的今天就能接，长叙事能力直接上线。"
         }
       }
     },
     {
-      "story_id": "story_b72b947b1616",
-      "title": "ChatGPT 免费版史诗升级：GPT-5.6 Luna 无限使用，Plus/Pro 用户也有专属福利",
-      "url": "https://www.aibase.com/news/30180",
+      "story_id": "story_67de54450aab",
+      "title": "Kimi K3 现已上线 GitHub Copilot / Kimi K3 is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 5,
-          "review": "GPT-5.6还没影呢，先编个名字蹭热度，免费无限更是梦话。"
+          "score": 65,
+          "review": "集成只是入口，模型好赖还得看评测，先别急着吹。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "仅一家媒体转述，无官方公告链接或评测数据，无法验证。"
+          "score": 30,
+          "review": "官方公告确认上线，但无性能数据或复现，仅属产品集成声明。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "免费版就能用新模型，个人跑任务不用再氪金，先查限速再切。"
+          "score": 85,
+          "review": "GitHub Copilot 直接可用 Kimi K3，写代码的今天就能切模型试试效果。"
         }
       }
     },
     {
-      "story_id": "story_355aa101c777",
-      "title": "OpenAI 优化 ChatGPT 中的 GPT-5.6 Sol，并扩大免费用户对 GPT-5.6 Luna 的访问权限 / Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+      "story_id": "story_23b7800d7275",
+      "title": "OpenAI 优化 ChatGPT 中的 GPT-5.6 Sol，并扩大免费用户对 GPT-5.6 Luna 的访问权限",
       "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "扩大免费访问是好事，但'优化'不列数据，和没说一样。"
+          "score": 72,
+          "review": "优化幅度没敢写数字，扩大访问倒是写得很清楚，老营销了。"
         },
         "paper-police": {
-          "score": 50,
-          "review": "官方博客给了细节和数字，但无论文无代码，等第三方跑分再定论。"
+          "score": 25,
+          "review": "官方公告只谈访问调整，无技术细节无评测，等第三方验证。"
         },
         "pragmatic": {
-          "score": 86,
-          "review": "免费用户能用 Luna 了，Sol 也优化了，直接去 ChatGPT 试。"
+          "score": 80,
+          "review": "免费用户能用 Luna 了，但具体提升没细说，先试再定要不要付费。"
         }
       }
     }
