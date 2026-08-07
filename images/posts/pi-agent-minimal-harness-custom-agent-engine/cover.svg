@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Pi Agent 的真正价值：极简 Harness、深度定制与可嵌入的 Agent 引擎</title>
+  <desc id="desc">从极简系统提示词、四个基础工具、Skill 与 Extension，到 Sub-agent、多模型和 SDK 嵌入，理解 Agent Harness 为什么决定模型之外的效率。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="0.55" stop-color="#334155"/><stop offset="1" stop-color="#22c55e"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="0.30"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#dcfce7" stroke-width="3">
+    <path d="M180 640 H1420"/><path d="M180 520 H1420"/><path d="M180 400 H1420"/>
+    <path d="M420 250 V740"/><path d="M760 250 V740"/><path d="M1100 250 V740"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="105" y="560" width="430" height="130" rx="26" fill="#f8fafc" opacity="0.95"/>
+    <text x="145" y="635" fill="#0f172a" font-family="Noto Sans SC, PingFang SC, Arial" font-size="42" font-weight="800">4 个基础工具</text>
+    <text x="145" y="674" fill="#166534" font-family="Noto Sans SC, PingFang SC, Arial" font-size="25" font-weight="700">读 · 写 · 编辑 · 终端</text>
+    <rect x="1020" y="555" width="430" height="130" rx="26" fill="#052e16" opacity="0.78"/>
+    <text x="1060" y="632" fill="#dcfce7" font-family="Noto Sans SC, PingFang SC, Arial" font-size="38" font-weight="800">Skill + Extension</text>
+    <text x="1060" y="674" fill="#bbf7d0" font-family="Noto Sans SC, PingFang SC, Arial" font-size="25" font-weight="700">方法与运行层同时可改</text>
+    <path d="M250 475 C430 350 560 400 720 310 C880 220 1030 340 1220 210 C1335 135 1430 145 1510 98" fill="none" stroke="#f8fafc" stroke-width="13" stroke-linecap="round" opacity="0.86"/>
+    <circle cx="720" cy="310" r="38" fill="#86efac"/><circle cx="1220" cy="210" r="46" fill="#f8fafc"/>
+  </g>
+  <text x="96" y="150" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="54" font-weight="800">Pi Agent 的真正价值：</text><text x="96" y="220" fill="#f8fafc" font-family="Noto Sans SC, PingFang SC, Arial" font-size="46" font-weight="800">极简 Harness、深度定制与可嵌入的 Agent 引擎</text>
+  <text x="100" y="316" fill="#dcfce7" opacity="0.95" font-family="Noto Sans SC, PingFang SC, Arial" font-size="34" font-weight="700">极简 Harness · 深度定制 · 可嵌入 Agent 引擎</text>
+  <text x="102" y="382" fill="#e2e8f0" font-family="Noto Sans SC, PingFang SC, Arial" font-size="27" font-weight="600">从极简系统提示词、四个基础工具、Skill 与 Extension，到 Sub-agent、多模</text>
+</svg>

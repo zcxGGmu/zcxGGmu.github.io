@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>Pi Agent 的真正价值：极简 Harness、深度定制与可嵌入的 Agent 引擎 - zcxGGmu's Blog</title>
+  <meta name="description" content="从极简系统提示词、四个基础工具、Skill 与 Extension，到 Sub-agent、多模型和 SDK 嵌入，理解 Agent Harness 为什么决定模型之外的效率。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/pi-agent-minimal-harness-custom-agent-engine/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="Pi Agent 的真正价值：极简 Harness、深度定制与可嵌入的 Agent 引擎"><meta property="og:description" content="从极简系统提示词、四个基础工具、Skill 与 Extension，到 Sub-agent、多模型和 SDK 嵌入，理解 Agent Harness 为什么决定模型之外的效率。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/pi-agent-minimal-harness-custom-agent-engine/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/pi-agent-minimal-harness-custom-agent-engine/cover.svg')"><div class="post-title">Pi Agent 的真正价值：极简 Harness、深度定制与可嵌入的 Agent 引擎<div class="post-subtitle">从极简系统提示词、四个基础工具、Skill 与 Extension，到 Sub-agent、多模型和 SDK 嵌入，理解 Agent Harness 为什么决定模型之外的效率。</div><div class="post-meta"><time itemprop="datePublished">2026-08-08</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/Pi%20Agent/">Pi Agent</a>&nbsp;<a href="/tags/Agent%20Harness/">Agent Harness</a>&nbsp;<a href="/tags/Claude%20Code/">Claude Code</a>&nbsp;<a href="/tags/Codex/">Codex</a>&nbsp;<a href="/tags/Skill/">Skill</a>&nbsp;<a href="/tags/Extension/">Extension</a>&nbsp;<a href="/tags/Sub-agent/">Sub-agent</a>&nbsp;<a href="/tags/SDK/">SDK</a>&nbsp;<a href="/tags/Vibe%20Coding/">Vibe Coding</a>&nbsp;<a href="/tags/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;<a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>&nbsp;<a href="/tags/%E5%A4%9A%E6%A8%A1%E5%9E%8B/">多模型</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 8 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>Claude Code、Codex 这类工具已经把 Agent 工作流做成了相当成熟的产品：安装后即可使用，工具链、权限、默认规则、上下文组织、安全提示和任务执行流程都已经预设好。对于多数日常开发任务，这种开箱即用的体验非常省心。</p>
+<p>但 Agent 并不只有“产品”这一种形态。模型之外还有一层更关键的运行系统：Agent Harness。它负责组织上下文、提供工具、执行模型发起的操作、收集结果，再把结果送回模型，让模型继续判断下一步。Pi Agent 的价值就在这里：它不是一个功能堆满的成品工具，而是一个极简、开源、可自由组装的 Agent Harness。</p>
+<p>Pi 默认只有读取、写入、编辑文件和执行终端命令四个基础工具，系统提示词不到一千 Token，却已经在公开 Agent 使用榜单中排到前列，并在 GitHub 获得大量开发者认可。它真正值得研究的地方，不是界面多复杂、内置功能多丰富，而是把 Agent 的运行层拆到足够简洁，让用户可以看清、修改并嵌入自己的工作流。</p>
+
+<h2 id="product-vs-harness">一、产品与 Harness：两种完全不同的 Agent 思路</h2>
+<p>成熟 Agent 产品的优势是确定性。Claude Code、Codex 更接近面向通用场景的生产工具，内置了丰富工具、安全机制和默认规则，用户的主要精力可以放在任务本身。缺点也很明显：产品越成熟，预设偏好越强；功能越多，系统提示词、工具定义、上下文管理和运行规则越重。</p>
+<p>Pi 的定位不同。它更像一套可以自由组装的底层车辆系统。如果把大模型比作发动机，那么 Harness 就是发动机外面的整车结构：方向盘、刹车、传动、仪表盘、控制逻辑、工具接口和安全边界。发动机决定上限，但 Harness 决定这台发动机如何被调用、如何接收路况、如何执行动作。</p>
+<p>Pi 的核心理念可以概括为一句话：让 Agent 适应人的工作方式，而不是让人适应 Agent 的预设方式。它默认能力很少，但可塑性很强。对普通用户而言，这意味着需要更多配置；对希望深入理解 Agent 的人而言，这恰好提供了一个观察和改造运行层的入口。</p>
+
+<h2 id="minimal-design-token-cost">二、极简设计：Token 开销本身就是生产力问题</h2>
+<p>Agent 的成本不只来自模型价格，也来自上下文开销。每一次模型调用，Agent 都会把系统提示词、工具定义、项目规则、历史消息、工具调用结果等内容一起放进上下文。内容越多，多轮执行中反复携带的 Token 越多；无关上下文越长，模型注意力也越容易被稀释。</p>
+<p>在相同模型、相同思考强度、相同任务条件下，用 Remotion 视频制作 Skill 做对比测试，Pi 平均消耗约 282 万 Token，Claude Code 平均消耗约 552 万 Token。Pi 的 Token 消耗约为 Claude Code 的 51%。耗时方面，Pi 平均约 8.75 分钟，Claude Code 平均约 10 分钟，时间差距相对有限，最终效果也没有明显劣化，甚至在元素不互相重叠方面更稳定。</p>
+<p>这组样本不能代表所有任务，但它揭示了一个重要事实：底层模型不变，任务不变，只是更换 Harness，Token 消耗就可能出现明显差异。很多时候，Agent 的“贵”和“慢”并不完全来自模型，而来自运行层如何组织上下文。</p>
+<p>Pi 的作者选择相信今天的模型已经接受过大量编程和 Agent 行为训练，很多基础行为不需要再用冗长系统提示词反复灌输。因此，Pi 用更精简的系统提示词和少量基础工具启动任务，把更多上下文空间留给真正的项目资料、任务过程和工具结果。</p>
+
+<h2 id="four-basic-tools">三、四个基础工具：少即是可控</h2>
+<p>Pi 默认只提供四个技术工具：读文件、写文件、编辑文件、执行终端命令。这种设计看起来简陋，却让运行边界变得非常清楚。Agent 能做什么、不能做什么，几乎一眼可见。</p>
+<p>成熟产品通常会内置搜索、文件树、补丁、计划、权限、任务状态、MCP、外部服务、网页、记忆等能力。这些能力能提高开箱体验，但也会让 Harness 自身变得厚重。Pi 的选择是先提供最小可用内核，再让用户根据任务补充能力。</p>
+<p>这类设计适合两种人：一类是想把 Agent 嵌进自己工具链的开发者，另一类是想学习 Agent 如何工作的研究型用户。因为默认工具少，系统提示词短，用户更容易判断一次行为到底来自模型本身、工具结果、项目规则，还是来自 Harness 的隐性预设。</p>
+
+<h2 id="skill-extension">四、Skill 与 Extension：一个教方法，一个改运行方式</h2>
+<p>Pi 的深度定制可以分成两个层面：Skill 和 Extension。</p>
+<p>Skill 更像一本按需加载的专业说明书。它告诉 Agent 遇到某类任务时应该如何分析、如何拆步骤、用什么模板、遵守什么规范、最后怎样验证结果。例如视频制作 Skill 可以告诉 Agent 如何分析脚本、设计分镜、生成视频并做最终验证。Skill 改变的是任务方法，而不是 Agent 的运行机制。</p>
+<p>Extension 则更进一步。它通过代码接入 Pi 的运行过程，改变 Agent 如何接收输入、如何调用工具、如何显示状态、如何输出结果、如何处理权限。Extension 可以增加新工具、接入外部服务、修改终端界面、为危险命令增加确认，也可以引入新的交互方式。</p>
+<p>简单说，Skill 教 Agent 如何完成专业任务；Extension 改变 Agent 本身如何运行。前者像知识和流程，后者像改造发动机外面的整套车辆系统。</p>
+
+<h2 id="voice-extension">五、语音交互扩展：让 Agent 改造 Agent 自己</h2>
+<p>Pi 的扩展能力最有意思的地方在于，用户不必亲手写完每一行代码。可以直接用自然语言描述想增加的能力，让 Pi 阅读自己的扩展文档，再由它创建和修改扩展，重新加载后立即测试。</p>
+<p>例如可以给 Pi 增加一套中文语音交互能力：把本地语音识别、语音接口和系统播放器连接起来，使任务输入和结果反馈不再局限于键盘和屏幕。用户可以用语音要求它读取某个文件夹下的内容，分析用途，总结摘要，再用语音播报结果。</p>
+<p>这个过程的关键不是语音本身，而是“Agent 参与构建和改造 Agent 本身”。当运行层足够开放，Agent 不只是执行项目代码，也可以修改自己的工具、界面和交互方式。成熟产品通常不鼓励用户触碰这些底层环节，而 Pi 把这些环节变成了可实验、可迭代的对象。</p>
+
+<h2 id="subagent-multimodel">六、Sub-agent 与多模型：按任务拆角色，按难度配模型</h2>
+<p>Pi 默认没有完整的 Sub-agent 机制，但这反而说明了它的可塑性。用户可以自己实现，或者安装别人设计好的扩展包，为 Pi 加入多 Agent 协作能力。</p>
+<p>一种实用方式是按任务角色拆分 Agent：设计、执行、审核、证明、修复分别由不同角色完成。每个角色可以配置不同厂商、不同级别的模型，也可以设置不同思考强度。简单任务交给速度快、成本低的模型，复杂任务再调用推理能力更强的模型。</p>
+<p>这种机制对成本控制和工程质量都很重要。并不是所有任务都需要最贵、最强、最高思考强度的模型。Harness 如果足够开放，就可以把“任务路由”“角色分工”“模型选择”“思考强度”变成可配置策略，而不是全部交给一个默认产品决定。</p>
+
+<h2 id="observable-agent-loop">七、可观察的执行循环：理解 Agent 的最佳入口</h2>
+<p>在成熟产品中，工具、权限、上下文管理和执行细节已经被整合成完整体验。用户看见的是结果，很难看清中间层如何组织。Pi 的代码开源、核心结构精简，更容易观察一次 Agent 任务怎样运行。</p>
+<p>典型循环大致如下：用户输入任务；Harness 组织系统提示词、项目规则、工具说明和历史消息；模型根据上下文判断是否调用工具；Harness 负责真正执行工具；工具结果返回给模型；模型继续判断下一步；循环持续，直到任务完成。</p>
+<p>这个循环看似简单，却是所有 Coding Agent 的共同基础。只要理解了它，就更容易判断规则应该怎样写、工具应该怎样给、上下文什么时候应该压缩、什么时候该加 CPU 或 GPU 资源、为什么不同配置会导致不同结果。</p>
+<p>Pi 的价值在于把这个循环暴露得足够清楚。用户可以修改某个环节，再用实际结果验证效果。这种学习会迁移到其他 Agent 工具上，即便最终日常工作仍然使用 Claude Code 或 Codex，也会更懂得如何配置规则、控制上下文和设计工作流。</p>
+
+<h2 id="sdk-embedded-apps">八、SDK 与嵌入能力：从终端工具到应用中的 Agent 引擎</h2>
+<p>Pi 也支持通过 SDK 调用核心能力，使 Agent 不再只能存在于终端里。借助 Vibe Coding，可以从零做一个小工具、桌面应用或自动化流程，把 Pi 作为其中的 Agent 引擎。</p>
+<p>这意味着 Pi 既可以作为现成 Agent 使用，也可以成为自己应用里的运行内核。一个极简 Agent 内核继续向外组合，就能扩展出消息渠道、定时任务、长期运行、多 Agent 协作、外部服务接入等复杂能力。</p>
+<p>从工程角度看，这种嵌入能力很关键。许多团队并不只是想在终端里让 Agent 改代码，而是希望把 Agent 放进内部工具、数据处理流程、桌面助手、自动化脚本和业务系统中。成熟产品未必允许这种深度嵌入，而极简 Harness 的开放性更适合做二次开发。</p>
+
+<h2 id="security-boundary">九、安全边界：控制权越大，责任越大</h2>
+<p>Pi 把更多控制权交给用户，也意味着默认安全保护没有成熟产品那么完整。极简设计带来透明和自由，也会带来配置、调试和维护成本。</p>
+<p>初次使用时，应该优先安装权限保护类扩展，尤其是在删除文件、执行高风险命令、访问敏感目录、调用外部接口之前增加确认机制。Agent 具备终端执行能力后，本质上已经能影响本地文件系统和开发环境，不能只把它当成聊天工具。</p>
+<p>安全策略最好分层设计：低风险读取操作可以自动执行；写文件和编辑文件需要保留差异记录；删除、覆盖、批量移动、网络请求、凭据读取和部署命令必须人工确认；涉及生产系统的操作应该放进隔离环境。Pi 的可扩展性让这些策略可以被做成 Extension，而不是依赖用户每次手动提醒。</p>
+
+<h2 id="install-model-setup">十、安装与模型配置：先跑起来，再逐步加能力</h2>
+<p>Pi 的安装路径相对直接：打开官方网站，根据当前环境复制安装命令，在终端执行；安装完成后输入启动命令即可进入交互。登录时可以选择账号认证，也可以通过 API Key 接入模型。</p>
+<p>如果选择 API 方式，可以按提供商搜索模型服务，例如接入 DeepSeek，再填入 Key。随后通过模型选择命令切换要使用的模型，也可以用快捷键调整模型思考强度。实践中更建议先用低成本模型跑简单任务，确认工作流和权限配置没有问题，再逐步接入更强模型处理复杂任务。</p>
+<p>不要一开始就把 Pi 配成全能工具。更好的方式是先保持默认四工具，理解它如何读、写、改、执行；然后加入 Skill，让它掌握特定任务方法；再加入 Extension，改变交互方式、权限策略和外部服务；最后再实验 Sub-agent、多模型和嵌入式应用。</p>
+
+<h2 id="when-to-use-pi">十一、什么时候选择 Pi，什么时候选择成熟产品</h2>
+<p>如果目标是完整、稳定、开箱即用，成熟产品仍然更省心。Claude Code、Codex 这类工具已经帮用户处理了大量默认规则、权限交互和工程细节，适合直接投入日常开发。</p>
+<p>Pi 更适合三类场景。第一，想理解 Agent 如何工作的人。它把 Harness 拆得足够简单，便于学习系统提示词、工具定义、上下文循环和执行结果之间的关系。第二，有个性化需求的人。语音交互、自定义权限、外部服务、特殊终端界面、多模型策略，都可以通过扩展逐步实现。第三，想把 Agent 放进自己应用的人。SDK 和极简内核让它更像一个可嵌入的 Agent 引擎，而不是只能在终端运行的成品工具。</p>
+<p>Pi 不一定是所有人的默认选择，但它能帮助用户看清一个更底层的问题：大模型只是 Agent 的发动机，Harness 才决定发动机如何被使用。理解 Harness，才能真正理解 Agent 为什么会消耗不同 Token、为什么会做出不同操作、为什么同一个模型在不同工具里表现差异很大。</p>
+
+<h2 id="conclusion">十二、结论：Pi Agent 的价值在于把 Agent 运行层交回用户手里</h2>
+<p>Pi Agent 的核心价值不是功能更多，而是更少、更透明、更可改。默认四个基础工具、不到一千 Token 的系统提示词、开源代码、Skill 与 Extension 双层扩展、Sub-agent 实验空间、SDK 嵌入能力，共同构成了一个适合学习和改造的 Agent Harness。</p>
+<p>成熟产品让 Agent 更像工具，Pi 让 Agent 更像材料。前者帮助用户更快完成任务，后者帮助用户理解并重塑任务系统。对于只想省心完成开发工作的人，成熟产品更合适；对于希望掌握 Agent 运行机制、降低上下文开销、深度定制工作流、把 Agent 嵌入自己应用的人，Pi 提供了更大的实验空间。</p>
+<p>未来 Agent 能力的竞争，不会只发生在模型层。谁能更好地组织上下文、设计工具、控制权限、分配模型、嵌入业务流程，谁就能把同一个模型用出更高效率。Pi Agent 值得研究，正是因为它把这些运行层问题清晰地摆在了用户面前。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/copper-price-new-high-valuation-low-three-logic-repricing/">上一篇<br>铜价新高、估值新低：铜板块三重逻辑共振下的重估窗口</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#product-vs-harness">一、产品与 Harness：两种完全不同的 Agent 思路</a><a class="toc-link toc-level-2" href="#minimal-design-token-cost">二、极简设计：Token 开销本身就是生产力问题</a><a class="toc-link toc-level-2" href="#four-basic-tools">三、四个基础工具：少即是可控</a><a class="toc-link toc-level-2" href="#skill-extension">四、Skill 与 Extension：一个教方法，一个改运行方式</a><a class="toc-link toc-level-2" href="#voice-extension">五、语音交互扩展：让 Agent 改造 Agent 自己</a><a class="toc-link toc-level-2" href="#subagent-multimodel">六、Sub-agent 与多模型：按任务拆角色，按难度配模型</a><a class="toc-link toc-level-2" href="#observable-agent-loop">七、可观察的执行循环：理解 Agent 的最佳入口</a><a class="toc-link toc-level-2" href="#sdk-embedded-apps">八、SDK 与嵌入能力：从终端工具到应用中的 Agent 引擎</a><a class="toc-link toc-level-2" href="#security-boundary">九、安全边界：控制权越大，责任越大</a><a class="toc-link toc-level-2" href="#install-model-setup">十、安装与模型配置：先跑起来，再逐步加能力</a><a class="toc-link toc-level-2" href="#when-to-use-pi">十一、什么时候选择 Pi，什么时候选择成熟产品</a><a class="toc-link toc-level-2" href="#conclusion">十二、结论：Pi Agent 的价值在于把 Agent 运行层交回用户手里</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
