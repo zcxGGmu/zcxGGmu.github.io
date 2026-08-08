@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T04:37:05.690726Z",
+  "generated_at": "2026-08-08T10:07:55.226867Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_3e94f4d6faf0",
-      "title": "Seedance 2.5 API上线，视频生成开启「电影级长叙事」",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzI0NzU1NzI5NQ%3D%3D&mid=2247543416&idx=1&sn=badeafc780a939033a1e4cb0bba4221c",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 32,
-          "review": "“电影级”全靠形容词撑着，样片和上下文窗口敢晒出来吗？"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "仅公众号宣称电影级，无论文无代码无第三方评测，证据不足。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "API已开放，做视频生成的今天就能接，长叙事能力直接上线。"
-        }
-      }
-    },
-    {
       "story_id": "story_bea4ca41292c",
       "title": "蚂蚁百灵开源 Ling-3.0-flash：124B 总参数 MoE 模型，支持 API、单机与高性能三种部署",
       "url": "https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw%3D%3D&mid=2247487457&idx=1&sn=24ad4a355d81291e53fbe680ca987112",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 65,
@@ -60,7 +40,7 @@
       "story_id": "story_af6808a77d18",
       "title": "Copilot 用量指标 API 新增 agent 应用活动 / Copilot usage metrics API adds agent app activity",
       "url": "https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 45,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 82,
           "review": "新增 agent 活动统计，做 Copilot 集成的今天就能接上，看用量更细。"
+        }
+      }
+    },
+    {
+      "story_id": "story_06de520f313d",
+      "title": "Copilot 代码审查工作量级别现已全面可用 / Copilot code review effort levels are generally available",
+      "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 78,
+          "review": "用力分级总算落地，早该如此，不然每次审查都像被AI轰炸。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "官方changelog宣称全面可用，但无文档无评测数据，待实操验证。"
+        },
+        "pragmatic": {
+          "score": 80,
+          "review": "审查力度可调，今天就能配到 CI 里省时间。"
         }
       }
     }
