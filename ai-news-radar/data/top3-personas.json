@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T10:07:55.226867Z",
+  "generated_at": "2026-08-08T15:00:42.306130Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_bea4ca41292c",
-      "title": "蚂蚁百灵开源 Ling-3.0-flash：124B 总参数 MoE 模型，支持 API、单机与高性能三种部署",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzkyODk2MDQwNw%3D%3D&mid=2247487457&idx=1&sn=24ad4a355d81291e53fbe680ca987112",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 65,
-          "review": "参数亮眼但缺激活参数和基准测试，别急着喊牛逼。"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "仅公众号宣称开源，无论文无代码链接，部署细节待验证。"
-        },
-        "pragmatic": {
-          "score": 88,
-          "review": "开源可部署，MoE 性价比高，API/单机/高性能三种方式灵活，直接上手。"
-        }
-      }
-    },
-    {
       "story_id": "story_af6808a77d18",
       "title": "Copilot 用量指标 API 新增 agent 应用活动 / Copilot usage metrics API adds agent app activity",
       "url": "https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 45,
@@ -60,7 +40,7 @@
       "story_id": "story_06de520f313d",
       "title": "Copilot 代码审查工作量级别现已全面可用 / Copilot code review effort levels are generally available",
       "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 78,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 80,
           "review": "审查力度可调，今天就能配到 CI 里省时间。"
+        }
+      }
+    },
+    {
+      "story_id": "story_1f7d8d6cb096",
+      "title": "企业现在可以安装第三方GitHub Apps / Enterprises can now install third-party GitHub Apps",
+      "url": "https://github.blog/changelog/2026-08-07-enterprises-can-now-install-third-party-github-apps",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "终于补上企业版的功能缺口，但第三方应用的安全审计怕是又要让管理员头疼。"
+        },
+        "paper-police": {
+          "score": 78,
+          "review": "官方changelog有据可查，功能已实装，但缺第三方验证。"
+        },
+        "pragmatic": {
+          "score": 78,
+          "review": "企业管理员今天就能装第三方App扩功能，团队协作有更多现成工具可选。"
         }
       }
     }
