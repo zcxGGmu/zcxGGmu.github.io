@@ -1,0 +1,60 @@
+<p>Codex 的使用方式正在从“一个聊天窗口里的代码助手”转向“围绕任务长期运行的工程队友”。真正的变化不是模型又会写更多代码，而是 Coding Agent 的中心对象从 Session 变成 Task：从一次会话、一次提示、一次 PR，升级为由任务系统驱动、可观察、可恢复、可并行推进的工程流水线。</p>
+<p>Symphony 的价值就在这里。它把 Linear 这类任务系统变成 Coding Agent 的控制面，让每个 issue 映射到独立 workspace，让 agent 在任务生命周期里持续推进工作，并把状态、PR、CI、review、依赖关系重新写回工程流程。</p>
+
+<h2 id="from-session-to-task">一、瓶颈从模型能力变成人类监督能力</h2>
+<p>早期使用 Codex，更像是在旁边放一个很能干的初级工程师。人类打开一个会话，交代任务，看它改代码、跑测试、提交结果。这个模式在单任务场景中有效，但当工程师同时打开 10 个、20 个 agent 会话时，瓶颈很快不再是代码生成，而是人的注意力。</p>
+<p>人会忘记哪个会话在做什么，会在不同终端之间切换，会不断拉回跑偏的 agent，还要处理执行到一半卡住的任务。Agent 很快，但系统不快，因为人类监督成本被放大。</p>
+<p>Symphony 的核心转向是：不要再让人盯着每个 agent 会话，而是让任务系统成为中心。软件工程真正围绕的对象是 deliverable、issue、task 和 ticket。让 agent 从任务系统里认领任务，围绕任务状态持续运行，才更接近真实工程组织。</p>
+
+<h2 id="linear-control-plane">二、任务系统成为 Agent 控制面</h2>
+<p>Symphony 会持续监控任务看板，每个 open issue 都可以映射到独立 agent workspace。每个 active task 背后有一个 agent 执行循环，人类不必盯每个窗口，而是在最终结果、关键状态和 review 节点介入。</p>
+<p>这不是把聊天窗口多开几个，而是把 Codex 变成一个后台服务。它持续查看哪里有新任务、哪里卡住、哪里需要重试、哪里需要等待依赖完成。任务系统不再只是待办事项列表，而成为 Agent 系统的权威状态机。</p>
+<p>一个典型生命周期包括：自动认领任务；创建隔离工作区；启动 agent 并传入任务上下文、仓库规则和工具；观察执行过程并在失败时恢复；把结果、状态、PR 和后续任务回写到任务系统。</p>
+
+<h2 id="isolated-workspace">三、独立 Workspace 是多 Agent 并发的基础设施</h2>
+<p>多 agent 并发工作的最大风险，是共享混乱工作区导致代码互相覆盖、状态污染、责任不清。Symphony 的做法是每个任务一个 workspace，每个 workspace 一个 agent 执行闭环。</p>
+<p>这样一来，agent 崩溃可以重启，任务状态变化可以停止不合适的运行，新任务出现可以创建新的独立环境。隔离 workspace 不是可选优化，而是多 agent 工程化的基础设施。</p>
+<p>如果没有隔离、日志、状态恢复和冲突处理，多 agent 不会带来效率提升，只会放大混乱。</p>
+
+<h2 id="dependency-dag">四、依赖 DAG 让 Agent 参与更大的工程计划</h2>
+<p>复杂工程项目通常不是一组彼此独立的小任务。某个 Vite migration 完成后，React upgrade 才能启动；某个底层重构合并后，上层功能才能继续开发。Symphony 通过任务系统显式识别依赖关系，让 agent 不会并行执行本不该并行的任务。</p>
+<p>这让 agent 不再只是“帮我改一个文件”，而是参与一个更大的工程计划。团队可以先让 agent 分析代码库、文档、历史讨论，形成 implementation plan；人类确认后，再拆成任务树，定义阶段和依赖关系。没有被阻塞的任务并行推进，有依赖的任务等待前置工作完成。</p>
+<p>更进一步，agent 在实现或 review 中发现性能问题、重构机会、后续优化时，也可以创建 follow-up issue，让新发现的问题重新进入同一套任务系统。</p>
+
+<h2 id="last-mile">五、最后一公里：CI、Review、Rebase 和旧 PR</h2>
+<p>在大型 monorepo 中，写完代码只是第一步。真正消耗人的，常常是最后一公里：CI 挂了、需要 rebase、出现冲突、flake check 失败、review comment 要处理、PR 长期没人管变成旧 PR。</p>
+<p>Symphony 的价值之一，是让 agent 守住这些流程。它可以观察 CI，必要时 rebase，处理冲突，重试检查，回应 review，把变更一路护送到更接近可合并的状态。</p>
+<p>这里的重点不是 agent 会写代码，而是 agent 会推进工作。推进工作包括理解任务、维护状态、处理反馈、管理 PR、观察 CI、失败后重试，以及在不确定时把问题交还给人。</p>
+
+<h2 id="goals-not-steps">六、给 Agent 目标，而不是机械步骤</h2>
+<p>早期 agent 编排容易把 agent 当成状态机节点：先做 A，再做 B，再做 C。但随着模型推理能力增强，过度限制反而会压低上限。Codex 不只可以实现任务描述中的功能，还可以创建多个 PR、读取 review feedback、继续修改、关闭旧 PR、统计完成和放弃的工作。</p>
+<p>更好的方式是给它清楚目标、上下文、工具和边界，而不是把每个动作写成机械操作手册。好的管理者不会微操每一步，而是定义好结果、约束和验收方式，让协作者发挥判断。</p>
+<p>编排系统的目的不是限制 agent 每一步怎么走，而是提供可靠、可观察、可恢复的工作环境。</p>
+
+<h2 id="system-feedback">七、失败不是一次救火，而是系统反馈</h2>
+<p>从聊天式监督转向 ticket 级分配任务，会失去随时中途纠偏的便利。有时 agent 会产出偏离目标的结果。关键不是每次人工手动修掉，而是把失败当作系统反馈。</p>
+<p>Agent 没做好，可能说明文档不清楚、测试不够、工具不够、workflow 没讲清什么叫好。正确做法是把失败沉淀成测试、文档、工具、guardrail 和更清楚的流程。这样下一次同类失败才会减少。</p>
+<p>这就是从“使用 Agent”到“运营 Agent 系统”的区别。规模化使用不是不断救火，而是不断让系统吸收失败。</p>
+
+<h2 id="symphony-components">八、Symphony 的工程组件</h2>
+<p>Symphony 的开源形式很有意思，它强调的是一份 spec，而不是复杂产品。规范定义了一个长期运行的自动化服务：持续从 issue tracker 读取工作，为每个 issue 创建隔离 workspace，再运行 Coding Agent session。</p>
+<p>核心组件包括 workflow loader、config layer、issue tracker client、orchestrator、worker 和 workspace manager。workflow loader 读取仓库里的 workflow.md，把项目自己的流程、prompt、runtime settings、hooks 和 tracker 配置加载进来；orchestrator 负责轮询任务、分发工作、处理重试、维护状态；worker 为每个任务创建 workspace，启动 agent 并管理 session 生命周期。</p>
+<p>workflow.md 尤其关键。它让 agent 的工作方式不再散落在某个 prompt 里，而是变成仓库的一部分，可以审查、回滚和迭代。</p>
+
+<h2 id="codex-server-mode">九、可编程 Runtime 才能支撑长期服务</h2>
+<p>为了让 Symphony 稳定地和 Codex 交互，Codex 需要以 server mode 运行，提供 JSON-RPC 接口。Orchestrator 可以启动 session、发送用户输入、监听事件流，并暴露动态工具调用。</p>
+<p>这说明 Symphony 不是在命令行里简单拼 prompt，而是在需要一个可编程、可观察、可恢复的 agent runtime。真正重要的是编排思想，而不是某个单一实现。</p>
+<p>参考实现选择了适合并发和 supervision 的技术栈，因为问题本质不是运行一个 agent，而是运行一批独立、可能失败、需要监督和重启的 agent worker。</p>
+
+<h2 id="six-takeaways">十、六点启发</h2>
+<p>第一，未来 Coding Agent 的核心对象会从 session 变成 task。系统应该围绕 issue、状态、依赖、验收和召回证据设计，而不是围绕聊天窗口设计。</p>
+<p>第二，仓库必须 agent-friendly。清晰规则、可靠测试、可读 CI、明确代码边界、稳定本地启动方式，是 agent 不迷路的前提。</p>
+<p>第三，隔离 workspace 是基础设施。多 agent 并发时，隔离、日志、状态恢复和冲突处理会变得非常重要。</p>
+<p>第四，依赖关系要显式化。该等待的任务必须等待，否则并行会制造错误。</p>
+<p>第五，失败要系统化吸收。Agent 做错，是流程、文档、测试或工具不够清楚的信号。</p>
+<p>第六，工程师价值会更集中在判断上。routine implementation 可以更多交给 agent，人类更需要定义问题、拆分边界、设计验证、处理模糊性和关键技术决策。</p>
+
+<h2 id="conclusion">十一、结论：从代码助手到工程队友</h2>
+<p>Symphony 不是让 Codex 多开几个窗口，而是把 Codex 从会写代码的助手推进成围绕任务长期工作的工程队友。下一阶段 Coding Agent 的竞争，不只在模型能力，也在编排能力。</p>
+<p>谁能把模型、工具、任务系统、CI、review、日志、workspace 隔离和权限边界接成可靠工作流，谁就更接近真正可规模化的 agent engineering。</p>
+
