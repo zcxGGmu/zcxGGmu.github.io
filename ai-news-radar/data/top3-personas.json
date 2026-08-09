@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T15:00:42.306130Z",
+  "generated_at": "2026-08-09T02:33:06.089223Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_af6808a77d18",
-      "title": "Copilot 用量指标 API 新增 agent 应用活动 / Copilot usage metrics API adds agent app activity",
-      "url": "https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity",
+      "story_id": "story_7bfb99629928",
+      "title": "OpenAI 桌面端 ChatGPT 上线语音交互功能，可语音操控电脑执行多步骤任务",
+      "url": "https://www.ithome.com/0/987/452.htm",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "加个数数指标就发 changelog，Copilot 的进步全靠仪表盘？"
+          "score": 58,
+          "review": "演示里的多步骤挺顺，换你现场试试卡不卡。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方changelog给了细节，但无独立验证，需实际调用确认。"
+          "score": 30,
+          "review": "功能上线有官方公告，但没有技术细节或第三方评测，口说无凭。"
         },
         "pragmatic": {
-          "score": 82,
-          "review": "新增 agent 活动统计，做 Copilot 集成的今天就能接上，看用量更细。"
+          "score": 75,
+          "review": "桌面端能语音操控电脑，可当多步任务助手用，今天就能试。"
         }
       }
     },
     {
-      "story_id": "story_06de520f313d",
-      "title": "Copilot 代码审查工作量级别现已全面可用 / Copilot code review effort levels are generally available",
-      "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available",
+      "story_id": "story_56cf4cefef8c",
+      "title": "给你的其他 Claude Code 会话发消息 / Message your other Claude Code sessions",
+      "url": "https://news.ycombinator.com/item?id=49222824",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 78,
-          "review": "用力分级总算落地，早该如此，不然每次审查都像被AI轰炸。"
+          "score": 60,
+          "review": "跨会话传消息不算新概念，先证明传输不丢包再说。"
         },
         "paper-police": {
           "score": 25,
-          "review": "官方changelog宣称全面可用，但无文档无评测数据，待实操验证。"
+          "review": "仅标题传播，无文档无代码无评测，消息无法验证。"
         },
         "pragmatic": {
-          "score": 80,
-          "review": "审查力度可调，今天就能配到 CI 里省时间。"
+          "score": 65,
+          "review": "跨会话协作有点用，但生态没成熟，急用不如直接开多个终端。"
         }
       }
     },
     {
-      "story_id": "story_1f7d8d6cb096",
-      "title": "企业现在可以安装第三方GitHub Apps / Enterprises can now install third-party GitHub Apps",
-      "url": "https://github.blog/changelog/2026-08-07-enterprises-can-now-install-third-party-github-apps",
+      "story_id": "story_adfff91a73dc",
+      "title": "OpenAI 意外攻击 Hugging Face 事件时间线现已整理出炉",
+      "url": "https://simonwillison.net/2026/Aug/7/openai-timeline",
       "rank": 3,
       "reviews": {
         "cynic": {
           "score": 72,
-          "review": "终于补上企业版的功能缺口，但第三方应用的安全审计怕是又要让管理员头疼。"
+          "review": "时间线详实，但'意外攻击'的免责声明比事件本身更有看头。"
         },
         "paper-police": {
-          "score": 78,
-          "review": "官方changelog有据可查，功能已实装，但缺第三方验证。"
+          "score": 35,
+          "review": "时间线有出处但无技术报告，事件细节尚待独立验证。"
         },
         "pragmatic": {
-          "score": 78,
-          "review": "企业管理员今天就能装第三方App扩功能，团队协作有更多现成工具可选。"
+          "score": 55,
+          "review": "事故复盘可参考，但无直接行动项，安全团队可存档。"
         }
       }
     }

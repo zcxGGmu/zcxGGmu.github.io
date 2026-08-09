@@ -1,107 +1,11 @@
 {
   "version": 1,
   "entries": {
-    "story_6e3ae8d4de00|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "研究对比有参考价值，但无实际可用的工具或API，观望即可。",
-      "title_hash": "2ebe3a00",
-      "scored_at": "2026-07-18T15:20:49.492975Z"
-    },
-    "story_641c7fe4ecc7|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "研究突破，暂无可用工具或API，等开源复现再考虑应用。",
-      "title_hash": "2763ab43",
-      "scored_at": "2026-07-18T15:20:53.668865Z"
-    },
-    "story_56c5b0ab76c7|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "小版本更新，用Codex CLI的查下changelog看看修了啥bug。",
-      "title_hash": "6b438d0d",
-      "scored_at": "2026-07-18T15:20:46.530265Z"
-    },
-    "story_dad2bbf2a5ce|pragmatic|0a5c5b24": {
-      "score": 70,
-      "review": "能抄的配置教程，有备用Mac的今天就能动手。",
-      "title_hash": "20e7a8b1",
-      "scored_at": "2026-07-18T21:10:45.921061Z"
-    },
-    "story_e2c93b777179|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "bug讨论贴，不是新工具或API变化，等官方修复再看。",
-      "title_hash": "69f0b48e",
-      "scored_at": "2026-07-18T19:36:56.109616Z"
-    },
-    "story_41dc3e242cb7|cynic|f4237a62": {
-      "score": 75,
-      "review": "API 加了个字段就打公告，还以为 Copilot 修了代码补全不准的老毛病。",
-      "title_hash": "6585e6c8",
-      "scored_at": "2026-07-18T21:10:49.867094Z"
-    },
-    "story_41dc3e242cb7|paper-police|966065bf": {
-      "score": 20,
-      "review": "官方改日志，无性能数据，无独立验证，仅功能说明。",
-      "title_hash": "6585e6c8",
-      "scored_at": "2026-07-18T21:10:52.934265Z"
-    },
-    "story_56c5b0ab76c7|cynic|f4237a62": {
-      "score": 30,
-      "review": "版本号刷得勤，更新日志却空得像节后办公室。",
-      "title_hash": "6b438d0d",
-      "scored_at": "2026-07-18T22:11:24.950538Z"
-    },
-    "story_56c5b0ab76c7|paper-police|966065bf": {
-      "score": 20,
-      "review": "只有更新日志，无论文无benchmark，无法验证性能。",
-      "title_hash": "6b438d0d",
-      "scored_at": "2026-07-18T22:11:26.930669Z"
-    },
-    "story_dad2bbf2a5ce|cynic|f4237a62": {
-      "score": 80,
-      "review": "Mac备用机也有了新用途，不过先得有两台Mac才行。",
-      "title_hash": "20e7a8b1",
-      "scored_at": "2026-07-18T22:11:31.163118Z"
-    },
-    "story_dad2bbf2a5ce|paper-police|966065bf": {
-      "score": 5,
-      "review": "无论文无代码无benchmark，操作指南不算学术发布。",
-      "title_hash": "20e7a8b1",
-      "scored_at": "2026-07-18T22:11:35.104449Z"
-    },
-    "story_6e3ae8d4de00|cynic|f4237a62": {
-      "score": 48,
-      "review": "拿个没听说过的Fable 5跟GPT比NP难问题，参数名起得挺玄乎。",
-      "title_hash": "2ebe3a00",
-      "scored_at": "2026-07-18T22:11:37.752327Z"
-    },
-    "story_6e3ae8d4de00|paper-police|966065bf": {
-      "score": 20,
-      "review": "博客对比有说法，但无论文无代码无第三方评测，证据不足。",
-      "title_hash": "2ebe3a00",
-      "scored_at": "2026-07-18T22:11:40.346275Z"
-    },
-    "story_5bd68d1f03fc|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "没开放链接或试用入口，先观望实际功能再说。",
-      "title_hash": "10befb92",
-      "scored_at": "2026-07-18T23:15:09.732622Z"
-    },
     "story_c668670e64ca|pragmatic|0a5c5b24": {
       "score": 55,
       "review": "监管提案，开发房产AI工具需关注合规，但暂不影响今日代码。",
       "title_hash": "224fe549",
       "scored_at": "2026-07-19T09:21:46.497197Z"
-    },
-    "story_1a64b2e84394|cynic|f4237a62": {
-      "score": 35,
-      "review": "把数据拉出来就叫影响分析？相关性和因果先分清楚吧。",
-      "title_hash": "9dff0cca",
-      "scored_at": "2026-07-19T00:14:37.400015Z"
-    },
-    "story_1a64b2e84394|paper-police|966065bf": {
-      "score": 8,
-      "review": "只有数据查询，无论文代码benchmark，无法验证AI影响。",
-      "title_hash": "9dff0cca",
-      "scored_at": "2026-07-19T00:14:39.736713Z"
     },
     "story_d8b201080948|pragmatic|0a5c5b24": {
       "score": 90,
@@ -5016,6 +4920,132 @@
       "review": "安全事件复盘，了解一下别重复踩坑，不急着改代码。",
       "title_hash": "f18055b2",
       "scored_at": "2026-08-08T15:00:42.305979Z"
+    },
+    "story_adfff91a73dc|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "事故复盘可参考，但无直接行动项，安全团队可存档。",
+      "title_hash": "cd0b2685",
+      "scored_at": "2026-08-08T15:54:26.285674Z"
+    },
+    "story_20af52419887|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "升级细节没公开，等API或演示出来再判断值不值得上手。",
+      "title_hash": "43b866b6",
+      "scored_at": "2026-08-08T17:00:20.370071Z"
+    },
+    "story_e9624a9c8fc0|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "爬虫挤爆基础设施，给运维提了个醒：反爬策略该加就加。",
+      "title_hash": "975de59d",
+      "scored_at": "2026-08-08T19:05:51.062136Z"
+    },
+    "story_a1c224640bfa|pragmatic|0a5c5b24": {
+      "score": 62,
+      "review": "benchmark 亮眼但未开放，等 API 上线再评估实际任务。",
+      "title_hash": "0f722d29",
+      "scored_at": "2026-08-08T17:53:09.143020Z"
+    },
+    "story_32ec53e91d06|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "教育口政策，不写代码也不改 API，开发者无需关注。",
+      "title_hash": "fe45b840",
+      "scored_at": "2026-08-08T19:50:38.391041Z"
+    },
+    "story_b17925e931ce|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "思路有参考价值，但没现成代码，等具体方案落地再动手。",
+      "title_hash": "47c4776e",
+      "scored_at": "2026-08-08T19:05:54.545095Z"
+    },
+    "story_0a07367e7420|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "找手机的小技巧，对开发工作没直接用处，扫一眼即可。",
+      "title_hash": "05b26ac7",
+      "scored_at": "2026-08-08T19:05:56.880498Z"
+    },
+    "story_2b97640ff5a6|cynic|f4237a62": {
+      "score": 60,
+      "review": "会话互发消息听着新鲜，但跨会话上下文同步的坑怕是没提。",
+      "title_hash": "f3d13e5c",
+      "scored_at": "2026-08-08T19:05:58.676423Z"
+    },
+    "story_2b97640ff5a6|paper-police|966065bf": {
+      "score": 25,
+      "review": "仅官方推文宣称新功能，无文档无代码，待实测验证。",
+      "title_hash": "f3d13e5c",
+      "scored_at": "2026-08-08T19:06:00.648365Z"
+    },
+    "story_56cf4cefef8c|pragmatic|0a5c5b24": {
+      "score": 65,
+      "review": "跨会话协作有点用，但生态没成熟，急用不如直接开多个终端。",
+      "title_hash": "8956515c",
+      "scored_at": "2026-08-08T20:54:45.830190Z"
+    },
+    "story_2252b2f8dcb5|cynic|f4237a62": {
+      "score": 50,
+      "review": "ROI板块能算清员工省下的工时，却算不清订阅费涨了多少。",
+      "title_hash": "c2897e35",
+      "scored_at": "2026-08-08T20:54:48.570339Z"
+    },
+    "story_2252b2f8dcb5|paper-police|966065bf": {
+      "score": 25,
+      "review": "官方更新说明了新板块，但无代码无评测，真假待用户验证。",
+      "title_hash": "c2897e35",
+      "scored_at": "2026-08-08T20:54:51.550451Z"
+    },
+    "story_5a089134551b|cynic|f4237a62": {
+      "score": 50,
+      "review": "每周例行公事，没数据没对比，就说了个'发布'。",
+      "title_hash": "9dc9e154",
+      "scored_at": "2026-08-08T21:51:13.191586Z"
+    },
+    "story_5a089134551b|paper-police|966065bf": {
+      "score": 55,
+      "review": "官方日志有功能细节，但缺论文代码和第三方评测，属发布记录。",
+      "title_hash": "9dc9e154",
+      "scored_at": "2026-08-08T21:51:15.895349Z"
+    },
+    "story_56cf4cefef8c|cynic|f4237a62": {
+      "score": 60,
+      "review": "跨会话传消息不算新概念，先证明传输不丢包再说。",
+      "title_hash": "8956515c",
+      "scored_at": "2026-08-08T21:51:18.874239Z"
+    },
+    "story_56cf4cefef8c|paper-police|966065bf": {
+      "score": 25,
+      "review": "仅标题传播，无文档无代码无评测，消息无法验证。",
+      "title_hash": "8956515c",
+      "scored_at": "2026-08-08T21:51:25.296084Z"
+    },
+    "story_adfff91a73dc|cynic|f4237a62": {
+      "score": 72,
+      "review": "时间线详实，但'意外攻击'的免责声明比事件本身更有看头。",
+      "title_hash": "cd0b2685",
+      "scored_at": "2026-08-08T21:51:29.319321Z"
+    },
+    "story_adfff91a73dc|paper-police|966065bf": {
+      "score": 35,
+      "review": "时间线有出处但无技术报告，事件细节尚待独立验证。",
+      "title_hash": "cd0b2685",
+      "scored_at": "2026-08-08T21:51:33.963091Z"
+    },
+    "story_7bfb99629928|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "桌面端能语音操控电脑，可当多步任务助手用，今天就能试。",
+      "title_hash": "61194bd3",
+      "scored_at": "2026-08-08T23:50:54.292637Z"
+    },
+    "story_7bfb99629928|cynic|f4237a62": {
+      "score": 58,
+      "review": "演示里的多步骤挺顺，换你现场试试卡不卡。",
+      "title_hash": "61194bd3",
+      "scored_at": "2026-08-08T23:50:57.643622Z"
+    },
+    "story_7bfb99629928|paper-police|966065bf": {
+      "score": 30,
+      "review": "功能上线有官方公告，但没有技术细节或第三方评测，口说无凭。",
+      "title_hash": "61194bd3",
+      "scored_at": "2026-08-08T23:50:59.891392Z"
     }
   }
 }
