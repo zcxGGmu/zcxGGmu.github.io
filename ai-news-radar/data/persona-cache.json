@@ -1,65 +1,11 @@
 {
   "version": 1,
   "entries": {
-    "story_c668670e64ca|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "监管提案，开发房产AI工具需关注合规，但暂不影响今日代码。",
-      "title_hash": "224fe549",
-      "scored_at": "2026-07-19T09:21:46.497197Z"
-    },
     "story_e10fb03864e5|pragmatic|0a5c5b24": {
       "score": 20,
       "review": "空谈社会影响，不如看代码和API。",
       "title_hash": "e4df8c26",
       "scored_at": "2026-07-19T10:50:13.630859Z"
-    },
-    "story_eaf92241cafb|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "宏观评论不写代码，看个热闹就行。",
-      "title_hash": "e4df8c26",
-      "scored_at": "2026-07-19T06:46:18.041929Z"
-    },
-    "story_ab014e97bca6|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "功能预览而已，等正式文档和API出来再评估是否上手。",
-      "title_hash": "599fb71d",
-      "scored_at": "2026-07-19T06:46:20.015407Z"
-    },
-    "story_67e92efcad32|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "综述性质，端侧算力动态可留意，但无立即行动点。",
-      "title_hash": "91240f74",
-      "scored_at": "2026-07-19T06:46:22.379010Z"
-    },
-    "story_e5910e819efb|pragmatic|0a5c5b24": {
-      "score": 70,
-      "review": "Codex 用户注意查收新的用量限制，可能影响日常编码工作流。",
-      "title_hash": "41398d13",
-      "scored_at": "2026-07-19T06:46:24.684179Z"
-    },
-    "story_e5910e819efb|cynic|f4237a62": {
-      "score": 45,
-      "review": "限制改来改去，玩的是心理战，不是技术战。",
-      "title_hash": "41398d13",
-      "scored_at": "2026-07-19T06:46:28.415371Z"
-    },
-    "story_e5910e819efb|paper-police|966065bf": {
-      "score": 20,
-      "review": "使用限制调整，非模型性能声明，无可验证证据。",
-      "title_hash": "41398d13",
-      "scored_at": "2026-07-19T06:46:31.535724Z"
-    },
-    "story_2ca67ade8503|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "等权重开放再动手，目前先了解。参数虽大，没链接没文档=空转。",
-      "title_hash": "21bd66be",
-      "scored_at": "2026-07-19T09:21:43.548222Z"
-    },
-    "story_32d644238db8|pragmatic|0a5c5b24": {
-      "score": 15,
-      "review": "500美元买AI配音培训？不如看免费文档，别花冤枉钱。",
-      "title_hash": "93582a37",
-      "scored_at": "2026-07-19T09:21:49.099631Z"
     },
     "story_433d10817ce7|pragmatic|0a5c5b24": {
       "score": 68,
@@ -4952,10 +4898,10 @@
       "scored_at": "2026-08-08T19:06:00.648365Z"
     },
     "story_56cf4cefef8c|pragmatic|0a5c5b24": {
-      "score": 65,
-      "review": "跨会话协作有点用，但生态没成熟，急用不如直接开多个终端。",
-      "title_hash": "8956515c",
-      "scored_at": "2026-08-08T20:54:45.830190Z"
+      "score": 78,
+      "review": "跨会话传消息，多窗口协作能省点事，适合在用Claude Code的团队。",
+      "title_hash": "103708e5",
+      "scored_at": "2026-08-09T07:28:01.403112Z"
     },
     "story_2252b2f8dcb5|cynic|f4237a62": {
       "score": 50,
@@ -4982,16 +4928,16 @@
       "scored_at": "2026-08-08T21:51:15.895349Z"
     },
     "story_56cf4cefef8c|cynic|f4237a62": {
-      "score": 60,
-      "review": "跨会话传消息不算新概念，先证明传输不丢包再说。",
-      "title_hash": "8956515c",
-      "scored_at": "2026-08-08T21:51:18.874239Z"
+      "score": 45,
+      "review": "跨会话发消息就叫新功能？先演示下消息不丢再说。",
+      "title_hash": "103708e5",
+      "scored_at": "2026-08-09T07:28:03.112135Z"
     },
     "story_56cf4cefef8c|paper-police|966065bf": {
-      "score": 25,
-      "review": "仅标题传播，无文档无代码无评测，消息无法验证。",
-      "title_hash": "8956515c",
-      "scored_at": "2026-08-08T21:51:25.296084Z"
+      "score": 22,
+      "review": "仅官方文档介绍功能，无论文代码或第三方评测，可信度待验证。",
+      "title_hash": "103708e5",
+      "scored_at": "2026-08-09T07:28:05.645111Z"
     },
     "story_adfff91a73dc|cynic|f4237a62": {
       "score": 72,
@@ -5040,6 +4986,30 @@
       "review": "对开发者影响有限，写手可能受限，别指望绕过，等官方细则。",
       "title_hash": "8374bcfb",
       "scored_at": "2026-08-09T04:44:29.326514Z"
+    },
+    "story_c679b82f6543|pragmatic|0a5c5b24": {
+      "score": 80,
+      "review": "安全工具，能直接拦住 Agent 乱读密钥和跑危险命令，生产环境可部署。",
+      "title_hash": "ce242367",
+      "scored_at": "2026-08-09T06:02:29.508893Z"
+    },
+    "story_c679b82f6543|cynic|f4237a62": {
+      "score": 45,
+      "review": "拦截器是好事，但演示里能挡的风险和真实世界的差距，敢晒规则集吗？",
+      "title_hash": "ce242367",
+      "scored_at": "2026-08-09T06:02:32.802875Z"
+    },
+    "story_c679b82f6543|paper-police|966065bf": {
+      "score": 25,
+      "review": "只有标题描述，无代码无评测，拦截效果无法验证。",
+      "title_hash": "ce242367",
+      "scored_at": "2026-08-09T06:02:37.144939Z"
+    },
+    "story_5da542bcba7e|pragmatic|0a5c5b24": {
+      "score": 62,
+      "review": "常见方法组合的教程，入门可看，老手不必花时间。",
+      "title_hash": "12b61c3d",
+      "scored_at": "2026-08-09T08:12:47.017253Z"
     }
   }
 }
