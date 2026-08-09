@@ -1,72 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_e10fb03864e5|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "空谈社会影响，不如看代码和API。",
-      "title_hash": "e4df8c26",
-      "scored_at": "2026-07-19T10:50:13.630859Z"
-    },
-    "story_433d10817ce7|pragmatic|0a5c5b24": {
-      "score": 68,
-      "review": "上下文砍掉十万，长代码补全能力倒退，用Codex的得考虑分段提示了。",
-      "title_hash": "651cea64",
-      "scored_at": "2026-07-19T15:19:35.468498Z"
-    },
-    "story_7fa464d3bd04|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "口号型发布，没开放API的模型等于没发布，等可用链接再评价。",
-      "title_hash": "4f2acfa3",
-      "scored_at": "2026-07-19T13:58:33.632604Z"
-    },
-    "story_0addcd6712bf|pragmatic|0a5c5b24": {
-      "score": 80,
-      "review": "小模型性能领先且适配多芯片，边缘部署首选，今天就能试用。",
-      "title_hash": "06883c18",
-      "scored_at": "2026-07-19T13:58:37.082631Z"
-    },
-    "story_c52bb64d8638|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "Claude Code 换运行时，对用户无直接影响，不急着改工作流。",
-      "title_hash": "fb5408f3",
-      "scored_at": "2026-07-19T13:58:40.570247Z"
-    },
-    "story_0addcd6712bf|cynic|f4237a62": {
-      "score": 45,
-      "review": "4B以下第一？那4B以上呢？挑个冷门赛道封王，确实是营销捷径。",
-      "title_hash": "06883c18",
-      "scored_at": "2026-07-19T13:58:44.994675Z"
-    },
-    "story_0addcd6712bf|paper-police|966065bf": {
-      "score": 20,
-      "review": "缺论文和开源代码，仅官方宣称，待独立验证。",
-      "title_hash": "06883c18",
-      "scored_at": "2026-07-19T13:58:48.348126Z"
-    },
-    "story_20bda4ade41b|pragmatic|0a5c5b24": {
-      "score": 90,
-      "review": "开源模型可直接用于机器人开发，今天就能下载实验。",
-      "title_hash": "e6e112c7",
-      "scored_at": "2026-07-19T15:19:32.731927Z"
-    },
-    "story_0ebdebd76392|pragmatic|0a5c5b24": {
-      "score": 10,
-      "review": "标题像概念，没看到可用的东西，先观望。",
-      "title_hash": "89434cbc",
-      "scored_at": "2026-07-19T15:19:38.585109Z"
-    },
-    "story_20bda4ade41b|cynic|f4237a62": {
-      "score": 75,
-      "review": "开源诚意到了，但机器人走出demo走廊前，先别谈理解与记忆。",
-      "title_hash": "e6e112c7",
-      "scored_at": "2026-07-19T15:19:41.174299Z"
-    },
-    "story_20bda4ade41b|paper-police|966065bf": {
-      "score": 55,
-      "review": "开源代码即可验证，但缺论文和独立评测，需自行跑分确认。",
-      "title_hash": "e6e112c7",
-      "scored_at": "2026-07-19T15:19:46.772626Z"
-    },
     "story_b07488f85ab7|pragmatic|0a5c5b24": {
       "score": 68,
       "review": "新人暂时用不了，已有用户不影响，想用先等等。",
@@ -5010,6 +4944,78 @@
       "review": "常见方法组合的教程，入门可看，老手不必花时间。",
       "title_hash": "12b61c3d",
       "scored_at": "2026-08-09T08:12:47.017253Z"
+    },
+    "story_89f0f7e97237|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "玩法更新看着热闹，但没提API或价格变化，先观望再动手。",
+      "title_hash": "665139e7",
+      "scored_at": "2026-08-09T11:01:35.852626Z"
+    },
+    "story_86c94d047e72|pragmatic|0a5c5b24": {
+      "score": 32,
+      "review": "AI成本挤压巨头预算，对选型无直接影响，留意供应商涨价信号。",
+      "title_hash": "8d1e2af8",
+      "scored_at": "2026-08-09T11:01:38.220759Z"
+    },
+    "story_d0c89c4c036a|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "事件时间线可作安全复盘参考，但无直接可用的工具或接口变化。",
+      "title_hash": "cd0b2685",
+      "scored_at": "2026-08-09T11:54:10.447136Z"
+    },
+    "story_a845b0ff7812|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "事件时间线值得扫一眼，确认自己没受影响即可，无需行动。",
+      "title_hash": "f18055b2",
+      "scored_at": "2026-08-09T13:28:20.792407Z"
+    },
+    "story_db4e33c200ca|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "数据中心选址是公司政治，不影响你写代码，无需行动。",
+      "title_hash": "2cd54b0e",
+      "scored_at": "2026-08-09T13:28:23.425449Z"
+    },
+    "story_ca48e27df6dc|pragmatic|0a5c5b24": {
+      "score": 35,
+      "review": "概念展示，未见可用实现，等具体代码和 benchmark 再动手。",
+      "title_hash": "63a60006",
+      "scored_at": "2026-08-09T13:28:26.350857Z"
+    },
+    "story_ea708b7a6475|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "攻击事件跟日常开发无关，除非正好用这几家API，否则不用动。",
+      "title_hash": "962ae9a9",
+      "scored_at": "2026-08-09T14:10:27.187807Z"
+    },
+    "story_ed474c29d378|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "提醒别盲目信任安全测试，但没给具体工具，暂时不用行动。",
+      "title_hash": "55229b56",
+      "scored_at": "2026-08-09T15:00:31.060688Z"
+    },
+    "story_abc8705d02da|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "安全团队的复盘材料，普通开发者等具体防护更新再看。",
+      "title_hash": "8bc73fae",
+      "scored_at": "2026-08-09T15:53:58.396919Z"
+    },
+    "story_67d5e9ec1941|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "市场格局数据，暂不影响今天写代码，选型时可参考。",
+      "title_hash": "c2f2a7a8",
+      "scored_at": "2026-08-09T15:54:00.587586Z"
+    },
+    "story_5da542bcba7e|cynic|f4237a62": {
+      "score": 68,
+      "review": "LoRA叠TF-IDF，常规操作非要凑齐五个关键词，这题我去年就看腻了。",
+      "title_hash": "12b61c3d",
+      "scored_at": "2026-08-09T15:54:03.034927Z"
+    },
+    "story_5da542bcba7e|paper-police|966065bf": {
+      "score": 25,
+      "review": "只有媒体标题，无论文无代码，方法细节无法验证，等于没证据。",
+      "title_hash": "12b61c3d",
+      "scored_at": "2026-08-09T15:54:06.181231Z"
     }
   }
 }
