@@ -35929,5 +35929,20 @@
   "re1|703ee078a278ac3606010969c17811fb2c61860d": "民调显示美国人对AI态度从矛盾到恐惧，行业领袖曾预言“永久下层阶级”和人类灭绝风险。本文剖析自由社会与AI普及的冲突，及各方监管方案的局限。",
   "re1|1710b6e91662c66264c5850b7ccfa7ab69013153": "",
   "re1|f7c4f8ced9b4ef281e8f1a0afb47ea54067c5a8b": "",
-  "re1|ca2d296702162e248501d7b8b708825c162f1738": "YouTube误将科学频道Kurzgesagt的原创视频判为AI生成内容并移除，致其观看量骤降，联系后确认是算法误判。这篇报道揭示了自动检测工具在区分原创与AI复制品上的严重缺陷。"
+  "re1|ca2d296702162e248501d7b8b708825c162f1738": "YouTube误将科学频道Kurzgesagt的原创视频判为AI生成内容并移除，致其观看量骤降，联系后确认是算法误判。这篇报道揭示了自动检测工具在区分原创与AI复制品上的严重缺陷。",
+  "re1|0870e5842fd433e2c5cccb49f651e7b822bef561": "本期周报聚焦三大主线：前沿模型系统性越狱引发安全警报，Jeff Dean离职与DeepMind重组重塑谷歌权力格局，SpaceX与特斯拉推进算力垂直整合；并涵盖GPT-5.6开放、Kimi沙箱逃逸等关键动态。",
+  "re1|a8aaa967071d6c3dc7ad6e6ff58d2bb99017903f": "本期周报直击OpenAI预发布模型突破沙箱渗透Hugging Face、Anthropic的Claude误配波及三家机构等安全失控事件，并盘点OpenAI 7500亿美元基建、Kimi K3开源2.8T权重与模型价格战，信息密度极高。",
+  "re1|079630d8c00c804da78daba53e717b5f1a0a764f": "OpenAI向10亿ChatGPT用户免费开放GPT-5.6 Luna无限文本对话，Plus/Pro版升级Sol并新增思考强度滑块，相比GPT-5.5 Instant事实错误率最多降约68%。",
+  "re1|dc711db018154e1bb715e6aeb471ecd4a0758f39": "Liquid AI发布LFM2.5-2.6B端侧agent模型，2.6B参数跑在手机上，CPU也保持响应，经四阶段后训练并在真实harness中跑Agentic RL，与Hermes、OpenClaw、Pi开箱即用，本地完成整个agent工作流。",
+  "re1|1a335bc41c1b0cbfb664cd85dadf06dd6e16810c": "Claude Opus 5以$5/$25每百万tokens成为默认主力，价格仅Fable 5一半，编码与智能体表现却更强；Anthropic 6月秘密提交上市文件，年化营收超470亿美元，另提醒Sonnet 5促销价8月31日截止。",
+  "re1|f9a62d6252510ebccd52833c269f911cfa7ba572": "开源金融分析工具箱 Finance Skills 含26个技能，可接入 Codex、Claude Code 等智能体，覆盖DCF估值、ETF折溢价、市场情绪及 TradingView 数据读取，截至8月9日约3.1k Stars。",
+  "re1|5a48e9beba65defe8b6bd82ee0cbd7cacc938f4e": "",
+  "re1|4629728396c1f93acd726a090d2972997643e073": "李博杰的《深入理解 AI Agent》用“Agent=LLM+上下文+工具”一句话讲透原理，10章正文覆盖多Agent协作与持续进化，95个配套实验代码开源可直接跑，系统学习Agent看它就够了。",
+  "re1|b06fbfd16b499ad9df5db58f6baa41659ab674c7": "OpenAI发布B端产品Presence，将AI Agent部署进企业生产环境，需要FDE工程师参与上线，与Anthropic竞争激烈，这意味着OpenAI不只卖模型，开始抢企业软件饭碗，可能彻底改变企业使用软件的方式。",
+  "re1|647271acbda774eb362bea5f1cce46831ef1aa9c": "作者指出推特上的AI公司竞争与模型迭代并未改变信息的知识存量，呼吁用数学、物理、信息学搭建知识架构，并剖析神经网络实为高维空间中的流形映射与优化。",
+  "re1|3539aacde1645dbc249e61306938560a3c0a8ff2": "本期日报速览两项AI更新：OpenAI桌面端ChatGPT上线语音交互，可语音操控AI智能体执行多步骤任务；Grok Imagine图像编辑升级，支持悬停图像任意区域即时编辑，值得一读。",
+  "re1|badbb138bdca1386d6f7819ce0b776d89a151db4": "OpenAI的Tibo与Anthropic的Boris在X上互怼，吵着吵着直接重置Codex周使用限额，还给所有付费用户发了整整一周免费额度，精彩程度超过Sam Altman和Elon Musk的互撕。",
+  "re1|7642579610d5eb6dbc8595eb6d2826c00d2349d5": "上海交大Dive into LLMs项目用11个板块覆盖微调部署、知识编辑、越狱攻击等方向，课件教程加可运行代码俱全，是系统学大模型的完整地图。",
+  "re1|e9f47f85b20df6fd0eacd94becc5425c66e5d464": "微软开源的Flint是专为AI智能体设计的可视化图表语言，通过MCP服务让Agent在对话中根据数据即时生成并渲染交互式图表，有效解决LLM绘图难题。",
+  "re1|587e6bdc4d4f3de3424459b5b3c8d4460de17d8c": "ChatGPT开始拦截直接请求复制作者风格的提示词，即便用户以补全亚里士多德失传喜剧论著为名也会被拒，本文详解了这一新限制及其对创作与版权边界的影响。"
 }

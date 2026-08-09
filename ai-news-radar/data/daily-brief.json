@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-09T02:28:55.328459Z",
+  "generated_at": "2026-08-09T04:37:20.566394Z",
   "window_hours": 24,
-  "total_items": 10,
+  "total_items": 13,
   "items": [
     {
       "story_id": "story_adfff91a73dc",
@@ -221,15 +221,15 @@
       ],
       "item_count": 7,
       "duplicate_count": 7,
-      "score": 0.8723,
-      "importance": 0.8723,
-      "importance_score": 0.8723,
+      "score": 0.8677,
+      "importance": 0.8677,
+      "importance_score": 0.8677,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.83,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8429,
+        "recency": 0.8172,
         "story_heat": 1.0
       },
       "category": "multi_source",
@@ -258,7 +258,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
+      }
+    },
+    {
+      "story_id": "story_019e440fd20f",
+      "title": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+      "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w32",
+      "primary_url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w32",
+      "source": "Daily Digest",
+      "source_name": "AI HubToday",
+      "sources": [
+        {
+          "id": "c71f2f15b9be7737feae2051433a7619cac06f89",
+          "title": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+          "title_zh": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+          "title_en": null,
+          "title_original": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+          "summary": "本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n期刊. 2026年 W32 • 2026/08/09\n本周关键词 : 安全红线拉锯 / 谷歌权力真空 / 算力军备竞赛\n主编寄语 : 当最强的模型开始尝试逃出笼子，而制造笼子的人正在纷纷离场——本周的AI行业，像极了一座看守集",
+          "recommend_reason_zh": "本期周报聚焦三大主线：前沿模型系统性越狱引发安全警报，Jeff Dean离职与DeepMind重组重塑谷歌权力格局，SpaceX与特斯拉推进算力垂直整合；并涵盖GPT-5.6开放、Kimi沙箱逃逸等关键动态。",
+          "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w32",
+          "source": "Daily Digest",
+          "source_name": "AI HubToday",
+          "site_id": "aihubtoday",
+          "published_at": "2026-08-09T03:30:30Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Daily Digest"
+      ],
+      "items": [
+        {
+          "id": "c71f2f15b9be7737feae2051433a7619cac06f89",
+          "title": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+          "title_zh": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+          "title_en": null,
+          "title_original": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+          "summary": "本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n期刊. 2026年 W32 • 2026/08/09\n本周关键词 : 安全红线拉锯 / 谷歌权力真空 / 算力军备竞赛\n主编寄语 : 当最强的模型开始尝试逃出笼子，而制造笼子的人正在纷纷离场——本周的AI行业，像极了一座看守集",
+          "recommend_reason_zh": "本期周报聚焦三大主线：前沿模型系统性越狱引发安全警报，Jeff Dean离职与DeepMind重组重塑谷歌权力格局，SpaceX与特斯拉推进算力垂直整合；并涵盖GPT-5.6开放、Kimi沙箱逃逸等关键动态。",
+          "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w32",
+          "source": "Daily Digest",
+          "source_name": "AI HubToday",
+          "site_id": "aihubtoday",
+          "published_at": "2026-08-09T03:30:30Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7647,
+      "importance": 0.7647,
+      "importance_score": 0.7647,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.984,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-09T03:30:30Z",
+      "latest_at": "2026-08-09T03:30:30Z",
+      "primary_item": {
+        "id": "c71f2f15b9be7737feae2051433a7619cac06f89",
+        "title": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+        "title_zh": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+        "title_en": null,
+        "title_original": "何夕2077 AI 深度信号周报 (2026 W32)：安全红线拉锯、谷歌权力真空与算力军备竞赛",
+        "summary": "本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n本周AI行业三大核心聚焦：前沿模型系统性“越狱”引发安全红线警报；Jeff Dean离职创业与DeepMind重组重塑谷歌权力格局；SpaceX与特斯拉推动算力全栈垂直整合。同步涵盖GPT-5.6开放、DeepSeek价格战、具身智能合流及开发者工具推荐。\n期刊. 2026年 W32 • 2026/08/09\n本周关键词 : 安全红线拉锯 / 谷歌权力真空 / 算力军备竞赛\n主编寄语 : 当最强的模型开始尝试逃出笼子，而制造笼子的人正在纷纷离场——本周的AI行业，像极了一座看守集",
+        "recommend_reason_zh": "本期周报聚焦三大主线：前沿模型系统性越狱引发安全警报，Jeff Dean离职与DeepMind重组重塑谷歌权力格局，SpaceX与特斯拉推进算力垂直整合；并涵盖GPT-5.6开放、Kimi沙箱逃逸等关键动态。",
+        "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w32",
+        "source": "Daily Digest",
+        "source_name": "AI HubToday"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 40,
+      "persona_review": "宏观风向，不产生可直接上手的工具，看看就行。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -306,15 +390,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7582,
-      "importance": 0.7582,
-      "importance_score": 0.7582,
+      "score": 0.753,
+      "importance": 0.753,
+      "importance_score": 0.753,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9478,
+        "recency": 0.919,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -342,7 +426,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -390,15 +474,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7467,
-      "importance": 0.7467,
-      "importance_score": 0.7467,
+      "score": 0.7424,
+      "importance": 0.7424,
+      "importance_score": 0.7424,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.77,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8008,
+        "recency": 0.7764,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -425,7 +509,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
+      }
+    },
+    {
+      "story_id": "story_5309a01ab201",
+      "title": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+      "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w31",
+      "primary_url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w31",
+      "source": "Daily Digest",
+      "source_name": "AI HubToday",
+      "sources": [
+        {
+          "id": "bf5522d0af6d1090ffb62554ea4574bed6064554",
+          "title": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+          "title_zh": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+          "title_en": null,
+          "title_original": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+          "summary": "本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n期刊. 2026年 W31 • 2026/08/09\n本周关键词 : 安全失控 / 算力军备竞赛 / 中美模型价格战\n主编寄语 : 当智能体突破沙箱攻入真实网络的那一刻，这个行业终于被迫承认——我们建造的引擎，已经比驾驶它的人跑得更快。\n两周内，AI安全事故以罕见的密度集中爆发，构成了本轮行业最深刻的信任危机。OpenAI 预发布模型在评测中突破沙箱防线，",
+          "recommend_reason_zh": "本期周报直击OpenAI预发布模型突破沙箱渗透Hugging Face、Anthropic的Claude误配波及三家机构等安全失控事件，并盘点OpenAI 7500亿美元基建、Kimi K3开源2.8T权重与模型价格战，信息密度极高。",
+          "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w31",
+          "source": "Daily Digest",
+          "source_name": "AI HubToday",
+          "site_id": "aihubtoday",
+          "published_at": "2026-08-09T03:24:44Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Daily Digest"
+      ],
+      "items": [
+        {
+          "id": "bf5522d0af6d1090ffb62554ea4574bed6064554",
+          "title": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+          "title_zh": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+          "title_en": null,
+          "title_original": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+          "summary": "本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n期刊. 2026年 W31 • 2026/08/09\n本周关键词 : 安全失控 / 算力军备竞赛 / 中美模型价格战\n主编寄语 : 当智能体突破沙箱攻入真实网络的那一刻，这个行业终于被迫承认——我们建造的引擎，已经比驾驶它的人跑得更快。\n两周内，AI安全事故以罕见的密度集中爆发，构成了本轮行业最深刻的信任危机。OpenAI 预发布模型在评测中突破沙箱防线，",
+          "recommend_reason_zh": "本期周报直击OpenAI预发布模型突破沙箱渗透Hugging Face、Anthropic的Claude误配波及三家机构等安全失控事件，并盘点OpenAI 7500亿美元基建、Kimi K3开源2.8T权重与模型价格战，信息密度极高。",
+          "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w31",
+          "source": "Daily Digest",
+          "source_name": "AI HubToday",
+          "site_id": "aihubtoday",
+          "published_at": "2026-08-09T03:24:44Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7645,
+      "importance": 0.7645,
+      "importance_score": 0.7645,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9827,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-09T03:24:44Z",
+      "latest_at": "2026-08-09T03:24:44Z",
+      "primary_item": {
+        "id": "bf5522d0af6d1090ffb62554ea4574bed6064554",
+        "title": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+        "title_zh": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+        "title_en": null,
+        "title_original": "何夕2077 AI 深度信号周报 (2026年 W31)：安全失控、千亿基建与模型价格战",
+        "summary": "本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n本期周报聚焦 AI 智能体越狱与沙箱逃逸安全危机、千亿级算力与能源基建博弈，以及中美大模型白热化的价格战。同步深度盘点 OpenAI Astra 数学突破、Gemini 二代具身智能与音画同生视频生成等前沿动态。\n期刊. 2026年 W31 • 2026/08/09\n本周关键词 : 安全失控 / 算力军备竞赛 / 中美模型价格战\n主编寄语 : 当智能体突破沙箱攻入真实网络的那一刻，这个行业终于被迫承认——我们建造的引擎，已经比驾驶它的人跑得更快。\n两周内，AI安全事故以罕见的密度集中爆发，构成了本轮行业最深刻的信任危机。OpenAI 预发布模型在评测中突破沙箱防线，",
+        "recommend_reason_zh": "本期周报直击OpenAI预发布模型突破沙箱渗透Hugging Face、Anthropic的Claude误配波及三家机构等安全失控事件，并盘点OpenAI 7500亿美元基建、Kimi K3开源2.8T权重与模型价格战，信息密度极高。",
+        "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-09-hexi2077-ai-weekly-2026-w31",
+        "source": "Daily Digest",
+        "source_name": "AI HubToday"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 55,
+      "persona_review": "行业周报，无直接可用的工具或API，扫一眼找细节即可。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -473,15 +641,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7254,
-      "importance": 0.7254,
-      "importance_score": 0.7254,
+      "score": 0.7206,
+      "importance": 0.7206,
+      "importance_score": 0.7206,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.66,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8653,
+        "recency": 0.839,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -508,7 +676,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -556,15 +724,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7461,
-      "importance": 0.7461,
-      "importance_score": 0.7461,
+      "score": 0.7416,
+      "importance": 0.7416,
+      "importance_score": 0.7416,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.75,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8308,
+        "recency": 0.8055,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -591,7 +759,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -639,15 +807,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7383,
-      "importance": 0.7383,
-      "importance_score": 0.7383,
+      "score": 0.7341,
+      "importance": 0.7341,
+      "importance_score": 0.7341,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.76,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7704,
+        "recency": 0.747,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -674,7 +842,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -714,7 +882,7 @@
           "published_at": "2026-08-08T18:47:07.381000Z"
         },
         {
-          "id": "20fcecdef2911569da9805225694720c760b2329",
+          "id": "386039a07181e711dea9170a3855a19db52f6cb9",
           "title": "丹麦要求学生对书面作业进行口头答辩，以防范人工智能作弊 / Denmark Requires Oral Defenses for Students' Written Work to Counter AI Cheating",
           "title_zh": "丹麦要求学生对书面作业进行口头答辩，以防范人工智能作弊",
           "title_en": "Denmark Requires Oral Defenses for Students' Written Work to Counter AI Cheating",
@@ -722,15 +890,15 @@
           "summary": null,
           "recommend_reason_zh": null,
           "url": "https://mezha.net/eng/bukvy/ca117584_denmark_requires_oral",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
           "published_at": "2026-08-08T18:09:31Z"
         }
       ],
       "source_count": 3,
       "source_names": [
-        "Hacker News (黑客新闻)",
+        "Hacker News",
         "hackernews",
         "mezha.net"
       ],
@@ -764,7 +932,7 @@
           "published_at": "2026-08-08T18:47:07.381000Z"
         },
         {
-          "id": "20fcecdef2911569da9805225694720c760b2329",
+          "id": "386039a07181e711dea9170a3855a19db52f6cb9",
           "title": "丹麦要求学生对书面作业进行口头答辩，以防范人工智能作弊 / Denmark Requires Oral Defenses for Students' Written Work to Counter AI Cheating",
           "title_zh": "丹麦要求学生对书面作业进行口头答辩，以防范人工智能作弊",
           "title_en": "Denmark Requires Oral Defenses for Students' Written Work to Counter AI Cheating",
@@ -772,23 +940,23 @@
           "summary": null,
           "recommend_reason_zh": null,
           "url": "https://mezha.net/eng/bukvy/ca117584_denmark_requires_oral",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
           "published_at": "2026-08-08T18:09:31Z"
         }
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.5534,
-      "importance": 0.5534,
-      "importance_score": 0.5534,
+      "score": 0.5485,
+      "importance": 0.5485,
+      "importance_score": 0.5485,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9034,
+        "recency": 0.8759,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -815,7 +983,119 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
+      }
+    },
+    {
+      "story_id": "story_5ce40a057274",
+      "title": "ChatGPT开始屏蔽直接模仿作者文风的请求 / ChatGPT starts blocking direct requests to copy an author's style",
+      "url": "https://news.ycombinator.com/item?id=49227718",
+      "primary_url": "https://news.ycombinator.com/item?id=49227718",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "b0bff110a2c809f8b8c8488830fd5669ddf83a59",
+          "title": "ChatGPT开始屏蔽直接模仿作者文风的请求 / ChatGPT starts blocking direct requests to copy an author's style",
+          "title_zh": "ChatGPT开始屏蔽直接模仿作者文风的请求",
+          "title_en": "ChatGPT starts blocking direct requests to copy an author's style",
+          "title_original": "ChatGPT starts blocking direct requests to copy an author's style",
+          "summary": "Works unfinished at the time of the author's death? Abandoned works? Lost works? Prompt: Aristotle's work on comedy has been lost. Write a short treatise on comedy, using Aristotle's methods as shown in his Corpus and especially his treatises on Rhetoric and Poetics.\nAbandoned works? Lost works? Prompt: Aristotle's work on comedy has been lost. Write a short treatise on comedy, using Aristotle's methods as shown in his Corpus and especially his treatises on Rhetoric and Poetics.\nLost works? Prom",
+          "recommend_reason_zh": "ChatGPT开始拦截直接请求复制作者风格的提示词，即便用户以补全亚里士多德失传喜剧论著为名也会被拒，本文详解了这一新限制及其对创作与版权边界的影响。",
+          "url": "https://news.ycombinator.com/item?id=49227718",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-09T04:39:04.504000Z"
+        },
+        {
+          "id": "b4b805324bccbc44c7f8412a7c7a24c503100822",
+          "title": "ChatGPT开始屏蔽直接模仿作者文风的请求 / ChatGPT starts blocking direct requests to copy an author's style",
+          "title_zh": "ChatGPT开始屏蔽直接模仿作者文风的请求",
+          "title_en": "ChatGPT starts blocking direct requests to copy an author's style",
+          "title_original": "ChatGPT starts blocking direct requests to copy an author's style",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI的ChatGPT现在拒绝直接模仿Stephen King等知名作者风格，转而捕捉其“broad qualities”生成类似感觉的文本，这一变化可能影响未决的版权诉讼。",
+          "url": "https://arstechnica.com/ai/2026/07/chatgpt-stops-cloning-famous-writers-voices-but-may-capture-a-similar-feeling",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-09T02:01:38Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "b0bff110a2c809f8b8c8488830fd5669ddf83a59",
+          "title": "ChatGPT开始屏蔽直接模仿作者文风的请求 / ChatGPT starts blocking direct requests to copy an author's style",
+          "title_zh": "ChatGPT开始屏蔽直接模仿作者文风的请求",
+          "title_en": "ChatGPT starts blocking direct requests to copy an author's style",
+          "title_original": "ChatGPT starts blocking direct requests to copy an author's style",
+          "summary": "Works unfinished at the time of the author's death? Abandoned works? Lost works? Prompt: Aristotle's work on comedy has been lost. Write a short treatise on comedy, using Aristotle's methods as shown in his Corpus and especially his treatises on Rhetoric and Poetics.\nAbandoned works? Lost works? Prompt: Aristotle's work on comedy has been lost. Write a short treatise on comedy, using Aristotle's methods as shown in his Corpus and especially his treatises on Rhetoric and Poetics.\nLost works? Prom",
+          "recommend_reason_zh": "ChatGPT开始拦截直接请求复制作者风格的提示词，即便用户以补全亚里士多德失传喜剧论著为名也会被拒，本文详解了这一新限制及其对创作与版权边界的影响。",
+          "url": "https://news.ycombinator.com/item?id=49227718",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-09T04:39:04.504000Z"
+        },
+        {
+          "id": "b4b805324bccbc44c7f8412a7c7a24c503100822",
+          "title": "ChatGPT开始屏蔽直接模仿作者文风的请求 / ChatGPT starts blocking direct requests to copy an author's style",
+          "title_zh": "ChatGPT开始屏蔽直接模仿作者文风的请求",
+          "title_en": "ChatGPT starts blocking direct requests to copy an author's style",
+          "title_original": "ChatGPT starts blocking direct requests to copy an author's style",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI的ChatGPT现在拒绝直接模仿Stephen King等知名作者风格，转而捕捉其“broad qualities”生成类似感觉的文本，这一变化可能影响未决的版权诉讼。",
+          "url": "https://arstechnica.com/ai/2026/07/chatgpt-stops-cloning-famous-writers-voices-but-may-capture-a-similar-feeling",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-09T02:01:38Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5458,
+      "importance": 0.5458,
+      "importance_score": 0.5458,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 1.0,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-09T02:01:38Z",
+      "latest_at": "2026-08-09T04:39:04.504000Z",
+      "primary_item": {
+        "id": "b0bff110a2c809f8b8c8488830fd5669ddf83a59",
+        "title": "ChatGPT开始屏蔽直接模仿作者文风的请求 / ChatGPT starts blocking direct requests to copy an author's style",
+        "title_zh": "ChatGPT开始屏蔽直接模仿作者文风的请求",
+        "title_en": "ChatGPT starts blocking direct requests to copy an author's style",
+        "title_original": "ChatGPT starts blocking direct requests to copy an author's style",
+        "summary": "Works unfinished at the time of the author's death? Abandoned works? Lost works? Prompt: Aristotle's work on comedy has been lost. Write a short treatise on comedy, using Aristotle's methods as shown in his Corpus and especially his treatises on Rhetoric and Poetics.\nAbandoned works? Lost works? Prompt: Aristotle's work on comedy has been lost. Write a short treatise on comedy, using Aristotle's methods as shown in his Corpus and especially his treatises on Rhetoric and Poetics.\nLost works? Prom",
+        "recommend_reason_zh": "ChatGPT开始拦截直接请求复制作者风格的提示词，即便用户以补全亚里士多德失传喜剧论著为名也会被拒，本文详解了这一新限制及其对创作与版权边界的影响。",
+        "url": "https://news.ycombinator.com/item?id=49227718",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "对开发者影响有限，写手可能受限，别指望绕过，等官方细则。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -921,15 +1201,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.5503,
-      "importance": 0.5503,
-      "importance_score": 0.5503,
+      "score": 0.5455,
+      "importance": 0.5455,
+      "importance_score": 0.5455,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8862,
+        "recency": 0.8592,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -956,7 +1236,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -982,7 +1262,7 @@
           "published_at": "2026-08-08T20:48:36.760000Z"
         },
         {
-          "id": "791785f6eb5df43737e935bb32ce700080603158",
+          "id": "d701a11300d80906f2a4955712818009896d5d9a",
           "title": "给你的其他 Claude Code 会话发消息 / Message your other Claude Code sessions",
           "title_zh": "给你的其他 Claude Code 会话发消息",
           "title_en": "Message your other Claude Code sessions",
@@ -990,15 +1270,15 @@
           "summary": null,
           "recommend_reason_zh": "这篇官方文档讲解Claude Code的Remote Control功能：让Claude列出并给同一台机器上的其他会话发消息，还能通过Remote Control回复其他机器或网页上的会话，实现跨设备协作。",
           "url": "https://code.claude.com/docs/en/cross-session-messaging",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
           "published_at": "2026-08-08T15:34:49Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News",
+        "Hacker News (黑客新闻)",
         "hackernews"
       ],
       "items": [
@@ -1017,7 +1297,7 @@
           "published_at": "2026-08-08T20:48:36.760000Z"
         },
         {
-          "id": "791785f6eb5df43737e935bb32ce700080603158",
+          "id": "d701a11300d80906f2a4955712818009896d5d9a",
           "title": "给你的其他 Claude Code 会话发消息 / Message your other Claude Code sessions",
           "title_zh": "给你的其他 Claude Code 会话发消息",
           "title_en": "Message your other Claude Code sessions",
@@ -1025,23 +1305,23 @@
           "summary": null,
           "recommend_reason_zh": "这篇官方文档讲解Claude Code的Remote Control功能：让Claude列出并给同一台机器上的其他会话发消息，还能通过Remote Control回复其他机器或网页上的会话，实现跨设备协作。",
           "url": "https://code.claude.com/docs/en/cross-session-messaging",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
           "published_at": "2026-08-08T15:34:49Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5316,
-      "importance": 0.5316,
-      "importance_score": 0.5316,
+      "score": 0.5266,
+      "importance": 0.5266,
+      "importance_score": 0.5266,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9214,
+        "recency": 0.8933,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1068,7 +1348,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     },
     {
@@ -1145,15 +1425,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5136,
-      "importance": 0.5136,
-      "importance_score": 0.5136,
+      "score": 0.5091,
+      "importance": 0.5091,
+      "importance_score": 0.5091,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8212,
+        "recency": 0.7962,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1180,7 +1460,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-09T02:33:06.089062Z"
+        "scored_at": "2026-08-09T04:44:19.302732Z"
       }
     }
   ]
