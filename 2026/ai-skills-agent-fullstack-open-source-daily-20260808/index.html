@@ -22,71 +22,71 @@
 
 <h2 id="trend-signals">一、三条趋势信号：Agent 基础设施、Skills 标准、全栈工具链</h2>
 
-<p>第一条信号是 Agent 基础设施爆发。NousResearch 的 <strong>hermes-agent</strong> 用开源通用 Agent 的方式，把自然语言任务转化为多步执行计划；Cloudflare 的 <strong>computer</strong> 给 Agent 提供云端电脑和虚拟文件系统；PrimeIntellect 的 <strong>prime-agent</strong> 则把持久化编程环境、自我改进和子 Agent 机制放到同一个系统里。它们都在回答同一个问题：如果 Agent 要真正做事，它不能只有模型，还必须有工作台、记忆、工具、权限和运行循环。</p>
+<p>第一条信号是 Agent 基础设施爆发。NousResearch 的 <strong><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">hermes-agent</a></strong> 用开源通用 Agent 的方式，把自然语言任务转化为多步执行计划；Cloudflare 的 <strong><a href="https://github.com/cloudflare/computer" target="_blank" rel="noopener">computer</a></strong> 给 Agent 提供云端电脑和虚拟文件系统；PrimeIntellect 的 <strong><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">prime-agent</a></strong> 则把持久化编程环境、自我改进和子 Agent 机制放到同一个系统里。它们都在回答同一个问题：如果 Agent 要真正做事，它不能只有模型，还必须有工作台、记忆、工具、权限和运行循环。</p>
 
-<p>第二条信号是 Skills 标准化加速。<strong>obra/superpowers</strong>、<strong>anthropics/skills</strong>、<strong>mattpocock/skills</strong>、<strong>addyosmani/agent-skills</strong> 和 <strong>vercel-labs/agent-skills</strong> 代表了不同层次的技能资产：有开放标准，有官方标准库，有 TypeScript 专家经验，有工程纪律，也有部署平台的最佳实践。Skills 的意义在于，把“怎么做得好”写成机器可发现、可安装、可调用的知识包。</p>
+<p>第二条信号是 Skills 标准化加速。<strong><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a></strong>、<strong><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a></strong>、<strong><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock/skills</a></strong>、<strong><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani/agent-skills</a></strong> 和 <strong><a href="https://github.com/vercel-labs/agent-skills" target="_blank" rel="noopener">vercel-labs/agent-skills</a></strong> 代表了不同层次的技能资产：有开放标准，有官方标准库，有 TypeScript 专家经验，有工程纪律，也有部署平台的最佳实践。Skills 的意义在于，把“怎么做得好”写成机器可发现、可安装、可调用的知识包。</p>
 
 <p>第三条信号是 AI 工具链正在全栈化。从 Firecrawl 的网页结构化抽取，到 browser-use 的浏览器自动化；从 LangChain、RAGFlow、Graphify 到 DeerFlow；从 Claude Code 的记忆、插件、最佳实践，到 Codex 插件 SDK、OpenCode、多模型网关、UI/UX 设计技能，AI 工具覆盖了需求分析、搜索、抓取、编码、测试、部署、设计和内容生产的完整生命周期。</p>
 
 <h2 id="skills-ecosystem">二、Skills 生态：把专家经验封装成可复用能力</h2>
 
-<p><strong>obra/superpowers</strong> 是 Agent Skills 开放标准的代表项目。它把技能定义为 Markdown 格式的结构化文件，让 AI 能自动发现、读取、按需调用，并通过 hooks、命令、领域规则和上下文管理策略，把一次性的经验沉淀成可重复执行的流程。它的价值不在于某一个具体技能，而在于提供了“技能如何被定义、安装、调度、组合”的底层约定。</p>
+<p><strong><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a></strong> 是 Agent Skills 开放标准的代表项目。它把技能定义为 Markdown 格式的结构化文件，让 AI 能自动发现、读取、按需调用，并通过 hooks、命令、领域规则和上下文管理策略，把一次性的经验沉淀成可重复执行的流程。它的价值不在于某一个具体技能，而在于提供了“技能如何被定义、安装、调度、组合”的底层约定。</p>
 
-<p><strong>mattpocock/skills</strong> 则是 TypeScript 领域的高质量技能样板。它把 TypeScript 高级类型、infer/extends 条件类型、React Server Components、Next.js App Router、Zod 模式验证、Vitest/Playwright 测试等工程经验，整理成可供 AI 直接使用的知识包。对追求代码质量的团队来说，这类技能相当于把专家的代码品味注入到日常生成过程里。</p>
+<p><strong><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock/skills</a></strong> 则是 TypeScript 领域的高质量技能样板。它把 TypeScript 高级类型、infer/extends 条件类型、React Server Components、Next.js App Router、Zod 模式验证、Vitest/Playwright 测试等工程经验，整理成可供 AI 直接使用的知识包。对追求代码质量的团队来说，这类技能相当于把专家的代码品味注入到日常生成过程里。</p>
 
-<p><strong>anthropics/skills</strong> 是 Claude Skills 的官方标准库，强调质量、安全、上下文窗口管理和工具链边界。每个技能不仅描述“做什么”，还包含在什么条件下触发、如何减少上下文浪费、如何避免误用工具、如何与 Claude Code 和 API 深度集成。这类官方标准库会直接影响企业工作流中对 Skills 的定义方式。</p>
+<p><strong><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a></strong> 是 Claude Skills 的官方标准库，强调质量、安全、上下文窗口管理和工具链边界。每个技能不仅描述“做什么”，还包含在什么条件下触发、如何减少上下文浪费、如何避免误用工具、如何与 Claude Code 和 API 深度集成。这类官方标准库会直接影响企业工作流中对 Skills 的定义方式。</p>
 
-<p><strong>addiyasmani/agent-skills</strong> 把 Google 工程实践转化为 Agent 技能包，覆盖代码审查清单、性能优化、安全扫描、PR 描述、审查意见、变更摘要、项目脚手架和工程规范。它强调的不是让 AI 多写代码，而是让 AI 先判断“是否值得写、怎么写才可维护、写完如何验证”。</p>
+<p><strong><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani/agent-skills</a></strong> 把 Google 工程实践转化为 Agent 技能包，覆盖代码审查清单、性能优化、安全扫描、PR 描述、审查意见、变更摘要、项目脚手架和工程规范。它强调的不是让 AI 多写代码，而是让 AI 先判断“是否值得写、怎么写才可维护、写完如何验证”。</p>
 
-<p><strong>vercel-labs/agent-skills</strong> 面向 Next.js 和 Vercel 部署场景，让 Agent 能处理 App Router、Pages Router、Edge/Serverless/ISR、AI SDK、Streaming、Function Calling、Postgres/Blob 等平台细节。对全栈工程师而言，这类部署技能会把“从代码到上线”的手工配置流程逐步压缩成可自动执行的标准动作。</p>
+<p><strong><a href="https://github.com/vercel-labs/agent-skills" target="_blank" rel="noopener">vercel-labs/agent-skills</a></strong> 面向 Next.js 和 Vercel 部署场景，让 Agent 能处理 App Router、Pages Router、Edge/Serverless/ISR、AI SDK、Streaming、Function Calling、Postgres/Blob 等平台细节。对全栈工程师而言，这类部署技能会把“从代码到上线”的手工配置流程逐步压缩成可自动执行的标准动作。</p>
 
 <h2 id="agent-frameworks">三、Agent 框架：从单次对话走向自治执行</h2>
 
-<p><strong>NousResearch/hermes-agent</strong> 的定位是开源通用 AI Agent。它可以把自然语言任务拆成多步计划，并串联搜索、代码执行、文件操作和模型调用。本地 LLM 与云端 AI 双模式，使它既能满足隐私场景，也能处理更强推理需求。它像一个能理解任务目标的数字实习生，重点不在聊天，而在自主规划、执行和交付。</p>
+<p><strong><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch/hermes-agent</a></strong> 的定位是开源通用 AI Agent。它可以把自然语言任务拆成多步计划，并串联搜索、代码执行、文件操作和模型调用。本地 LLM 与云端 AI 双模式，使它既能满足隐私场景，也能处理更强推理需求。它像一个能理解任务目标的数字实习生，重点不在聊天，而在自主规划、执行和交付。</p>
 
-<p><strong>microsoft/ai-agents-for-beginners</strong> 是微软官方的 Agent 入门课程，包含 18 节系统内容和可运行 Notebook，覆盖 Agent 概念、多 Agent 协作、Semantic Kernel、AutoGen、LangChain 等主流框架。它的价值在教育层：降低新开发者进入 Agent 工程的门槛，让团队能用统一语言讨论 Agent 架构。</p>
+<p><strong><a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" rel="noopener">microsoft/ai-agents-for-beginners</a></strong> 是微软官方的 Agent 入门课程，包含 18 节系统内容和可运行 Notebook，覆盖 Agent 概念、多 Agent 协作、Semantic Kernel、AutoGen、LangChain 等主流框架。它的价值在教育层：降低新开发者进入 Agent 工程的门槛，让团队能用统一语言讨论 Agent 架构。</p>
 
-<p><strong>Panniantong/Agent-Reach</strong> 聚焦 Agent 发现与通信协议。Agent 不能长期作为孤立脚本存在，它需要注册、发现、协商、通信、安全授权和任务编排。Agent-Reach 把这一层抽象成协议，让多个 Agent 可以像网络节点一样互联互通，支持并行、串行和条件分支任务。</p>
+<p><strong><a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Panniantong/Agent-Reach</a></strong> 聚焦 Agent 发现与通信协议。Agent 不能长期作为孤立脚本存在，它需要注册、发现、协商、通信、安全授权和任务编排。Agent-Reach 把这一层抽象成协议，让多个 Agent 可以像网络节点一样互联互通，支持并行、串行和条件分支任务。</p>
 
-<p><strong>different-ai/openwork</strong> 是开源 AI 协作框架，强调任务可视化、沙箱安全执行和自主规划。它把 Agent 工作从“黑盒执行”拉回到可观察流程中：任务如何拆解、当前执行到哪一步、哪里需要人工介入、最后如何验证，都可以在框架里被跟踪。</p>
+<p><strong><a href="https://github.com/different-ai/openwork" target="_blank" rel="noopener">different-ai/openwork</a></strong> 是开源 AI 协作框架，强调任务可视化、沙箱安全执行和自主规划。它把 Agent 工作从“黑盒执行”拉回到可观察流程中：任务如何拆解、当前执行到哪一步、哪里需要人工介入、最后如何验证，都可以在框架里被跟踪。</p>
 
-<p><strong>andrewyng/openworker</strong> 采用人类团队管理思路设计多 Agent 协作，内置 PM、Developer、QA、Designer 等角色，并支持 Claude Code、Codex、Gemini CLI 等后端。它的关键不是多开几个模型，而是让不同角色以明确职责完成复杂开发任务。</p>
+<p><strong><a href="https://github.com/andrewyng/openworker" target="_blank" rel="noopener">andrewyng/openworker</a></strong> 采用人类团队管理思路设计多 Agent 协作，内置 PM、Developer、QA、Designer 等角色，并支持 Claude Code、Codex、Gemini CLI 等后端。它的关键不是多开几个模型，而是让不同角色以明确职责完成复杂开发任务。</p>
 
-<p><strong>PrimeIntellect-ai/prime-agent</strong> 代表另一条路线：给编程 Agent 装上长期记忆、自我改进和持久化执行环境。它把上下文视为可管理变量，把子 Agent 视为可调用函数，并通过 daemon 后台运行机制，让工作上下文跨对话存活。这类系统正在突破单次聊天窗口的限制。</p>
+<p><strong><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">PrimeIntellect-ai/prime-agent</a></strong> 代表另一条路线：给编程 Agent 装上长期记忆、自我改进和持久化执行环境。它把上下文视为可管理变量，把子 Agent 视为可调用函数，并通过 daemon 后台运行机制，让工作上下文跨对话存活。这类系统正在突破单次聊天窗口的限制。</p>
 
 <h2 id="agent-tools">四、Agent 工具：给智能体接上数据、浏览器和云端电脑</h2>
 
-<p><strong>Shubhamsaboo/awesome-llm-apps</strong> 是 LLM 应用案例合集，覆盖 RAG、Agent、聊天机器人、多模态等大量即用型模板。它对开发者的意义是减少架构试错：每个案例提供代码、架构图和部署方案，可以用来快速验证产品原型。</p>
+<p><strong><a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank" rel="noopener">Shubhamsaboo/awesome-llm-apps</a></strong> 是 LLM 应用案例合集，覆盖 RAG、Agent、聊天机器人、多模态等大量即用型模板。它对开发者的意义是减少架构试错：每个案例提供代码、架构图和部署方案，可以用来快速验证产品原型。</p>
 
-<p><strong>mendableai/firecrawl</strong> 是网页数据结构化工具，可以把任意网站转换成干净的 Markdown 或结构化 JSON，自动去除广告、导航和页脚，并支持 JS 渲染、点击、滚动、等待等动态交互。对 Agent 来说，Firecrawl 像数据水管，把混乱网页变成可直接进入知识库和 RAG 管道的原料。</p>
+<p><strong><a href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a></strong> 是网页数据结构化工具，可以把任意网站转换成干净的 Markdown 或结构化 JSON，自动去除广告、导航和页脚，并支持 JS 渲染、点击、滚动、等待等动态交互。对 Agent 来说，Firecrawl 像数据水管，把混乱网页变成可直接进入知识库和 RAG 管道的原料。</p>
 
-<p><strong>browser-use/browser-use</strong> 让 AI Agent 像人一样操作浏览器，支持点击、输入、滚动、表单填写和复杂多页流程。它结合视觉理解与 DOM 解析，使 Agent 能定位页面元素、处理登录搜索筛选等任务。没有浏览器能力的 Agent 只能“想”，有了浏览器能力才开始真正“上网做事”。</p>
+<p><strong><a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener">browser-use/browser-use</a></strong> 让 AI Agent 像人一样操作浏览器，支持点击、输入、滚动、表单填写和复杂多页流程。它结合视觉理解与 DOM 解析，使 Agent 能定位页面元素、处理登录搜索筛选等任务。没有浏览器能力的 Agent 只能“想”，有了浏览器能力才开始真正“上网做事”。</p>
 
-<p><strong>cloudflare/computer</strong> 解决的是 Agent 没有自己电脑的问题。它基于 Durable Object 构建虚拟文件系统和持久化工作空间，并提供 Container、Isolate Shell、Isolate JS 等执行后端。Agent 可以直接读写文件、执行 Shell 命令、运行脚本，并在 Cloudflare Workers 上进行全球分发。</p>
+<p><strong><a href="https://github.com/cloudflare/computer" target="_blank" rel="noopener">cloudflare/computer</a></strong> 解决的是 Agent 没有自己电脑的问题。它基于 Durable Object 构建虚拟文件系统和持久化工作空间，并提供 Container、Isolate Shell、Isolate JS 等执行后端。Agent 可以直接读写文件、执行 Shell 命令、运行脚本，并在 Cloudflare Workers 上进行全球分发。</p>
 
-<p><strong>deepcpldy/botmux</strong> 把 AI CLI 接入飞书等协作环境，一条消息就能启动一个独立 AI 编程会话，支持 Claude Code、Codex、Gemini、OpenCode 等多种 CLI Agent，并实时回传输出。它把 Agent 从个人终端带入团队群聊，使远程团队可以通过移动端发起、跟踪和协作。</p>
+<p><strong><a href="https://github.com/deepcoldy/botmux" target="_blank" rel="noopener">deepcoldy/botmux</a></strong> 把 AI CLI 接入飞书等协作环境，一条消息就能启动一个独立 AI 编程会话，支持 Claude Code、Codex、Gemini、OpenCode 等多种 CLI Agent，并实时回传输出。它把 Agent 从个人终端带入团队群聊，使远程团队可以通过移动端发起、跟踪和协作。</p>
 
 <h2 id="ai-tools">五、AI 工具平台：从 RAG 到知识图谱，再到长周期研究</h2>
 
-<p><strong>langchain-ai/langchain</strong> 仍然是 LLM 应用工程化的重要标准框架，提供统一模型接口、提示词模板、Agent 编排、工具调用、RAG 管道、文档加载、切分、向量化和检索组件。它的强项在生态成熟度：从原型到生产，开发者总能找到对应模块。</p>
+<p><strong><a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener">langchain-ai/langchain</a></strong> 仍然是 LLM 应用工程化的重要标准框架，提供统一模型接口、提示词模板、Agent 编排、工具调用、RAG 管道、文档加载、切分、向量化和检索组件。它的强项在生态成熟度：从原型到生产，开发者总能找到对应模块。</p>
 
-<p><strong>Graphify-Labs/graphify</strong> 把原始数据转化为交互式知识图谱。它能从非结构化文本中识别实体和关系，接入文档、数据库、API、网页等数据源，并通过图谱可视化支持研究分析、情报挖掘和复杂知识探索。搜索是关键词入口，图谱则是关系入口。</p>
+<p><strong><a href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">Graphify-Labs/graphify</a></strong> 把原始数据转化为交互式知识图谱。它能从非结构化文本中识别实体和关系，接入文档、数据库、API、网页等数据源，并通过图谱可视化支持研究分析、情报挖掘和复杂知识探索。搜索是关键词入口，图谱则是关系入口。</p>
 
-<p><strong>infiniflow/ragflow</strong> 聚焦企业级 RAG，强调深度文档解析、智能分块和多路检索融合。PDF、Word、Excel、PPT、图片等复杂文档，不能靠粗暴切片处理；RAGFlow 更重视文档结构、章节边界、表格含义和权限隔离，适合企业知识库、客服问答、合规审查和内部资料检索。</p>
+<p><strong><a href="https://github.com/infiniflow/ragflow" target="_blank" rel="noopener">infiniflow/ragflow</a></strong> 聚焦企业级 RAG，强调深度文档解析、智能分块和多路检索融合。PDF、Word、Excel、PPT、图片等复杂文档，不能靠粗暴切片处理；RAGFlow 更重视文档结构、章节边界、表格含义和权限隔离，适合企业知识库、客服问答、合规审查和内部资料检索。</p>
 
-<p><strong>bytedance/deer-flow</strong> 是长周期 SuperAgent 框架，覆盖研究、编码和创作。它把研究员、编码、审查等角色组织成流水线，并接入搜索、代码执行、文件操作和网页浏览工具，适合技术调研、可行性分析、自动化研究和报告生成。</p>
+<p><strong><a href="https://github.com/bytedance/deer-flow" target="_blank" rel="noopener">bytedance/deer-flow</a></strong> 是长周期 SuperAgent 框架，覆盖研究、编码和创作。它把研究员、编码、审查等角色组织成流水线，并接入搜索、代码执行、文件操作和网页浏览工具，适合技术调研、可行性分析、自动化研究和报告生成。</p>
 
-<p><strong>Egonex-AI/Understand-Anything</strong> 用于把代码库转化为可交互知识图谱。导入仓库后，它能生成代码结构、调用关系和依赖链，并用 AI 解释函数、类、模块含义。面对陌生大项目时，这类工具能显著降低新人上手和架构理解成本。</p>
+<p><strong><a href="https://github.com/Egonex-AI/Understand-Anything" target="_blank" rel="noopener">Egonex-AI/Understand-Anything</a></strong> 用于把代码库转化为可交互知识图谱。导入仓库后，它能生成代码结构、调用关系和依赖链，并用 AI 解释函数、类、模块含义。面对陌生大项目时，这类工具能显著降低新人上手和架构理解成本。</p>
 
-<p><strong>mem0ai/mem0</strong> 是通用 AI Agent 记忆层，一行代码即可为 LLM 应用加入用户、会话和 Agent 级记忆。它支持自动提取、存储、更新和遗忘，并可接入 SQLite、PostgreSQL、Redis、Qdrant 等后端。记忆层让 AI 应用不再每次从零开始，而是逐步形成用户画像和长期上下文。</p>
+<p><strong><a href="https://github.com/mem0ai/mem0" target="_blank" rel="noopener">mem0ai/mem0</a></strong> 是通用 AI Agent 记忆层，一行代码即可为 LLM 应用加入用户、会话和 Agent 级记忆。它支持自动提取、存储、更新和遗忘，并可接入 SQLite、PostgreSQL、Redis、Qdrant 等后端。记忆层让 AI 应用不再每次从零开始，而是逐步形成用户画像和长期上下文。</p>
 
-<p><strong>liyogavin/airllm</strong> 试图让大模型在低内存设备上运行，通过 4-bit/8-bit 量化、智能分层卸载和磁盘缓存，使普通笔记本也能运行大参数模型。它解决的是成本和硬件门槛问题，让本地 AI 推理更接近个人开发者。</p>
+<p><strong><a href="https://github.com/lyogavin/airllm" target="_blank" rel="noopener">lyogavin/airllm</a></strong> 试图让大模型在低内存设备上运行，通过 4-bit/8-bit 量化、智能分层卸载和磁盘缓存，使普通笔记本也能运行大参数模型。它解决的是成本和硬件门槛问题，让本地 AI 推理更接近个人开发者。</p>
 
-<p><strong>OpenCut-app/OpenCut</strong> 是开源 AI 视频剪辑器，支持用自然语言完成剪辑、调色、字幕生成、翻译和风格套用。它把专业剪辑软件的复杂界面，转化为“把第三分钟到第五分钟加速两倍”这种可理解指令，适合内容创作和短视频团队。</p>
+<p><strong><a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener">OpenCut-app/OpenCut</a></strong> 是开源 AI 视频剪辑器，支持用自然语言完成剪辑、调色、字幕生成、翻译和风格套用。它把专业剪辑软件的复杂界面，转化为“把第三分钟到第五分钟加速两倍”这种可理解指令，适合内容创作和短视频团队。</p>
 
 <h2 id="skill-hotlist">六、技能热榜：安全、搜索、天气、浏览器与 PDF 成为基础能力</h2>
 
-<p><strong>self-improving agent</strong> 和 <strong>Self-Improving + Proactive</strong> 都指向 Agent 的自我改进系统。前者强调从每次任务中捕获错误、修正和经验教训，形成可复用记忆；后者更进一步，让 Agent 不等指令就主动发现可优化点，调整工具配置、代码结构和工作流程。长期看，自我改进会成为 Agent 系统的基础能力。</p>
+<p><strong><a href="https://github.com/lanyasheng/self-improving-agent" target="_blank" rel="noopener">self-improving agent</a></strong> 和 <strong><a href="https://github.com/claw-opus/proactive-self-improving-agent" target="_blank" rel="noopener">Self-Improving + Proactive</a></strong> 都指向 Agent 的自我改进系统。前者强调从每次任务中捕获错误、修正和经验教训，形成可复用记忆；后者更进一步，让 Agent 不等指令就主动发现可优化点，调整工具配置、代码结构和工作流程。长期看，自我改进会成为 Agent 系统的基础能力。</p>
 
 <p><strong>Skill Vetter</strong> 解决 Skills 安全审查问题。技能安装前需要扫描恶意行为、权限滥用、数据泄漏和依赖风险，并给出风险评分。随着 Skills 生态扩张，“可安装能力”也会带来供应链安全问题，Skill Vetter 这类工具相当于技能生态的安全门卫。</p>
 
@@ -96,35 +96,35 @@
 
 <p><strong>Weather</strong> 代表最普适的生活信息技能，支持全球城市实时天气、未来预测、空气质量、小时级预报和极端天气预警。它说明 Skills 不只服务开发，也会覆盖日常查询、出行规划和个人助理场景。</p>
 
-<p><strong>Agent Browser</strong> 是专为 AI Agent 优化的无头浏览器自动化 CLI，优先使用无障碍属性和结构化页面理解，而不是单纯依赖像素坐标。它还强调反检测、多标签管理、批量导出和浏览器数据复用。</p>
+<p><strong><a href="https://github.com/sleepinginsummer/agent-browser-cli" target="_blank" rel="noopener">Agent Browser</a></strong> 是专为 AI Agent 优化的无头浏览器自动化 CLI，优先使用无障碍属性和结构化页面理解，而不是单纯依赖像素坐标。它还强调反检测、多标签管理、批量导出和浏览器数据复用。</p>
 
-<p><strong>Nano PDF</strong> 提供 PDF 阅读、解析、生成、合并、拆分、旋转、加密、OCR 和 Markdown/HTML 转 PDF 等功能。PDF 是办公自动化里最常见也最麻烦的格式之一，把它封装成稳定技能，可以显著提升 Agent 的文档处理能力。</p>
+<p><strong><a href="https://github.com/iizcm/nano-pdf-skill" target="_blank" rel="noopener">Nano PDF</a></strong> 提供 PDF 阅读、解析、生成、合并、拆分、旋转、加密、OCR 和 Markdown/HTML 转 PDF 等功能。PDF 是办公自动化里最常见也最麻烦的格式之一，把它封装成稳定技能，可以显著提升 Agent 的文档处理能力。</p>
 
 <p><strong>first-principles</strong> 是第一性原理思维教练，帮助 Agent 区分事实、物理规律和惯例假设，引导它从成本拆解、架构决策、产品设计等问题中剥离隐藏假设。它提醒开发者：Agent 不只需要工具，也需要更好的思考框架。</p>
 
-<p><strong>Ponytail Gain</strong> 则把 AI 编程效率量化，统计 Agent 帮助少写了多少代码、节省多少 token、降低多少 Bug 率。只有把效率收益数据化，团队才能真正评估 AI 编程方法是否有效。</p>
+<p><strong><a href="https://github.com/runaki-ai/ponytail-gain" target="_blank" rel="noopener">Ponytail Gain</a></strong> 则把 AI 编程效率量化，统计 Agent 帮助少写了多少代码、节省多少 token、降低多少 Bug 率。只有把效率收益数据化，团队才能真正评估 AI 编程方法是否有效。</p>
 
 <h2 id="claude-code-ecosystem">七、Claude Code 生态：记忆、技能目录、实践指南与插件管理</h2>
 
-<p><strong>thedotmack/claude-mem</strong> 是 Claude Code 的跨会话记忆层，自动捕获对话中的关键信息、决策和偏好，并基于语义相似度而不是关键词匹配进行召回。它支持多 Agent 共享记忆，适合长期研究、项目管理和个人知识库场景。</p>
+<p><strong><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack/claude-mem</a></strong> 是 Claude Code 的跨会话记忆层，自动捕获对话中的关键信息、决策和偏好，并基于语义相似度而不是关键词匹配进行召回。它支持多 Agent 共享记忆，适合长期研究、项目管理和个人知识库场景。</p>
 
-<p><strong>ComposioHQ/awesome-claude-skills</strong> 是 Claude Skills 资源目录，按开发、设计、写作、安全、自动化等类别整理技能，并提供简介、评分、安装量和维护状态。技能生态一旦变大，发现、比较和选择本身就会成为刚需。</p>
+<p><strong><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ/awesome-claude-skills</a></strong> 是 Claude Skills 资源目录，按开发、设计、写作、安全、自动化等类别整理技能，并提供简介、评分、安装量和维护状态。技能生态一旦变大，发现、比较和选择本身就会成为刚需。</p>
 
-<p><strong>shararaisshan/claude-code-best-practice</strong> 是 Claude Code 实践大全，覆盖 CLAUDE.md 配置、MCP 服务器安装与调试、Skills 开发规范、团队模板、交互式排障和最佳实践。它适合团队导入 AI 工具时作为操作手册。</p>
+<p><strong><a href="https://github.com/shanraisshan/claude-code-best-practice" target="_blank" rel="noopener">shanraisshan/claude-code-best-practice</a></strong> 是 Claude Code 实践大全，覆盖 CLAUDE.md 配置、MCP 服务器安装与调试、Skills 开发规范、团队模板、交互式排障和最佳实践。它适合团队导入 AI 工具时作为操作手册。</p>
 
-<p><strong>Yeachan-Heo/oh-my-claudecode</strong> 是 Claude Code 插件管理器，类似 Claude Code 生态里的“增强市场”。它支持 CLAUDE.md 配置模板、MCP 服务器一键安装、主题定制、Skills 搜索安装更新和全生命周期管理，降低了社区扩展的使用门槛。</p>
+<p><strong><a href="https://github.com/Yeachan-Heo/oh-my-claudecode" target="_blank" rel="noopener">Yeachan-Heo/oh-my-claudecode</a></strong> 是 Claude Code 插件管理器，类似 Claude Code 生态里的“增强市场”。它支持 CLAUDE.md 配置模板、MCP 服务器一键安装、主题定制、Skills 搜索安装更新和全生命周期管理，降低了社区扩展的使用门槛。</p>
 
 <h2 id="codex-uiux">八、Codex 与 UI/UX 设计系统：开放插件、多模型网关和设计到代码</h2>
 
-<p><strong>anomalco/opencode</strong> 是开源 AI 编程终端框架，支持 Claude、Codex、Cursor、Gemini 等多引擎切换，并统一文件操作、终端命令、浏览器控制等接口。它的价值在于本地化、开源和多模型自由切换，让开发者不被单一平台锁定。</p>
+<p><strong><a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">anomalyco/opencode</a></strong> 是开源 AI 编程终端框架，支持 Claude、Codex、Cursor、Gemini 等多引擎切换，并统一文件操作、终端命令、浏览器控制等接口。它的价值在于本地化、开源和多模型自由切换，让开发者不被单一平台锁定。</p>
 
-<p><strong>openai/codex-plugin-cc</strong> 是 Codex 插件 SDK，标志着 Codex 从封闭工具走向可扩展生态。它支持自定义 MCP Server、Skills 开发模板、调试工具和发布流程，让企业和个人可以把自己的工具链接入 Codex。</p>
+<p><strong><a href="https://github.com/openai/codex-plugin-cc" target="_blank" rel="noopener">openai/codex-plugin-cc</a></strong> 是 Codex 插件 SDK，标志着 Codex 从封闭工具走向可扩展生态。它支持自定义 MCP Server、Skills 开发模板、调试工具和发布流程，让企业和个人可以把自己的工具链接入 Codex。</p>
 
-<p><strong>diegosouzapw/OmniRoute</strong> 是 AI API 网关，一个端点可以接入大量提供商和模型，并根据任务类型进行智能路由。它解决的是成本、可用性和模型选择问题：便宜任务用低成本模型，复杂任务切换到更强模型，接口保持一致。</p>
+<p><strong><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">diegosouzapw/OmniRoute</a></strong> 是 AI API 网关，一个端点可以接入大量提供商和模型，并根据任务类型进行智能路由。它解决的是成本、可用性和模型选择问题：便宜任务用低成本模型，复杂任务切换到更强模型，接口保持一致。</p>
 
-<p><strong>zhaoxuya520/reverse-skill</strong> 面向合法授权的安全测试，把目标识别、技能路由、工具下载配置和经验库更新封装成流程。安全工具尤其需要边界清晰，只有在合法授权范围内运行，才能把效率提升转化为合规能力。</p>
+<p><strong><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank" rel="noopener">zhaoxuya520/reverse-skill</a></strong> 面向合法授权的安全测试，把目标识别、技能路由、工具下载配置和经验库更新封装成流程。安全工具尤其需要边界清晰，只有在合法授权范围内运行，才能把效率提升转化为合规能力。</p>
 
-<p><strong>nextlevelbuilder/ui-ux-pro-max-skill</strong> 是 UI/UX 设计智能引擎，内置设计系统、可达性检查、品牌一致性、HTML/CSS/Tailwind/React 交付规则等内容。它的目标不是生成漂亮截图，而是让 AI 生成的界面能符合产品调性、设计系统和工程可落地性。</p>
+<p><strong><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">nextlevelbuilder/ui-ux-pro-max-skill</a></strong> 是 UI/UX 设计智能引擎，内置设计系统、可达性检查、品牌一致性、HTML/CSS/Tailwind/React 交付规则等内容。它的目标不是生成漂亮截图，而是让 AI 生成的界面能符合产品调性、设计系统和工程可落地性。</p>
 
 <p><strong>OpenDesign</strong> 代表开源设计协作平台方向，强调设计稿与代码之间的双向同步、多框架生成、多人协作和评审批注。AI 驱动设计进入工程流程之后，设计不再只是静态稿，而会变成可版本管理、可生成代码、可持续同步的结构化资产。</p>
 
@@ -134,13 +134,13 @@
 
 <p>面对这么多项目，最有效的选型方式不是按热度逐个安装，而是先判断自己的 Agent 工作流缺哪一层。</p>
 
-<p>如果缺方法论和工程纪律，优先看 <strong>superpowers</strong>、<strong>anthropics/skills</strong>、<strong>agent-skills</strong>、<strong>claude-code-best-practice</strong> 和 <strong>ui-ux-pro-max-skill</strong>。这些项目能让 AI 的输出更符合团队规范。</p>
+<p>如果缺方法论和工程纪律，优先看 <strong><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">superpowers</a></strong>、<strong><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a></strong>、<strong><a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">agent-skills</a></strong>、<strong><a href="https://github.com/shanraisshan/claude-code-best-practice" target="_blank" rel="noopener">claude-code-best-practice</a></strong> 和 <strong><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">ui-ux-pro-max-skill</a></strong>。这些项目能让 AI 的输出更符合团队规范。</p>
 
-<p>如果缺自主执行和多 Agent 协作，优先看 <strong>hermes-agent</strong>、<strong>openwork</strong>、<strong>openworker</strong>、<strong>Agent-Reach</strong> 和 <strong>prime-agent</strong>。这些项目决定 Agent 能否从聊天走向任务系统。</p>
+<p>如果缺自主执行和多 Agent 协作，优先看 <strong><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">hermes-agent</a></strong>、<strong><a href="https://github.com/different-ai/openwork" target="_blank" rel="noopener">openwork</a></strong>、<strong><a href="https://github.com/andrewyng/openworker" target="_blank" rel="noopener">openworker</a></strong>、<strong><a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener">Agent-Reach</a></strong> 和 <strong><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">prime-agent</a></strong>。这些项目决定 Agent 能否从聊天走向任务系统。</p>
 
-<p>如果缺外部世界连接能力，优先看 <strong>Firecrawl</strong>、<strong>browser-use</strong>、<strong>Agent Browser</strong>、<strong>Cloudflare Computer</strong> 和 <strong>botmux</strong>。这些项目把数据、浏览器、文件系统和协作入口接到 Agent 手里。</p>
+<p>如果缺外部世界连接能力，优先看 <strong><a href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">Firecrawl</a></strong>、<strong><a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener">browser-use</a></strong>、<strong><a href="https://github.com/sleepinginsummer/agent-browser-cli" target="_blank" rel="noopener">Agent Browser</a></strong>、<strong><a href="https://github.com/cloudflare/computer" target="_blank" rel="noopener">Cloudflare Computer</a></strong> 和 <strong><a href="https://github.com/deepcoldy/botmux" target="_blank" rel="noopener">botmux</a></strong>。这些项目把数据、浏览器、文件系统和协作入口接到 Agent 手里。</p>
 
-<p>如果缺知识处理和企业应用框架，优先看 <strong>LangChain</strong>、<strong>RAGFlow</strong>、<strong>Graphify</strong>、<strong>mem0</strong>、<strong>Understand-Anything</strong> 和 <strong>DeerFlow</strong>。这些项目解决文档、知识、代码库和长期研究问题。</p>
+<p>如果缺知识处理和企业应用框架，优先看 <strong><a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener">LangChain</a></strong>、<strong><a href="https://github.com/infiniflow/ragflow" target="_blank" rel="noopener">RAGFlow</a></strong>、<strong><a href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">Graphify</a></strong>、<strong><a href="https://github.com/mem0ai/mem0" target="_blank" rel="noopener">mem0</a></strong>、<strong><a href="https://github.com/Egonex-AI/Understand-Anything" target="_blank" rel="noopener">Understand-Anything</a></strong> 和 <strong><a href="https://github.com/bytedance/deer-flow" target="_blank" rel="noopener">DeerFlow</a></strong>。这些项目解决文档、知识、代码库和长期研究问题。</p>
 
 <h2 id="risk-boundaries">十、风险边界：工具越强，越需要权限、验证和可回滚</h2>
 
