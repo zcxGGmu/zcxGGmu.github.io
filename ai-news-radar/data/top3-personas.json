@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T15:54:06.181286Z",
+  "generated_at": "2026-08-09T23:51:58.061186Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,42 +17,42 @@
   ],
   "items": [
     {
-      "story_id": "story_c679b82f6543",
-      "title": "实时 MCP 拦截器：阻止 Agent 读取 .env 文件和执行危险命令 / Real-time MCP interceptor that blocks .env reads and dangerous commands agents",
-      "url": "https://news.ycombinator.com/item?id=49228086",
+      "story_id": "story_7742a97ea427",
+      "title": "Anthropic 将默认开启 Claude Code 的自动模式 / Anthropic is turning Claude Code’s auto mode on by default",
+      "url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "拦截器是好事，但演示里能挡的风险和真实世界的差距，敢晒规则集吗？"
+          "score": 70,
+          "review": "默认开启自动模式？先问问用户敢不敢让代码自己跑。"
         },
         "paper-police": {
           "score": 25,
-          "review": "只有标题描述，无代码无评测，拦截效果无法验证。"
+          "review": "媒体转述官方默认设置，无技术细节无评测数据，等实际体验验证。"
         },
         "pragmatic": {
-          "score": 80,
-          "review": "安全工具，能直接拦住 Agent 乱读密钥和跑危险命令，生产环境可部署。"
+          "score": 75,
+          "review": "默认开自动模式，升级后先盯紧 agent 行为，别让它乱改代码。"
         }
       }
     },
     {
-      "story_id": "story_7bfb99629928",
-      "title": "OpenAI 桌面端 ChatGPT 上线语音交互功能，可语音操控电脑执行多步骤任务",
-      "url": "https://www.ithome.com/0/987/452.htm",
+      "story_id": "story_fe7d41da32c5",
+      "title": "Anthropic 称已基本解决提示注入攻击 / Prompt injection is the most common way that scammers attack people and agents： your agent visits ht…",
+      "url": "https://x.com/bcherny/status/2086520950259118464",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 58,
-          "review": "演示里的多步骤挺顺，换你现场试试卡不卡。"
+          "score": 25,
+          "review": "单一推文里的“基本解决”和之前那些“彻底解决”一样，换个攻击思路就翻车。"
         },
         "paper-police": {
-          "score": 30,
-          "review": "功能上线有官方公告，但没有技术细节或第三方评测，口说无凭。"
+          "score": 5,
+          "review": "一条推文声称解决提示注入，无论文无代码无复现，等于没说。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "桌面端能语音操控电脑，可当多步任务助手用，今天就能试。"
+          "score": 62,
+          "review": "提示注入是 Agent 安全实锤难题，但只凭自述别急着改架构，等公开方案。"
         }
       }
     },
