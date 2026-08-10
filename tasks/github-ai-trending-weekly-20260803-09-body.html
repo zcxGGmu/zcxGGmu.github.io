@@ -1,0 +1,21 @@
+<p>一周的 GitHub AI 增长榜并不等于长期价值榜，但它能及时显示开发者正在补哪些基础设施：安全路由、文档处理、团队记忆、本地推理、课程化学习，以及把模型能力嵌入生产流程的工具链。判断项目时，新增 Star 只是起点，更重要的是问题边界、实现路径和可持续维护能力。</p>
+<h2 id="weekly-signal">一、增长信号要和问题定义一起看</h2>
+<p>榜单的前列集中在三个问题：怎样让 Agent 先选对工具，怎样让它可靠处理复杂文档，怎样让它把项目经验留给下一个执行者。这些并不是花哨的应用层功能，而是 Agent 进入团队工作流前必须补齐的基础能力。</p>
+<h2 id="reverse-skill">二、先判断任务类型的安全路由</h2>
+<p><a href="https://github.com/zhaoxuya520/reverse-skill">zhaoxuya520/reverse-skill</a> 面向授权逆向、安全测试与研究场景，把 APK、前端代码、接口和固件等目标路由到不同技能与工具。其核心设计是按需加载而非一次性暴露所有工具，并保留范围、时间线、证据和报告。</p>
+<p>这类项目的使用前提是明确授权。安全自动化的质量不只取决于能否得到结果，也取决于每一步是否可解释、可审计、可在权限边界内停止。</p>
+<h2 id="pdf-inspector">三、PDF 处理先分流，后 OCR</h2>
+<p><a href="https://github.com/firecrawl/pdf-inspector">firecrawl/pdf-inspector</a> 的价值在于先判断页面是文字页、扫描页、图片页还是混合页。带文字层的页面直接抽取并转为结构化文本，没有文字层的页面再进入 OCR，能避免把所有资料都送进昂贵且容易失真的识别流程。</p>
+<p>文档工具的评价标准应包含表格、代码块、多栏阅读顺序、标题层级和浏览器端处理能力。对 RAG、合规归档与研究工作流而言，保留结构通常和提取正文同样重要。</p>
+<h2 id="agent-memory">四、团队记忆不是聊天记录堆积</h2>
+<p><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory">TencentCloud/TencentDB-Agent-Memory</a> 将对话偏好、可复用 Skill、文档知识和代码图拆成不同资产，再按团队与角色受控分发。这样的分层能避免新 Agent 从零开始，也能降低把私有上下文无差别扩散给所有角色的风险。</p>
+<h2 id="learning-inference-workflow">五、学习、推理与生成工作流</h2>
+<p><a href="https://github.com/microsoft/AI-For-Beginners">microsoft/AI-For-Beginners</a> 把 AI 基础拆成课程和可运行实验；<a href="https://github.com/lyogavin/airllm">lyogavin/airllm</a> 通过分层加载降低大模型本地推理资源门槛；<a href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a> 用节点方式组织图像与视频生成步骤。这三类项目对应“学会原理、跑得起来、流程可复现”的连续链条。</p>
+<h2 id="coding-and-reusable-knowledge">六、终端编码与可复用知识</h2>
+<p><a href="https://github.com/esengine/DeepSeek-Reasonix">esengine/DeepSeek-Reasonix</a> 面向终端内的编码 Agent 与稳定的长时运行；<a href="https://github.com/virgiliojr94/book-to-skill">virgiliojr94/book-to-skill</a> 则把书籍与长文档转成 Agent 可逐章读取的知识包。前者缩短实现循环，后者降低重复查资料的上下文成本。</p>
+<h2 id="voice-video-agents">七、实时交互 Agent 的组合方式</h2>
+<p><a href="https://github.com/livekit/agents">livekit/agents</a> 面向语音和视频 Agent，连接语音识别、语言模型、语音合成与实时通信。真正的难点不只是接通组件，还包括延迟、打断处理、状态同步、错误恢复和用户隐私边界。</p>
+<h2 id="google-skills">八、技能目录的价值在于边界清楚</h2>
+<p><a href="https://github.com/google/skills">google/skills</a> 展示了面向产品与云服务的官方技能集合。相比零散提示词，明确的使用条件、参数、限制和示例更适合被 Agent 调用，也更便于团队审查版本变化。</p>
+<h2 id="how-to-use-a-weekly-list">九、把榜单变成选型清单</h2>
+<p>采用新项目时，先验证维护者、许可证、发布节奏、真实依赖和安全模型；然后用一个可回滚的小任务评估输出质量、成本和故障模式；最后才决定是否接入团队主流程。增长快可以说明需求强，但不能替代生产验证。</p>
