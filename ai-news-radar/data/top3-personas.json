@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T10:53:33.499971Z",
+  "generated_at": "2026-08-10T15:30:01.389902Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_ae25210f3945",
-      "title": "英伟达首款开源全双工语音模型VoiceChat 11B正式发布",
-      "url": "https://www.aibase.com/news/30220",
+      "story_id": "story_3711c7beb745",
+      "title": "SGLang 为 Muse Glimmer 提供 Day-0 支持，针对本地智能体工作流优化推理 / Blog SGLang Adds Day-0 Support for Muse Glimmer， a Multimodal Model Built for Local Agentic Workflows We're excited to partner with Meta Superintelligence Labs to bring Day-0 support for Muse Glimmer to SGLang， with dedicated optimizations tailored for high-performance inference of agentic workflows o… Meta Superintelligence Labs and the SGLang Team",
+      "url": "https://www.lmsys.org/blog/2026-08-10-meta-muse-glimmer",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "开源是真，但'全双工'先拿出实测延迟和并发，别光发个权重包。"
+          "score": 55,
+          "review": "Day-0支持成了标配，优化的延迟和吞吐数据呢？别只发贺电。"
         },
         "paper-police": {
-          "score": 18,
-          "review": "仅有新闻转述，无论文无代码无评测链接，开源真实性待验证。"
+          "score": 25,
+          "review": "只有合作博客，无评测细节和开源代码，性能存疑待验证。"
         },
         "pragmatic": {
           "score": 88,
-          "review": "开源权重已放出，全双工语音可直接部署，做实时对话的今天就能试。"
+          "review": "SGLang 当天支持 Muse Glimmer，跑本地 agent 工作流的可以直接上手。"
         }
       }
     },
     {
-      "story_id": "story_cca82cecf2ae",
-      "title": "“自动模式”现已成为 Claude Code 的默认设置",
-      "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
+      "story_id": "story_88c4bb049e16",
+      "title": "Model ML 借助 GPT-5.6 Sol 更高效地完成金融工作 / Model ML completes finance work more efficiently with GPT-5.6 Sol",
+      "url": "https://openai.com/index/model-ml",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 68,
-          "review": "默认自动模式，省了点头，多了翻车风险，调试时记得盯紧点。"
+          "score": 45,
+          "review": "官方通稿没给对比基线，'更高效'是跟谁比？"
         },
         "paper-police": {
-          "score": 25,
-          "review": "官方博客自宣新功能，无代码无评测，等社区实测反馈。"
+          "score": 30,
+          "review": "官方新闻无论文无代码，绩效数字未公开，等评测出来再说。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "默认自动模式省操作，但权限自动执行有风险，生产环境慎用。"
+          "score": 85,
+          "review": "GPT-5.6 已开放，金融任务可直接接 API，提效明显，适合立即试用。"
         }
       }
     }
