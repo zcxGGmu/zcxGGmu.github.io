@@ -1,78 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_e32ded550c3a|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "多智能体协作编码有参考价值，但非即用方案，等开源再试。",
-      "title_hash": "f698c9b2",
-      "scored_at": "2026-07-21T12:06:17.341416Z"
-    },
-    "story_dca03783a107|pragmatic|0a5c5b24": {
-      "score": 90,
-      "review": "开源机器人数据记录工具，做机器人操作的开发者今天就能用上。",
-      "title_hash": "c3aa316d",
-      "scored_at": "2026-07-21T12:06:10.451915Z"
-    },
-    "story_e11bad701999|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "数学推理benchmark成绩，但没开放API或代码，等能用了再关注。",
-      "title_hash": "518ee4a0",
-      "scored_at": "2026-07-21T12:06:13.122291Z"
-    },
-    "story_d79b44b7e75a|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "债务新闻不写代码，投资风险与开发者无关。",
-      "title_hash": "f94a1282",
-      "scored_at": "2026-07-21T12:06:14.858823Z"
-    },
-    "story_e97ad702a98f|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "人形机器人平台，但没提开放API或代码，对普通开发者暂时没用。",
-      "title_hash": "37902c2a",
-      "scored_at": "2026-07-21T12:06:20.017599Z"
-    },
-    "story_dca03783a107|cynic|f4237a62": {
-      "score": 70,
-      "review": "开放记录是好，但数据集质量还得看谁来标，别又是个标注地狱。",
-      "title_hash": "c3aa316d",
-      "scored_at": "2026-07-21T12:06:24.544879Z"
-    },
-    "story_dca03783a107|paper-police|966065bf": {
-      "score": 25,
-      "review": "只有博客宣称，无论文代码和第三方评测，证据不足。",
-      "title_hash": "c3aa316d",
-      "scored_at": "2026-07-21T12:06:27.397185Z"
-    },
-    "story_bc14d188634a|pragmatic|0a5c5b24": {
-      "score": 90,
-      "review": "Claude Tag 能帮你省下八成提示词和大量 PR 时间，今天就能用。",
-      "title_hash": "efe494b6",
-      "scored_at": "2026-07-21T14:25:52.521474Z"
-    },
-    "story_9e0727a388db|pragmatic|0a5c5b24": {
-      "score": 30,
-      "review": "研究论文，暂无可用接口，等开源或API。",
-      "title_hash": "565de666",
-      "scored_at": "2026-07-21T14:25:55.153041Z"
-    },
-    "story_167a1baccc90|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "短片好看但没工具，等字节开放 Seedance API 再关注。",
-      "title_hash": "df88c5cd",
-      "scored_at": "2026-07-21T14:25:58.405413Z"
-    },
-    "story_bc14d188634a|cynic|f4237a62": {
-      "score": 70,
-      "review": "65% PR来自一个tag，其他35%是团队在摸鱼？提示词砍80%还能工作，那之前80%都是废话。",
-      "title_hash": "efe494b6",
-      "scored_at": "2026-07-21T14:26:03.605680Z"
-    },
-    "story_bc14d188634a|paper-police|966065bf": {
-      "score": 8,
-      "review": "数字来自内部对话，无论文无代码，无法核实，信源单一。",
-      "title_hash": "efe494b6",
-      "scored_at": "2026-07-21T14:26:07.960125Z"
-    },
     "story_7e78ee445fab|pragmatic|0a5c5b24": {
       "score": 90,
       "review": "新模型今天可用，Flash-Lite适合低成本场景，建议直接测试迁移。",
@@ -5136,6 +5064,78 @@
       "review": "只看到公众号宣称开源，无代码无benchmark，无法验证。",
       "title_hash": "d6b505bb",
       "scored_at": "2026-08-11T10:29:52.956870Z"
+    },
+    "story_025a725a5231|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "数学能力再强也没开放API，短期不影响开发，关注后续产品化。",
+      "title_hash": "15e48ca3",
+      "scored_at": "2026-08-11T12:11:01.044648Z"
+    },
+    "story_9fbb4447f967|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "语言选型老话题，观点参考可以，别指望看完就能动手。",
+      "title_hash": "4d74c329",
+      "scored_at": "2026-08-11T12:11:02.555837Z"
+    },
+    "story_eddc237df9be|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "研究向的token优化方案，等有可跑代码再动手。",
+      "title_hash": "4338b71a",
+      "scored_at": "2026-08-11T14:02:07.459550Z"
+    },
+    "story_f527ac6baab4|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "本地跑智能体有新选择，但需确认是否开源，能下载就值。",
+      "title_hash": "04ab77da",
+      "scored_at": "2026-08-11T14:02:09.427035Z"
+    },
+    "story_2172d913ef6d|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "自查是否在用该类工具，尽快轮换凭证并检查暴露记录。",
+      "title_hash": "2d769870",
+      "scored_at": "2026-08-11T14:02:12.100791Z"
+    },
+    "story_bdd68ac35b2d|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "账单能按模型拆了，做成本核算的直接受益，改下报表就行。",
+      "title_hash": "072b9f8e",
+      "scored_at": "2026-08-11T15:36:53.423317Z"
+    },
+    "story_5ce5e8a5042c|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "万亿参数还在传闻阶段，等开源放出来再看，别急着改选型。",
+      "title_hash": "da73503e",
+      "scored_at": "2026-08-11T15:36:54.938251Z"
+    },
+    "story_2b0f68d1ef21|pragmatic|0a5c5b24": {
+      "score": 85,
+      "review": "直接能在 SGLang 跑新模型，做 Agent 推理的可以今天上手试。",
+      "title_hash": "9a452965",
+      "scored_at": "2026-08-11T15:36:57.180569Z"
+    },
+    "story_98891a5c0ebf|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "前缀缓存优化方案，做推理优化的可以读读，但暂无现成实现可抄。",
+      "title_hash": "77602c10",
+      "scored_at": "2026-08-11T15:36:59.344732Z"
+    },
+    "story_e5745a33fcfd|pragmatic|0a5c5b24": {
+      "score": 92,
+      "review": "30B 开源模型可本地部署，推理党今天就能 clone 跑起来。",
+      "title_hash": "78ec6d7c",
+      "scored_at": "2026-08-11T15:37:01.043796Z"
+    },
+    "story_e5745a33fcfd|cynic|f4237a62": {
+      "score": 55,
+      "review": "30B稠密也敢叫'重磅'？先给出和同规模开源模型的对比再说。",
+      "title_hash": "78ec6d7c",
+      "scored_at": "2026-08-11T15:37:04.968409Z"
+    },
+    "story_e5745a33fcfd|paper-police|966065bf": {
+      "score": 20,
+      "review": "只说开源没给仓库和评测链接，无法验证模型真假。",
+      "title_hash": "78ec6d7c",
+      "scored_at": "2026-08-11T15:37:07.123745Z"
     }
   }
 }
