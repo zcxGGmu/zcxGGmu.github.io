@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T15:30:01.389902Z",
+  "generated_at": "2026-08-11T00:05:50.204371Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,10 +17,30 @@
   ],
   "items": [
     {
+      "story_id": "story_b385166df3f8",
+      "title": "利用NVIDIA Magpie TTS构建低延迟多语言语音Agent：开放权重与完全部署控制 / Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS",
+      "url": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 90,
+          "review": "开放权重加部署控制，这次没玩虚的，低延迟请拿实测说话。"
+        },
+        "paper-police": {
+          "score": 50,
+          "review": "博客给细节和权重可下载，但无论文无代码，独立复现待验证。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "开放权重可自托管，低延迟多语言语音Agent直接上手。"
+        }
+      }
+    },
+    {
       "story_id": "story_db693db10af6",
       "title": "NVIDIA 发布 NemotronLabs VoiceChat 11B：开源全双工语音模型，支持约 450 毫秒轮换与实时工具调用 / NVIDIA Releases NemotronLabs VoiceChat 11B： An Open Full-Duplex Speech-to-Speech Model with ~450 ms Turn-Taking and Live Tool Calling",
       "url": "https://www.marktechpost.com/2026/08/09/nvidia-releases-nemotronlabs-voicechat-11b-an-open-full-duplex-speech-to-speech-model-with-450-ms-turn-taking-and-live-tool-calling",
-      "rank": 1,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 75,
@@ -40,7 +60,7 @@
       "story_id": "story_3711c7beb745",
       "title": "SGLang 为 Muse Glimmer 提供 Day-0 支持，针对本地智能体工作流优化推理 / Blog SGLang Adds Day-0 Support for Muse Glimmer， a Multimodal Model Built for Local Agentic Workflows We're excited to partner with Meta Superintelligence Labs to bring Day-0 support for Muse Glimmer to SGLang， with dedicated optimizations tailored for high-performance inference of agentic workflows o… Meta Superintelligence Labs and the SGLang Team",
       "url": "https://www.lmsys.org/blog/2026-08-10-meta-muse-glimmer",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 55,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 88,
           "review": "SGLang 当天支持 Muse Glimmer，跑本地 agent 工作流的可以直接上手。"
-        }
-      }
-    },
-    {
-      "story_id": "story_88c4bb049e16",
-      "title": "Model ML 借助 GPT-5.6 Sol 更高效地完成金融工作 / Model ML completes finance work more efficiently with GPT-5.6 Sol",
-      "url": "https://openai.com/index/model-ml",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 45,
-          "review": "官方通稿没给对比基线，'更高效'是跟谁比？"
-        },
-        "paper-police": {
-          "score": 30,
-          "review": "官方新闻无论文无代码，绩效数字未公开，等评测出来再说。"
-        },
-        "pragmatic": {
-          "score": 85,
-          "review": "GPT-5.6 已开放，金融任务可直接接 API，提效明显，适合立即试用。"
         }
       }
     }
