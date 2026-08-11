@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import importlib.util
+import base64
+import json
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import quote
 
 
 TASKS = Path(__file__).resolve().parent
@@ -24,7 +28,7 @@ base.MANIFEST_NAME = "publish-ai-skills-agent-fullstack-open-source-daily-202608
 
 BODY = r'''
 <p>AI 开发正在从单点对话工具走向一套可组合、可审计的工程系统。2026 年 8 月的开源项目动向里，最清晰的变化不是又多了一个模型，而是技能包、Agent 运行时、浏览器执行、代码审查、模型路由和设计约束开始互相衔接。一个能稳定完成工作的 Agent，必须知道如何拆解任务、怎样使用工具、何时保存记忆、哪些操作需要确认，以及如何让结果回到可验证的软件交付流程。</p>
-<p>这篇文章以 51 个项目覆盖的五类能力为线索，梳理其中最值得落地的工程判断：把专业经验固化为 Skills，把 Agent 置于清楚的权限边界，把网页与桌面操作变为可审查的执行链路，再用测试、安全扫描和持续迭代把自动生成的代码拉回工程质量标准。</p>
+<p>围绕 Skills、Agent 框架、工具执行、Codex 生态和垂直应用，最值得落地的工程判断是：把专业经验固化为 Skills，把 Agent 置于清楚的权限边界，把网页与桌面操作变为可审查的执行链路，再用测试、安全扫描和持续迭代把自动生成的代码拉回工程质量标准。</p>
 
 <h2 id="engineering-signals">一、三个信号：工程化、双生态与垂直场景</h2>
 <p>第一条信号是 Agent 工程化。多层任务处理、隔离执行、记忆系统和角色协作，正在替代“给出一句提示，期待一次性成功”的用法。第二条信号是终端编码与可组合 Agent 工具之间的互通需求上升，团队不再愿意被单一界面或单一模型锁定。第三条信号则是能力向垂直领域下沉，数据库运维、注意力管理、文档处理、设计审查与电商后台都在形成专用工作流。</p>
@@ -86,7 +90,7 @@ BODY = r'''
 base.POSTS = [
     base.Post(
         "ai-skills-agent-fullstack-open-source-daily-20260811",
-        "8月11日 AI Skills/Agent 全栈开源项目速览：把 51 个项目变成工程系统",
+        "8月11日 AI Skills/Agent 全栈开源项目速览：从 Skills 到工程系统",
         "从 Skills、Agent 运行时和浏览器执行，到代码审查、记忆层与垂直工具，拆解 AI 工具链走向生产的关键边界。",
         "AI工具",
         "AI Agent",
@@ -94,8 +98,108 @@ base.POSTS = [
         13,
         BODY,
         ("#111827", "#0f766e", "#b45309"),
-        ["Skills", "Agent", "浏览器", "代码", "记忆", "工程", "51 个项目"],
+        ["Skills", "Agent", "浏览器", "代码", "记忆", "工程"],
         4400,
     )
 ]
-base.main()
+EXPECTED_REPOS = {
+    "https://github.com/Comfy-Org/ComfyUI",
+    "https://github.com/Significant-Gravitas/AutoGPT",
+    "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+    "https://github.com/anomalyco/opencode",
+    "https://github.com/anthropics/claude-code",
+    "https://github.com/esengine/DeepSeek-Reasonix",
+    "https://github.com/firecrawl/firecrawl",
+    "https://github.com/medusajs/medusa",
+    "https://github.com/microsoft/AI-For-Beginners",
+    "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "https://github.com/obra/superpowers",
+    "https://github.com/openai/codex",
+    "https://github.com/zhaoxuya520/reverse-skill",
+}
+
+_base_validate = base.validate
+_active_ref = None
+
+
+def get_file_at_active_ref(path: str) -> str | None:
+    if _active_ref is None:
+        raise RuntimeError("active remote ref is not set")
+    api_path = quote(path, safe="/")
+    try:
+        data = base.run_gh([base.endpoint(f"contents/{api_path}?ref={_active_ref.commit_sha}")])
+    except RuntimeError as exc:
+        if "Not Found" in str(exc):
+            return None
+        raise
+    return base64.b64decode(data["content"]).decode("utf-8")
+
+
+def validate(outputs: dict[str, str]) -> None:
+    _base_validate(outputs)
+    post = base.POSTS[0]
+    article = outputs[f"2026/{post.slug}/index.html"]
+    body = re.search(r'<div class="post-body" v-pre>(.*?)</div></div><nav', article, re.S)
+    if body is None:
+        raise RuntimeError("article body missing")
+    actual = set(re.findall(r'https://github\.com/[^"<]+', body.group(1)))
+    if actual != EXPECTED_REPOS:
+        raise RuntimeError(f"GitHub link coverage mismatch: expected={len(EXPECTED_REPOS)} actual={len(actual)}")
+
+
+def write_outputs(outputs: dict[str, str]) -> None:
+    out_dir = Path("/tmp/ai-skills-agent-fullstack-open-source-daily-20260812-publish-output")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for rel, content in outputs.items():
+        path = out_dir / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+
+
+def create_commit(outputs: dict[str, str], ref) -> str:
+    entries = []
+    for path, content in sorted(outputs.items()):
+        blob = base.run_gh(
+            ["-X", "POST", base.endpoint("git/blobs"), "--input", "-"],
+            {"content": content, "encoding": "utf-8"},
+        )
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    tree = base.run_gh(
+        ["-X", "POST", base.endpoint("git/trees"), "--input", "-"],
+        {"base_tree": ref.tree_sha, "tree": entries},
+    )
+    commit = base.run_gh(
+        ["-X", "POST", base.endpoint("git/commits"), "--input", "-"],
+        {"message": "Publish AI Skills daily article 2026-08-11", "tree": tree["sha"], "parents": [ref.commit_sha]},
+    )
+    base.run_gh(
+        ["-X", "PATCH", base.endpoint(f"git/refs/heads/{base.BRANCH}"), "--input", "-"],
+        {"sha": commit["sha"], "force": False},
+    )
+    return commit["sha"]
+
+
+def main() -> None:
+    global _active_ref
+    for attempt in range(3):
+        ref = base.get_ref()
+        _active_ref = ref
+        base.get_file = get_file_at_active_ref
+        outputs = base.collect_outputs()
+        validate(outputs)
+        write_outputs(outputs)
+        try:
+            commit_sha = create_commit(outputs, ref)
+        except RuntimeError as exc:
+            if attempt < 2 and "Reference update failed" in str(exc):
+                continue
+            raise
+        if base.get_ref().commit_sha != commit_sha:
+            raise RuntimeError("remote head differs from published commit")
+        print(json.dumps({"parent": ref.commit_sha, "pushed": commit_sha, "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False))
+        return
+    raise RuntimeError("publication retried after concurrent updates but did not succeed")
+
+
+if __name__ == "__main__":
+    main()
