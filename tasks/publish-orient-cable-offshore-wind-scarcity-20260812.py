@@ -1,0 +1,207 @@
+from __future__ import annotations
+
+import base64
+import importlib.util
+import json
+import re
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import quote
+
+
+sys.dont_write_bytecode = True
+
+TASKS = Path(__file__).resolve().parent
+BASE_SCRIPT = TASKS / "publish-three-life-business-articles-20260809.py"
+
+spec = importlib.util.spec_from_file_location("publish_base", BASE_SCRIPT)
+base = importlib.util.module_from_spec(spec)
+assert spec.loader is not None
+sys.modules[spec.name] = base
+spec.loader.exec_module(base)
+
+base.__file__ = __file__
+base.DATE = "2026-08-12"
+base.BASE_DT = datetime(2026, 8, 12, 21, 45, 0, tzinfo=timezone(timedelta(hours=8)))
+base.PREV_EXISTING_URL = "/2026/buzz-open-source-agent-collaboration-workspace/"
+base.PREV_EXISTING_TITLE = "Buzz：面向人类与 AI Agent 的开源协作工作区"
+base.SCRIPT_NAME = Path(__file__).name
+base.MANIFEST_NAME = "publish-orient-cable-offshore-wind-scarcity-20260812-changed-files.json"
+
+
+BODY = r'''
+<p>东方电缆是一家在 A 股里兼具确定性和稀缺性的公司。它的逻辑并不复杂：公司真正有弹性的利润来源，是海缆和海洋工程；真正决定景气度的变量，是海上风电装机、招标、订单确认节奏和海外项目突破。公司并不是一个普通电缆制造商，而是站在海风产业链中更稀缺、更难复制的位置。</p>
+<p>这家公司最值得长期跟踪的地方，是它从上市早期就卡住了海底电缆这个环节。早年招股资料里强调过国内率先实现海底电缆产业化和脐带缆相关能力，这种技术与项目经验积累，让它在之后几轮海风周期里获得了很强辨识度。</p>
+<p>当下的关键判断可以概括为一句话：确定性很高，稀缺性也很高，但仍然要等风来。国内海风招标和政策目标已经给出方向，订单也维持在较高水平，存货中发出商品增长显示项目确认在推进，但真正的业绩爆发仍取决于装机和施工节点能否集中释放，以及海外海缆订单能否继续突破。</p>
+
+<h2 id="scarcity-first">一、东方电缆的核心，不是普通电缆，而是海缆稀缺性</h2>
+<p>东方电缆最早进入视野，不是因为它做普通电缆，而是因为它在海底电缆、脐带缆和海洋工程相关能力上的稀缺性。普通陆缆是更充分竞争的业务，利润弹性和产业地位都有限；海缆不同，技术门槛、项目经验、交付能力和资质壁垒都更高。</p>
+<p>国内海风产业链中，真正能稳定吃到大体量海缆订单的公司并不多。东方电缆、中天科技、亨通光电等公司各有优势，但东方电缆在业务结构上更纯粹。中天、亨通等公司业务线更宽，光通信、陆缆或其他板块占比更大；东方电缆的利润弹性更集中地绑定在海缆和海风装机上。</p>
+<p>这种纯粹性，使它在海风景气周期中更容易被资金识别。海风装机一旦进入放量，订单、收入、毛利率和估值弹性会集中反映到公司身上。反过来，当海风装机迟迟上不去，市场也会很快把它压回等待区间。</p>
+<p>所以东方电缆的研究起点，不能只把它当制造业公司看，而要把它放进海上风电产业周期里。海缆是海风项目的关键设备，项目越深远海化、容量越大、输电要求越高，海缆的重要性越突出。</p>
+
+<h2 id="historical-cycle">二、历史周期：从 18-20 年高景气，到 21 年后的消化</h2>
+<p>2018 年到 2020 年，是东方电缆非常典型的一轮高景气阶段。国内海风装机快速增长，2021 年又是抢装窗口，海缆需求快速放量。当时国内相关产能偏紧，供需关系对海缆企业非常有利，毛利率处在很高水平。</p>
+<p>2019 年尤其典型。公司业绩增幅很快，多个季度都出现大两位数甚至三位数增长，但估值并没有同步大幅抬升，PE 一度只有十几倍。那一段行情，本质上赚的是业绩增长的钱，而不是单纯估值扩张的钱。</p>
+<p>2020 年抢装结束后，2021 年订单开始明显下滑，同时铜价上涨又压缩了成本端。市场当时对新能源平价抱有很高预期，认为只要海风进入平价，装机就会持续上行，因此 2021 年出现过较强的估值拉升。</p>
+<p>但后续现实没有那么顺畅。无论国内还是海外，海风装机兑现都没有完全跟上预期。2022 年之后，公司股价和估值进入较长时间的宽幅震荡。业务慢慢消化高位估值，估值也回落到二十多倍附近，但再难回到刚上市时十倍左右的状态。</p>
+<p>这里的差异，来自市场对公司性质的重新认知。早期市场更容易把它看成陆缆为主、海缆为辅的制造公司；现在海缆已经成为利润核心，国内竞争格局也更清晰，稀缺性溢价自然比早期更高。</p>
+
+<h2 id="business-classification">三、业务分类变化，让横向比较更难</h2>
+<p>研究东方电缆时，需要注意公司业务分类口径变化。过去公司披露相对更细，能够看到陆缆、海缆、海洋工程等板块。脐带缆等业务过去通常被放在海缆相关口径下。</p>
+<p>到了新的分类口径里，公司把部分陆上高压电缆也放入与海缆更接近的新能源相关业务中，而脐带缆、柔性缆等动态缆业务则被划入海洋装备。这种划分从产业链角度有一定逻辑，但对投资者横向比较并不友好。</p>
+<p>原因很简单：如果海缆口径中混入部分高压电缆，就很难直接判断毛利率变化究竟来自海缆本身降价，还是来自业务结构变化。如果海洋装备中又包含脐带缆和动态缆，也会影响对传统海缆业务的独立观察。</p>
+<p>不过从大方向看，这些细节并不改变核心矛盾。东方电缆的下游足够纯粹，影响最大的仍然是海上风电。只要海风产业景气度起来，公司作为海缆核心供应商，确定性就会明显提高。</p>
+
+<h2 id="revenue-margin-and-valuation">四、收入、毛利率和估值：真正的弹性来自海风</h2>
+<p>从收入和毛利率看，公司经历过一轮从高景气到低谷再到修复的过程。2020 年前后毛利率处在高点，主要原因是产能偏紧、定价较强、海缆供需格局好。随后随着抢装结束、铜价上涨和项目节奏变化，毛利率开始回落。</p>
+<p>直到 2024 年，公司收入才逐步越过 2021 年高点。也就是说，上一轮抢装后的消化时间很长，行业不是线性增长。海风项目从规划、核准、招标、施工到并网，本身周期就长，中间还会受到海域、审批、施工窗口、设备供应和地方节奏影响。</p>
+<p>估值层面，当前市场大致给公司二十多倍估值。这个估值对应的是海风业务尚未明显放量、订单在高位但还没有进入强兑现的状态。一旦海风景气真正回归，市场有可能重新给予估值提升，但强度未必会像 2020-2021 年那样猛烈。</p>
+<p>因此，东方电缆并不是低估值困境反转逻辑，而是“景气等待 + 稀缺性溢价”逻辑。它贵不贵，要看海风是否进入兑现；它有没有弹性，要看订单和装机是否同时改善。</p>
+
+<h2 id="orders-are-the-best-leading-indicator">五、订单是最重要的前瞻指标</h2>
+<p>跟踪东方电缆，最直接的指标是订单。宏观层面可以看海风招标和装机，微观层面必须看公司披露的订单结构。订单比收入更前瞻，尤其在项目制业务里，订单决定未来收入确认的空间。</p>
+<p>2021 年抢装后，海缆需求出现阶段性低谷。到 2023 年开始逐步复苏，2024、2025、2026 年的海缆订单量已经重新回到较高水平。若把海缆和海洋工程相关订单合并看，高毛利部分的订单量仍处在相对较高位置。</p>
+<p>以近年披露数据看，2024 年报时点相关订单体量已经较高，到 2025 年一季末时点，海缆和海洋工程合计订单接近 150 亿元量级。虽然半年报披露后整体数值因部分海缆项目确认而有所下降，但仍维持在约 130 亿元左右，明显高于此前低谷状态。</p>
+<p>这说明公司并不缺方向，也不是订单完全断档。问题在于订单增长没有持续直线加速，项目确认节奏仍受装机和施工约束。因此，短期很难期待业绩突然爆发，但中期订单池已经提供了较强支撑。</p>
+<p>更关键的是订单质量。海缆、海洋工程、脐带缆、动态缆等业务毛利率通常高于普通陆缆。如果高毛利订单占比保持较高，公司未来利润弹性会比单纯收入规模更值得重视。</p>
+
+<h2 id="offshore-wind-installation-gap">六、国内海风最大的问题，是招标多、装机慢</h2>
+<p>当前国内海风产业最大的矛盾，是招标和规划已经不少，但装机量迟迟没有完全释放。2022 年之后，海风招标量长期明显高于实际装机量，形成了较大的待施工和待确认项目池。</p>
+<p>十五五规划和地方政策目标已经给出方向。2026 年国内海风装机可能达到 7 到 8GW，之后有望进入 10GW 以上的年度装机水平。对比当前实际装机节奏，未来存在比较明确的工程放量空间。</p>
+<p>但海风项目不是只要招标就能马上并网。海域使用、审批节奏、施工窗口、船机资源、并网安排和地方协调都会影响落地。前面堆积的任务量，最后可能集中在某些时点释放，也可能持续一两年逐步确认。</p>
+<p>这就是“等风来”的含义。方向已经较清楚，项目池也在，但还没有进入那种收入和利润快速爆发的阶段。一旦海域等关键约束缓解，施工启动和收入确认就会明显加快，海缆公司有望迎来更强业绩弹性。</p>
+
+<h2 id="inventory-and-goods-shipped">七、存货和发出商品显示项目正在靠近确认</h2>
+<p>除了订单，存货也是一个重要信号。公司中报显示存货出现明显增长，其中发出商品增长尤其值得注意。发出商品意味着产品已经发出，但尚未最终确认收入，通常与项目交付和验收节奏相关。</p>
+<p>在约 50 多亿元存货中，发出商品约 16 亿元，相比上一期明显增加，增量接近 12 亿元。这说明部分项目已经进入交付链条，只是收入确认还没有完全落地。</p>
+<p>如果下游极度景气，单个项目确认慢并不会造成太大压力，因为其他项目会不断补上。但当前处在景气修复阶段，项目节奏仍然影响财务表现。看到存货和发出商品增加，只能说明兑现正在靠近，还不能直接等同于业绩爆发。</p>
+<p>因此，后续要观察三件事：发出商品能否顺利转收入，新增订单能否继续保持高位，毛利率能否随着海缆和海工占比提升而稳定。只有这三点同时改善，市场才会把“等待”重新定价为“兑现”。</p>
+
+<h2 id="overseas-opportunity">八、海外订单是第二增长曲线</h2>
+<p>国内海风决定基本盘，海外订单决定增量弹性。东方电缆海外收入从早期几千万元起步，到 2025 年已经达到 12 亿元以上。考虑到海外业务毛利率和产品属性，这部分收入大概率主要由海缆贡献，而不是普通陆缆。</p>
+<p>海外海风市场的吸引力在于项目单体规模大、技术要求高、供应链壁垒强。欧洲、亚洲其他地区以及深远海项目，都对高压海缆、动态缆、海洋工程能力提出更高要求。如果东方电缆能持续拿到海外订单，就不仅是国内海风周期标的，也会逐渐带上全球海缆供应商的定价逻辑。</p>
+<p>海外收入占比首次突破两位数，是一个重要信号。它说明公司已经不只是跟随国内海风周期，也在尝试打开国际市场。后续最值得跟踪的，是海外订单金额、项目类型、交付周期和毛利率。</p>
+<p>理想状态下，国内装机恢复与海外订单突破同时发生。国内提供收入兑现确定性，海外提供估值想象力和全球化溢价。那时公司的景气画面会更完整。</p>
+
+<h2 id="marine-engineering-and-umbilical-cables">九、海洋工程、脐带缆和动态缆打开更宽边界</h2>
+<p>东方电缆并不只做海底电缆。公司近年开始向下游延伸，包括建船、买船、铺设、海洋工程等环节。海洋工程看起来像重资产、苦活累活，但毛利率并不低，且能增强公司在项目中的综合交付能力。</p>
+<p>脐带缆、动态缆等产品，也使公司从传统海风输电环节拓展到海工平台和更复杂的海洋能源场景。脐带缆更多服务于海工平台，动态缆则与漂浮式风电、深远海开发等新趋势相关。</p>
+<p>这些业务的意义，在于提高公司长期成长边界。海风从近海走向深远海后，项目复杂度提升，普通电缆供应商和具备海洋工程能力的一体化企业之间，差距会越来越明显。</p>
+<p>如果未来漂浮式风电、海工平台和海外深远海项目放量，东方电缆的海洋装备和工程能力可能成为新的增量来源。这部分还处在成长阶段，但方向值得持续跟踪。</p>
+
+<h2 id="investment-framework">十、投资框架：确定性高，但要等业绩触发点</h2>
+<p>东方电缆的逻辑可以拆成三层。第一层是公司质地：海缆稀缺、业务纯粹、国内竞争格局清晰。第二层是行业周期：国内海风招标和规划已经起来，但装机和收入确认还需要等待。第三层是增量空间：海外订单和海洋工程业务可能带来更高弹性。</p>
+<p>这家公司很难用“特别便宜”来描述，因为市场已经给了稀缺性溢价；但也不能简单说缺乏机会，因为订单、装机和海外业务都在积累。真正的问题是时间点：什么时候项目开工加速，什么时候发出商品转收入，什么时候海外订单继续突破。</p>
+<p>短期看，订单只是维持高位，没有出现连续爆发式增长，不能过度期待立刻释放。中期看，海风项目积压、装机目标、存货增长和海外收入扩张共同说明，业绩触发点正在靠近。长期看，公司在海缆和海洋工程上的卡位仍然稀缺。</p>
+<p>所以“等风来”不是空等，而是等几个可验证指标：国内海风装机开始兑现，招标转化为施工，存货和发出商品转为收入，海缆毛利率稳定，海外订单持续增加。指标出现之前，股价可能仍以震荡消化为主；指标出现之后，确定性资金会重新集中。</p>
+<p>估值触发点也要分层理解。第一类触发是订单公告，尤其是高压海缆、柔直海缆、海洋工程和海外项目；第二类触发是财报中的收入确认和毛利率修复；第三类触发是行业层面的海风装机数据开始兑现。只有订单、财报和行业数据互相印证，市场才会愿意把二十多倍估值重新往更高景气假设上推。</p>
+<p>如果只看到订单，却看不到装机和收入确认，行情容易停留在预期阶段；如果只看到收入确认，却没有新增订单跟上，又会担心后续持续性。东方电缆最好的状态，是订单池保持厚度、发出商品持续转收入、海外订单贡献增量，同时海风装机从政策目标进入实际施工。</p>
+
+<h2 id="risks-and-final-view">十一、结论：海风周期没到爆发点，但东方电缆的位置仍然稀缺</h2>
+<p>东方电缆的核心价值，不在于短期叙事，而在于它处在海上风电最稀缺的海缆环节。历史已经证明，海风景气上行时，公司订单、毛利和估值都会有明显弹性；海风兑现不及预期时，公司也会进入漫长等待。</p>
+<p>当前阶段，国内数据已经改善，订单保持相对高位，发出商品增加，海外收入开始有规模，但还没有到业绩全面爆发的节点。真正理想的状态，是国内装机上来，同时公司拿到更多海外海缆订单。那时确定性和成长性会同时出现。</p>
+<p>风险也需要摆在前面。海域审批和施工节奏可能继续拖慢装机，铜价和原材料成本可能影响毛利，海缆竞争可能阶段性加剧，海外订单获取和交付也存在不确定性。业务分类口径变化，也会提高外部跟踪毛利率和板块结构的难度。</p>
+<p>这些风险并不否定公司稀缺性，但会决定业绩释放速度。真正需要持续跟踪的，是项目开工、并网、收入确认和订单续接之间是否形成顺畅链条。</p>
+<p>但从产业位置看，东方电缆仍然是一家值得放在海风核心观察池里的公司。它不一定随时便宜，也不一定马上爆发；它的价值在于，一旦海风真正进入施工和装机兑现阶段，稀缺环节往往最先被重新定价。</p>
+'''
+
+
+base.POSTS = [
+    base.Post(
+        slug="orient-cable-offshore-wind-scarcity-orders-waiting-cycle",
+        title="东方电缆：海缆稀缺性、海风装机与等待放量的订单周期",
+        desc="从历史景气、海缆毛利、订单高位、存货发出商品、国内海风装机和海外订单，拆解东方电缆的确定性与等待逻辑。",
+        category="投资",
+        series="新能源产业观察",
+        tags=["东方电缆", "海缆", "海风", "海上风电", "新能源", "订单", "海洋工程", "投资"],
+        minutes=10,
+        body=BODY,
+        accent=("#0f172a", "#0369a1", "#f59e0b"),
+        required=["东方电缆", "海缆", "海风", "订单", "存货", "发出商品", "海外", "等风来"],
+        minimum=5200,
+    )
+]
+
+
+_active_ref = None
+_base_validate = base.validate
+
+
+def get_file_at_active_ref(path: str) -> str | None:
+    if _active_ref is None:
+        raise RuntimeError("active remote ref is not set")
+    api_path = quote(path, safe="/")
+    try:
+        data = base.run_gh([base.endpoint(f"contents/{api_path}?ref={_active_ref.commit_sha}")])
+    except RuntimeError as exc:
+        if "Not Found" in str(exc):
+            return None
+        raise
+    return base64.b64decode(data["content"]).decode("utf-8")
+
+
+def validate(outputs: dict[str, str]) -> None:
+    _base_validate(outputs)
+    article = outputs["2026/orient-cable-offshore-wind-scarcity-orders-waiting-cycle/index.html"]
+    for term in ["2018", "2020", "2021", "2025", "150 亿元", "130 亿元", "7 到 8GW", "10GW", "12 亿元"]:
+        if term not in article:
+            raise RuntimeError(f"missing detailed term: {term}")
+
+
+def write_outputs(outputs: dict[str, str]) -> None:
+    out_dir = Path("/tmp/orient-cable-offshore-wind-scarcity-20260812-publish-output")
+    if out_dir.exists():
+        import shutil
+
+        shutil.rmtree(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for rel, content in outputs.items():
+        path = out_dir / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+    print(json.dumps({"local_output": str(out_dir), "files": len(outputs), "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
+
+
+def create_commit(outputs: dict[str, str], ref: base.RemoteRef) -> str:
+    entries = []
+    for path, content in sorted(outputs.items()):
+        blob = base.run_gh(["-X", "POST", base.endpoint("git/blobs"), "--input", "-"], {"content": content, "encoding": "utf-8"})
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    tree = base.run_gh(["-X", "POST", base.endpoint("git/trees"), "--input", "-"], {"base_tree": ref.tree_sha, "tree": entries})
+    commit = base.run_gh(
+        ["-X", "POST", base.endpoint("git/commits"), "--input", "-"],
+        {"message": "Publish Orient Cable offshore wind article", "tree": tree["sha"], "parents": [ref.commit_sha]},
+    )
+    base.run_gh(["-X", "PATCH", base.endpoint(f"git/refs/heads/{base.BRANCH}"), "--input", "-"], {"sha": commit["sha"], "force": False})
+    return commit["sha"]
+
+
+def main() -> None:
+    global _active_ref
+    for attempt in range(3):
+        ref = base.get_ref()
+        _active_ref = ref
+        base.get_file = get_file_at_active_ref
+        outputs = base.collect_outputs()
+        validate(outputs)
+        write_outputs(outputs)
+        try:
+            commit_sha = create_commit(outputs, ref)
+        except RuntimeError as exc:
+            if attempt < 2 and "Reference update failed" in str(exc):
+                continue
+            raise
+        current_head = base.get_ref().commit_sha
+        if current_head != commit_sha:
+            comparison = base.run_gh([base.endpoint(f"compare/{commit_sha}...{current_head}")])
+            if comparison.get("status") != "ahead":
+                raise RuntimeError("published commit is not an ancestor of current remote head")
+        print(json.dumps({"parent": ref.commit_sha, "pushed": commit_sha, "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
+        return
+    raise RuntimeError("publication retried after concurrent updates but did not succeed")
+
+
+if __name__ == "__main__":
+    main()
