@@ -1,54 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_3804bc528fec|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "投资未落地，没有新模型或API，等真投了再看。",
-      "title_hash": "dc1de4d0",
-      "scored_at": "2026-07-22T12:08:50.684124Z"
-    },
-    "story_1e962b49e887|pragmatic|0a5c5b24": {
-      "score": 85,
-      "review": "代码已开源，想尝鲜多模态训练的今天就能clone试试，但新范式有学习成本。",
-      "title_hash": "de813690",
-      "scored_at": "2026-07-22T12:08:54.467677Z"
-    },
-    "story_89357f950e19|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "不会立刻影响开发，动工到投用还早，等有具体开放细节再看。",
-      "title_hash": "300dad77",
-      "scored_at": "2026-07-22T14:27:15.564761Z"
-    },
-    "story_9495caa5c2c2|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "没有具体内容，等看更新了什么再评价。",
-      "title_hash": "9fd92ee4",
-      "scored_at": "2026-07-22T14:27:18.286987Z"
-    },
-    "story_54df5095c0ce|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "钱还没变成工具，等落地再说。",
-      "title_hash": "86e091fb",
-      "scored_at": "2026-07-22T14:27:20.868154Z"
-    },
-    "story_96cb9eaf08f7|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "新API功能可用，做语音交互的可以加进Prompt试试效果。",
-      "title_hash": "508d2a01",
-      "scored_at": "2026-07-22T14:27:24.057130Z"
-    },
-    "story_56d098a4a53d|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "模型发布但未说明何时开放，等API或代码再动手。",
-      "title_hash": "e06b8cf0",
-      "scored_at": "2026-07-22T14:27:27.579322Z"
-    },
-    "story_08fdef5bc579|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "性能不错但没开放API或权重，等能用了再评价。",
-      "title_hash": "09427874",
-      "scored_at": "2026-07-22T14:27:30.847098Z"
-    },
     "story_737071755d64|pragmatic|0a5c5b24": {
       "score": 85,
       "review": "GHES用户需关注上传支持包变更，不调整可能影响故障排查。",
@@ -5124,6 +5076,72 @@
       "review": "跨会话传消息能减少重复上下文，长期多步任务可参考，但需实测适配。",
       "title_hash": "703c134c",
       "scored_at": "2026-08-12T10:39:29.363867Z"
+    },
+    "story_c27a5b0e8673|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "讲的是落地方法论，没新品没接口，做方案时可参考，但今天用不上。",
+      "title_hash": "941d296c",
+      "scored_at": "2026-08-12T14:05:05.328602Z"
+    },
+    "story_208a14008235|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "Meta 开放权重模型已在 OpenRouter 上线，直接调 API 就能体验，跑任务的可以立刻试。",
+      "title_hash": "16405c3a",
+      "scored_at": "2026-08-12T14:05:08.983440Z"
+    },
+    "story_06cb8c904cd7|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "又是愿景宣言，没有产品出来前对开发者零影响。",
+      "title_hash": "53b2798a",
+      "scored_at": "2026-08-12T14:05:11.680278Z"
+    },
+    "story_208a14008235|cynic|f4237a62": {
+      "score": 68,
+      "review": "开源是真，但'首个'纯粹是自家实验室自封，性能数据呢？",
+      "title_hash": "16405c3a",
+      "scored_at": "2026-08-12T14:05:13.628212Z"
+    },
+    "story_208a14008235|paper-police|966065bf": {
+      "score": 25,
+      "review": "仅推文称开源上线，无代码仓库无评测，待实际跑分验证。",
+      "title_hash": "16405c3a",
+      "scored_at": "2026-08-12T14:05:16.713262Z"
+    },
+    "story_3479a70ad230|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "3B小模型开源可跑边缘端，视觉任务今天就能试，省部署成本。",
+      "title_hash": "1d2259e4",
+      "scored_at": "2026-08-12T15:35:34.384520Z"
+    },
+    "story_c5cde4192426|pragmatic|0a5c5b24": {
+      "score": 62,
+      "review": "手语识别工具落地，做无障碍应用的开发者可以关注，其他领域暂无需行动。",
+      "title_hash": "e85168f6",
+      "scored_at": "2026-08-12T15:35:43.508642Z"
+    },
+    "story_72a76c10c59d|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "写书体验谈，对开发者无直接用途，等真能自动写书再看。",
+      "title_hash": "3e5d30f8",
+      "scored_at": "2026-08-12T15:35:45.736403Z"
+    },
+    "story_4aeed2d5acdd|pragmatic|0a5c5b24": {
+      "score": 78,
+      "review": "方案可直接抄，跑本地大模型提速明显，但要折腾 GPU 直通配置。",
+      "title_hash": "116abe4b",
+      "scored_at": "2026-08-12T15:35:47.838152Z"
+    },
+    "story_3479a70ad230|cynic|f4237a62": {
+      "score": 55,
+      "review": "3B模型谈'更好'，先把对比基准和功耗数据晒出来。",
+      "title_hash": "1d2259e4",
+      "scored_at": "2026-08-12T15:35:50.698566Z"
+    },
+    "story_3479a70ad230|paper-police|966065bf": {
+      "score": 45,
+      "review": "官方博客给了模型细节和评测数字，但未见开源代码与第三方验证，复现存疑。",
+      "title_hash": "1d2259e4",
+      "scored_at": "2026-08-12T15:35:53.754698Z"
     }
   }
 }

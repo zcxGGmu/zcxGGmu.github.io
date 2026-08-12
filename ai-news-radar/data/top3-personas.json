@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T10:39:29.363999Z",
+  "generated_at": "2026-08-12T15:35:53.754766Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,10 +37,30 @@
       }
     },
     {
+      "story_id": "story_3479a70ad230",
+      "title": "LFM2.5-VL-3B：为边缘端带来更好更快的视觉能力 / LFM2.5-VL-3B for Better and Faster Vision Capabilities for the Edge",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 55,
+          "review": "3B模型谈'更好'，先把对比基准和功耗数据晒出来。"
+        },
+        "paper-police": {
+          "score": 45,
+          "review": "官方博客给了模型细节和评测数字，但未见开源代码与第三方验证，复现存疑。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "3B小模型开源可跑边缘端，视觉任务今天就能试，省部署成本。"
+        }
+      }
+    },
+    {
       "story_id": "story_8bee042859df",
       "title": "Runway Seedance 2.5 上线，支持50角色参考 / A full cast， a full track， one generation at a time. Seedance 2.5 is live on Runway， with 50 unique…",
       "url": "https://x.com/runwayml/status/2087251184658657346",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 45,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 88,
           "review": "多角色视频生成已上线，做短片可直接上手试。"
-        }
-      }
-    },
-    {
-      "story_id": "story_2b5700449511",
-      "title": "Gemini 助力 Database Migration Service 加速 PostgreSQL 迁移 / Accelerate PostgreSQL migrations using Gemini in Database Migration Service",
-      "url": "https://cloud.google.com/blog/products/databases/accelerate-postgresql-migrations-with-gemini-in-dms",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 45,
-          "review": "又给老工具贴AI标签，迁移加速了没基准数据，先跑个TPC-H再说。"
-        },
-        "paper-police": {
-          "score": 45,
-          "review": "官方博客有细节但无独立验证，等实际迁移数据再定论。"
-        },
-        "pragmatic": {
-          "score": 87,
-          "review": "Google Cloud的PG迁移加了Gemini辅助，迁移用户今天就能上手。"
         }
       }
     }
