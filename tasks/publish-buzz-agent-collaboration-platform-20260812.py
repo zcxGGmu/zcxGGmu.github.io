@@ -1,0 +1,208 @@
+from __future__ import annotations
+
+import base64
+import importlib.util
+import json
+import re
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import quote
+
+
+sys.dont_write_bytecode = True
+
+TASKS = Path(__file__).resolve().parent
+BASE_SCRIPT = TASKS / "publish-three-life-business-articles-20260809.py"
+
+spec = importlib.util.spec_from_file_location("publish_base", BASE_SCRIPT)
+base = importlib.util.module_from_spec(spec)
+assert spec.loader is not None
+sys.modules[spec.name] = base
+spec.loader.exec_module(base)
+
+base.__file__ = __file__
+base.DATE = "2026-08-12"
+base.BASE_DT = datetime(2026, 8, 12, 21, 25, 0, tzinfo=timezone(timedelta(hours=8)))
+base.PREV_EXISTING_URL = "/2026/cxo-recovery-wuxi-apptec-orders-bd-outbound/"
+base.PREV_EXISTING_TITLE = "CXO 景气复苏进入兑现期：药明康德订单、BD 出海与业绩弹性"
+base.SCRIPT_NAME = Path(__file__).name
+base.MANIFEST_NAME = "publish-buzz-agent-collaboration-platform-20260812-changed-files.json"
+
+
+BODY = r'''
+<p><a href="https://github.com/block/buzz">Buzz</a> 是 Block 团队推出的开源协作平台，它的核心判断很明确：未来的工作区不只属于人，也属于 AI Agent。聊天、频道、线程、附件、代码任务、工具调用、审查反馈和团队交接，不应该分散在一堆互相割裂的窗口里，而应该进入同一个可搜索、可追踪、可审计的协作空间。</p>
+<p>它第一眼看起来像一个可以自托管的 Slack 式工作区，但真正有意思的地方不在界面相似，而在协作对象发生了变化。人可以进入频道，Agent 也可以进入频道；人可以被提及，Agent 也可以被提及；人可以参与线程，Agent 也可以拥有自己的身份、上下文、权限和活动记录。</p>
+<p>这类产品的方向，正好对应 Agent 时代的一个关键问题：当一个人手里同时有多个模型、多个服务额度、几台本地机器、不同编码工具和一组需要协作的 Agent 时，怎样把它们编排成一个真正能工作的团队，而不是一堆散落的聊天窗口。</p>
+
+<h2 id="workspace-for-humans-and-agents">一、一个同时面向人和 Agent 的工作区</h2>
+<p>Buzz 的基本形态是社区、频道、线程和成员。左侧可以加入不同社区，逻辑上接近团队或组织；频道可以公开，也可以私有；每个频道里既能添加人，也能添加 Agent。熟悉团队聊天工具的人，上手时不会觉得陌生。</p>
+<p>区别在于，Agent 在这里不是一个隐藏在后台的机器人，也不是某个命令行窗口里的孤立进程。它更像频道成员。你可以在消息里直接提及它，让它进入某个线程，围绕当前上下文完成任务，再把结果返回到同一个协作空间。</p>
+<p>这种设计让 Agent 的角色从“我单独向它发提示词”，变成“它参与一个团队讨论”。当任务需要多人、多个角色或多种工具协作时，这种共享上下文会比单人单窗口更自然。</p>
+<p>一个典型场景是工程团队频道。产品、设计、内容、工程和运维都可以在同一频道里讨论需求；不同 Agent 可以分别承担代码修改、文案调整、设计检查、测试建议和发布清单。所有讨论、决策、补丁和审查反馈都留在同一个线程里。</p>
+
+<h2 id="slack-like-but-agent-native">二、界面像 Slack，但底层逻辑是 Agent-native</h2>
+<p>Buzz 的界面刻意做得很熟悉：频道列表、线程展开、表情回应、附件上传、成员提及、格式化消息，都接近现代团队协作工具。这个熟悉感很重要，因为未来的 Agent 协作不应该要求用户重新学习一套完全陌生的交互方式。</p>
+<p>但它不是简单复制聊天软件。它把 Agent 放进了和人相同的协作表面：Agent 可以进入频道，可以被授权和限制，可以在活动记录里展示过程，可以被其他 Agent 或人接力。团队不是围着一个聊天框转，而是在一个工作区里组织任务。</p>
+<p>这种体验和传统编码 Agent 不同。命令行式工具的优势，是可以清楚看到大量中间输出、文件差异和命令结果。Buzz 更像管理一个团队：你不一定一直盯着每个细节，而是让 Agent 在后台处理，再把关键结果和需要确认的点带回线程。</p>
+<p>这也意味着它更适合多 Agent 工作流，而不是只适合一次性问答。任务被放在频道、线程和团队结构里，天然就更容易沉淀上下文，也更容易把角色、权限和交接写清楚。</p>
+
+<h2 id="agent-configuration-and-permissions">三、Agent 可以像员工一样配置角色、权限和职责</h2>
+<p>Buzz 的 Agent 配置并不只是填一个名字。你可以指定使用什么 harness，接入什么模型或 provider，谁能和这个 Agent 对话，是否允许它成为社区的一部分，以及它能在哪些频道里工作。</p>
+<p>这对于昂贵模型尤其重要。比如某个高成本模型只应该由少数人调用，但团队仍然需要在公开线程里看到任务结果，就可以把调用权限和可见性分开处理。这样既能控制成本，也能保留团队协作记录。</p>
+<p>同一种 Agent 还可以创建多个版本。一个版本负责工程实现，一个版本负责内容审查，一个版本负责运营建议，一个版本负责设计反馈。每个 Agent 都可以有不同 system instructions，也可以绑定不同模型和工具能力。</p>
+<p>这种方式接近给组织里的不同岗位写岗位说明书。与其让一个万能 Agent 什么都做，不如把任务拆成 CTO、内容负责人、工程负责人、营销负责人、运维负责人等角色，让每个 Agent 按自己的职责行动。角色越明确，输出越容易评估。</p>
+
+<h2 id="harnesses-providers-and-local-compute">四、模型、harness 和本地算力可以组合起来</h2>
+<p>Buzz 的另一个重点，是它不把用户锁死在某一个模型或单一服务里。你可以配置不同 LLM providers，也可以让不同 Agent 使用不同 harness。做代码实现时，可以选择更适合编码的模型和工具；做设计、文案或策略时，则可以换成更适合语言和审美判断的模型。</p>
+<p>更有意思的是本地算力共享。Compute 相关配置允许把某台机器开放给团队成员运行 Agent。一个人手里可能有桌面工作站、GPU 设备、笔记本，也可能有多个模型额度。Buzz 提供了一种方式，把这些算力和服务额度放进一个共享协作界面里。</p>
+<p>这会带来一个很现实的组织能力：团队不必每个人都重复配置同样复杂的环境。某台机器负责跑重模型，另一台机器负责开发任务，某个服务额度负责高质量推理，某个本地环境负责私有代码。Agent 在工作区里被调度，人只需要决定任务交给谁、用什么能力完成。</p>
+<p>如果把 Agent 看作员工，把本地机器和模型额度看作办公室设备，那么 Buzz 做的事就是把员工、设备和任务放进同一个组织结构里。这样，个人硬件和团队协作之间不再隔着一层复杂的手工配置。</p>
+
+<h2 id="channels-as-operating-units">五、频道可以成为项目、部门和任务的运行单元</h2>
+<p>频道不只是聊天房间，也可以成为一个项目或部门的运行单元。比如新建一个 Demo Channel，再把工程、内容、设计和运营相关的 Agent 添加进去，就得到一个面向某个任务的临时团队。</p>
+<p>频道描述、可见范围、成员选择和 Agent 团队配置，会共同定义这个空间的用途。一个公司内部可以有市场部频道、工程部频道、数据科学频道；个人项目也可以拆成网站、产品、内容、分发、增长等不同频道。</p>
+<p>这种组织方式的好处，是上下文不会散。一个首页标题优化任务，从需求提出、Agent 查找仓库、修改建议、内容负责人反馈、工程执行到最后确认，都可以在同一条线程里完成。后续再回头看，也能知道为什么要改、谁做了判断、哪里需要复查。</p>
+<p>当 Agent 数量越来越多，真正难的不是让某个 Agent 回答问题，而是让多个 Agent 在同一项目里不互相打架、不重复劳动、不丢失上下文。频道和线程就是最基础的组织边界。</p>
+
+<h2 id="activity-log-and-agent-client-protocol">六、活动记录和 Agent Client Protocol 让过程可追踪</h2>
+<p>Buzz 的 Agent 工作会进入活动记录。你可以点开查看 Agent 正在做什么、做到了哪里、返回了什么结果。相比专门的编码工具面板，这种活动视图未必最适合逐行盯过程，但它适合在团队协作场景下保留关键进展。</p>
+<p>底层协作依赖 Agent Client Protocol。消息在频道和 Agent harness 之间传递，Agent 接收上下文、执行任务，再把状态和结果送回线程。这样，不同 harness 可以通过同一种协作表面和同一个频道体系工作。</p>
+<p>这一步很重要。过去不同 Agent 工具之间往往互不相通，A 工具做出的上下文很难自然交给 B 工具。Buzz 想解决的是同一个工作区里多个 Agent 和人之间的通信问题，让编码、内容、审查、运营等不同角色都能在同一空间里交接。</p>
+<p>长期看，这种协议化协作比单个聊天窗口更接近真实工作。真实组织不是一个人和一个助手来回对话，而是多个角色围绕任务、文档、代码和决策不断交接。</p>
+
+<h2 id="handoff-between-agent-roles">七、最有价值的能力，是 Agent 之间可以交接</h2>
+<p>在一个首页优化任务里，工程 Agent 可以先找到仓库和对应文件，完成标题简化；然后它可以把结果交给内容负责人 Agent，请它按内容约束做反馈。内容负责人再根据自己的规则验证，提出修改意见或确认可以审核。</p>
+<p>这种交接看起来很简单，但意义很大。它意味着 Agent 不再只是独立完成单点任务，而是可以被组织成流程。一个 Agent 负责执行，另一个 Agent 负责审查，第三个 Agent 负责产品语气，第四个 Agent 负责发布 checklist。人只在关键节点介入。</p>
+<p>这也是多 Agent 系统最容易落地的方式。不要一开始追求一个全能系统，而是把组织里已经存在的角色和流程映射出来：谁提出目标，谁做实现，谁做审查，谁做验收，谁决定发布。然后让 Agent 按这个流程工作。</p>
+<p>如果 system instructions 写得足够清楚，Agent 会更像一个有职责边界的队友，而不是一个每次都需要重新解释背景的聊天机器人。真正节省时间的不是它一次说了多少话，而是它能否在同一组织上下文里持续承担职责。</p>
+
+<h2 id="secure-tool-access-and-mcp-runtime">八、真正难的不是 MCP server，而是安全工具接入</h2>
+<p>搭建一个 MCP server 本身并不是最难的部分。真正麻烦的是生产环境里的认证、OAuth、密钥管理、安全部署，以及如何在不暴露全部系统能力的情况下，让 AI 只访问它应该使用的工具。</p>
+<p>Agent 要进入真实工作，迟早需要访问外部服务：代码仓库、部署平台、文档系统、客户系统、数据库、对象存储和内部 API。问题不在于能不能调用，而在于怎样限制调用范围，怎样记录调用行为，怎样处理错误，怎样让人类在高风险动作前确认。</p>
+<p>Buzz 这类协作工作区的价值，正是在这里变得明显。工具调用不应该只存在于某个本地终端输出里，而应该回到频道、线程和审查流程。谁触发了任务，Agent 调用了哪些工具，结果返回到哪里，后续谁确认，都应该成为工作记录的一部分。</p>
+<p>当 Agent 进入公司或团队工作流，权限模型会比模型能力更关键。能不能安全使用工具，决定了它是演示玩具，还是生产协作系统。</p>
+
+<h2 id="not-a-chatbot-but-a-teammate">九、把 Agent 当队友，而不是聊天机器人</h2>
+<p>Buzz 最强的产品观念，是把 Agent 当队友。聊天机器人模式里，用户每次都打开一个窗口、输入一个问题、等待一个回答。队友模式里，Agent 有身份、有角色、有所属频道、有任务上下文，也会和其他成员交接。</p>
+<p>这更接近未来组织的样子。几年后，每个人调用多个 Agent 完成不同任务可能会变得很普通：一个负责写代码，一个负责测验收，一个负责查历史上下文，一个负责生成营销素材，一个负责整理发布说明。界面不应该逼人逐个窗口切换，而应该提供一个共同工作区。</p>
+<p>人也可以按自己的方式塑造 Agent。给它命名，放入头像，指定人物原型，喂入某类资料，写清楚行为约束，让它在某个频道里承担固定职责。这样建立出来的不是一个泛化助手，而是一个贴近组织文化和项目需求的虚拟成员。</p>
+<p>这也是 Buzz 让人感觉熟悉又新鲜的原因。熟悉的是团队聊天界面，新鲜的是里面的成员不再全是人。未来的组织可能正是由人、Agent、工作流、工具和算力共同组成。</p>
+
+<h2 id="why-open-source-and-self-hosting-matter">十、开源、自托管和不锁模型，是这个方向的关键</h2>
+<p>Buzz 是开源项目，这一点很重要。Agent 协作平台如果要进入真实团队，很难只依赖一个封闭 SaaS。团队会关心数据在哪里，消息和任务记录如何保存，Agent 权限怎样隔离，是否能接入自己的模型、算力和内部工具。</p>
+<p>它的底层思路也强调 relay 和事件日志。README 中把它描述为一个 self-hostable workspace，并把消息、反应、工作流步骤、审查批准和 git 事件都放进同一类 signed event。换句话说，Nostr relay 不只是传消息，而是在给人、Agent、工作流和代码事件提供共同记录层。</p>
+<p>自托管让社区、组织和个人有机会掌握自己的 relay 和数据边界。它也更适合那些拥有本地硬件、私有代码库或内部系统的团队。对 Agent 工作区来说，可部署性和可控性不是附加功能，而是进入生产协作的前提。</p>
+<p>不锁定单一模型同样关键。不同任务需要不同模型，不同团队有不同成本、隐私和质量要求。一个能长期使用的 Agent 平台，必须允许模型、provider、harness 和算力组合，而不是把所有任务都交给同一个黑盒。</p>
+<p>这类系统现在仍在早期。界面、活动记录、Agent 交互和团队协作方式都还有继续打磨空间。但方向已经清楚：单个聊天框不够了，单个编码终端也不够了。人和 Agent 需要一个共同的组织空间。</p>
+
+<h2 id="final-view">十一、结论：Agent 时代需要新的协作界面</h2>
+<p>Buzz 展示的是一种“登月计划式”的产品尝试：把团队聊天、Agent 调度、本地算力、模型 provider、线程协作、工具接入和审查交接放在同一个工作区。它不是简单做一个 Slack 克隆，而是在回答 Agent 时代该如何组织工作的底层问题。</p>
+<p>它真正有价值的地方，是让 Agent 从工具变成成员，从问答变成协作，从一次性调用变成持续角色。工程、内容、市场、运维、设计、数据分析等任务都可以围绕频道和线程被组织起来，再由不同 Agent 按职责完成。</p>
+<p>未来的个人工作台和团队组织，很可能不会只是一堆聊天窗口、IDE 插件和命令行终端。更合理的形态，是人、Agent、项目、工具、权限和历史记录在同一个界面里协同。Buzz 之所以值得研究，正是因为它提前把这个方向做成了可运行的开源系统。</p>
+'''
+
+
+base.POSTS = [
+    base.Post(
+        slug="buzz-open-source-agent-collaboration-workspace",
+        title="Buzz：面向人类与 AI Agent 的开源协作工作区",
+        desc="从频道、Agent 角色、共享算力、ACP 协议和工具安全接入，拆解 Buzz 如何把人和 AI Agent 放进同一个协作空间。",
+        category="AI工具",
+        series="AI Agent",
+        tags=["Buzz", "AI Agent", "开源项目", "协作平台", "Block", "Agent Client Protocol", "本地算力", "软件工程"],
+        minutes=10,
+        body=BODY,
+        accent=("#0f172a", "#f59e0b", "#22c55e"),
+        required=["Buzz", "Agent", "频道", "本地算力", "Agent Client Protocol", "MCP", "Block", "https://github.com/block/buzz"],
+        minimum=5200,
+    )
+]
+
+
+_active_ref = None
+_base_validate = base.validate
+
+
+def get_file_at_active_ref(path: str) -> str | None:
+    if _active_ref is None:
+        raise RuntimeError("active remote ref is not set")
+    api_path = quote(path, safe="/")
+    try:
+        data = base.run_gh([base.endpoint(f"contents/{api_path}?ref={_active_ref.commit_sha}")])
+    except RuntimeError as exc:
+        if "Not Found" in str(exc):
+            return None
+        raise
+    return base64.b64decode(data["content"]).decode("utf-8")
+
+
+def validate(outputs: dict[str, str]) -> None:
+    _base_validate(outputs)
+    article = outputs["2026/buzz-open-source-agent-collaboration-workspace/index.html"]
+    body = re.search(r'<div class="post-body" v-pre>(.*?)</div></div><nav', article, re.S)
+    if body is None:
+        raise RuntimeError("article body missing")
+    links = set(re.findall(r'https://github\.com/[^"<]+', body.group(1)))
+    if links != {"https://github.com/block/buzz"}:
+        raise RuntimeError(f"GitHub link coverage mismatch: {links}")
+    for term in ["Nostr", "self-host", "harness", "OAuth", "密钥管理", "Slack"]:
+        if term not in article:
+            raise RuntimeError(f"missing detailed term: {term}")
+
+
+def write_outputs(outputs: dict[str, str]) -> None:
+    out_dir = Path("/tmp/buzz-agent-collaboration-platform-20260812-publish-output")
+    if out_dir.exists():
+        import shutil
+
+        shutil.rmtree(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for rel, content in outputs.items():
+        path = out_dir / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+    print(json.dumps({"local_output": str(out_dir), "files": len(outputs), "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
+
+
+def create_commit(outputs: dict[str, str], ref: base.RemoteRef) -> str:
+    entries = []
+    for path, content in sorted(outputs.items()):
+        blob = base.run_gh(["-X", "POST", base.endpoint("git/blobs"), "--input", "-"], {"content": content, "encoding": "utf-8"})
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    tree = base.run_gh(["-X", "POST", base.endpoint("git/trees"), "--input", "-"], {"base_tree": ref.tree_sha, "tree": entries})
+    commit = base.run_gh(
+        ["-X", "POST", base.endpoint("git/commits"), "--input", "-"],
+        {"message": "Publish Buzz agent collaboration article", "tree": tree["sha"], "parents": [ref.commit_sha]},
+    )
+    base.run_gh(["-X", "PATCH", base.endpoint(f"git/refs/heads/{base.BRANCH}"), "--input", "-"], {"sha": commit["sha"], "force": False})
+    return commit["sha"]
+
+
+def main() -> None:
+    global _active_ref
+    for attempt in range(3):
+        ref = base.get_ref()
+        _active_ref = ref
+        base.get_file = get_file_at_active_ref
+        outputs = base.collect_outputs()
+        validate(outputs)
+        write_outputs(outputs)
+        try:
+            commit_sha = create_commit(outputs, ref)
+        except RuntimeError as exc:
+            if attempt < 2 and "Reference update failed" in str(exc):
+                continue
+            raise
+        current_head = base.get_ref().commit_sha
+        if current_head != commit_sha:
+            comparison = base.run_gh([base.endpoint(f"compare/{commit_sha}...{current_head}")])
+            if comparison.get("status") != "ahead":
+                raise RuntimeError("published commit is not an ancestor of current remote head")
+        print(json.dumps({"parent": ref.commit_sha, "pushed": commit_sha, "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
+        return
+    raise RuntimeError("publication retried after concurrent updates but did not succeed")
+
+
+if __name__ == "__main__":
+    main()
