@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T15:35:53.754766Z",
+  "generated_at": "2026-08-13T00:14:32.747550Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,22 +17,42 @@
   ],
   "items": [
     {
-      "story_id": "story_c246dedc40ae",
-      "title": "GitHub Copilot 现已支持 MAI-Code-1.1-Flash / MAI-Code-1.1-Flash available in GitHub Copilot",
-      "url": "https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot",
+      "story_id": "story_dc9722a7a353",
+      "title": "阿里开放 Qwen3.8-2.4T-A95B 模型权重：2.4T MoE、激活 95B、原生 256K 上下文",
+      "url": "https://www.ithome.com/0/989/001.htm",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "换了个模型名就发 changelog，性能对比和实际体验呢？"
+          "score": 88,
+          "review": "参数实打实，权重直接给，这次挑不出大毛病。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "官方公告但无技术细节和评测，仅称可用，缺论文和独立验证。"
+          "score": 72,
+          "review": "权重已开放可自行验证，但无论文和benchmark，等第三方跑分补证。"
+        },
+        "pragmatic": {
+          "score": 92,
+          "review": "权重已开放，2.4T MoE 能跑，长上下文需求今天就能上手试。"
+        }
+      }
+    },
+    {
+      "story_id": "story_094f6572bd5f",
+      "title": "Agent Plugins 1.0 现已登陆 VS Code、Copilot CLI 和 Copilot 应用 / Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app",
+      "url": "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 50,
+          "review": "从预览版换个1.0名号，没给任何基准数据，先跑起来再说。"
+        },
+        "paper-police": {
+          "score": 28,
+          "review": "官方公告无评测无代码，功能细节待第三方验证。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "Copilot 集成新模型，写代码可立即切换体验，效率党直接上手。"
+          "review": "插件生态落开发环境，今天就能配置用上。"
         }
       }
     },
@@ -40,7 +60,7 @@
       "story_id": "story_3479a70ad230",
       "title": "LFM2.5-VL-3B：为边缘端带来更好更快的视觉能力 / LFM2.5-VL-3B for Better and Faster Vision Capabilities for the Edge",
       "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 55,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 88,
           "review": "3B小模型开源可跑边缘端，视觉任务今天就能试，省部署成本。"
-        }
-      }
-    },
-    {
-      "story_id": "story_8bee042859df",
-      "title": "Runway Seedance 2.5 上线，支持50角色参考 / A full cast， a full track， one generation at a time. Seedance 2.5 is live on Runway， with 50 unique…",
-      "url": "https://x.com/runwayml/status/2087251184658657346",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 45,
-          "review": "五十个角色参考听着唬人，渲染时长和实际效果敢晒出来吗？"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "仅官方推文宣称，无论文代码评测，等独立验证。"
-        },
-        "pragmatic": {
-          "score": 88,
-          "review": "多角色视频生成已上线，做短片可直接上手试。"
         }
       }
     }
