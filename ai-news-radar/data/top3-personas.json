@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T05:17:46.806630Z",
+  "generated_at": "2026-08-14T10:35:23.922606Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,10 +17,30 @@
   ],
   "items": [
     {
+      "story_id": "story_d40bf6855f00",
+      "title": "GLM-5.3 发布：编程能力开源第一，并涌现网络安全能力",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494084&idx=1&sn=a2e5cd9a534a4825feb3633ea1b6d492",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 45,
+          "review": "开源第一的榜单基线没公示，网络安全'涌现'一测便知真假。"
+        },
+        "paper-police": {
+          "score": 18,
+          "review": "官方公众号自宣性能，无论文无代码，跑分无第三方验证。"
+        },
+        "pragmatic": {
+          "score": 92,
+          "review": "开源模型能直接用，编程能力第一，本地部署撸代码的今天就能上手。"
+        }
+      }
+    },
+    {
       "story_id": "story_804890f5e6d9",
       "title": "DeepSeek-V4-Pro 正式版上线，Agent 能力大幅增强",
       "url": "https://api-docs.deepseek.com/zh-cn/updates",
-      "rank": 1,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 60,
@@ -37,42 +57,22 @@
       }
     },
     {
-      "story_id": "story_230b99496aae",
-      "title": "Google DeepMind 推出 Gemini 3.7 Flash：面向编程与智能体的最强工作模型 / Introducing Gemini 3.7 Flash",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 70,
-          "review": "跑分领先是真的，但'最强'这词在自家测试里当然是第一，第三方见了再说。"
-        },
-        "paper-police": {
-          "score": 30,
-          "review": "官方博客宣称性能，无论文无代码无第三方评测，缺铁证。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "新模型已上线，编程和智能体场景直接试用，API 可接入。"
-        }
-      }
-    },
-    {
-      "story_id": "story_3fd84efeedff",
-      "title": "GPT-5.6 构建者指南：如何以更低成本实现前沿智能体性能 / The builder’s guide to GPT‑5.6",
-      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+      "story_id": "story_02bf18388430",
+      "title": "DeepSeek V4 Pro 登陆硅基流动，1M 上下文 / This time， it's official. DeepSeek V4 Pro just landed. 🚀 @deepseek_ai DeepSeek-V4-Pro-0813 is now l…",
+      "url": "https://x.com/SiliconFlowAI/status/2088127458558271885",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "低成本？先晒出基准对比和API价格，别急着教人做事。"
+          "score": 50,
+          "review": "换个平台上线就配叫官宣？1M上下文先跑个实测再吹。"
         },
         "paper-police": {
-          "score": 22,
-          "review": "官方指南仅宣称成本降低，无论文无代码，性能数字缺少可复现证据。"
+          "score": 25,
+          "review": "仅官方推文宣称上线，无论文代码benchmark，数字无从验证。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "官方降本指南，做Agent的今天就能照着调参省成本。"
+          "score": 92,
+          "review": "硅基流动已上线，1M上下文直接调API，长文本任务今天就能用。"
         }
       }
     }
