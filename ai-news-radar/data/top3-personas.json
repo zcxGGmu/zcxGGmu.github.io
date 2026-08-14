@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T15:34:10.474765Z",
+  "generated_at": "2026-08-14T00:13:16.843917Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_dc9722a7a353",
-      "title": "阿里开放 Qwen3.8-2.4T-A95B 模型权重：2.4T MoE、激活 95B、原生 256K 上下文",
-      "url": "https://www.ithome.com/0/989/001.htm",
+      "story_id": "story_230b99496aae",
+      "title": "Google DeepMind 推出 Gemini 3.7 Flash：面向编程与智能体的最强工作模型 / Introducing Gemini 3.7 Flash",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 88,
-          "review": "参数实打实，权重直接给，这次挑不出大毛病。"
+          "score": 70,
+          "review": "跑分领先是真的，但'最强'这词在自家测试里当然是第一，第三方见了再说。"
         },
         "paper-police": {
-          "score": 72,
-          "review": "权重已开放可自行验证，但无论文和benchmark，等第三方跑分补证。"
+          "score": 30,
+          "review": "官方博客宣称性能，无论文无代码无第三方评测，缺铁证。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "权重已开放，2.4T MoE 能跑，长上下文需求今天就能上手试。"
+          "score": 90,
+          "review": "新模型已上线，编程和智能体场景直接试用，API 可接入。"
         }
       }
     },
     {
-      "story_id": "story_094f6572bd5f",
-      "title": "Agent Plugins 1.0 现已登陆 VS Code、Copilot CLI 和 Copilot 应用 / Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app",
-      "url": "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app",
+      "story_id": "story_9fd2d6d4a7de",
+      "title": "Grok 4.6 发布即登顶性价比榜：智能指数追平 GPT-5.6 Sol，定价却便宜 60% 以上",
+      "url": "https://www.aibase.com/news/30323",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 50,
-          "review": "从预览版换个1.0名号，没给任何基准数据，先跑起来再说。"
+          "score": 22,
+          "review": "性价比榜谁排的？智能指数敢晒测试集吗？便宜一半先发货再说。"
         },
         "paper-police": {
-          "score": 28,
-          "review": "官方公告无评测无代码，功能细节待第三方验证。"
+          "score": 8,
+          "review": "只有媒体宣称，无论文无代码无评测报告，性价比榜是谁排的？"
         },
         "pragmatic": {
           "score": 90,
-          "review": "插件生态落开发环境，今天就能配置用上。"
+          "review": "直接换，便宜六成性能不输，跑量任务立省成本。"
         }
       }
     }
