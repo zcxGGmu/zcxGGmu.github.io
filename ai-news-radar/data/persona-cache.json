@@ -1,48 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_8df1b0bf002d|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "纯法律纠纷，不影响开发选型，观望后续判例即可。",
-      "title_hash": "c8701a11",
-      "scored_at": "2026-07-24T00:18:33.259852Z"
-    },
-    "story_35e9cf099ba2|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "金融浮盈新闻，对写代码没任何影响，不用浪费时间。",
-      "title_hash": "ee31796d",
-      "scored_at": "2026-07-24T03:52:23.902220Z"
-    },
-    "story_39ba2312dcea|pragmatic|0a5c5b24": {
-      "score": 75,
-      "review": "语音+旗舰模型开放集成，如果API已可用，今天就能接入测试。",
-      "title_hash": "2a7a6c51",
-      "scored_at": "2026-07-24T03:52:27.105323Z"
-    },
-    "story_37037fdc465b|pragmatic|0a5c5b24": {
-      "score": 92,
-      "review": "多模型切换+外部应用调用，Claude用户今天就能提升效率。",
-      "title_hash": "a00569bc",
-      "scored_at": "2026-07-24T03:52:29.188249Z"
-    },
-    "story_1fc027519cfe|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "健康数据接入开放，做医疗AI的可以关注API，但通用开发者暂时用不上。",
-      "title_hash": "249048ca",
-      "scored_at": "2026-07-24T03:52:31.977871Z"
-    },
-    "story_37037fdc465b|cynic|f4237a62": {
-      "score": 70,
-      "review": "语音加应用调用确实实用，但隐私条款怕是又要翻倍了。",
-      "title_hash": "a00569bc",
-      "scored_at": "2026-07-24T03:52:34.678883Z"
-    },
-    "story_37037fdc465b|paper-police|966065bf": {
-      "score": 20,
-      "review": "仅新闻稿宣称功能，无论文无代码无第三方评测。",
-      "title_hash": "a00569bc",
-      "scored_at": "2026-07-24T03:52:37.016354Z"
-    },
     "story_b5d4c2ab6c52|pragmatic|0a5c5b24": {
       "score": 55,
       "review": "桌面端语音功能，非API更新，开发暂时无需跟进。",
@@ -5160,6 +5118,90 @@
       "review": "实践案例可借鉴，但非现成方案，动手前先看自己项目复杂度。",
       "title_hash": "40920a3b",
       "scored_at": "2026-08-13T22:14:52.115973Z"
+    },
+    "story_9fea9202dd3d|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "审核漏洞是老问题，开发者上架前自求多福，别依赖苹果把关。",
+      "title_hash": "41e40b24",
+      "scored_at": "2026-08-14T03:04:00.506448Z"
+    },
+    "story_b01244ecd5a3|pragmatic|0a5c5b24": {
+      "score": 76,
+      "review": "实操速通教程，跑 DeepSeek Harness 可直接照抄步骤，适合快速上手。",
+      "title_hash": "8e1844ae",
+      "scored_at": "2026-08-14T03:04:03.671459Z"
+    },
+    "story_422c73720a8b|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "开源可clone，插件架构适合DIY评测流程，今天就能跑起来。",
+      "title_hash": "3bae70be",
+      "scored_at": "2026-08-14T03:04:05.864435Z"
+    },
+    "story_9d327538ac44|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "成本是硬优势，做编程任务的团队值得对比实测一下。",
+      "title_hash": "6a26f242",
+      "scored_at": "2026-08-14T03:04:09.741609Z"
+    },
+    "story_e2e9ba7b5ef8|pragmatic|0a5c5b24": {
+      "score": 85,
+      "review": "开源即用，Agent 开发可拆插件，今天就能跑。",
+      "title_hash": "5aeb312c",
+      "scored_at": "2026-08-14T03:04:11.767288Z"
+    },
+    "story_344286eacf02|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "Mac 端功能更新，跟 API 和选型无关，开发者看看就行。",
+      "title_hash": "55e2e407",
+      "scored_at": "2026-08-14T03:04:16.292977Z"
+    },
+    "story_8329992ed28e|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "营收数字不影响API价格和模型能力，开发者不用行动。",
+      "title_hash": "9590bfe2",
+      "scored_at": "2026-08-14T03:04:18.642230Z"
+    },
+    "story_3fd84efeedff|cynic|f4237a62": {
+      "score": 70,
+      "review": "低成本？先晒出基准对比和API价格，别急着教人做事。",
+      "title_hash": "28a4c631",
+      "scored_at": "2026-08-14T03:04:22.300662Z"
+    },
+    "story_3fd84efeedff|paper-police|966065bf": {
+      "score": 22,
+      "review": "官方指南仅宣称成本降低，无论文无代码，性能数字缺少可复现证据。",
+      "title_hash": "28a4c631",
+      "scored_at": "2026-08-14T03:04:27.445525Z"
+    },
+    "story_cd775d13a1a9|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "IPO 估值再高也不改 API，等实际开放或降价再看。",
+      "title_hash": "303b0ba7",
+      "scored_at": "2026-08-14T05:17:27.414583Z"
+    },
+    "story_ab4c865810ad|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "营收数字看看就好，API价格和模型更新才影响选型。",
+      "title_hash": "aac16a60",
+      "scored_at": "2026-08-14T05:17:29.689052Z"
+    },
+    "story_9d903e6ade1a|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "单机跑RL后训练是方向，但没开源没demo，先观望。",
+      "title_hash": "89fbcf2a",
+      "scored_at": "2026-08-14T05:17:35.578976Z"
+    },
+    "story_3da66707f2f2|pragmatic|0a5c5b24": {
+      "score": 60,
+      "review": "案例证明 Claude Code 在芯片验证有奇效，但没细节，只能当选型参考。",
+      "title_hash": "ccc2e116",
+      "scored_at": "2026-08-14T05:17:44.526684Z"
+    },
+    "story_53497b5460da|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "画饼无实货，等集群落地再看。",
+      "title_hash": "11a0b863",
+      "scored_at": "2026-08-14T05:17:46.806512Z"
     }
   }
 }

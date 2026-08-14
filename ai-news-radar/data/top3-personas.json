@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T00:13:16.843917Z",
+  "generated_at": "2026-08-14T05:17:46.806630Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -57,22 +57,22 @@
       }
     },
     {
-      "story_id": "story_9fd2d6d4a7de",
-      "title": "Grok 4.6 发布即登顶性价比榜：智能指数追平 GPT-5.6 Sol，定价却便宜 60% 以上",
-      "url": "https://www.aibase.com/news/30323",
+      "story_id": "story_3fd84efeedff",
+      "title": "GPT-5.6 构建者指南：如何以更低成本实现前沿智能体性能 / The builder’s guide to GPT‑5.6",
+      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 22,
-          "review": "性价比榜谁排的？智能指数敢晒测试集吗？便宜一半先发货再说。"
+          "score": 70,
+          "review": "低成本？先晒出基准对比和API价格，别急着教人做事。"
         },
         "paper-police": {
-          "score": 8,
-          "review": "只有媒体宣称，无论文无代码无评测报告，性价比榜是谁排的？"
+          "score": 22,
+          "review": "官方指南仅宣称成本降低，无论文无代码，性能数字缺少可复现证据。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "直接换，便宜六成性能不输，跑量任务立省成本。"
+          "score": 88,
+          "review": "官方降本指南，做Agent的今天就能照着调参省成本。"
         }
       }
     }
