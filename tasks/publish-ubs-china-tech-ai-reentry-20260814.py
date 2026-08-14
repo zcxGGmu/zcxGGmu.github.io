@@ -1,0 +1,235 @@
+from __future__ import annotations
+
+import base64
+import importlib.util
+import json
+import re
+import sys
+import time
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import quote
+
+
+sys.dont_write_bytecode = True
+
+TASKS = Path(__file__).resolve().parent
+BASE_SCRIPT = TASKS / "publish-three-life-business-articles-20260809.py"
+
+spec = importlib.util.spec_from_file_location("publish_base", BASE_SCRIPT)
+base = importlib.util.module_from_spec(spec)
+assert spec.loader is not None
+sys.modules[spec.name] = base
+spec.loader.exec_module(base)
+
+_base_run_gh = base.run_gh
+
+
+def run_gh_with_stream_retry(args: list[str], payload: dict | None = None):
+    for attempt in range(5):
+        try:
+            return _base_run_gh(args, payload)
+        except RuntimeError as exc:
+            msg = str(exc).lower()
+            if attempt < 4 and any(token in msg for token in ["stream error", "cancel", "connection", "reset", "timeout", "temporarily"]):
+                time.sleep(2 + attempt * 3)
+                continue
+            raise
+
+
+base.run_gh = run_gh_with_stream_retry
+
+base.__file__ = __file__
+base.DATE = "2026-08-14"
+base.BASE_DT = datetime(2026, 8, 14, 18, 5, 0, tzinfo=timezone(timedelta(hours=8)))
+base.PREV_EXISTING_URL = "/2026/goldman-ai-server-pcb-ccl-rubin-ultra-supply-chain/"
+base.PREV_EXISTING_TITLE = "高盛上调 AI 服务器 PCB/CCL 市场：Rubin Ultra、M9 材料与国产链条重估"
+base.SCRIPT_NAME = Path(__file__).name
+base.MANIFEST_NAME = "publish-ubs-china-tech-ai-reentry-20260814-changed-files.json"
+
+
+BODY = r'''
+<p>7 月的中国科技股调整，表面看是 AI 泡沫破裂、科技股末日和市场情绪崩塌，底层更像一场剧烈但必要的杠杆出清。股价垂直下跌让人恐慌，但真正需要判断的是：市场到底在定价技术前景恶化，还是在清理前期过度拥挤的交易结构。</p>
+<p>瑞银 2026 年 8 月 10 日中国股票策略的核心判断非常反直觉：科技股调整已经接近尾声，现在是重新评估 AI 主线的窗口。这个判断不是建立在“跌多了自然会反弹”上，而是建立在三个更实的逻辑上：杠杆资金大幅去化，AI 商业化基本面仍在改善，中国本土算力中心建设正在加速落地。</p>
+
+<h2 id="july-selloff">一、7 月暴跌的真实含义：不是基本面崩塌，而是交易结构出清</h2>
+<p>7 月的中国 AI 科技硬件板块经历了无差别抛售，整体板块下跌约 32%。更极端的是，高达 36% 的科技硬件股票单月跌幅超过 40%。这不是普通回调，而是一场把前期拥挤资金强行挤出去的高强度调整。</p>
+<p>融资余额从高峰期约 3 万亿元人民币快速回落至约 2.6 万亿元，直接回吐约 4000 亿元。这个数字非常关键，因为 2.6 万亿元大致回到 4 月初全市场刚开始集中加杠杆炒作 AI 时的水平。换句话说，过去几个月靠融资和短线情绪冲进科技股的资金，大部分已经被洗出去。</p>
+<p>全球层面也在发生类似去杠杆。全球杠杆 ETF 的资产管理规模出现明显回落，韩国相关规模收缩约 50%，美国也下降约 30%。这说明 7 月不是中国单一市场的孤立事件，而是全球科技交易拥挤度同步下降的一部分。</p>
+<p>普通投资者看到的是账户缩水和股价暴跌，策略资金看到的则是一个危险结构被清理：前期极端拥挤、高杠杆、强动量的交易已经被迫降温。真正的问题变成，清洗之后剩下的基本面是否足以支撑新的资金回流。</p>
+<p>这也是为什么 7 月调整不能简单理解为“AI 结束”。如果产业前景被证伪，应该看到的是订单下修、资本开支收缩、云厂商需求降温和 EPS 预期同步下移；如果只是交易结构出清，则会看到股价先大幅下跌，但产业订单和盈利预期没有同等幅度恶化。两种下跌的投资含义完全不同。</p>
+
+<h2 id="margin-safety">二、融资担保比例仍在 280%，系统性踩踏风险下降</h2>
+<p>判断出清是否结束，不能只看跌幅，还要看杠杆安全垫。当前整体 A 股融资担保比例仍维持在约 280% 的健康水平。用更直接的话说，如果投资者借了 100 元，账户里还有约 280 元资产作为抵押。</p>
+<p>这个比例意味着市场仍有较厚的下行保护空间。即使短期再出现突发宏观消息或恐慌性抛售，也不容易触发连续强平、连环抛售和系统性踩踏。与其说市场已经没有风险，不如说最危险的强制去杠杆阶段大概率已经过去。</p>
+<p>这就像一场森林大火。表面上看满山树叶被烧掉，景象非常惨烈；但真正被清理掉的是那些最干燥、最容易引发更大火灾的枯枝和落叶。高杠杆资金被烧掉后，市场生态反而更安全，后续才有讨论修复的基础。</p>
+<p>但必须强调，杠杆出清只能说明坑够深、结构更稳，不能单独构成买入理由。便宜资产可能继续便宜，跌得多不等于能涨回来。真正能把股价重新拉起来的，只能是基本面重新证明自己。</p>
+<p>因此，策略上的第一步不是立刻满仓，而是把“恐慌阶段”和“修复阶段”分开。恐慌阶段看融资余额和强平压力，修复阶段看订单、财报、资本开支和盈利预期。只有两个阶段都给出正面信号，才说明调整正在从被动去杠杆转向主动再配置。</p>
+
+<h2 id="global-ai-monetization">三、全球 AI 变现没有证伪，反而进入改善期</h2>
+<p>市场最大的质疑是：AI 到底能不能赚钱？过去两年，全球科技巨头投入巨额资本开支购买 AI 芯片、建设算力中心、训练模型和部署云服务。如果这些投资不能转化成收入和利润，整个 AI 交易就会变成一场昂贵的资本游戏。</p>
+<p>最新财报给出的信号并不悲观。微软、亚马逊等云服务巨头的业绩显示，AI 带来的增长已经实实在在反映在财务报表里。更重要的是，云服务提供商的积压订单仍在增加，说明需求端并不是空转，算力服务确实有客户在排队购买。</p>
+<p>企业端采用 AI 的速度也在加快。平均 AI 支出环比增长约 25%，这不是三年后的远期故事，而是企业在上个季度已经实际花出去的钱。无论是接入 API、优化内部数据库、构建专有模型，还是把 AI 嵌入业务流程，商业化正在从概念进入预算。</p>
+<p>因此，全球 AI 基本面并没有被 7 月股价下跌证伪。真正发生变化的是交易结构，而不是产业方向。只要云厂商积压订单继续增加、企业 AI 支出继续增长，AI 基础设施链条就仍然具备支撑。</p>
+<p>这一点决定了“重返窗口”的底层逻辑。市场不需要立刻证明所有 AI 应用都能高利润变现，只需要证明企业愿意持续为算力、工具、云服务和内部效率提升付费。只要预算端仍在增长，基础设施端就有继续扩张的理由，硬件链条和数据中心配套也就仍有业绩支撑。</p>
+
+<h2 id="china-ai-infrastructure">四、中国市场的关键变量：国产 GPU 可用性与 AIDC 建设</h2>
+<p>中国科技股不能简单套用美国云服务繁荣逻辑。高端 AI 芯片限制、本土供应链差异、云厂商资本开支节奏和政策环境，都使中国市场有自己的约束和节奏。真正值得盯住的变量，是国产替代的可用性。</p>
+<p>随着国产 GPU 可用性不断提升，之前卡在算力供给端的瓶颈正在松动。瑞银策略判断，今年下半年国内 AIDC，也就是智能算力中心建设将显著加速。这是中国市场独有的基本面支撑。</p>
+<p>当市场舆论还在争论大模型哪家更强、AI 应用如何变现时，更确定的现实可能是算力基础设施先行。模型层竞争可以继续，但只要训练、推理、政企部署和产业应用需要更高算力，AIDC 建设就会先落地。</p>
+<p>这也是下半年 AI 主线与上半年不同的地方。上半年更多是对概念和龙头的集中追逐，下半年更可能转向实体建设、订单兑现、设备交付、电力配套和基础材料消耗。市场从讲故事，转向看物理世界里的真实建设。</p>
+<p>国产算力的可用性还会带来一个变化：供应链利润不再只集中于最上游芯片叙事，而会沿着算力中心建设向服务器、网络、存储、散热、电源、电网和运维扩散。越接近实体交付的环节，越容易用订单和产能验证，市场也更愿意给出确定性溢价。</p>
+
+<h2 id="valuation-eps-divergence">五、估值下来了，EPS 预期没有同步下修</h2>
+<p>经历 7 月调整后，中国 AI 科技硬件公司的远期市盈率已经明显回落，目前仅略高于历史平均水平。估值端被情绪压低，但每股收益预期并没有同步下调，反而仍在被分析师上修。</p>
+<p>这就是典型的“杀估值”而不是“杀业绩”。市场用恐慌情绪把股价砸下来，但公司未来盈利预期并没有同等幅度恶化。如果基本面继续兑现，估值回落与盈利上修之间的背离，就会形成重新定价的基础。</p>
+<p>不过，这并不意味着可以无脑抄底所有 AI 概念股。前期极端波动会留下心理创伤，资金不会立刻回到上半年那种抱团追逐少数 AI server 或芯片龙头的状态。交易逻辑会变宽，资金会寻找估值更便宜、基本面改善、同时能享受 AI 红利的延伸板块。</p>
+<p>下半年的关键词不是“更窄的抱团”，而是“更宽的产业链扩散”。这正是瑞银策略最有价值的部分：重返科技股，并不等于回到旧剧本。</p>
+<p>这也解释了为什么不能把上半年的热门名单直接搬到下半年。上半年资金愿意为稀缺概念和短期弹性支付高估值，下半年资金更看重估值位置、业绩能见度和订单兑现。交易从情绪驱动转为证据驱动，组合也必须从单点押注转向产业链篮子。</p>
+
+<h2 id="market-breadth">六、行情会变宽：互联网、半导体设备、网络芯片与先进封装</h2>
+<p>科技硬件内部，半导体设备、网络芯片、先进封装仍是较直接的受益方向。AI 服务器和算力中心建设需要更多芯片互联、封装能力和设备投资，这些环节与 AI 基建扩张高度相关。</p>
+<p>更反直觉的是互联网板块。长期调整之后，互联网公司的估值已经处在较低位置，盈利趋势也在改善。它们既是云端 AI 转型的直接参与者，也是 AI 降本增效的应用者。百度、腾讯等公司在下半年都有收入和利润增长加速的预期，阿里巴巴也被纳入新的配置组合。</p>
+<p>互联网重新进入视野，不是因为平台经济旧逻辑回归，而是因为这些公司拥有云、数据、应用场景、模型落地和企业客户资源。AI 商业化如果真正从概念走向企业预算，大型互联网公司反而是离商业闭环最近的一批资产。</p>
+<p>这也是“科技股”定义被重新拉宽的原因。科技股不只是芯片和服务器，不只是硬件龙头，也包括云服务、平台公司、半导体设备、封装测试、网络通信和数据中心配套。资金会从单一赛道扩散到更完整的 AI 基础设施版图。</p>
+<p>互联网板块还有一个优势：过去几年估值和预期已经被压低，边际改善更容易被市场感知。只要广告、电商、本地生活、游戏、云服务和企业服务中有一部分被 AI 提升效率，利润率改善就会比收入增长更早反映出来。这类公司不一定是最纯的 AI 标的，却可能是 AI 商业化最早反映在利润表上的资产。</p>
+
+<h2 id="power-equipment-metals">七、算力的尽头是电力：电力设备与有色金属的衍生逻辑</h2>
+<p>如果只盯着 GPU，就只看到了 AI 革命的起点。把视角拉到基础设施层面，会看到一个无法绕开的物理现实：算力的尽头是电力。</p>
+<p>智能算力中心和传统数据中心不是同一种负载。传统服务器机柜功率可能只有几千瓦，高密度 AI 服务器机柜功率可以达到几十甚至上百千瓦。更高功率密度意味着更大的电力供应、更强的电网配套、更复杂的变压器、配电和液冷散热系统。</p>
+<p>因此，电力设备不只是传统周期资产，而是 AIDC 建设的直接受益方。它同时叠加能源独立、电网升级和算力基建三条逻辑。宁德时代以及部分传统电力设备公司，都可能在这一层逻辑下被重新定价。</p>
+<p>有色金属的逻辑也同样清楚。建设大规模数据中心、铺设承载高电流的电力网络、制造特高压变压器和电气设备，都需要大量铜、铝等基础金属。紫金矿业等资源公司不仅有自身盈利趋势，还在底层绑定了 AI 基础设施的物理需求。</p>
+<p>这类资产看起来不像传统意义上的科技股，却可能是 AI 基建扩散中最稳定的“卖铲人”。当资金从虚无的算法叙事转向真实订单、变压器出货量、铜铝消耗量和资本开支，老牌周期资产也会获得新的科技含义。</p>
+<p>电力设备和有色金属的共同特征，是它们不依赖某一家模型公司胜出。只要算力中心继续建设，电、铜、铝、变压器、配电系统和散热系统就必须投入。模型层竞争越激烈，底层基础设施越像公共卖铲环节，反而更容易享受整个行业扩张。</p>
+
+<h2 id="underweight-sectors">八、需要避开的方向：缺少结构性动能的板块</h2>
+<p>重返科技主线，并不意味着所有板块都值得加仓。瑞银策略列出的相对低配方向，主要包括建筑、汽车整车生产商、消费者板块和纯软件板块。</p>
+<p>这些板块的问题在于缺乏像智能算力中心建设这样强劲的结构性衍生动力。建筑链条可能受需求和利润率约束，汽车整车仍面对价格战，消费板块受内需偏弱拖累，纯软件的 AI 变现周期相对更长。</p>
+<p>纯软件并非没有长期机会，但在当前阶段，资金更愿意支付给已经有订单、设备、资本开支和基础设施需求的环节。市场风险偏好刚从高杠杆调整中恢复，不太会立刻为遥远的商业模式买单。</p>
+<p>因此，下半年的配置关键不是贴标签，而是看结构性驱动力。谁能从 AIDC 建设、国产算力、企业 AI 预算、电力设备升级和金属需求中直接受益，谁更容易获得资金重新定价。</p>
+<p>这也是防止踩错方向的核心方法：不问一家公司是否会讲 AI，而问它是否正在获得 AI 相关订单；不问业务介绍里有没有大模型，而问收入、毛利率、资本开支和客户结构是否真的发生变化。概念可以很快扩散，财务兑现却很难伪装。</p>
+
+<h2 id="two-monitoring-variables">九、两个必须盯住的变量：融资余额与真实订单</h2>
+<p>接下来最重要的观察变量有两个。第一个是 A 股融资余额。只要融资余额能够稳定在约 2.6 万亿元附近，不再出现悬崖式恐慌下降，就说明市场底部结构相对稳固，高杠杆强平风险没有重新恶化。</p>
+<p>第二个是国内智能算力中心的实际落地数据。不要只看大模型跑分、榜单和概念热度，更要看电力设备、半导体设备、网络芯片、先进封装和数据中心配套公司的订单、资本开支、产能利用率和出货数据。</p>
+<p>无法伪造的物理现实，比短期情绪更可靠。基建订单、变压器出货量、铜铝消耗量、服务器机柜交付、电网改造和液冷系统安装，才是判断 AI 基建是否真正落地的锚点。</p>
+<p>如果融资余额稳定，AI 基建订单持续兑现，企业 AI 支出继续增长，那么 7 月的调整就更像一次风险释放后的重启窗口。反过来，如果融资余额再次快速下滑，AIDC 建设延迟，订单兑现不及预期，就需要重新评估风险。</p>
+<p>具体到组合管理，融资余额更像风险温度计，订单和资本开支更像基本面方向盘。前者决定能不能承受波动，后者决定有没有向上的牵引力。只有温度降下来、方向盘也开始转正，才是更稳的配置环境。</p>
+<p>风险也必须同步摆在桌面上。若海外云资本开支放缓，国内智能算力中心招标低于预期，国产 GPU 交付和生态适配进展不顺，或者融资余额重新快速下降，科技股修复窗口就会被推迟。策略上要承认方向改善，但不能忽视兑现节奏、仓位纪律和组合回撤控制。</p>
+
+<h2 id="conclusion">十、结论：AI 投资不只是买芯片，而是买基础设施化</h2>
+<p>7 月科技股的惨烈调整，大概率已经完成了最剧烈的技术性抛售。杠杆资金出清后，市场重新回到基本面验证阶段。全球 AI 商业化没有被证伪，中国国产 GPU 可用性提升和智能算力中心建设加速，则给本土科技主线提供了新的支撑。</p>
+<p>真正需要升级的是行动框架。不能再像上半年那样只盯着名字里带 AI、芯片或服务器的热门概念股，而要把视野放到完整产业链：互联网、半导体设备、网络芯片、先进封装、电力设备、有色金属、数据中心配套和出海链条。</p>
+<p>如果 AI 最终会像水和电一样成为无处不在、隐于无形的基础设施，那么最大红利不一定只属于显卡和模型公司。真正长期受益的，可能还包括掌握电网建设、关键设备、铜铝矿产和底层资源的传统公司。</p>
+<p>AI 投资的下一阶段，不是继续追逐口号，而是识别谁在为基础设施化提供真实供给。市场已经从情绪和杠杆驱动，转向订单、资本开支、产能和物理消耗驱动。能穿越噪音的，不是更热的概念，而是更硬的现实。</p>
+<p>以上内容仅用于产业研究和投资框架梳理，不构成任何投资建议。</p>
+'''
+
+
+base.POSTS = [
+    base.Post(
+        slug="ubs-china-tech-ai-reentry-aidc-power-metals",
+        title="中国科技股调整接近尾声：AI 主线重返窗口、AIDC 建设与产业链扩散",
+        desc="从 7 月科技股暴跌、杠杆出清、AI 商业化改善，到国产 GPU、智能算力中心、电力设备和有色金属的下半年配置逻辑。",
+        category="投资",
+        series="硬科技投资",
+        tags=["AI", "科技股", "AIDC", "瑞银", "融资余额", "电力设备", "有色金属", "互联网", "半导体", "投资"],
+        minutes=12,
+        body=BODY,
+        accent=("#101827", "#0ea5e9", "#22c55e"),
+        required=["瑞银", "32%", "2.6 万亿元", "280%", "25%", "国产 GPU", "AIDC", "电力设备", "有色金属"],
+        minimum=5600,
+    )
+]
+
+
+_active_ref = None
+_base_validate = base.validate
+
+
+def get_file_at_active_ref(path: str) -> str | None:
+    if _active_ref is None:
+        raise RuntimeError("active remote ref is not set")
+    api_path = quote(path, safe="/")
+    try:
+        data = base.run_gh([base.endpoint(f"contents/{api_path}?ref={_active_ref.commit_sha}")])
+    except RuntimeError as exc:
+        if "Not Found" in str(exc):
+            return None
+        raise
+    return base64.b64decode(data["content"]).decode("utf-8")
+
+
+def validate(outputs: dict[str, str]) -> None:
+    _base_validate(outputs)
+    extra_forbidden = ["Bilibili", "哔哩哔哩", "视频里", "视频中", "原视频", "音频里", "音频中", "这期", "本期", "作者说", "他提到", "观看", "点赞", "订阅", "投币", "收藏", "下期", "关注", "感谢大家", "BV1"]
+    failures: list[str] = []
+    post = base.POSTS[0]
+    article = outputs[f"2026/{post.slug}/index.html"]
+    cover = outputs[f"images/posts/{post.slug}/cover.svg"]
+    for word in extra_forbidden:
+        if word in article or word in cover:
+            failures.append(f"{post.slug}: forbidden wording present: {word}")
+    detailed_terms = ["杠杆出清", "36%", "4000 亿元", "韩国", "微软", "亚马逊", "智能算力中心", "百度", "腾讯", "阿里巴巴", "宁德时代", "紫金矿业", "不构成任何投资建议"]
+    for term in detailed_terms:
+        if term not in article:
+            failures.append(f"{post.slug}: missing detailed term {term}")
+    if failures:
+        raise SystemExit("\n".join(failures))
+
+
+def write_outputs(outputs: dict[str, str]) -> None:
+    out_dir = Path("/tmp/ubs-china-tech-ai-reentry-20260814-publish-output")
+    if out_dir.exists():
+        import shutil
+
+        shutil.rmtree(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for rel, content in outputs.items():
+        path = out_dir / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+    print(json.dumps({"local_output": str(out_dir), "files": len(outputs), "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
+
+
+def create_commit(outputs: dict[str, str], ref: base.RemoteRef) -> str:
+    entries = []
+    for path, content in sorted(outputs.items()):
+        blob = base.run_gh(["-X", "POST", base.endpoint("git/blobs"), "--input", "-"], {"content": content, "encoding": "utf-8"})
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    tree = base.run_gh(["-X", "POST", base.endpoint("git/trees"), "--input", "-"], {"base_tree": ref.tree_sha, "tree": entries})
+    commit = base.run_gh(
+        ["-X", "POST", base.endpoint("git/commits"), "--input", "-"],
+        {"message": "Publish UBS China tech AI reentry article", "tree": tree["sha"], "parents": [ref.commit_sha]},
+    )
+    base.run_gh(["-X", "PATCH", base.endpoint(f"git/refs/heads/{base.BRANCH}"), "--input", "-"], {"sha": commit["sha"], "force": False})
+    return commit["sha"]
+
+
+def main() -> None:
+    global _active_ref
+    for attempt in range(3):
+        ref = base.get_ref()
+        _active_ref = ref
+        base.get_file = get_file_at_active_ref
+        outputs = base.collect_outputs()
+        validate(outputs)
+        write_outputs(outputs)
+        try:
+            commit_sha = create_commit(outputs, ref)
+        except RuntimeError as exc:
+            if attempt < 2 and "Reference update failed" in str(exc):
+                continue
+            raise
+        current_head = base.get_ref().commit_sha
+        if current_head != commit_sha:
+            comparison = base.run_gh([base.endpoint(f"compare/{commit_sha}...{current_head}")])
+            if comparison.get("status") not in {"ahead", "identical"}:
+                raise RuntimeError("published commit is not an ancestor of current remote head")
+        print(json.dumps({"parent": ref.commit_sha, "pushed": commit_sha, "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
+        return
+    raise RuntimeError("publication retried after concurrent updates but did not succeed")
+
+
+if __name__ == "__main__":
+    main()
