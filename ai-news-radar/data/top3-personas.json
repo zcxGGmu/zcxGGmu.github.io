@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T10:35:23.922606Z",
+  "generated_at": "2026-08-14T15:22:17.800063Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,30 +37,10 @@
       }
     },
     {
-      "story_id": "story_804890f5e6d9",
-      "title": "DeepSeek-V4-Pro 正式版上线，Agent 能力大幅增强",
-      "url": "https://api-docs.deepseek.com/zh-cn/updates",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 60,
-          "review": "“大幅增强”有多大幅？给个可复现的基准，别只发更新日志。"
-        },
-        "paper-police": {
-          "score": 38,
-          "review": "官方更新日志称 Agent 增强，无论文无代码无跑分，待实测验证。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "新模型已上线，Agent任务今天就能升级调用，先测兼容性再切流量。"
-        }
-      }
-    },
-    {
       "story_id": "story_02bf18388430",
       "title": "DeepSeek V4 Pro 登陆硅基流动，1M 上下文 / This time， it's official. DeepSeek V4 Pro just landed. 🚀 @deepseek_ai DeepSeek-V4-Pro-0813 is now l…",
       "url": "https://x.com/SiliconFlowAI/status/2088127458558271885",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 50,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 92,
           "review": "硅基流动已上线，1M上下文直接调API，长文本任务今天就能用。"
+        }
+      }
+    },
+    {
+      "story_id": "story_230b99496aae",
+      "title": "Google DeepMind 推出 Gemini 3.7 Flash：面向编程与智能体的最强工作模型 / Introducing Gemini 3.7 Flash",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 70,
+          "review": "跑分领先是真的，但'最强'这词在自家测试里当然是第一，第三方见了再说。"
+        },
+        "paper-police": {
+          "score": 30,
+          "review": "官方博客宣称性能，无论文无代码无第三方评测，缺铁证。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "新模型已上线，编程和智能体场景直接试用，API 可接入。"
         }
       }
     }
