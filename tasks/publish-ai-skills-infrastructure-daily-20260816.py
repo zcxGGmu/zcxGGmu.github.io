@@ -20,7 +20,7 @@ base.__file__ = __file__
 base.DATE = "2026-08-16"
 base.BASE_DT = datetime(2026, 8, 16, 6, 20, tzinfo=timezone(timedelta(hours=8)))
 base.PREV_EXISTING_URL = "/2026/deepseek-harness-dsh-plugin-agent-framework/"
-base.PREV_EXISTING_TITLE = "DeepSeek Harness：可插拔 Agent 框架与运行时底座"
+base.PREV_EXISTING_TITLE = "DeepSeek Harness 深度解析：Everything is a Plugin 的智能体脚手架"
 base.SCRIPT_NAME = Path(__file__).name
 base.MANIFEST_NAME = "publish-ai-skills-infrastructure-daily-20260816-changed-files.json"
 base.PINNED_PREFIX = [
