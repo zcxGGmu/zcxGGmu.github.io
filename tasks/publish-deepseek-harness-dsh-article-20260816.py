@@ -1,0 +1,229 @@
+from __future__ import annotations
+
+import base64
+import importlib.util
+import json
+import re
+import subprocess
+import sys
+import time
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+
+sys.dont_write_bytecode = True
+
+TASKS = Path(__file__).resolve().parent
+TEMPLATE_SCRIPT = TASKS / "publish-deepseek-harness-cordis-article-20260816.py"
+ASSET_DIR = TASKS / "video-batch-20260816-bv1ig" / "clean-screenshots-final"
+OUT_DIR = Path("/tmp/deepseek-harness-dsh-article-20260816-output")
+SLUG = "deepseek-harness-dsh-plugin-agent-framework"
+
+spec = importlib.util.spec_from_file_location("publish_template", TEMPLATE_SCRIPT)
+template = importlib.util.module_from_spec(spec)
+assert spec.loader is not None
+sys.modules[spec.name] = template
+spec.loader.exec_module(template)
+
+base = template.base
+base.__file__ = __file__
+base.DATE = "2026-08-16"
+base.BASE_DT = datetime(2026, 8, 16, 1, 45, 0, tzinfo=timezone(timedelta(hours=8)))
+base.PREV_EXISTING_URL = "/2026/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/"
+base.PREV_EXISTING_TITLE = "DeepSeek Harness 背后的 Cordis：把 Agent 自进化变成可回滚的运行时系统"
+base.SCRIPT_NAME = Path(__file__).name
+base.MANIFEST_NAME = "publish-deepseek-harness-dsh-article-20260816-changed-files.json"
+base.PINNED_PREFIX = [
+    "/ai-news-radar/",
+    "/2026/codeinsights-local-first-agent-workbench/",
+    "/2026/what-you-need-to-learn-from-claw-code-repo/",
+    "/2026/gaojingqi-investment-system/",
+    "/2026/ai-revolution-permanent-underclass-career-selection/",
+    "/2026/live-longer-than-earn-fast-investment-infinite-game/",
+    "/2026/original-accumulation-time-autonomy-ordinary-people/",
+    "/2026/next-decade-wealth-leap-deflation-rmb-ai-cashflow/",
+]
+
+
+def fig(slug: str, name: str, caption: str) -> str:
+    return f'<figure class="post-figure"><img src="/images/posts/{slug}/{name}" alt="{caption}" loading="lazy"><figcaption>{caption}</figcaption></figure>'
+
+
+BODY = rf'''
+<p><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">DeepSeek Harness</a>，简称 <code>dsh</code>，是一个面向智能体应用的开源 Agent Harness。它最核心的口号是 <strong>Everything is a Plugin</strong>：从最底层的大模型适配，到工具、提示词、沙箱、会话、循环引擎，再到上层 Web 界面，都可以被拆成插件，按需装入、替换和组合。</p>
+<p>这类框架解决的不是“再做一个聊天框”这样的问题，而是把一个能思考、能调用工具、能执行任务、能留下日志、能被审计和调试的 AI 助手底座搭出来。平时手写智能体，需要处理模型对话、上下文组织、工具调用、权限边界、执行循环和 UI 通道；DeepSeek Harness 把这些底层能力封装成可替换模块，让开发者把更多精力放在自己的业务和工作流上。</p>
+<p>它的底层由 <a href="https://github.com/cordiverse/cordis" target="_blank" rel="noopener">Cordis</a> 驱动。Cordis 提供插件注册、事件流转和可逆副作用机制，DeepSeek Harness 在这块基石上继续搭建智能体运行层。换句话说，Cordis 像发动机，dsh 是围绕发动机搭出的智能体脚手架。</p>
+
+<h2 id="what-is-dsh">一、dsh 到底是什么</h2>
+<p>把 DeepSeek Harness 理解成“搭智能体的脚手架”最准确。它不是某个固定成品助手，也不是只能调用某一家模型的简单 SDK，而是一套可以组装 AI 助手的运行系统。</p>
+<p>一个真正能干活的 AI，至少要具备几类能力：能跟底层模型稳定对话，能把历史上下文整理成模型可以理解的输入，能决定什么时候调用工具，能把工具执行结果放回下一轮思考，能控制权限和风险，能把每一步执行记录下来。dsh 把这些能力拆成插件，开发者可以用默认实现，也可以换成自己的实现。</p>
+<p>这种设计的直觉类似乐高积木。想用 DeepSeek 模型，插入一个模型适配插件；想换成本地开源模型，替换模型插件；想增加联网搜索、文件操作或命令执行，插入工具插件；想改变系统提示词和人格设定，替换提示词插件。只要遵守统一的上下文和事件契约，模块之间就可以相互协作。</p>
+
+<h2 id="project-basics">二、项目基本面：官方开源、MIT、开发者预览</h2>
+<p>DeepSeek Harness 由 DeepSeek AI 开源，主仓库使用 TypeScript 编写，许可协议是 MIT，意味着它在商用、修改和二次分发上都相对宽松。仓库当前已经超过 11 万 star 和 1.1 万 fork，社区热度很高。</p>
+<p>但它仍处在 developer preview，也就是开发者预览阶段。官方明确提示项目还在快速迭代，未来会有兼容性破坏变更。因此，dsh 更适合学习、研究、原型、深度定制和二次开发，不适合不加评估就直接放进关键生产链路。</p>
+<p>运行方式也很直接。安装 Node.js 以后，可以通过下面的命令启动 Web UI：</p>
+<p><code>npx @deepseek-ai/dsh web</code></p>
+<p>默认服务地址是 <code>http://127.0.0.1:3080</code>。如果从源码运行，则是克隆仓库后执行 <code>pnpm install</code>、<code>pnpm run build</code>、<code>pnpm dsh web</code>。根目录 <code>package.json</code> 对 Node 版本也有要求：<code>^22.19.0 || &gt;=24.0.0</code>。</p>
+
+<h2 id="architecture-layers">三、架构分层：底层一块基石，其余全是插件</h2>
+<p>dsh 的架构可以从下往上看。最底层是 Cordis，它负责插件如何注册、上下文如何扩展、事件如何流动，以及插件卸载时副作用怎样撤回。在它之上，是 dsh 自己的几个运行入口和组合包。</p>
+<p><code>dsh-base</code> 是每个 profile 的第一层，包含模型适配器、工具、持久化、沙箱与审批策略、设置、凭据和遥测。<code>dsh-web-app</code> 增加浏览器应用，让开发者通过 Web UI 使用和调试。<code>dsh-headless</code> 则提供无界面的一次性运行器，更适合服务器、脚本和自动化场景。围绕这些基础能力，还可以挂载大量 <code>dsh-plugin</code> 插件。</p>
+<p>最上层才是开发者自己的业务。业务不需要直接重写底层框架，只需要在已有插件树上挂载新的能力、替换已有能力，或通过配置改变组合方式。底层足够稳定，上层足够自由，这正是 dsh 分层架构的价值。</p>
+{fig(SLUG, 'architecture-layers-clean.jpg', 'DeepSeek Harness 的分层结构：Cordis 作为底层基石，dsh-base、dsh-web-app、dsh-headless 和插件共同组成运行系统。')}
+
+<h2 id="everything-is-plugin">四、一切皆插件，到底强在哪里</h2>
+<p>“一切皆插件”不是一句口号，它直接决定了 dsh 的可定制程度。第一，模型可以替换。今天使用 DeepSeek，明天切到本地模型或其他供应商，只要模型适配层满足同一契约，上层业务不需要重写。</p>
+<p>第二，工具可以纳入安全边界。AI 读写文件、运行命令、访问外部服务都可能带来风险，dsh 可以把工具执行放进审批、沙箱和日志体系里。敏感操作不是默认放行，而是可以由策略决定是否允许。</p>
+<p>第三，日志和事件天然可观测。AI 每一步请求、工具调用、状态变化、能力注册和卸载，都可以通过事件系统被记录和消费。这对调试智能体很关键，因为开发者必须知道它在哪一步卡住、哪一步选错工具、哪一步把上下文带偏。</p>
+<p>第四，能力可以替换。模型、工具、存储、会话日志、Agent Loop、系统提示词都不是不可动的“内核”，而是插件树上的节点。任何一个环节不符合需求，都可以用自己的实现顶上去。</p>
+
+<h2 id="profile-and-bundle">五、Profile 与 Bundle：一个 AI 是怎样被组装出来的</h2>
+<p>dsh 里有两个关键概念：<code>profile</code> 和 <code>bundle</code>。一个运行中的 dsh，本质是一棵在启动时按层组合出来的插件树。</p>
+<p><code>profile</code> 是一份具名组装，存放在 Harness home 中。它列出自己要叠加哪些 bundle，存放用户安装的树外插件，也保留用户自己的 <code>cordis.patch.yml</code>。<code>web</code> 和 <code>headless</code> 就是随发行版提供的 profile 模板。</p>
+<p><code>bundle</code> 是 Cordis 配置行和挂载代码的分发格式。它把一组插件、配置和代码打包成可以复用、可以分享、可以被上层 patch 的组合。启动时，系统根据 profile 里列出的 bundle 顺序，把插件树组装起来，一个可运行的 AI 助手就形成了。</p>
+<p>这里最重要的一点，是不存在特权核心。核心功能本身也是插件提供的，扩展 dsh 的方式不是去改一个不可触碰的内核，而是把插件挂到其他插件旁边。各项注册是副作用，插件卸载时会撤销，这也是 Cordis 和 dsh 架构紧密相连的地方。</p>
+
+<h2 id="seven-core-modules">六、七个核心模块：对话、规则、工具、循环和边界</h2>
+<p>从内部看，一个智能体运行起来，通常会经过几类核心模块。<code>Session</code> 负责一次完整对话的生命周期和会话日志；<code>System Prompt</code> 负责给 AI 设定规则、人格、边界和任务风格；<code>Tools</code> 是 AI 可以调用的工具集合。</p>
+<p><code>Agent</code> 是智能体本体的封装，承载输入、状态和执行控制；<code>Agent Loop</code> 是思考、行动、再思考的循环引擎；<code>Scope</code> 管权限、可见性和作用域边界；<code>LLM</code> 则是底层大模型接入层。</p>
+<p>这几个模块彼此独立，又通过事件和上下文协作。要改提示词策略，不必动工具系统；要换模型接入，不必重写 Agent Loop；要替换工具审批策略，也不必改 Session。模块边界越清楚，深度定制越可控。</p>
+{fig(SLUG, 'core-modules-clean.jpg', 'dsh 的核心模块包括 Session、System Prompt、Tools、Agent、Agent Loop、Scope 和 LLM。')}
+
+<h2 id="turn-and-step">七、Turn 与 Step：AI 一个回合是怎样转起来的</h2>
+<p>理解 dsh 的调试方式，需要先区分 <code>turn</code> 和 <code>step</code>。<code>turn</code> 是会话中一次被接纳输入的完整排空过程，从用户输入进入系统，到模型和工具停止工作或终止策略介入后结束。一个 turn 可能包含零个、一个或多个 step。</p>
+<p><code>step</code> 是一次模型请求，以及由模型响应引发的工具执行。一次复杂任务里，AI 可能先读上下文，接着调用工具，拿到结果后再请求模型，然后继续调用另一个工具。每一个这样的模型请求和工具执行片段，都可以形成 step。</p>
+<p>这个分层对调试非常有用。开发者可以看到问题发生在 turn 的哪个阶段，是前置 hook 拦截了输入，是模型选择了错误工具，是工具返回不符合预期，还是最终结果整合出了偏差。没有 step/turn 这样的结构，智能体调试很容易变成猜。</p>
+
+<h2 id="event-system">八、事件系统：监控、日志和拦截不用侵入业务代码</h2>
+<p>dsh 的模块通信主要依靠事件。事件可以分成几类：与对话生命周期相关的 Session 事件，例如开始、结束和日志写入；与 Agent 行为相关的事件，例如开始运行、进入某个 step、决定调用工具；与能力相关的事件，例如某个能力被注册、替换或卸载。</p>
+<p>因为通信都走事件，开发者要加监控、日志、审计和拦截，不需要直接改别人的模块代码。监听对应事件，就可以看到系统内部发生了什么；在合适的 hook 上加入策略，就可以改变某一步是否继续执行。</p>
+<p>对智能体系统来说，这一点尤其重要。AI 的行为不是一条简单函数调用链，而是一串模型请求、工具调用、状态变化和外部副作用。没有统一事件系统，就很难解释“它为什么这么做”。</p>
+
+<h2 id="capability-seam">九、Capability Seam：把能力拆成定义、提供和消费</h2>
+<p>dsh 文档里还有一个关键概念：<code>Capability Seam</code>，可以理解为“可替换能力接缝”。一个 seam 不是单个函数，也不是一个普通接口，而是一项完整能力的替换边界。</p>
+<p>它通常包含三种角色：第一是 Service Definition，定义这项能力的上下文键、类型和词汇；第二是 Service Provider，提供一个或多个具体实现；第三是 Consumer，消费这项服务。以 shell 能力为例，定义方声明 shell 执行能力，本地 bash 或沙箱 bash 可以作为提供方，工具插件作为消费方。</p>
+<p>这样拆分以后，定义方、提供方和消费方可以独立演进。更换中间实现时，使用者只依赖能力契约，而不是依赖某个具体包。这就是 dsh 能把大模型、工具、存储、沙箱和 UI 都做成可插拔能力的原因。</p>
+
+<h2 id="when-to-use">十、什么时候适合使用 DeepSeek Harness</h2>
+<p>第一类场景，是想构建定制 AI 助手的开发者。现成产品往往默认流程固定、工具边界固定、模型策略固定。如果目标是做一个完全贴合自己工作流的助手，dsh 的插件化底座会更合适。</p>
+<p>第二类场景，是研究实验。因为 dsh 的模块边界清晰，事件和日志丰富，很适合做对比实验：换一个模型、换一套提示词策略、换一个工具执行策略、换一种上下文压缩方式，然后比较效果差异。</p>
+<p>第三类场景，是技术团队做二次开发。团队可以把 dsh 当作底座，在上面封装内部产品、开发专用 Agent、接入自有权限体系、存储系统和审计系统。它面向的是愿意动手写代码的人，而不是只想开箱即用的普通终端用户。</p>
+{fig(SLUG, 'use-cases-clean.jpg', 'DeepSeek Harness 更适合自建 AI 助手、研究实验和二次开发三类场景。')}
+
+<h2 id="boundaries">十一、边界和风险：预览阶段、模型自备、安全自管</h2>
+<p>dsh 的边界也很清楚。第一，它还处于 developer preview，接口仍可能变化。对长期维护的产品来说，这意味着升级成本和兼容性风险需要提前评估。</p>
+<p>第二，它不自带大模型。开发者需要自己准备模型接口、密钥、配额和成本控制策略。Harness 负责组织智能体运行，底层模型能力和调用成本仍然由接入方承担。</p>
+<p>第三，AI 调用工具天然有风险。读写文件、运行命令、访问网络、调用内部系统，都可能造成数据泄露或破坏性操作。dsh 支持审批和沙箱，但安全策略仍需要开发者认真配置，不能因为有框架就默认安全。</p>
+<p>第四，它面向开发者。完全不懂代码的人，上手门槛并不低。它的价值不是“零配置马上用”，而是给需要深度定制、研究和二次开发的人一套可替换、可观测、可扩展的底座。</p>
+
+<h2 id="final-view">十二、结论：它不是聊天产品，而是智能体运行层</h2>
+<p>DeepSeek Harness 的关键价值，不是功能列表多，而是把 Agent 运行层做成了可组合系统。模型、工具、提示词、沙箱、会话、日志、循环、界面都可以成为插件；profile 和 bundle 负责把这些插件组装起来；事件系统负责让它们可观测、可拦截；Capability Seam 则让能力拥有清晰替换边界。</p>
+<p>对于只想快速聊天的人，它可能太重；对于想研究智能体、构建专用助手、封装团队产品、替换模型和工具策略的人，它是一套很有价值的底座。真正值得记住的不是某个单点功能，而是它贯彻到底的架构选择：一切皆插件，模块可替换，事件可观测，边界可配置。</p>
+<p>未来的 Agent 应用不会只拼模型本身，还会拼模型外面的运行系统。谁能更好地组织上下文、工具、权限、审计、事件和插件生态，谁就更容易把模型能力变成可靠的工作流。DeepSeek Harness 正是在这个层面上提供了一种清晰答案。</p>
+'''
+
+
+base.POSTS = [
+    base.Post(
+        slug=SLUG,
+        title="DeepSeek Harness 深度解析：Everything is a Plugin 的智能体脚手架",
+        desc="从 Cordis 底座、profile 与 bundle、七个核心模块、turn/step 生命周期，到 Capability Seam，理解 dsh 为什么适合深度定制 Agent。",
+        category="AI",
+        series="Agent 系统",
+        tags=["DeepSeek Harness", "dsh", "Agent", "Cordis", "插件系统", "智能体", "TypeScript", "开源项目"],
+        minutes=10,
+        body=BODY,
+        accent=("#06111f", "#0284c7", "#22d3ee"),
+        required=["DeepSeek Harness", "dsh", "Cordis", "Everything is a Plugin", "dsh-base", "dsh-web-app", "dsh-headless", "dsh-plugin", "profile", "bundle", "Session", "System Prompt", "Tools", "Agent", "Agent Loop", "Scope", "LLM", "step", "turn", "Capability Seam", "Node.js", "npx @deepseek-ai/dsh web", "MIT", "developer preview"],
+        minimum=4700,
+    )
+]
+
+template.SLUG = SLUG
+template.ASSET_DIR = ASSET_DIR
+template.SCREENSHOT_SOURCES = {
+    SLUG: [
+        ("architecture-layers-clean.jpg", "architecture-layers-clean.jpg"),
+        ("core-modules-clean.jpg", "core-modules-clean.jpg"),
+        ("use-cases-clean.jpg", "use-cases-clean.jpg"),
+    ]
+}
+
+
+def write_outputs(outputs: dict[str, str | None], binary_outputs: dict[str, bytes]) -> None:
+    if OUT_DIR.exists():
+        import shutil
+
+        shutil.rmtree(OUT_DIR)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for rel, content in outputs.items():
+        if content is None:
+            continue
+        path = OUT_DIR / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+    for rel, content in binary_outputs.items():
+        path = OUT_DIR / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(content)
+    print(json.dumps({"local_output": str(OUT_DIR), "text_files": len([v for v in outputs.values() if v is not None]), "binary_files": len(binary_outputs), "deleted": len([v for v in outputs.values() if v is None]), "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
+
+
+def render_asset_check() -> None:
+    from PIL import Image
+
+    for post in base.POSTS:
+        svg = OUT_DIR / f"images/posts/{post.slug}/cover.svg"
+        png = Path(f"/tmp/{post.slug}-cover.png")
+        subprocess.run(["sips", "-s", "format", "png", str(svg), "--out", str(png)], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        probe = subprocess.run(["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(png)], check=True, stdout=subprocess.PIPE, text=True).stdout
+        if "pixelWidth: 1600" not in probe or "pixelHeight: 900" not in probe:
+            raise RuntimeError(f"cover render failed: {post.slug}: {probe}")
+        for _, dest in template.SCREENSHOT_SOURCES[post.slug]:
+            chart = OUT_DIR / f"images/posts/{post.slug}/{dest}"
+            chart_probe = subprocess.run(["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(chart)], check=True, stdout=subprocess.PIPE, text=True).stdout
+            if "pixelWidth: 852" not in chart_probe or "pixelHeight: 480" not in chart_probe:
+                raise RuntimeError(f"screenshot dimensions failed: {post.slug}/{dest}: {chart_probe}")
+            img = Image.open(chart).convert("RGB")
+            lower = img.crop((0, int(img.height * 0.55), img.width, img.height))
+            purple_pixels = sum(
+                1
+                for r, g, b in lower.getdata()
+                if r > 90 and b > 80 and g < 90 and r > g * 1.4 and b > g * 1.2
+            )
+            if purple_pixels > 100:
+                raise RuntimeError(f"subtitle-like purple overlay detected in {post.slug}/{dest}: {purple_pixels} pixels")
+            top_right = img.crop((int(img.width * 0.68), 0, img.width, int(img.height * 0.23)))
+            bright_pixels = sum(1 for r, g, b in top_right.getdata() if r > 200 and g > 200 and b > 200)
+            if bright_pixels > 100:
+                raise RuntimeError(f"source-overlay-like bright pixels detected in {post.slug}/{dest}: {bright_pixels}")
+
+
+def create_commit(outputs: dict[str, str | None], binary_outputs: dict[str, bytes], ref) -> str:
+    entries = []
+    for path, content in sorted(outputs.items()):
+        if content is None:
+            entries.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
+            continue
+        blob = base.run_gh(["-X", "POST", base.endpoint("git/blobs"), "--input", "-"], {"content": content, "encoding": "utf-8"})
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    for path, content in sorted(binary_outputs.items()):
+        blob = base.run_gh(["-X", "POST", base.endpoint("git/blobs"), "--input", "-"], {"content": base64.b64encode(content).decode("ascii"), "encoding": "base64"})
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    tree = base.run_gh(["-X", "POST", base.endpoint("git/trees"), "--input", "-"], {"base_tree": ref.tree_sha, "tree": entries})
+    commit = base.run_gh(
+        ["-X", "POST", base.endpoint("git/commits"), "--input", "-"],
+        {"message": "Publish DeepSeek Harness dsh article", "tree": tree["sha"], "parents": [ref.commit_sha]},
+    )
+    base.run_gh(["-X", "PATCH", base.endpoint(f"git/refs/heads/{base.BRANCH}"), "--input", "-"], {"sha": commit["sha"], "force": False})
+    return commit["sha"]
+
+
+template.write_outputs = write_outputs
+template.render_asset_check = render_asset_check
+template.create_commit = create_commit
+
+
+if __name__ == "__main__":
+    template.main()
