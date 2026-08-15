@@ -377,11 +377,16 @@ def main() -> None:
             if attempt < 2 and "Reference update failed" in str(exc):
                 continue
             raise
-        current_head = base.get_ref().commit_sha
-        if current_head != commit_sha:
+        for _ in range(6):
+            current_head = base.get_ref().commit_sha
+            if current_head == commit_sha:
+                break
             comparison = base.run_gh([base.endpoint(f"compare/{commit_sha}...{current_head}")])
-            if comparison.get("status") not in {"ahead", "identical"}:
-                raise RuntimeError("published commit is not an ancestor of current remote head")
+            if comparison.get("status") in {"ahead", "identical"}:
+                break
+            time.sleep(3)
+        else:
+            raise RuntimeError("published commit is not an ancestor of current remote head")
         print(json.dumps({"parent": ref.commit_sha, "pushed": commit_sha, "urls": [post.full_url for post in base.POSTS]}, ensure_ascii=False, indent=2))
         return
     raise RuntimeError("publication retried after concurrent updates but did not succeed")
