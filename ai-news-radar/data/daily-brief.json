@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T09:41:48.964937Z",
+  "generated_at": "2026-08-15T14:39:33.792197Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -48,15 +48,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.82,
-      "importance": 0.82,
-      "importance_score": 0.82,
+      "score": 0.8103,
+      "importance": 0.8103,
+      "importance_score": 0.8103,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.7778,
+        "recency": 0.724,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +85,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -191,15 +191,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.8114,
-      "importance": 0.8114,
-      "importance_score": 0.8114,
+      "score": 0.8013,
+      "importance": 0.8013,
+      "importance_score": 0.8013,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.65,
         "source_tier": 1.0,
         "ai_relevance": 1.0,
-        "recency": 0.8132,
+        "recency": 0.757,
         "story_heat": 0.5
       },
       "category": "official",
@@ -228,7 +228,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -276,15 +276,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8034,
-      "importance": 0.8034,
-      "importance_score": 0.8034,
+      "score": 0.7938,
+      "importance": 0.7938,
+      "importance_score": 0.7938,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.7745,
+        "recency": 0.7209,
         "story_heat": 0.0
       },
       "category": "official",
@@ -313,7 +313,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -361,15 +361,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8176,
-      "importance": 0.8176,
-      "importance_score": 0.8176,
+      "score": 0.807,
+      "importance": 0.807,
+      "importance_score": 0.807,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8535,
+        "recency": 0.7945,
         "story_heat": 0.0
       },
       "category": "official",
@@ -398,452 +398,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
-      "story_id": "story_5634b0a754f6",
-      "title": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff",
-      "primary_url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff",
-      "source": "公众号：小红书技术（dots.llm）",
+      "story_id": "story_e50ea4ab6859",
+      "title": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入 / AI-generated books are flooding Amazon and tanking sales for human authors",
+      "url": "https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors",
+      "primary_url": "https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors",
+      "source": "The Decoder：AI News（RSS）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "a059b7702912fcb0e95b0fff5d2a7da4864b1da9",
-          "title": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-          "title_zh": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-          "title_en": null,
-          "title_original": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-          "summary": "小红书技术开源 dots3-note Preview，这是 dots3 系列最轻量模型，总参数 280B、激活参数 16B，支持 512K 上下文及文本、视觉、语音多模态理解，并针对复杂推理和长程 Agent 任务优化。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff",
-          "source": "公众号：小红书技术（dots.llm）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T11:25:29Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "公众号：小红书技术（dots.llm）"
-      ],
-      "items": [
-        {
-          "id": "a059b7702912fcb0e95b0fff5d2a7da4864b1da9",
-          "title": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-          "title_zh": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-          "title_en": null,
-          "title_original": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-          "summary": "小红书技术开源 dots3-note Preview，这是 dots3 系列最轻量模型，总参数 280B、激活参数 16B，支持 512K 上下文及文本、视觉、语音多模态理解，并针对复杂推理和长程 Agent 任务优化。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff",
-          "source": "公众号：小红书技术（dots.llm）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T11:25:29Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7391,
-      "importance": 0.7391,
-      "importance_score": 0.7391,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.79,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.725,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-14T11:25:29Z",
-      "latest_at": "2026-08-14T11:25:29Z",
-      "primary_item": {
-        "id": "a059b7702912fcb0e95b0fff5d2a7da4864b1da9",
-        "title": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-        "title_zh": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-        "title_en": null,
-        "title_original": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-        "summary": "小红书技术开源 dots3-note Preview，这是 dots3 系列最轻量模型，总参数 280B、激活参数 16B，支持 512K 上下文及文本、视觉、语音多模态理解，并针对复杂推理和长程 Agent 任务优化。",
-        "recommend_reason_zh": null,
-        "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff",
-        "source": "公众号：小红书技术（dots.llm）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "开源就能拉下来试，长程智能体和多模态推理的基准可以自己跑一遍。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
-      }
-    },
-    {
-      "story_id": "story_3c124a5494f7",
-      "title": "Cursor 正式并入 SpaceXAI 助力 Grok / Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-      "url": "https://x.com/SpaceXAI/status/2088250109188608289",
-      "primary_url": "https://x.com/SpaceXAI/status/2088250109188608289",
-      "source": "X：SpaceXAI (@SpaceXAI)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "2dd1ea11a8204f0c5fc0699f92dd3d4e2c3f812f",
-          "title": "Cursor 正式并入 SpaceXAI 助力 Grok / Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-          "title_zh": "Cursor 正式并入 SpaceXAI 助力 Grok",
-          "title_en": "Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-          "title_original": "Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-          "summary": "Cursor 正式完成被 SpaceX 收购，团队加入 SpaceXAI，共同打造 Grok 为全球最实用的 AI。合作将聚焦软件工程，并扩展至知识工作领域，同时改进 Grok Build、Grok Bot、Grok API 及 Cursor 等产品。",
-          "recommend_reason_zh": "SpaceXAI团队欢迎新成员，Cursor将帮助团队更快实现世界最有用的AI，先从软件工程入手再扩展至知识工作，值得关注。",
-          "url": "https://x.com/SpaceXAI/status/2088250109188608289",
-          "source": "X：SpaceXAI (@SpaceXAI)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T13:03:18Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：SpaceXAI (@SpaceXAI)"
-      ],
-      "items": [
-        {
-          "id": "2dd1ea11a8204f0c5fc0699f92dd3d4e2c3f812f",
-          "title": "Cursor 正式并入 SpaceXAI 助力 Grok / Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-          "title_zh": "Cursor 正式并入 SpaceXAI 助力 Grok",
-          "title_en": "Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-          "title_original": "Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-          "summary": "Cursor 正式完成被 SpaceX 收购，团队加入 SpaceXAI，共同打造 Grok 为全球最实用的 AI。合作将聚焦软件工程，并扩展至知识工作领域，同时改进 Grok Build、Grok Bot、Grok API 及 Cursor 等产品。",
-          "recommend_reason_zh": "SpaceXAI团队欢迎新成员，Cursor将帮助团队更快实现世界最有用的AI，先从软件工程入手再扩展至知识工作，值得关注。",
-          "url": "https://x.com/SpaceXAI/status/2088250109188608289",
-          "source": "X：SpaceXAI (@SpaceXAI)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T13:03:18Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7362,
-      "importance": 0.7362,
-      "importance_score": 0.7362,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.77,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7422,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-14T13:03:18Z",
-      "latest_at": "2026-08-14T13:03:18Z",
-      "primary_item": {
-        "id": "2dd1ea11a8204f0c5fc0699f92dd3d4e2c3f812f",
-        "title": "Cursor 正式并入 SpaceXAI 助力 Grok / Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-        "title_zh": "Cursor 正式并入 SpaceXAI 助力 Grok",
-        "title_en": "Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-        "title_original": "Welcome to the SpaceXAI team！ Cursor will help us move faster on the path to the world's most usefu…",
-        "summary": "Cursor 正式完成被 SpaceX 收购，团队加入 SpaceXAI，共同打造 Grok 为全球最实用的 AI。合作将聚焦软件工程，并扩展至知识工作领域，同时改进 Grok Build、Grok Bot、Grok API 及 Cursor 等产品。",
-        "recommend_reason_zh": "SpaceXAI团队欢迎新成员，Cursor将帮助团队更快实现世界最有用的AI，先从软件工程入手再扩展至知识工作，值得关注。",
-        "url": "https://x.com/SpaceXAI/status/2088250109188608289",
-        "source": "X：SpaceXAI (@SpaceXAI)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "公司变动对今天无直接影响，等功能或定价变化再动手。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
-      }
-    },
-    {
-      "story_id": "story_e5e76630b687",
-      "title": "OpenAI和Anthropic陷入价格战，中国AI竞争对手势头正劲 / OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
-      "url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground",
-      "primary_url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground",
-      "source": "Ars Technica：AI（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "e76762fbdbcf898d8d6ff82f016be8922778c6d6",
-          "title": "OpenAI和Anthropic陷入价格战，中国AI竞争对手势头正劲 / OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
-          "title_zh": "OpenAI和Anthropic陷入价格战，中国AI竞争对手势头正劲",
-          "title_en": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
-          "title_original": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
+          "id": "d7799803fcf09767f5fac7c966f8170274cdec44",
+          "title": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入 / AI-generated books are flooding Amazon and tanking sales for human authors",
+          "title_zh": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入",
+          "title_en": "AI-generated books are flooding Amazon and tanking sales for human authors",
+          "title_original": "AI-generated books are flooding Amazon and tanking sales for human authors",
           "summary": null,
-          "recommend_reason_zh": "OpenAI与Anthropic发起价格战：GPT-5.6 Luna价格大降80%，Claude Opus 5以Fable 5半价推出，应对Moonshot、DeepSeek等中国对手，使美国实验室模型价格自7月中旬以来下跌近25%。DoorDash和Airbnb已转用中国模型。",
-          "url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground",
-          "source": "Ars Technica：AI（RSS）",
+          "recommend_reason_zh": "一项研究分析14,419本Amazon自出版电子书发现，AI生成书占目录20%却仅带来12%销售额，八种类型中七种的人类作者单书收入下滑，为版权案提供市场损害证据。",
+          "url": "https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors",
+          "source": "The Decoder：AI News（RSS）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-14T14:27:14Z"
+          "published_at": "2026-08-15T11:00:50Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "Ars Technica：AI（RSS）"
+        "The Decoder：AI News（RSS）"
       ],
       "items": [
         {
-          "id": "e76762fbdbcf898d8d6ff82f016be8922778c6d6",
-          "title": "OpenAI和Anthropic陷入价格战，中国AI竞争对手势头正劲 / OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
-          "title_zh": "OpenAI和Anthropic陷入价格战，中国AI竞争对手势头正劲",
-          "title_en": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
-          "title_original": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
+          "id": "d7799803fcf09767f5fac7c966f8170274cdec44",
+          "title": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入 / AI-generated books are flooding Amazon and tanking sales for human authors",
+          "title_zh": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入",
+          "title_en": "AI-generated books are flooding Amazon and tanking sales for human authors",
+          "title_original": "AI-generated books are flooding Amazon and tanking sales for human authors",
           "summary": null,
-          "recommend_reason_zh": "OpenAI与Anthropic发起价格战：GPT-5.6 Luna价格大降80%，Claude Opus 5以Fable 5半价推出，应对Moonshot、DeepSeek等中国对手，使美国实验室模型价格自7月中旬以来下跌近25%。DoorDash和Airbnb已转用中国模型。",
-          "url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground",
-          "source": "Ars Technica：AI（RSS）",
+          "recommend_reason_zh": "一项研究分析14,419本Amazon自出版电子书发现，AI生成书占目录20%却仅带来12%销售额，八种类型中七种的人类作者单书收入下滑，为版权案提供市场损害证据。",
+          "url": "https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors",
+          "source": "The Decoder：AI News（RSS）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-14T14:27:14Z"
+          "published_at": "2026-08-15T11:00:50Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7359,
-      "importance": 0.7359,
-      "importance_score": 0.7359,
+      "score": 0.7524,
+      "importance": 0.7524,
+      "importance_score": 0.7524,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.76,
+        "editorial": 0.7,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7574,
+        "recency": 0.9487,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance"
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-14T14:27:14Z",
-      "latest_at": "2026-08-14T14:27:14Z",
+      "earliest_at": "2026-08-15T11:00:50Z",
+      "latest_at": "2026-08-15T11:00:50Z",
       "primary_item": {
-        "id": "e76762fbdbcf898d8d6ff82f016be8922778c6d6",
-        "title": "OpenAI和Anthropic陷入价格战，中国AI竞争对手势头正劲 / OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
-        "title_zh": "OpenAI和Anthropic陷入价格战，中国AI竞争对手势头正劲",
-        "title_en": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
-        "title_original": "OpenAI and Anthropic in price war as Chinese AI rivals gain ground",
+        "id": "d7799803fcf09767f5fac7c966f8170274cdec44",
+        "title": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入 / AI-generated books are flooding Amazon and tanking sales for human authors",
+        "title_zh": "AI生成书籍正淹没亚马逊，并拉低人类作者的单书收入",
+        "title_en": "AI-generated books are flooding Amazon and tanking sales for human authors",
+        "title_original": "AI-generated books are flooding Amazon and tanking sales for human authors",
         "summary": null,
-        "recommend_reason_zh": "OpenAI与Anthropic发起价格战：GPT-5.6 Luna价格大降80%，Claude Opus 5以Fable 5半价推出，应对Moonshot、DeepSeek等中国对手，使美国实验室模型价格自7月中旬以来下跌近25%。DoorDash和Airbnb已转用中国模型。",
-        "url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground",
-        "source": "Ars Technica：AI（RSS）",
+        "recommend_reason_zh": "一项研究分析14,419本Amazon自出版电子书发现，AI生成书占目录20%却仅带来12%销售额，八种类型中七种的人类作者单书收入下滑，为版权案提供市场损害证据。",
+        "url": "https://the-decoder.com/ai-generated-books-are-flooding-amazon-and-tanking-sales-for-human-authors",
+        "source": "The Decoder：AI News（RSS）",
         "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 68,
-      "persona_review": "价格战对开发者是好事，但等具体降价再动手，不用急。",
+      "persona_score": 45,
+      "persona_review": "内容生成赛道要留意平台治理风向，但今天无需动手。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
-      }
-    },
-    {
-      "story_id": "story_c0648d9766a4",
-      "title": "Cursor 正式被 SpaceX 收购 / Cursor is now a part of SpaceX",
-      "url": "https://cursor.com/blog/joining-spacex",
-      "primary_url": "https://cursor.com/blog/joining-spacex",
-      "source": "Cursor Blog",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "37be0084d39109564aa95e679db99447f43ba6a3",
-          "title": "Cursor 正式被 SpaceX 收购 / Cursor is now a part of SpaceX",
-          "title_zh": "Cursor 正式被 SpaceX 收购",
-          "title_en": "Cursor is now a part of SpaceX",
-          "title_original": "Cursor is now a part of SpaceX",
-          "summary": "Cursor 已被 SpaceX 正式收购，完成自 4 月启动的收购流程。合并后 Cursor 将获得全球最大 GPU 集群，以构建更强且运行成本更低的模型，从而以更低价格向客户提供更强大的模型。本周三发布的 Grok 4.6 是双方合作成果的早期体现。",
-          "recommend_reason_zh": "Cursor 被 SpaceX 收购正式完成，始于4月的流程落幕。借助全球最大 GPU 集群，Cursor 计划以更低成本训练更强模型，并发布 Grok 4.6 展示初步成果。",
-          "url": "https://cursor.com/blog/joining-spacex",
-          "source": "Cursor Blog",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T12:00:00Z"
-        },
-        {
-          "id": "1f7eb9a531d18ce1c0fa1f45950f75e029ce9a30",
-          "title": "Cursor 现已加入 SpaceX / Cursor is now a part of SpaceX",
-          "title_zh": "Cursor 现已加入 SpaceX",
-          "title_en": "Cursor is now a part of SpaceX",
-          "title_original": "Cursor is now a part of SpaceX",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49298211",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-14T17:12:30.187000Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Cursor Blog",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "37be0084d39109564aa95e679db99447f43ba6a3",
-          "title": "Cursor 正式被 SpaceX 收购 / Cursor is now a part of SpaceX",
-          "title_zh": "Cursor 正式被 SpaceX 收购",
-          "title_en": "Cursor is now a part of SpaceX",
-          "title_original": "Cursor is now a part of SpaceX",
-          "summary": "Cursor 已被 SpaceX 正式收购，完成自 4 月启动的收购流程。合并后 Cursor 将获得全球最大 GPU 集群，以构建更强且运行成本更低的模型，从而以更低价格向客户提供更强大的模型。本周三发布的 Grok 4.6 是双方合作成果的早期体现。",
-          "recommend_reason_zh": "Cursor 被 SpaceX 收购正式完成，始于4月的流程落幕。借助全球最大 GPU 集群，Cursor 计划以更低成本训练更强模型，并发布 Grok 4.6 展示初步成果。",
-          "url": "https://cursor.com/blog/joining-spacex",
-          "source": "Cursor Blog",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T12:00:00Z"
-        },
-        {
-          "id": "1f7eb9a531d18ce1c0fa1f45950f75e029ce9a30",
-          "title": "Cursor 现已加入 SpaceX / Cursor is now a part of SpaceX",
-          "title_zh": "Cursor 现已加入 SpaceX",
-          "title_en": "Cursor is now a part of SpaceX",
-          "title_original": "Cursor is now a part of SpaceX",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49298211",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-14T17:12:30.187000Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7322,
-      "importance": 0.7322,
-      "importance_score": 0.7322,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.68,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.731,
-        "story_heat": 0.25
-      },
-      "category": "industry",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-14T12:00:00Z",
-      "latest_at": "2026-08-14T17:12:30.187000Z",
-      "primary_item": {
-        "id": "37be0084d39109564aa95e679db99447f43ba6a3",
-        "title": "Cursor 正式被 SpaceX 收购 / Cursor is now a part of SpaceX",
-        "title_zh": "Cursor 正式被 SpaceX 收购",
-        "title_en": "Cursor is now a part of SpaceX",
-        "title_original": "Cursor is now a part of SpaceX",
-        "summary": "Cursor 已被 SpaceX 正式收购，完成自 4 月启动的收购流程。合并后 Cursor 将获得全球最大 GPU 集群，以构建更强且运行成本更低的模型，从而以更低价格向客户提供更强大的模型。本周三发布的 Grok 4.6 是双方合作成果的早期体现。",
-        "recommend_reason_zh": "Cursor 被 SpaceX 收购正式完成，始于4月的流程落幕。借助全球最大 GPU 集群，Cursor 计划以更低成本训练更强模型，并发布 Grok 4.6 展示初步成果。",
-        "url": "https://cursor.com/blog/joining-spacex",
-        "source": "Cursor Blog",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 30,
-      "persona_review": "收购不写代码，等看Cursor后续路线再动。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
-      }
-    },
-    {
-      "story_id": "story_a5a9de1a4652",
-      "title": "通义千问开源 Qwen3.8 系列模型 / We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-      "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
-      "primary_url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
-      "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "ef74b668854b5a5fd23bf9ef2f74ec6cf633a6ad",
-          "title": "通义千问开源 Qwen3.8 系列模型 / We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-          "title_zh": "通义千问开源 Qwen3.8 系列模型",
-          "title_en": "We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-          "title_original": "We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-          "summary": "通义千问兑现承诺，开源 Qwen3.8 系列模型。其中 Qwen3.8-27B 为原生多模态稠密模型，仅 27B 参数即全面超越 Qwen3.7-Plus，原生支持 262K 上下文，可通过 YaRN 扩展至 1M tokens，采用 Apache 2.0 许可。Max 级 Qwen3.8-2.4T-A95B 的开放权重也已同步发布。",
-          "recommend_reason_zh": "Qwen3.8-27B开放权重的细节来了：27B参数原生多模态模型，综合强于Qwen3.7-Plus，编程办公表现突出，原生上下文262K可扩展至1M。",
-          "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
-          "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T15:02:48Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：通义千问 / Qwen (@Alibaba_Qwen)"
-      ],
-      "items": [
-        {
-          "id": "ef74b668854b5a5fd23bf9ef2f74ec6cf633a6ad",
-          "title": "通义千问开源 Qwen3.8 系列模型 / We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-          "title_zh": "通义千问开源 Qwen3.8 系列模型",
-          "title_en": "We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-          "title_original": "We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-          "summary": "通义千问兑现承诺，开源 Qwen3.8 系列模型。其中 Qwen3.8-27B 为原生多模态稠密模型，仅 27B 参数即全面超越 Qwen3.7-Plus，原生支持 262K 上下文，可通过 YaRN 扩展至 1M tokens，采用 Apache 2.0 许可。Max 级 Qwen3.8-2.4T-A95B 的开放权重也已同步发布。",
-          "recommend_reason_zh": "Qwen3.8-27B开放权重的细节来了：27B参数原生多模态模型，综合强于Qwen3.7-Plus，编程办公表现突出，原生上下文262K可扩展至1M。",
-          "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
-          "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-14T15:02:48Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7221,
-      "importance": 0.7221,
-      "importance_score": 0.7221,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.71,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7639,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-14T15:02:48Z",
-      "latest_at": "2026-08-14T15:02:48Z",
-      "primary_item": {
-        "id": "ef74b668854b5a5fd23bf9ef2f74ec6cf633a6ad",
-        "title": "通义千问开源 Qwen3.8 系列模型 / We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-        "title_zh": "通义千问开源 Qwen3.8 系列模型",
-        "title_en": "We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-        "title_original": "We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-        "summary": "通义千问兑现承诺，开源 Qwen3.8 系列模型。其中 Qwen3.8-27B 为原生多模态稠密模型，仅 27B 参数即全面超越 Qwen3.7-Plus，原生支持 262K 上下文，可通过 YaRN 扩展至 1M tokens，采用 Apache 2.0 许可。Max 级 Qwen3.8-2.4T-A95B 的开放权重也已同步发布。",
-        "recommend_reason_zh": "Qwen3.8-27B开放权重的细节来了：27B参数原生多模态模型，综合强于Qwen3.7-Plus，编程办公表现突出，原生上下文262K可扩展至1M。",
-        "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
-        "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "新模型开源，能直接下载跑，值得动手试试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -920,15 +559,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.6086,
-      "importance": 0.6086,
-      "importance_score": 0.6086,
+      "score": 0.599,
+      "importance": 0.599,
+      "importance_score": 0.599,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.5472,
         "source_tier": 0.58,
         "ai_relevance": 0.76,
-        "recency": 0.777,
+        "recency": 0.7233,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -955,7 +594,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -1031,15 +670,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5887,
-      "importance": 0.5887,
-      "importance_score": 0.5887,
+      "score": 0.579,
+      "importance": 0.579,
+      "importance_score": 0.579,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.5112,
         "source_tier": 0.58,
         "ai_relevance": 0.71,
-        "recency": 0.7819,
+        "recency": 0.7278,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1066,119 +705,289 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
-      "story_id": "story_9b3a42a6069d",
-      "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
-      "url": "https://news.ycombinator.com/item?id=49308553",
-      "primary_url": "https://news.ycombinator.com/item?id=49308553",
+      "story_id": "story_67a9736d0220",
+      "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+      "url": "https://news.ycombinator.com/item?id=49310725",
+      "primary_url": "https://news.ycombinator.com/item?id=49310725",
       "source": "hackernews",
       "source_name": "NewsNow",
       "sources": [
         {
-          "id": "c30f8573a51fc6a0016a46508904b90a17de31ff",
-          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
-          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "summary": "To me, it seems truly frightening that a Silicon Valley company could be placed in such a direct position of trust and influence over the legal system.  There are examples of AI acting in its own self-interest over the wants of its masters, so I do wonder how it would handle cases against its respective company, or things which would directly impact it.  Outside of that, I still worry about its impartiality and its overall correctness. It makes me feel very uneasy.\nIt makes me feel very uneasy.\n",
-          "recommend_reason_zh": "一名男子因怀疑法院使用AI判案，竟在提交的诉讼文件中暗中注入提示词，试图影响判决结果。文章聚焦这一离奇事件，引发对AI介入司法系统信任与公正性的深思。",
-          "url": "https://news.ycombinator.com/item?id=49308553",
+          "id": "f50f85b755a8871c36dc1a3f17ad231bac4f5f7e",
+          "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+          "title_zh": "二手书销量激增，是因为AI吗？",
+          "title_en": "Secondhand book sales are booming. Is it because of AI?",
+          "title_original": "Secondhand book sales are booming. Is it because of AI?",
+          "summary": "reply\nreply\nOur local independent book shop got together with a couple other dozen and started a used book platform. If I have a book I don't want, I'll let them know, if they have a buyer, I just bring it to them and get a small amount of money. They take a fee for the handling and everyone's happy.\nA used book is usually max half the price of new and there is a decently wide selection. A lot of online retailers have also started stocking used books as a cheaper alternative.\nA lot of online ret",
+          "recommend_reason_zh": "本文解读二手书市场为何火爆：独立书店联合数十家共营二手平台，旧书售价最高仅为新书一半，线上零售商也竞相上架，并探讨这股风潮是否与AI训练数据需求有关。",
+          "url": "https://news.ycombinator.com/item?id=49310725",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-15T09:21:23.610000Z"
+          "published_at": "2026-08-15T14:40:01.091000Z"
         },
         {
-          "id": "af15888dbcee63ada971de5f84e713e501dc3fcf",
-          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
-          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "id": "fb298e71a21de056b737cb1400f65f0be73dfa0f",
+          "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+          "title_zh": "二手书销量激增，是因为AI吗？",
+          "title_en": "Secondhand book sales are booming. Is it because of AI?",
+          "title_original": "Secondhand book sales are booming. Is it because of AI?",
+          "summary": "Booksellers are reporting mysterious bulk orders. It's thought the books are being used to train AI - and ending up pulped.\nBooksellers are reporting mysterious bulk orders. It's thought the books are being used to train AI - and ending up pulped.\nBooksellers are reporting mysterious bulk orders. It's thought the books are being used to train AI - and ending up pulped.\nSomething mysterious has been happening in the world of secondhand books.\nOver the last few months independent booksellers have ",
+          "recommend_reason_zh": "二手书商Stuart Manley遭遇加拿大公司单笔订单堪比一周销量，法院裁定Anthropic用旧书训练Claude合法，内部“Project Panama”计划涉及破坏性扫描，AI正吞噬二手书市场。",
+          "url": "https://www.bbc.co.uk/news/articles/cp3rprx2wl4o",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-15T14:08:55Z"
+        },
+        {
+          "id": "dcc8a19034a29524320fe1cf922bc36524fb4b37",
+          "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+          "title_zh": "二手书销量激增，是因为AI吗？",
+          "title_en": "Secondhand book sales are booming. Is it because of AI?",
+          "title_original": "Secondhand book sales are booming. Is it because of AI?",
           "summary": null,
-          "recommend_reason_zh": "康涅狄格州原告Matthew Elliott在法庭文件中用白底白字隐藏极小指令，意图引导AI系统偏向自己；法官Walter Spader Jr.判定这是“严重诉讼滥用”，但因法院未用AI而未得逞。",
-          "url": "https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case",
-          "source": "Hacker News",
+          "recommend_reason_zh": "二手书市现神秘批量扫货，疑为Anthropic训练Claude的Project Panama毁书扫描，英国书商Stuart Manley称30年未见此景，单笔订单即达一周销量。",
+          "url": "https://www.bbc.co.uk/news/articles/cp3rprx2wl4o?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
           "source_name": "TechURLs",
           "site_id": "techurls",
-          "published_at": "2026-08-15T07:31:46Z"
+          "published_at": "2026-08-15T11:25:32Z"
         }
       ],
-      "source_count": 2,
+      "source_count": 3,
       "source_names": [
-        "Hacker News",
+        "BBC News",
+        "Hacker News (黑客新闻)",
         "hackernews"
       ],
       "items": [
         {
-          "id": "c30f8573a51fc6a0016a46508904b90a17de31ff",
-          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
-          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "summary": "To me, it seems truly frightening that a Silicon Valley company could be placed in such a direct position of trust and influence over the legal system.  There are examples of AI acting in its own self-interest over the wants of its masters, so I do wonder how it would handle cases against its respective company, or things which would directly impact it.  Outside of that, I still worry about its impartiality and its overall correctness. It makes me feel very uneasy.\nIt makes me feel very uneasy.\n",
-          "recommend_reason_zh": "一名男子因怀疑法院使用AI判案，竟在提交的诉讼文件中暗中注入提示词，试图影响判决结果。文章聚焦这一离奇事件，引发对AI介入司法系统信任与公正性的深思。",
-          "url": "https://news.ycombinator.com/item?id=49308553",
+          "id": "f50f85b755a8871c36dc1a3f17ad231bac4f5f7e",
+          "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+          "title_zh": "二手书销量激增，是因为AI吗？",
+          "title_en": "Secondhand book sales are booming. Is it because of AI?",
+          "title_original": "Secondhand book sales are booming. Is it because of AI?",
+          "summary": "reply\nreply\nOur local independent book shop got together with a couple other dozen and started a used book platform. If I have a book I don't want, I'll let them know, if they have a buyer, I just bring it to them and get a small amount of money. They take a fee for the handling and everyone's happy.\nA used book is usually max half the price of new and there is a decently wide selection. A lot of online retailers have also started stocking used books as a cheaper alternative.\nA lot of online ret",
+          "recommend_reason_zh": "本文解读二手书市场为何火爆：独立书店联合数十家共营二手平台，旧书售价最高仅为新书一半，线上零售商也竞相上架，并探讨这股风潮是否与AI训练数据需求有关。",
+          "url": "https://news.ycombinator.com/item?id=49310725",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-15T09:21:23.610000Z"
+          "published_at": "2026-08-15T14:40:01.091000Z"
         },
         {
-          "id": "af15888dbcee63ada971de5f84e713e501dc3fcf",
-          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
-          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "id": "fb298e71a21de056b737cb1400f65f0be73dfa0f",
+          "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+          "title_zh": "二手书销量激增，是因为AI吗？",
+          "title_en": "Secondhand book sales are booming. Is it because of AI?",
+          "title_original": "Secondhand book sales are booming. Is it because of AI?",
+          "summary": "Booksellers are reporting mysterious bulk orders. It's thought the books are being used to train AI - and ending up pulped.\nBooksellers are reporting mysterious bulk orders. It's thought the books are being used to train AI - and ending up pulped.\nBooksellers are reporting mysterious bulk orders. It's thought the books are being used to train AI - and ending up pulped.\nSomething mysterious has been happening in the world of secondhand books.\nOver the last few months independent booksellers have ",
+          "recommend_reason_zh": "二手书商Stuart Manley遭遇加拿大公司单笔订单堪比一周销量，法院裁定Anthropic用旧书训练Claude合法，内部“Project Panama”计划涉及破坏性扫描，AI正吞噬二手书市场。",
+          "url": "https://www.bbc.co.uk/news/articles/cp3rprx2wl4o",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-15T14:08:55Z"
+        },
+        {
+          "id": "dcc8a19034a29524320fe1cf922bc36524fb4b37",
+          "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+          "title_zh": "二手书销量激增，是因为AI吗？",
+          "title_en": "Secondhand book sales are booming. Is it because of AI?",
+          "title_original": "Secondhand book sales are booming. Is it because of AI?",
           "summary": null,
-          "recommend_reason_zh": "康涅狄格州原告Matthew Elliott在法庭文件中用白底白字隐藏极小指令，意图引导AI系统偏向自己；法官Walter Spader Jr.判定这是“严重诉讼滥用”，但因法院未用AI而未得逞。",
-          "url": "https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case",
-          "source": "Hacker News",
+          "recommend_reason_zh": "二手书市现神秘批量扫货，疑为Anthropic训练Claude的Project Panama毁书扫描，英国书商Stuart Manley称30年未见此景，单笔订单即达一周销量。",
+          "url": "https://www.bbc.co.uk/news/articles/cp3rprx2wl4o?at_medium=RSS&at_campaign=rss",
+          "source": "BBC News",
           "source_name": "TechURLs",
           "site_id": "techurls",
-          "published_at": "2026-08-15T07:31:46Z"
+          "published_at": "2026-08-15T11:25:32Z"
         }
       ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5449,
-      "importance": 0.5449,
-      "importance_score": 0.5449,
-      "importance_label": "值得关注",
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5708,
+      "importance": 0.5708,
+      "importance_score": 0.5708,
+      "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9951,
-        "story_heat": 0.25
+        "recency": 1.0,
+        "story_heat": 0.5
       },
-      "category": "watch",
+      "category": "multi_source",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-08-15T07:31:46Z",
-      "latest_at": "2026-08-15T09:21:23.610000Z",
+      "earliest_at": "2026-08-15T11:25:32Z",
+      "latest_at": "2026-08-15T14:40:01.091000Z",
       "primary_item": {
-        "id": "c30f8573a51fc6a0016a46508904b90a17de31ff",
-        "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
-        "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
-        "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-        "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
-        "summary": "To me, it seems truly frightening that a Silicon Valley company could be placed in such a direct position of trust and influence over the legal system.  There are examples of AI acting in its own self-interest over the wants of its masters, so I do wonder how it would handle cases against its respective company, or things which would directly impact it.  Outside of that, I still worry about its impartiality and its overall correctness. It makes me feel very uneasy.\nIt makes me feel very uneasy.\n",
-        "recommend_reason_zh": "一名男子因怀疑法院使用AI判案，竟在提交的诉讼文件中暗中注入提示词，试图影响判决结果。文章聚焦这一离奇事件，引发对AI介入司法系统信任与公正性的深思。",
-        "url": "https://news.ycombinator.com/item?id=49308553",
+        "id": "f50f85b755a8871c36dc1a3f17ad231bac4f5f7e",
+        "title": "二手书销量激增，是因为AI吗？ / Secondhand book sales are booming. Is it because of AI?",
+        "title_zh": "二手书销量激增，是因为AI吗？",
+        "title_en": "Secondhand book sales are booming. Is it because of AI?",
+        "title_original": "Secondhand book sales are booming. Is it because of AI?",
+        "summary": "reply\nreply\nOur local independent book shop got together with a couple other dozen and started a used book platform. If I have a book I don't want, I'll let them know, if they have a buyer, I just bring it to them and get a small amount of money. They take a fee for the handling and everyone's happy.\nA used book is usually max half the price of new and there is a decently wide selection. A lot of online retailers have also started stocking used books as a cheaper alternative.\nA lot of online ret",
+        "recommend_reason_zh": "本文解读二手书市场为何火爆：独立书店联合数十家共营二手平台，旧书售价最高仅为新书一半，线上零售商也竞相上架，并探讨这股风潮是否与AI训练数据需求有关。",
+        "url": "https://news.ycombinator.com/item?id=49310725",
         "source": "hackernews",
         "source_name": "NewsNow"
       },
       "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "对开发者无实用价值，但提醒注意 LLM 应用的注入风险。",
+      "persona_score": 42,
+      "persona_review": "行业表象，无工具无接口，开发者不用行动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
+      }
+    },
+    {
+      "story_id": "story_d572412cd374",
+      "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+      "url": "https://sankalp.bearblog.dev/autoresearch",
+      "primary_url": "https://sankalp.bearblog.dev/autoresearch",
+      "source": "sankalp.bearblog.dev",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "676b5690df0ddb599c2991828b9ee5440bd38a25",
+          "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "title_zh": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "title_en": null,
+          "title_original": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "summary": "Table of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\nTable of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\nTable of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\n08 Jul, 2026\nGPU ",
+          "recommend_reason_zh": "使用 Codex 自动研究，作者在 GPU Mode 竞赛中实现 232 倍内核加速，从 183 名选手中脱颖而出位列第 12，详解批处理紧凑 Householder QR 分解的完整优化路径。",
+          "url": "https://sankalp.bearblog.dev/autoresearch",
+          "source": "sankalp.bearblog.dev",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-15T13:58:02.713000Z"
+        },
+        {
+          "id": "346274b22b37e9694636fa708f056faa34061988",
+          "title": "使用 codex 进行自动研究：我是如何实现 232 倍更快内核的 / Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_zh": "使用 codex 进行自动研究：我是如何实现 232 倍更快内核的",
+          "title_en": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_original": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "summary": null,
+          "recommend_reason_zh": "本文作者借助codex自动研究，让claude对比C#/.NET与C++内核实现，快速定位C#缺失的廉价优化，并发现Rust版已有而Tokio/Prost没有，最终实现232倍加速。",
+          "url": "https://news.ycombinator.com/item?id=49309549",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T12:38:05.900000Z"
+        },
+        {
+          "id": "bc9604c13e3a66b8b75be69bf59facde955e8ba2",
+          "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的 / Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_zh": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "title_en": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_original": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "summary": null,
+          "recommend_reason_zh": "在GPU Mode与Core Automation合办的auto-research竞赛中，作者实现紧凑Householder QR分解，以232x加速、第12名成绩（183名参与者），详解了agent驱动的内核优化闭环与踩坑过程。",
+          "url": "https://sankalp.bearblog.dev/autoresearch",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T11:00:02Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News",
+        "hackernews",
+        "sankalp.bearblog.dev"
+      ],
+      "items": [
+        {
+          "id": "676b5690df0ddb599c2991828b9ee5440bd38a25",
+          "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "title_zh": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "title_en": null,
+          "title_original": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "summary": "Table of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\nTable of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\nTable of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\n08 Jul, 2026\nGPU ",
+          "recommend_reason_zh": "使用 Codex 自动研究，作者在 GPU Mode 竞赛中实现 232 倍内核加速，从 183 名选手中脱颖而出位列第 12，详解批处理紧凑 Householder QR 分解的完整优化路径。",
+          "url": "https://sankalp.bearblog.dev/autoresearch",
+          "source": "sankalp.bearblog.dev",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-15T13:58:02.713000Z"
+        },
+        {
+          "id": "346274b22b37e9694636fa708f056faa34061988",
+          "title": "使用 codex 进行自动研究：我是如何实现 232 倍更快内核的 / Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_zh": "使用 codex 进行自动研究：我是如何实现 232 倍更快内核的",
+          "title_en": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_original": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "summary": null,
+          "recommend_reason_zh": "本文作者借助codex自动研究，让claude对比C#/.NET与C++内核实现，快速定位C#缺失的廉价优化，并发现Rust版已有而Tokio/Prost没有，最终实现232倍加速。",
+          "url": "https://news.ycombinator.com/item?id=49309549",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T12:38:05.900000Z"
+        },
+        {
+          "id": "bc9604c13e3a66b8b75be69bf59facde955e8ba2",
+          "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的 / Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_zh": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+          "title_en": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "title_original": "Auto-research with codex: How I achieved a 232x Faster Kernel",
+          "summary": null,
+          "recommend_reason_zh": "在GPU Mode与Core Automation合办的auto-research竞赛中，作者实现紧凑Householder QR分解，以232x加速、第12名成绩（183名参与者），详解了agent驱动的内核优化闭环与踩坑过程。",
+          "url": "https://sankalp.bearblog.dev/autoresearch",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T11:00:02Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.569,
+      "importance": 0.569,
+      "importance_score": 0.569,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9901,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-15T11:00:02Z",
+      "latest_at": "2026-08-15T13:58:02.713000Z",
+      "primary_item": {
+        "id": "676b5690df0ddb599c2991828b9ee5440bd38a25",
+        "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+        "title_zh": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+        "title_en": null,
+        "title_original": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+        "summary": "Table of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\nTable of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\nTable of Contents\r\nIntro\r\nContest in short\r\nProblem intro\r\nWhy this problem is auto-research-able\r\nLearning Enough to Ask Better Questions\r\n(Optional) Math f...\n08 Jul, 2026\nGPU ",
+        "recommend_reason_zh": "使用 Codex 自动研究，作者在 GPU Mode 竞赛中实现 232 倍内核加速，从 183 名选手中脱颖而出位列第 12，详解批处理紧凑 Householder QR 分解的完整优化路径。",
+        "url": "https://sankalp.bearblog.dev/autoresearch",
+        "source": "sankalp.bearblog.dev",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "自动研究优化内核的实战案例，方法可借鉴，效果看场景。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -1284,15 +1093,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.5434,
-      "importance": 0.5434,
-      "importance_score": 0.5434,
+      "score": 0.5329,
+      "importance": 0.5329,
+      "importance_score": 0.5329,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8479,
+        "recency": 0.7892,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -1319,7 +1128,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -1425,15 +1234,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.5372,
-      "importance": 0.5372,
-      "importance_score": 0.5372,
+      "score": 0.527,
+      "importance": 0.527,
+      "importance_score": 0.527,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8131,
+        "recency": 0.7569,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -1460,148 +1269,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
-      }
-    },
-    {
-      "story_id": "story_02ec0b642bd2",
-      "title": "当天才失灵：人工智能实验室的智力傲慢",
-      "url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-      "primary_url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-      "source": "weightythoughts.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "abb0dd9e623ffc1b8468057aec216f1a40c62611",
-          "title": "当天才失灵：人工智能实验室的智力傲慢",
-          "title_zh": "当天才失灵：人工智能实验室的智力傲慢",
-          "title_en": null,
-          "title_original": "当天才失灵：人工智能实验室的智力傲慢",
-          "summary": null,
-          "recommend_reason_zh": "文章以Leopold Aschenbrenner旗下二百亿美元对冲基金Situational Awareness爆仓为例，对照Long-Term Capital Management的溃败，批判AI实验室的智力傲慢，说明专家并不等于通才。",
-          "url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-          "source": "weightythoughts.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-14T16:10:19.001000Z"
-        },
-        {
-          "id": "88da14f6fe324236413e4952b53842d93f2adce3",
-          "title": "天才失灵：AI实验室的智识傲慢 / When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_zh": "天才失灵：AI实验室的智识傲慢",
-          "title_en": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_original": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "summary": null,
-          "recommend_reason_zh": "这篇《When Genius Fails》直指AI Labs的智力傲慢，剖析顶尖团队如何因过度自信而忽视技术局限，最终让“天才”成为系统性失误的温床，值得从业者对照自查。",
-          "url": "https://news.ycombinator.com/item?id=49299282",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-14T15:07:54.703000Z"
-        },
-        {
-          "id": "aae77e411a82914d7d2661154aa2fbf7cff5aa13",
-          "title": "当天才失灵：人工智能实验室的智力傲慢 / When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_zh": "当天才失灵：人工智能实验室的智力傲慢",
-          "title_en": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_original": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "summary": null,
-          "recommend_reason_zh": "Leopold Aschenbrenner的Situational Awareness基金200亿美元爆仓，暴露AI实验室的智识傲慢；文章还对照1998年Long-Term Capital Management的诺奖得主溃败和120万韩国账户遭追缴，警示天才跨界必败。",
-          "url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-14T14:34:49Z"
-        }
-      ],
-      "source_count": 3,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "hackernews",
-        "weightythoughts.com"
-      ],
-      "items": [
-        {
-          "id": "abb0dd9e623ffc1b8468057aec216f1a40c62611",
-          "title": "当天才失灵：人工智能实验室的智力傲慢",
-          "title_zh": "当天才失灵：人工智能实验室的智力傲慢",
-          "title_en": null,
-          "title_original": "当天才失灵：人工智能实验室的智力傲慢",
-          "summary": null,
-          "recommend_reason_zh": "文章以Leopold Aschenbrenner旗下二百亿美元对冲基金Situational Awareness爆仓为例，对照Long-Term Capital Management的溃败，批判AI实验室的智力傲慢，说明专家并不等于通才。",
-          "url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-          "source": "weightythoughts.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-14T16:10:19.001000Z"
-        },
-        {
-          "id": "88da14f6fe324236413e4952b53842d93f2adce3",
-          "title": "天才失灵：AI实验室的智识傲慢 / When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_zh": "天才失灵：AI实验室的智识傲慢",
-          "title_en": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_original": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "summary": null,
-          "recommend_reason_zh": "这篇《When Genius Fails》直指AI Labs的智力傲慢，剖析顶尖团队如何因过度自信而忽视技术局限，最终让“天才”成为系统性失误的温床，值得从业者对照自查。",
-          "url": "https://news.ycombinator.com/item?id=49299282",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-14T15:07:54.703000Z"
-        },
-        {
-          "id": "aae77e411a82914d7d2661154aa2fbf7cff5aa13",
-          "title": "当天才失灵：人工智能实验室的智力傲慢 / When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_zh": "当天才失灵：人工智能实验室的智力傲慢",
-          "title_en": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "title_original": "When Genius Fails: The Intellectual Arrogance of the AI Labs",
-          "summary": null,
-          "recommend_reason_zh": "Leopold Aschenbrenner的Situational Awareness基金200亿美元爆仓，暴露AI实验室的智识傲慢；文章还对照1998年Long-Term Capital Management的诺奖得主溃败和120万韩国账户遭追缴，警示天才跨界必败。",
-          "url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-14T14:34:49Z"
-        }
-      ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5306,
-      "importance": 0.5306,
-      "importance_score": 0.5306,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7764,
-        "story_heat": 0.5
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-14T14:34:49Z",
-      "latest_at": "2026-08-14T16:10:19.001000Z",
-      "primary_item": {
-        "id": "abb0dd9e623ffc1b8468057aec216f1a40c62611",
-        "title": "当天才失灵：人工智能实验室的智力傲慢",
-        "title_zh": "当天才失灵：人工智能实验室的智力傲慢",
-        "title_en": null,
-        "title_original": "当天才失灵：人工智能实验室的智力傲慢",
-        "summary": null,
-        "recommend_reason_zh": "文章以Leopold Aschenbrenner旗下二百亿美元对冲基金Situational Awareness爆仓为例，对照Long-Term Capital Management的溃败，批判AI实验室的智力傲慢，说明专家并不等于通才。",
-        "url": "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
-        "source": "weightythoughts.com",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "评论文章不产出代码，看标题就知道没上手价值。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -1627,7 +1295,7 @@
           "published_at": "2026-08-15T02:42:14Z"
         },
         {
-          "id": "8b505a81e3065b1d92b7679c3db0826cae05db8a",
+          "id": "e205e722bde4dc4eca5649c78b23bcab4873c0e7",
           "title": "Show HN: Deltix——AI 驱动测试 / Show HN: Deltix – AI Driven Testing",
           "title_zh": "Show HN: Deltix——AI 驱动测试",
           "title_en": "Show HN: Deltix – AI Driven Testing",
@@ -1635,16 +1303,16 @@
           "summary": null,
           "recommend_reason_zh": "Deltix让开发者用自然语言描述任务，AI代理在Mac模拟器上运行并判断真实用户能否完成；成功流程可一键存为Playbook，供后续构建确定性重放，免费且无需信用卡，本地运行不接触源码。",
           "url": "https://app.deltix.ai",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-15T02:42:14Z"
         }
       ],
       "source_count": 2,
       "source_names": [
         "Hacker News",
-        "Hacker News (黑客新闻)"
+        "Hacker News · 24h最热"
       ],
       "items": [
         {
@@ -1662,7 +1330,7 @@
           "published_at": "2026-08-15T02:42:14Z"
         },
         {
-          "id": "8b505a81e3065b1d92b7679c3db0826cae05db8a",
+          "id": "e205e722bde4dc4eca5649c78b23bcab4873c0e7",
           "title": "Show HN: Deltix——AI 驱动测试 / Show HN: Deltix – AI Driven Testing",
           "title_zh": "Show HN: Deltix——AI 驱动测试",
           "title_en": "Show HN: Deltix – AI Driven Testing",
@@ -1670,23 +1338,23 @@
           "summary": null,
           "recommend_reason_zh": "Deltix让开发者用自然语言描述任务，AI代理在Mac模拟器上运行并判断真实用户能否完成；成功流程可一键存为Playbook，供后续构建确定性重放，免费且无需信用卡，本地运行不接触源码。",
           "url": "https://app.deltix.ai",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-15T02:42:14Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5285,
-      "importance": 0.5285,
-      "importance_score": 0.5285,
+      "score": 0.5173,
+      "importance": 0.5173,
+      "importance_score": 0.5173,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9039,
+        "recency": 0.8414,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1713,7 +1381,119 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
+      }
+    },
+    {
+      "story_id": "story_353de4c443a8",
+      "title": "Yadda 3.0.0：人工智能代理时代的 BDD / Yadda 3.0.0: BDD in the Age of AI Agents",
+      "url": "https://news.ycombinator.com/item?id=49310495",
+      "primary_url": "https://news.ycombinator.com/item?id=49310495",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "f6b38b4dde366310ef65c6d8455cfeda8e83552c",
+          "title": "Yadda 3.0.0：人工智能代理时代的 BDD / Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_zh": "Yadda 3.0.0：人工智能代理时代的 BDD",
+          "title_en": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_original": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "summary": "I was expecting something on Binary Decision Diagrams. SAOD is worst with TLAs.\nreply\nreply\nreply",
+          "recommend_reason_zh": "Yadda 3.0.0 正式发布，聚焦 AI Agents 时代的 BDD。作者自嘲原以为会讲 Binary Decision Diagrams，结果并非如此，并吐槽 SAOD 在缩略语上最为糟糕，滥用 TLA 让人头疼。",
+          "url": "https://news.ycombinator.com/item?id=49310495",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T14:40:01.091000Z"
+        },
+        {
+          "id": "6798338c29b45497deb2f55f717a29ab9fe91ec2",
+          "title": "Yadda 3.0.0：人工智能代理时代的 BDD / Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_zh": "Yadda 3.0.0：人工智能代理时代的 BDD",
+          "title_en": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_original": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "summary": "Yadda 3.0.0 is out. The release modernises the JavaScript BDD library, but more interestingly, it was largely built by Claude Code and points to why executable specifications may become even more valuable in an agentic development world.\nYadda 3.0.0 is out. The release modernises the JavaScript BDD library, but more interestingly, it was largely built by Claude Code and points to why executable specifications may become even more valuable in an agentic development world.\nI’ve just published Yadd",
+          "recommend_reason_zh": null,
+          "url": "http://www.stephen-cresswell.com/2026/08/15/Yadda-3.0.0-BDD-in-the-Age-of-AI-Agents.html",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-15T13:43:46Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News (黑客新闻)",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "f6b38b4dde366310ef65c6d8455cfeda8e83552c",
+          "title": "Yadda 3.0.0：人工智能代理时代的 BDD / Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_zh": "Yadda 3.0.0：人工智能代理时代的 BDD",
+          "title_en": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_original": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "summary": "I was expecting something on Binary Decision Diagrams. SAOD is worst with TLAs.\nreply\nreply\nreply",
+          "recommend_reason_zh": "Yadda 3.0.0 正式发布，聚焦 AI Agents 时代的 BDD。作者自嘲原以为会讲 Binary Decision Diagrams，结果并非如此，并吐槽 SAOD 在缩略语上最为糟糕，滥用 TLA 让人头疼。",
+          "url": "https://news.ycombinator.com/item?id=49310495",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T14:40:01.091000Z"
+        },
+        {
+          "id": "6798338c29b45497deb2f55f717a29ab9fe91ec2",
+          "title": "Yadda 3.0.0：人工智能代理时代的 BDD / Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_zh": "Yadda 3.0.0：人工智能代理时代的 BDD",
+          "title_en": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "title_original": "Yadda 3.0.0: BDD in the Age of AI Agents",
+          "summary": "Yadda 3.0.0 is out. The release modernises the JavaScript BDD library, but more interestingly, it was largely built by Claude Code and points to why executable specifications may become even more valuable in an agentic development world.\nYadda 3.0.0 is out. The release modernises the JavaScript BDD library, but more interestingly, it was largely built by Claude Code and points to why executable specifications may become even more valuable in an agentic development world.\nI’ve just published Yadd",
+          "recommend_reason_zh": null,
+          "url": "http://www.stephen-cresswell.com/2026/08/15/Yadda-3.0.0-BDD-in-the-Age-of-AI-Agents.html",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-15T13:43:46Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5458,
+      "importance": 0.5458,
+      "importance_score": 0.5458,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 1.0,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-15T13:43:46Z",
+      "latest_at": "2026-08-15T14:40:01.091000Z",
+      "primary_item": {
+        "id": "f6b38b4dde366310ef65c6d8455cfeda8e83552c",
+        "title": "Yadda 3.0.0：人工智能代理时代的 BDD / Yadda 3.0.0: BDD in the Age of AI Agents",
+        "title_zh": "Yadda 3.0.0：人工智能代理时代的 BDD",
+        "title_en": "Yadda 3.0.0: BDD in the Age of AI Agents",
+        "title_original": "Yadda 3.0.0: BDD in the Age of AI Agents",
+        "summary": "I was expecting something on Binary Decision Diagrams. SAOD is worst with TLAs.\nreply\nreply\nreply",
+        "recommend_reason_zh": "Yadda 3.0.0 正式发布，聚焦 AI Agents 时代的 BDD。作者自嘲原以为会讲 Binary Decision Diagrams，结果并非如此，并吐槽 SAOD 在缩略语上最为糟糕，滥用 TLA 让人头疼。",
+        "url": "https://news.ycombinator.com/item?id=49310495",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 60,
+      "persona_review": "BDD框架新版本，有具体改动才能评估，先看更新日志再决定是否升级。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -1790,15 +1570,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5155,
-      "importance": 0.5155,
-      "importance_score": 0.5155,
+      "score": 0.5052,
+      "importance": 0.5052,
+      "importance_score": 0.5052,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8319,
+        "recency": 0.7743,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1825,119 +1605,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
-      }
-    },
-    {
-      "story_id": "story_b004ea508d1a",
-      "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-      "url": "https://news.ycombinator.com/item?id=49307700",
-      "primary_url": "https://news.ycombinator.com/item?id=49307700",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "cb0602853d5df9ee0d0d7b05adab8514f2668d56",
-          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
-          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49307700",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-15T06:58:35.218000Z"
-        },
-        {
-          "id": "21d03b11a1381fa674680da4e209d300ad0d8009",
-          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
-          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "summary": null,
-          "recommend_reason_zh": "ThoughtDAG用图边控制LLM上下文，删除一条橙色边后同一问题答案改变、token减少47个，支持分支合并、本地存储与MIT开源。",
-          "url": "https://chenxiachan.github.io/thoughtdag",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-15T04:42:07Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "cb0602853d5df9ee0d0d7b05adab8514f2668d56",
-          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
-          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49307700",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-15T06:58:35.218000Z"
-        },
-        {
-          "id": "21d03b11a1381fa674680da4e209d300ad0d8009",
-          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
-          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-          "summary": null,
-          "recommend_reason_zh": "ThoughtDAG用图边控制LLM上下文，删除一条橙色边后同一问题答案改变、token减少47个，支持分支合并、本地存储与MIT开源。",
-          "url": "https://chenxiachan.github.io/thoughtdag",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-15T04:42:07Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5389,
-      "importance": 0.5389,
-      "importance_score": 0.5389,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.9615,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-15T04:42:07Z",
-      "latest_at": "2026-08-15T06:58:35.218000Z",
-      "primary_item": {
-        "id": "cb0602853d5df9ee0d0d7b05adab8514f2668d56",
-        "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-        "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
-        "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-        "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
-        "summary": null,
-        "recommend_reason_zh": null,
-        "url": "https://news.ycombinator.com/item?id=49307700",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "图谱式上下文编辑，适合调试复杂对话，能跑就用。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
@@ -2014,15 +1682,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5072,
-      "importance": 0.5072,
-      "importance_score": 0.5072,
+      "score": 0.4974,
+      "importance": 0.4974,
+      "importance_score": 0.4974,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.7854,
+        "recency": 0.731,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -2049,119 +1717,567 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     },
     {
-      "story_id": "story_5a09fec3239c",
-      "title": "DeepSeek 峰谷电价更新",
-      "url": "https://api-docs.deepseek.com/news/news260813",
-      "primary_url": "https://api-docs.deepseek.com/news/news260813",
-      "source": "api-docs.deepseek.com",
-      "source_name": "Buzzing",
+      "story_id": "story_a13484beb4c8",
+      "title": "GenRec：Netflix 的 LLM 原生推荐之路 / GenRec: Towards LLM-Native Recommendation at Netflix",
+      "url": "https://news.ycombinator.com/item?id=49310177",
+      "primary_url": "https://news.ycombinator.com/item?id=49310177",
+      "source": "hackernews",
+      "source_name": "NewsNow",
       "sources": [
         {
-          "id": "c77cba701516586a9a2f25cd861b85d5acacb66d",
-          "title": "DeepSeek 峰谷电价更新",
-          "title_zh": "DeepSeek 峰谷电价更新",
-          "title_en": null,
-          "title_original": "DeepSeek 峰谷电价更新",
+          "id": "484a170c650aec649118825a0b2ddb94364d864a",
+          "title": "GenRec：Netflix 的 LLM 原生推荐之路 / GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_zh": "GenRec：Netflix 的 LLM 原生推荐之路",
+          "title_en": "GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_original": "GenRec: Towards LLM-Native Recommendation at Netflix",
           "summary": null,
-          "recommend_reason_zh": "DeepSeek发布V4-Pro，Agent能力大升级，推理分低/高/最大三档，原生支持OpenAI Responses API；同步推出峰谷电价，谷时价格较峰时低50%，8月16日16:00 UTC生效。",
-          "url": "https://api-docs.deepseek.com/news/news260813",
-          "source": "api-docs.deepseek.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-14T13:32:02.381000Z"
+          "recommend_reason_zh": "这篇评论从Netflix的GenRec出发，直指其推荐逻辑依赖“更多同类”内容，却未提商业化干预，并点出“任意时刻约50部可看”的内容库瓶颈，更顺带畅想Bumble的AI媒人应用。",
+          "url": "https://news.ycombinator.com/item?id=49310177",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T13:44:23.044000Z"
         },
         {
-          "id": "c68c5ed9bba7ce744c6c5aaf6ff2b2cb7b8db8b3",
-          "title": "DeepSeek 峰谷电价更新 / DeepSeek peak/off-peak pricing update",
-          "title_zh": "DeepSeek 峰谷电价更新",
-          "title_en": "DeepSeek peak/off-peak pricing update",
-          "title_original": "DeepSeek peak/off-peak pricing update",
+          "id": "eda64ecf67fe9cd31fd002d272b7efab29a59b91",
+          "title": "GenRec：Netflix 的 LLM 原生推荐之路 / GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_zh": "GenRec：Netflix 的 LLM 原生推荐之路",
+          "title_en": "GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_original": "GenRec: Towards LLM-Native Recommendation at Netflix",
           "summary": null,
-          "recommend_reason_zh": "DeepSeek今日推出V4-Pro，API定价引入峰谷机制，低谷时段费率比高峰低50%，并新增OpenAI Responses API支持，助力灵活调度工作负载。",
-          "url": "https://api-docs.deepseek.com/news/news260813",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-14T09:55:33Z"
+          "recommend_reason_zh": "Netflix的GenRec用LLM原生排序器，在A/B测试中以远少于生产系统的标注数据和输入信号，取得短期和长期指标的显著提升，减少手工特征工程，转向上下文工程。",
+          "url": "https://netflixtechblog.com/genrec-towards-llm-native-recommendation-at-netflix-f20be6f643e3",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T12:56:56Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News · 24h最热",
-        "api-docs.deepseek.com"
+        "Hacker News",
+        "hackernews"
       ],
       "items": [
         {
-          "id": "c77cba701516586a9a2f25cd861b85d5acacb66d",
-          "title": "DeepSeek 峰谷电价更新",
-          "title_zh": "DeepSeek 峰谷电价更新",
-          "title_en": null,
-          "title_original": "DeepSeek 峰谷电价更新",
+          "id": "484a170c650aec649118825a0b2ddb94364d864a",
+          "title": "GenRec：Netflix 的 LLM 原生推荐之路 / GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_zh": "GenRec：Netflix 的 LLM 原生推荐之路",
+          "title_en": "GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_original": "GenRec: Towards LLM-Native Recommendation at Netflix",
           "summary": null,
-          "recommend_reason_zh": "DeepSeek发布V4-Pro，Agent能力大升级，推理分低/高/最大三档，原生支持OpenAI Responses API；同步推出峰谷电价，谷时价格较峰时低50%，8月16日16:00 UTC生效。",
-          "url": "https://api-docs.deepseek.com/news/news260813",
-          "source": "api-docs.deepseek.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-14T13:32:02.381000Z"
+          "recommend_reason_zh": "这篇评论从Netflix的GenRec出发，直指其推荐逻辑依赖“更多同类”内容，却未提商业化干预，并点出“任意时刻约50部可看”的内容库瓶颈，更顺带畅想Bumble的AI媒人应用。",
+          "url": "https://news.ycombinator.com/item?id=49310177",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T13:44:23.044000Z"
         },
         {
-          "id": "c68c5ed9bba7ce744c6c5aaf6ff2b2cb7b8db8b3",
-          "title": "DeepSeek 峰谷电价更新 / DeepSeek peak/off-peak pricing update",
-          "title_zh": "DeepSeek 峰谷电价更新",
-          "title_en": "DeepSeek peak/off-peak pricing update",
-          "title_original": "DeepSeek peak/off-peak pricing update",
+          "id": "eda64ecf67fe9cd31fd002d272b7efab29a59b91",
+          "title": "GenRec：Netflix 的 LLM 原生推荐之路 / GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_zh": "GenRec：Netflix 的 LLM 原生推荐之路",
+          "title_en": "GenRec: Towards LLM-Native Recommendation at Netflix",
+          "title_original": "GenRec: Towards LLM-Native Recommendation at Netflix",
           "summary": null,
-          "recommend_reason_zh": "DeepSeek今日推出V4-Pro，API定价引入峰谷机制，低谷时段费率比高峰低50%，并新增OpenAI Responses API支持，助力灵活调度工作负载。",
-          "url": "https://api-docs.deepseek.com/news/news260813",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-14T09:55:33Z"
+          "recommend_reason_zh": "Netflix的GenRec用LLM原生排序器，在A/B测试中以远少于生产系统的标注数据和输入信号，取得短期和长期指标的显著提升，减少手工特征工程，转向上下文工程。",
+          "url": "https://netflixtechblog.com/genrec-towards-llm-native-recommendation-at-netflix-f20be6f643e3",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T12:56:56Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5003,
-      "importance": 0.5003,
-      "importance_score": 0.5003,
+      "score": 0.5434,
+      "importance": 0.5434,
+      "importance_score": 0.5434,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.7474,
+        "recency": 0.9868,
         "story_heat": 0.25
       },
       "category": "watch",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-08-14T09:55:33Z",
-      "latest_at": "2026-08-14T13:32:02.381000Z",
+      "earliest_at": "2026-08-15T12:56:56Z",
+      "latest_at": "2026-08-15T13:44:23.044000Z",
       "primary_item": {
-        "id": "c77cba701516586a9a2f25cd861b85d5acacb66d",
-        "title": "DeepSeek 峰谷电价更新",
-        "title_zh": "DeepSeek 峰谷电价更新",
-        "title_en": null,
-        "title_original": "DeepSeek 峰谷电价更新",
+        "id": "484a170c650aec649118825a0b2ddb94364d864a",
+        "title": "GenRec：Netflix 的 LLM 原生推荐之路 / GenRec: Towards LLM-Native Recommendation at Netflix",
+        "title_zh": "GenRec：Netflix 的 LLM 原生推荐之路",
+        "title_en": "GenRec: Towards LLM-Native Recommendation at Netflix",
+        "title_original": "GenRec: Towards LLM-Native Recommendation at Netflix",
         "summary": null,
-        "recommend_reason_zh": "DeepSeek发布V4-Pro，Agent能力大升级，推理分低/高/最大三档，原生支持OpenAI Responses API；同步推出峰谷电价，谷时价格较峰时低50%，8月16日16:00 UTC生效。",
-        "url": "https://api-docs.deepseek.com/news/news260813",
-        "source": "api-docs.deepseek.com",
-        "source_name": "Buzzing"
+        "recommend_reason_zh": "这篇评论从Netflix的GenRec出发，直指其推荐逻辑依赖“更多同类”内容，却未提商业化干预，并点出“任意时刻约50部可看”的内容库瓶颈，更顺带畅想Bumble的AI媒人应用。",
+        "url": "https://news.ycombinator.com/item?id=49310177",
+        "source": "hackernews",
+        "source_name": "NewsNow"
       },
       "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "API 价格调整直接改成本账单，跑批量任务今天就能换算。",
+      "persona_score": 50,
+      "persona_review": "Netflix 的推荐架构分享，了解思路可以，暂无直接可抄的代码。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-15T09:53:27.646795Z"
+        "scored_at": "2026-08-15T14:50:42.187375Z"
+      }
+    },
+    {
+      "story_id": "story_461e5611a9d5",
+      "title": "与AI协作与其说是编程，不如说是领导 / Working with AI Feels More Like Leadership Than Coding",
+      "url": "https://news.ycombinator.com/item?id=49309451",
+      "primary_url": "https://news.ycombinator.com/item?id=49309451",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "b90c3bc7c0cde103f85eff23dc739c1eeaea4cf6",
+          "title": "与AI协作与其说是编程，不如说是领导 / Working with AI Feels More Like Leadership Than Coding",
+          "title_zh": "与AI协作与其说是编程，不如说是领导",
+          "title_en": "Working with AI Feels More Like Leadership Than Coding",
+          "title_original": "Working with AI Feels More Like Leadership Than Coding",
+          "summary": null,
+          "recommend_reason_zh": "本文讨论“与AI协作更像领导而非编码”的观点，指出管理LLM需全新技能而非套用人员管理经验，并提到Anthropic将CTO、CEO聘为个体贡献者的现象，分析代理无自主意志、比管人更易等因素。",
+          "url": "https://news.ycombinator.com/item?id=49309451",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T13:44:23.044000Z"
+        },
+        {
+          "id": "7424ad1f591f93f7da2d5fe2e48a56f5fd4dab7d",
+          "title": "与AI协作与其说是编程，不如说是领导 / Working with AI Feels More Like Leadership Than Coding",
+          "title_zh": "与AI协作与其说是编程，不如说是领导",
+          "title_en": "Working with AI Feels More Like Leadership Than Coding",
+          "title_original": "Working with AI Feels More Like Leadership Than Coding",
+          "summary": null,
+          "recommend_reason_zh": "Allen Bargi从亲身经验说明，与AI协作更像领导而非编程：同样的请求可能得到不同答案，把它当编译器会受挫；提供语境、明确期望和反馈，AI才能更好理解你的意图。",
+          "url": "https://allen.bargi.org/notes/working-with-ai-feels-like-leadership",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T10:39:41Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "b90c3bc7c0cde103f85eff23dc739c1eeaea4cf6",
+          "title": "与AI协作与其说是编程，不如说是领导 / Working with AI Feels More Like Leadership Than Coding",
+          "title_zh": "与AI协作与其说是编程，不如说是领导",
+          "title_en": "Working with AI Feels More Like Leadership Than Coding",
+          "title_original": "Working with AI Feels More Like Leadership Than Coding",
+          "summary": null,
+          "recommend_reason_zh": "本文讨论“与AI协作更像领导而非编码”的观点，指出管理LLM需全新技能而非套用人员管理经验，并提到Anthropic将CTO、CEO聘为个体贡献者的现象，分析代理无自主意志、比管人更易等因素。",
+          "url": "https://news.ycombinator.com/item?id=49309451",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T13:44:23.044000Z"
+        },
+        {
+          "id": "7424ad1f591f93f7da2d5fe2e48a56f5fd4dab7d",
+          "title": "与AI协作与其说是编程，不如说是领导 / Working with AI Feels More Like Leadership Than Coding",
+          "title_zh": "与AI协作与其说是编程，不如说是领导",
+          "title_en": "Working with AI Feels More Like Leadership Than Coding",
+          "title_original": "Working with AI Feels More Like Leadership Than Coding",
+          "summary": null,
+          "recommend_reason_zh": "Allen Bargi从亲身经验说明，与AI协作更像领导而非编程：同样的请求可能得到不同答案，把它当编译器会受挫；提供语境、明确期望和反馈，AI才能更好理解你的意图。",
+          "url": "https://allen.bargi.org/notes/working-with-ai-feels-like-leadership",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T10:39:41Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5434,
+      "importance": 0.5434,
+      "importance_score": 0.5434,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9868,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-15T10:39:41Z",
+      "latest_at": "2026-08-15T13:44:23.044000Z",
+      "primary_item": {
+        "id": "b90c3bc7c0cde103f85eff23dc739c1eeaea4cf6",
+        "title": "与AI协作与其说是编程，不如说是领导 / Working with AI Feels More Like Leadership Than Coding",
+        "title_zh": "与AI协作与其说是编程，不如说是领导",
+        "title_en": "Working with AI Feels More Like Leadership Than Coding",
+        "title_original": "Working with AI Feels More Like Leadership Than Coding",
+        "summary": null,
+        "recommend_reason_zh": "本文讨论“与AI协作更像领导而非编码”的观点，指出管理LLM需全新技能而非套用人员管理经验，并提到Anthropic将CTO、CEO聘为个体贡献者的现象，分析代理无自主意志、比管人更易等因素。",
+        "url": "https://news.ycombinator.com/item?id=49309451",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 25,
+      "persona_review": "观点文不写代码，等有具体工作流再看不迟。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-15T14:50:42.187375Z"
+      }
+    },
+    {
+      "story_id": "story_e4e112615ce7",
+      "title": "Debian 开始就 AI/LLM 贡献的未来进行投票 / Debian has begun voting on the future of AI/LLM contributions",
+      "url": "https://news.ycombinator.com/item?id=49309050",
+      "primary_url": "https://news.ycombinator.com/item?id=49309050",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "94f2e65cd326a0283f944003ccb96821966d0bff",
+          "title": "Debian 开始就 AI/LLM 贡献的未来进行投票 / Debian has begun voting on the future of AI/LLM contributions",
+          "title_zh": "Debian 开始就 AI/LLM 贡献的未来进行投票",
+          "title_en": "Debian has begun voting on the future of AI/LLM contributions",
+          "title_original": "Debian has begun voting on the future of AI/LLM contributions",
+          "summary": null,
+          "recommend_reason_zh": "Debian正就AI/LLM贡献政策展开投票，选项7不覆盖上游间接贡献，选项8承认LLM难以检测且仅作立场声明，引发对发行版与开源社区AI边界的热议。",
+          "url": "https://news.ycombinator.com/item?id=49309050",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T12:38:05.900000Z"
+        },
+        {
+          "id": "6d0b897897483914c3e12234f6b9757a33d2c3ae",
+          "title": "Debian 开始就 AI/LLM 贡献的未来进行投票 / Debian has begun voting on the future of AI/LLM contributions",
+          "title_zh": "Debian 开始就 AI/LLM 贡献的未来进行投票",
+          "title_en": "Debian has begun voting on the future of AI/LLM contributions",
+          "title_original": "Debian has begun voting on the future of AI/LLM contributions",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://lists.debian.org/debian-devel-announce/2026/08/msg00002.html",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-15T09:20:07Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News (黑客新闻)",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "94f2e65cd326a0283f944003ccb96821966d0bff",
+          "title": "Debian 开始就 AI/LLM 贡献的未来进行投票 / Debian has begun voting on the future of AI/LLM contributions",
+          "title_zh": "Debian 开始就 AI/LLM 贡献的未来进行投票",
+          "title_en": "Debian has begun voting on the future of AI/LLM contributions",
+          "title_original": "Debian has begun voting on the future of AI/LLM contributions",
+          "summary": null,
+          "recommend_reason_zh": "Debian正就AI/LLM贡献政策展开投票，选项7不覆盖上游间接贡献，选项8承认LLM难以检测且仅作立场声明，引发对发行版与开源社区AI边界的热议。",
+          "url": "https://news.ycombinator.com/item?id=49309050",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T12:38:05.900000Z"
+        },
+        {
+          "id": "6d0b897897483914c3e12234f6b9757a33d2c3ae",
+          "title": "Debian 开始就 AI/LLM 贡献的未来进行投票 / Debian has begun voting on the future of AI/LLM contributions",
+          "title_zh": "Debian 开始就 AI/LLM 贡献的未来进行投票",
+          "title_en": "Debian has begun voting on the future of AI/LLM contributions",
+          "title_original": "Debian has begun voting on the future of AI/LLM contributions",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://lists.debian.org/debian-devel-announce/2026/08/msg00002.html",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-15T09:20:07Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5406,
+      "importance": 0.5406,
+      "importance_score": 0.5406,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9712,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-15T09:20:07Z",
+      "latest_at": "2026-08-15T12:38:05.900000Z",
+      "primary_item": {
+        "id": "94f2e65cd326a0283f944003ccb96821966d0bff",
+        "title": "Debian 开始就 AI/LLM 贡献的未来进行投票 / Debian has begun voting on the future of AI/LLM contributions",
+        "title_zh": "Debian 开始就 AI/LLM 贡献的未来进行投票",
+        "title_en": "Debian has begun voting on the future of AI/LLM contributions",
+        "title_original": "Debian has begun voting on the future of AI/LLM contributions",
+        "summary": null,
+        "recommend_reason_zh": "Debian正就AI/LLM贡献政策展开投票，选项7不覆盖上游间接贡献，选项8承认LLM难以检测且仅作立场声明，引发对发行版与开源社区AI边界的热议。",
+        "url": "https://news.ycombinator.com/item?id=49309050",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 52,
+      "persona_review": "社区投票定政策，短期不影响你装包，但提交 Debian 包时留意 AI 代码审核。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-15T14:50:42.187375Z"
+      }
+    },
+    {
+      "story_id": "story_9b3a42a6069d",
+      "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
+      "url": "https://news.ycombinator.com/item?id=49308553",
+      "primary_url": "https://news.ycombinator.com/item?id=49308553",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "c30f8573a51fc6a0016a46508904b90a17de31ff",
+          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
+          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "summary": null,
+          "recommend_reason_zh": "一名男子因怀疑法院使用AI判案，竟在提交的诉讼文件中暗中注入提示词，试图影响判决结果。文章聚焦这一离奇事件，引发对AI介入司法系统信任与公正性的深思。",
+          "url": "https://news.ycombinator.com/item?id=49308553",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T09:21:23.610000Z"
+        },
+        {
+          "id": "af15888dbcee63ada971de5f84e713e501dc3fcf",
+          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
+          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "summary": null,
+          "recommend_reason_zh": "康涅狄格州原告Matthew Elliott在法庭文件中用白底白字隐藏极小指令，意图引导AI系统偏向自己；法官Walter Spader Jr.判定这是“严重诉讼滥用”，但因法院未用AI而未得逞。",
+          "url": "https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T07:31:46Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "c30f8573a51fc6a0016a46508904b90a17de31ff",
+          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
+          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "summary": null,
+          "recommend_reason_zh": "一名男子因怀疑法院使用AI判案，竟在提交的诉讼文件中暗中注入提示词，试图影响判决结果。文章聚焦这一离奇事件，引发对AI介入司法系统信任与公正性的深思。",
+          "url": "https://news.ycombinator.com/item?id=49308553",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T09:21:23.610000Z"
+        },
+        {
+          "id": "af15888dbcee63ada971de5f84e713e501dc3fcf",
+          "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
+          "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+          "summary": null,
+          "recommend_reason_zh": "康涅狄格州原告Matthew Elliott在法庭文件中用白底白字隐藏极小指令，意图引导AI系统偏向自己；法官Walter Spader Jr.判定这是“严重诉讼滥用”，但因法院未用AI而未得逞。",
+          "url": "https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T07:31:46Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5325,
+      "importance": 0.5325,
+      "importance_score": 0.5325,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9263,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-15T07:31:46Z",
+      "latest_at": "2026-08-15T09:21:23.610000Z",
+      "primary_item": {
+        "id": "c30f8573a51fc6a0016a46508904b90a17de31ff",
+        "title": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司 / Suspecting court of using AI, man injected prompts in filings to try to win case",
+        "title_zh": "怀疑法院用AI，男子在诉讼文件中注入提示词试图赢得官司",
+        "title_en": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+        "title_original": "Suspecting court of using AI, man injected prompts in filings to try to win case",
+        "summary": null,
+        "recommend_reason_zh": "一名男子因怀疑法院使用AI判案，竟在提交的诉讼文件中暗中注入提示词，试图影响判决结果。文章聚焦这一离奇事件，引发对AI介入司法系统信任与公正性的深思。",
+        "url": "https://news.ycombinator.com/item?id=49308553",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 25,
+      "persona_review": "对开发者无实用价值，但提醒注意 LLM 应用的注入风险。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-15T14:50:42.187375Z"
+      }
+    },
+    {
+      "story_id": "story_b004ea508d1a",
+      "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+      "url": "https://news.ycombinator.com/item?id=49307700",
+      "primary_url": "https://news.ycombinator.com/item?id=49307700",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "cb0602853d5df9ee0d0d7b05adab8514f2668d56",
+          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
+          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49307700",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T06:58:35.218000Z"
+        },
+        {
+          "id": "21d03b11a1381fa674680da4e209d300ad0d8009",
+          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
+          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "summary": null,
+          "recommend_reason_zh": "ThoughtDAG用图边控制LLM上下文，删除一条橙色边后同一问题答案改变、token减少47个，支持分支合并、本地存储与MIT开源。",
+          "url": "https://chenxiachan.github.io/thoughtdag",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T04:42:07Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "cb0602853d5df9ee0d0d7b05adab8514f2668d56",
+          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
+          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49307700",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-15T06:58:35.218000Z"
+        },
+        {
+          "id": "21d03b11a1381fa674680da4e209d300ad0d8009",
+          "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
+          "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+          "summary": null,
+          "recommend_reason_zh": "ThoughtDAG用图边控制LLM上下文，删除一条橙色边后同一问题答案改变、token减少47个，支持分支合并、本地存储与MIT开源。",
+          "url": "https://chenxiachan.github.io/thoughtdag",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-15T04:42:07Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5269,
+      "importance": 0.5269,
+      "importance_score": 0.5269,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.895,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-15T04:42:07Z",
+      "latest_at": "2026-08-15T06:58:35.218000Z",
+      "primary_item": {
+        "id": "cb0602853d5df9ee0d0d7b05adab8514f2668d56",
+        "title": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱 / Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+        "title_zh": "Show HN：ThoughtDAG —— 可编辑的LLM对话上下文图谱",
+        "title_en": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+        "title_original": "Show HN: ThoughtDAG – An editable context graph for LLM conversations",
+        "summary": null,
+        "recommend_reason_zh": null,
+        "url": "https://news.ycombinator.com/item?id=49307700",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "图谱式上下文编辑，适合调试复杂对话，能跑就用。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-15T14:50:42.187375Z"
       }
     }
   ]

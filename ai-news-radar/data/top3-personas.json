@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T09:53:29.443536Z",
+  "generated_at": "2026-08-15T14:50:48.274662Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_5634b0a754f6",
-      "title": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
-      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff",
+      "story_id": "story_cec2fecb0919",
+      "title": "Qwen 3.8 27B发布FP8量化权重，性能接近原版",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B-FP8",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 35,
-          "review": "280B敢叫轻量，先把推理成本压下来再谈长程智能。"
+          "score": 72,
+          "review": "省显存是真的，精度损失也是真的，别把'接近'当'一样'。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "官方号宣称开源280B模型，但无代码无论文无评测链接，无法核实。"
+          "score": 45,
+          "review": "权重已开源但无第三方评测，性能声称待独立验证。"
         },
         "pragmatic": {
           "score": 88,
-          "review": "开源就能拉下来试，长程智能体和多模态推理的基准可以自己跑一遍。"
+          "review": "开源FP8权重可直接用，显存省一半性能不掉，部署党今天就能换。"
         }
       }
     },
     {
-      "story_id": "story_a5a9de1a4652",
-      "title": "通义千问开源 Qwen3.8 系列模型 / We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
-      "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
+      "story_id": "story_e27bfcf013b4",
+      "title": "OAuth 应用的多个重定向 URI 与 token 刷新 / Multiple redirect URIs and token refresh for OAuth apps",
+      "url": "https://github.blog/changelog/2026-08-14-multiple-redirect-uris-and-token-refresh-for-oauth-apps",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 87,
-          "review": "又开源又给权重，这次是真敢晒，挑不出毛病。"
+          "score": 80,
+          "review": "多年后才补上多回调和刷新，早干嘛去了？"
         },
         "paper-police": {
-          "score": 20,
-          "review": "只有X帖宣称开源，无论文无代码链接，无法验证。"
+          "score": 45,
+          "review": "官方变更日志有功能细节，但缺独立验证，需实测确认效果。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "新模型开源，能直接下载跑，值得动手试试。"
+          "score": 85,
+          "review": "多回调 URI 和 token 刷新，做 OAuth 集成的今天就能改配置。"
         }
       }
     }
