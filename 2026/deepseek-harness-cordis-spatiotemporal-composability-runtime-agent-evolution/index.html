@@ -19,7 +19,7 @@
 <div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/cover.svg')"><div class="post-title">DeepSeek Harness 背后的 Cordis：把 Agent 自进化变成可回滚的运行时系统<div class="post-subtitle">从可逆效应、响应式余效应、两阶段卸载到 ctx.effect，理解 Cordis 怎样为 Agent Harness 的动态组件替换提供形式化地基。</div><div class="post-meta"><time itemprop="datePublished">2026-08-16</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI/">AI</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/DeepSeek%20Harness/">DeepSeek Harness</a>&nbsp;<a href="/tags/Cordis/">Cordis</a>&nbsp;<a href="/tags/Agent/">Agent</a>&nbsp;<a href="/tags/%E8%87%AA%E8%BF%9B%E5%8C%96/">自进化</a>&nbsp;<a href="/tags/%E8%BF%90%E8%A1%8C%E6%97%B6/">运行时</a>&nbsp;<a href="/tags/%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F/">插件系统</a>&nbsp;<a href="/tags/Koishi/">Koishi</a>&nbsp;<a href="/tags/%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81/">形式化验证</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 15 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">DeepSeek Harness</a> 的重要性，不在于又多了一个 Agent 框架，而在于它把模型、工具、技能、沙箱、循环和界面都放进同一个插件化运行层里。一个智能体系统不再只是“模型加工具”的组合，而是一个可以在运行时装入、卸载、替换和演化的系统。</p>
 <p>真正难的问题也随之出现：运行中的系统如果换掉一个组件，能不能不重启，还能证明旧组件留下的修改已经被收干净？如果 Agent 未来要持续自我改造，错误修改能不能被完整撤回？这不是产品体验问题，而是运行时正确性问题。</p>
 <p><a href="https://github.com/cordiverse/paper" target="_blank" rel="noopener">A Programming Paradigm for Spatiotemporal Composability</a> 给出的答案，是把动态组合拆成“时间”和“空间”两个维度：时间上，组件卸载以后，它对环境造成的影响要能被回收；空间上，组件之间的依赖关系要能声明出来，并且随着环境变化自动调整。理论落在 <a href="https://github.com/cordiverse/cordis" target="_blank" rel="noopener">Cordis</a> 这个开源元框架上，并在 <a href="https://github.com/koishijs/koishi" target="_blank" rel="noopener">Koishi</a> 生态中经过长期工程检验。</p>
-<figure class="post-figure"><img src="/images/posts/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/paper-outline.jpg" alt="论文目录把问题拆成可逆效应、响应式余效应、组件加载器与元定理，核心是时空可组合性。" loading="lazy"><figcaption>论文目录把问题拆成可逆效应、响应式余效应、组件加载器与元定理，核心是时空可组合性。</figcaption></figure>
+<figure class="post-figure"><img src="/images/posts/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/paper-outline-clean.jpg" alt="论文目录把问题拆成可逆效应、响应式余效应、组件加载器与元定理，核心是时空可组合性。" loading="lazy"><figcaption>论文目录把问题拆成可逆效应、响应式余效应、组件加载器与元定理，核心是时空可组合性。</figcaption></figure>
 
 <h2 id="why-runtime-composability-matters">一、为什么运行时换组件不能只靠重启</h2>
 <p>传统工程处理动态变化，最粗暴的办法是重启进程。组件坏了，配置错了，依赖冲突了，把进程拉起来重来。对于很多服务，这个办法确实能解决一部分问题，因为进程退出会顺便清掉内存、连接、监听器、缓存和临时状态。</p>
@@ -57,7 +57,7 @@
 <p>动态系统最容易出错的地方，是提供者和消费者的卸载顺序。数据库服务、存储后端、模型适配器、工具执行器都可能被其他组件使用。如果提供者一卸载就立刻释放资源，消费者还没完成清理，就会拿着已经失效的引用继续运行，最终触发难排查的错误。</p>
 <p>两阶段卸载解决的是这个顺序问题。第一阶段，提供者先从全局服务表中移除，让新的消费者无法再解析到它；但提供者资源暂时不立刻释放。第二阶段，运行时等待已有消费者完成清理，确认没有旧依赖继续使用它，再调用累加器释放提供者自身资源。</p>
 <p>这让系统同时避免两类问题：一方面，不会继续产生新的依赖；另一方面，也不会提前释放仍被旧消费者使用的资源。对于长期运行的 Agent Harness，这种顺序保证比单纯的“卸载回调”更可靠。</p>
-<figure class="post-figure"><img src="/images/posts/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/runtime-fiber-rules.jpg" alt="组件加载与卸载被拆成一串有状态的效应迭代，而不是一次性完成的黑箱动作。" loading="lazy"><figcaption>组件加载与卸载被拆成一串有状态的效应迭代，而不是一次性完成的黑箱动作。</figcaption></figure>
+<figure class="post-figure"><img src="/images/posts/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/runtime-fiber-rules-clean.jpg" alt="组件加载与卸载被拆成一串有状态的效应迭代，而不是一次性完成的黑箱动作。" loading="lazy"><figcaption>组件加载与卸载被拆成一串有状态的效应迭代，而不是一次性完成的黑箱动作。</figcaption></figure>
 
 <h2 id="activation-is-iterative">八、加载不是一口气完成，而是一串效应迭代</h2>
 <p>组件激活也不是一次函数调用就结束。真实加载过程可能包含多个步骤：解析依赖、注入上下文、注册监听器、异步导入模块、初始化资源、启动服务。每一步都会产生效应，也可能在中途遇到目标状态变化。</p>
@@ -73,7 +73,7 @@
 <p>Cordis 在工程实现上抓住了一个关键原语：<code>ctx.effect</code>。插件作者在加载时通过它登记对上下文的修改，运行时同时获得对应的清理信息。这样，卸载路径不是另一段容易遗忘、容易写错、容易和加载逻辑不一致的代码，而是从加载过程中的效应记录自然派生出来。</p>
 <p>这和常见 Webpack、Vite 热模块替换有本质差别。传统 HMR 往往围绕模块边界和手写 accept/dispose 回调工作，开发者需要自己维护哪些状态可保留、哪些状态要清掉。Cordis 的边界来自组件实例、效应、依赖规格和上下文注册表。热替换不只是重新 import 一个模块，而是一场带依赖重算、效应回滚和状态迁移的事务。</p>
 <p>如果新模块导入失败，事务式热替换可以整体回滚；如果依赖变化只影响部分插件，运行时只重新激活受影响组件，而不是把整个系统推倒重来。这一点对 Agent Harness 尤其关键，因为 Harness 的每个部件都可能是插件：模型适配器、工具集合、记忆层、沙箱、循环策略和 UI 通道都需要可替换，但不能每次替换都破坏整个工作环境。</p>
-<figure class="post-figure"><img src="/images/posts/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/component-loader.jpg" alt="组件加载器把 ctx.effect、ctx.use、ctx.set 等命令式原语组织为声明式的动态组合过程。" loading="lazy"><figcaption>组件加载器把 ctx.effect、ctx.use、ctx.set 等命令式原语组织为声明式的动态组合过程。</figcaption></figure>
+<figure class="post-figure"><img src="/images/posts/deepseek-harness-cordis-spatiotemporal-composability-runtime-agent-evolution/component-loader-clean.jpg" alt="组件加载器把 ctx.effect、ctx.use、ctx.set 等命令式原语组织为声明式的动态组合过程。" loading="lazy"><figcaption>组件加载器把 ctx.effect、ctx.use、ctx.set 等命令式原语组织为声明式的动态组合过程。</figcaption></figure>
 
 <h2 id="koishi-case">十一、Koishi 案例：4000 多个插件的工程压力测试</h2>
 <p>Koishi 是 Cordis 之上的聊天机器人框架，长期积累了 4000 多个社区插件。这个案例的意义，不在于它能替代受控实验，而在于它证明这套抽象能在真实社区生态里承受插件数量、作者差异和长期演进的压力。</p>
