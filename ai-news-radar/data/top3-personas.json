@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T15:22:17.800063Z",
+  "generated_at": "2026-08-14T23:46:11.170559Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_02bf18388430",
-      "title": "DeepSeek V4 Pro 登陆硅基流动，1M 上下文 / This time， it's official. DeepSeek V4 Pro just landed. 🚀 @deepseek_ai DeepSeek-V4-Pro-0813 is now l…",
-      "url": "https://x.com/SiliconFlowAI/status/2088127458558271885",
+      "story_id": "story_a55195371b1b",
+      "title": "DeepSeek V4 Pro 登陆硅基流动：百万级上下文窗口配三档推理强度，缓存命中每百万 token 只要 0.44 美元",
+      "url": "https://www.aibase.com/news/30358",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 50,
-          "review": "换个平台上线就配叫官宣？1M上下文先跑个实测再吹。"
+          "score": 42,
+          "review": "V4 Pro？官方都没发，第三方平台先上新，参数和基准都没晒，价格倒是挺会挑着报。"
         },
         "paper-police": {
           "score": 25,
-          "review": "仅官方推文宣称上线，无论文代码benchmark，数字无从验证。"
+          "review": "指标来自单篇新闻，无官方文档和基准，等官方发布再验真。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "硅基流动已上线，1M上下文直接调API，长文本任务今天就能用。"
+          "score": 90,
+          "review": "新模型已上线，百万上下文+缓存低价，长文本任务可直接上手。"
         }
       }
     },
     {
-      "story_id": "story_230b99496aae",
-      "title": "Google DeepMind 推出 Gemini 3.7 Flash：面向编程与智能体的最强工作模型 / Introducing Gemini 3.7 Flash",
-      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash",
+      "story_id": "story_3ded9ed73b65",
+      "title": "Grok 4.6现已登陆 GitHub Copilot / Grok 4.6 is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "跑分领先是真的，但'最强'这词在自家测试里当然是第一，第三方见了再说。"
+          "score": 75,
+          "review": "Copilot换个模型不算突破，跑稳了再喊不迟。"
         },
         "paper-police": {
           "score": 30,
-          "review": "官方博客宣称性能，无论文无代码无第三方评测，缺铁证。"
+          "review": "官方公告可用，无性能数据无评测，第三方未验证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "新模型已上线，编程和智能体场景直接试用，API 可接入。"
+          "score": 88,
+          "review": "Copilot 里直接换模型，写代码的今天就能试。"
         }
       }
     }
