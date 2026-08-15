@@ -1,0 +1,138 @@
+from __future__ import annotations
+
+import importlib.util
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+
+TASKS = Path(__file__).resolve().parent
+TEMPLATE = TASKS / "publish-ai-skills-two-source-20260815.py"
+spec = importlib.util.spec_from_file_location("daily_template", TEMPLATE)
+template = importlib.util.module_from_spec(spec)
+assert spec.loader is not None
+sys.modules[spec.name] = template
+spec.loader.exec_module(template)
+
+base = template.base
+base.__file__ = __file__
+base.DATE = "2026-08-16"
+base.BASE_DT = datetime(2026, 8, 16, 6, 20, tzinfo=timezone(timedelta(hours=8)))
+base.PREV_EXISTING_URL = "/2026/deepseek-harness-dsh-plugin-agent-framework/"
+base.PREV_EXISTING_TITLE = "DeepSeek Harness：可插拔 Agent 框架与运行时底座"
+base.SCRIPT_NAME = Path(__file__).name
+base.MANIFEST_NAME = "publish-ai-skills-infrastructure-daily-20260816-changed-files.json"
+base.PINNED_PREFIX = [
+    "/ai-news-radar/",
+    "/2026/codeinsights-local-first-agent-workbench/",
+    "/2026/what-you-need-to-learn-from-claw-code-repo/",
+    "/2026/gaojingqi-investment-system/",
+    "/2026/ai-revolution-permanent-underclass-career-selection/",
+    "/2026/live-longer-than-earn-fast-investment-infinite-game/",
+    "/2026/original-accumulation-time-autonomy-ordinary-people/",
+    "/2026/next-decade-wealth-leap-deflation-rmb-ai-cashflow/",
+]
+
+BODY = r'''
+<p>AI Agent 正在从“模型加提示词”的单点工具，变成一条包含运行时、技能、记忆、执行、治理和交付的工程链。近期高热度项目集中回答同一个问题：怎样让模型真正完成任务，同时让人知道它做了什么、为何这样做，以及出错后如何停止和恢复。</p>
+<p>下面按能力层整理一组代表性开源项目。重点不是罗列名称，而是观察它们分别补上了哪一块基础设施，以及在个人开发、团队协作和生产系统中应当如何设置边界。</p>
+
+<h2 id="runtime">一、Harness 运行时：把 Agent 变成可组装系统</h2>
+<p><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">deepseek-ai/deepseek-harness</a> 的核心思路是 Everything is a Plugin。模型适配、工具、提示词、会话、循环引擎、沙箱和界面都可以拆成可替换组件。开发者不必把所有逻辑写进一个不可动的核心，而是用统一事件和上下文把能力组装起来。</p>
+<p>它依托的底层元框架是 <a href="https://github.com/cordiverse/cordis" target="_blank" rel="noopener">cordiverse/cordis</a>。Cordis 负责插件注册、事件流转和可逆副作用，让组件能够在运行时装入和卸载。这样的设计更适合研究型助手、深度定制产品和需要替换模型供应商的团队，但开发者预览阶段仍应先在隔离环境验证兼容性。</p>
+
+<h2 id="parallel">二、并行工作台：让多个 Agent 有序地同时工作</h2>
+<p>单人编码时，真正的瓶颈常常不是模型速度，而是多个任务之间的切换。并行 Agent 工作台将独立的修复、测试、资料整理或代码审查分给不同执行单元，再用任务状态和结果汇总减少排队时间。</p>
+<p>并行并不意味着把所有工作同时启动。任务必须能拆分，输入和输出要清楚，彼此之间没有隐含的写入冲突。共享文件、数据库迁移和发布动作仍应顺序执行；每个子任务还要记录使用的模型、修改范围、测试结果和待人工确认事项。</p>
+
+<h2 id="harness-os">三、统一技能与记忆：给多个编码 Agent 一套共同规则</h2>
+<p><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a> 把技能、瞬时上下文、记忆、安全策略和研究优先等工程习惯组织成可复用的编码能力包。它解决的是“换一个 Agent 就要重新配置一遍”的重复劳动，让不同终端工具共享同一套工作纪律。</p>
+<p>统一规则的价值不在于强制所有项目使用同一提示词，而在于把测试、审查、提交和收尾变成可检查的步骤。团队仍需根据仓库权限和语言栈调整配置，并对涉及文件写入、网络发送和凭据读取的动作增加人工闸门。</p>
+
+<h2 id="skills">四、Skills 生态：从操作示范到可审查能力</h2>
+<p><a href="https://github.com/microsoft/skill-recorder" target="_blank" rel="noopener">microsoft/skill-recorder</a> 代表一种降低技能创作门槛的路径：先完成一次真实任务，同时补充必要的口头判断，再把操作和说明整理成可修改、可复用的 Skill。高质量产物描述的是目标、条件、工具和完成标准，而不是绑定某个窗口坐标。</p>
+<p><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">virgiliojr94/book-to-skill</a> 则把技术书或文档转成可检索的技能材料。它提醒团队，知识沉淀不能只保存聊天记录，还要保留来源、版本、切分方式和引用位置。任何自动生成的 Skill 都应先审阅，再以只读、低风险任务做小样本验证。</p>
+
+<h2 id="memory">五、团队记忆：让经验跨会话、跨角色保留下来</h2>
+<p><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentCloud/TencentDB-Agent-Memory</a> 把对话、文档、代码关系和运行经验组织成团队级记忆资产。它的意义不是把所有历史内容塞进上下文，而是让事实、偏好、决策和故障经验拥有不同的检索与权限边界。</p>
+<p>记忆系统必须带有来源、创建时间、适用版本和失效时间。没有这些字段，旧建议会与当前事实混在一起；没有角色隔离，某个 Agent 的临时判断也可能被误当成团队共识。记忆写入尤其应经过人工确认或质量门槛。</p>
+
+<h2 id="web">六、联网检索与浏览器执行：数据入口和外部动作要分层</h2>
+<p><a href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a> 代表结构化网页入口：把动态页面转换为适合检索和知识库使用的文本，同时保留来源与抓取时间。它更接近数据采集层，不应自动获得修改页面、提交表单或操作账户的权限。</p>
+<p>浏览器执行层则需要单独治理登录态、下载目录、网络域名和外部写入。浏览器自动化适合在隔离环境中完成只读研究、草稿生成和测试；涉及支付、隐私数据、生产配置或不可逆提交时，必须预览目标、限制范围并设置人工确认。</p>
+
+<h2 id="local">七、本地推理：显存、隐私与可维护性同时优化</h2>
+<p><a href="https://github.com/lyogavin/airllm" target="_blank" rel="noopener">lyogavin/airllm</a> 面向低资源设备上的大模型推理与微调，价值在于降低显存门槛，而不是让硬件限制消失。实际部署仍要评估量化误差、吞吐、并发、模型许可和升级策略。</p>
+<p><a href="https://github.com/MoonshotAI/Kimi-K2" target="_blank" rel="noopener">MoonshotAI/Kimi-K2</a> 展示了大参数模型与长上下文、多模态能力的另一条路线；<a href="https://github.com/ml-explore/mlx-lm" target="_blank" rel="noopener">ml-explore/mlx-lm</a> 则面向 Apple 芯片上的本地训练和推理。选择本地方案时，应把数据不出设备、成本可控和故障可定位作为同等重要的指标。</p>
+
+<h2 id="rag">八、知识检索与可追溯回答</h2>
+<p><a href="https://github.com/infiniflow/ragflow" target="_blank" rel="noopener">infiniflow/ragflow</a> 将复杂文档解析、切分、索引和问答组合起来。企业知识库的质量不仅取决于向量检索，还取决于 PDF、Word、表格和多栏页面是否被正确理解，以及回答能否回到原始证据。</p>
+<p>图结构记忆的方向同样重要：事实、来源、时间和贡献角色应能被查询。对于高影响结论，系统应展示引用链和不确定性；无法找到依据时应明确停止，而不是用看似合理的句子填补空白。</p>
+
+<h2 id="governance">九、安全治理：能力越强，边界越要前置</h2>
+<p><a href="https://github.com/microsoft/agent-governance-toolkit" target="_blank" rel="noopener">microsoft/agent-governance-toolkit</a> 把策略执行、身份与权限、沙箱和可靠性工程放进同一套治理视角。它提醒团队，Agent 安全不是单个扫描器的结果，而是从身份、工具、数据到恢复路径的连续控制。</p>
+<p>代码层面可以结合 <a href="https://github.com/openai/codex" target="_blank" rel="noopener">openai/codex</a> 的终端工作流，先读取约束，再做最小修改，最后运行测试、静态扫描和依赖检查。自动发现漏洞不等于自动批准修复；误报、权限不足和供应链变化仍需要独立审查。</p>
+
+<h2 id="content">十、内容与视觉工作流：从生成结果走向可编辑资产</h2>
+<p>AI 内容工具正在把脚本、镜头、图表和素材组织成流水线。真正可交付的系统应保存提示词、素材来源、模型版本和关键参数，并让结果能够被编辑、复跑和审查，而不是只输出一次性的图片或成片。</p>
+<p>对于技术文档和演示稿，生成图表时要优先选择可编辑的 HTML、SVG 或结构化文件；对于本地 3D 和语音应用，则要验证硬件占用、数据留存、许可和离线失败策略。自动化的视觉质量必须与内容正确性一起验收。</p>
+
+<h2 id="platform">十一、协作与内部工具：把高频流程接进可控平台</h2>
+<p><a href="https://github.com/rustdesk/rustdesk" target="_blank" rel="noopener">rustdesk/rustdesk</a> 代表自托管远程桌面路线，适合需要跨设备维护、又希望掌握连接数据的团队。自托管并不意味着零运维，身份认证、密钥轮换、网络暴露面和审计日志仍需专门管理。</p>
+<p><a href="https://github.com/ToolJet/ToolJet" target="_blank" rel="noopener">ToolJet</a> 这类内部应用平台则把表单、仪表盘、工作流和数据连接组合起来。它适合先交付低风险的内部工具，再逐步加入 Agent 能力；复杂业务和生产写入仍要回到明确的 API、权限和回滚机制。</p>
+
+<h2 id="security-intel">十二、安全情报：自动收集不等于自动下结论</h2>
+<p>攻击面测绘、公开信息收集和邮箱暴露检查等工具，可以显著减少安全团队的重复查询，但必须限定在授权范围内。自动化输出应包含来源、时间、请求范围和置信度，不能把扫描结果直接当作漏洞定论。</p>
+<p>安全流程最适合采用“机器收集、人做判断”的闭环：系统负责发现候选资产和异常线索，分析师负责验证、定级和处置。任何涉及他人账号、未授权系统或敏感数据的查询，都应被策略阻断并留下审计记录。</p>
+
+<h2 id="adoption">十三、采用顺序：先做一个可回滚闭环</h2>
+<p>面对几十个项目，最稳妥的路径不是一次装满，而是选择一条输入明确、输出可检查、失败可恢复的流程。例如把公开资料整理成带引用的草稿、为代码变更生成测试清单，或在隔离环境中运行只读检索。</p>
+<p>评估时至少记录成功率、人工修订时间、模型和工具成本、失败类型、重试次数及回滚耗时。连续达到指标后，再扩大权限和数据范围；对外发送、生产写入、删除、付费和凭据操作始终保留人工闸门。</p>
+
+<h2 id="conclusion">十四、结论：工具密度必须匹配治理密度</h2>
+<p>从可插拔 Harness、统一 Skills、团队记忆，到本地推理、知识检索和安全治理，开源生态正在补齐 Agent 进入真实工作的每一个环节。真正有长期价值的不是项目数量，而是能力之间能否通过清晰接口连接起来。</p>
+<p>先让一个小闭环做到可解释、可测试、可停止和可回滚，再把稳定步骤沉淀为 Skill，把长期状态交给记忆层，把高风险动作交给审批和审查。这样，AI 才会从会回答问题的模型，变成能够被组织、被验证、也值得信任的工作系统。</p>
+'''
+
+SLUG = "ai-skills-agent-infrastructure-open-source-daily-20260814"
+base.POSTS = [
+    base.Post(
+        slug=SLUG,
+        title="AI Agent 基础设施 53 项速览：从可插拔 Harness 到本地推理与安全治理",
+        desc="梳理 11 个能力层的 AI Agent 开源方向：运行时、Skills、团队记忆、联网检索、本地推理、知识库、治理与协作平台。",
+        category="AI工具",
+        series="AI Agent",
+        tags=["AI Skills", "AI Agent", "开源项目", "GitHub", "Agent框架", "本地推理", "RAG", "安全治理", "工作流"],
+        minutes=23,
+        body=BODY,
+        accent=("#0f172a", "#0f766e", "#b45309"),
+        required=["Harness", "Skills", "记忆", "本地", "RAG", "治理", "回滚"],
+        minimum=3000,
+    )
+]
+
+template.EXPECTED_LINKS = {
+    SLUG: {
+        "https://github.com/deepseek-ai/deepseek-harness",
+        "https://github.com/cordiverse/cordis",
+        "https://github.com/affaan-m/ECC",
+        "https://github.com/microsoft/skill-recorder",
+        "https://github.com/virgiliojr94/book-to-skill",
+        "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+        "https://github.com/firecrawl/firecrawl",
+        "https://github.com/lyogavin/airllm",
+        "https://github.com/MoonshotAI/Kimi-K2",
+        "https://github.com/ml-explore/mlx-lm",
+        "https://github.com/infiniflow/ragflow",
+        "https://github.com/microsoft/agent-governance-toolkit",
+        "https://github.com/openai/codex",
+        "https://github.com/rustdesk/rustdesk",
+        "https://github.com/ToolJet/ToolJet",
+    }
+}
+template.FORBIDDEN = ["B站", "bilibili", "Bilibili", "哔哩", "UP主", "up主", "原视频", "视频中", "视频里", "音频中", "音频里", "本期", "这期", "观看", "点赞", "投币", "收藏", "订阅", "关注", "三连", "BV1"]
+template.PAGE_SIZE = 10
+
+if __name__ == "__main__":
+    template.main()
