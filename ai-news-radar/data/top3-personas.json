@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T04:02:55.143276Z",
+  "generated_at": "2026-08-15T09:53:29.443536Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,50 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_d40bf6855f00",
-      "title": "GLM-5.3 发布：编程能力开源第一，并涌现网络安全能力",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494084&idx=1&sn=a2e5cd9a534a4825feb3633ea1b6d492",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 45,
-          "review": "开源第一的榜单基线没公示，网络安全'涌现'一测便知真假。"
-        },
-        "paper-police": {
-          "score": 18,
-          "review": "官方公众号自宣性能，无论文无代码，跑分无第三方验证。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "开源模型能直接用，编程能力第一，本地部署撸代码的今天就能上手。"
-        }
-      }
-    },
-    {
-      "story_id": "story_a55195371b1b",
-      "title": "DeepSeek V4 Pro 登陆硅基流动：百万级上下文窗口配三档推理强度，缓存命中每百万 token 只要 0.44 美元",
-      "url": "https://www.aibase.com/news/30358",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 42,
-          "review": "V4 Pro？官方都没发，第三方平台先上新，参数和基准都没晒，价格倒是挺会挑着报。"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "指标来自单篇新闻，无官方文档和基准，等官方发布再验真。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "新模型已上线，百万上下文+缓存低价，长文本任务可直接上手。"
-        }
-      }
-    },
-    {
       "story_id": "story_3ded9ed73b65",
       "title": "Grok 4.6现已登陆 GitHub Copilot / Grok 4.6 is now available in GitHub Copilot",
       "url": "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot",
-      "rank": 3,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 75,
@@ -73,6 +33,46 @@
         "pragmatic": {
           "score": 88,
           "review": "Copilot 里直接换模型，写代码的今天就能试。"
+        }
+      }
+    },
+    {
+      "story_id": "story_5634b0a754f6",
+      "title": "dots3-note Preview 开源：280B 参数轻量模型，主打长程智能体与多模态推理",
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTc2MzczNg%3D%3D&mid=2247496140&idx=1&sn=5239a5fbb115c58d2ae0056bb32789ff",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 35,
+          "review": "280B敢叫轻量，先把推理成本压下来再谈长程智能。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "官方号宣称开源280B模型，但无代码无论文无评测链接，无法核实。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "开源就能拉下来试，长程智能体和多模态推理的基准可以自己跑一遍。"
+        }
+      }
+    },
+    {
+      "story_id": "story_a5a9de1a4652",
+      "title": "通义千问开源 Qwen3.8 系列模型 / We promised open weights for Qwen3.8. Now， time to meet them！ 🎉 ⚡ Qwen3.8-27B： - A native multimod…",
+      "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 87,
+          "review": "又开源又给权重，这次是真敢晒，挑不出毛病。"
+        },
+        "paper-police": {
+          "score": 20,
+          "review": "只有X帖宣称开源，无论文无代码链接，无法验证。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "新模型开源，能直接下载跑，值得动手试试。"
         }
       }
     }
