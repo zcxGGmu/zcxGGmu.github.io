@@ -16,7 +16,7 @@ sys.dont_write_bytecode = True
 
 TASKS = Path(__file__).resolve().parent
 BASE_SCRIPT = TASKS / "publish-three-life-business-articles-20260809.py"
-ASSET_DIR = TASKS / "video-batch-20260816-bv1ug" / "screenshots"
+ASSET_DIR = TASKS / "video-batch-20260816-bv1ug" / "clean-screenshots-final"
 
 spec = importlib.util.spec_from_file_location("publish_base", BASE_SCRIPT)
 base = importlib.util.module_from_spec(spec)
@@ -169,9 +169,9 @@ base.POSTS = [
 
 SCREENSHOT_SOURCES = {
     SLUG: [
-        ("BV1ugby6jEKN_20.jpg", "paper-outline.jpg"),
-        ("BV1ugby6jEKN_510.jpg", "runtime-fiber-rules.jpg"),
-        ("BV1ugby6jEKN_790.jpg", "component-loader.jpg"),
+        ("paper-outline.jpg", "paper-outline.jpg"),
+        ("runtime-fiber-rules.jpg", "runtime-fiber-rules.jpg"),
+        ("component-loader.jpg", "component-loader.jpg"),
     ]
 }
 _base_validate = base.validate
@@ -342,6 +342,8 @@ def write_outputs(outputs: dict[str, str | None], binary_outputs: dict[str, byte
 
 
 def render_asset_check() -> None:
+    from PIL import Image
+
     out_dir = Path("/tmp/deepseek-harness-cordis-article-20260816-output")
     for post in base.POSTS:
         svg = out_dir / f"images/posts/{post.slug}/cover.svg"
@@ -355,6 +357,15 @@ def render_asset_check() -> None:
             chart_probe = subprocess.run(["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(chart)], check=True, stdout=subprocess.PIPE, text=True).stdout
             if "pixelWidth: 852" not in chart_probe or "pixelHeight: 480" not in chart_probe:
                 raise RuntimeError(f"screenshot dimensions failed: {post.slug}/{dest}: {chart_probe}")
+            img = Image.open(chart).convert("RGB")
+            lower = img.crop((0, int(img.height * 0.55), img.width, img.height))
+            purple_pixels = sum(
+                1
+                for r, g, b in lower.getdata()
+                if r > 90 and b > 80 and g < 90 and r > g * 1.4 and b > g * 1.2
+            )
+            if purple_pixels > 100:
+                raise RuntimeError(f"subtitle-like purple overlay detected in {post.slug}/{dest}: {purple_pixels} pixels")
 
 
 def create_commit(outputs: dict[str, str | None], binary_outputs: dict[str, bytes], ref) -> str:
