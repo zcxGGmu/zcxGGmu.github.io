@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T09:50:49.646784Z",
+  "generated_at": "2026-08-16T14:46:30.879267Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_d572412cd374",
-      "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
-      "url": "https://sankalp.bearblog.dev/autoresearch",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 62,
-          "review": "232 倍提升的前提写清楚了吗？怕是只挑了最慢的基线。"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "只有博客自述，无代码无基准，232倍无从验证。"
-        },
-        "pragmatic": {
-          "score": 72,
-          "review": "自动研究优化内核的实战案例，方法可借鉴，效果看场景。"
-        }
-      }
-    },
-    {
       "story_id": "story_3415e330fba4",
       "title": "AI辅助将25万行老旧天气模拟代码移植至GPU / AI-Assisted GPU Porting of a 250k Line Legacy Weather Simulation Code",
       "url": "https://news.ycombinator.com/item?id=49314967",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 62,
@@ -60,7 +40,7 @@
       "story_id": "story_e5da5f0992d1",
       "title": "ProofRun——面向 AI 编程代理的本地验证凭证 / ProofRun – a local verification receipt for AI coding agents",
       "url": "https://news.ycombinator.com/item?id=49316605",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 60,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 68,
           "review": "本地验证凭证可补强 CI 信任链，先看文档再决定接不接。"
+        }
+      }
+    },
+    {
+      "story_id": "story_ad56c119c312",
+      "title": "Claude更新核心系统提示 覆盖网页及iOS/Android应用",
+      "url": "https://platform.claude.com/docs/en/release-notes/system-prompts",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 65,
+          "review": "系统提示更新是常态，但行为改变才是关键，别拿文档凑数。"
+        },
+        "paper-police": {
+          "score": 45,
+          "review": "官方文档更新有细节，但无代码无第三方验证，待复现确认。"
+        },
+        "pragmatic": {
+          "score": 65,
+          "review": "系统提示变了可能影响应用行为，先跑测试再上线。"
         }
       }
     }

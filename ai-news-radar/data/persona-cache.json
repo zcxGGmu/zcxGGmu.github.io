@@ -1,18 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_f87d3f1e3314|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "宏观评论，没工具没方案，不解决今天的问题。",
-      "title_hash": "92fe09db",
-      "scored_at": "2026-07-26T11:42:55.932573Z"
-    },
-    "story_9a66534a1fc0|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "政治游说离代码太远，有政策变化再看。",
-      "title_hash": "9afd50f3",
-      "scored_at": "2026-07-26T14:01:51.622593Z"
-    },
     "story_62361e6c3c72|pragmatic|0a5c5b24": {
       "score": 20,
       "review": "机器人停车非AI开发者日常，看看就好，没有可复用的技术。",
@@ -5234,10 +5222,34 @@
       "scored_at": "2026-08-16T05:51:23.798024Z"
     },
     "story_7a8d440461c0|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "实验性研究，短期无直接用途，但可能启发数据筛选思路。",
-      "title_hash": "59b92d32",
-      "scored_at": "2026-08-16T08:54:09.126530Z"
+      "score": 35,
+      "review": "纯研究实验，验证数据上限影响，不改代码不换 API，看个结论即可。",
+      "title_hash": "c9bbbc77",
+      "scored_at": "2026-08-16T10:48:44.006647Z"
+    },
+    "story_0bf300873ab5|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "多智能体踩坑总结，架构选型前可扫一眼，但暂无直接可用的工具。",
+      "title_hash": "1e988a23",
+      "scored_at": "2026-08-16T11:45:32.686434Z"
+    },
+    "story_ad56c119c312|pragmatic|0a5c5b24": {
+      "score": 65,
+      "review": "系统提示变了可能影响应用行为，先跑测试再上线。",
+      "title_hash": "b24385a2",
+      "scored_at": "2026-08-16T14:46:22.949104Z"
+    },
+    "story_ad56c119c312|cynic|f4237a62": {
+      "score": 65,
+      "review": "系统提示更新是常态，但行为改变才是关键，别拿文档凑数。",
+      "title_hash": "b24385a2",
+      "scored_at": "2026-08-16T14:46:27.405090Z"
+    },
+    "story_ad56c119c312|paper-police|966065bf": {
+      "score": 45,
+      "review": "官方文档更新有细节，但无代码无第三方验证，待复现确认。",
+      "title_hash": "b24385a2",
+      "scored_at": "2026-08-16T14:46:30.879219Z"
     }
   }
 }
