@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>AI Agent 基础设施 53 项速览：从可插拔运行时到可治理工作流 - zcxGGmu's Blog</title>
+  <meta name="description" content="从运行时、Skills、记忆、规格驱动开发到安全治理，梳理 AI Agent 如何形成可验证、可回滚的工作系统。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/ai-skills-agent-infrastructure-workflows-daily-20260815/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="AI Agent 基础设施 53 项速览：从可插拔运行时到可治理工作流"><meta property="og:description" content="从运行时、Skills、记忆、规格驱动开发到安全治理，梳理 AI Agent 如何形成可验证、可回滚的工作系统。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/ai-skills-agent-infrastructure-workflows-daily-20260815/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/ai-skills-agent-infrastructure-workflows-daily-20260815/cover.svg')"><div class="post-title">AI Agent 基础设施 53 项速览：从可插拔运行时到可治理工作流<div class="post-subtitle">从运行时、Skills、记忆、规格驱动开发到安全治理，梳理 AI Agent 如何形成可验证、可回滚的工作系统。</div><div class="post-meta"><time itemprop="datePublished">2026-08-17</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/AI%20Skills/">AI Skills</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>&nbsp;<a href="/tags/GitHub/">GitHub</a>&nbsp;<a href="/tags/Codex/">Codex</a>&nbsp;<a href="/tags/Agent%E6%A1%86%E6%9E%B6/">Agent框架</a>&nbsp;<a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>&nbsp;<a href="/tags/%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86/">安全治理</a>&nbsp;<a href="/tags/RAG/">RAG</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 18 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>AI Agent 的竞争正在从模型能力转向工作完成率。要让一个系统稳定完成真实任务，需要的不只是对话入口，而是一组能协同工作的基础设施：可替换的运行时、可复用的 Skills、长期记忆、可追溯知识、受控执行、质量门和恢复机制。</p>
+<p>近期的开源生态把这些层面集中呈现出来。它们并不互相替代：框架解决组装，Skill 固化方法，检索补充证据，记忆延续状态，治理限制权限，终端工具承担执行。关键不在于一次接入多少项目，而在于把每一层放进明确的输入、输出和验收边界。</p>
+
+<h2 id="runtime">一、可插拔运行时让能力替换成为工程问题</h2>
+<p><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">deepseek-ai/deepseek-harness</a> 将模型、工具、提示词、会话循环、存储、沙箱和界面视为可组合部件。这样的架构避免把全部逻辑固化在单一核心中，团队可以按场景替换模型提供者、工具适配器或执行环境。</p>
+<p>其底层 <a href="https://github.com/cordiverse/cordis" target="_blank" rel="noopener">cordiverse/cordis</a> 强调插件注册、事件流转与可逆副作用。模块化并不会自动带来可靠性，反而要求更严格的接口契约：输入输出结构、错误语义、权限范围和卸载行为都要有测试。先在隔离环境验证新插件，再逐步连接真实数据和写入能力，才能避免可插拔变成不可控。</p>
+
+<h2 id="coordination">二、多 Agent 协作先解决调度和状态，而不是增加数量</h2>
+<p>并行执行适合互不依赖的任务，例如分开的代码审查、测试矩阵、资料整理或批量转换；共享文件、数据库迁移和发布动作则必须顺序进行。每个执行单元需要明确目标、允许工具、输出格式和完成条件，协调器只负责拆分依赖、汇总证据与处理冲突。</p>
+<p><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a> 的价值在于统一管理多种编码 Agent 所使用的 Skills、记忆、安全策略与研究优先规则。统一配置不等于统一决策，而是让团队不用在每个工具里重新定义测试、审查和收尾纪律。共享规则应像代码一样评审和版本化，防止不透明的全局提示词改变所有任务的行为。</p>
+
+<h2 id="skills">三、Skills 应被视为可审查的工程依赖</h2>
+<p><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a> 代表了将规划、实现、测试、审查和交付方法沉淀为能力包的路径。一个有价值的 Skill 不只是更长的提示词，而应写清适用条件、前置检查、可调用工具、完成标准与失败路径。</p>
+<p>接入第三方 Skill 前，应检查来源、版本、依赖、网络访问、文件读写和是否要求读取凭据。读操作可以先在最小权限下试运行，涉及删除、外部发送、账号操作或费用的能力必须设置人工确认。团队还应记录每次升级造成的行为变化，并保留可回退的稳定版本。</p>
+
+<h2 id="capture">四、从示范到能力：把操作经验沉淀为可复用工作单元</h2>
+<p><a href="https://github.com/microsoft/skill-recorder" target="_blank" rel="noopener">microsoft/skill-recorder</a> 展示了一条更低门槛的能力生产路径：先完成一次真实任务，再由系统把目标、判断和步骤整理为可修改的 Skill 或自动化。它的重点不是回放鼠标轨迹，而是捕捉为什么筛选、何时确认、结果应写向何处。</p>
+<p>示范记录可能包含窗口标题、地址、剪贴板和内部资料，因此开始前必须清理敏感内容。生成结果也不能直接投入运行，应先审阅是否混入无关动作、是否遗漏异常分支、是否把读操作误写成外部写入。真正可复用的流程要抽象成语义动作，而不是绑定某个坐标或单次页面布局。</p>
+
+<h2 id="knowledge">五、把书和文档转成知识时，引用链比摘要更重要</h2>
+<p><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">virgiliojr94/book-to-skill</a> 提供了将技术书 PDF 组织为可调用知识的思路。资料分块、索引和结构化输出能减少反复翻找，但必须保留原始页码、版本、许可与检索位置，避免模型把过期内容当作当前事实。</p>
+<p>企业级检索可以使用 <a href="https://github.com/infiniflow/ragflow" target="_blank" rel="noopener">infiniflow/ragflow</a> 这类文档理解和检索引擎。复杂 PDF、表格、多栏版面与图片的解析质量，会直接决定后续回答质量。知识系统的验收应检查能否回到来源、权限是否隔离、找不到证据时是否明确不确定，而不能只看回答是否流畅。</p>
+
+<h2 id="memory">六、长期记忆需要来源、边界和失效机制</h2>
+<p><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentCloud/TencentDB-Agent-Memory</a> 将对话、Skill、文档知识和代码关系划分为可复用资产。长期状态能减少重复解释，却也可能把临时判断、错误结论或敏感内容长期传播，因此记忆写入需要质量门和角色权限。</p>
+<p>每条长期信息至少应包含来源、创建时间、适用版本、所有者和失效条件。事实、偏好、任务状态与推测应分层保存，不能混为同一类“记忆”。在多 Agent 场景中，读取共享记忆要遵循最小权限，写入则应可审计、可撤回。</p>
+
+<h2 id="spec">七、先写规格，再让 Agent 编码</h2>
+<p><a href="https://github.com/github/spec-kit" target="_blank" rel="noopener">github/spec-kit</a> 将规格驱动开发变成可执行的起点：先说明目标、约束、验收和边界，再拆解实现。这样做的成本是前期需要澄清需求，回报是减少“代码写得很多但方向错误”的返工。</p>
+<p>规格不应只是功能清单。它还应覆盖输入数据、权限、错误处理、非功能约束、测试样例和回滚策略。复杂需求先形成可审查的规格，再让 Agent 实现小步变更，最后执行受影响测试和人工审查，会比一次性生成大改动更容易控制风险。</p>
+
+<h2 id="coding">八、终端 Agent 的价值在于形成验证闭环</h2>
+<p><a href="https://github.com/openai/codex" target="_blank" rel="noopener">openai/codex</a> 把代码阅读、编辑与命令执行放进同一工作环境。稳定使用方式不是跳过工程流程，而是先读取仓库约束和现有测试，做范围最小的改动，运行定向验证，并清楚说明哪些检查实际执行过。</p>
+<p>代码自动化的权限必须分层。可以让工具做只读检索、草稿、格式化和受控测试；对依赖升级、数据库变更、部署、密钥操作和对外发送则应增加明确闸门。自动审查可提高覆盖率，但最终合并仍应由理解业务和架构后果的责任人批准。</p>
+
+<h2 id="local">九、本地推理的核心是资源、隐私和可维护性</h2>
+<p><a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unslothai/unsloth</a> 面向有限资源下的本地训练和微调；<a href="https://github.com/MoonshotAI/Kimi-K2" target="_blank" rel="noopener">MoonshotAI/Kimi-K2</a> 则代表更大规模模型开放给开发者研究的方向。两者都提醒团队：本地运行不等于没有成本，显存、量化误差、吞吐、并发、模型许可和升级策略都需要量化评估。</p>
+<p>本地方案的优势是数据边界更清楚、延迟和成本更可控，但需要补齐模型版本管理、硬件监控、数据留存和故障恢复。先用小规模真实样本测试输出质量和资源曲线，再扩大数据范围，比直接把关键流程接入新模型更可靠。</p>
+
+<h2 id="governance">十、治理把 Agent 能力约束为可批准的动作</h2>
+<p><a href="https://github.com/microsoft/agent-governance-toolkit" target="_blank" rel="noopener">microsoft/agent-governance-toolkit</a> 将策略执行、零信任身份、执行沙箱和可靠性工程放到同一套框架中。高能力系统需要的不是更多自由度，而是明确它能访问什么、在何种条件下停止、出了问题由谁接管。</p>
+<p>一条合格的工作流应区分只读研究、草稿生成、低风险写入与高影响动作，并为后两类记录目标、参数、结果和撤销路径。审计日志不仅用于事故追溯，也用于识别不必要的权限和重复失败。治理越早进入设计，后续扩展越不需要靠临时禁令收场。</p>
+
+<h2 id="platform">十一、内部工具和远程运维也要受同一套边界约束</h2>
+<p><a href="https://github.com/ToolJet/ToolJet" target="_blank" rel="noopener">ToolJet/ToolJet</a> 适合快速构建内部表单、仪表盘、业务应用、工作流和 Agent 入口。低代码的收益在于缩短低风险工具的交付时间，但复杂业务规则、生产写入和权限模型仍需要回到明确的 API、审计与回滚。</p>
+<p><a href="https://github.com/rustdesk/rustdesk" target="_blank" rel="noopener">rustdesk/rustdesk</a> 则代表自托管远程桌面路线。自托管把连接数据和服务端控制权带回团队，同时也带来身份认证、网络暴露、密钥轮换和运维责任。部署前应先定义允许接入的设备、会话记录、审批流程和应急吊销机制。</p>
+
+<h2 id="security">十二、安全情报自动化必须在授权范围内运行</h2>
+<p><a href="https://github.com/smicallef/spiderfoot" target="_blank" rel="noopener">smicallef/spiderfoot</a> 可帮助安全团队自动汇集公开情报和攻击面线索，但自动收集不等于自动定性。结果应保留来源、时间、扫描范围与置信度，关键发现仍需人工验证、定级与处置。</p>
+<p><a href="https://github.com/megadose/holehe" target="_blank" rel="noopener">megadose/holehe</a> 涉及检查邮箱在不同站点上的注册痕迹，只应在本人资产或获得明确授权的范围内使用。任何依赖“忘记密码”接口的安全研究都要避免越权、批量滥用和对他人隐私的探测，组织还应保存书面授权和执行日志。</p>
+
+<h2 id="adoption">十三、采用顺序：先跑通一个可回滚的小闭环</h2>
+<p>个人可以从低风险、输入输出清晰的流程开始，例如将公开资料整理为带引用的草稿、生成测试清单、构建内部知识索引。团队则应优先补齐权限、日志、密钥管理、成本监控和停用开关，再扩展到并行 Agent、浏览器执行或自动写入。</p>
+<p>每个候选能力都要用真实小样本衡量成功率、人工修订时间、单次成本、失败类型与恢复耗时。只有当指标连续稳定，才扩大权限和数据范围。自动化应随着证据增长，而不是随着项目数量增长。</p>
+
+<h2 id="conclusion">十四、结论：工具密度必须匹配治理密度</h2>
+<p>运行时提供组装能力，Skills 提供方法，检索和记忆提供上下文，终端与内部工具提供执行，治理和验证提供边界。它们共同构成的不是一个更会聊天的界面，而是一套可解释、可测试、可停止和可恢复的工作系统。</p>
+<p>真正值得沉淀的不是某个单品的热度，而是一条经过验证的闭环：输入有来源，步骤有边界，动作有日志，结果有检查，失败能回滚，责任人能接手。先把一条流程做到稳定，再逐步增加自动化，才能把开源生态的速度转化为长期效率。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/reform-opening-history-productive-forces-distribution-dignity/">上一篇<br>改革开放的历史逻辑：生产力、分配与人的尊严</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#runtime">一、可插拔运行时让能力替换成为工程问题</a><a class="toc-link toc-level-2" href="#coordination">二、多 Agent 协作先解决调度和状态，而不是增加数量</a><a class="toc-link toc-level-2" href="#skills">三、Skills 应被视为可审查的工程依赖</a><a class="toc-link toc-level-2" href="#capture">四、从示范到能力：把操作经验沉淀为可复用工作单元</a><a class="toc-link toc-level-2" href="#knowledge">五、把书和文档转成知识时，引用链比摘要更重要</a><a class="toc-link toc-level-2" href="#memory">六、长期记忆需要来源、边界和失效机制</a><a class="toc-link toc-level-2" href="#spec">七、先写规格，再让 Agent 编码</a><a class="toc-link toc-level-2" href="#coding">八、终端 Agent 的价值在于形成验证闭环</a><a class="toc-link toc-level-2" href="#local">九、本地推理的核心是资源、隐私和可维护性</a><a class="toc-link toc-level-2" href="#governance">十、治理把 Agent 能力约束为可批准的动作</a><a class="toc-link toc-level-2" href="#platform">十一、内部工具和远程运维也要受同一套边界约束</a><a class="toc-link toc-level-2" href="#security">十二、安全情报自动化必须在授权范围内运行</a><a class="toc-link toc-level-2" href="#adoption">十三、采用顺序：先跑通一个可回滚的小闭环</a><a class="toc-link toc-level-2" href="#conclusion">十四、结论：工具密度必须匹配治理密度</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
