@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T14:50:48.274662Z",
+  "generated_at": "2026-08-15T23:43:06.694140Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_3ded9ed73b65",
-      "title": "Grok 4.6现已登陆 GitHub Copilot / Grok 4.6 is now available in GitHub Copilot",
-      "url": "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot",
+      "story_id": "story_d572412cd374",
+      "title": "使用 Codex 进行自动研究：我是如何实现内核速度提升 232 倍的",
+      "url": "https://sankalp.bearblog.dev/autoresearch",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 75,
-          "review": "Copilot换个模型不算突破，跑稳了再喊不迟。"
+          "score": 62,
+          "review": "232 倍提升的前提写清楚了吗？怕是只挑了最慢的基线。"
         },
         "paper-police": {
-          "score": 30,
-          "review": "官方公告可用，无性能数据无评测，第三方未验证。"
+          "score": 25,
+          "review": "只有博客自述，无代码无基准，232倍无从验证。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "Copilot 里直接换模型，写代码的今天就能试。"
+          "score": 72,
+          "review": "自动研究优化内核的实战案例，方法可借鉴，效果看场景。"
         }
       }
     },
     {
-      "story_id": "story_cec2fecb0919",
-      "title": "Qwen 3.8 27B发布FP8量化权重，性能接近原版",
-      "url": "https://huggingface.co/Qwen/Qwen3.8-27B-FP8",
+      "story_id": "story_b004ea508d1a",
+      "title": "Show HN: ThoughtDAG——用于大型语言模型对话的可编辑上下文图",
+      "url": "https://chenxiachan.github.io/thoughtdag",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "省显存是真的，精度损失也是真的，别把'接近'当'一样'。"
+          "score": 55,
+          "review": "概念有点意思，但只有个demo页，没看到实际效果对比。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "权重已开源但无第三方评测，性能声称待独立验证。"
+          "score": 15,
+          "review": "只有项目页和HN讨论，无论文无代码无评测，无法验证效果。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "开源FP8权重可直接用，显存省一半性能不掉，部署党今天就能换。"
+          "score": 70,
+          "review": "可编辑上下文图思路实用，想折腾LLM对话管理的可以试，但生态未验证。"
         }
       }
     },
     {
-      "story_id": "story_e27bfcf013b4",
-      "title": "OAuth 应用的多个重定向 URI 与 token 刷新 / Multiple redirect URIs and token refresh for OAuth apps",
-      "url": "https://github.blog/changelog/2026-08-14-multiple-redirect-uris-and-token-refresh-for-oauth-apps",
+      "story_id": "story_dfcb40835c8c",
+      "title": "Show HN：38 美元 Thermalright Trofeo Vision LCD 的实时 Claude 用量 HUD / Show HN: Live Claude Usage HUD for a $38 Thermalright Trofeo Vision LCD",
+      "url": "https://news.ycombinator.com/item?id=49314594",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 80,
-          "review": "多年后才补上多回调和刷新，早干嘛去了？"
+          "score": 72,
+          "review": "给 38 美元的屏写 HUD，这是把省钱和折腾都玩明白了。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方变更日志有功能细节，但缺独立验证，需实测确认效果。"
+          "score": 25,
+          "review": "只有标题没有代码和实测数据，无法验证HUD功能与成本。"
         },
         "pragmatic": {
-          "score": 85,
-          "review": "多回调 URI 和 token 刷新，做 OAuth 集成的今天就能改配置。"
+          "score": 65,
+          "review": "低成本 DIY 监控 Claude 用量，动手党可照着抄，非刚需但实用。"
         }
       }
     }
