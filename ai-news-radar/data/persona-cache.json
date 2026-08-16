@@ -1,65 +1,11 @@
 {
   "version": 1,
   "entries": {
-    "story_fd83d61e5894|pragmatic|0a5c5b24": {
-      "score": 78,
-      "review": "8美元跑小模型，IoT推理新玩法，仓库已开放可clone试。但参数量小，别期待太高精度。",
-      "title_hash": "e441c66b",
-      "scored_at": "2026-07-26T06:51:27.044186Z"
-    },
-    "story_fd83d61e5894|cynic|f4237a62": {
-      "score": 45,
-      "review": "跑是能跑，等输出等得花都谢了——你管这叫‘运行’？",
-      "title_hash": "e441c66b",
-      "scored_at": "2026-07-26T06:51:32.505712Z"
-    },
-    "story_fd83d61e5894|paper-police|966065bf": {
-      "score": 55,
-      "review": "代码已开源，但缺少论文和独立评测，性能待验证。",
-      "title_hash": "e441c66b",
-      "scored_at": "2026-07-26T06:51:37.832428Z"
-    },
     "story_f87d3f1e3314|pragmatic|0a5c5b24": {
       "score": 20,
       "review": "宏观评论，没工具没方案，不解决今天的问题。",
       "title_hash": "92fe09db",
       "scored_at": "2026-07-26T11:42:55.932573Z"
-    },
-    "story_053563a28f71|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "Cloudflare用户可优化流量，但非紧急，有性能需求再研究。",
-      "title_hash": "fe4b3a5a",
-      "scored_at": "2026-07-26T09:29:47.029586Z"
-    },
-    "story_a3ff96779b04|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "泄露的提示词可作学习参考，但无法直接用于生产。",
-      "title_hash": "abd395a1",
-      "scored_at": "2026-07-26T06:51:30.066972Z"
-    },
-    "story_542487498bc6|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "安全老问题，无新工具或方案，等官方补丁再关心。",
-      "title_hash": "c3b9a8d6",
-      "scored_at": "2026-07-26T09:29:44.248303Z"
-    },
-    "story_56214f7f40b3|pragmatic|0a5c5b24": {
-      "score": 90,
-      "review": "9M参数语音模型已开源，适合边缘部署，今天就能下载试用。",
-      "title_hash": "eb7b6c03",
-      "scored_at": "2026-07-26T09:29:50.015656Z"
-    },
-    "story_56214f7f40b3|cynic|f4237a62": {
-      "score": 50,
-      "review": "完整语音模型？先通过通用语音测试再来谈完整。",
-      "title_hash": "eb7b6c03",
-      "scored_at": "2026-07-26T09:29:53.016934Z"
-    },
-    "story_56214f7f40b3|paper-police|966065bf": {
-      "score": 55,
-      "review": "模型已开源，但缺论文和独立评测，效果存疑。",
-      "title_hash": "eb7b6c03",
-      "scored_at": "2026-07-26T09:29:57.914740Z"
     },
     "story_9a66534a1fc0|pragmatic|0a5c5b24": {
       "score": 20,
@@ -5268,6 +5214,30 @@
       "review": "周报性质，多为事件汇总，无直接可用的新工具或API，看趋势即可。",
       "title_hash": "7962472c",
       "scored_at": "2026-08-16T04:07:33.694846Z"
+    },
+    "story_e5da5f0992d1|pragmatic|0a5c5b24": {
+      "score": 68,
+      "review": "本地验证凭证可补强 CI 信任链，先看文档再决定接不接。",
+      "title_hash": "45e853b8",
+      "scored_at": "2026-08-16T05:51:18.602707Z"
+    },
+    "story_e5da5f0992d1|cynic|f4237a62": {
+      "score": 60,
+      "review": "本地验证凭证听着新鲜，但没看到怎么防作弊，先跑几个任务看看。",
+      "title_hash": "45e853b8",
+      "scored_at": "2026-08-16T05:51:22.080515Z"
+    },
+    "story_e5da5f0992d1|paper-police|966065bf": {
+      "score": 8,
+      "review": "仅 HN 帖子无论文无代码，验证凭证可行性未证，空谈概念。",
+      "title_hash": "45e853b8",
+      "scored_at": "2026-08-16T05:51:23.798024Z"
+    },
+    "story_7a8d440461c0|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "实验性研究，短期无直接用途，但可能启发数据筛选思路。",
+      "title_hash": "59b92d32",
+      "scored_at": "2026-08-16T08:54:09.126530Z"
     }
   }
 }

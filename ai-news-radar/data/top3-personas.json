@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T04:07:33.695064Z",
+  "generated_at": "2026-08-16T09:50:49.646784Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,30 +37,10 @@
       }
     },
     {
-      "story_id": "story_b004ea508d1a",
-      "title": "Show HN: ThoughtDAG——用于大型语言模型对话的可编辑上下文图",
-      "url": "https://chenxiachan.github.io/thoughtdag",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 55,
-          "review": "概念有点意思，但只有个demo页，没看到实际效果对比。"
-        },
-        "paper-police": {
-          "score": 15,
-          "review": "只有项目页和HN讨论，无论文无代码无评测，无法验证效果。"
-        },
-        "pragmatic": {
-          "score": 70,
-          "review": "可编辑上下文图思路实用，想折腾LLM对话管理的可以试，但生态未验证。"
-        }
-      }
-    },
-    {
       "story_id": "story_3415e330fba4",
       "title": "AI辅助将25万行老旧天气模拟代码移植至GPU / AI-Assisted GPU Porting of a 250k Line Legacy Weather Simulation Code",
       "url": "https://news.ycombinator.com/item?id=49314967",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 62,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 70,
           "review": "老代码GPU迁移有参考价值，但工具未必开源，先看细节再动手。"
+        }
+      }
+    },
+    {
+      "story_id": "story_e5da5f0992d1",
+      "title": "ProofRun——面向 AI 编程代理的本地验证凭证 / ProofRun – a local verification receipt for AI coding agents",
+      "url": "https://news.ycombinator.com/item?id=49316605",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 60,
+          "review": "本地验证凭证听着新鲜，但没看到怎么防作弊，先跑几个任务看看。"
+        },
+        "paper-police": {
+          "score": 8,
+          "review": "仅 HN 帖子无论文无代码，验证凭证可行性未证，空谈概念。"
+        },
+        "pragmatic": {
+          "score": 68,
+          "review": "本地验证凭证可补强 CI 信任链，先看文档再决定接不接。"
         }
       }
     }
