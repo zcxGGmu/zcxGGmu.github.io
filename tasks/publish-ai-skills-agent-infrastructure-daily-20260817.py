@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import importlib.util
+import json
+import re
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -95,11 +98,12 @@ BODY = r'''
 <p>真正值得沉淀的不是某个单品的热度，而是一条经过验证的闭环：输入有来源，步骤有边界，动作有日志，结果有检查，失败能回滚，责任人能接手。先把一条流程做到稳定，再逐步增加自动化，才能把开源生态的速度转化为长期效率。</p>
 '''
 
-SLUG = "ai-skills-agent-infrastructure-workflows-daily-20260815"
+SLUG = "ai-skills-agent-infrastructure-workflows-daily-20260817"
+OLD_SLUG = "ai-skills-agent-infrastructure-workflows-daily-20260815"
 base.POSTS = [
     base.Post(
         slug=SLUG,
-        title="AI Agent 基础设施 53 项速览：从可插拔运行时到可治理工作流",
+        title="AI Agent 基础设施：从可插拔运行时到可治理工作流",
         desc="从运行时、Skills、记忆、规格驱动开发到安全治理，梳理 AI Agent 如何形成可验证、可回滚的工作系统。",
         category="AI工具",
         series="AI Agent",
@@ -136,5 +140,103 @@ template.EXPECTED_LINKS = {
 template.FORBIDDEN = ["B站", "bilibili", "Bilibili", "哔哩", "UP主", "up主", "原视频", "视频中", "视频里", "音频中", "音频里", "本期", "这期", "观看", "点赞", "投币", "收藏", "订阅", "关注", "三连", "BV1"]
 template.PAGE_SIZE = 10
 
+
+OLD_POST = base.Post(
+    slug=OLD_SLUG,
+    title="AI Agent 基础设施 53 项速览：从可插拔运行时到可治理工作流",
+    desc="",
+    category="AI工具",
+    series="AI Agent",
+    tags=["AI Skills", "AI Agent", "开源项目", "GitHub", "Codex", "Agent框架", "工作流", "安全治理", "RAG"],
+    minutes=18,
+    body="",
+    accent=("#0f172a", "#0f766e", "#b45309"),
+    required=[],
+    minimum=0,
+)
+
+
+def remove_old_publication(outputs: dict[str, str | None]) -> None:
+    old_item = re.compile(rf"<item>\s*<title>[^<]*</title>\s*<link>{re.escape(OLD_POST.full_url)}</link>.*?</item>\s*", re.S)
+    outputs["index.html"] = base.strip_home_card(outputs["index.html"] or "", OLD_POST.url_path)
+    outputs["index.xml"] = old_item.sub("", outputs["index.xml"] or "")
+    outputs["archive/index.html"] = base.remove_archive_item(outputs["archive/index.html"] or "", OLD_POST)
+    outputs["sitemap.xml"] = re.sub(rf"\s*<url><loc>{re.escape(OLD_POST.full_url)}</loc></url>", "", outputs["sitemap.xml"] or "")
+
+    for kind, term in [("categories", OLD_POST.category), ("series", OLD_POST.series), *[("tags", tag) for tag in OLD_POST.tags]]:
+        page_path = f"{kind}/{term}/index.html"
+        index_path = f"{kind}/index.html"
+        outputs[page_path] = base.remove_tax_item(outputs[page_path] or "", OLD_POST)
+        outputs[index_path] = base.update_term_index(outputs[index_path] or "", kind, term, -1)
+
+    outputs[f"2026/{OLD_SLUG}/index.html"] = None
+    outputs[f"images/posts/{OLD_SLUG}/cover.svg"] = None
+    outputs[f"tasks/{OLD_SLUG}-body.html"] = None
+
+
+_collect_outputs = base.collect_outputs
+
+
+def collect_outputs() -> dict[str, str | None]:
+    outputs = _collect_outputs()
+    remove_old_publication(outputs)
+    return outputs
+
+
+base.collect_outputs = collect_outputs
+
+
+def create_commit(outputs: dict[str, str | None], ref) -> str:
+    entries = []
+    for path, content in sorted(outputs.items()):
+        if content is None:
+            entries.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
+            continue
+        blob = base.run_gh(["-X", "POST", base.endpoint("git/blobs"), "--input", "-"], {"content": content, "encoding": "utf-8"})
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    tree = base.run_gh(["-X", "POST", base.endpoint("git/trees"), "--input", "-"], {"base_tree": ref.tree_sha, "tree": entries})
+    commit = base.run_gh(
+        ["-X", "POST", base.endpoint("git/commits"), "--input", "-"],
+        {"message": "Publish AI Skills article 2026-08-17", "tree": tree["sha"], "parents": [ref.commit_sha]},
+    )
+    base.run_gh(["-X", "PATCH", base.endpoint(f"git/refs/heads/{base.BRANCH}"), "--input", "-"], {"sha": commit["sha"], "force": False})
+    return commit["sha"]
+
+
+def main() -> None:
+    for _ in range(3):
+        ref = base.get_ref()
+        template.active_ref = ref
+        base.get_file = template.get_file_at_active_ref
+        base.update_home = template.update_home_after_pinned
+        outputs = base.collect_outputs()
+        card_count, total_pages = template.rebuild_pagination(outputs)
+        outputs[f"tasks/{base.MANIFEST_NAME}"] = json.dumps(
+            sorted(path for path, content in outputs.items() if content is not None),
+            ensure_ascii=False,
+            indent=2,
+        )
+        template.validate(outputs)
+        base.write_outputs({path: content for path, content in outputs.items() if content is not None})
+        template.validate_cover_rendering(outputs)
+        if base.get_ref().commit_sha != ref.commit_sha:
+            continue
+        try:
+            commit_sha = create_commit(outputs, ref)
+        except RuntimeError as exc:
+            if "Reference update failed" in str(exc):
+                time.sleep(2)
+                continue
+            raise
+        if base.get_ref().commit_sha != commit_sha:
+            continue
+        template.verify_remote_publish(commit_sha, card_count, total_pages)
+        if base.get_ref().commit_sha != commit_sha:
+            continue
+        print(json.dumps({"parent": ref.commit_sha, "pushed": commit_sha, "cards": card_count, "pages": total_pages}, ensure_ascii=False))
+        return
+    raise RuntimeError("remote reference changed during all publication attempts")
+
+
 if __name__ == "__main__":
-    template.main()
+    main()
