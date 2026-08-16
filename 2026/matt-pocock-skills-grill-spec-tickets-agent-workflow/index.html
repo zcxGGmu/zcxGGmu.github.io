@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>Matt Pocock Skills 工作流拆解：从 grill-me 到 spec、tickets 与代码审查 - zcxGGmu's Blog</title>
+  <meta name="description" content="以 Matt Pocock Skills 为例，拆解如何用 grill、spec、tickets、implement、TDD 和 code-review 把 Agent 开发推进到可验证交付。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/matt-pocock-skills-grill-spec-tickets-agent-workflow/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="Matt Pocock Skills 工作流拆解：从 grill-me 到 spec、tickets 与代码审查"><meta property="og:description" content="以 Matt Pocock Skills 为例，拆解如何用 grill、spec、tickets、implement、TDD 和 code-review 把 Agent 开发推进到可验证交付。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/matt-pocock-skills-grill-spec-tickets-agent-workflow/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/matt-pocock-skills-grill-spec-tickets-agent-workflow/cover.svg')"><div class="post-title">Matt Pocock Skills 工作流拆解：从 grill-me 到 spec、tickets 与代码审查<div class="post-subtitle">以 Matt Pocock Skills 为例，拆解如何用 grill、spec、tickets、implement、TDD 和 code-review 把 Agent 开发推进到可验证交付。</div><div class="post-meta"><time itemprop="datePublished">2026-08-16</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/AI%20Skills/">AI Skills</a>&nbsp;<a href="/tags/Agent/">Agent</a>&nbsp;<a href="/tags/Matt%20Pocock/">Matt Pocock</a>&nbsp;<a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>&nbsp;<a href="/tags/TDD/">TDD</a>&nbsp;<a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/">代码审查</a>&nbsp;<a href="/tags/OpenSpec/">OpenSpec</a>&nbsp;<a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 13 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">Matt Pocock Skills</a> 的价值，不是又多了一套复杂的 Agent 编排框架，而是把开发过程中最容易失控的几个环节拆成一组可以组合的技能。它解决的是四类常见问题：Agent 做出来的东西和真实需求不一致，失败次数太多，代码异常不知道怎样收口，以及团队如何保证代码质量。</p>
+<p>这套方法最重要的一句话是：使用工作流，但不要让工作流接管全部流程。Skills 提供的是单一职责的能力块，开发者仍然负责判断任务复杂度、选择入口、决定什么时候跳步、什么时候加重流程。也正因为它不强行接管，日常小改、复杂需求拆解、大项目维护、Bug 排查和代码审查都能用同一组能力重新组合。</p>
+<figure class="post-figure"><img src="/images/posts/matt-pocock-skills-grill-spec-tickets-agent-workflow/01-skills-title.jpg" alt="Matt Pocock Skills 以一组工程化技能覆盖需求澄清、规格沉淀、任务拆分、实现和审查。" loading="lazy"><figcaption>Matt Pocock Skills 以一组工程化技能覆盖需求澄清、规格沉淀、任务拆分、实现和审查。</figcaption></figure>
+
+<h2 id="workflow-not-autopilot">一、工作流不是自动驾驶，而是工程护栏</h2>
+<p>Agent 开发最常见的失败，不是模型完全不会写代码，而是它很快就开始“自以为理解了”。需求说得模糊时，它会补设定；上下文缺失时，它会猜结构；代码质量没人盯时，它会在局部通过的同时埋下全局问题。一个完整工作流的作用，就是把这些风险提前拆开处理。</p>
+<p>但工作流如果过重，也会变成负担。某些从零到一的大版本，确实适合用更强的自动化框架，让 Agent 依据细颗粒度计划连续推进。可一旦项目进入日常维护阶段，大部分任务只是小功能、小修复、小改动；模型能力提升后，过细计划反而会浪费上下文和时间。</p>
+<p>Matt Pocock Skills 更适合这种中间地带：需要规范，但不需要全流程被框架锁死；需要质量，但不想为一个按钮样式改动启动完整项目治理。它把决策权留给人，把重复的工程动作交给技能。</p>
+
+<h2 id="when-to-use-which-flow">二、什么时候用轻流程，什么时候上重流程</h2>
+<p>如果任务极其简单，例如修一个显而易见的样式问题，完全可以直接改，不必启动任何流程。流程本身没有神圣性，只有在它能降低错误率时才有价值。</p>
+<p>如果需求一句话说不清楚，就应该先进入 grill。它的任务不是写代码，而是追问、澄清、压缩歧义。再复杂一点的需求，需要把讨论结果沉淀为 spec，让未来的自己和后续 Agent 都知道“为什么这么做、为什么不那么做”。当需求包含多个功能点、多个模块或多个交付面时，再用 tickets 拆成可以独立交付的垂直切片。</p>
+<p>大型项目、多人协作、长期演进则更适合 OpenSpec 这类上层机制。OpenSpec 处理的是项目级变更记录、决策历史和跨角色协作；Matt Pocock Skills 更偏向每个具体任务的细节质量。两者不是互斥关系，而是层级不同。</p>
+
+<h2 id="two-skill-modes">三、两类技能：用户触发与模型触发</h2>
+<p>这套 Skills 可以分成两类。第一类是用户主动触发的入口技能，例如 grill-me、grill-with-docs、to-spec、to-tickets、implement、code-review。它们对应真实开发流程中的一个阶段。</p>
+<p>第二类是模型在技能内部主动调用的子技能。这样设计是为了遵守单一职责原则：入口技能负责表达使用意图，底层技能负责执行具体流程。比如 grill-me 和 grill-with-docs 都会调用 grilling；差别在于 grill-with-docs 还会调用额外的文档沉淀能力，把讨论结果写成后续可用的材料。</p>
+<figure class="post-figure"><img src="/images/posts/matt-pocock-skills-grill-spec-tickets-agent-workflow/02-skill-modes.jpg" alt="Skills 分为用户主动调用和模型内部调用两种形态，入口技能和底层技能各守单一职责。" loading="lazy"><figcaption>Skills 分为用户主动调用和模型内部调用两种形态，入口技能和底层技能各守单一职责。</figcaption></figure>
+
+<h2 id="grill-first">四、grill-me：先把问题问清楚</h2>
+<p>grill-me 的本质是需求拷问。它适合那些“感觉要做点什么，但说不清到底要什么”的任务。很多开发失败并不是实现能力不足，而是问题本身没有被定义。越早让 Agent 追问，越能减少后面返工。</p>
+<p>grill-with-docs 更进一步：它不只追问，还会把结论结构化保存。普通 grill 结束后，讨论可能停留在上下文里，一旦会话被压缩或换 Agent 接手，许多判断就会丢失。grill-with-docs 会把关键背景、约束、决定和理由落到文件中，让后续流程有据可依。</p>
+<p>这一步看似慢，实际是在减少后面的盲改。对 AI 编程来说，真正昂贵的不是多问几个问题，而是在错误目标上快速写出一堆看似能跑的代码。</p>
+
+<h2 id="to-spec-source-of-truth">五、to-spec：把对话变成单一事实源</h2>
+<p>需求澄清以后，to-spec 会把讨论沉淀成可以发布、可以实现、可以审查的规格。这里的关键不是“写一份文档”，而是建立单一事实源：做什么，不做什么，为什么这样做，有哪些约束，验收标准是什么。</p>
+<p>没有规格时，未来任何人回头看都很难判断当初为什么做了某个取舍。尤其在 AI 参与开发后，代码产出速度变快，决策记录反而更重要。否则几天之后连自己都可能忘记当时为什么这么选，更不用说让另一个 Agent 接手。</p>
+<p>规格不是形式主义。它让需求从“临时聊天”变成“可追踪决策”，也是后续测试、拆票、实现和审查的共同依据。</p>
+<figure class="post-figure"><img src="/images/posts/matt-pocock-skills-grill-spec-tickets-agent-workflow/03-spec-flow.jpg" alt="spec 的作用是把对话结论沉淀为单一事实源，避免后续实现偏离原始约束。" loading="lazy"><figcaption>spec 的作用是把对话结论沉淀为单一事实源，避免后续实现偏离原始约束。</figcaption></figure>
+
+<h2 id="to-tickets-vertical-slices">六、to-tickets：按垂直切片拆任务</h2>
+<p>to-tickets 的重要性在于拆分方式。很多人习惯按技术层拆任务：先写所有数据库层，再写所有服务层，再写所有前端页面。这样拆出来的任务之间依赖重、难独立验收，也不适合多个 Agent 并行。</p>
+<p>更好的方式是垂直切片。假设有 A、B、C 三个增删改查能力，不应先做 A/B/C 的数据库，再做 A/B/C 的服务层，而应先完成 A 的数据库、服务、接口和界面，让它成为一个能独立交付、能独立验证的小功能；然后再做 B，再做 C。</p>
+<p>这种拆法能显著降低长任务失控概率。每张 ticket 都有清楚的输入、输出、依赖和验收口径，既方便人审查，也方便为每个 ticket 开新的上下文，让 Agent 不被前一段执行噪声污染。</p>
+<figure class="post-figure"><img src="/images/posts/matt-pocock-skills-grill-spec-tickets-agent-workflow/04-tickets.jpg" alt="tickets 不是按技术层横切，而是尽量拆成可独立交付的 vertical slices。" loading="lazy"><figcaption>tickets 不是按技术层横切，而是尽量拆成可独立交付的 vertical slices。</figcaption></figure>
+
+<h2 id="implement-tdd-review">七、implement：TDD、实现与代码审查</h2>
+<p>implement 是主流程里的实现入口，但它并不是简单地让模型直接写代码。它会把实现放进更严格的工程顺序里：先测试，再开发，再审查。测试驱动开发在 AI 编程时代变得更自然，因为写测试、跑失败、补最小实现这些原本让人嫌麻烦的动作，已经可以由 Agent 高速完成。</p>
+<p>标准 TDD 通常包含红、绿、重构三步：先写失败测试，再写最小代码让测试通过，最后在测试保护下优化结构。Matt Pocock 的拆分更细：TDD 技能只承担红绿循环，重构和质量检查交给 code-review 相关流程处理。这样做的好处是每个技能职责更清楚，不会把“功能是否满足”和“代码是否优雅”混在一起。</p>
+<p>code-review 也分维度审查：一类检查代码是否符合项目编码标准，另一类检查实现是否符合已定义规格。分开报告能避免一个维度掩盖另一个维度。例如代码风格很漂亮，但需求没做对；或者需求完成了，但实现方式破坏了项目约定。两者都需要单独被看见。</p>
+<figure class="post-figure"><img src="/images/posts/matt-pocock-skills-grill-spec-tickets-agent-workflow/05-main-flow.jpg" alt="主流程可以概括为 grill → spec → tickets → implement，再根据复杂度灵活跳步。" loading="lazy"><figcaption>主流程可以概括为 grill → spec → tickets → implement，再根据复杂度灵活跳步。</figcaption></figure>
+
+<h2 id="sdd-is-standard-now">八、规格驱动开发正在成为事实标准</h2>
+<p>过去软件工程也强调先设计、先测试、先审查，只是执行成本高，人又容易偷懒。团队里只要有一块短板，最终质量就会被那块短板拉低。进度压力一来，很多原本该做的地基工作就被省掉。</p>
+<p>AI 改变了成本结构。模型写代码速度足够快，前置规格、测试和审查的相对成本下降，收益反而上升。现在还完全凭一句模糊需求直接开写，更像是快速但低质量的粗糙加工。想做出稳定作品，规格和测试已经不再是“高级流程”，而是基础设施。</p>
+<p>差别只在于规格文件怎么设计、包含哪些内容、由谁维护、什么时候更新。写文档不是目的，让 Agent 在同一组事实和约束里工作才是目的。</p>
+
+<h2 id="exploration-before-flow">九、主流程之前：探索、原型和分诊</h2>
+<p>并不是所有任务一开始就能进入 spec。有些需求连目标都没想清楚，需要先探索。探索型流程的产物通常是一张任务地图和一组不同类型的 ticket：哪些需要研究，哪些需要追问，哪些需要原型，哪些可以直接实现。</p>
+<p>research 适合那些模型不知道、但代码库或材料里能查出来的问题。grill 适合那些答案在人的脑子里、需要通过追问挖出来的问题。prototype 则对应原型驱动开发：有些产品体验只有先做出来，才知道下一步该怎么做。AI 让高保真原型成本下降，原型不再只是昂贵的大项目动作。</p>
+<p>triage 更适合多人协作项目。项目有大量 issue 或外部反馈时，它可以先做分类：Bug、需求、需要补充信息、需要人处理、Agent 可自动处理、暂不处理。分诊不是写代码，但它决定了后续工作是否有秩序。</p>
+
+<h2 id="setup-and-side-skills">十、setup、Debug、Teach 与上下文交接</h2>
+<p>setup 通常安装后运行一次，用来配置 issue tracker、triage level 等基础选项。如果项目暂时不需要分诊，配置可以很轻；如果要接入协作系统，就应该把这些选项提前设好。</p>
+<p>复杂 Bug 可以用专门的调试技能收束。重构入口也可以单独调用，只是它非常消耗上下文和 token，应该在有测试保护、目标明确时使用。Teach 属于元技能，适合把一个主题拆成学习材料；如果目的是让 Agent 通过提问帮助自己理解，类似 Sigma 的问答式学习也可以作为替代思路。</p>
+<p>上下文压缩技能也很实用。长任务中途换 Agent、换会话或跨天继续时，仅靠对话历史很容易丢重点。把阶段性背景、已完成事项、未解决问题和验证证据写成 Markdown，下一位接手者才不需要重新探索。</p>
+
+<h2 id="ask-matt-as-router">十一、ask-matt：不知道用哪个技能时的路由器</h2>
+<p>ask-matt 可以理解为技能路由器。当任务摆在面前，却不确定应该先 grill、先 research、先 prototype、先 to-spec，还是直接 implement 时，先问它。它的价值不是替你完成工作，而是帮你判断下一步该用哪个技能。</p>
+<p>这也是整套 Skills 的入门方式：不必一开始记住所有技能。先记住主链路，复杂度上来再逐步加技能；实在不确定，就用 ask-matt 选择入口。这样既不会被工具数量吓住，也不会把简单任务变复杂。</p>
+<figure class="post-figure"><img src="/images/posts/matt-pocock-skills-grill-spec-tickets-agent-workflow/06-ask-matt.jpg" alt="主流程之外还存在探索、分诊、教学、上下文交接和 ask-matt 等辅助技能。" loading="lazy"><figcaption>主流程之外还存在探索、分诊、教学、上下文交接和 ask-matt 等辅助技能。</figcaption></figure>
+
+<h2 id="practical-operating-model">十二、一套可落地的使用模型</h2>
+<p>实际使用时，可以按复杂度建立四档策略。第一档，极小改动直接做，保持测试和验证即可。第二档，需求表述不清先 grill，把目标问清楚。第三档，有明确功能但影响范围较大，先 to-spec，再 implement。第四档，多功能、多模块或多人协作，先 to-spec，再 to-tickets，把每张 ticket 作为独立交付单元推进。</p>
+<p>如果缺信息，用 research；如果缺人脑里的判断，用 grill；如果不知道产品到底长什么样，用 prototype；如果 issue 太多，用 triage；如果不确定入口，用 ask-matt。这样 Skills 才是工具箱，而不是新一层束缚。</p>
+
+<h2 id="avoid-overusing-skills">十三、不要把技能当成万能按钮</h2>
+<p>这套工作法真正容易用错的地方，是把每个任务都塞进完整链路。技能越多，越需要克制。一个一眼能修的错误，不必先写 spec；一个范围非常清楚的小改动，不必拆 tickets；一个没有风险的文本调整，也不需要复杂审查。工程纪律不是流程堆叠，而是在正确的时机增加正确的约束。</p>
+<p>反过来，越是说不清需求、越是涉及多人协作、越是会改变数据结构或用户路径，就越应该把前置流程补齐。grill 用来减少歧义，spec 用来固化判断，tickets 用来控制切片，TDD 用来证明行为，code-review 用来防止局部通过但整体变差。每个技能都应当回答一个清楚问题：它正在降低哪一种风险。</p>
+<p>因此，成熟用法不是背熟命令列表，而是形成一套判断习惯。先判断任务复杂度，再选择入口；先决定要降低什么风险，再决定调用哪个技能；先让输出可验证，再追求执行速度。这样才能既保留 AI 的速度，又不牺牲工程交付质量。</p>
+
+<h2 id="conclusion">十四、结论：把 Agent 开发从“会写代码”推进到“能稳定交付”</h2>
+<p>AI 编程的下一阶段，不是单纯追求模型更快写代码，而是让它更稳定地理解需求、沉淀规格、拆分任务、实现功能、接受审查并完成交接。Matt Pocock Skills 之所以值得认真拆解，是因为它没有把开发者赶出流程，而是把开发者最需要掌控的决策点保留下来。</p>
+<p>grill 负责把问题问清楚，to-spec 负责把事实沉淀下来，to-tickets 负责把复杂需求拆成可交付切片，implement 负责在 TDD 和审查下推进实现，code-review 负责把项目标准和需求标准分开检查，ask-matt 负责在迷路时选择入口。它们合在一起，构成的不是自动驾驶，而是一套能让 Agent 少跑偏、少返工、少制造低质量代码的工程护栏。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/china-consumption-rate-40-production-first-domestic-demand/">上一篇<br>居民消费率只有 40%：生产优先、扩大内需与普通人的压力</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#workflow-not-autopilot">一、工作流不是自动驾驶，而是工程护栏</a><a class="toc-link toc-level-2" href="#when-to-use-which-flow">二、什么时候用轻流程，什么时候上重流程</a><a class="toc-link toc-level-2" href="#two-skill-modes">三、两类技能：用户触发与模型触发</a><a class="toc-link toc-level-2" href="#grill-first">四、grill-me：先把问题问清楚</a><a class="toc-link toc-level-2" href="#to-spec-source-of-truth">五、to-spec：把对话变成单一事实源</a><a class="toc-link toc-level-2" href="#to-tickets-vertical-slices">六、to-tickets：按垂直切片拆任务</a><a class="toc-link toc-level-2" href="#implement-tdd-review">七、implement：TDD、实现与代码审查</a><a class="toc-link toc-level-2" href="#sdd-is-standard-now">八、规格驱动开发正在成为事实标准</a><a class="toc-link toc-level-2" href="#exploration-before-flow">九、主流程之前：探索、原型和分诊</a><a class="toc-link toc-level-2" href="#setup-and-side-skills">十、setup、Debug、Teach 与上下文交接</a><a class="toc-link toc-level-2" href="#ask-matt-as-router">十一、ask-matt：不知道用哪个技能时的路由器</a><a class="toc-link toc-level-2" href="#practical-operating-model">十二、一套可落地的使用模型</a><a class="toc-link toc-level-2" href="#avoid-overusing-skills">十三、不要把技能当成万能按钮</a><a class="toc-link toc-level-2" href="#conclusion">十四、结论：把 Agent 开发从“会写代码”推进到“能稳定交付”</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
