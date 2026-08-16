@@ -166,8 +166,11 @@ def remove_old_publication(outputs: dict[str, str | None]) -> None:
     for kind, term in [("categories", OLD_POST.category), ("series", OLD_POST.series), *[("tags", tag) for tag in OLD_POST.tags]]:
         page_path = f"{kind}/{term}/index.html"
         index_path = f"{kind}/index.html"
-        outputs[page_path] = base.remove_tax_item(outputs[page_path] or "", OLD_POST)
-        outputs[index_path] = base.update_term_index(outputs[index_path] or "", kind, term, -1)
+        page = outputs[page_path] or ""
+        had_old_post = OLD_POST.url_path in page
+        outputs[page_path] = base.remove_tax_item(page, OLD_POST)
+        if had_old_post:
+            outputs[index_path] = base.update_term_index(outputs[index_path] or "", kind, term, -1)
 
     outputs[f"2026/{OLD_SLUG}/index.html"] = None
     outputs[f"images/posts/{OLD_SLUG}/cover.svg"] = None
@@ -190,7 +193,8 @@ def create_commit(outputs: dict[str, str | None], ref) -> str:
     entries = []
     for path, content in sorted(outputs.items()):
         if content is None:
-            entries.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
+            if base.get_file(path) is not None:
+                entries.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
             continue
         blob = base.run_gh(["-X", "POST", base.endpoint("git/blobs"), "--input", "-"], {"content": content, "encoding": "utf-8"})
         entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
