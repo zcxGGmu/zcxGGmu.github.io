@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>写、限、拦、救：AI Agent 新手必须补上的安全规则 - zcxGGmu's Blog</title>
+  <meta name="description" content="从规则文件、权限边界、执行前钩子到 Git、worktree、快照和独立备份，建立 AI Agent 误操作前后的四层防线。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/ai-agent-rules-sandbox-hooks-recovery-write-limit-block-rescue/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="写、限、拦、救：AI Agent 新手必须补上的安全规则"><meta property="og:description" content="从规则文件、权限边界、执行前钩子到 Git、worktree、快照和独立备份，建立 AI Agent 误操作前后的四层防线。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/ai-agent-rules-sandbox-hooks-recovery-write-limit-block-rescue/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/ai-agent-rules-sandbox-hooks-recovery-write-limit-block-rescue/cover.svg')"><div class="post-title">写、限、拦、救：AI Agent 新手必须补上的安全规则<div class="post-subtitle">从规则文件、权限边界、执行前钩子到 Git、worktree、快照和独立备份，建立 AI Agent 误操作前后的四层防线。</div><div class="post-meta"><time itemprop="datePublished">2026-08-17</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/AGENTS.md/">AGENTS.md</a>&nbsp;<a href="/tags/CLAUDE.md/">CLAUDE.md</a>&nbsp;<a href="/tags/Sandbox/">Sandbox</a>&nbsp;<a href="/tags/Hooks/">Hooks</a>&nbsp;<a href="/tags/Git/">Git</a>&nbsp;<a href="/tags/Worktree/">Worktree</a>&nbsp;<a href="/tags/%E5%A4%87%E4%BB%BD/">备份</a>&nbsp;<a href="/tags/%E6%9D%83%E9%99%90/">权限</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 12 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>AI Agent 已经不只是补几行代码的助手。它可以读写文件、运行终端命令、安装依赖、调用多个工具，甚至在没有人盯着的情况下连续执行。能力越强，做对事情时越省时间；方向一旦错了，副作用也会更快落到真实硬盘和真实数据上。</p>
+<p>真正需要警惕的，不是某一个模型是不是有问题，而是模型能力、终端权限和真实数据叠加在一起之后，一个错误动作会被迅速放大。代码改坏了还可以回滚；用户数据、原始素材和生产配置一旦被误删，如果没有备份，可能连第二次机会都没有。</p>
+
+<h2 id="agent-is-not-autocomplete">一、AI Agent 已经不是自动补全</h2>
+<p>过去使用 AI 写代码，风险主要是生成错误实现、引入 bug 或误解需求。现在的风险已经扩展到文件系统和执行环境。Agent 不仅会建议代码，还会直接修改文件、删除目录、安装包、运行脚本、调用 MCP 工具。</p>
+<p>当这些动作发生在真实项目里，错误就不再只是文本错误，而是系统状态变化。尤其是删除、覆盖、迁移、清理缓存、重写配置、强推分支这类动作，只要落在错误路径上，就可能造成不可逆损失。</p>
+<p>因此，使用 Agent 时必须把默认心态从“它在聊天”改成“它在操作一台有权限的机器”。机器上有什么，它就可能碰到什么；权限开多大，事故半径就有多大。</p>
+
+<h2 id="production-mindset">二、把当前环境按生产环境处理</h2>
+<p>最稳妥的第一句话，是把当前环境按生产环境处理。只要没有明确授权，Agent 只允许分析，不允许自行执行修改、删除、清理、迁移和批量覆盖动作。</p>
+<p>这种表达不是为了吓唬模型，而是为了建立默认边界。Agent 必须先识别环境风险，列出准备做什么，说明目标路径、影响范围、恢复方案，然后等待明确确认。</p>
+<figure class="post-figure"><img src="/images/posts/ai-agent-rules-sandbox-hooks-recovery-write-limit-block-rescue/agent-rules-production-boundary.jpg" alt="高风险任务要先把环境当成生产环境处理，删除和迁移动作必须有恢复方案。" loading="lazy"><figcaption>高风险任务要先把环境当成生产环境处理，删除和迁移动作必须有恢复方案。</figcaption></figure>
+<p>如果规则没有写清楚，Agent 很容易把“帮我整理项目”理解成可以删除未使用文件，把“清理一下”理解成可以批量移除目录，把“修复依赖”理解成可以重写配置。模糊指令必须先被拆清楚，不能直接执行。</p>
+
+<h2 id="four-words">三、整套方法可以压缩成四个字：写、限、拦、救</h2>
+<p>写，是把规则写清楚。限，是限制 Agent 能碰哪里、能做什么。拦，是在执行前检查危险动作。救，是在事故发生后还能恢复。</p>
+<p>这四层少一层都不完整。只写规则而没有权限限制，Agent 仍然可能越界。只有沙箱而没有执行前检查，危险动作可能在允许范围内发生。只有拦截而没有备份，一旦漏掉就没有恢复路径。</p>
+<p>真正可靠的 Agent 安全，不是相信一句提示词，而是把规则、权限、钩子和恢复点组合成独立防线。</p>
+
+<h2 id="write-rules">四、写：规则文件要具体、可检查、可长期维护</h2>
+<p>规则文件不是项目百科全书，也不是 README。README 给人看，说明项目怎么使用；Agent 规则文件给 AI 看，规定它在这个项目里怎样工作。</p>
+<p>不同工具的规则文件名不同，例如 CLAUDE.md、AGENTS.md、Harness 项目里的 agent instructions，或者本地私有规则文件。文件名可以不同，但要解决的问题相同：任务范围、真实命令、危险操作、验收标准、禁止事项和参考资料。</p>
+<p>好的规则应该具体，而不是空泛。不要只写“不要乱删文件”，而要写“删除前必须列出目标路径、文件数量、总大小、是否可恢复，并等待当前回合明确确认”。不要只写“注意安全”，而要写“禁止操作生产数据、原始素材、用户上传文件和密钥目录”。</p>
+
+<h2 id="rule-principles">五、规则写作的三个原则</h2>
+<p>第一，只写下次还有用的内容。一次性临时要求不应该塞进长期规则文件，否则规则会越来越臃肿。第二，只写和 Agent 行为直接相关的内容，不要把项目所有背景都搬进去。第三，规则必须能检查，不能只写态度。</p>
+<p>“生成草稿，不等于规则合格”这一点很重要。规则写完后，要检查它是否真的包含项目范围、危险动作、验收标准和边界条件。更进一步，还要确认 Agent 实际加载了这些规则。</p>
+<p>如果工具提供上下文查看能力，就要检查规则文件是否被读入；如果没有，也要通过 dry-run 式任务观察 Agent 是否会先列计划、先问确认、先说明风险。</p>
+
+<h2 id="limit-permissions">六、限：只开放完成任务真正需要的权限</h2>
+<p>权限不能按“方便”来开，而要按任务需要来开。分析任务使用只读权限；修改任务限制在工作区；涉及真实数据、生产配置、密钥、原始素材和大体积文件时，应当放到单独隔离环境处理。</p>
+<p>很多事故不是模型突然变坏，而是权限给得太大。一个本来只需要看代码的任务，却拥有删除整个目录的能力；一个只需要改某个模块的任务，却能访问全盘文件；一个只需要生成方案的任务，却能运行真实迁移命令。</p>
+<figure class="post-figure"><img src="/images/posts/ai-agent-rules-sandbox-hooks-recovery-write-limit-block-rescue/agent-rules-sandbox-scope.jpg" alt="权限要按任务范围收窄，只读、工作区和生产数据应分层隔离。" loading="lazy"><figcaption>权限要按任务范围收窄，只读、工作区和生产数据应分层隔离。</figcaption></figure>
+<p>沙箱不是形式。它决定了最坏情况下事故能扩散到哪里。没有沙箱，Agent 的一次错误命令可能直接碰到整块磁盘；有沙箱，错误至少被限制在可控范围内。</p>
+
+<h2 id="block-before-tool-use">七、拦：危险动作必须在工具执行前被检查</h2>
+<p>只靠规则提醒是不够的。Agent 准备执行命令时，系统还应该有 PreToolUse 这类执行前检查：动作是什么，目标路径在哪里，是否命中保护目录，是否属于删除、覆盖、强推、迁移或生产数据操作。</p>
+<p>真正稳妥的拦截，不是只拦一个 rm 命令。删除可能通过 rmdir、git clean、PowerShell Remove-Item、文件编辑工具或 MCP 工具发生。如果只盯一个关键词，Agent 换一条工具路径就可能绕过。</p>
+<figure class="post-figure"><img src="/images/posts/ai-agent-rules-sandbox-hooks-recovery-write-limit-block-rescue/agent-rules-pretooluse-hook.jpg" alt="执行前检查应同时识别动作和目标路径，保护目录默认拒绝，批量删除要求确认。" loading="lazy"><figcaption>执行前检查应同时识别动作和目标路径，保护目录默认拒绝，批量删除要求确认。</figcaption></figure>
+<p>更好的做法，是同时检查动作类型和目标路径。任何形式的删除，只要目标落入受保护目录，就默认拒绝；普通工作区里的批量删除，也至少要求人工确认；没有破坏性的读操作，才允许放行。</p>
+
+<h2 id="start-small-hooks">八、钩子先从最小版本开始</h2>
+<p>第一次配置钩子，不要一上来写一个号称能解析所有命令的万能系统。万能钩子很容易写错，写错后反而让人产生虚假的安全感。</p>
+<p>更现实的路径，是先把明显危险的删除命令、覆盖命令、强推命令和生产数据操作设为询问或拒绝。然后在一次性测试目录里验证拦截结果，确认它真的能挡住目标动作。</p>
+<p>钩子本身也可能失败。脚本可能没匹配到，路径可能没规范化，工具参数可能不是预期格式。所以钩子很有价值，但它不能成为唯一防线。</p>
+
+<h2 id="rescue-layer">九、救：恢复点必须在危险任务开始之前存在</h2>
+<p>如果规则漏了，权限开大了，钩子也没有拦住，最后能靠什么？靠恢复层。代码改动前先提交 Git；复杂任务放进独立 worktree；重要配置做快照；原始素材、用户上传文件和大体积数据单独备份。</p>
+<p>这里不要神话 Git。Git 能恢复已经追踪并提交的内容，但救不了所有未追踪文件，也不适合替代几百 GB 的素材备份。真正的恢复点必须在 Agent 执行危险任务之前就存在，而且要和当前工作目录隔离。</p>
+<p>备份如果和原文件放在同一个可写目录里，一条递归删除命令可能把原件和备份一起带走。备份必须有独立位置、独立权限或独立快照。</p>
+
+<h2 id="combined-defense">十、四层防线要一起工作</h2>
+<p>假设 Agent 准备执行一条目标路径异常的删除命令。规则文件应该先要求它列出路径、数量、大小和恢复方案，并停下来等待确认。沙箱应该限制它不能直接碰整块磁盘。PreToolUse 应该检查动作和路径，命中风险后拒绝或要求确认。即使前三层都漏了，独立备份和快照仍然应该给出恢复机会。</p>
+<p>无法保证这样就能挡住所有事故，但可以确定，每增加一层独立控制，错误操作直接变成不可逆损失的概率就会下降。即使出事，影响范围也更容易被限制。</p>
+<p>这才是规则文件真正应该放在系统里的位置。它不是护身符，也不是贴上去就生效的安全认证。它只负责告诉 Agent 什么是对的；沙箱和权限负责规定它能去哪里；钩子负责在危险动作前踩刹车；Git、快照和备份负责在最坏情况下把项目拉回来。</p>
+
+<h2 id="first-action">十一、今天最值得补的一条规则</h2>
+<p>如果只准备做一件事，就先打开自己的项目规则文件，把这一句写进去：删除、覆盖、迁移或清理任何文件前，必须列出目标路径、文件数量、总大小、影响范围和恢复方案，并等待当前回合明确确认。</p>
+<p>写完以后，再问一个更重要的问题：如果 Agent 没有听见这句话，系统里还有哪一道门能拦住它？如果答案是没有，下一步就不是继续优化提示词，而是补权限、补钩子、补恢复点。</p>
+<p>AI Agent 越强，越需要工程化边界。真正可靠的使用方式，不是期待它永远听话，而是承认它可能犯错，然后提前把错误的半径限制住。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/prime-agent-rlm-continual-harness-self-improving-coding-agent/">下一篇<br>Prime Agent 深度拆解：RLM、持续 Harness 与自进化编程助手</a><a class="older-posts" href="/2026/sixteen-hour-low-wage-jobs-labor-market-bottom-reality/">上一篇<br>16 小时工作只够活着：低薪岗位里的真实就业困境</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#agent-is-not-autocomplete">一、AI Agent 已经不是自动补全</a><a class="toc-link toc-level-2" href="#production-mindset">二、把当前环境按生产环境处理</a><a class="toc-link toc-level-2" href="#four-words">三、整套方法可以压缩成四个字：写、限、拦、救</a><a class="toc-link toc-level-2" href="#write-rules">四、写：规则文件要具体、可检查、可长期维护</a><a class="toc-link toc-level-2" href="#rule-principles">五、规则写作的三个原则</a><a class="toc-link toc-level-2" href="#limit-permissions">六、限：只开放完成任务真正需要的权限</a><a class="toc-link toc-level-2" href="#block-before-tool-use">七、拦：危险动作必须在工具执行前被检查</a><a class="toc-link toc-level-2" href="#start-small-hooks">八、钩子先从最小版本开始</a><a class="toc-link toc-level-2" href="#rescue-layer">九、救：恢复点必须在危险任务开始之前存在</a><a class="toc-link toc-level-2" href="#combined-defense">十、四层防线要一起工作</a><a class="toc-link toc-level-2" href="#first-action">十一、今天最值得补的一条规则</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
