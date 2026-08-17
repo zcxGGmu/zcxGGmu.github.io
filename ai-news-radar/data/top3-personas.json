@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T23:40:17.964400Z",
+  "generated_at": "2026-08-17T04:09:36.620388Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,10 +17,50 @@
   ],
   "items": [
     {
+      "story_id": "story_49a27a8cb3e7",
+      "title": "Codex 中 GPT-5.6 Sol 百万上下文放开：ChatGPT 账号也能用",
+      "url": "https://www.aibase.com/news/30389",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 25,
+          "review": "GPT-5.6这版本号怕不是自己编的，百万上下文拿官方文档验验再说。"
+        },
+        "paper-police": {
+          "score": 8,
+          "review": "仅新闻标题宣称放开，无论文代码评测，无法验证真伪。"
+        },
+        "pragmatic": {
+          "score": 92,
+          "review": "百万上下文直接可用，长文档处理今天就能上，无需额外申请。"
+        }
+      }
+    },
+    {
+      "story_id": "story_5014b5e051ff",
+      "title": "百万上下文全面开放，Codex迎来AI编程“终极形态”",
+      "url": "https://www.aibase.com/news/30387",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 35,
+          "review": "百万上下文刚开放就敢叫终极形态，等用户跑完真实项目再吹不迟。"
+        },
+        "paper-police": {
+          "score": 20,
+          "review": "新闻通稿宣称性能，无论文无代码无评测，等实测再说。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "Codex 百万上下文开放，长项目重构可直接上手，白嫖窗口别错过。"
+        }
+      }
+    },
+    {
       "story_id": "story_5df010d9d793",
       "title": "Qwen 3.8 27B 表现出色，但默认推理强度过高导致过度思考 / Qwen 3.8 27B is excellent， but it defaults to wildly overthinking things",
       "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b",
-      "rank": 1,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 72,
@@ -33,46 +73,6 @@
         "pragmatic": {
           "score": 80,
           "review": "模型能用了但默认参数爱绕弯，部署时记得调低推理强度省 token。"
-        }
-      }
-    },
-    {
-      "story_id": "story_e5da5f0992d1",
-      "title": "ProofRun——面向 AI 编程代理的本地验证凭证 / ProofRun – a local verification receipt for AI coding agents",
-      "url": "https://news.ycombinator.com/item?id=49316605",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 60,
-          "review": "本地验证凭证听着新鲜，但没看到怎么防作弊，先跑几个任务看看。"
-        },
-        "paper-police": {
-          "score": 8,
-          "review": "仅 HN 帖子无论文无代码，验证凭证可行性未证，空谈概念。"
-        },
-        "pragmatic": {
-          "score": 68,
-          "review": "本地验证凭证可补强 CI 信任链，先看文档再决定接不接。"
-        }
-      }
-    },
-    {
-      "story_id": "story_ad56c119c312",
-      "title": "Claude更新核心系统提示 覆盖网页及iOS/Android应用",
-      "url": "https://platform.claude.com/docs/en/release-notes/system-prompts",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 65,
-          "review": "系统提示更新是常态，但行为改变才是关键，别拿文档凑数。"
-        },
-        "paper-police": {
-          "score": 45,
-          "review": "官方文档更新有细节，但无代码无第三方验证，待复现确认。"
-        },
-        "pragmatic": {
-          "score": 65,
-          "review": "系统提示变了可能影响应用行为，先跑测试再上线。"
         }
       }
     }
