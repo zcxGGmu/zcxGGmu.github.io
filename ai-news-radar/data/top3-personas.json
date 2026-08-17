@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T04:09:36.620388Z",
+  "generated_at": "2026-08-17T10:06:41.276829Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,42 +17,22 @@
   ],
   "items": [
     {
-      "story_id": "story_49a27a8cb3e7",
-      "title": "Codex 中 GPT-5.6 Sol 百万上下文放开：ChatGPT 账号也能用",
-      "url": "https://www.aibase.com/news/30389",
+      "story_id": "story_b60199de2cff",
+      "title": "阿里Qwen-Audio-3.0系列语音模型上线千问AI平台，斩获国际评测“大满贯”",
+      "url": "https://www.aibase.com/news/30399",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 25,
-          "review": "GPT-5.6这版本号怕不是自己编的，百万上下文拿官方文档验验再说。"
+          "score": 65,
+          "review": "大满贯？先把评测基准名单列全，别只挑自家的强项。"
         },
         "paper-police": {
-          "score": 8,
-          "review": "仅新闻标题宣称放开，无论文代码评测，无法验证真伪。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "百万上下文直接可用，长文档处理今天就能上，无需额外申请。"
-        }
-      }
-    },
-    {
-      "story_id": "story_5014b5e051ff",
-      "title": "百万上下文全面开放，Codex迎来AI编程“终极形态”",
-      "url": "https://www.aibase.com/news/30387",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 35,
-          "review": "百万上下文刚开放就敢叫终极形态，等用户跑完真实项目再吹不迟。"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "新闻通稿宣称性能，无论文无代码无评测，等实测再说。"
+          "score": 10,
+          "review": "评测'大满贯'无论文无代码，凭平台新闻不可信。"
         },
         "pragmatic": {
           "score": 88,
-          "review": "Codex 百万上下文开放，长项目重构可直接上手，白嫖窗口别错过。"
+          "review": "语音模型已上线，多模态任务可直接实测，跑ASR/音频理解的今天就能用。"
         }
       }
     },
@@ -60,7 +40,7 @@
       "story_id": "story_5df010d9d793",
       "title": "Qwen 3.8 27B 表现出色，但默认推理强度过高导致过度思考 / Qwen 3.8 27B is excellent， but it defaults to wildly overthinking things",
       "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 72,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 80,
           "review": "模型能用了但默认参数爱绕弯，部署时记得调低推理强度省 token。"
+        }
+      }
+    },
+    {
+      "story_id": "story_16a84261d17f",
+      "title": "豆包“工作任务”功能上新:手机可远程操控电脑，跨设备办公再无边界",
+      "url": "https://www.aibase.com/news/30402",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 45,
+          "review": "远程控制又不是新发明，TeamViewer笑而不语，改个名叫跨设备办公就无边界了？"
+        },
+        "paper-police": {
+          "score": 22,
+          "review": "功能描述无评测细节，未开源未复现，仅官方说法待验证。"
+        },
+        "pragmatic": {
+          "score": 65,
+          "review": "多设备操控落地，办公族能直接用，开发无新接口可蹭。"
         }
       }
     }
