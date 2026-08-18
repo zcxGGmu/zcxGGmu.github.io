@@ -1,0 +1,42 @@
+<p>AI 开源生态正在从“会不会写代码”转向“能不能稳定把事情做完”。最新一批项目覆盖运行时、任务编排、Skills、知识库、应用工具和治理安全等层次，背后共同的问题是：如何让 Agent 拥有明确的工作方法、足够的上下文、可恢复的状态和可审计的权限。把这些项目放在一条交付链上，比逐个追逐功能更容易看清它们的真实价值。</p>
+<p>下面只讨论能够确认仓库归属的项目，并把项目放回具体工程边界中。热度可以帮助筛选候选，但不能替代许可证、维护活跃度、数据权限和失败恢复测试。</p>
+
+<h2 id="runtime">一、运行时从可替换组件开始</h2>
+<p><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">deepseek-ai/deepseek-harness</a> 把模型、工具、提示词、循环、存储、沙箱和界面拆成可替换模块。它的启发不是“换一个模型就够了”，而是把每次调用的契约、状态保存和错误恢复都变成可以单独测试的边界。长任务遇到超时或上下文切换时，系统应该知道从哪个检查点继续，而不是重新猜测整个过程。</p>
+<p><a href="https://github.com/msitarzewski/agency-agents" target="_blank" rel="noopener">msitarzewski/agency-agents</a> 用不同职责的角色组织前端、后端、测试和研究工作；<a href="https://github.com/bytedance/deer-flow" target="_blank" rel="noopener">bytedance/deer-flow</a> 则把研究、编码和长流程放进可持续运行的工作台。角色越多，越需要明确输入、输出、所有权和完成条件，否则并行只是把冲突隐藏到最后。</p>
+
+<h2 id="orchestration">二、并行协作必须有唯一所有者</h2>
+<p><a href="https://github.com/HKUDS/nanobot" target="_blank" rel="noopener">HKUDS/nanobot</a> 代表轻量、本地化的助手形态，适合在资源受限的环境中执行边界清晰的任务。<a href="https://github.com/superset-sh/superset" target="_blank" rel="noopener">superset-sh/superset</a> 把多个编码 Agent 放到桌面调度台中；<a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">PrimeIntellect-ai/prime-agent</a> 进一步强调后台任务、长期目标和经验积累。它们都说明并行的关键不是角色数量，而是每个工作区能否独立保存上下文并在完成后交回可核验结果。</p>
+<p>数据库迁移、发布分支、依赖锁文件和外部写入必须设置唯一所有者。调度层应记录允许使用的工具、预算、输出格式和回滚方式；任何一个子任务失败，都不应静默地触发后续写操作。</p>
+
+<h2 id="specification">三、先写规格，再让 Agent 执行</h2>
+<p><a href="https://github.com/github/spec-kit" target="_blank" rel="noopener">github/spec-kit</a> 把需求、规格、计划和实现连接起来，适合把“想做一个功能”拆成可以验收的文档。规格的价值在于减少隐含假设：输入是什么、边界在哪里、成功如何定义、哪些动作需要批准。没有这些内容，Agent 很容易把局部正确误认为整体完成。</p>
+<p><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">paperclipai/paperclip</a> 则提供目标、任务、预算、审批和运行状态的控制面。项目管理界面不能替代工程责任，但能让负责人看到并行任务的真实成本和权限，及时停止偏离目标的执行。</p>
+
+<h2 id="skills">四、Skills 是需要版本管理的工程依赖</h2>
+<p><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a> 将规划、实现、测试、审查和收尾整理成可调用的方法；<a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a> 把工程约束、记忆和质量实践组合成一套工作框架；<a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">mattpocock/skills</a> 展示了如何把日常工程经验写成可复用的步骤。它们都不应获得默认生产写入权限，升级时还应比较行为差异。</p>
+<p><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics/skills</a>、<a href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">addyosmani/agent-skills</a> 和 <a href="https://github.com/trailofbits/skills" target="_blank" rel="noopener">trailofbits/skills</a> 分别代表官方能力、生产工程实践和安全审计方法。安装前应检查网络、文件、凭据和命令权限，先在隔离工作区试运行，再接入真实仓库。</p>
+
+<h2 id="knowledge">五、知识输入必须保留来源</h2>
+<p><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank" rel="noopener">virgiliojr94/book-to-skill</a> 尝试把书籍内容整理为可以调用的工作知识，<a href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a> 则把网页转换为结构化上下文。它们提升了输入效率，却不会自动保证事实正确。关键结论仍应回到原始页面、版本、页码或抓取时间，并处理许可和页面变化。</p>
+<p><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">TencentCloud/TencentDB-Agent-Memory</a> 适合把对话、文档、代码和经验沉淀为团队记忆；<a href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener">semantica-agi/semantica</a> 则强调资料、决定、证据和来源之间的关系。事实、偏好、任务状态和推测应采用不同的写入门槛与保留期，过期信息也要能被清理。</p>
+
+<h2 id="local">六、本地执行扩大了能力边界，也扩大了风险</h2>
+<p><a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">unslothai/unsloth</a> 面向本地模型运行与训练，<a href="https://github.com/ToolJet/ToolJet" target="_blank" rel="noopener">ToolJet/ToolJet</a> 面向内部应用和工作流，<a href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">cactus-compute/needle</a> 则探索小模型在设备端完成工具调用和结构化提取。低延迟、离线和隐私是优势，但模型、数据、提示词、工具和日志仍需要权限与版本治理。</p>
+<p>试点应先从只读任务和脱敏数据开始，比较质量、延迟、资源占用和异常回退。用结构化输出、范围限制和失败清单约束模型，比单纯追求吞吐更可靠。</p>
+
+<h2 id="applications">七、应用层项目要接入质量门</h2>
+<p><a href="https://github.com/langflow-ai/langflow" target="_blank" rel="noopener">langflow-ai/langflow</a> 让团队用可视化方式组合 AI 应用，适合快速验证流程，但正式交付仍需要固定输入输出、权限和回归样本。<a href="https://github.com/openai/codex" target="_blank" rel="noopener">openai/codex</a> 把代码阅读、编辑、命令执行和验证放进连续工作环境，真正的价值是让工程闭环更顺畅，而不是跳过测试与审查。</p>
+<p>输入门检查资料许可、分支和任务范围；执行门限制网络、文件系统、账号和费用；输出门核对事实、测试、格式与未授权写入。三道质量门缺一不可。</p>
+
+<h2 id="visualization">八、图表与界面是沟通层，不是事实来源</h2>
+<p><a href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">cathrynlavery/diagram-design</a> 为架构图、流程图、时序图和数据图提供可生成的视觉类型。图表能缩短交接路径，但每张图仍应说明数据来源、口径和更新时间。漂亮的连线不能替代对异常分支和单位的检查。</p>
+<p>UI 与自动化输出也应纳入验收：文本不能溢出，导出的 HTML、SVG 和文档要能在目标软件中打开，颜色和图例要表达真实关系。视觉交付完成后仍需要人工复核。</p>
+
+<h2 id="governance">九、治理层决定系统能否规模化</h2>
+<p>一套可运行的 Agent 系统至少要保留输入版本、工具调用、模型版本、耗时、成本、输出位置和人工决定。对高影响操作设置预览与二次批准，对网络和凭据采用最小权限，对每次记忆更新保留来源和回滚点。</p>
+<p>“自我改进”应优先理解为工作说明、测试样本和经验记录的改进，而不是让模型无边界地改变自身。所有自动更新都应经过差异审阅，并能退回上一稳定版本。</p>
+
+<h2 id="adoption">十、从一个低风险闭环开始采用</h2>
+<p>最稳妥的顺序是：先用公开或脱敏资料完成只读整理，再接入可编辑草稿，最后评估受控写入。每一步记录成功率、人工修订时间、单次成本、失败类型和恢复耗时；连续稳定后再扩大并发量和权限。</p>
+<p>运行时让任务可持续，Skills 让方法可复用，知识与记忆让上下文可追溯，应用工具把能力接进业务，治理与质量门则决定系统是否值得信任。项目数量不是成熟度指标，能够解释“准备做什么、依据什么做、实际做了什么、失败后如何恢复”，才是工程化的起点。</p>

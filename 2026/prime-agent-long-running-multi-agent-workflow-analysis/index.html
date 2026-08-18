@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>Prime Agent 深度拆解：多 Agent 分工、后台续跑与经验回滚 - zcxGGmu's Blog</title>
+  <meta name="description" content="从任务拆分、RLM、后台会话、定时检查到 Continual Harness，分析长任务 Agent 的可恢复性与安全边界。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/prime-agent-long-running-multi-agent-workflow-analysis/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="Prime Agent 深度拆解：多 Agent 分工、后台续跑与经验回滚"><meta property="og:description" content="从任务拆分、RLM、后台会话、定时检查到 Continual Harness，分析长任务 Agent 的可恢复性与安全边界。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/prime-agent-long-running-multi-agent-workflow-analysis/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/prime-agent-long-running-multi-agent-workflow-analysis/cover.svg')"><div class="post-title">Prime Agent 深度拆解：多 Agent 分工、后台续跑与经验回滚<div class="post-subtitle">从任务拆分、RLM、后台会话、定时检查到 Continual Harness，分析长任务 Agent 的可恢复性与安全边界。</div><div class="post-meta"><time itemprop="datePublished">2026-08-19</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/Prime%20Agent/">Prime Agent</a>&nbsp;<a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>&nbsp;<a href="/tags/GitHub/">GitHub</a>&nbsp;<a href="/tags/%E5%A4%9AAgent/">多Agent</a>&nbsp;<a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>&nbsp;<a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>&nbsp;<a href="/tags/%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86/">安全治理</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 10 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>长任务最容易在两个地方失效：上下文不断膨胀，或者终端关闭后状态消失。<a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">PrimeIntellect-ai/prime-agent</a> 针对的正是这类问题：主 Agent 可以把复杂工作拆给多个子 Agent，让每个子任务保留自己的上下文，最后再把结构化结果交回主流程。</p>
+<p>它更适合被理解为一个可持续运行的工作台，而不是另一个聊天窗口。真正值得评估的是任务拆分、后台恢复、长期目标、经验记录和权限边界能否形成闭环。</p>
+
+<h2 id="delegation">一、把复杂任务拆成有边界的子任务</h2>
+<p>以排查登录问题为例，主 Agent 可以让一个子 Agent 阅读认证代码，让另一个查找相关测试，再让第三个整理配置和错误日志。每个子 Agent 只接收完成任务所需的上下文，输出发现、证据、未解决问题和建议动作。主 Agent 不需要把所有文件重新塞进同一段对话。</p>
+<p>拆分的边界必须可验证。子任务要有输入文件、允许工具、完成条件和超时策略；共享数据库、发布分支和凭据操作不能被多个子 Agent 同时拥有。并行提高的是信息覆盖和等待时间，不是免除所有权。</p>
+
+<h2 id="rlm">二、RLM 的价值在于递归委派</h2>
+<p>项目中的 RLM 思路可以理解为：主 Agent 在遇到上下文或步骤复杂度上升时，继续调用新的 Agent 处理局部问题，再把结果压缩回当前任务。这样既能保持主线，又能让专门任务使用更完整的局部材料。</p>
+<p>压缩不是简单截断文本。返回结果应包含结论、证据位置、假设和风险；如果缺少证据，主 Agent 应保留待确认项，而不是把推测合并成确定事实。</p>
+
+<h2 id="background">三、后台会话让长任务跨越终端生命周期</h2>
+<p>关闭终端不应等于任务消失。后台进程需要保存任务目标、检查点、子任务状态和日志，并允许重新打开后查看仍在运行的工作。恢复时应先展示当前状态和即将执行的动作，再继续写入文件或调用外部服务。</p>
+<p>稳定性验证至少包含三组样本：中断后从正确检查点恢复、一个子任务失败时阻止后续写入、重复恢复时不重复创建副作用。没有幂等和停止开关，后台运行只会让问题更晚暴露。</p>
+
+<h2 id="goals">四、目标与定时检查形成可观察的闭环</h2>
+<p>复杂任务往往不是“执行一次命令”，而是修复问题、运行完整测试、等待部署、再次检查结果。目标和定时检查可以把这些步骤保留在同一个任务中，减少每次重新解释前因后果的成本。</p>
+<p>定时器本身不能证明部署成功。每个检查点都要定义可测信号，例如测试退出码、构建状态、健康检查和生成文件哈希；信号缺失时应该转入人工确认，而不是继续推进。</p>
+
+<h2 id="continual">五、Continual Harness 改的是经验记录</h2>
+<p>任务结束后回看哪些方法有效、哪些目录不能修改、哪条测试应优先执行，可以形成补充说明、记忆或工作模板。这里的“自我改进”不是重新训练模型，而是改进下一次任务会读取的工作材料。</p>
+<p>经验更新必须留下差异、来源和适用范围。错误的经验比没有经验更危险，因此每次更新都应经过审阅，并且能退回前一个版本。对于不同仓库和不同团队，经验不能未经筛选直接共享。</p>
+
+<h2 id="skills">六、Python Skills 把工具能力接进任务</h2>
+<p>除了普通说明文件，Prime Agent 还支持带 Python 功能的 Skills，用来处理搜索、数据整理和固定流程。已有的 Codex 或 Claude Code 工作规则可以在确认工具契约后复用，但命令、环境变量和权限边界必须重新核对。</p>
+<p>Skills 的验收不应只看“能不能调用”。还要测试空值、网络失败、权限不足、重复请求和异常输出，并确认失败时不会留下半完成状态。对外发送、数据库写入和生产部署仍需要单独批准。</p>
+
+<h2 id="architecture">七、底座与产品化能力应分开评估</h2>
+<p>项目的基础 Agent 能力提供模型调用、工具执行和会话循环，Prime Agent 在此之上增加子 Agent、后台任务、长期目标和经验积累。评估时应分别看底座的可扩展性和产品层的可观察性，避免把界面功能误认为运行时可靠性。</p>
+<p>模型、API 和本地服务可以按团队环境接入，但每种认证方式都要记录费用、配额和数据流向。第三方工具调用可能产生额外用量，不能默认包含在普通套餐额度中。</p>
+
+<h2 id="security">八、权限边界比自动化速度更重要</h2>
+<p>Prime Agent 会以当前电脑账户权限运行生成的 Python 和项目命令，因此它不是安全沙箱。首次试用应使用临时项目、独立工作副本和最小权限账号，确认文件改动、网络访问和命令调用后，再接入重要代码。</p>
+<p>后台任务尤其需要停止按钮、日志和资源上限。对凭据、生产目录、发布分支和不可逆操作设置人工闸门，才能避免“任务还在运行”被误解为“任务可以自由行动”。</p>
+
+<h2 id="evaluation">九、用真实小样本验证长期运行</h2>
+<p>建议用三类任务验收：需要多个领域判断的研究任务、需要多轮测试的代码修复、需要等待外部状态的部署检查。记录拆分后的总耗时、上下文节省、人工接管次数、恢复成功率和失败回滚时间。</p>
+<p>如果子 Agent 只是增加协调成本，或者经验更新没有提高下一次成功率，就应减少并发与自动化范围。长期运行的价值必须由可重复指标证明。</p>
+
+<h2 id="conclusion">十、长任务系统的核心是可恢复、可审计、可停止</h2>
+<p>Prime Agent 展示了一条清晰路径：主 Agent 负责目标与合并，子 Agent 负责局部调查，后台会话负责跨越终端生命周期，目标检查负责等待与复核，经验记录负责下一次复用。任何一个环节都不能脱离权限、日志和回滚。</p>
+<p>真正可靠的长期任务不是让系统永远运行，而是让它在每个检查点都能回答：现在完成了什么、依据是什么、下一步会改变什么、失败后如何停下。把这些答案写进工作流，Agent 才能从一次性演示变成可治理的工程能力。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/ai-skills-agent-fullstack-open-source-daily-20260818/">下一篇<br>8月18日 AI Skills/Agent 全栈开源项目速览：从插件生态到可治理工作系统</a><a class="older-posts" href="/2026/hermes-agent-memory-background-tasks-model-routing-local-os/">上一篇<br>Hermes Agent：23分钟浓缩百小时的实战经验</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#delegation">一、把复杂任务拆成有边界的子任务</a><a class="toc-link toc-level-2" href="#rlm">二、RLM 的价值在于递归委派</a><a class="toc-link toc-level-2" href="#background">三、后台会话让长任务跨越终端生命周期</a><a class="toc-link toc-level-2" href="#goals">四、目标与定时检查形成可观察的闭环</a><a class="toc-link toc-level-2" href="#continual">五、Continual Harness 改的是经验记录</a><a class="toc-link toc-level-2" href="#skills">六、Python Skills 把工具能力接进任务</a><a class="toc-link toc-level-2" href="#architecture">七、底座与产品化能力应分开评估</a><a class="toc-link toc-level-2" href="#security">八、权限边界比自动化速度更重要</a><a class="toc-link toc-level-2" href="#evaluation">九、用真实小样本验证长期运行</a><a class="toc-link toc-level-2" href="#conclusion">十、长任务系统的核心是可恢复、可审计、可停止</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
