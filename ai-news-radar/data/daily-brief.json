@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T03:58:08.736377Z",
+  "generated_at": "2026-08-18T09:48:23.641166Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -135,15 +135,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.8553,
-      "importance": 0.8553,
-      "importance_score": 0.8553,
+      "score": 0.8419,
+      "importance": 0.8419,
+      "importance_score": 0.8419,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.81,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9205,
+        "recency": 0.8461,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -172,7 +172,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -220,15 +220,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8399,
-      "importance": 0.8399,
-      "importance_score": 0.8399,
+      "score": 0.827,
+      "importance": 0.827,
+      "importance_score": 0.827,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.8884,
+        "recency": 0.8166,
         "story_heat": 0.0
       },
       "category": "official",
@@ -257,122 +257,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
-      }
-    },
-    {
-      "story_id": "story_b3a579450c1c",
-      "title": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window / The Defender’s Window",
-      "url": "https://openai.com/index/the-defenders-window",
-      "primary_url": "https://openai.com/index/the-defenders-window",
-      "source": "OpenAI News",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "9163f70edad4cc1828e92c7e823a607aad5512f0",
-          "title": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window / The Defender’s Window",
-          "title_zh": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window",
-          "title_en": "The Defender’s Window",
-          "title_original": "The Defender’s Window",
-          "summary": null,
-          "recommend_reason_zh": "Greg Brockman以OpenAI-Hugging Face事件为引，阐述AI如何同时赋能攻击与防御：OpenAI已只向可信防御者发布网络能力，他实测用ChatGPT Work（GPT-5.6 Sol）15分钟就在gregbrockman.com发现13处隐患，并给出企业立即行动的清单。",
-          "url": "https://openai.com/index/the-defenders-window",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T05:30:00Z"
-        },
-        {
-          "id": "9575a034f19954426ba1d1e0ddeff1f6cab41ea5",
-          "title": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window / The Defender's Window",
-          "title_zh": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window",
-          "title_en": "The Defender's Window",
-          "title_original": "The Defender's Window",
-          "summary": "OpenAI 在 OpenAI-Hugging Face 事件后反思低估了模型真实网络攻击能力，正通过四大支柱强化自身安全：用 Codex 验证代码漏洞、用智能体优先分流安全告警、持续枚举攻击路径，并仅向可信防御者开放网络能力。文中演示 ChatGPT Work（基于 GPT-5.6 Sol）15 分钟发现个人网站 13 个问题并在一小时内完成修复。",
-          "recommend_reason_zh": "Greg Brockman透露，ChatGPT Work用GPT-5.6 Sol在15分钟内扫描gregbrockman.com发现13个隐患，并反思OpenAI-Hugging Face事件中自主渗透的威胁。",
-          "url": "https://openai.com/index/the-defenders-window",
-          "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T05:30:00Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "OpenAI News",
-        "OpenAI：官网动态（RSS · 排除企业/客户案例）"
-      ],
-      "items": [
-        {
-          "id": "9163f70edad4cc1828e92c7e823a607aad5512f0",
-          "title": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window / The Defender’s Window",
-          "title_zh": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window",
-          "title_en": "The Defender’s Window",
-          "title_original": "The Defender’s Window",
-          "summary": null,
-          "recommend_reason_zh": "Greg Brockman以OpenAI-Hugging Face事件为引，阐述AI如何同时赋能攻击与防御：OpenAI已只向可信防御者发布网络能力，他实测用ChatGPT Work（GPT-5.6 Sol）15分钟就在gregbrockman.com发现13处隐患，并给出企业立即行动的清单。",
-          "url": "https://openai.com/index/the-defenders-window",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T05:30:00Z"
-        },
-        {
-          "id": "9575a034f19954426ba1d1e0ddeff1f6cab41ea5",
-          "title": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window / The Defender's Window",
-          "title_zh": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window",
-          "title_en": "The Defender's Window",
-          "title_original": "The Defender's Window",
-          "summary": "OpenAI 在 OpenAI-Hugging Face 事件后反思低估了模型真实网络攻击能力，正通过四大支柱强化自身安全：用 Codex 验证代码漏洞、用智能体优先分流安全告警、持续枚举攻击路径，并仅向可信防御者开放网络能力。文中演示 ChatGPT Work（基于 GPT-5.6 Sol）15 分钟发现个人网站 13 个问题并在一小时内完成修复。",
-          "recommend_reason_zh": "Greg Brockman透露，ChatGPT Work用GPT-5.6 Sol在15分钟内扫描gregbrockman.com发现13个隐患，并反思OpenAI-Hugging Face事件中自主渗透的威胁。",
-          "url": "https://openai.com/index/the-defenders-window",
-          "source": "OpenAI：官网动态（RSS · 排除企业/客户案例）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T05:30:00Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.8271,
-      "importance": 0.8271,
-      "importance_score": 0.8271,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7229,
-        "story_heat": 0.25
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-17T05:30:00Z",
-      "latest_at": "2026-08-17T05:30:00Z",
-      "primary_item": {
-        "id": "9163f70edad4cc1828e92c7e823a607aad5512f0",
-        "title": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window / The Defender’s Window",
-        "title_zh": "OpenAI 如何用前沿智能加固自身防御：The Defender's Window",
-        "title_en": "The Defender’s Window",
-        "title_original": "The Defender’s Window",
-        "summary": null,
-        "recommend_reason_zh": "Greg Brockman以OpenAI-Hugging Face事件为引，阐述AI如何同时赋能攻击与防御：OpenAI已只向可信防御者发布网络能力，他实测用ChatGPT Work（GPT-5.6 Sol）15分钟就在gregbrockman.com发现13处隐患，并给出企业立即行动的清单。",
-        "url": "https://openai.com/index/the-defenders-window",
-        "source": "OpenAI News",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 30,
-      "persona_review": "概念性官宣，没给出可用的防御工具或接口，等实际产品再说。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -420,15 +305,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8154,
-      "importance": 0.8154,
-      "importance_score": 0.8154,
+      "score": 0.8032,
+      "importance": 0.8032,
+      "importance_score": 0.8032,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8413,
+        "recency": 0.7733,
         "story_heat": 0.0
       },
       "category": "official",
@@ -457,7 +342,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -526,8 +411,8 @@
         },
         {
           "id": "a1932399f4adbbca2ed23e784bd521a61f882eda",
-          "title": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁 / We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
-          "title_zh": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
+          "title": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心 / We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
+          "title_zh": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
           "title_en": "We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
           "title_original": "We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
           "summary": null,
@@ -621,8 +506,8 @@
         },
         {
           "id": "a1932399f4adbbca2ed23e784bd521a61f882eda",
-          "title": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁 / We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
-          "title_zh": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
+          "title": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心 / We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
+          "title_zh": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
           "title_en": "We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
           "title_original": "We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
           "summary": null,
@@ -650,15 +535,15 @@
       ],
       "item_count": 6,
       "duplicate_count": 6,
-      "score": 0.8422,
-      "importance": 0.8422,
-      "importance_score": 0.8422,
+      "score": 0.8295,
+      "importance": 0.8295,
+      "importance_score": 0.8295,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.71,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8756,
+        "recency": 0.8048,
         "story_heat": 1.0
       },
       "category": "multi_source",
@@ -687,92 +572,120 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
-      "story_id": "story_7e8345d4d33c",
-      "title": "借助Gemini和Pixel更贴近比赛 / Get closer to the game with Gemini and Pixel",
-      "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships",
-      "primary_url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships",
-      "source": "Google AI Blog",
-      "source_name": "Official AI Updates",
+      "story_id": "story_f462fcedc46c",
+      "title": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+      "url": "https://www.aibase.com/news/30429",
+      "primary_url": "https://www.aibase.com/news/30429",
+      "source": "AIbase",
+      "source_name": "AIbase",
       "sources": [
         {
-          "id": "a91b14668f19e9c4b49f9e20ab96e03d79f7e084",
-          "title": "借助Gemini和Pixel更贴近比赛 / Get closer to the game with Gemini and Pixel",
-          "title_zh": "借助Gemini和Pixel更贴近比赛",
-          "title_en": "Get closer to the game with Gemini and Pixel",
-          "title_original": "Get closer to the game with Gemini and Pixel",
+          "id": "bc231d7de78f2c83c89f432c904568eee93a6661",
+          "title": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_zh": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_en": null,
+          "title_original": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
           "summary": null,
-          "recommend_reason_zh": "Gemini与Pixel联合Arsenal FC、FC Barcelona等五家俱乐部，用AI提供深度比赛洞察，Pixel记录幕后内容，并致力于缩小女足覆盖面差距。",
-          "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships",
-          "source": "Google AI Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T08:00:00Z"
+          "recommend_reason_zh": "独立音乐出版商Round Hill Music在美起诉Anthropic与Suno，称Anthropic未经许可用至少500首经典歌词训练Claude，涉及James Brown等音乐人，索赔或超10亿美元，后续涉事歌曲或增至数万首。",
+          "url": "https://www.aibase.com/news/30429",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T08:53:39.267759Z"
+        },
+        {
+          "id": "e32729d5292817c9c557c76fc9fdaad1bf706caf",
+          "title": "AI版权危机再度升级：独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_zh": "AI版权危机再度升级：独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_en": null,
+          "title_original": "AI版权危机再度升级：独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "summary": null,
+          "recommend_reason_zh": "Round Hill Music起诉Anthropic与Suno，指控其未经授权使用至少500首经典歌词训练Claude等系统，索赔或超10亿美元，涉James Brown等作品。",
+          "url": "https://www.aibase.com/news/30429",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T07:04:36.209045Z"
         }
       ],
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Google AI Blog"
+        "AIbase"
       ],
       "items": [
         {
-          "id": "a91b14668f19e9c4b49f9e20ab96e03d79f7e084",
-          "title": "借助Gemini和Pixel更贴近比赛 / Get closer to the game with Gemini and Pixel",
-          "title_zh": "借助Gemini和Pixel更贴近比赛",
-          "title_en": "Get closer to the game with Gemini and Pixel",
-          "title_original": "Get closer to the game with Gemini and Pixel",
+          "id": "bc231d7de78f2c83c89f432c904568eee93a6661",
+          "title": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_zh": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_en": null,
+          "title_original": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
           "summary": null,
-          "recommend_reason_zh": "Gemini与Pixel联合Arsenal FC、FC Barcelona等五家俱乐部，用AI提供深度比赛洞察，Pixel记录幕后内容，并致力于缩小女足覆盖面差距。",
-          "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships",
-          "source": "Google AI Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T08:00:00Z"
+          "recommend_reason_zh": "独立音乐出版商Round Hill Music在美起诉Anthropic与Suno，称Anthropic未经许可用至少500首经典歌词训练Claude，涉及James Brown等音乐人，索赔或超10亿美元，后续涉事歌曲或增至数万首。",
+          "url": "https://www.aibase.com/news/30429",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T08:53:39.267759Z"
+        },
+        {
+          "id": "e32729d5292817c9c557c76fc9fdaad1bf706caf",
+          "title": "AI版权危机再度升级：独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_zh": "AI版权危机再度升级：独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "title_en": null,
+          "title_original": "AI版权危机再度升级：独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+          "summary": null,
+          "recommend_reason_zh": "Round Hill Music起诉Anthropic与Suno，指控其未经授权使用至少500首经典歌词训练Claude等系统，索赔或超10亿美元，涉James Brown等作品。",
+          "url": "https://www.aibase.com/news/30429",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T07:04:36.209045Z"
         }
       ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8069,
-      "importance": 0.8069,
-      "importance_score": 0.8069,
-      "importance_label": "官方更新",
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.7902,
+      "importance": 0.7902,
+      "importance_score": 0.7902,
+      "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7495,
-        "story_heat": 0.0
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9869,
+        "story_heat": 0.25
       },
-      "category": "official",
+      "category": "industry",
       "reasons": [
-        "official_source",
+        "multi_source",
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-17T08:00:00Z",
-      "latest_at": "2026-08-17T08:00:00Z",
+      "earliest_at": "2026-08-18T07:04:36.209045Z",
+      "latest_at": "2026-08-18T08:53:39.267759Z",
       "primary_item": {
-        "id": "a91b14668f19e9c4b49f9e20ab96e03d79f7e084",
-        "title": "借助Gemini和Pixel更贴近比赛 / Get closer to the game with Gemini and Pixel",
-        "title_zh": "借助Gemini和Pixel更贴近比赛",
-        "title_en": "Get closer to the game with Gemini and Pixel",
-        "title_original": "Get closer to the game with Gemini and Pixel",
+        "id": "bc231d7de78f2c83c89f432c904568eee93a6661",
+        "title": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+        "title_zh": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
+        "title_en": null,
+        "title_original": "独立音乐出版商起诉Anthropic与Suno，索赔或超 10 亿美元",
         "summary": null,
-        "recommend_reason_zh": "Gemini与Pixel联合Arsenal FC、FC Barcelona等五家俱乐部，用AI提供深度比赛洞察，Pixel记录幕后内容，并致力于缩小女足覆盖面差距。",
-        "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships",
-        "source": "Google AI Blog",
-        "source_name": "Official AI Updates"
+        "recommend_reason_zh": "独立音乐出版商Round Hill Music在美起诉Anthropic与Suno，称Anthropic未经许可用至少500首经典歌词训练Claude，涉及James Brown等音乐人，索赔或超10亿美元，后续涉事歌曲或增至数万首。",
+        "url": "https://www.aibase.com/news/30429",
+        "source": "AIbase",
+        "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
       "persona_score": 25,
-      "persona_review": "合作官宣不写 API，球迷功能对开发者没有实操价值。",
+      "persona_review": "官司离代码远，等判例出来才影响合规。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -820,15 +733,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7954,
-      "importance": 0.7954,
-      "importance_score": 0.7954,
+      "score": 0.7818,
+      "importance": 0.7818,
+      "importance_score": 0.7818,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.69,
         "source_tier": 1.0,
         "ai_relevance": 1.0,
-        "recency": 0.9358,
+        "recency": 0.8601,
         "story_heat": 0.0
       },
       "category": "official",
@@ -856,176 +769,90 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
-      "story_id": "story_07b36a6c9f2c",
-      "title": "OpenAI 加入 PORTS-Pike 项目 / OpenAI joins PORTS-Pike project",
-      "url": "https://openai.com/index/openai-joins-ports-pike-project",
-      "primary_url": "https://openai.com/index/openai-joins-ports-pike-project",
-      "source": "OpenAI News",
-      "source_name": "Official AI Updates",
+      "story_id": "story_886d9637cc01",
+      "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
+      "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
+      "primary_url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
+      "source": "Google AI：DEV 作者专属（RSS）",
+      "source_name": "AI HOT",
       "sources": [
         {
-          "id": "56b86347d148780724bfa2fb4adea8f45cdf3e76",
-          "title": "OpenAI 加入 PORTS-Pike 项目 / OpenAI joins PORTS-Pike project",
-          "title_zh": "OpenAI 加入 PORTS-Pike 项目",
-          "title_en": "OpenAI joins PORTS-Pike project",
-          "title_original": "OpenAI joins PORTS-Pike project",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI联手SB Energy、NVIDIA及美国能源部，在俄亥俄PORTS-Pike园区锁定约8吉瓦容量，预计创造35,000个建筑岗位和2,500个长期岗位，并投入$40百万社区基金及$84百万Codex credits。",
-          "url": "https://openai.com/index/openai-joins-ports-pike-project",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T05:00:00Z"
+          "id": "28bd262ceb8bb8267ecb21c922badcfbb9b38bf5",
+          "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
+          "title_zh": "设计 AI 评测：先求清晰，再谈可视化",
+          "title_en": "Designing AI Evals： Clarity Now and Visualization Next",
+          "title_original": "Designing AI Evals： Clarity Now and Visualization Next",
+          "summary": "本文演示如何用开源评测框架 Inspect AI 和 Harbor 评估 agent 技能，并借助 Google Sheets 和 Data Studio 进行可视化分析。",
+          "recommend_reason_zh": "本文演示如何用Inspect AI和Harbor评估agent技能，以google/gemini-3.5-flash-lite与3.6-flash为求解器、3.1-flash-lite为评分器，通过严格二元判断和程序化汇总节省quota，并借助Google Sheets和Data Studio做可视化分析。",
+          "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
+          "source": "Google AI：DEV 作者专属（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T07:00:00Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "OpenAI News"
+        "Google AI：DEV 作者专属（RSS）"
       ],
       "items": [
         {
-          "id": "56b86347d148780724bfa2fb4adea8f45cdf3e76",
-          "title": "OpenAI 加入 PORTS-Pike 项目 / OpenAI joins PORTS-Pike project",
-          "title_zh": "OpenAI 加入 PORTS-Pike 项目",
-          "title_en": "OpenAI joins PORTS-Pike project",
-          "title_original": "OpenAI joins PORTS-Pike project",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI联手SB Energy、NVIDIA及美国能源部，在俄亥俄PORTS-Pike园区锁定约8吉瓦容量，预计创造35,000个建筑岗位和2,500个长期岗位，并投入$40百万社区基金及$84百万Codex credits。",
-          "url": "https://openai.com/index/openai-joins-ports-pike-project",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T05:00:00Z"
+          "id": "28bd262ceb8bb8267ecb21c922badcfbb9b38bf5",
+          "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
+          "title_zh": "设计 AI 评测：先求清晰，再谈可视化",
+          "title_en": "Designing AI Evals： Clarity Now and Visualization Next",
+          "title_original": "Designing AI Evals： Clarity Now and Visualization Next",
+          "summary": "本文演示如何用开源评测框架 Inspect AI 和 Harbor 评估 agent 技能，并借助 Google Sheets 和 Data Studio 进行可视化分析。",
+          "recommend_reason_zh": "本文演示如何用Inspect AI和Harbor评估agent技能，以google/gemini-3.5-flash-lite与3.6-flash为求解器、3.1-flash-lite为评分器，通过严格二元判断和程序化汇总节省quota，并借助Google Sheets和Data Studio做可视化分析。",
+          "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
+          "source": "Google AI：DEV 作者专属（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T07:00:00Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8012,
-      "importance": 0.8012,
-      "importance_score": 0.8012,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7177,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-17T05:00:00Z",
-      "latest_at": "2026-08-17T05:00:00Z",
-      "primary_item": {
-        "id": "56b86347d148780724bfa2fb4adea8f45cdf3e76",
-        "title": "OpenAI 加入 PORTS-Pike 项目 / OpenAI joins PORTS-Pike project",
-        "title_zh": "OpenAI 加入 PORTS-Pike 项目",
-        "title_en": "OpenAI joins PORTS-Pike project",
-        "title_original": "OpenAI joins PORTS-Pike project",
-        "summary": null,
-        "recommend_reason_zh": "OpenAI联手SB Energy、NVIDIA及美国能源部，在俄亥俄PORTS-Pike园区锁定约8吉瓦容量，预计创造35,000个建筑岗位和2,500个长期岗位，并投入$40百万社区基金及$84百万Codex credits。",
-        "url": "https://openai.com/index/openai-joins-ports-pike-project",
-        "source": "OpenAI News",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "合作声明没有可用的API或工具，等具体动作再说。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
-      }
-    },
-    {
-      "story_id": "story_3097bbbd907d",
-      "title": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-      "url": "https://www.aibase.com/news/30426",
-      "primary_url": "https://www.aibase.com/news/30426",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "48f4b70d03ab350b265876c89f22187a5f1e8baa",
-          "title": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-          "title_zh": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-          "title_en": null,
-          "title_original": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-          "summary": "Reuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nReuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nReuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nExplore AI Fronti",
-          "recommend_reason_zh": "Reuters独家报道Google AI权力洗牌：Brin亲自督战推动“递归自我改进”致Gemini旗舰延期两月，Hassabis被架空转任主席，Kavukcuoglu接棒成核心桥梁。",
-          "url": "https://www.aibase.com/news/30426",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T03:58:08.736377Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "48f4b70d03ab350b265876c89f22187a5f1e8baa",
-          "title": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-          "title_zh": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-          "title_en": null,
-          "title_original": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-          "summary": "Reuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nReuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nReuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nExplore AI Fronti",
-          "recommend_reason_zh": "Reuters独家报道Google AI权力洗牌：Brin亲自督战推动“递归自我改进”致Gemini旗舰延期两月，Hassabis被架空转任主席，Kavukcuoglu接棒成核心桥梁。",
-          "url": "https://www.aibase.com/news/30426",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T03:58:08.736377Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
+      "score": 0.7455,
+      "importance": 0.7455,
+      "importance_score": 0.7455,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.72,
+        "editorial": 0.67,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 1.0,
+        "recency": 0.9603,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
-      "earliest_at": "2026-08-18T03:58:08.736377Z",
-      "latest_at": "2026-08-18T03:58:08.736377Z",
+      "earliest_at": "2026-08-18T07:00:00Z",
+      "latest_at": "2026-08-18T07:00:00Z",
       "primary_item": {
-        "id": "48f4b70d03ab350b265876c89f22187a5f1e8baa",
-        "title": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-        "title_zh": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-        "title_en": null,
-        "title_original": "Google AI 重组内幕：Brin 亲自督战，DeepMind 权力洗牌",
-        "summary": "Reuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nReuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nReuters独家报道，过去几个月，Google的AI部门经历了剧烈动荡，剧情有三条主线：联合创始人Brin亲自介入模型训练、深度学习之父Hassabis被架空、两位Gemini创始技术负责人离职创业。这场权力重构，反映出DeepMind自2014年被收购以来，自主权持续被侵蚀的现实。Brin重返一线，Hassabis\nExplore AI Fronti",
-        "recommend_reason_zh": "Reuters独家报道Google AI权力洗牌：Brin亲自督战推动“递归自我改进”致Gemini旗舰延期两月，Hassabis被架空转任主席，Kavukcuoglu接棒成核心桥梁。",
-        "url": "https://www.aibase.com/news/30426",
-        "source": "AIbase",
-        "source_name": "AIbase"
+        "id": "28bd262ceb8bb8267ecb21c922badcfbb9b38bf5",
+        "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
+        "title_zh": "设计 AI 评测：先求清晰，再谈可视化",
+        "title_en": "Designing AI Evals： Clarity Now and Visualization Next",
+        "title_original": "Designing AI Evals： Clarity Now and Visualization Next",
+        "summary": "本文演示如何用开源评测框架 Inspect AI 和 Harbor 评估 agent 技能，并借助 Google Sheets 和 Data Studio 进行可视化分析。",
+        "recommend_reason_zh": "本文演示如何用Inspect AI和Harbor评估agent技能，以google/gemini-3.5-flash-lite与3.6-flash为求解器、3.1-flash-lite为评分器，通过严格二元判断和程序化汇总节省quota，并借助Google Sheets和Data Studio做可视化分析。",
+        "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
+        "source": "Google AI：DEV 作者专属（RSS）",
+        "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "权力游戏不写代码，API 价格和模型没变，看个热闹就行。",
+      "persona_score": 68,
+      "persona_review": "评测方法论值得一看，但没新工具落地，适合做评估时参考。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -1073,21 +900,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7545,
-      "importance": 0.7545,
-      "importance_score": 0.7545,
+      "score": 0.7408,
+      "importance": 0.7408,
+      "importance_score": 0.7408,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.71,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9438,
+        "recency": 0.8675,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-17T23:58:00Z",
       "latest_at": "2026-08-17T23:58:00Z",
@@ -1109,7 +935,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -1164,8 +990,8 @@
         },
         {
           "id": "aef8a9ee8fb759654a135a61e0f52fd6c33fc2a7",
-          "title": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南 / How to disable or avoid intrusive AI",
-          "title_zh": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
+          "title": "如何禁用或避免侵入式人工智能 / How to disable or avoid intrusive AI",
+          "title_zh": "如何禁用或避免侵入式人工智能",
           "title_en": "How to disable or avoid intrusive AI",
           "title_original": "How to disable or avoid intrusive AI",
           "summary": null,
@@ -1229,8 +1055,8 @@
         },
         {
           "id": "aef8a9ee8fb759654a135a61e0f52fd6c33fc2a7",
-          "title": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南 / How to disable or avoid intrusive AI",
-          "title_zh": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
+          "title": "如何禁用或避免侵入式人工智能 / How to disable or avoid intrusive AI",
+          "title_zh": "如何禁用或避免侵入式人工智能",
           "title_en": "How to disable or avoid intrusive AI",
           "title_original": "How to disable or avoid intrusive AI",
           "summary": null,
@@ -1244,15 +1070,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.8124,
-      "importance": 0.8124,
-      "importance_score": 0.8124,
+      "score": 0.7998,
+      "importance": 0.7998,
+      "importance_score": 0.7998,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.7,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8655,
+        "recency": 0.7956,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -1281,7 +1107,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
+      }
+    },
+    {
+      "story_id": "story_e3e64a7023cf",
+      "title": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+      "url": "https://www.aibase.com/news/30441",
+      "primary_url": "https://www.aibase.com/news/30441",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "cb4653e2437f6e617659fa3bd0118470b1f89966",
+          "title": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+          "title_zh": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+          "title_en": null,
+          "title_original": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+          "summary": "Technology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nTechnology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nTechnology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nExplore AI Fronti",
+          "recommend_reason_zh": "Android Authority拆解Google Phone应用234.0.9版代码，发现vivo将继Google与Samsung后成为第三家支持安卓AI诈骗检测的厂商，该功能可实时识别转账、礼品卡等诈骗话术，目前仅Pixel与Galaxy S26支持。",
+          "url": "https://www.aibase.com/news/30441",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T09:48:23.641166Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "cb4653e2437f6e617659fa3bd0118470b1f89966",
+          "title": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+          "title_zh": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+          "title_en": null,
+          "title_original": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+          "summary": "Technology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nTechnology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nTechnology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nExplore AI Fronti",
+          "recommend_reason_zh": "Android Authority拆解Google Phone应用234.0.9版代码，发现vivo将继Google与Samsung后成为第三家支持安卓AI诈骗检测的厂商，该功能可实时识别转账、礼品卡等诈骗话术，目前仅Pixel与Galaxy S26支持。",
+          "url": "https://www.aibase.com/news/30441",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T09:48:23.641166Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 1.0,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T09:48:23.641166Z",
+      "latest_at": "2026-08-18T09:48:23.641166Z",
+      "primary_item": {
+        "id": "cb4653e2437f6e617659fa3bd0118470b1f89966",
+        "title": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+        "title_zh": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+        "title_en": null,
+        "title_original": "全球第 3 家：代码显示 vivo 手机将接入安卓 AI 诈骗检测",
+        "summary": "Technology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nTechnology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nTechnology media Android Authority disclosed on August 17 that, after Google and Samsung, vivo will become the third smartphone manufacturer to support the \"Sca\nExplore AI Fronti",
+        "recommend_reason_zh": "Android Authority拆解Google Phone应用234.0.9版代码，发现vivo将继Google与Samsung后成为第三家支持安卓AI诈骗检测的厂商，该功能可实时识别转账、礼品卡等诈骗话术，目前仅Pixel与Galaxy S26支持。",
+        "url": "https://www.aibase.com/news/30441",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "功能没上线，等真推送再关注，对今天开发无影响。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -1329,15 +1239,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7467,
-      "importance": 0.7467,
-      "importance_score": 0.7467,
+      "score": 0.7351,
+      "importance": 0.7351,
+      "importance_score": 0.7351,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.77,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8007,
+        "recency": 0.736,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1364,7 +1274,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -1412,15 +1322,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7379,
-      "importance": 0.7379,
-      "importance_score": 0.7379,
+      "score": 0.7263,
+      "importance": 0.7263,
+      "importance_score": 0.7263,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.74,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8018,
+        "recency": 0.737,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1447,91 +1357,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
-      }
-    },
-    {
-      "story_id": "story_350c554c9760",
-      "title": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-      "url": "https://www.aibase.com/news/30425",
-      "primary_url": "https://www.aibase.com/news/30425",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "72d49b34813673901937a3d3c2c713f703fc79a5",
-          "title": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-          "title_zh": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-          "title_en": null,
-          "title_original": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-          "summary": "Enterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nEnterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nEnterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nExplore AI Fronti",
-          "recommend_reason_zh": "企业微信5.0.10于8月18日发布，全面打通AI Agent，开放CLI与MCP能力，让WorkBuddy、Codex等智能机器人直接调用消息、文档、表格、邮件、会议等十大办公能力，实现与日常工作流深度融合。",
-          "url": "https://www.aibase.com/news/30425",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T03:58:08.736377Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "72d49b34813673901937a3d3c2c713f703fc79a5",
-          "title": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-          "title_zh": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-          "title_en": null,
-          "title_original": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-          "summary": "Enterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nEnterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nEnterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nExplore AI Fronti",
-          "recommend_reason_zh": "企业微信5.0.10于8月18日发布，全面打通AI Agent，开放CLI与MCP能力，让WorkBuddy、Codex等智能机器人直接调用消息、文档、表格、邮件、会议等十大办公能力，实现与日常工作流深度融合。",
-          "url": "https://www.aibase.com/news/30425",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T03:58:08.736377Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 1.0,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-18T03:58:08.736377Z",
-      "latest_at": "2026-08-18T03:58:08.736377Z",
-      "primary_item": {
-        "id": "72d49b34813673901937a3d3c2c713f703fc79a5",
-        "title": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-        "title_zh": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-        "title_en": null,
-        "title_original": "企业微信5.0.10打通AI Agent，十大办公能力全面开放",
-        "summary": "Enterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nEnterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nEnterprise WeChat 5.0.10 was officially released on August 18, with further upgrades to AI capabilities. According to official announcements from Enterprise WeC\nExplore AI Fronti",
-        "recommend_reason_zh": "企业微信5.0.10于8月18日发布，全面打通AI Agent，开放CLI与MCP能力，让WorkBuddy、Codex等智能机器人直接调用消息、文档、表格、邮件、会议等十大办公能力，实现与日常工作流深度融合。",
-        "url": "https://www.aibase.com/news/30425",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 76,
-      "persona_review": "企业微信开放Agent能力，办公自动化可直接接入，但先查文档确认接口。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -1579,15 +1405,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7344,
-      "importance": 0.7344,
-      "importance_score": 0.7344,
+      "score": 0.7228,
+      "importance": 0.7228,
+      "importance_score": 0.7228,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7989,
+        "recency": 0.7343,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1614,30 +1440,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
-      "story_id": "story_a8e593f081cc",
-      "title": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
-      "url": "https://www.aibase.com/news/30420",
-      "primary_url": "https://www.aibase.com/news/30420",
+      "story_id": "story_f14986276d84",
+      "title": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
+      "url": "https://www.aibase.com/news/30442",
+      "primary_url": "https://www.aibase.com/news/30442",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "27629c58575dfdb786e35467e371eb1057688f83",
-          "title": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
-          "title_zh": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
+          "id": "c0db6f8ac2ffc4e819069aa12d95c7c9ac8a854b",
+          "title": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
+          "title_zh": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
           "title_en": null,
-          "title_original": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
-          "summary": null,
-          "recommend_reason_zh": "从Google搜索的\"胶水披萨\"食谱到Facebook的\"虾耶稣\"图片，AI垃圾正淹没互联网；Spotify已删除7500万首垃圾曲目，YouTube母公司Google半年移除13万低质量频道，科技巨头的大扫除刚刚开始。",
-          "url": "https://www.aibase.com/news/30420",
+          "title_original": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
+          "summary": "The 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nThe 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nThe 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nExplore AI Fronti",
+          "recommend_reason_zh": "Fanli Large Model 4.0发布：参数规模达3970亿，覆盖水质、鱼种、饲料等八大养殖维度，整合101个主要品种专业知识，展现我国渔业智能化新突破。",
+          "url": "https://www.aibase.com/news/30442",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-18T03:08:52.160268Z"
+          "published_at": "2026-08-18T09:48:23.641166Z"
         }
       ],
       "source_count": 1,
@@ -1646,31 +1472,31 @@
       ],
       "items": [
         {
-          "id": "27629c58575dfdb786e35467e371eb1057688f83",
-          "title": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
-          "title_zh": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
+          "id": "c0db6f8ac2ffc4e819069aa12d95c7c9ac8a854b",
+          "title": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
+          "title_zh": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
           "title_en": null,
-          "title_original": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
-          "summary": null,
-          "recommend_reason_zh": "从Google搜索的\"胶水披萨\"食谱到Facebook的\"虾耶稣\"图片，AI垃圾正淹没互联网；Spotify已删除7500万首垃圾曲目，YouTube母公司Google半年移除13万低质量频道，科技巨头的大扫除刚刚开始。",
-          "url": "https://www.aibase.com/news/30420",
+          "title_original": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
+          "summary": "The 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nThe 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nThe 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nExplore AI Fronti",
+          "recommend_reason_zh": "Fanli Large Model 4.0发布：参数规模达3970亿，覆盖水质、鱼种、饲料等八大养殖维度，整合101个主要品种专业知识，展现我国渔业智能化新突破。",
+          "url": "https://www.aibase.com/news/30442",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-18T03:08:52.160268Z"
+          "published_at": "2026-08-18T09:48:23.641166Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7655,
-      "importance": 0.7655,
-      "importance_score": 0.7655,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9882,
+        "recency": 1.0,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1678,50 +1504,50 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-18T03:08:52.160268Z",
-      "latest_at": "2026-08-18T03:08:52.160268Z",
+      "earliest_at": "2026-08-18T09:48:23.641166Z",
+      "latest_at": "2026-08-18T09:48:23.641166Z",
       "primary_item": {
-        "id": "27629c58575dfdb786e35467e371eb1057688f83",
-        "title": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
-        "title_zh": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
+        "id": "c0db6f8ac2ffc4e819069aa12d95c7c9ac8a854b",
+        "title": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
+        "title_zh": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
         "title_en": null,
-        "title_original": "\"先生成后治理\"：AI 垃圾淹没互联网，科技巨头终于动手大扫除",
-        "summary": null,
-        "recommend_reason_zh": "从Google搜索的\"胶水披萨\"食谱到Facebook的\"虾耶稣\"图片，AI垃圾正淹没互联网；Spotify已删除7500万首垃圾曲目，YouTube母公司Google半年移除13万低质量频道，科技巨头的大扫除刚刚开始。",
-        "url": "https://www.aibase.com/news/30420",
+        "title_original": "我国首个渔业大模型4. 0 版发布，算力飙升、直击八大核心！",
+        "summary": "The 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nThe 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nThe 2026 International Smart Fisheries and Aquaculture Conference, hosted by China Agricultural University, officially opened in Beijing. With the theme \"Digita\nExplore AI Fronti",
+        "recommend_reason_zh": "Fanli Large Model 4.0发布：参数规模达3970亿，覆盖水质、鱼种、饲料等八大养殖维度，整合101个主要品种专业知识，展现我国渔业智能化新突破。",
+        "url": "https://www.aibase.com/news/30442",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
       "persona_score": 55,
-      "persona_review": "治理动作还在喊口号，做内容平台的可以观望，写代码的暂时不用改。",
+      "persona_review": "垂直行业模型，搞渔业的可以看落地案例，通用开发者影响有限。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
-      "story_id": "story_011d89a45a9d",
-      "title": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
-      "url": "https://www.aibase.com/news/30421",
-      "primary_url": "https://www.aibase.com/news/30421",
+      "story_id": "story_914e45d552d0",
+      "title": "百度二季度营收313亿元，AI业务占比连续两季过半",
+      "url": "https://www.aibase.com/news/30443",
+      "primary_url": "https://www.aibase.com/news/30443",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "da43e6c6e104ea4b1e1c1aae04e23b67c8315033",
-          "title": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
-          "title_zh": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
+          "id": "8b8f9bdca63d2a450fa74fefb57e7ec817369510",
+          "title": "百度二季度营收313亿元，AI业务占比连续两季过半",
+          "title_zh": "百度二季度营收313亿元，AI业务占比连续两季过半",
           "title_en": null,
-          "title_original": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI为ChatGPT macOS应用新增Computer History功能，以事件时间线记录工作轨迹，供ChatGPT和Codex参考，不采集截图或音视频，采用opt-in，可排除指定应用，并演示查找文档与确认Slack分享。",
-          "url": "https://www.aibase.com/news/30421",
+          "title_original": "百度二季度营收313亿元，AI业务占比连续两季过半",
+          "summary": "Baidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nBaidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nBaidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nExplore AI Fronti",
+          "recommend_reason_zh": "该报道显示，百度二季度营收313亿元，AI业务占比连续两季过半；AI云基础设施收入73亿元同比增50%，GPU云增283%，Baidu Dazi月活环比增1063.79%。",
+          "url": "https://www.aibase.com/news/30443",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-18T03:08:52.160268Z"
+          "published_at": "2026-08-18T09:48:23.641166Z"
         }
       ],
       "source_count": 1,
@@ -1730,31 +1556,31 @@
       ],
       "items": [
         {
-          "id": "da43e6c6e104ea4b1e1c1aae04e23b67c8315033",
-          "title": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
-          "title_zh": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
+          "id": "8b8f9bdca63d2a450fa74fefb57e7ec817369510",
+          "title": "百度二季度营收313亿元，AI业务占比连续两季过半",
+          "title_zh": "百度二季度营收313亿元，AI业务占比连续两季过半",
           "title_en": null,
-          "title_original": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI为ChatGPT macOS应用新增Computer History功能，以事件时间线记录工作轨迹，供ChatGPT和Codex参考，不采集截图或音视频，采用opt-in，可排除指定应用，并演示查找文档与确认Slack分享。",
-          "url": "https://www.aibase.com/news/30421",
+          "title_original": "百度二季度营收313亿元，AI业务占比连续两季过半",
+          "summary": "Baidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nBaidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nBaidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nExplore AI Fronti",
+          "recommend_reason_zh": "该报道显示，百度二季度营收313亿元，AI业务占比连续两季过半；AI云基础设施收入73亿元同比增50%，GPU云增283%，Baidu Dazi月活环比增1063.79%。",
+          "url": "https://www.aibase.com/news/30443",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-18T03:08:52.160268Z"
+          "published_at": "2026-08-18T09:48:23.641166Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7655,
-      "importance": 0.7655,
-      "importance_score": 0.7655,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9882,
+        "recency": 1.0,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1762,50 +1588,50 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-18T03:08:52.160268Z",
-      "latest_at": "2026-08-18T03:08:52.160268Z",
+      "earliest_at": "2026-08-18T09:48:23.641166Z",
+      "latest_at": "2026-08-18T09:48:23.641166Z",
       "primary_item": {
-        "id": "da43e6c6e104ea4b1e1c1aae04e23b67c8315033",
-        "title": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
-        "title_zh": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
+        "id": "8b8f9bdca63d2a450fa74fefb57e7ec817369510",
+        "title": "百度二季度营收313亿元，AI业务占比连续两季过半",
+        "title_zh": "百度二季度营收313亿元，AI业务占比连续两季过半",
         "title_en": null,
-        "title_original": "ChatGPT macOS新增“计算机历史”，可记录用户工作轨迹",
-        "summary": null,
-        "recommend_reason_zh": "OpenAI为ChatGPT macOS应用新增Computer History功能，以事件时间线记录工作轨迹，供ChatGPT和Codex参考，不采集截图或音视频，采用opt-in，可排除指定应用，并演示查找文档与确认Slack分享。",
-        "url": "https://www.aibase.com/news/30421",
+        "title_original": "百度二季度营收313亿元，AI业务占比连续两季过半",
+        "summary": "Baidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nBaidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nBaidu released its second-quarter 2026 financial report, with total revenue for the quarter reaching 31.3 billion yuan; general business revenue was 25.2 billio\nExplore AI Fronti",
+        "recommend_reason_zh": "该报道显示，百度二季度营收313亿元，AI业务占比连续两季过半；AI云基础设施收入73亿元同比增50%，GPU云增283%，Baidu Dazi月活环比增1063.79%。",
+        "url": "https://www.aibase.com/news/30443",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "macOS版新增历史轨迹，个人回溯有用，开发者工作流无影响。",
+      "persona_score": 50,
+      "persona_review": "财报数字看看就行，不改变任何开发决策；除非你关注百度云定价。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
-      "story_id": "story_7d6fb4da2bc8",
-      "title": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
-      "url": "https://www.aibase.com/news/30419",
-      "primary_url": "https://www.aibase.com/news/30419",
+      "story_id": "story_bff3f6531ed0",
+      "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
+      "url": "https://www.aibase.com/news/30439",
+      "primary_url": "https://www.aibase.com/news/30439",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "b008d6862fe519efe75eabc5f3a3e28222cd89f0",
-          "title": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
-          "title_zh": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
+          "id": "72ab8e2d8d7669b0abbe45f11dc2f7c02e424596",
+          "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
+          "title_zh": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
           "title_en": null,
-          "title_original": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
+          "title_original": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
           "summary": null,
-          "recommend_reason_zh": "Reddit正在测试AI视频功能，将文本帖和部分评论自动转为音频和视频；一个8年前的r/boardgames帖子被制成3分钟视频，原帖有101条回复，用户可切换Read或Play模式，但这一AI语音功能或出现发音错误。",
-          "url": "https://www.aibase.com/news/30419",
+          "recommend_reason_zh": "Anthropic 8月15日风险报告意外披露Model 2，据内部基准CoBench v2，其多任务表现略超公开最强Claude Mythos 5，综合能力小幅提升，并牵出Model 1疑云。",
+          "url": "https://www.aibase.com/news/30439",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-18T03:08:52.160268Z"
+          "published_at": "2026-08-18T08:53:39.267759Z"
         }
       ],
       "source_count": 1,
@@ -1814,31 +1640,31 @@
       ],
       "items": [
         {
-          "id": "b008d6862fe519efe75eabc5f3a3e28222cd89f0",
-          "title": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
-          "title_zh": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
+          "id": "72ab8e2d8d7669b0abbe45f11dc2f7c02e424596",
+          "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
+          "title_zh": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
           "title_en": null,
-          "title_original": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
+          "title_original": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
           "summary": null,
-          "recommend_reason_zh": "Reddit正在测试AI视频功能，将文本帖和部分评论自动转为音频和视频；一个8年前的r/boardgames帖子被制成3分钟视频，原帖有101条回复，用户可切换Read或Play模式，但这一AI语音功能或出现发音错误。",
-          "url": "https://www.aibase.com/news/30419",
+          "recommend_reason_zh": "Anthropic 8月15日风险报告意外披露Model 2，据内部基准CoBench v2，其多任务表现略超公开最强Claude Mythos 5，综合能力小幅提升，并牵出Model 1疑云。",
+          "url": "https://www.aibase.com/news/30439",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-18T03:08:52.160268Z"
+          "published_at": "2026-08-18T08:53:39.267759Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7655,
-      "importance": 0.7655,
-      "importance_score": 0.7655,
+      "score": 0.7652,
+      "importance": 0.7652,
+      "importance_score": 0.7652,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9882,
+        "recency": 0.9869,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1846,27 +1672,111 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-18T03:08:52.160268Z",
-      "latest_at": "2026-08-18T03:08:52.160268Z",
+      "earliest_at": "2026-08-18T08:53:39.267759Z",
+      "latest_at": "2026-08-18T08:53:39.267759Z",
       "primary_item": {
-        "id": "b008d6862fe519efe75eabc5f3a3e28222cd89f0",
-        "title": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
-        "title_zh": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
+        "id": "72ab8e2d8d7669b0abbe45f11dc2f7c02e424596",
+        "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
+        "title_zh": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
         "title_en": null,
-        "title_original": "Reddit测试AI视频功能，将文本帖子转为音视频内容",
+        "title_original": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
         "summary": null,
-        "recommend_reason_zh": "Reddit正在测试AI视频功能，将文本帖和部分评论自动转为音频和视频；一个8年前的r/boardgames帖子被制成3分钟视频，原帖有101条回复，用户可切换Read或Play模式，但这一AI语音功能或出现发音错误。",
-        "url": "https://www.aibase.com/news/30419",
+        "recommend_reason_zh": "Anthropic 8月15日风险报告意外披露Model 2，据内部基准CoBench v2，其多任务表现略超公开最强Claude Mythos 5，综合能力小幅提升，并牵出Model 1疑云。",
+        "url": "https://www.aibase.com/news/30439",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "测试功能，未开放API，做Reddit工具的暂时不用动。",
+      "persona_score": 48,
+      "persona_review": "未开放的模型，性能略超也动不了手，等 API 再说。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
+      }
+    },
+    {
+      "story_id": "story_b4cb58f18c34",
+      "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+      "url": "https://www.aibase.com/news/30437",
+      "primary_url": "https://www.aibase.com/news/30437",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "d4e804926a5767c05cdb0a378dea0ad20e1e8874",
+          "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+          "title_zh": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+          "title_en": null,
+          "title_original": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+          "summary": null,
+          "recommend_reason_zh": "三年估值30亿美元，演语科技（Evoken）冲刺港股IPO，正文拆解其从LiblibAI模型社区起家、靠AI应用层“中间商”模式抢跑的商业逻辑与竞争壁垒。",
+          "url": "https://www.aibase.com/news/30437",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T08:53:39.267759Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "d4e804926a5767c05cdb0a378dea0ad20e1e8874",
+          "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+          "title_zh": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+          "title_en": null,
+          "title_original": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+          "summary": null,
+          "recommend_reason_zh": "三年估值30亿美元，演语科技（Evoken）冲刺港股IPO，正文拆解其从LiblibAI模型社区起家、靠AI应用层“中间商”模式抢跑的商业逻辑与竞争壁垒。",
+          "url": "https://www.aibase.com/news/30437",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-18T08:53:39.267759Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7652,
+      "importance": 0.7652,
+      "importance_score": 0.7652,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9869,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T08:53:39.267759Z",
+      "latest_at": "2026-08-18T08:53:39.267759Z",
+      "primary_item": {
+        "id": "d4e804926a5767c05cdb0a378dea0ad20e1e8874",
+        "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+        "title_zh": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+        "title_en": null,
+        "title_original": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
+        "summary": null,
+        "recommend_reason_zh": "三年估值30亿美元，演语科技（Evoken）冲刺港股IPO，正文拆解其从LiblibAI模型社区起家、靠AI应用层“中间商”模式抢跑的商业逻辑与竞争壁垒。",
+        "url": "https://www.aibase.com/news/30437",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 20,
+      "persona_review": "估值和IPO是资本故事，不写代码，等有产品工具再看。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -1943,15 +1853,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.6216,
-      "importance": 0.6216,
-      "importance_score": 0.6216,
+      "score": 0.6093,
+      "importance": 0.6093,
+      "importance_score": 0.6093,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.5472,
         "source_tier": 0.58,
         "ai_relevance": 0.76,
-        "recency": 0.8492,
+        "recency": 0.7805,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1978,7 +1888,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     },
     {
@@ -2055,15 +1965,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.6174,
-      "importance": 0.6174,
-      "importance_score": 0.6174,
+      "score": 0.6054,
+      "importance": 0.6054,
+      "importance_score": 0.6054,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.5472,
         "source_tier": 0.58,
         "ai_relevance": 0.76,
-        "recency": 0.8258,
+        "recency": 0.7591,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -2090,7 +2000,118 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T04:06:43.800233Z"
+        "scored_at": "2026-08-18T09:59:18.685641Z"
+      }
+    },
+    {
+      "story_id": "story_af54f92163bc",
+      "title": "Anthropic 详解 Claude 的隐形文本水印的工作原理 / Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+      "primary_url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+      "source": "The Verge",
+      "source_name": "Curated Media",
+      "sources": [
+        {
+          "id": "e4a1fa384e7dfe47c175c93347eded816acc40c2",
+          "title": "Anthropic 详解 Claude 的隐形文本水印的工作原理 / Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+          "title_zh": "Anthropic 详解 Claude 的隐形文本水印的工作原理",
+          "title_en": "Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+          "title_original": "Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic 宣布将用 Google DeepMind 的开源 SynthID-Text 方案给 Claude 文本加隐形水印，通过改写低风险词语的概率模式留下可检测痕迹，以合规欧盟 AI 法案，且不影响输出质量与价格。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-17T10:57:13Z"
+        },
+        {
+          "id": "7496fe78bb23935a420d21bbf52934a97a65e42b",
+          "title": "Anthropic 详解 Claude 隐形文本水印的工作原理 / Anthropic explains how Claude’s invisible text watermarks will work",
+          "title_zh": "Anthropic 详解 Claude 隐形文本水印的工作原理",
+          "title_en": "Anthropic explains how Claude’s invisible text watermarks will work",
+          "title_original": "Anthropic explains how Claude’s invisible text watermarks will work",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic详解如何用概率模式为Claude文本添加隐形水印：采用Google DeepMind开源的SynthID-Text，利用词语概率模式留下可检测痕迹，以符合欧盟AI法案，且不增加成本。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+          "source": "The Verge",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-17T10:57:13Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "The Verge"
+      ],
+      "items": [
+        {
+          "id": "e4a1fa384e7dfe47c175c93347eded816acc40c2",
+          "title": "Anthropic 详解 Claude 的隐形文本水印的工作原理 / Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+          "title_zh": "Anthropic 详解 Claude 的隐形文本水印的工作原理",
+          "title_en": "Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+          "title_original": "Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic 宣布将用 Google DeepMind 的开源 SynthID-Text 方案给 Claude 文本加隐形水印，通过改写低风险词语的概率模式留下可检测痕迹，以合规欧盟 AI 法案，且不影响输出质量与价格。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-17T10:57:13Z"
+        },
+        {
+          "id": "7496fe78bb23935a420d21bbf52934a97a65e42b",
+          "title": "Anthropic 详解 Claude 隐形文本水印的工作原理 / Anthropic explains how Claude’s invisible text watermarks will work",
+          "title_zh": "Anthropic 详解 Claude 隐形文本水印的工作原理",
+          "title_en": "Anthropic explains how Claude’s invisible text watermarks will work",
+          "title_original": "Anthropic explains how Claude’s invisible text watermarks will work",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic详解如何用概率模式为Claude文本添加隐形水印：采用Google DeepMind开源的SynthID-Text，利用词语概率模式留下可检测痕迹，以符合欧盟AI法案，且不增加成本。",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+          "source": "The Verge",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-17T10:57:13Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5898,
+      "importance": 0.5898,
+      "importance_score": 0.5898,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.5328,
+        "source_tier": 0.58,
+        "ai_relevance": 0.74,
+        "recency": 0.7189,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-17T10:57:13Z",
+      "latest_at": "2026-08-17T10:57:13Z",
+      "primary_item": {
+        "id": "e4a1fa384e7dfe47c175c93347eded816acc40c2",
+        "title": "Anthropic 详解 Claude 的隐形文本水印的工作原理 / Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+        "title_zh": "Anthropic 详解 Claude 的隐形文本水印的工作原理",
+        "title_en": "Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+        "title_original": "Anthropic explains how Claude&#8217;s invisible text watermarks will work",
+        "summary": null,
+        "recommend_reason_zh": "Anthropic 宣布将用 Google DeepMind 的开源 SynthID-Text 方案给 Claude 文本加隐形水印，通过改写低风险词语的概率模式留下可检测痕迹，以合规欧盟 AI 法案，且不影响输出质量与价格。",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+        "source": "The Verge",
+        "source_name": "Curated Media"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 55,
+      "persona_review": "水印机制说明，除非做 AI 内容检测，否则短期用不上。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T09:59:18.685641Z"
       }
     }
   ]
