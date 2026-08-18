@@ -1,132 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_2d4e47d50fc6|pragmatic|0a5c5b24": {
-      "score": 90,
-      "review": "模型已开源可下载，安全场景可直接替换测试。",
-      "title_hash": "1aea189f",
-      "scored_at": "2026-07-27T18:53:42.313552Z"
-    },
-    "story_230e970f2c05|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "没有具体工具或标准，先观望巨头后续动作。",
-      "title_hash": "c27f621f",
-      "scored_at": "2026-07-27T15:22:32.463694Z"
-    },
-    "story_999d3b049e00|pragmatic|0a5c5b24": {
-      "score": 35,
-      "review": "书籍销毁影响训练数据质量，但短期内不必担忧。",
-      "title_hash": "551cefbb",
-      "scored_at": "2026-07-27T15:22:38.146141Z"
-    },
-    "story_2a8e05bf7e66|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "官方教程，新多人协作功能可直接上手试，适合团队探索。",
-      "title_hash": "638b98aa",
-      "scored_at": "2026-07-27T17:19:52.663220Z"
-    },
-    "story_5dcea5dd076a|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "SEO流量将被挤压，做内容分发的需留意，但今天不用动。",
-      "title_hash": "7aac385c",
-      "scored_at": "2026-07-27T17:19:55.665781Z"
-    },
-    "story_112bcb1d3a8b|pragmatic|0a5c5b24": {
-      "score": 92,
-      "review": "2.8T MoE 权重和技术报告已开源，可直接下载部署，今天就能上手实验。",
-      "title_hash": "d960df7b",
-      "scored_at": "2026-07-27T17:19:57.863396Z"
-    },
-    "story_e85da4d1892f|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "新模型上线算个信号，没开源没价格前先观望。",
-      "title_hash": "93d5447a",
-      "scored_at": "2026-07-27T17:20:03.658907Z"
-    },
-    "story_45205b48cfd8|pragmatic|0a5c5b24": {
-      "score": 88,
-      "review": "开源仓库可直接 clone，分布式智能体环境开箱即用。",
-      "title_hash": "f6d55bcb",
-      "scored_at": "2026-07-27T17:20:05.944874Z"
-    },
-    "story_36a4cddafb16|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "游说花钱多不代表产品好，对写代码没任何影响。",
-      "title_hash": "52d7bdac",
-      "scored_at": "2026-07-27T17:20:07.648652Z"
-    },
-    "story_112bcb1d3a8b|cynic|f4237a62": {
-      "score": 90,
-      "review": "2.8T的参数是实打实的大，但你先告诉我要多少显存才能跑起来。",
-      "title_hash": "d960df7b",
-      "scored_at": "2026-07-27T17:20:12.980342Z"
-    },
-    "story_112bcb1d3a8b|paper-police|966065bf": {
-      "score": 55,
-      "review": "权重和技术报告已公开，但缺独立benchmark验证，需等第三方复现。",
-      "title_hash": "d960df7b",
-      "scored_at": "2026-07-27T17:20:17.682128Z"
-    },
-    "story_ebe3ddd20f67|pragmatic|0a5c5b24": {
-      "score": 75,
-      "review": "金融Agent设计教程，有代码和MCP连接器，做相关开发的可以直接抄方案。",
-      "title_hash": "114ead3d",
-      "scored_at": "2026-07-27T18:53:37.153312Z"
-    },
-    "story_6a580af5bd08|pragmatic|0a5c5b24": {
-      "score": 92,
-      "review": "SGLang和Miles当天支持K3模型，有大规模部署需求的团队可以直接用。",
-      "title_hash": "65df3a1a",
-      "scored_at": "2026-07-27T18:53:39.878905Z"
-    },
-    "story_eb7b6b649c03|pragmatic|0a5c5b24": {
-      "score": 10,
-      "review": "纯嘴炮预测，没代码没工具，跟开发无关。",
-      "title_hash": "bc9ba99a",
-      "scored_at": "2026-07-27T18:53:43.942824Z"
-    },
-    "story_6a580af5bd08|cynic|f4237a62": {
-      "score": 85,
-      "review": "3万亿参数开源诚意足，但推理成本可不是闹着玩的。",
-      "title_hash": "65df3a1a",
-      "scored_at": "2026-07-27T18:53:49.245065Z"
-    },
-    "story_6a580af5bd08|paper-police|966065bf": {
-      "score": 20,
-      "review": "仅博客宣称支持，无论文代码或独立验证。",
-      "title_hash": "65df3a1a",
-      "scored_at": "2026-07-27T18:53:54.801570Z"
-    },
-    "story_fdb39a7d1547|pragmatic|0a5c5b24": {
-      "score": 75,
-      "review": "减少工具切换，今天就能在IDE里体验全流程。建议开启试用看是否适配你的项目。",
-      "title_hash": "1c6bfecf",
-      "scored_at": "2026-07-27T20:49:42.358594Z"
-    },
-    "story_c08b86727d06|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "现象观察，无直接可用工具，看看就好。",
-      "title_hash": "0eeed371",
-      "scored_at": "2026-07-27T20:49:44.420620Z"
-    },
-    "story_ed4f738c2dbe|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "新基准上线，做视觉感知评测的多一个选择，但暂且观望。",
-      "title_hash": "67fc68f4",
-      "scored_at": "2026-07-27T20:49:46.190693Z"
-    },
-    "story_3aa98e967d5f|pragmatic|0a5c5b24": {
-      "score": 70,
-      "review": "团队管理员可收紧Copilot第三方应用权限，避免数据泄露风险。",
-      "title_hash": "800d9062",
-      "scored_at": "2026-07-27T22:23:52.205656Z"
-    },
-    "story_7284fe0b61a4|pragmatic|0a5c5b24": {
-      "score": 75,
-      "review": "企业IT管理员可在Copilot应用和云代理中统一管控设置，减少运维风险。",
-      "title_hash": "e87d1bac",
-      "scored_at": "2026-07-27T22:23:55.461813Z"
-    },
     "story_f4def218d9f8|pragmatic|0a5c5b24": {
       "score": 55,
       "review": "立场澄清不改变现状，开源自用不受影响，继续关注后续政策。",
@@ -4928,10 +4802,10 @@
       "scored_at": "2026-08-16T22:46:20.025375Z"
     },
     "story_6ea5c9d0c11e|pragmatic|0a5c5b24": {
-      "score": 35,
-      "review": "理念争议，不直接影响工具使用，写作用户可等官方说明。",
-      "title_hash": "e6e98591",
-      "scored_at": "2026-08-17T02:06:46.208661Z"
+      "score": 50,
+      "review": "纯观点争论，不影响API调用，写作者留意即可。",
+      "title_hash": "a0874a13",
+      "scored_at": "2026-08-17T17:54:55.990832Z"
     },
     "story_96d24a4f2679|pragmatic|0a5c5b24": {
       "score": 25,
@@ -5312,10 +5186,10 @@
       "scored_at": "2026-08-17T14:03:05.676658Z"
     },
     "story_be56974e4c46|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "老黄发推无明确接口或价格，看个热闹，有产品再动手。",
-      "title_hash": "9f0eaf4a",
-      "scored_at": "2026-08-17T14:03:08.709403Z"
+      "score": 52,
+      "review": "远期算力布局，今天没有可用的新工具，先观望。",
+      "title_hash": "e846e0df",
+      "scored_at": "2026-08-17T16:59:05.354484Z"
     },
     "story_cec42b7695cc|pragmatic|0a5c5b24": {
       "score": 30,
@@ -5331,9 +5205,9 @@
     },
     "story_a3e7db53d120|pragmatic|0a5c5b24": {
       "score": 55,
-      "review": "AI 自动补丁也有漏洞，合入前记得人工过一遍。",
-      "title_hash": "8fb39a1e",
-      "scored_at": "2026-08-17T14:55:15.703347Z"
+      "review": "AI 自动修代码引入漏洞，给 Copilot 补丁加人工审查再合。",
+      "title_hash": "42a65b5e",
+      "scored_at": "2026-08-17T16:59:07.780922Z"
     },
     "story_f75e3b4636ba|cynic|f4237a62": {
       "score": 45,
@@ -5346,6 +5220,108 @@
       "review": "博客吹性能无论文无代码，视觉评测基准未公开，只能算单方面说法。",
       "title_hash": "4b13be7d",
       "scored_at": "2026-08-17T14:55:19.872525Z"
+    },
+    "story_4c94bc9d56c4|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "AI训练数据来源的伦理争议，从业者需关注版权风险，但暂无直接可操作影响。",
+      "title_hash": "5738e771",
+      "scored_at": "2026-08-17T19:11:51.230665Z"
+    },
+    "story_e8417ef9f36f|pragmatic|0a5c5b24": {
+      "score": 78,
+      "review": "Copilot 画布能直接上手调 Agent 工作流，省 token 又可控，值得试。",
+      "title_hash": "8c440672",
+      "scored_at": "2026-08-17T16:59:03.121038Z"
+    },
+    "story_e8417ef9f36f|cynic|f4237a62": {
+      "score": 75,
+      "review": "可视可控是实打实的，但“经济高效”的账本敢晒出来吗？",
+      "title_hash": "8c440672",
+      "scored_at": "2026-08-17T16:59:10.273587Z"
+    },
+    "story_e8417ef9f36f|paper-police|966065bf": {
+      "score": 42,
+      "review": "官方博客讲概念，无论文无代码无跑分，效率提升缺证据。",
+      "title_hash": "8c440672",
+      "scored_at": "2026-08-17T16:59:13.686361Z"
+    },
+    "story_92ad1be47cb2|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "想躲开系统自带 AI 的可以照抄，覆盖主流平台，今天就能动手。",
+      "title_hash": "ceb178c1",
+      "scored_at": "2026-08-17T19:11:53.270242Z"
+    },
+    "story_92ad1be47cb2|cynic|f4237a62": {
+      "score": 62,
+      "review": "这类指南不少，真能一键关干净的有几个？还是先教教怎么别被自动更新装回来。",
+      "title_hash": "ceb178c1",
+      "scored_at": "2026-08-17T19:11:55.482637Z"
+    },
+    "story_92ad1be47cb2|paper-police|966065bf": {
+      "score": 45,
+      "review": "操作指南有细节但无官方验证，复用性和时效性待考。",
+      "title_hash": "ceb178c1",
+      "scored_at": "2026-08-17T19:11:58.825868Z"
+    },
+    "story_008aca6e8b2b|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "伦理争议虽大，但跟今天写代码、选型没关系，看个热闹就行。",
+      "title_hash": "35c62d44",
+      "scored_at": "2026-08-17T19:53:32.831666Z"
+    },
+    "story_001e17993196|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "水印是伦理口水战，不影响今天调 API，纯围观。",
+      "title_hash": "a0874a13",
+      "scored_at": "2026-08-17T19:53:35.062977Z"
+    },
+    "story_5646c2e72f66|pragmatic|0a5c5b24": {
+      "score": 80,
+      "review": "调度顺序优化就能提33%利用率，跑集群的值得读。",
+      "title_hash": "3ab52e20",
+      "scored_at": "2026-08-17T20:54:59.718835Z"
+    },
+    "story_5646c2e72f66|cynic|f4237a62": {
+      "score": 72,
+      "review": "调度顺序能赚33个点，怕是基线挑得够低。",
+      "title_hash": "3ab52e20",
+      "scored_at": "2026-08-17T20:55:05.146780Z"
+    },
+    "story_5646c2e72f66|paper-police|966065bf": {
+      "score": 58,
+      "review": "博客有具体数字和方案细节，但未见代码或复现路径，待独立验证。",
+      "title_hash": "3ab52e20",
+      "scored_at": "2026-08-17T20:55:07.382772Z"
+    },
+    "story_ae0a0f31fc5c|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "训练数据版权争议又添一例，做数据合规的得留个心眼。",
+      "title_hash": "b4ad83ac",
+      "scored_at": "2026-08-17T21:53:50.529379Z"
+    },
+    "story_13ad5c9c5494|pragmatic|0a5c5b24": {
+      "score": 85,
+      "review": "多一个代码托管选择，想摆脱 GitHub 的可以试试，迁移成本不高。",
+      "title_hash": "e591653d",
+      "scored_at": "2026-08-17T22:51:09.752934Z"
+    },
+    "story_13ad5c9c5494|cynic|f4237a62": {
+      "score": 55,
+      "review": "替代 GitHub 先解决生态和信任问题，光靠编辑器光环不够。",
+      "title_hash": "e591653d",
+      "scored_at": "2026-08-17T22:51:12.520644Z"
+    },
+    "story_13ad5c9c5494|paper-police|966065bf": {
+      "score": 45,
+      "review": "官方公告有了但无代码无评测，等第三方验证再定论。",
+      "title_hash": "e591653d",
+      "scored_at": "2026-08-17T22:51:14.769661Z"
+    },
+    "story_654c10ffc24b|pragmatic|0a5c5b24": {
+      "score": 68,
+      "review": "Agent安全加固的官方实践指南，做企业级应用可参考。",
+      "title_hash": "129bd594",
+      "scored_at": "2026-08-17T23:46:12.558217Z"
     }
   }
 }

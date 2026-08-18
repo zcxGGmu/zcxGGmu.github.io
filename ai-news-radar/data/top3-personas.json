@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T14:55:19.872584Z",
+  "generated_at": "2026-08-17T23:46:12.558492Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_b60199de2cff",
-      "title": "阿里Qwen-Audio-3.0系列语音模型上线千问AI平台，斩获国际评测“大满贯”",
-      "url": "https://www.aibase.com/news/30399",
+      "story_id": "story_13ad5c9c5494",
+      "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
+      "url": "https://cursor.com/changelog/origin-code-hosting",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "大满贯？先把评测基准名单列全，别只挑自家的强项。"
+          "score": 55,
+          "review": "替代 GitHub 先解决生态和信任问题，光靠编辑器光环不够。"
         },
         "paper-police": {
-          "score": 10,
-          "review": "评测'大满贯'无论文无代码，凭平台新闻不可信。"
+          "score": 45,
+          "review": "官方公告有了但无代码无评测，等第三方验证再定论。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "语音模型已上线，多模态任务可直接实测，跑ASR/音频理解的今天就能用。"
+          "score": 85,
+          "review": "多一个代码托管选择，想摆脱 GitHub 的可以试试，迁移成本不高。"
         }
       }
     },
     {
-      "story_id": "story_5df010d9d793",
-      "title": "Qwen 3.8 27B 表现出色，但默认推理强度过高导致过度思考 / Qwen 3.8 27B is excellent， but it defaults to wildly overthinking things",
-      "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b",
+      "story_id": "story_5646c2e72f66",
+      "title": "同一集群，利用率提升33个百分点：改变的是顺序 / Same Cluster, 33 Points More Utilization: What Changed Was the Order",
+      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
       "rank": 2,
       "reviews": {
         "cynic": {
           "score": 72,
-          "review": "实力在线，但默认推理强度像跑车起步就飙到红线，省点电行不？"
+          "review": "调度顺序能赚33个点，怕是基线挑得够低。"
         },
         "paper-police": {
-          "score": 55,
-          "review": "博客给了实测印象但无论文无代码，待官方三件套出现。"
+          "score": 58,
+          "review": "博客有具体数字和方案细节，但未见代码或复现路径，待独立验证。"
         },
         "pragmatic": {
           "score": 80,
-          "review": "模型能用了但默认参数爱绕弯，部署时记得调低推理强度省 token。"
+          "review": "调度顺序优化就能提33%利用率，跑集群的值得读。"
         }
       }
     },
     {
-      "story_id": "story_f75e3b4636ba",
-      "title": "GPT 5.6 Sol 是 OpenAI 有史以来发布的最优秀的“视觉”模型",
-      "url": "https://blog.roboflow.com/openai-gpt-5-6",
+      "story_id": "story_e8417ef9f36f",
+      "title": "画布如何让智能体工作流变得可视、可控且经济高效 / How canvases make agentic workflows visible, steerable, and cost-efficient",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "“最优秀”三个字谁封的？上对比数据再谈历史地位。"
+          "score": 75,
+          "review": "可视可控是实打实的，但“经济高效”的账本敢晒出来吗？"
         },
         "paper-police": {
-          "score": 20,
-          "review": "博客吹性能无论文无代码，视觉评测基准未公开，只能算单方面说法。"
+          "score": 42,
+          "review": "官方博客讲概念，无论文无代码无跑分，效率提升缺证据。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "视觉模型新标杆，做 CV 的可以跑跑 benchmark 看是否值得换。"
+          "score": 78,
+          "review": "Copilot 画布能直接上手调 Agent 工作流，省 token 又可控，值得试。"
         }
       }
     }
