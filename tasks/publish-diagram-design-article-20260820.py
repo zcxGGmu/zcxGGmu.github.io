@@ -95,7 +95,7 @@ base.POSTS = [
     base.Post(
         slug=SLUG,
         title="Diagram Design：用 27 种专业图表规则把 AI 输出变成可交付文档",
-        desc="拆解 Diagram Design 的图表类型选择、布局约束、HTML/SVG 导出、旧图重绘与品牌样式，并给出接入工程工作流的验证方法。",
+        desc="拆解图表类型、布局约束、HTML/SVG 导出与工程验证。",
         category="AI工具",
         series="AI Agent",
         tags=["AI Skills", "AI Agent", "开源项目", "GitHub", "Diagram Design", "可视化", "工作流", "软件工程"],
