@@ -1,54 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_662891d3b0ba|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "更新了就看看 changelog，如果是破坏性变更得先锁版本。",
-      "title_hash": "006a38b8",
-      "scored_at": "2026-07-29T03:49:19.289079Z"
-    },
-    "story_d26d09267b84|pragmatic|0a5c5b24": {
-      "score": 65,
-      "review": "团队用 Copilot 的话，报表更细了，方便算 ROI。",
-      "title_hash": "f290ea25",
-      "scored_at": "2026-07-29T03:49:21.963546Z"
-    },
-    "story_a140b8d566f7|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "实验性项目，速度太慢无法实用，仅作技术参考。",
-      "title_hash": "8bf5a047",
-      "scored_at": "2026-07-29T03:49:24.910557Z"
-    },
-    "story_f2677af66a35|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "呼吁信不写代码，没实际限制，开发者当行业信号看看就行。",
-      "title_hash": "a0e799c0",
-      "scored_at": "2026-07-29T03:49:27.820984Z"
-    },
-    "story_0225f52e421b|pragmatic|0a5c5b24": {
-      "score": 88,
-      "review": "npm 加实时恶意软件扫描，发布包更安全，今天就能用，开发者少踩供应链坑。",
-      "title_hash": "26592536",
-      "scored_at": "2026-07-29T03:49:30.684576Z"
-    },
-    "story_53ee7af07f48|pragmatic|0a5c5b24": {
-      "score": 20,
-      "review": "联名信不写代码，等真有法规落地再说。",
-      "title_hash": "a27e2ede",
-      "scored_at": "2026-07-29T03:49:32.958759Z"
-    },
-    "story_877f0f256fb6|cynic|f4237a62": {
-      "score": 70,
-      "review": "低延迟是多大？别又是PPT上的3ms，实际跑起来卡成狗。",
-      "title_hash": "0d5fbb67",
-      "scored_at": "2026-07-29T03:49:36.582361Z"
-    },
-    "story_877f0f256fb6|paper-police|966065bf": {
-      "score": 25,
-      "review": "只有官方推文，无论文代码和独立评测，等公开benchmark再认。",
-      "title_hash": "0d5fbb67",
-      "scored_at": "2026-07-29T03:49:38.856207Z"
-    },
     "story_21ab5ad62dcb|pragmatic|0a5c5b24": {
       "score": 20,
       "review": "呼吁监管不写代码，等立法落地再说。",
@@ -5412,6 +5364,132 @@
       "review": "官方案例，没有新接口或降价，对企业选型有参考，开发者不用动。",
       "title_hash": "70aded30",
       "scored_at": "2026-08-18T23:41:50.066395Z"
+    },
+    "story_57fc147b8fa7|pragmatic|0a5c5b24": {
+      "score": 65,
+      "review": "企业管理员可统一管控 Copilot 设置，个人开发者无感。",
+      "title_hash": "54dfd872",
+      "scored_at": "2026-08-19T01:58:22.305728Z"
+    },
+    "story_eadd8d231bf2|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "新模型上线且成本降了，跑推理的直接换。",
+      "title_hash": "d97983f6",
+      "scored_at": "2026-08-19T01:58:24.269904Z"
+    },
+    "story_85c60887e099|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "常规安全更新，AI参与只是噱头，升级浏览器即可，别过度解读。",
+      "title_hash": "c013e3a4",
+      "scored_at": "2026-08-19T01:58:27.483935Z"
+    },
+    "story_fa9390c8de81|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "多一个托管选择，但迁移成本高，先观望，别急着从GitHub搬走。",
+      "title_hash": "caa1a039",
+      "scored_at": "2026-08-19T01:58:30.387043Z"
+    },
+    "story_8fca6b8ea403|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "安全审查收紧是中期风向，具体接口和准入规则没出，暂不用动。",
+      "title_hash": "8d308b8a",
+      "scored_at": "2026-08-19T01:58:33.394398Z"
+    },
+    "story_05c824816201|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "教育类产品可参考其安全设计，但开发者今天没有新接口可用。",
+      "title_hash": "c8f1a32f",
+      "scored_at": "2026-08-19T01:58:36.210758Z"
+    },
+    "story_39c8e5998438|pragmatic|0a5c5b24": {
+      "score": 62,
+      "review": "安全事件提醒，慎用陌生模型，检查依赖，OpenAI暂停训练对日常API影响不大。",
+      "title_hash": "e66970dc",
+      "scored_at": "2026-08-19T01:58:41.981044Z"
+    },
+    "story_75da83f04ae8|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "水印可被绕过，依赖AI检测的别太放心，短期不用改方案。",
+      "title_hash": "e9b8362c",
+      "scored_at": "2026-08-19T01:58:43.994800Z"
+    },
+    "story_eadd8d231bf2|cynic|f4237a62": {
+      "score": 45,
+      "review": "自创“AA智能指数”并列第一，测评细则和对比对象倒是拿出来啊。",
+      "title_hash": "d97983f6",
+      "scored_at": "2026-08-19T01:58:47.076740Z"
+    },
+    "story_eadd8d231bf2|paper-police|966065bf": {
+      "score": 25,
+      "review": "只有官方公众号宣称，无论文无代码无第三方评测，分数不可验证。",
+      "title_hash": "d97983f6",
+      "scored_at": "2026-08-19T01:58:49.015388Z"
+    },
+    "story_22f804de25fd|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "营收数字不写代码，选型不看财报，等真有产品变化再说。",
+      "title_hash": "b34c6ab9",
+      "scored_at": "2026-08-19T03:16:27.356405Z"
+    },
+    "story_3c199221181b|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "市场策略实验数据，对开发选型无直接影响，看个趋势即可。",
+      "title_hash": "9b3326e6",
+      "scored_at": "2026-08-19T03:16:29.961455Z"
+    },
+    "story_1b9c7efdb539|pragmatic|0a5c5b24": {
+      "score": 22,
+      "review": "融资估值不写代码，等模型或API有实际变化再关注。",
+      "title_hash": "f955545b",
+      "scored_at": "2026-08-19T03:16:32.374460Z"
+    },
+    "story_aaec7fc426e6|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "企业 Copilot 用户今天就得排查，补丁和绕过方案优先确认。",
+      "title_hash": "72bd95da",
+      "scored_at": "2026-08-19T03:16:34.780684Z"
+    },
+    "story_e898888ef922|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "还没上线，等真能画UI再动手，先留意别乱改工作流。",
+      "title_hash": "e1826b48",
+      "scored_at": "2026-08-19T03:16:37.172312Z"
+    },
+    "story_34ed06650578|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "API已开放可立即试用，开源权重下周落地，跑分并列第一，值得上手。",
+      "title_hash": "9321530c",
+      "scored_at": "2026-08-19T03:16:39.201749Z"
+    },
+    "story_34ed06650578|cynic|f4237a62": {
+      "score": 70,
+      "review": "AA指数并列第一，权重还没开，先别急着封神。",
+      "title_hash": "9321530c",
+      "scored_at": "2026-08-19T03:16:41.795029Z"
+    },
+    "story_34ed06650578|paper-police|966065bf": {
+      "score": 10,
+      "review": "权重未开源，仅媒体通稿宣称分数，无第三方复现，等下周见真章。",
+      "title_hash": "9321530c",
+      "scored_at": "2026-08-19T03:16:44.624479Z"
+    },
+    "story_b12c78ecfeef|pragmatic|0a5c5b24": {
+      "score": 92,
+      "review": "Mojo 全面开源且 Apache 2.0，可商用，今天就能拉代码上手试性能。",
+      "title_hash": "16214f05",
+      "scored_at": "2026-08-19T04:03:00.496585Z"
+    },
+    "story_b12c78ecfeef|cynic|f4237a62": {
+      "score": 80,
+      "review": "开源是真开源，但生态和兼容性还差着十万八千里。",
+      "title_hash": "16214f05",
+      "scored_at": "2026-08-19T04:03:03.739744Z"
+    },
+    "story_b12c78ecfeef|paper-police|966065bf": {
+      "score": 70,
+      "review": "开源是实锤，但缺仓库链接和benchmark，跑通才算数。",
+      "title_hash": "16214f05",
+      "scored_at": "2026-08-19T04:03:05.952652Z"
     }
   }
 }

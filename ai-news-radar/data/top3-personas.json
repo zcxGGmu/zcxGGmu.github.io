@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T23:41:50.066518Z",
+  "generated_at": "2026-08-19T04:54:20.252422Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_7b5d73500e30",
-      "title": "Mojo 语言正式开源，编译器与工具链全面开放",
-      "url": "https://www.modular.com/blog/mojo-open-source",
+      "story_id": "story_b12c78ecfeef",
+      "title": "Modular 官宣 Mojo 语言正式全面开源，拥抱 Apache 2.0 许可协议",
+      "url": "https://www.aibase.com/news/30463",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 82,
-          "review": "真开源了，但吊了两年胃口，生态位还抢得回来吗？"
+          "score": 80,
+          "review": "开源是真开源，但生态和兼容性还差着十万八千里。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "博客只说开源，未见代码仓库和评测，等链接验证。"
+          "score": 70,
+          "review": "开源是实锤，但缺仓库链接和benchmark，跑通才算数。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "编译器开箱即用，写高性能算子可以直接上手试，但生态迁移成本别低估。"
+          "score": 92,
+          "review": "Mojo 全面开源且 Apache 2.0，可商用，今天就能拉代码上手试性能。"
         }
       }
     },
     {
-      "story_id": "story_5a9ad877cc94",
-      "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理 / Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
-      "url": "https://x.com/claudeai/status/2089806039088517356",
+      "story_id": "story_eadd8d231bf2",
+      "title": "GLM-5.3上线：AA智能指数60分并列开源第一，成本更低",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494105&idx=1&sn=8d7409e0fb846a3c7803c142b5d1a8e7",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "集成邮件和网盘就叫新功能？隔壁插件市场早堆成山了。"
+          "score": 45,
+          "review": "自创“AA智能指数”并列第一，测评细则和对比对象倒是拿出来啊。"
         },
         "paper-police": {
-          "score": 18,
-          "review": "官方推特宣称新功能，无论文无代码无评测，等正式文档再验证。"
+          "score": 25,
+          "review": "只有官方公众号宣称，无论文无代码无第三方评测，分数不可验证。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "能直接操作Gmail和Drive，自动化办公场景可立即接入。"
+          "review": "新模型上线且成本降了，跑推理的直接换。"
         }
       }
     },
     {
-      "story_id": "story_cd7a1ff75de2",
-      "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
-      "url": "https://huggingface.co/blog/multi-vector-encoder",
+      "story_id": "story_34ed06650578",
+      "title": "智谱 GLM-5.3 API 重磅上线：AA指数斩获 60 分并列开源第一，权重将于下周五开源",
+      "url": "https://www.aibase.com/news/30454",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 78,
-          "review": "多向量编码总算进了官方库，但别急着吹，复现和调参才是真考验。"
+          "score": 70,
+          "review": "AA指数并列第一，权重还没开，先别急着封神。"
         },
         "paper-police": {
-          "score": 72,
-          "review": "官方博客有技术细节，代码开源可复现，缺独立基准验证。"
+          "score": 10,
+          "review": "权重未开源，仅媒体通稿宣称分数，无第三方复现，等下周见真章。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "多向量检索开箱即用，ColBERT 风格模型直接上手，检索精度提升可立即落地。"
+          "score": 90,
+          "review": "API已开放可立即试用，开源权重下周落地，跑分并列第一，值得上手。"
         }
       }
     }
