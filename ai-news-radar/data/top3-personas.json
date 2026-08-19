@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T15:03:36.282670Z",
+  "generated_at": "2026-08-18T23:41:50.066518Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_13ad5c9c5494",
-      "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-      "url": "https://cursor.com/changelog/origin-code-hosting",
+      "story_id": "story_7b5d73500e30",
+      "title": "Mojo 语言正式开源，编译器与工具链全面开放",
+      "url": "https://www.modular.com/blog/mojo-open-source",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 55,
-          "review": "替代 GitHub 先解决生态和信任问题，光靠编辑器光环不够。"
+          "score": 82,
+          "review": "真开源了，但吊了两年胃口，生态位还抢得回来吗？"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方公告有了但无代码无评测，等第三方验证再定论。"
+          "score": 25,
+          "review": "博客只说开源，未见代码仓库和评测，等链接验证。"
         },
         "pragmatic": {
-          "score": 85,
-          "review": "多一个代码托管选择，想摆脱 GitHub 的可以试试，迁移成本不高。"
+          "score": 90,
+          "review": "编译器开箱即用，写高性能算子可以直接上手试，但生态迁移成本别低估。"
         }
       }
     },
     {
-      "story_id": "story_5646c2e72f66",
-      "title": "同一集群，利用率提升33个百分点：改变的是顺序 / Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
+      "story_id": "story_5a9ad877cc94",
+      "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理 / Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+      "url": "https://x.com/claudeai/status/2089806039088517356",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "调度顺序能赚33个点，怕是基线挑得够低。"
+          "score": 70,
+          "review": "集成邮件和网盘就叫新功能？隔壁插件市场早堆成山了。"
         },
         "paper-police": {
-          "score": 58,
-          "review": "博客有具体数字和方案细节，但未见代码或复现路径，待独立验证。"
+          "score": 18,
+          "review": "官方推特宣称新功能，无论文无代码无评测，等正式文档再验证。"
         },
         "pragmatic": {
-          "score": 80,
-          "review": "调度顺序优化就能提33%利用率，跑集群的值得读。"
+          "score": 90,
+          "review": "能直接操作Gmail和Drive，自动化办公场景可立即接入。"
         }
       }
     },
     {
-      "story_id": "story_e8417ef9f36f",
-      "title": "画布如何让智能体工作流变得可视、可控且经济高效 / How canvases make agentic workflows visible, steerable, and cost-efficient",
-      "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient",
+      "story_id": "story_cd7a1ff75de2",
+      "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
+      "url": "https://huggingface.co/blog/multi-vector-encoder",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 75,
-          "review": "可视可控是实打实的，但“经济高效”的账本敢晒出来吗？"
+          "score": 78,
+          "review": "多向量编码总算进了官方库，但别急着吹，复现和调参才是真考验。"
         },
         "paper-police": {
-          "score": 42,
-          "review": "官方博客讲概念，无论文无代码无跑分，效率提升缺证据。"
+          "score": 72,
+          "review": "官方博客有技术细节，代码开源可复现，缺独立基准验证。"
         },
         "pragmatic": {
-          "score": 78,
-          "review": "Copilot 画布能直接上手调 Agent 工作流，省 token 又可控，值得试。"
+          "score": 88,
+          "review": "多向量检索开箱即用，ColBERT 风格模型直接上手，检索精度提升可立即落地。"
         }
       }
     }

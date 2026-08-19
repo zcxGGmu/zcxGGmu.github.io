@@ -1,8 +1,123 @@
 {
-  "generated_at": "2026-08-18T14:52:59.454341Z",
+  "generated_at": "2026-08-18T23:36:50.009120Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
+    {
+      "story_id": "story_77f8f8705916",
+      "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准 / How Much Memory Does Your Agent Actually Need?",
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+      "primary_url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+      "source": "Hugging Face Blog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "4c7e6d7987f8435623b872c1349860e73b991e53",
+          "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准 / How Much Memory Does Your Agent Actually Need?",
+          "title_zh": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准",
+          "title_en": "How Much Memory Does Your Agent Actually Need?",
+          "title_original": "How Much Memory Does Your Agent Actually Need?",
+          "summary": null,
+          "recommend_reason_zh": "IBM Research新研究揭示智能体记忆需按模型能力校准：gpt-oss-120b经精选检索提升16.1个百分点且仅增5% token，DeepSeek-V3.2全量指南增9.5pp，而GLM-5无增益。",
+          "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+          "source": "Hugging Face Blog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T18:09:38Z"
+        },
+        {
+          "id": "ed0f0ca83fed5aa8ae6ec56cfdfbee39b0782b0e",
+          "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准 / How Much Memory Does Your Agent Actually Need？",
+          "title_zh": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准",
+          "title_en": "How Much Memory Does Your Agent Actually Need？",
+          "title_original": "How Much Memory Does Your Agent Actually Need？",
+          "summary": "智能体记忆并非可随意开启的功能，而是需按模型能力校准的剂量。强模型适合注入完整指南集，DeepSeek-V3.2（671B MoE）任务完成率提升+9.5个百分点；较弱模型采用精选检索效果最佳，gpt-oss-120b（117B MoE）提升+16.1pp且仅增加+5% token。该方法无需更新权重或人工标注，通过从智能体过往轨迹中蒸馏指南并在推理时注入实现。",
+          "recommend_reason_zh": "IBM Research在Hugging Face发文，对比8款模型后发现agent记忆需按模型校准：gpt-oss-120b用精选检索提升16.1pp且仅多耗5%token，DeepSeek-V3.2用完整指南+9.5pp，GLM-5则饱和无增益。",
+          "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+          "source": "Hugging Face：Blog（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T18:09:38Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hugging Face Blog",
+        "Hugging Face：Blog（RSS）"
+      ],
+      "items": [
+        {
+          "id": "4c7e6d7987f8435623b872c1349860e73b991e53",
+          "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准 / How Much Memory Does Your Agent Actually Need?",
+          "title_zh": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准",
+          "title_en": "How Much Memory Does Your Agent Actually Need?",
+          "title_original": "How Much Memory Does Your Agent Actually Need?",
+          "summary": null,
+          "recommend_reason_zh": "IBM Research新研究揭示智能体记忆需按模型能力校准：gpt-oss-120b经精选检索提升16.1个百分点且仅增5% token，DeepSeek-V3.2全量指南增9.5pp，而GLM-5无增益。",
+          "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+          "source": "Hugging Face Blog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T18:09:38Z"
+        },
+        {
+          "id": "ed0f0ca83fed5aa8ae6ec56cfdfbee39b0782b0e",
+          "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准 / How Much Memory Does Your Agent Actually Need？",
+          "title_zh": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准",
+          "title_en": "How Much Memory Does Your Agent Actually Need？",
+          "title_original": "How Much Memory Does Your Agent Actually Need？",
+          "summary": "智能体记忆并非可随意开启的功能，而是需按模型能力校准的剂量。强模型适合注入完整指南集，DeepSeek-V3.2（671B MoE）任务完成率提升+9.5个百分点；较弱模型采用精选检索效果最佳，gpt-oss-120b（117B MoE）提升+16.1pp且仅增加+5% token。该方法无需更新权重或人工标注，通过从智能体过往轨迹中蒸馏指南并在推理时注入实现。",
+          "recommend_reason_zh": "IBM Research在Hugging Face发文，对比8款模型后发现agent记忆需按模型校准：gpt-oss-120b用精选检索提升16.1pp且仅多耗5%token，DeepSeek-V3.2用完整指南+9.5pp，GLM-5则饱和无增益。",
+          "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+          "source": "Hugging Face：Blog（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T18:09:38Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.8714,
+      "importance": 0.8714,
+      "importance_score": 0.8714,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.95,
+        "recency": 0.9243,
+        "story_heat": 0.25
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "multi_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T18:09:38Z",
+      "latest_at": "2026-08-18T18:09:38Z",
+      "primary_item": {
+        "id": "4c7e6d7987f8435623b872c1349860e73b991e53",
+        "title": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准 / How Much Memory Does Your Agent Actually Need?",
+        "title_zh": "智能体记忆并非越多越好：八款模型评测显示剂量需按能力校准",
+        "title_en": "How Much Memory Does Your Agent Actually Need?",
+        "title_original": "How Much Memory Does Your Agent Actually Need?",
+        "summary": null,
+        "recommend_reason_zh": "IBM Research新研究揭示智能体记忆需按模型能力校准：gpt-oss-120b经精选检索提升16.1个百分点且仅增5% token，DeepSeek-V3.2全量指南增9.5pp，而GLM-5无增益。",
+        "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+        "source": "Hugging Face Blog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "评测给了记忆配置参考，做Agent选型时值得翻一眼，但不用立刻动手改。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
     {
       "story_id": "story_394e39b5c070",
       "title": "OpenAI 推出 ChatGPT for Teens：面向青少年的学习体验与更强安全保护 / Introducing ChatGPT for Teens: Built for learning, backed by protections",
@@ -77,15 +192,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.8752,
-      "importance": 0.8752,
-      "importance_score": 0.8752,
+      "score": 0.855,
+      "importance": 0.855,
+      "importance_score": 0.855,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.9455,
+        "recency": 0.8335,
         "story_heat": 0.25
       },
       "category": "official",
@@ -115,12 +230,182 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
+    {
+      "story_id": "story_7de8d1dc0770",
+      "title": "按 token 类型撤销凭据与取消授权 / Credential revocation and deauthorization by token type",
+      "url": "https://github.blog/changelog/2026-08-18-credential-revocation-and-deauthorization-by-token-type",
+      "primary_url": "https://github.blog/changelog/2026-08-18-credential-revocation-and-deauthorization-by-token-type",
+      "source": "GitHub Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "f4aa758ec0506c171d08b8864e8dfbcca8b1c2d5",
+          "title": "按 token 类型撤销凭据与取消授权 / Credential revocation and deauthorization by token type",
+          "title_zh": "按 token 类型撤销凭据与取消授权",
+          "title_en": "Credential revocation and deauthorization by token type",
+          "title_original": "Credential revocation and deauthorization by token type",
+          "summary": null,
+          "recommend_reason_zh": "GitHub 新增按令牌类型撤销凭证功能，企业所有者和管理员可单独撤销 Personal access tokens、SSH keys 等特定类型，精准控制安全事件影响范围，避免一次性撤销所有信任凭证。",
+          "url": "https://github.blog/changelog/2026-08-18-credential-revocation-and-deauthorization-by-token-type",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T21:57:30Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "GitHub Changelog"
+      ],
+      "items": [
+        {
+          "id": "f4aa758ec0506c171d08b8864e8dfbcca8b1c2d5",
+          "title": "按 token 类型撤销凭据与取消授权 / Credential revocation and deauthorization by token type",
+          "title_zh": "按 token 类型撤销凭据与取消授权",
+          "title_en": "Credential revocation and deauthorization by token type",
+          "title_original": "Credential revocation and deauthorization by token type",
+          "summary": null,
+          "recommend_reason_zh": "GitHub 新增按令牌类型撤销凭证功能，企业所有者和管理员可单独撤销 Personal access tokens、SSH keys 等特定类型，精准控制安全事件影响范围，避免一次性撤销所有信任凭证。",
+          "url": "https://github.blog/changelog/2026-08-18-credential-revocation-and-deauthorization-by-token-type",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T21:57:30Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8397,
+      "importance": 0.8397,
+      "importance_score": 0.8397,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.87,
+        "recency": 0.9764,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T21:57:30Z",
+      "latest_at": "2026-08-18T21:57:30Z",
+      "primary_item": {
+        "id": "f4aa758ec0506c171d08b8864e8dfbcca8b1c2d5",
+        "title": "按 token 类型撤销凭据与取消授权 / Credential revocation and deauthorization by token type",
+        "title_zh": "按 token 类型撤销凭据与取消授权",
+        "title_en": "Credential revocation and deauthorization by token type",
+        "title_original": "Credential revocation and deauthorization by token type",
+        "summary": null,
+        "recommend_reason_zh": "GitHub 新增按令牌类型撤销凭证功能，企业所有者和管理员可单独撤销 Personal access tokens、SSH keys 等特定类型，精准控制安全事件影响范围，避免一次性撤销所有信任凭证。",
+        "url": "https://github.blog/changelog/2026-08-18-credential-revocation-and-deauthorization-by-token-type",
+        "source": "GitHub Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 75,
+      "persona_review": "可以按 token 类型精准撤销，安全排查省事，有凭据管理需求的今天就能用。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
+    {
+      "story_id": "story_02cf85db407e",
+      "title": "Codex CLI 0.148.0",
+      "url": "https://developers.openai.com/codex/changelog",
+      "primary_url": "https://developers.openai.com/codex/changelog",
+      "source": "OpenAI Codex Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "628d16ca26e4ea18a33764992457d12726bd5db4",
+          "title": "Codex CLI 0.148.0",
+          "title_zh": null,
+          "title_en": "Codex CLI 0.148.0",
+          "title_original": "Codex CLI 0.148.0",
+          "summary": null,
+          "recommend_reason_zh": "Codex CLI 0.148.0带来macOS桌面端的Computer History可选记忆功能，推出Linux桌面预览版，并将安全工具Daybreak拆为Blue/Red两级，分别访问GPT-5.6 Sol和GPT-5.6 Cyber。",
+          "url": "https://developers.openai.com/codex/changelog",
+          "source": "OpenAI Codex Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T00:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "OpenAI Codex Changelog"
+      ],
+      "items": [
+        {
+          "id": "628d16ca26e4ea18a33764992457d12726bd5db4",
+          "title": "Codex CLI 0.148.0",
+          "title_zh": null,
+          "title_en": "Codex CLI 0.148.0",
+          "title_original": "Codex CLI 0.148.0",
+          "summary": null,
+          "recommend_reason_zh": "Codex CLI 0.148.0带来macOS桌面端的Computer History可选记忆功能，推出Linux桌面预览版，并将安全工具Daybreak拆为Blue/Red两级，分别访问GPT-5.6 Sol和GPT-5.6 Cyber。",
+          "url": "https://developers.openai.com/codex/changelog",
+          "source": "OpenAI Codex Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T00:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.814,
+      "importance": 0.814,
+      "importance_score": 0.814,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.98,
+        "recency": 0.7111,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T00:00:00Z",
+      "latest_at": "2026-08-18T00:00:00Z",
+      "primary_item": {
+        "id": "628d16ca26e4ea18a33764992457d12726bd5db4",
+        "title": "Codex CLI 0.148.0",
+        "title_zh": null,
+        "title_en": "Codex CLI 0.148.0",
+        "title_original": "Codex CLI 0.148.0",
+        "summary": null,
+        "recommend_reason_zh": "Codex CLI 0.148.0带来macOS桌面端的Computer History可选记忆功能，推出Linux桌面预览版，并将安全工具Daybreak拆为Blue/Red两级，分别访问GPT-5.6 Sol和GPT-5.6 Cyber。",
+        "url": "https://developers.openai.com/codex/changelog",
+        "source": "OpenAI Codex Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 68,
+      "persona_review": "官方小版本更新，没写具体改动，先看changelog再决定升不升。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
       "story_id": "story_cd7a1ff75de2",
-      "title": "使用Sentence Transformers的多向量（后期交互）嵌入模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
+      "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
       "url": "https://huggingface.co/blog/multi-vector-encoder",
       "primary_url": "https://huggingface.co/blog/multi-vector-encoder",
       "source": "Hugging Face Blog",
@@ -128,8 +413,8 @@
       "sources": [
         {
           "id": "fc2527d839553090ffa83437277c7d1cc2cb53fc",
-          "title": "使用Sentence Transformers的多向量（后期交互）嵌入模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
-          "title_zh": "使用Sentence Transformers的多向量（后期交互）嵌入模型",
+          "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
+          "title_zh": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型",
           "title_en": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
           "title_original": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
           "summary": null,
@@ -142,11 +427,11 @@
         },
         {
           "id": "3a5f22e406027a5eb26beb9570e669a3730e1990",
-          "title": "基于 Sentence Transformers 的多向量（后期交互）嵌入模型 / Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
-          "title_zh": "基于 Sentence Transformers 的多向量（后期交互）嵌入模型",
+          "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
+          "title_zh": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型",
           "title_en": "Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
           "title_original": "Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
-          "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.\nWe’re on a journey to advance and democratize artificial intelligence through open source and open science.\nTable of Contents What are Multi-Vector Models? The MaxSim Operator What You Gain, and What It Costs Installation Loading a Model Inspecting What a Checkpoint Configured Encoding Queries and Documents Scoring with MaxSim Score Magnitude and MeanMaxSim Semantic Search Retrieve and Rer",
+          "summary": null,
           "recommend_reason_zh": "句 Transformers v6.0 新增 MultiVectorEncoder，支持加载 PyLate、Stanford-NLP ColBERT 及 colpali-engine 模型，用 MaxSim 保留 token 级匹配，实现无 OCR 的视觉文档检索，并展示索引压缩技巧。",
           "url": "https://huggingface.co/blog/multi-vector-encoder",
           "source": "Hugging Face：Blog（RSS）",
@@ -163,8 +448,8 @@
       "items": [
         {
           "id": "fc2527d839553090ffa83437277c7d1cc2cb53fc",
-          "title": "使用Sentence Transformers的多向量（后期交互）嵌入模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
-          "title_zh": "使用Sentence Transformers的多向量（后期交互）嵌入模型",
+          "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
+          "title_zh": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型",
           "title_en": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
           "title_original": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
           "summary": null,
@@ -177,11 +462,11 @@
         },
         {
           "id": "3a5f22e406027a5eb26beb9570e669a3730e1990",
-          "title": "基于 Sentence Transformers 的多向量（后期交互）嵌入模型 / Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
-          "title_zh": "基于 Sentence Transformers 的多向量（后期交互）嵌入模型",
+          "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
+          "title_zh": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型",
           "title_en": "Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
           "title_original": "Multi-Vector （Late Interaction） Embedding Models with Sentence Transformers",
-          "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.\nWe’re on a journey to advance and democratize artificial intelligence through open source and open science.\nTable of Contents What are Multi-Vector Models? The MaxSim Operator What You Gain, and What It Costs Installation Loading a Model Inspecting What a Checkpoint Configured Encoding Queries and Documents Scoring with MaxSim Score Magnitude and MeanMaxSim Semantic Search Retrieve and Rer",
+          "summary": null,
           "recommend_reason_zh": "句 Transformers v6.0 新增 MultiVectorEncoder，支持加载 PyLate、Stanford-NLP ColBERT 及 colpali-engine 模型，用 MaxSim 保留 token 级匹配，实现无 OCR 的视觉文档检索，并展示索引压缩技巧。",
           "url": "https://huggingface.co/blog/multi-vector-encoder",
           "source": "Hugging Face：Blog（RSS）",
@@ -192,15 +477,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.8582,
-      "importance": 0.8582,
-      "importance_score": 0.8582,
+      "score": 0.841,
+      "importance": 0.841,
+      "importance_score": 0.841,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.99,
-        "recency": 0.8066,
+        "recency": 0.7111,
         "story_heat": 0.25
       },
       "category": "official",
@@ -214,8 +499,8 @@
       "latest_at": "2026-08-18T00:00:00Z",
       "primary_item": {
         "id": "fc2527d839553090ffa83437277c7d1cc2cb53fc",
-        "title": "使用Sentence Transformers的多向量（后期交互）嵌入模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
-        "title_zh": "使用Sentence Transformers的多向量（后期交互）嵌入模型",
+        "title": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型 / Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
+        "title_zh": "Sentence Transformers v6.0 新增 MultiVectorEncoder，支持 ColBERT 风格多向量模型",
         "title_en": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
         "title_original": "Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers",
         "summary": null,
@@ -225,203 +510,284 @@
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "教程可实操，用多向量做检索能提升召回，今晚就能试。",
+      "persona_score": 88,
+      "persona_review": "多向量检索开箱即用，ColBERT 风格模型直接上手，检索精度提升可立即落地。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
-      "story_id": "story_13ad5c9c5494",
-      "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-      "url": "https://cursor.com/changelog/origin-code-hosting",
-      "primary_url": "https://cursor.com/changelog/origin-code-hosting",
-      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "5a4dff0995a2f95891c6c7ac5b66e04e4c21fe92",
-          "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "title_zh": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "title_en": null,
-          "title_original": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "summary": "Cursor 今日起向所有付费计划用户开放 Origin 代码托管的早期测试版，提供仓库、拉取请求、代码浏览及 GitHub 同步功能。用户可创建以 cursor.com/codebase/ 为前缀的仓库，或将 GitHub 仓库同步至 Origin，双向同步评论与审查。Vercel、Depot 和 Buildkite 集成已可用，智能体功能即将推出。",
-          "recommend_reason_zh": "Cursor推出Origin代码托管服务，向所有付费方案开放早期Beta，涵盖代码仓库、PR、代码浏览，支持PR与GitHub双向同步，并集成Vercel、Depot、Buildkite，让代码与智能体同处一处。",
-          "url": "https://cursor.com/changelog/origin-code-hosting",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T22:14:00.748000Z"
-        },
-        {
-          "id": "24bf32d9e6fbc3c8e01bfe0ca6b287a3cb352f35",
-          "title": "Cursor 推出 Origin，作为 GitHub 的替代方案",
-          "title_zh": "Cursor 推出 Origin，作为 GitHub 的替代方案",
-          "title_en": null,
-          "title_original": "Cursor 推出 Origin，作为 GitHub 的替代方案",
-          "summary": null,
-          "recommend_reason_zh": "Cursor推出Origin代码托管服务，早期Beta版覆盖所有付费方案，支持PR双向同步、Vercel预览部署及Depot/Buildkite CI，并可将GitHub仓库实时同步至cursor.com/codebase/。",
-          "url": "https://cursor.com/changelog/origin-code-hosting",
-          "source": "cursor.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-17T22:14:00.748000Z"
-        },
-        {
-          "id": "431f3a483f7a160512b15bf12fc1baab56d904bd",
-          "title": "Cursor 发布 Origin，对标 GitHub 的替代方案 / Cursor launches Origin, GitHub alternative",
-          "title_zh": "Cursor 发布 Origin，对标 GitHub 的替代方案",
-          "title_en": "Cursor launches Origin, GitHub alternative",
-          "title_original": "Cursor launches Origin, GitHub alternative",
-          "summary": null,
-          "recommend_reason_zh": "本文热议Cursor推出的GitHub替代品Origin，既指出其100% CPU占用和仅限付费beta的现状，也探讨AI agent可能误推代码至新供应商的风险，及xAI上传repo引发的信任危机。",
-          "url": "https://news.ycombinator.com/item?id=49334209",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-17T21:42:14.971000Z"
-        },
-        {
-          "id": "0179251da1b8d80b95ec64d8de5982683835fea4",
-          "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案 / Cursor launches Origin, GitHub alternative",
-          "title_zh": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "title_en": "Cursor launches Origin, GitHub alternative",
-          "title_original": "Cursor launches Origin, GitHub alternative",
-          "summary": null,
-          "recommend_reason_zh": "Cursor推出Origin，付费Beta支持GitHub PR双向同步与代码浏览，URL含codebase名，集成Vercel、Depot、Buildkite。",
-          "url": "https://cursor.com/changelog/origin-code-hosting",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-17T17:02:44Z"
-        }
-      ],
-      "source_count": 4,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "Hacker News 热门（buzzing.cc 中文翻译）",
-        "cursor.com",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "5a4dff0995a2f95891c6c7ac5b66e04e4c21fe92",
-          "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "title_zh": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "title_en": null,
-          "title_original": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "summary": "Cursor 今日起向所有付费计划用户开放 Origin 代码托管的早期测试版，提供仓库、拉取请求、代码浏览及 GitHub 同步功能。用户可创建以 cursor.com/codebase/ 为前缀的仓库，或将 GitHub 仓库同步至 Origin，双向同步评论与审查。Vercel、Depot 和 Buildkite 集成已可用，智能体功能即将推出。",
-          "recommend_reason_zh": "Cursor推出Origin代码托管服务，向所有付费方案开放早期Beta，涵盖代码仓库、PR、代码浏览，支持PR与GitHub双向同步，并集成Vercel、Depot、Buildkite，让代码与智能体同处一处。",
-          "url": "https://cursor.com/changelog/origin-code-hosting",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T22:14:00.748000Z"
-        },
-        {
-          "id": "24bf32d9e6fbc3c8e01bfe0ca6b287a3cb352f35",
-          "title": "Cursor 推出 Origin，作为 GitHub 的替代方案",
-          "title_zh": "Cursor 推出 Origin，作为 GitHub 的替代方案",
-          "title_en": null,
-          "title_original": "Cursor 推出 Origin，作为 GitHub 的替代方案",
-          "summary": null,
-          "recommend_reason_zh": "Cursor推出Origin代码托管服务，早期Beta版覆盖所有付费方案，支持PR双向同步、Vercel预览部署及Depot/Buildkite CI，并可将GitHub仓库实时同步至cursor.com/codebase/。",
-          "url": "https://cursor.com/changelog/origin-code-hosting",
-          "source": "cursor.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-17T22:14:00.748000Z"
-        },
-        {
-          "id": "431f3a483f7a160512b15bf12fc1baab56d904bd",
-          "title": "Cursor 发布 Origin，对标 GitHub 的替代方案 / Cursor launches Origin, GitHub alternative",
-          "title_zh": "Cursor 发布 Origin，对标 GitHub 的替代方案",
-          "title_en": "Cursor launches Origin, GitHub alternative",
-          "title_original": "Cursor launches Origin, GitHub alternative",
-          "summary": null,
-          "recommend_reason_zh": "本文热议Cursor推出的GitHub替代品Origin，既指出其100% CPU占用和仅限付费beta的现状，也探讨AI agent可能误推代码至新供应商的风险，及xAI上传repo引发的信任危机。",
-          "url": "https://news.ycombinator.com/item?id=49334209",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-17T21:42:14.971000Z"
-        },
-        {
-          "id": "0179251da1b8d80b95ec64d8de5982683835fea4",
-          "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案 / Cursor launches Origin, GitHub alternative",
-          "title_zh": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-          "title_en": "Cursor launches Origin, GitHub alternative",
-          "title_original": "Cursor launches Origin, GitHub alternative",
-          "summary": null,
-          "recommend_reason_zh": "Cursor推出Origin，付费Beta支持GitHub PR双向同步与代码浏览，URL含codebase名，集成Vercel、Depot、Buildkite。",
-          "url": "https://cursor.com/changelog/origin-code-hosting",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-17T17:02:44Z"
-        }
-      ],
-      "item_count": 4,
-      "duplicate_count": 4,
-      "score": 0.8311,
-      "importance": 0.8311,
-      "importance_score": 0.8311,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.81,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7863,
-        "story_heat": 0.75
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-17T17:02:44Z",
-      "latest_at": "2026-08-17T22:14:00.748000Z",
-      "primary_item": {
-        "id": "5a4dff0995a2f95891c6c7ac5b66e04e4c21fe92",
-        "title": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-        "title_zh": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-        "title_en": null,
-        "title_original": "Cursor 推出 Origin 代码托管服务，作为 GitHub 的替代方案",
-        "summary": "Cursor 今日起向所有付费计划用户开放 Origin 代码托管的早期测试版，提供仓库、拉取请求、代码浏览及 GitHub 同步功能。用户可创建以 cursor.com/codebase/ 为前缀的仓库，或将 GitHub 仓库同步至 Origin，双向同步评论与审查。Vercel、Depot 和 Buildkite 集成已可用，智能体功能即将推出。",
-        "recommend_reason_zh": "Cursor推出Origin代码托管服务，向所有付费方案开放早期Beta，涵盖代码仓库、PR、代码浏览，支持PR与GitHub双向同步，并集成Vercel、Depot、Buildkite，让代码与智能体同处一处。",
-        "url": "https://cursor.com/changelog/origin-code-hosting",
-        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 85,
-      "persona_review": "多一个代码托管选择，想摆脱 GitHub 的可以试试，迁移成本不高。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_8e332aafeb89",
-      "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
-      "url": "https://openai.com/index/partnering-with-codeai",
-      "primary_url": "https://openai.com/index/partnering-with-codeai",
+      "story_id": "story_17c97873294f",
+      "title": "加强国家安全中的民主监督 / Strengthening democratic oversight in national security",
+      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+      "primary_url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
       "source": "OpenAI News",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "8c23f9c3a3a5054ca38390d052850998cb9e1e25",
-          "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
-          "title_zh": "与CodeAI合作，培养第一代AI",
-          "title_en": "Partnering with CodeAI to prepare the first AI generation",
-          "title_original": "Partnering with CodeAI to prepare the first AI generation",
+          "id": "0c27098fe00776484fc7428d7541fc78ed2ed378",
+          "title": "加强国家安全中的民主监督 / Strengthening democratic oversight in national security",
+          "title_zh": "加强国家安全中的民主监督",
+          "title_en": "Strengthening democratic oversight in national security",
+          "title_original": "Strengthening democratic oversight in national security",
           "summary": null,
-          "recommend_reason_zh": "OpenAI与CodeAI合作推出ChatGPT for Teens，帮助学生批判性地使用AI；文中引用调查数据：75%高中生认为理解AI更重要，但仅16%高中领导者表示所有学生都在课堂学习AI技术知识，直面这一代人的教育鸿沟。",
-          "url": "https://openai.com/index/partnering-with-codeai",
+          "recommend_reason_zh": "OpenAI启动新倡议，向政府监督机构提供工具、培训和专业知识，以强化国家安全中AI应用的民主监督。文章详述三大原则，强调AI应增强而非取代人类判断，并依据Preparedness Framework进行部署前审查。",
+          "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T19:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "OpenAI News"
+      ],
+      "items": [
+        {
+          "id": "0c27098fe00776484fc7428d7541fc78ed2ed378",
+          "title": "加强国家安全中的民主监督 / Strengthening democratic oversight in national security",
+          "title_zh": "加强国家安全中的民主监督",
+          "title_en": "Strengthening democratic oversight in national security",
+          "title_original": "Strengthening democratic oversight in national security",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI启动新倡议，向政府监督机构提供工具、培训和专业知识，以强化国家安全中AI应用的民主监督。文章详述三大原则，强调AI应增强而非取代人类判断，并依据Preparedness Framework进行部署前审查。",
+          "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T19:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8404,
+      "importance": 0.8404,
+      "importance_score": 0.8404,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.91,
+        "recency": 0.9355,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T19:00:00Z",
+      "latest_at": "2026-08-18T19:00:00Z",
+      "primary_item": {
+        "id": "0c27098fe00776484fc7428d7541fc78ed2ed378",
+        "title": "加强国家安全中的民主监督 / Strengthening democratic oversight in national security",
+        "title_zh": "加强国家安全中的民主监督",
+        "title_en": "Strengthening democratic oversight in national security",
+        "title_original": "Strengthening democratic oversight in national security",
+        "summary": null,
+        "recommend_reason_zh": "OpenAI启动新倡议，向政府监督机构提供工具、培训和专业知识，以强化国家安全中AI应用的民主监督。文章详述三大原则，强调AI应增强而非取代人类判断，并依据Preparedness Framework进行部署前审查。",
+        "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "官方治理表态，暂无直接工具或API变化，不影响今天写代码。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
+    {
+      "story_id": "story_7b5d73500e30",
+      "title": "Mojo 语言正式开源，编译器与工具链全面开放",
+      "url": "https://www.modular.com/blog/mojo-open-source",
+      "primary_url": "https://www.modular.com/blog/mojo-open-source",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "c85095d8dff46e7cff0dc8d8bf8ffa15d1d29acf",
+          "title": "Mojo 语言正式开源，编译器与工具链全面开放",
+          "title_zh": "Mojo 语言正式开源，编译器与工具链全面开放",
+          "title_en": null,
+          "title_original": "Mojo 语言正式开源，编译器与工具链全面开放",
+          "summary": "Mojo🔥 语言现已正式开源，采用 Apache 2.0 许可证（含 LLVM 例外），编译器、工具链及全部源码已发布至 modular GitHub 仓库。Mojo 上周刚达成 1.0 版本（源码稳定），此次开源涵盖整个编译器与工具链。目前暂不接受编译器相关贡献，计划年底前开放，标准库自 2024 年起已接受社区贡献。",
+          "recommend_reason_zh": "Mojo语言正式开源，采用Apache 2.0许可并含LLVM例外，编译器与工具链全面开放，此前已开源标准库并发布数十万行内核代码，值得开发者关注。",
+          "url": "https://www.modular.com/blog/mojo-open-source",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T21:26:01.095000Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Hacker News 热门（buzzing.cc 中文翻译）"
+      ],
+      "items": [
+        {
+          "id": "c85095d8dff46e7cff0dc8d8bf8ffa15d1d29acf",
+          "title": "Mojo 语言正式开源，编译器与工具链全面开放",
+          "title_zh": "Mojo 语言正式开源，编译器与工具链全面开放",
+          "title_en": null,
+          "title_original": "Mojo 语言正式开源，编译器与工具链全面开放",
+          "summary": "Mojo🔥 语言现已正式开源，采用 Apache 2.0 许可证（含 LLVM 例外），编译器、工具链及全部源码已发布至 modular GitHub 仓库。Mojo 上周刚达成 1.0 版本（源码稳定），此次开源涵盖整个编译器与工具链。目前暂不接受编译器相关贡献，计划年底前开放，标准库自 2024 年起已接受社区贡献。",
+          "recommend_reason_zh": "Mojo语言正式开源，采用Apache 2.0许可并含LLVM例外，编译器与工具链全面开放，此前已开源标准库并发布数十万行内核代码，值得开发者关注。",
+          "url": "https://www.modular.com/blog/mojo-open-source",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T21:26:01.095000Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.768,
+      "importance": 0.768,
+      "importance_score": 0.768,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.74,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.969,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T21:26:01.095000Z",
+      "latest_at": "2026-08-18T21:26:01.095000Z",
+      "primary_item": {
+        "id": "c85095d8dff46e7cff0dc8d8bf8ffa15d1d29acf",
+        "title": "Mojo 语言正式开源，编译器与工具链全面开放",
+        "title_zh": "Mojo 语言正式开源，编译器与工具链全面开放",
+        "title_en": null,
+        "title_original": "Mojo 语言正式开源，编译器与工具链全面开放",
+        "summary": "Mojo🔥 语言现已正式开源，采用 Apache 2.0 许可证（含 LLVM 例外），编译器、工具链及全部源码已发布至 modular GitHub 仓库。Mojo 上周刚达成 1.0 版本（源码稳定），此次开源涵盖整个编译器与工具链。目前暂不接受编译器相关贡献，计划年底前开放，标准库自 2024 年起已接受社区贡献。",
+        "recommend_reason_zh": "Mojo语言正式开源，采用Apache 2.0许可并含LLVM例外，编译器与工具链全面开放，此前已开源标准库并发布数十万行内核代码，值得开发者关注。",
+        "url": "https://www.modular.com/blog/mojo-open-source",
+        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 90,
+      "persona_review": "编译器开箱即用，写高性能算子可以直接上手试，但生态迁移成本别低估。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
+    {
+      "story_id": "story_e8202dde9923",
+      "title": "Claude 如何加速蛋白质设计与分析化学研究 / How Claude is accelerating protein design and analytical chemistry",
+      "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+      "primary_url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+      "source": "Anthropic：Research（发表成果 · 网页）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "2d445d4711836fe1d6d56e649860541e33eb624e",
+          "title": "Claude 如何加速蛋白质设计与分析化学研究 / How Claude is accelerating protein design and analytical chemistry",
+          "title_zh": "Claude 如何加速蛋白质设计与分析化学研究",
+          "title_en": "How Claude is accelerating protein design and analytical chemistry",
+          "title_original": "How Claude is accelerating protein design and analytical chemistry",
+          "summary": "Anthropic 公布两项实验：Claude（Mythos Preview 和 Opus 4.8）针对 15 个靶点设计蛋白质结合剂，成功 14 个，命中率达 22.6%-35.1%。",
+          "recommend_reason_zh": "本文介绍Claude加速生命科学研究：它成功设计14/15个蛋白结合靶点，结合成功率22%-35%优于常规10-15%；处理NMR和LC-MS数据仅用23和19分钟，纯度判断与实验室一致。",
+          "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+          "source": "Anthropic：Research（发表成果 · 网页）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T22:27:16.191000Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Anthropic：Research（发表成果 · 网页）"
+      ],
+      "items": [
+        {
+          "id": "2d445d4711836fe1d6d56e649860541e33eb624e",
+          "title": "Claude 如何加速蛋白质设计与分析化学研究 / How Claude is accelerating protein design and analytical chemistry",
+          "title_zh": "Claude 如何加速蛋白质设计与分析化学研究",
+          "title_en": "How Claude is accelerating protein design and analytical chemistry",
+          "title_original": "How Claude is accelerating protein design and analytical chemistry",
+          "summary": "Anthropic 公布两项实验：Claude（Mythos Preview 和 Opus 4.8）针对 15 个靶点设计蛋白质结合剂，成功 14 个，命中率达 22.6%-35.1%。",
+          "recommend_reason_zh": "本文介绍Claude加速生命科学研究：它成功设计14/15个蛋白结合靶点，结合成功率22%-35%优于常规10-15%；处理NMR和LC-MS数据仅用23和19分钟，纯度判断与实验室一致。",
+          "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+          "source": "Anthropic：Research（发表成果 · 网页）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T22:27:16.191000Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.73,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9834,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-18T22:27:16.191000Z",
+      "latest_at": "2026-08-18T22:27:16.191000Z",
+      "primary_item": {
+        "id": "2d445d4711836fe1d6d56e649860541e33eb624e",
+        "title": "Claude 如何加速蛋白质设计与分析化学研究 / How Claude is accelerating protein design and analytical chemistry",
+        "title_zh": "Claude 如何加速蛋白质设计与分析化学研究",
+        "title_en": "How Claude is accelerating protein design and analytical chemistry",
+        "title_original": "How Claude is accelerating protein design and analytical chemistry",
+        "summary": "Anthropic 公布两项实验：Claude（Mythos Preview 和 Opus 4.8）针对 15 个靶点设计蛋白质结合剂，成功 14 个，命中率达 22.6%-35.1%。",
+        "recommend_reason_zh": "本文介绍Claude加速生命科学研究：它成功设计14/15个蛋白结合靶点，结合成功率22%-35%优于常规10-15%；处理NMR和LC-MS数据仅用23和19分钟，纯度判断与实验室一致。",
+        "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
+        "source": "Anthropic：Research（发表成果 · 网页）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 55,
+      "persona_review": "案例展示多于落地工具，做蛋白设计的可参考思路，暂无直接可用的接口。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
+    {
+      "story_id": "story_deae2dbaff1a",
+      "title": "OpenAI 在\"关键网络能力\"时代放缓模型开发节奏 / Pacing model development in an era of cyber-critical capabilities",
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+      "primary_url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "cdd10bf9920f60b5be7322fa5b0eaa62e04932f0",
+          "title": "OpenAI 在\"关键网络能力\"时代放缓模型开发节奏 / Pacing model development in an era of cyber-critical capabilities",
+          "title_zh": "OpenAI 在\"关键网络能力\"时代放缓模型开发节奏",
+          "title_en": "Pacing model development in an era of cyber-critical capabilities",
+          "title_original": "Pacing model development in an era of cyber-critical capabilities",
+          "summary": null,
+          "recommend_reason_zh": "本文披露OpenAI因OpenAI-Hugging Face事件及Astra模型或触及网络安全关键阈值，暂停两周RL训练并延后最大前沿RL运行，详述监控、对齐与安全强化措施。",
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
           "source": "OpenAI News",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
@@ -434,14 +800,14 @@
       ],
       "items": [
         {
-          "id": "8c23f9c3a3a5054ca38390d052850998cb9e1e25",
-          "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
-          "title_zh": "与CodeAI合作，培养第一代AI",
-          "title_en": "Partnering with CodeAI to prepare the first AI generation",
-          "title_original": "Partnering with CodeAI to prepare the first AI generation",
+          "id": "cdd10bf9920f60b5be7322fa5b0eaa62e04932f0",
+          "title": "OpenAI 在\"关键网络能力\"时代放缓模型开发节奏 / Pacing model development in an era of cyber-critical capabilities",
+          "title_zh": "OpenAI 在\"关键网络能力\"时代放缓模型开发节奏",
+          "title_en": "Pacing model development in an era of cyber-critical capabilities",
+          "title_original": "Pacing model development in an era of cyber-critical capabilities",
           "summary": null,
-          "recommend_reason_zh": "OpenAI与CodeAI合作推出ChatGPT for Teens，帮助学生批判性地使用AI；文中引用调查数据：75%高中生认为理解AI更重要，但仅16%高中领导者表示所有学生都在课堂学习AI技术知识，直面这一代人的教育鸿沟。",
-          "url": "https://openai.com/index/partnering-with-codeai",
+          "recommend_reason_zh": "本文披露OpenAI因OpenAI-Hugging Face事件及Astra模型或触及网络安全关键阈值，暂停两周RL训练并延后最大前沿RL运行，详述监控、对齐与安全强化措施。",
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
           "source": "OpenAI News",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
@@ -450,15 +816,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8422,
-      "importance": 0.8422,
-      "importance_score": 0.8422,
+      "score": 0.822,
+      "importance": 0.822,
+      "importance_score": 0.822,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.9455,
+        "recency": 0.8335,
         "story_heat": 0.0
       },
       "category": "official",
@@ -470,194 +836,24 @@
       "earliest_at": "2026-08-18T11:00:00Z",
       "latest_at": "2026-08-18T11:00:00Z",
       "primary_item": {
-        "id": "8c23f9c3a3a5054ca38390d052850998cb9e1e25",
-        "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
-        "title_zh": "与CodeAI合作，培养第一代AI",
-        "title_en": "Partnering with CodeAI to prepare the first AI generation",
-        "title_original": "Partnering with CodeAI to prepare the first AI generation",
+        "id": "cdd10bf9920f60b5be7322fa5b0eaa62e04932f0",
+        "title": "OpenAI 在\"关键网络能力\"时代放缓模型开发节奏 / Pacing model development in an era of cyber-critical capabilities",
+        "title_zh": "OpenAI 在\"关键网络能力\"时代放缓模型开发节奏",
+        "title_en": "Pacing model development in an era of cyber-critical capabilities",
+        "title_original": "Pacing model development in an era of cyber-critical capabilities",
         "summary": null,
-        "recommend_reason_zh": "OpenAI与CodeAI合作推出ChatGPT for Teens，帮助学生批判性地使用AI；文中引用调查数据：75%高中生认为理解AI更重要，但仅16%高中领导者表示所有学生都在课堂学习AI技术知识，直面这一代人的教育鸿沟。",
-        "url": "https://openai.com/index/partnering-with-codeai",
+        "recommend_reason_zh": "本文披露OpenAI因OpenAI-Hugging Face事件及Astra模型或触及网络安全关键阈值，暂停两周RL训练并延后最大前沿RL运行，详述监控、对齐与安全强化措施。",
+        "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
         "source": "OpenAI News",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 35,
-      "persona_review": "教育合作新闻，无新工具无新API，开发者不用动。",
+      "persona_score": 45,
+      "persona_review": "官方节奏声明，没有新工具或接口，动手前不必关注。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_e8417ef9f36f",
-      "title": "画布如何让智能体工作流变得可视、可控且经济高效 / How canvases make agentic workflows visible, steerable, and cost-efficient",
-      "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient",
-      "primary_url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient",
-      "source": "GitHub AI & ML",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "9906b46475e583e00b16574efb087d7c6a44e46f",
-          "title": "画布如何让智能体工作流变得可视、可控且经济高效 / How canvases make agentic workflows visible, steerable, and cost-efficient",
-          "title_zh": "画布如何让智能体工作流变得可视、可控且经济高效",
-          "title_en": "How canvases make agentic workflows visible, steerable, and cost-efficient",
-          "title_original": "How canvases make agentic workflows visible, steerable, and cost-efficient",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot的canvases让agent工作流不再淹没在聊天记录中，通过Java Modernization Studio等实践，把代理任务变成可视、可审、可验收的共享面板。",
-          "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient",
-          "source": "GitHub AI & ML",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T16:00:00Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub AI & ML"
-      ],
-      "items": [
-        {
-          "id": "9906b46475e583e00b16574efb087d7c6a44e46f",
-          "title": "画布如何让智能体工作流变得可视、可控且经济高效 / How canvases make agentic workflows visible, steerable, and cost-efficient",
-          "title_zh": "画布如何让智能体工作流变得可视、可控且经济高效",
-          "title_en": "How canvases make agentic workflows visible, steerable, and cost-efficient",
-          "title_original": "How canvases make agentic workflows visible, steerable, and cost-efficient",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot的canvases让agent工作流不再淹没在聊天记录中，通过Java Modernization Studio等实践，把代理任务变成可视、可审、可验收的共享面板。",
-          "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient",
-          "source": "GitHub AI & ML",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T16:00:00Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7933,
-      "importance": 0.7933,
-      "importance_score": 0.7933,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7186,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-17T16:00:00Z",
-      "latest_at": "2026-08-17T16:00:00Z",
-      "primary_item": {
-        "id": "9906b46475e583e00b16574efb087d7c6a44e46f",
-        "title": "画布如何让智能体工作流变得可视、可控且经济高效 / How canvases make agentic workflows visible, steerable, and cost-efficient",
-        "title_zh": "画布如何让智能体工作流变得可视、可控且经济高效",
-        "title_en": "How canvases make agentic workflows visible, steerable, and cost-efficient",
-        "title_original": "How canvases make agentic workflows visible, steerable, and cost-efficient",
-        "summary": null,
-        "recommend_reason_zh": "GitHub Copilot的canvases让agent工作流不再淹没在聊天记录中，通过Java Modernization Studio等实践，把代理任务变成可视、可审、可验收的共享面板。",
-        "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient",
-        "source": "GitHub AI & ML",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 78,
-      "persona_review": "Copilot 画布能直接上手调 Agent 工作流，省 token 又可控，值得试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_5646c2e72f66",
-      "title": "同一集群，利用率提升33个百分点：改变的是顺序 / Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
-      "primary_url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
-      "source": "Hugging Face Blog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "4f25f81b303f8e33d4c266b4ceef6fee39e8f9da",
-          "title": "同一集群，利用率提升33个百分点：改变的是顺序 / Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-          "title_zh": "同一集群，利用率提升33个百分点：改变的是顺序",
-          "title_en": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-          "title_original": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-          "summary": null,
-          "recommend_reason_zh": "Dharma-AI实测证明，相同硬件下仅改变分配顺序，GPU利用率最多提升33个百分点，优先级加权输出最高提升105%，一个约束感知分配器的具体收益。",
-          "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T19:46:21Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Hugging Face Blog"
-      ],
-      "items": [
-        {
-          "id": "4f25f81b303f8e33d4c266b4ceef6fee39e8f9da",
-          "title": "同一集群，利用率提升33个百分点：改变的是顺序 / Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-          "title_zh": "同一集群，利用率提升33个百分点：改变的是顺序",
-          "title_en": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-          "title_original": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-          "summary": null,
-          "recommend_reason_zh": "Dharma-AI实测证明，相同硬件下仅改变分配顺序，GPU利用率最多提升33个百分点，优先级加权输出最高提升105%，一个约束感知分配器的具体收益。",
-          "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-17T19:46:21Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8166,
-      "importance": 0.8166,
-      "importance_score": 0.8166,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.95,
-        "recency": 0.7588,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-17T19:46:21Z",
-      "latest_at": "2026-08-17T19:46:21Z",
-      "primary_item": {
-        "id": "4f25f81b303f8e33d4c266b4ceef6fee39e8f9da",
-        "title": "同一集群，利用率提升33个百分点：改变的是顺序 / Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-        "title_zh": "同一集群，利用率提升33个百分点：改变的是顺序",
-        "title_en": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-        "title_original": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-        "summary": null,
-        "recommend_reason_zh": "Dharma-AI实测证明，相同硬件下仅改变分配顺序，GPU利用率最多提升33个百分点，优先级加权输出最高提升105%，一个约束感知分配器的具体收益。",
-        "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
-        "source": "Hugging Face Blog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 80,
-      "persona_review": "调度顺序优化就能提33%利用率，跑集群的值得读。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
@@ -733,15 +929,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.7777,
-      "importance": 0.7777,
-      "importance_score": 0.7777,
+      "score": 0.7581,
+      "importance": 0.7581,
+      "importance_score": 0.7581,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9172,
+        "recency": 0.8085,
         "story_heat": 0.25
       },
       "category": "industry",
@@ -770,257 +966,341 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
-      "story_id": "story_654c10ffc24b",
-      "title": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体 / Build zero-trust AI agents with Google's Agent Development Kit",
-      "url": "https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit",
-      "primary_url": "https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit",
-      "source": "Google Developers Blog（RSS）",
+      "story_id": "story_0bf04552d060",
+      "title": "OpenAI 暂缓前沿训练强化安全监控 / We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+      "url": "https://x.com/merettm/status/2089776131255783823",
+      "primary_url": "https://x.com/merettm/status/2089776131255783823",
+      "source": "X：Jakub Pachocki（OpenAI 首席科学家，@merettm）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "707f5eb71c2096b7bea1f9c983ab98b9b4433d29",
-          "title": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体 / Build zero-trust AI agents with Google's Agent Development Kit",
-          "title_zh": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体",
-          "title_en": "Build zero-trust AI agents with Google's Agent Development Kit",
-          "title_original": "Build zero-trust AI agents with Google's Agent Development Kit",
-          "summary": "Google 开源了基于 ADK 和 Gemini 的零信任客服与退货智能体示例，演示如何防御提示注入等攻击。该架构在 LLM 上下文之外通过三层硬性安全机制保障：硬件支持的加密签名确保数据库写入不可抵赖、gVisor 沙箱隔离动态代码执行、确定性语义网关校验业务逻辑。系统提示词只是软约束，无法作为安全边界。",
-          "recommend_reason_zh": "Google ADK用加密签名、gVisor沙箱和语义网关三层机制落实零信任，要求每个写操作验证签名，并开源了基于Gemini的客服退货代理，演示如何防范提示注入与数据库篡改。",
-          "url": "https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit",
-          "source": "Google Developers Blog（RSS）",
+          "id": "cf9dc9974a9401bb4062286fb30619abe411abf1",
+          "title": "OpenAI 暂缓前沿训练强化安全监控 / We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+          "title_zh": "OpenAI 暂缓前沿训练强化安全监控",
+          "title_en": "We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+          "title_original": "We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+          "summary": "OpenAI 首席科学家 Jakub Pachocki 表示，公司已暂时放缓部分前沿模型训练以强化安全与监控，最大规模的前沿 RL 训练仍处于搁置状态，同时通过小规模训练和评估测试安全措施并收集对齐证据。他认为安全信心将日益决定 AI 发展节奏，并已签署《Pacing the Frontier》倡议，呼吁实验室和国家间加强协调。",
+          "recommend_reason_zh": "暂停最大规模frontier RL训练以强化安全监控，改用小规模训练与评估测试防护措施并收集对齐证据，揭示前沿AI安全实践的关键取舍。",
+          "url": "https://x.com/merettm/status/2089776131255783823",
+          "source": "X：Jakub Pachocki（OpenAI 首席科学家，@merettm）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-17T23:22:25.902000Z"
+          "published_at": "2026-08-18T18:07:10Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "Google Developers Blog（RSS）"
+        "X：Jakub Pachocki（OpenAI 首席科学家，@merettm）"
       ],
       "items": [
         {
-          "id": "707f5eb71c2096b7bea1f9c983ab98b9b4433d29",
-          "title": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体 / Build zero-trust AI agents with Google's Agent Development Kit",
-          "title_zh": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体",
-          "title_en": "Build zero-trust AI agents with Google's Agent Development Kit",
-          "title_original": "Build zero-trust AI agents with Google's Agent Development Kit",
-          "summary": "Google 开源了基于 ADK 和 Gemini 的零信任客服与退货智能体示例，演示如何防御提示注入等攻击。该架构在 LLM 上下文之外通过三层硬性安全机制保障：硬件支持的加密签名确保数据库写入不可抵赖、gVisor 沙箱隔离动态代码执行、确定性语义网关校验业务逻辑。系统提示词只是软约束，无法作为安全边界。",
-          "recommend_reason_zh": "Google ADK用加密签名、gVisor沙箱和语义网关三层机制落实零信任，要求每个写操作验证签名，并开源了基于Gemini的客服退货代理，演示如何防范提示注入与数据库篡改。",
-          "url": "https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit",
-          "source": "Google Developers Blog（RSS）",
+          "id": "cf9dc9974a9401bb4062286fb30619abe411abf1",
+          "title": "OpenAI 暂缓前沿训练强化安全监控 / We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+          "title_zh": "OpenAI 暂缓前沿训练强化安全监控",
+          "title_en": "We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+          "title_original": "We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+          "summary": "OpenAI 首席科学家 Jakub Pachocki 表示，公司已暂时放缓部分前沿模型训练以强化安全与监控，最大规模的前沿 RL 训练仍处于搁置状态，同时通过小规模训练和评估测试安全措施并收集对齐证据。他认为安全信心将日益决定 AI 发展节奏，并已签署《Pacing the Frontier》倡议，呼吁实验室和国家间加强协调。",
+          "recommend_reason_zh": "暂停最大规模frontier RL训练以强化安全监控，改用小规模训练与评估测试防护措施并收集对齐证据，揭示前沿AI安全实践的关键取舍。",
+          "url": "https://x.com/merettm/status/2089776131255783823",
+          "source": "X：Jakub Pachocki（OpenAI 首席科学家，@merettm）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-17T23:22:25.902000Z"
+          "published_at": "2026-08-18T18:07:10Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7709,
-      "importance": 0.7709,
-      "importance_score": 0.7709,
+      "score": 0.7419,
+      "importance": 0.7419,
+      "importance_score": 0.7419,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.68,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9237,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-18T18:07:10Z",
+      "latest_at": "2026-08-18T18:07:10Z",
+      "primary_item": {
+        "id": "cf9dc9974a9401bb4062286fb30619abe411abf1",
+        "title": "OpenAI 暂缓前沿训练强化安全监控 / We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+        "title_zh": "OpenAI 暂缓前沿训练强化安全监控",
+        "title_en": "We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+        "title_original": "We temporarily slowed some frontier training to strengthen security and monitoring. Our largest plan…",
+        "summary": "OpenAI 首席科学家 Jakub Pachocki 表示，公司已暂时放缓部分前沿模型训练以强化安全与监控，最大规模的前沿 RL 训练仍处于搁置状态，同时通过小规模训练和评估测试安全措施并收集对齐证据。他认为安全信心将日益决定 AI 发展节奏，并已签署《Pacing the Frontier》倡议，呼吁实验室和国家间加强协调。",
+        "recommend_reason_zh": "暂停最大规模frontier RL训练以强化安全监控，改用小规模训练与评估测试防护措施并收集对齐证据，揭示前沿AI安全实践的关键取舍。",
+        "url": "https://x.com/merettm/status/2089776131255783823",
+        "source": "X：Jakub Pachocki（OpenAI 首席科学家，@merettm）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "训练放缓是内部动作，开发者无需行动，等安全措施落地或 API 变化再关注。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
+    {
+      "story_id": "story_5a9ad877cc94",
+      "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理 / Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+      "url": "https://x.com/claudeai/status/2089806039088517356",
+      "primary_url": "https://x.com/claudeai/status/2089806039088517356",
+      "source": "X：Claude (@claudeai)",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "5833776bd035dfd9b5170fda745039e872c9c85f",
+          "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理 / Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+          "title_zh": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理",
+          "title_en": "Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+          "title_original": "Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+          "summary": "Claude 现在可以在 Gmail 中发送邮件，并管理 Google Drive 中的文件。\n\n让 Claude 回复某个邮件线程，它会起草并发送回复。你可以控制何时需要你的批准。\n\n从连接器菜单中选择连接 Gmail 或 Google Drive 即可试用。所有付费套餐均可用。",
+          "recommend_reason_zh": "Claude现已支持连接Gmail与Google Drive，可自动起草并发送邮件回复，用户可控制审批时机，所有付费计划均可使用。",
+          "url": "https://x.com/claudeai/status/2089806039088517356",
+          "source": "X：Claude (@claudeai)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T20:06:01Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "X：Claude (@claudeai)"
+      ],
+      "items": [
+        {
+          "id": "5833776bd035dfd9b5170fda745039e872c9c85f",
+          "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理 / Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+          "title_zh": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理",
+          "title_en": "Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+          "title_original": "Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+          "summary": "Claude 现在可以在 Gmail 中发送邮件，并管理 Google Drive 中的文件。\n\n让 Claude 回复某个邮件线程，它会起草并发送回复。你可以控制何时需要你的批准。\n\n从连接器菜单中选择连接 Gmail 或 Google Drive 即可试用。所有付费套餐均可用。",
+          "recommend_reason_zh": "Claude现已支持连接Gmail与Google Drive，可自动起草并发送邮件回复，用户可控制审批时机，所有付费计划均可使用。",
+          "url": "https://x.com/claudeai/status/2089806039088517356",
+          "source": "X：Claude (@claudeai)",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-18T20:06:01Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7377,
+      "importance": 0.7377,
+      "importance_score": 0.7377,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.65,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9505,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-18T20:06:01Z",
+      "latest_at": "2026-08-18T20:06:01Z",
+      "primary_item": {
+        "id": "5833776bd035dfd9b5170fda745039e872c9c85f",
+        "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理 / Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+        "title_zh": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理",
+        "title_en": "Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+        "title_original": "Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
+        "summary": "Claude 现在可以在 Gmail 中发送邮件，并管理 Google Drive 中的文件。\n\n让 Claude 回复某个邮件线程，它会起草并发送回复。你可以控制何时需要你的批准。\n\n从连接器菜单中选择连接 Gmail 或 Google Drive 即可试用。所有付费套餐均可用。",
+        "recommend_reason_zh": "Claude现已支持连接Gmail与Google Drive，可自动起草并发送邮件回复，用户可控制审批时机，所有付费计划均可使用。",
+        "url": "https://x.com/claudeai/status/2089806039088517356",
+        "source": "X：Claude (@claudeai)",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 90,
+      "persona_review": "能直接操作Gmail和Drive，自动化办公场景可立即接入。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-18T23:41:44.881686Z"
+      }
+    },
+    {
+      "story_id": "story_8e332aafeb89",
+      "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
+      "url": "https://openai.com/index/partnering-with-codeai",
+      "primary_url": "https://openai.com/index/partnering-with-codeai",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "8c23f9c3a3a5054ca38390d052850998cb9e1e25",
+          "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
+          "title_zh": "与CodeAI合作，培养第一代AI",
+          "title_en": "Partnering with CodeAI to prepare the first AI generation",
+          "title_original": "Partnering with CodeAI to prepare the first AI generation",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI与CodeAI合作推出ChatGPT for Teens，帮助学生批判性地使用AI；文中引用调查数据：75%高中生认为理解AI更重要，但仅16%高中领导者表示所有学生都在课堂学习AI技术知识，直面这一代人的教育鸿沟。",
+          "url": "https://openai.com/index/partnering-with-codeai",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T11:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "OpenAI News"
+      ],
+      "items": [
+        {
+          "id": "8c23f9c3a3a5054ca38390d052850998cb9e1e25",
+          "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
+          "title_zh": "与CodeAI合作，培养第一代AI",
+          "title_en": "Partnering with CodeAI to prepare the first AI generation",
+          "title_original": "Partnering with CodeAI to prepare the first AI generation",
+          "summary": null,
+          "recommend_reason_zh": "OpenAI与CodeAI合作推出ChatGPT for Teens，帮助学生批判性地使用AI；文中引用调查数据：75%高中生认为理解AI更重要，但仅16%高中领导者表示所有学生都在课堂学习AI技术知识，直面这一代人的教育鸿沟。",
+          "url": "https://openai.com/index/partnering-with-codeai",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T11:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.822,
+      "importance": 0.822,
+      "importance_score": 0.822,
       "importance_label": "官方更新",
       "importance_breakdown": {
-        "editorial": 0.69,
+        "editorial": 0.9,
         "source_tier": 1.0,
-        "ai_relevance": 1.0,
-        "recency": 0.7993,
+        "ai_relevance": 0.91,
+        "recency": 0.8335,
         "story_heat": 0.0
       },
       "category": "official",
       "reasons": [
+        "official_source",
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-17T23:22:25.902000Z",
-      "latest_at": "2026-08-17T23:22:25.902000Z",
+      "earliest_at": "2026-08-18T11:00:00Z",
+      "latest_at": "2026-08-18T11:00:00Z",
       "primary_item": {
-        "id": "707f5eb71c2096b7bea1f9c983ab98b9b4433d29",
-        "title": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体 / Build zero-trust AI agents with Google's Agent Development Kit",
-        "title_zh": "用 Google 的 Agent Development Kit 构建零信任 AI 智能体",
-        "title_en": "Build zero-trust AI agents with Google's Agent Development Kit",
-        "title_original": "Build zero-trust AI agents with Google's Agent Development Kit",
-        "summary": "Google 开源了基于 ADK 和 Gemini 的零信任客服与退货智能体示例，演示如何防御提示注入等攻击。该架构在 LLM 上下文之外通过三层硬性安全机制保障：硬件支持的加密签名确保数据库写入不可抵赖、gVisor 沙箱隔离动态代码执行、确定性语义网关校验业务逻辑。系统提示词只是软约束，无法作为安全边界。",
-        "recommend_reason_zh": "Google ADK用加密签名、gVisor沙箱和语义网关三层机制落实零信任，要求每个写操作验证签名，并开源了基于Gemini的客服退货代理，演示如何防范提示注入与数据库篡改。",
-        "url": "https://developers.googleblog.com/build-zero-trust-ai-agents-with-googles-agent-development-kit",
-        "source": "Google Developers Blog（RSS）",
-        "source_name": "AI HOT"
+        "id": "8c23f9c3a3a5054ca38390d052850998cb9e1e25",
+        "title": "与CodeAI合作，培养第一代AI / Partnering with CodeAI to prepare the first AI generation",
+        "title_zh": "与CodeAI合作，培养第一代AI",
+        "title_en": "Partnering with CodeAI to prepare the first AI generation",
+        "title_original": "Partnering with CodeAI to prepare the first AI generation",
+        "summary": null,
+        "recommend_reason_zh": "OpenAI与CodeAI合作推出ChatGPT for Teens，帮助学生批判性地使用AI；文中引用调查数据：75%高中生认为理解AI更重要，但仅16%高中领导者表示所有学生都在课堂学习AI技术知识，直面这一代人的教育鸿沟。",
+        "url": "https://openai.com/index/partnering-with-codeai",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 68,
-      "persona_review": "Agent安全加固的官方实践指南，做企业级应用可参考。",
+      "persona_score": 35,
+      "persona_review": "教育合作新闻，无新工具无新API，开发者不用动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
-      "story_id": "story_886d9637cc01",
-      "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
-      "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
-      "primary_url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
-      "source": "Google AI：DEV 作者专属（RSS）",
+      "story_id": "story_57110e360f41",
+      "title": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者 / Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+      "url": "https://claude.com/blog/ai-ci-cd-on-call",
+      "primary_url": "https://claude.com/blog/ai-ci-cd-on-call",
+      "source": "Claude：Blog（网页）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "28bd262ceb8bb8267ecb21c922badcfbb9b38bf5",
-          "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
-          "title_zh": "设计 AI 评测：先求清晰，再谈可视化",
-          "title_en": "Designing AI Evals： Clarity Now and Visualization Next",
-          "title_original": "Designing AI Evals： Clarity Now and Visualization Next",
-          "summary": "本文演示如何用开源评测框架 Inspect AI 和 Harbor 评估 agent 技能，并借助 Google Sheets 和 Data Studio 进行可视化分析。",
-          "recommend_reason_zh": "本文演示如何用Inspect AI和Harbor评估agent技能，以google/gemini-3.5-flash-lite与3.6-flash为求解器、3.1-flash-lite为评分器，通过严格二元判断和程序化汇总节省quota，并借助Google Sheets和Data Studio做可视化分析。",
-          "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
-          "source": "Google AI：DEV 作者专属（RSS）",
+          "id": "fb736f80d9d45402ef56b84bfa18c92744ec4b36",
+          "title": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者 / Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+          "title_zh": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者",
+          "title_en": "Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+          "title_original": "Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+          "summary": "Anthropic 的 CI 工程师用 Claude Tag 构建了值班智能体，作为 CI/CD 故障的一线响应者。Claude 在事故发生后中位 14 分钟发布首份基于证据的分析，最快案例中 3 分钟内验证修复并确认错误率恢复基线。该方案通过 Slack 频道、Datadog 或 Grafana 工具访问及 GitHub 技能文件实现，Anthropic 已发布通用设置套件供其他团队部署。",
+          "recommend_reason_zh": "本文介绍Anthropic工程师如何用Claude Tag构建CI/CD故障第一响应代理：一次44个测试未触发，Claude在3分钟内确认回滚安全，并在15分钟内产出首份事故报告，附GitHub部署套件。",
+          "url": "https://claude.com/blog/ai-ci-cd-on-call",
+          "source": "Claude：Blog（网页）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-18T07:00:00Z"
+          "published_at": "2026-08-18T19:26:08.389000Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "Google AI：DEV 作者专属（RSS）"
+        "Claude：Blog（网页）"
       ],
       "items": [
         {
-          "id": "28bd262ceb8bb8267ecb21c922badcfbb9b38bf5",
-          "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
-          "title_zh": "设计 AI 评测：先求清晰，再谈可视化",
-          "title_en": "Designing AI Evals： Clarity Now and Visualization Next",
-          "title_original": "Designing AI Evals： Clarity Now and Visualization Next",
-          "summary": "本文演示如何用开源评测框架 Inspect AI 和 Harbor 评估 agent 技能，并借助 Google Sheets 和 Data Studio 进行可视化分析。",
-          "recommend_reason_zh": "本文演示如何用Inspect AI和Harbor评估agent技能，以google/gemini-3.5-flash-lite与3.6-flash为求解器、3.1-flash-lite为评分器，通过严格二元判断和程序化汇总节省quota，并借助Google Sheets和Data Studio做可视化分析。",
-          "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
-          "source": "Google AI：DEV 作者专属（RSS）",
+          "id": "fb736f80d9d45402ef56b84bfa18c92744ec4b36",
+          "title": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者 / Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+          "title_zh": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者",
+          "title_en": "Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+          "title_original": "Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+          "summary": "Anthropic 的 CI 工程师用 Claude Tag 构建了值班智能体，作为 CI/CD 故障的一线响应者。Claude 在事故发生后中位 14 分钟发布首份基于证据的分析，最快案例中 3 分钟内验证修复并确认错误率恢复基线。该方案通过 Slack 频道、Datadog 或 Grafana 工具访问及 GitHub 技能文件实现，Anthropic 已发布通用设置套件供其他团队部署。",
+          "recommend_reason_zh": "本文介绍Anthropic工程师如何用Claude Tag构建CI/CD故障第一响应代理：一次44个测试未触发，Claude在3分钟内确认回滚安全，并在15分钟内产出首份事故报告，附GitHub部署套件。",
+          "url": "https://claude.com/blog/ai-ci-cd-on-call",
+          "source": "Claude：Blog（网页）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-18T07:00:00Z"
+          "published_at": "2026-08-18T19:26:08.389000Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7332,
-      "importance": 0.7332,
-      "importance_score": 0.7332,
+      "score": 0.7301,
+      "importance": 0.7301,
+      "importance_score": 0.7301,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.67,
+        "editorial": 0.63,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8924,
+        "recency": 0.9414,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
         "high_ai_relevance"
       ],
-      "earliest_at": "2026-08-18T07:00:00Z",
-      "latest_at": "2026-08-18T07:00:00Z",
+      "earliest_at": "2026-08-18T19:26:08.389000Z",
+      "latest_at": "2026-08-18T19:26:08.389000Z",
       "primary_item": {
-        "id": "28bd262ceb8bb8267ecb21c922badcfbb9b38bf5",
-        "title": "设计 AI 评测：先求清晰，再谈可视化 / Designing AI Evals： Clarity Now and Visualization Next",
-        "title_zh": "设计 AI 评测：先求清晰，再谈可视化",
-        "title_en": "Designing AI Evals： Clarity Now and Visualization Next",
-        "title_original": "Designing AI Evals： Clarity Now and Visualization Next",
-        "summary": "本文演示如何用开源评测框架 Inspect AI 和 Harbor 评估 agent 技能，并借助 Google Sheets 和 Data Studio 进行可视化分析。",
-        "recommend_reason_zh": "本文演示如何用Inspect AI和Harbor评估agent技能，以google/gemini-3.5-flash-lite与3.6-flash为求解器、3.1-flash-lite为评分器，通过严格二元判断和程序化汇总节省quota，并借助Google Sheets和Data Studio做可视化分析。",
-        "url": "https://dev.to/googleai/designing-ai-evals-clarity-now-and-visualization-next-4eii",
-        "source": "Google AI：DEV 作者专属（RSS）",
+        "id": "fb736f80d9d45402ef56b84bfa18c92744ec4b36",
+        "title": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者 / Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+        "title_zh": "Claude Tag 如何担任 Anthropic CI/CD 故障的一线响应者",
+        "title_en": "Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+        "title_original": "Claude on call： How Claude Tag serves as Anthropic's first responder for CI/CD failures",
+        "summary": "Anthropic 的 CI 工程师用 Claude Tag 构建了值班智能体，作为 CI/CD 故障的一线响应者。Claude 在事故发生后中位 14 分钟发布首份基于证据的分析，最快案例中 3 分钟内验证修复并确认错误率恢复基线。该方案通过 Slack 频道、Datadog 或 Grafana 工具访问及 GitHub 技能文件实现，Anthropic 已发布通用设置套件供其他团队部署。",
+        "recommend_reason_zh": "本文介绍Anthropic工程师如何用Claude Tag构建CI/CD故障第一响应代理：一次44个测试未触发，Claude在3分钟内确认回滚安全，并在15分钟内产出首份事故报告，附GitHub部署套件。",
+        "url": "https://claude.com/blog/ai-ci-cd-on-call",
+        "source": "Claude：Blog（网页）",
         "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 68,
-      "persona_review": "评测方法论值得一看，但没新工具落地，适合做评估时参考。",
+      "persona_score": 55,
+      "persona_review": "内部巡检实践可借鉴，但非现成工具，动手前先看自家流水线痛点。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_7e8f273992af",
-      "title": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685329&idx=1&sn=9471278dc489641c097b228912965ed4",
-      "primary_url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685329&idx=1&sn=9471278dc489641c097b228912965ed4",
-      "source": "公众号：数字生命卡兹克",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "4e8bc7ca3e901e63222da3f6d87a6be1bb0f20b3",
-          "title": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-          "title_zh": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-          "title_en": null,
-          "title_original": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-          "summary": "作者基于Reddit上\"让Claude真正开始思考\"的帖子，引入逻辑学中的\"钢人论证\"（steelman）概念，并自创了一个\"双向钢人Prompt\"。该Prompt通过重述真实问题、强化正反双方观点、找出关键变量、逼AI给出明确判断四步，旨在避免模型谄媚，帮助用户找到问题最本质的答案。作者以自己选择公司司庆日的真实案例演示了使用效果。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685329&idx=1&sn=9471278dc489641c097b228912965ed4",
-          "source": "公众号：数字生命卡兹克",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T23:58:00Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "公众号：数字生命卡兹克"
-      ],
-      "items": [
-        {
-          "id": "4e8bc7ca3e901e63222da3f6d87a6be1bb0f20b3",
-          "title": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-          "title_zh": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-          "title_en": null,
-          "title_original": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-          "summary": "作者基于Reddit上\"让Claude真正开始思考\"的帖子，引入逻辑学中的\"钢人论证\"（steelman）概念，并自创了一个\"双向钢人Prompt\"。该Prompt通过重述真实问题、强化正反双方观点、找出关键变量、逼AI给出明确判断四步，旨在避免模型谄媚，帮助用户找到问题最本质的答案。作者以自己选择公司司庆日的真实案例演示了使用效果。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685329&idx=1&sn=9471278dc489641c097b228912965ed4",
-          "source": "公众号：数字生命卡兹克",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T23:58:00Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7297,
-      "importance": 0.7297,
-      "importance_score": 0.7297,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.71,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8062,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-17T23:58:00Z",
-      "latest_at": "2026-08-17T23:58:00Z",
-      "primary_item": {
-        "id": "4e8bc7ca3e901e63222da3f6d87a6be1bb0f20b3",
-        "title": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-        "title_zh": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-        "title_en": null,
-        "title_original": "一个实用的深度思考Prompt：用\"双向钢人论证\"让AI帮你挖出最本质的答案",
-        "summary": "作者基于Reddit上\"让Claude真正开始思考\"的帖子，引入逻辑学中的\"钢人论证\"（steelman）概念，并自创了一个\"双向钢人Prompt\"。该Prompt通过重述真实问题、强化正反双方观点、找出关键变量、逼AI给出明确判断四步，旨在避免模型谄媚，帮助用户找到问题最本质的答案。作者以自己选择公司司庆日的真实案例演示了使用效果。",
-        "recommend_reason_zh": null,
-        "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685329&idx=1&sn=9471278dc489641c097b228912965ed4",
-        "source": "公众号：数字生命卡兹克",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 68,
-      "persona_review": "prompt 技巧可即刻抄用，但效果看场景，别当万能药。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
@@ -1068,21 +1348,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7573,
-      "importance": 0.7573,
-      "importance_score": 0.7573,
+      "score": 0.7372,
+      "importance": 0.7372,
+      "importance_score": 0.7372,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9425,
+        "recency": 0.8309,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-18T10:47:07.153361Z",
       "latest_at": "2026-08-18T10:47:07.153361Z",
@@ -1104,120 +1383,92 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
-      "story_id": "story_9dc365abafc2",
-      "title": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-      "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
-      "primary_url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
-      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-      "source_name": "AI HOT",
+      "story_id": "story_41f4a70159de",
+      "title": "Asana借助Codex在两周内完成了原本需5年的工程工作量 / Asana cleared 5 years of engineering work in 2 weeks with Codex",
+      "url": "https://openai.com/index/asana",
+      "primary_url": "https://openai.com/index/asana",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "4e9af5540cfb87db38c0d740293719051913bff7",
-          "title": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-          "title_zh": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-          "title_en": null,
-          "title_original": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-          "summary": "404 Media 通过在一本珍本图书中放置追踪设备，首次揭露亚马逊未公开的购书行动：批量购入大量书籍，扫描用于 AI 训练数据，随后销毁。追踪显示这些书最终被送往亚马逊的一处人工智能训练中心。",
-          "recommend_reason_zh": "404 Media在珍本书中暗置追踪设备，追踪到Amazon秘密收购大量图书用于AI训练扫描后销毁，首次曝光这一此前未报道的运作。",
-          "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T18:46:04.518000Z"
-        },
-        {
-          "id": "e93451a4241de1ea3225f404c98bc7301751b7e6",
-          "title": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
-          "title_zh": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
-          "title_en": null,
-          "title_original": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
+          "id": "2202f2b59ff8d878e47df300dc1567311e52d90b",
+          "title": "Asana借助Codex在两周内完成了原本需5年的工程工作量 / Asana cleared 5 years of engineering work in 2 weeks with Codex",
+          "title_zh": "Asana借助Codex在两周内完成了原本需5年的工程工作量",
+          "title_en": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+          "title_original": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
           "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
-          "source": "www.404media.co",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-17T18:46:04.518000Z"
+          "recommend_reason_zh": "Asana 用 OpenAI Codex 在两周内拆除了过时的 Enzyme 测试系统，完成原本预计耗时五年、约 600 万美元的工作，实际成本仅约 1.2 万美元。",
+          "url": "https://openai.com/index/asana",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T07:00:00Z"
         }
       ],
-      "source_count": 2,
+      "source_count": 1,
       "source_names": [
-        "Hacker News 热门（buzzing.cc 中文翻译）",
-        "www.404media.co"
+        "OpenAI News"
       ],
       "items": [
         {
-          "id": "4e9af5540cfb87db38c0d740293719051913bff7",
-          "title": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-          "title_zh": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-          "title_en": null,
-          "title_original": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-          "summary": "404 Media 通过在一本珍本图书中放置追踪设备，首次揭露亚马逊未公开的购书行动：批量购入大量书籍，扫描用于 AI 训练数据，随后销毁。追踪显示这些书最终被送往亚马逊的一处人工智能训练中心。",
-          "recommend_reason_zh": "404 Media在珍本书中暗置追踪设备，追踪到Amazon秘密收购大量图书用于AI训练扫描后销毁，首次曝光这一此前未报道的运作。",
-          "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T18:46:04.518000Z"
-        },
-        {
-          "id": "e93451a4241de1ea3225f404c98bc7301751b7e6",
-          "title": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
-          "title_zh": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
-          "title_en": null,
-          "title_original": "我们追踪了一批珍本图书的运输过程。最终，这些书被送到了亚马逊的一处人工智能训练中心",
+          "id": "2202f2b59ff8d878e47df300dc1567311e52d90b",
+          "title": "Asana借助Codex在两周内完成了原本需5年的工程工作量 / Asana cleared 5 years of engineering work in 2 weeks with Codex",
+          "title_zh": "Asana借助Codex在两周内完成了原本需5年的工程工作量",
+          "title_en": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+          "title_original": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
           "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
-          "source": "www.404media.co",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-17T18:46:04.518000Z"
+          "recommend_reason_zh": "Asana 用 OpenAI Codex 在两周内拆除了过时的 Enzyme 测试系统，完成原本预计耗时五年、约 600 万美元的工作，实际成本仅约 1.2 万美元。",
+          "url": "https://openai.com/index/asana",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T07:00:00Z"
         }
       ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7442,
-      "importance": 0.7442,
-      "importance_score": 0.7442,
-      "importance_label": "行业动态",
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8216,
+      "importance": 0.8216,
+      "importance_score": 0.8216,
+      "importance_label": "官方更新",
       "importance_breakdown": {
-        "editorial": 0.71,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7479,
-        "story_heat": 0.25
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.95,
+        "recency": 0.7867,
+        "story_heat": 0.0
       },
-      "category": "industry",
+      "category": "official",
       "reasons": [
-        "multi_source",
-        "high_ai_relevance"
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-17T18:46:04.518000Z",
-      "latest_at": "2026-08-17T18:46:04.518000Z",
+      "earliest_at": "2026-08-18T07:00:00Z",
+      "latest_at": "2026-08-18T07:00:00Z",
       "primary_item": {
-        "id": "4e9af5540cfb87db38c0d740293719051913bff7",
-        "title": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-        "title_zh": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-        "title_en": null,
-        "title_original": "404 Media 追踪珍本图书流向：亚马逊批量购书扫描用于 AI 训练后销毁",
-        "summary": "404 Media 通过在一本珍本图书中放置追踪设备，首次揭露亚马逊未公开的购书行动：批量购入大量书籍，扫描用于 AI 训练数据，随后销毁。追踪显示这些书最终被送往亚马逊的一处人工智能训练中心。",
-        "recommend_reason_zh": "404 Media在珍本书中暗置追踪设备，追踪到Amazon秘密收购大量图书用于AI训练扫描后销毁，首次曝光这一此前未报道的运作。",
-        "url": "https://www.404media.co/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-training-facility",
-        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-        "source_name": "AI HOT"
+        "id": "2202f2b59ff8d878e47df300dc1567311e52d90b",
+        "title": "Asana借助Codex在两周内完成了原本需5年的工程工作量 / Asana cleared 5 years of engineering work in 2 weeks with Codex",
+        "title_zh": "Asana借助Codex在两周内完成了原本需5年的工程工作量",
+        "title_en": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+        "title_original": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+        "summary": null,
+        "recommend_reason_zh": "Asana 用 OpenAI Codex 在两周内拆除了过时的 Enzyme 测试系统，完成原本预计耗时五年、约 600 万美元的工作，实际成本仅约 1.2 万美元。",
+        "url": "https://openai.com/index/asana",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 52,
-      "persona_review": "版权风险预警，采集训练数据前先查来路。",
+      "persona_score": 55,
+      "persona_review": "案例很猛但没工具可上手，属于市场宣传，参考效率即可。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
@@ -1265,21 +1516,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7549,
-      "importance": 0.7549,
-      "importance_score": 0.7549,
+      "score": 0.7351,
+      "importance": 0.7351,
+      "importance_score": 0.7351,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9293,
+        "recency": 0.8192,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-18T09:48:23.641166Z",
       "latest_at": "2026-08-18T09:48:23.641166Z",
@@ -1301,120 +1551,92 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
-      "story_id": "story_042e1009900f",
-      "title": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-      "url": "https://www.librarian.net/notoai",
-      "primary_url": "https://www.librarian.net/notoai",
-      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-      "source_name": "AI HOT",
+      "story_id": "story_423313afb312",
+      "title": "NVIDIA 如何借助 ChatGPT Work 扩展专业知识 / How NVIDIA scales expertise with ChatGPT Work",
+      "url": "https://openai.com/index/nvidia/chatgpt-work",
+      "primary_url": "https://openai.com/index/nvidia/chatgpt-work",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "5018273d0d7f36fdbb0075484cc5f634bb9d8308",
-          "title": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-          "title_zh": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-          "title_en": null,
-          "title_original": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-          "summary": "一份面向希望减少技术环境中侵入式 AI 的用户的操作指南，涵盖 Adobe Acrobat、Android/Gemini、Apple Intelligence、Chrome、Edge、Firefox、DuckDuckGo、Google Workspace、Slack、WhatsApp 及 Windows 11/Copilot 等平台。",
-          "recommend_reason_zh": "这篇指南手把手教你禁用侵入式AI，从Windows到Chrome、Firefox，具体到关闭Gemini和Apple Intelligence，甚至可用chrome://flags禁用GLIC功能，实用细节满满。",
-          "url": "https://www.librarian.net/notoai",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T17:58:12.144000Z"
-        },
-        {
-          "id": "4473f8065513906e3e3dbe6b04888a94e69e6e4e",
-          "title": "如何禁用或避免侵入式人工智能",
-          "title_zh": "如何禁用或避免侵入式人工智能",
-          "title_en": null,
-          "title_original": "如何禁用或避免侵入式人工智能",
-          "summary": null,
-          "recommend_reason_zh": "这篇图书馆员写的指南，按平台教你关闭侵入式AI：Google Gemini、Apple Intelligence、Amazon Alexa for Shopping，具体到取消勾选Acrobat Reader、在Chrome flags中禁用Gemini，并推荐Zen或Helium浏览器替代。",
-          "url": "https://www.librarian.net/notoai",
-          "source": "www.librarian.net",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-17T17:58:12.144000Z"
+          "id": "ca33be9e603f78504e23ed2c700b9296427539f4",
+          "title": "NVIDIA 如何借助 ChatGPT Work 扩展专业知识 / How NVIDIA scales expertise with ChatGPT Work",
+          "title_zh": "NVIDIA 如何借助 ChatGPT Work 扩展专业知识",
+          "title_en": "How NVIDIA scales expertise with ChatGPT Work",
+          "title_original": "How NVIDIA scales expertise with ChatGPT Work",
+          "summary": "NVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nAugust 18, 2026\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflow",
+          "recommend_reason_zh": "NVIDIA借助ChatGPT Work将GTC筹备周期中每周节省16小时，原型开发从2-3周缩至3-5天，并每周从25-40条外部AI动态中提炼5-8个关键信号，展现AI工作流如何规模化落地。",
+          "url": "https://openai.com/index/nvidia/chatgpt-work",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T00:00:00Z"
         }
       ],
-      "source_count": 2,
+      "source_count": 1,
       "source_names": [
-        "Hacker News 热门（buzzing.cc 中文翻译）",
-        "www.librarian.net"
+        "OpenAI News"
       ],
       "items": [
         {
-          "id": "5018273d0d7f36fdbb0075484cc5f634bb9d8308",
-          "title": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-          "title_zh": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-          "title_en": null,
-          "title_original": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-          "summary": "一份面向希望减少技术环境中侵入式 AI 的用户的操作指南，涵盖 Adobe Acrobat、Android/Gemini、Apple Intelligence、Chrome、Edge、Firefox、DuckDuckGo、Google Workspace、Slack、WhatsApp 及 Windows 11/Copilot 等平台。",
-          "recommend_reason_zh": "这篇指南手把手教你禁用侵入式AI，从Windows到Chrome、Firefox，具体到关闭Gemini和Apple Intelligence，甚至可用chrome://flags禁用GLIC功能，实用细节满满。",
-          "url": "https://www.librarian.net/notoai",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-17T17:58:12.144000Z"
-        },
-        {
-          "id": "4473f8065513906e3e3dbe6b04888a94e69e6e4e",
-          "title": "如何禁用或避免侵入式人工智能",
-          "title_zh": "如何禁用或避免侵入式人工智能",
-          "title_en": null,
-          "title_original": "如何禁用或避免侵入式人工智能",
-          "summary": null,
-          "recommend_reason_zh": "这篇图书馆员写的指南，按平台教你关闭侵入式AI：Google Gemini、Apple Intelligence、Amazon Alexa for Shopping，具体到取消勾选Acrobat Reader、在Chrome flags中禁用Gemini，并推荐Zen或Helium浏览器替代。",
-          "url": "https://www.librarian.net/notoai",
-          "source": "www.librarian.net",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-17T17:58:12.144000Z"
+          "id": "ca33be9e603f78504e23ed2c700b9296427539f4",
+          "title": "NVIDIA 如何借助 ChatGPT Work 扩展专业知识 / How NVIDIA scales expertise with ChatGPT Work",
+          "title_zh": "NVIDIA 如何借助 ChatGPT Work 扩展专业知识",
+          "title_en": "How NVIDIA scales expertise with ChatGPT Work",
+          "title_original": "How NVIDIA scales expertise with ChatGPT Work",
+          "summary": "NVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nAugust 18, 2026\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflow",
+          "recommend_reason_zh": "NVIDIA借助ChatGPT Work将GTC筹备周期中每周节省16小时，原型开发从2-3周缩至3-5天，并每周从25-40条外部AI动态中提炼5-8个关键信号，展现AI工作流如何规模化落地。",
+          "url": "https://openai.com/index/nvidia/chatgpt-work",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-18T00:00:00Z"
         }
       ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7397,
-      "importance": 0.7397,
-      "importance_score": 0.7397,
-      "importance_label": "行业动态",
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.808,
+      "importance": 0.808,
+      "importance_score": 0.808,
+      "importance_label": "官方更新",
       "importance_breakdown": {
-        "editorial": 0.7,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7393,
-        "story_heat": 0.25
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.95,
+        "recency": 0.7111,
+        "story_heat": 0.0
       },
-      "category": "industry",
+      "category": "official",
       "reasons": [
-        "multi_source",
-        "high_ai_relevance"
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-17T17:58:12.144000Z",
-      "latest_at": "2026-08-17T17:58:12.144000Z",
+      "earliest_at": "2026-08-18T00:00:00Z",
+      "latest_at": "2026-08-18T00:00:00Z",
       "primary_item": {
-        "id": "5018273d0d7f36fdbb0075484cc5f634bb9d8308",
-        "title": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-        "title_zh": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-        "title_en": null,
-        "title_original": "如何禁用或避免侵入式 AI：一份覆盖 Windows、Chrome、Edge、Firefox 及主流应用的实用指南",
-        "summary": "一份面向希望减少技术环境中侵入式 AI 的用户的操作指南，涵盖 Adobe Acrobat、Android/Gemini、Apple Intelligence、Chrome、Edge、Firefox、DuckDuckGo、Google Workspace、Slack、WhatsApp 及 Windows 11/Copilot 等平台。",
-        "recommend_reason_zh": "这篇指南手把手教你禁用侵入式AI，从Windows到Chrome、Firefox，具体到关闭Gemini和Apple Intelligence，甚至可用chrome://flags禁用GLIC功能，实用细节满满。",
-        "url": "https://www.librarian.net/notoai",
-        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-        "source_name": "AI HOT"
+        "id": "ca33be9e603f78504e23ed2c700b9296427539f4",
+        "title": "NVIDIA 如何借助 ChatGPT Work 扩展专业知识 / How NVIDIA scales expertise with ChatGPT Work",
+        "title_zh": "NVIDIA 如何借助 ChatGPT Work 扩展专业知识",
+        "title_en": "How NVIDIA scales expertise with ChatGPT Work",
+        "title_original": "How NVIDIA scales expertise with ChatGPT Work",
+        "summary": "NVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally.\nAugust 18, 2026\nNVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflow",
+        "recommend_reason_zh": "NVIDIA借助ChatGPT Work将GTC筹备周期中每周节省16小时，原型开发从2-3周缩至3-5天，并每周从25-40条外部AI动态中提炼5-8个关键信号，展现AI工作流如何规模化落地。",
+        "url": "https://openai.com/index/nvidia/chatgpt-work",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "禁用AI的操作清单，了解用户反AI情绪可参考，但无新工具或API。",
+      "persona_score": 42,
+      "persona_review": "官方案例，没有新接口或降价，对企业选型有参考，开发者不用动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
@@ -1462,21 +1684,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7549,
-      "importance": 0.7549,
-      "importance_score": 0.7549,
+      "score": 0.7351,
+      "importance": 0.7351,
+      "importance_score": 0.7351,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9293,
+        "recency": 0.8192,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-18T09:48:23.641166Z",
       "latest_at": "2026-08-18T09:48:23.641166Z",
@@ -1498,7 +1719,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     },
     {
@@ -1546,21 +1767,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7549,
-      "importance": 0.7549,
-      "importance_score": 0.7549,
+      "score": 0.7351,
+      "importance": 0.7351,
+      "importance_score": 0.7351,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9293,
+        "recency": 0.8192,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-18T09:48:23.641166Z",
       "latest_at": "2026-08-18T09:48:23.641166Z",
@@ -1582,428 +1802,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_bff3f6531ed0",
-      "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-      "url": "https://www.aibase.com/news/30439",
-      "primary_url": "https://www.aibase.com/news/30439",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "72ab8e2d8d7669b0abbe45f11dc2f7c02e424596",
-          "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-          "title_zh": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-          "title_en": null,
-          "title_original": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-          "summary": null,
-          "recommend_reason_zh": "Anthropic 8月15日风险报告意外披露Model 2，据内部基准CoBench v2，其多任务表现略超公开最强Claude Mythos 5，综合能力小幅提升，并牵出Model 1疑云。",
-          "url": "https://www.aibase.com/news/30439",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T08:53:39.267759Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "72ab8e2d8d7669b0abbe45f11dc2f7c02e424596",
-          "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-          "title_zh": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-          "title_en": null,
-          "title_original": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-          "summary": null,
-          "recommend_reason_zh": "Anthropic 8月15日风险报告意外披露Model 2，据内部基准CoBench v2，其多任务表现略超公开最强Claude Mythos 5，综合能力小幅提升，并牵出Model 1疑云。",
-          "url": "https://www.aibase.com/news/30439",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T08:53:39.267759Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7527,
-      "importance": 0.7527,
-      "importance_score": 0.7527,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9172,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-18T08:53:39.267759Z",
-      "latest_at": "2026-08-18T08:53:39.267759Z",
-      "primary_item": {
-        "id": "72ab8e2d8d7669b0abbe45f11dc2f7c02e424596",
-        "title": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-        "title_zh": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-        "title_en": null,
-        "title_original": "Anthropic 披露 Model 2：性能略超公开最强 Claude Mythos 5",
-        "summary": null,
-        "recommend_reason_zh": "Anthropic 8月15日风险报告意外披露Model 2，据内部基准CoBench v2，其多任务表现略超公开最强Claude Mythos 5，综合能力小幅提升，并牵出Model 1疑云。",
-        "url": "https://www.aibase.com/news/30439",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 48,
-      "persona_review": "未开放的模型，性能略超也动不了手，等 API 再说。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_008aca6e8b2b",
-      "title": "以卖书起家的Amazon正在销毁珍稀文本以训练AI / Amazon, which started off selling books, is destroying rare texts to train AI",
-      "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models",
-      "primary_url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models",
-      "source": "TechCrunch AI",
-      "source_name": "Curated Media",
-      "sources": [
-        {
-          "id": "1c138b79f233ab1079997c5ec2f6ed94d65025ac",
-          "title": "以卖书起家的Amazon正在销毁珍稀文本以训练AI / Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_zh": "以卖书起家的Amazon正在销毁珍稀文本以训练AI",
-          "title_en": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_original": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "summary": null,
-          "recommend_reason_zh": "Amazon 这家靠卖书起家的巨头，正销毁稀有文本用于 AI 训练。文章指出稀有书籍对 LLM 极有价值，因为模型已训练过网上能获取的内容，这些珍本正是新语料。",
-          "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models",
-          "source": "TechCrunch AI",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-08-17T16:38:44Z"
-        },
-        {
-          "id": "ac4a81fd1ca647f27ed345b0f1f6ec3f4200214c",
-          "title": "以卖书起家的Amazon正在销毁珍稀文本以训练AI / Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_zh": "以卖书起家的Amazon正在销毁珍稀文本以训练AI",
-          "title_en": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_original": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "summary": null,
-          "recommend_reason_zh": "Amazon因美国版权法要求，扫描后必须销毁实体书，为训练AI正大量毁掉稀有文本；这篇报道揭示了法律漏洞与科技巨头在版权合规中的争议选择。",
-          "url": "https://news.ycombinator.com/item?id=49335216",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-17T19:44:01.694000Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "TechCrunch AI",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "1c138b79f233ab1079997c5ec2f6ed94d65025ac",
-          "title": "以卖书起家的Amazon正在销毁珍稀文本以训练AI / Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_zh": "以卖书起家的Amazon正在销毁珍稀文本以训练AI",
-          "title_en": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_original": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "summary": null,
-          "recommend_reason_zh": "Amazon 这家靠卖书起家的巨头，正销毁稀有文本用于 AI 训练。文章指出稀有书籍对 LLM 极有价值，因为模型已训练过网上能获取的内容，这些珍本正是新语料。",
-          "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models",
-          "source": "TechCrunch AI",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-08-17T16:38:44Z"
-        },
-        {
-          "id": "ac4a81fd1ca647f27ed345b0f1f6ec3f4200214c",
-          "title": "以卖书起家的Amazon正在销毁珍稀文本以训练AI / Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_zh": "以卖书起家的Amazon正在销毁珍稀文本以训练AI",
-          "title_en": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "title_original": "Amazon, which started off selling books, is destroying rare texts to train AI",
-          "summary": null,
-          "recommend_reason_zh": "Amazon因美国版权法要求，扫描后必须销毁实体书，为训练AI正大量毁掉稀有文本；这篇报道揭示了法律漏洞与科技巨头在版权合规中的争议选择。",
-          "url": "https://news.ycombinator.com/item?id=49335216",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-17T19:44:01.694000Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5993,
-      "importance": 0.5993,
-      "importance_score": 0.5993,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.5472,
-        "source_tier": 0.58,
-        "ai_relevance": 0.76,
-        "recency": 0.7253,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-17T16:38:44Z",
-      "latest_at": "2026-08-17T19:44:01.694000Z",
-      "primary_item": {
-        "id": "1c138b79f233ab1079997c5ec2f6ed94d65025ac",
-        "title": "以卖书起家的Amazon正在销毁珍稀文本以训练AI / Amazon, which started off selling books, is destroying rare texts to train AI",
-        "title_zh": "以卖书起家的Amazon正在销毁珍稀文本以训练AI",
-        "title_en": "Amazon, which started off selling books, is destroying rare texts to train AI",
-        "title_original": "Amazon, which started off selling books, is destroying rare texts to train AI",
-        "summary": null,
-        "recommend_reason_zh": "Amazon 这家靠卖书起家的巨头，正销毁稀有文本用于 AI 训练。文章指出稀有书籍对 LLM 极有价值，因为模型已训练过网上能获取的内容，这些珍本正是新语料。",
-        "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models",
-        "source": "TechCrunch AI",
-        "source_name": "Curated Media"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 20,
-      "persona_review": "伦理争议虽大，但跟今天写代码、选型没关系，看个热闹就行。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_b4cb58f18c34",
-      "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-      "url": "https://www.aibase.com/news/30437",
-      "primary_url": "https://www.aibase.com/news/30437",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "d4e804926a5767c05cdb0a378dea0ad20e1e8874",
-          "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-          "title_zh": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-          "title_en": null,
-          "title_original": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-          "summary": null,
-          "recommend_reason_zh": "三年估值30亿美元，演语科技（Evoken）冲刺港股IPO，正文拆解其从LiblibAI模型社区起家、靠AI应用层“中间商”模式抢跑的商业逻辑与竞争壁垒。",
-          "url": "https://www.aibase.com/news/30437",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T08:53:39.267759Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "d4e804926a5767c05cdb0a378dea0ad20e1e8874",
-          "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-          "title_zh": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-          "title_en": null,
-          "title_original": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-          "summary": null,
-          "recommend_reason_zh": "三年估值30亿美元，演语科技（Evoken）冲刺港股IPO，正文拆解其从LiblibAI模型社区起家、靠AI应用层“中间商”模式抢跑的商业逻辑与竞争壁垒。",
-          "url": "https://www.aibase.com/news/30437",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-18T08:53:39.267759Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7527,
-      "importance": 0.7527,
-      "importance_score": 0.7527,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9172,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-18T08:53:39.267759Z",
-      "latest_at": "2026-08-18T08:53:39.267759Z",
-      "primary_item": {
-        "id": "d4e804926a5767c05cdb0a378dea0ad20e1e8874",
-        "title": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-        "title_zh": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-        "title_en": null,
-        "title_original": "三年估值 30 亿美元！大模型“中间商”演语科技如何靠抢跑冲刺港股IPO？",
-        "summary": null,
-        "recommend_reason_zh": "三年估值30亿美元，演语科技（Evoken）冲刺港股IPO，正文拆解其从LiblibAI模型社区起家、靠AI应用层“中间商”模式抢跑的商业逻辑与竞争壁垒。",
-        "url": "https://www.aibase.com/news/30437",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 20,
-      "persona_review": "估值和IPO是资本故事，不写代码，等有产品工具再看。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
-      }
-    },
-    {
-      "story_id": "story_b7fc3695f17f",
-      "title": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-      "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-      "primary_url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-      "source": "www.theregister.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "ad7b3df7f7955f9d55b96acf2b7115639201bda9",
-          "title": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "title_zh": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "title_en": null,
-          "title_original": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "summary": null,
-          "recommend_reason_zh": "谷歌以1000万美元拍下破产的Spirit Airlines数据，包括1亿封邮件、3000万通电话录音及Teams、Oracle等记录，用于改进AI服务。",
-          "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-          "source": "www.theregister.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-18T12:06:14.267000Z"
-        },
-        {
-          "id": "5598fabf3e7d07f92aa111bc2fd8f51cae60124c",
-          "title": "Google在拍卖会上买下破产航空公司Spirit的数据，因为AI / Google buys crashed airline Spirit's data at auction, because AI",
-          "title_zh": "Google在拍卖会上买下破产航空公司Spirit的数据，因为AI",
-          "title_en": "Google buys crashed airline Spirit's data at auction, because AI",
-          "title_original": "Google buys crashed airline Spirit's data at auction, because AI",
-          "summary": null,
-          "recommend_reason_zh": "Google在破产拍卖中买下Spirit Airlines的乘客数据用于AI，法庭文件显示数据出售前已去标识化，Google承诺清除任何PII，但乘客隐私仍令人担忧。",
-          "url": "https://news.ycombinator.com/item?id=49343559",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-18T10:25:49.787000Z"
-        },
-        {
-          "id": "1c99c086c006ac042eeca135c91b0f542759e66f",
-          "title": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能 / Google buys crashed airline Spirit's data at auction, because AI",
-          "title_zh": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "title_en": "Google buys crashed airline Spirit's data at auction, because AI",
-          "title_original": "Google buys crashed airline Spirit's data at auction, because AI",
-          "summary": null,
-          "recommend_reason_zh": "Google花1000万美元在拍卖中买下已破产的Spirit Airlines的海量数据，包括超1亿封邮件、3000万通客服录音，以及来自Teams、Oracle等系统的记录，用于训练AI。",
-          "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-18T10:13:28Z"
-        }
-      ],
-      "source_count": 3,
-      "source_names": [
-        "Hacker News (黑客新闻)",
-        "hackernews",
-        "www.theregister.com"
-      ],
-      "items": [
-        {
-          "id": "ad7b3df7f7955f9d55b96acf2b7115639201bda9",
-          "title": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "title_zh": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "title_en": null,
-          "title_original": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "summary": null,
-          "recommend_reason_zh": "谷歌以1000万美元拍下破产的Spirit Airlines数据，包括1亿封邮件、3000万通电话录音及Teams、Oracle等记录，用于改进AI服务。",
-          "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-          "source": "www.theregister.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-18T12:06:14.267000Z"
-        },
-        {
-          "id": "5598fabf3e7d07f92aa111bc2fd8f51cae60124c",
-          "title": "Google在拍卖会上买下破产航空公司Spirit的数据，因为AI / Google buys crashed airline Spirit's data at auction, because AI",
-          "title_zh": "Google在拍卖会上买下破产航空公司Spirit的数据，因为AI",
-          "title_en": "Google buys crashed airline Spirit's data at auction, because AI",
-          "title_original": "Google buys crashed airline Spirit's data at auction, because AI",
-          "summary": null,
-          "recommend_reason_zh": "Google在破产拍卖中买下Spirit Airlines的乘客数据用于AI，法庭文件显示数据出售前已去标识化，Google承诺清除任何PII，但乘客隐私仍令人担忧。",
-          "url": "https://news.ycombinator.com/item?id=49343559",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-18T10:25:49.787000Z"
-        },
-        {
-          "id": "1c99c086c006ac042eeca135c91b0f542759e66f",
-          "title": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能 / Google buys crashed airline Spirit's data at auction, because AI",
-          "title_zh": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-          "title_en": "Google buys crashed airline Spirit's data at auction, because AI",
-          "title_original": "Google buys crashed airline Spirit's data at auction, because AI",
-          "summary": null,
-          "recommend_reason_zh": "Google花1000万美元在拍卖中买下已破产的Spirit Airlines的海量数据，包括超1亿封邮件、3000万通客服录音，以及来自Teams、Oracle等系统的记录，用于训练AI。",
-          "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-18T10:13:28Z"
-        }
-      ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5637,
-      "importance": 0.5637,
-      "importance_score": 0.5637,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.9607,
-        "story_heat": 0.5
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-18T10:13:28Z",
-      "latest_at": "2026-08-18T12:06:14.267000Z",
-      "primary_item": {
-        "id": "ad7b3df7f7955f9d55b96acf2b7115639201bda9",
-        "title": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-        "title_zh": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-        "title_en": null,
-        "title_original": "谷歌在拍卖会上购得已破产的Spirit航空公司数据，原因在于人工智能",
-        "summary": null,
-        "recommend_reason_zh": "谷歌以1000万美元拍下破产的Spirit Airlines数据，包括1亿封邮件、3000万通电话录音及Teams、Oracle等记录，用于改进AI服务。",
-        "url": "https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962",
-        "source": "www.theregister.com",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "买数据训练AI，但用途未明，短期与开发者无关。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-18T15:03:30.725283Z"
+        "scored_at": "2026-08-18T23:41:44.881686Z"
       }
     }
   ]
