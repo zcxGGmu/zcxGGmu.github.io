@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T23:41:11.178342Z",
+  "generated_at": "2026-08-20T04:58:13.638577Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_eadd8d231bf2",
-      "title": "GLM-5.3上线：AA智能指数60分并列开源第一，成本更低",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494105&idx=1&sn=8d7409e0fb846a3c7803c142b5d1a8e7",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 45,
-          "review": "自创“AA智能指数”并列第一，测评细则和对比对象倒是拿出来啊。"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "只有官方公众号宣称，无论文无代码无第三方评测，分数不可验证。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "新模型上线且成本降了，跑推理的直接换。"
-        }
-      }
-    },
-    {
       "story_id": "story_5eb7373b87f5",
       "title": "为前沿模型提供零数据保留功能 / Offering Zero Data Retention for frontier models",
       "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 68,
@@ -60,7 +40,7 @@
       "story_id": "story_be580d9263f2",
       "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失 / LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
       "url": "https://huggingface.co/blog/LiquidAI/qad",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 55,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 82,
           "review": "Q4量化检查点可直接用，精度损失小，适合边缘部署，省内存的今天就能试。"
+        }
+      }
+    },
+    {
+      "story_id": "story_cf8446af2124",
+      "title": "FastMetal 让 Mac 本地 30 秒生成视频 / A 5-second 480P video， generated entirely on a Mac， in 30 seconds. No CUDA， no cloud， 3.9 GiB of mem…",
+      "url": "https://x.com/haoailab/status/2090177721913770407",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 68,
+          "review": "本地30秒出片听着香，可480P五秒视频的实用场景和画质，敢不敢放原片对比？"
+        },
+        "paper-police": {
+          "score": 10,
+          "review": "仅社交媒体宣称，无论文无代码无评测，数字无法验证。"
+        },
+        "pragmatic": {
+          "score": 82,
+          "review": "Mac 本地 30 秒出视频，免云免 CUDA，想玩生成视频的今天就能试。"
         }
       }
     }
