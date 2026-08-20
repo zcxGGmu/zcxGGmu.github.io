@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T15:50:53.863598Z",
+  "generated_at": "2026-08-19T23:41:11.178342Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_7b5d73500e30",
-      "title": "Mojo 语言正式开源，编译器与工具链全面开放",
-      "url": "https://www.modular.com/blog/mojo-open-source",
+      "story_id": "story_5eb7373b87f5",
+      "title": "为前沿模型提供零数据保留功能 / Offering Zero Data Retention for frontier models",
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 82,
-          "review": "真开源了，但吊了两年胃口，生态位还抢得回来吗？"
+          "score": 68,
+          "review": "零保留算实在，但条款细则没晒全，先别急着鼓掌。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "博客只说开源，未见代码仓库和评测，等链接验证。"
+          "score": 30,
+          "review": "官方说零保留，无技术报告无第三方核验，等独立验证再提级。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "编译器开箱即用，写高性能算子可以直接上手试，但生态迁移成本别低估。"
+          "score": 82,
+          "review": "数据合规需求直接可满足，企业客户可立刻评估接入。"
         }
       }
     },
     {
-      "story_id": "story_5a9ad877cc94",
-      "title": "Claude 现已支持 Gmail 邮件与 Google Drive 文件管理 / Claude can now send emails in Gmail and manage files in Google Drive. Ask Claude to reply to a thre…",
-      "url": "https://x.com/claudeai/status/2089806039088517356",
+      "story_id": "story_be580d9263f2",
+      "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失 / LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
+      "url": "https://huggingface.co/blog/LiquidAI/qad",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "集成邮件和网盘就叫新功能？隔壁插件市场早堆成山了。"
+          "score": 55,
+          "review": "97%恢复精度？怕是跟全精度比，量化损失本来就没多少。"
         },
         "paper-police": {
-          "score": 18,
-          "review": "官方推特宣称新功能，无论文无代码无评测，等正式文档再验证。"
+          "score": 45,
+          "review": "官方博客给出97%精度恢复的数字，缺少论文和第三方复现，权重开源情况待查。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "能直接操作Gmail和Drive，自动化办公场景可立即接入。"
+          "score": 82,
+          "review": "Q4量化检查点可直接用，精度损失小，适合边缘部署，省内存的今天就能试。"
         }
       }
     }
