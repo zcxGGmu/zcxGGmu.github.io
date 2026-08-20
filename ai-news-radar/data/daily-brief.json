@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T09:50:26.241384Z",
+  "generated_at": "2026-08-20T14:55:09.486186Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -48,15 +48,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8173,
-      "importance": 0.8173,
-      "importance_score": 0.8173,
+      "score": 0.807,
+      "importance": 0.807,
+      "importance_score": 0.807,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8071,
+        "recency": 0.75,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +85,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -133,15 +133,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8149,
-      "importance": 0.8149,
-      "importance_score": 0.8149,
+      "score": 0.8048,
+      "importance": 0.8048,
+      "importance_score": 0.8048,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.7937,
+        "recency": 0.7376,
         "story_heat": 0.0
       },
       "category": "official",
@@ -170,92 +170,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
-      }
-    },
-    {
-      "story_id": "story_be580d9263f2",
-      "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失 / LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-      "url": "https://huggingface.co/blog/LiquidAI/qad",
-      "primary_url": "https://huggingface.co/blog/LiquidAI/qad",
-      "source": "Hugging Face Blog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "62faba33f1940cf562ff65cd39d1d90d837fd659",
-          "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失 / LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-          "title_zh": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失",
-          "title_en": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-          "title_original": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://huggingface.co/blog/LiquidAI/qad",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-19T13:48:49Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Hugging Face Blog"
-      ],
-      "items": [
-        {
-          "id": "62faba33f1940cf562ff65cd39d1d90d837fd659",
-          "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失 / LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-          "title_zh": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失",
-          "title_en": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-          "title_original": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://huggingface.co/blog/LiquidAI/qad",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-19T13:48:49Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8148,
-      "importance": 0.8148,
-      "importance_score": 0.8148,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.95,
-        "recency": 0.7489,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-19T13:48:49Z",
-      "latest_at": "2026-08-19T13:48:49Z",
-      "primary_item": {
-        "id": "62faba33f1940cf562ff65cd39d1d90d837fd659",
-        "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失 / LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-        "title_zh": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失",
-        "title_en": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-        "title_original": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-        "summary": null,
-        "recommend_reason_zh": null,
-        "url": "https://huggingface.co/blog/LiquidAI/qad",
-        "source": "Hugging Face Blog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 82,
-      "persona_review": "Q4量化检查点可直接用，精度损失小，适合边缘部署，省内存的今天就能试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -303,15 +218,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8139,
-      "importance": 0.8139,
-      "importance_score": 0.8139,
+      "score": 0.8033,
+      "importance": 0.8033,
+      "importance_score": 0.8033,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8327,
+        "recency": 0.7738,
         "story_heat": 0.0
       },
       "category": "official",
@@ -340,7 +255,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -388,15 +303,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8093,
-      "importance": 0.8093,
-      "importance_score": 0.8093,
+      "score": 0.799,
+      "importance": 0.799,
+      "importance_score": 0.799,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8071,
+        "recency": 0.75,
         "story_heat": 0.0
       },
       "category": "official",
@@ -425,30 +340,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
-      "story_id": "story_6e44341739d1",
-      "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
-      "url": "https://www.aibase.com/news/30507",
-      "primary_url": "https://www.aibase.com/news/30507",
+      "story_id": "story_8d7d53a3e367",
+      "title": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
+      "url": "https://www.aibase.com/news/30508",
+      "primary_url": "https://www.aibase.com/news/30508",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "c2d35e4e8e6ed6c9b00e79c6492b55ebbb243e1e",
-          "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
-          "title_zh": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
+          "id": "df6e8786b483bebf33a0fd03556d12f55bcb7285",
+          "title": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
+          "title_zh": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
           "title_en": null,
-          "title_original": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
-          "summary": "With the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nWith the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nWith the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nExplore AI Fronti",
-          "recommend_reason_zh": "美团搜索3.0技术分析披露三次迭代路径，聚焦服务零售排名场景，用LLM语义表征替代传统词匹配，应对长尾品类与复杂意图挑战。",
-          "url": "https://www.aibase.com/news/30507",
+          "title_original": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
+          "summary": null,
+          "recommend_reason_zh": "发布仅7天，开源智能体工具DeepSeek Harness即迎重大更新：正式支持多模态，/goal等命令可图文同传，@引用扩至历史对话，并修复MCP与ACP附件持久性问题。",
+          "url": "https://www.aibase.com/news/30508",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-20T09:50:26.241384Z"
+          "published_at": "2026-08-20T10:47:45.204720Z"
         }
       ],
       "source_count": 1,
@@ -457,31 +372,31 @@
       ],
       "items": [
         {
-          "id": "c2d35e4e8e6ed6c9b00e79c6492b55ebbb243e1e",
-          "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
-          "title_zh": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
+          "id": "df6e8786b483bebf33a0fd03556d12f55bcb7285",
+          "title": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
+          "title_zh": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
           "title_en": null,
-          "title_original": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
-          "summary": "With the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nWith the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nWith the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nExplore AI Fronti",
-          "recommend_reason_zh": "美团搜索3.0技术分析披露三次迭代路径，聚焦服务零售排名场景，用LLM语义表征替代传统词匹配，应对长尾品类与复杂意图挑战。",
-          "url": "https://www.aibase.com/news/30507",
+          "title_original": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
+          "summary": null,
+          "recommend_reason_zh": "发布仅7天，开源智能体工具DeepSeek Harness即迎重大更新：正式支持多模态，/goal等命令可图文同传，@引用扩至历史对话，并修复MCP与ACP附件持久性问题。",
+          "url": "https://www.aibase.com/news/30508",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-20T09:50:26.241384Z"
+          "published_at": "2026-08-20T10:47:45.204720Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
+      "score": 0.7572,
+      "importance": 0.7572,
+      "importance_score": 0.7572,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 1.0,
+        "recency": 0.9422,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -489,112 +404,111 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-20T09:50:26.241384Z",
-      "latest_at": "2026-08-20T09:50:26.241384Z",
+      "earliest_at": "2026-08-20T10:47:45.204720Z",
+      "latest_at": "2026-08-20T10:47:45.204720Z",
       "primary_item": {
-        "id": "c2d35e4e8e6ed6c9b00e79c6492b55ebbb243e1e",
-        "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
-        "title_zh": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
+        "id": "df6e8786b483bebf33a0fd03556d12f55bcb7285",
+        "title": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
+        "title_zh": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
         "title_en": null,
-        "title_original": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
-        "summary": "With the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nWith the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nWith the deep evolution of large language model (LLM) technology, search engines are undergoing a third paradigm shift, moving from traditional keyword-based te\nExplore AI Fronti",
-        "recommend_reason_zh": "美团搜索3.0技术分析披露三次迭代路径，聚焦服务零售排名场景，用LLM语义表征替代传统词匹配，应对长尾品类与复杂意图挑战。",
-        "url": "https://www.aibase.com/news/30507",
+        "title_original": "DeepSeek Harness重磅更新：多模态支持全面上线，意外剧透V4视觉版动向",
+        "summary": null,
+        "recommend_reason_zh": "发布仅7天，开源智能体工具DeepSeek Harness即迎重大更新：正式支持多模态，/goal等命令可图文同传，@引用扩至历史对话，并修复MCP与ACP附件持久性问题。",
+        "url": "https://www.aibase.com/news/30508",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "技术分享有干货，做搜索的可以参考，但无工具可直接上手。",
+      "persona_score": 75,
+      "persona_review": "Harness 多模态已上线，可立刻试；V4 视觉版仅剧透，不急。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
-      "story_id": "story_24b8f639b701",
-      "title": "跟踪组织代码质量趋势 / Track organization code quality trends",
-      "url": "https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends",
-      "primary_url": "https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
+      "story_id": "story_07ac88c2e7ee",
+      "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+      "url": "https://www.ithome.com/0/992/239.htm",
+      "primary_url": "https://www.ithome.com/0/992/239.htm",
+      "source": "IT之家（RSS）",
+      "source_name": "AI HOT",
       "sources": [
         {
-          "id": "52ef45c1784e20e142910f5a0f3a0f9f9bc3454f",
-          "title": "跟踪组织代码质量趋势 / Track organization code quality trends",
-          "title_zh": "跟踪组织代码质量趋势",
-          "title_en": "Track organization code quality trends",
-          "title_original": "Track organization code quality trends",
-          "summary": null,
-          "recommend_reason_zh": "本文介绍GitHub组织级Code Quality仪表板新增的Trends标签页：可跨仓库追踪代码质量随时间变化，识别open findings升降趋势及驱动仓库；该功能面向Enterprise Cloud和Team plans用户，不含Enterprise Server。",
-          "url": "https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-19T12:56:57Z"
+          "id": "639c31e3f086c0a76f0dd5c5b512d606d2e82585",
+          "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+          "title_zh": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+          "title_en": null,
+          "title_original": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+          "summary": "阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页端及深度搜索（DeepSearch）环境。",
+          "recommend_reason_zh": "Qwen-UI-Agent在100+台真机、150+应用环境中训练，真机基准MobileWorld-Real达92.2%，移动端MobileWorld以82.1%领先GPT-5.6 Sol达12个百分点。",
+          "url": "https://www.ithome.com/0/992/239.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-20T09:45:51Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "GitHub Changelog"
+        "IT之家（RSS）"
       ],
       "items": [
         {
-          "id": "52ef45c1784e20e142910f5a0f3a0f9f9bc3454f",
-          "title": "跟踪组织代码质量趋势 / Track organization code quality trends",
-          "title_zh": "跟踪组织代码质量趋势",
-          "title_en": "Track organization code quality trends",
-          "title_original": "Track organization code quality trends",
-          "summary": null,
-          "recommend_reason_zh": "本文介绍GitHub组织级Code Quality仪表板新增的Trends标签页：可跨仓库追踪代码质量随时间变化，识别open findings升降趋势及驱动仓库；该功能面向Enterprise Cloud和Team plans用户，不含Enterprise Server。",
-          "url": "https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-19T12:56:57Z"
+          "id": "639c31e3f086c0a76f0dd5c5b512d606d2e82585",
+          "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+          "title_zh": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+          "title_en": null,
+          "title_original": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+          "summary": "阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页端及深度搜索（DeepSearch）环境。",
+          "recommend_reason_zh": "Qwen-UI-Agent在100+台真机、150+应用环境中训练，真机基准MobileWorld-Real达92.2%，移动端MobileWorld以82.1%领先GPT-5.6 Sol达12个百分点。",
+          "url": "https://www.ithome.com/0/992/239.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-20T09:45:51Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7971,
-      "importance": 0.7971,
-      "importance_score": 0.7971,
-      "importance_label": "官方更新",
+      "score": 0.7547,
+      "importance": 0.7547,
+      "importance_score": 0.7547,
+      "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7396,
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9283,
         "story_heat": 0.0
       },
-      "category": "official",
+      "category": "industry",
       "reasons": [
-        "official_source",
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-19T12:56:57Z",
-      "latest_at": "2026-08-19T12:56:57Z",
+      "earliest_at": "2026-08-20T09:45:51Z",
+      "latest_at": "2026-08-20T09:45:51Z",
       "primary_item": {
-        "id": "52ef45c1784e20e142910f5a0f3a0f9f9bc3454f",
-        "title": "跟踪组织代码质量趋势 / Track organization code quality trends",
-        "title_zh": "跟踪组织代码质量趋势",
-        "title_en": "Track organization code quality trends",
-        "title_original": "Track organization code quality trends",
-        "summary": null,
-        "recommend_reason_zh": "本文介绍GitHub组织级Code Quality仪表板新增的Trends标签页：可跨仓库追踪代码质量随时间变化，识别open findings升降趋势及驱动仓库；该功能面向Enterprise Cloud和Team plans用户，不含Enterprise Server。",
-        "url": "https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
+        "id": "639c31e3f086c0a76f0dd5c5b512d606d2e82585",
+        "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+        "title_zh": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+        "title_en": null,
+        "title_original": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
+        "summary": "阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页端及深度搜索（DeepSearch）环境。",
+        "recommend_reason_zh": "Qwen-UI-Agent在100+台真机、150+应用环境中训练，真机基准MobileWorld-Real达92.2%，移动端MobileWorld以82.1%领先GPT-5.6 Sol达12个百分点。",
+        "url": "https://www.ithome.com/0/992/239.htm",
+        "source": "IT之家（RSS）",
+        "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 78,
-      "persona_review": "GitHub 官方功能，能直接看组织仓库质量趋势，适合团队管理员日常监控。",
+      "persona_score": 60,
+      "persona_review": "UI Agent 概念不新，等模型或 API 开放再评估，暂时不用动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -671,15 +585,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.7637,
-      "importance": 0.7637,
-      "importance_score": 0.7637,
+      "score": 0.753,
+      "importance": 0.753,
+      "importance_score": 0.753,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8392,
+        "recency": 0.7799,
         "story_heat": 0.25
       },
       "category": "industry",
@@ -708,113 +622,113 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
-      "story_id": "story_8d0553fb4a53",
-      "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-      "url": "https://www.ithome.com/0/991/886.htm",
-      "primary_url": "https://www.ithome.com/0/991/886.htm",
-      "source": "IT之家（RSS）",
+      "story_id": "story_1eb20f797356",
+      "title": "Claude Code 初创公司指南：五大规则与创始人洞见 / The Claude Code Guide For Startups",
+      "url": "https://claude.com/blog/claude-code-guide-for-startups",
+      "primary_url": "https://claude.com/blog/claude-code-guide-for-startups",
+      "source": "Claude：Blog（网页）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "af4a1a809f9e4fe18fbb8ea61b21223ff382e96e",
-          "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-          "title_zh": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-          "title_en": null,
-          "title_original": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-          "summary": "OpenAI 首席财务官萨拉·弗里亚尔在全员大会上告知员工，公司最迟将于 2027 年完成上市，若业务持续向好也可能更早。OpenAI 已于 6 月秘密提交 IPO 招股书，本季度整体年化营收增长 35%，企业级业务年化营收增长 50%，AI 编程与办公产品周活跃用户突破 2000 万。",
-          "recommend_reason_zh": "OpenAI CFO透露公司最迟2027年上市，已秘密提交招股书；本季度年化营收增35%、企业级业务增50%，二季度营收67亿美元。了解上市时间表、财务数据及高管离职影响，值得一读。",
-          "url": "https://www.ithome.com/0/991/886.htm",
-          "source": "IT之家（RSS）",
+          "id": "6d1ec869caa4430d86f28505a4278b9a849b78b3",
+          "title": "Claude Code 初创公司指南：五大规则与创始人洞见 / The Claude Code Guide For Startups",
+          "title_zh": "Claude Code 初创公司指南：五大规则与创始人洞见",
+          "title_en": "The Claude Code Guide For Startups",
+          "title_original": "The Claude Code Guide For Startups",
+          "summary": "Anthropic 发布面向初创公司的 Claude Code 使用指南，基于对十余家高增长公司的调研，总结出\"人人皆可交付、自动化繁琐工作、信任但验证、为重构而构建、原型-自用-产品化\"五大规则。",
+          "recommend_reason_zh": "这篇指南采访了十几家高增长初创公司，总结出五条规则，展示Claude Code如何让非技术员工从0到1构建原型，并列举Crosby将工具接入律师流程、Clay通过季度评审纳入路线图等具体做法。",
+          "url": "https://claude.com/blog/claude-code-guide-for-startups",
+          "source": "Claude：Blog（网页）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-20T00:17:26Z"
+          "published_at": "2026-08-20T13:26:53.704000Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "IT之家（RSS）"
+        "Claude：Blog（网页）"
       ],
       "items": [
         {
-          "id": "af4a1a809f9e4fe18fbb8ea61b21223ff382e96e",
-          "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-          "title_zh": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-          "title_en": null,
-          "title_original": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-          "summary": "OpenAI 首席财务官萨拉·弗里亚尔在全员大会上告知员工，公司最迟将于 2027 年完成上市，若业务持续向好也可能更早。OpenAI 已于 6 月秘密提交 IPO 招股书，本季度整体年化营收增长 35%，企业级业务年化营收增长 50%，AI 编程与办公产品周活跃用户突破 2000 万。",
-          "recommend_reason_zh": "OpenAI CFO透露公司最迟2027年上市，已秘密提交招股书；本季度年化营收增35%、企业级业务增50%，二季度营收67亿美元。了解上市时间表、财务数据及高管离职影响，值得一读。",
-          "url": "https://www.ithome.com/0/991/886.htm",
-          "source": "IT之家（RSS）",
+          "id": "6d1ec869caa4430d86f28505a4278b9a849b78b3",
+          "title": "Claude Code 初创公司指南：五大规则与创始人洞见 / The Claude Code Guide For Startups",
+          "title_zh": "Claude Code 初创公司指南：五大规则与创始人洞见",
+          "title_en": "The Claude Code Guide For Startups",
+          "title_original": "The Claude Code Guide For Startups",
+          "summary": "Anthropic 发布面向初创公司的 Claude Code 使用指南，基于对十余家高增长公司的调研，总结出\"人人皆可交付、自动化繁琐工作、信任但验证、为重构而构建、原型-自用-产品化\"五大规则。",
+          "recommend_reason_zh": "这篇指南采访了十几家高增长初创公司，总结出五条规则，展示Claude Code如何让非技术员工从0到1构建原型，并列举Crosby将工具接入律师流程、Clay通过季度评审纳入路线图等具体做法。",
+          "url": "https://claude.com/blog/claude-code-guide-for-startups",
+          "source": "Claude：Blog（网页）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-20T00:17:26Z"
+          "published_at": "2026-08-20T13:26:53.704000Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7414,
-      "importance": 0.7414,
-      "importance_score": 0.7414,
+      "score": 0.7428,
+      "importance": 0.7428,
+      "importance_score": 0.7428,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.71,
+        "editorial": 0.65,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8712,
+        "recency": 0.979,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
         "high_ai_relevance"
       ],
-      "earliest_at": "2026-08-20T00:17:26Z",
-      "latest_at": "2026-08-20T00:17:26Z",
+      "earliest_at": "2026-08-20T13:26:53.704000Z",
+      "latest_at": "2026-08-20T13:26:53.704000Z",
       "primary_item": {
-        "id": "af4a1a809f9e4fe18fbb8ea61b21223ff382e96e",
-        "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-        "title_zh": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-        "title_en": null,
-        "title_original": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
-        "summary": "OpenAI 首席财务官萨拉·弗里亚尔在全员大会上告知员工，公司最迟将于 2027 年完成上市，若业务持续向好也可能更早。OpenAI 已于 6 月秘密提交 IPO 招股书，本季度整体年化营收增长 35%，企业级业务年化营收增长 50%，AI 编程与办公产品周活跃用户突破 2000 万。",
-        "recommend_reason_zh": "OpenAI CFO透露公司最迟2027年上市，已秘密提交招股书；本季度年化营收增35%、企业级业务增50%，二季度营收67亿美元。了解上市时间表、财务数据及高管离职影响，值得一读。",
-        "url": "https://www.ithome.com/0/991/886.htm",
-        "source": "IT之家（RSS）",
+        "id": "6d1ec869caa4430d86f28505a4278b9a849b78b3",
+        "title": "Claude Code 初创公司指南：五大规则与创始人洞见 / The Claude Code Guide For Startups",
+        "title_zh": "Claude Code 初创公司指南：五大规则与创始人洞见",
+        "title_en": "The Claude Code Guide For Startups",
+        "title_original": "The Claude Code Guide For Startups",
+        "summary": "Anthropic 发布面向初创公司的 Claude Code 使用指南，基于对十余家高增长公司的调研，总结出\"人人皆可交付、自动化繁琐工作、信任但验证、为重构而构建、原型-自用-产品化\"五大规则。",
+        "recommend_reason_zh": "这篇指南采访了十几家高增长初创公司，总结出五条规则，展示Claude Code如何让非技术员工从0到1构建原型，并列举Crosby将工具接入律师流程、Clay通过季度评审纳入路线图等具体做法。",
+        "url": "https://claude.com/blog/claude-code-guide-for-startups",
+        "source": "Claude：Blog（网页）",
         "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 35,
-      "persona_review": "上市时间表不解决今天的技术问题，等真招股再关注。",
+      "persona_score": 55,
+      "persona_review": "指南类文章，已在用 Claude Code 的可借鉴，但无上手新功能。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
-      "story_id": "story_185623635221",
-      "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
-      "url": "https://www.aibase.com/news/30506",
-      "primary_url": "https://www.aibase.com/news/30506",
+      "story_id": "story_6e44341739d1",
+      "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
+      "url": "https://www.aibase.com/news/30507",
+      "primary_url": "https://www.aibase.com/news/30507",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "76b9f01767f82759af76bb18dca18be1692ace57",
-          "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
-          "title_zh": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "id": "c2d35e4e8e6ed6c9b00e79c6492b55ebbb243e1e",
+          "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
+          "title_zh": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
           "title_en": null,
-          "title_original": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "title_original": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
           "summary": null,
-          "recommend_reason_zh": "小米人形机器人Tie Da在WRC2026首次亮相，身高约1.70米、重66公斤，66个自由度中半数集中在双手；同时“小米铁大”商标已成功注册，涉及医疗园艺、健身设备等。",
-          "url": "https://www.aibase.com/news/30506",
+          "recommend_reason_zh": "美团搜索3.0技术分析披露三次迭代路径，聚焦服务零售排名场景，用LLM语义表征替代传统词匹配，应对长尾品类与复杂意图挑战。",
+          "url": "https://www.aibase.com/news/30507",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-20T08:56:42.308162Z"
+          "published_at": "2026-08-20T09:50:26.241384Z"
         }
       ],
       "source_count": 1,
@@ -823,31 +737,31 @@
       ],
       "items": [
         {
-          "id": "76b9f01767f82759af76bb18dca18be1692ace57",
-          "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
-          "title_zh": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "id": "c2d35e4e8e6ed6c9b00e79c6492b55ebbb243e1e",
+          "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
+          "title_zh": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
           "title_en": null,
-          "title_original": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "title_original": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
           "summary": null,
-          "recommend_reason_zh": "小米人形机器人Tie Da在WRC2026首次亮相，身高约1.70米、重66公斤，66个自由度中半数集中在双手；同时“小米铁大”商标已成功注册，涉及医疗园艺、健身设备等。",
-          "url": "https://www.aibase.com/news/30506",
+          "recommend_reason_zh": "美团搜索3.0技术分析披露三次迭代路径，聚焦服务零售排名场景，用LLM语义表征替代传统词匹配，应对长尾品类与复杂意图挑战。",
+          "url": "https://www.aibase.com/news/30507",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-20T08:56:42.308162Z"
+          "published_at": "2026-08-20T09:50:26.241384Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7653,
-      "importance": 0.7653,
-      "importance_score": 0.7653,
+      "score": 0.7549,
+      "importance": 0.7549,
+      "importance_score": 0.7549,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9872,
+        "recency": 0.9293,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -855,27 +769,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-20T08:56:42.308162Z",
-      "latest_at": "2026-08-20T08:56:42.308162Z",
+      "earliest_at": "2026-08-20T09:50:26.241384Z",
+      "latest_at": "2026-08-20T09:50:26.241384Z",
       "primary_item": {
-        "id": "76b9f01767f82759af76bb18dca18be1692ace57",
-        "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
-        "title_zh": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+        "id": "c2d35e4e8e6ed6c9b00e79c6492b55ebbb243e1e",
+        "title": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
+        "title_zh": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
         "title_en": null,
-        "title_original": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+        "title_original": "美团搜索 3.0如何用大模型表征重构本地生活搜索底座？",
         "summary": null,
-        "recommend_reason_zh": "小米人形机器人Tie Da在WRC2026首次亮相，身高约1.70米、重66公斤，66个自由度中半数集中在双手；同时“小米铁大”商标已成功注册，涉及医疗园艺、健身设备等。",
-        "url": "https://www.aibase.com/news/30506",
+        "recommend_reason_zh": "美团搜索3.0技术分析披露三次迭代路径，聚焦服务零售排名场景，用LLM语义表征替代传统词匹配，应对长尾品类与复杂意图挑战。",
+        "url": "https://www.aibase.com/news/30507",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "没有开放接口或技术细节，机器人开发者只能看个热闹。",
+      "persona_score": 55,
+      "persona_review": "技术分享有干货，做搜索的可以参考，但无工具可直接上手。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -923,15 +837,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7337,
-      "importance": 0.7337,
-      "importance_score": 0.7337,
+      "score": 0.7235,
+      "importance": 0.7235,
+      "importance_score": 0.7235,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7948,
+        "recency": 0.7386,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -958,7 +872,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -1006,15 +920,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7335,
-      "importance": 0.7335,
-      "importance_score": 0.7335,
+      "score": 0.723,
+      "importance": 0.723,
+      "importance_score": 0.723,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.71,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8273,
+        "recency": 0.7688,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1041,7 +955,174 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
+      }
+    },
+    {
+      "story_id": "story_8d0553fb4a53",
+      "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+      "url": "https://www.ithome.com/0/991/886.htm",
+      "primary_url": "https://www.ithome.com/0/991/886.htm",
+      "source": "IT之家（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "af4a1a809f9e4fe18fbb8ea61b21223ff382e96e",
+          "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+          "title_zh": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+          "title_en": null,
+          "title_original": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+          "summary": "OpenAI 首席财务官萨拉·弗里亚尔在全员大会上告知员工，公司最迟将于 2027 年完成上市，若业务持续向好也可能更早。OpenAI 已于 6 月秘密提交 IPO 招股书，本季度整体年化营收增长 35%，企业级业务年化营收增长 50%，AI 编程与办公产品周活跃用户突破 2000 万。",
+          "recommend_reason_zh": "OpenAI CFO透露公司最迟2027年上市，已秘密提交招股书；本季度年化营收增35%、企业级业务增50%，二季度营收67亿美元。了解上市时间表、财务数据及高管离职影响，值得一读。",
+          "url": "https://www.ithome.com/0/991/886.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-20T00:17:26Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "IT之家（RSS）"
+      ],
+      "items": [
+        {
+          "id": "af4a1a809f9e4fe18fbb8ea61b21223ff382e96e",
+          "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+          "title_zh": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+          "title_en": null,
+          "title_original": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+          "summary": "OpenAI 首席财务官萨拉·弗里亚尔在全员大会上告知员工，公司最迟将于 2027 年完成上市，若业务持续向好也可能更早。OpenAI 已于 6 月秘密提交 IPO 招股书，本季度整体年化营收增长 35%，企业级业务年化营收增长 50%，AI 编程与办公产品周活跃用户突破 2000 万。",
+          "recommend_reason_zh": "OpenAI CFO透露公司最迟2027年上市，已秘密提交招股书；本季度年化营收增35%、企业级业务增50%，二季度营收67亿美元。了解上市时间表、财务数据及高管离职影响，值得一读。",
+          "url": "https://www.ithome.com/0/991/886.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-20T00:17:26Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7303,
+      "importance": 0.7303,
+      "importance_score": 0.7303,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.71,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.8096,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-20T00:17:26Z",
+      "latest_at": "2026-08-20T00:17:26Z",
+      "primary_item": {
+        "id": "af4a1a809f9e4fe18fbb8ea61b21223ff382e96e",
+        "title": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+        "title_zh": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+        "title_en": null,
+        "title_original": "消息称 OpenAI 首席财务官告知员工：公司最迟将于 2027 年上市",
+        "summary": "OpenAI 首席财务官萨拉·弗里亚尔在全员大会上告知员工，公司最迟将于 2027 年完成上市，若业务持续向好也可能更早。OpenAI 已于 6 月秘密提交 IPO 招股书，本季度整体年化营收增长 35%，企业级业务年化营收增长 50%，AI 编程与办公产品周活跃用户突破 2000 万。",
+        "recommend_reason_zh": "OpenAI CFO透露公司最迟2027年上市，已秘密提交招股书；本季度年化营收增35%、企业级业务增50%，二季度营收67亿美元。了解上市时间表、财务数据及高管离职影响，值得一读。",
+        "url": "https://www.ithome.com/0/991/886.htm",
+        "source": "IT之家（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 35,
+      "persona_review": "上市时间表不解决今天的技术问题，等真招股再关注。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-20T15:00:33.225743Z"
+      }
+    },
+    {
+      "story_id": "story_185623635221",
+      "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+      "url": "https://www.aibase.com/news/30506",
+      "primary_url": "https://www.aibase.com/news/30506",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "76b9f01767f82759af76bb18dca18be1692ace57",
+          "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "title_zh": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "title_en": null,
+          "title_original": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "summary": null,
+          "recommend_reason_zh": "小米人形机器人Tie Da在WRC2026首次亮相，身高约1.70米、重66公斤，66个自由度中半数集中在双手；同时“小米铁大”商标已成功注册，涉及医疗园艺、健身设备等。",
+          "url": "https://www.aibase.com/news/30506",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-20T08:56:42.308162Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "76b9f01767f82759af76bb18dca18be1692ace57",
+          "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "title_zh": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "title_en": null,
+          "title_original": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+          "summary": null,
+          "recommend_reason_zh": "小米人形机器人Tie Da在WRC2026首次亮相，身高约1.70米、重66公斤，66个自由度中半数集中在双手；同时“小米铁大”商标已成功注册，涉及医疗园艺、健身设备等。",
+          "url": "https://www.aibase.com/news/30506",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-20T08:56:42.308162Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7527,
+      "importance": 0.7527,
+      "importance_score": 0.7527,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9173,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-20T08:56:42.308162Z",
+      "latest_at": "2026-08-20T08:56:42.308162Z",
+      "primary_item": {
+        "id": "76b9f01767f82759af76bb18dca18be1692ace57",
+        "title": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+        "title_zh": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+        "title_en": null,
+        "title_original": "小米人形机器人首次亮相，已成功注册多枚小米铁大商标",
+        "summary": null,
+        "recommend_reason_zh": "小米人形机器人Tie Da在WRC2026首次亮相，身高约1.70米、重66公斤，66个自由度中半数集中在双手；同时“小米铁大”商标已成功注册，涉及医疗园艺、健身设备等。",
+        "url": "https://www.aibase.com/news/30506",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "没有开放接口或技术细节，机器人开发者只能看个热闹。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -1089,15 +1170,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7653,
-      "importance": 0.7653,
-      "importance_score": 0.7653,
+      "score": 0.7527,
+      "importance": 0.7527,
+      "importance_score": 0.7527,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9872,
+        "recency": 0.9173,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1125,7 +1206,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -1173,15 +1254,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7628,
-      "importance": 0.7628,
-      "importance_score": 0.7628,
+      "score": 0.7504,
+      "importance": 0.7504,
+      "importance_score": 0.7504,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9731,
+        "recency": 0.9043,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1209,7 +1290,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -1257,21 +1338,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7606,
-      "importance": 0.7606,
-      "importance_score": 0.7606,
+      "score": 0.7484,
+      "importance": 0.7484,
+      "importance_score": 0.7484,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9614,
+        "recency": 0.8934,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-20T07:06:44.789536Z",
       "latest_at": "2026-08-20T07:06:44.789536Z",
@@ -1293,7 +1373,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -1341,21 +1421,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7606,
-      "importance": 0.7606,
-      "importance_score": 0.7606,
+      "score": 0.7484,
+      "importance": 0.7484,
+      "importance_score": 0.7484,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9614,
+        "recency": 0.8934,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-20T07:06:44.789536Z",
       "latest_at": "2026-08-20T07:06:44.789536Z",
@@ -1377,7 +1456,260 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
+      }
+    },
+    {
+      "story_id": "story_cd43b590ecb7",
+      "title": "请不要粘贴AI生成的内容",
+      "url": "https://dontpastetheai.com",
+      "primary_url": "https://dontpastetheai.com",
+      "source": "dontpastetheai.com",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "132dfe0439518720d544f0d1e85d9f268c16eb39",
+          "title": "请不要粘贴AI生成的内容",
+          "title_zh": "请不要粘贴AI生成的内容",
+          "title_en": null,
+          "title_original": "请不要粘贴AI生成的内容",
+          "summary": null,
+          "recommend_reason_zh": "别再粘贴ChatGPT回答了——对方四秒就能拿到通用回复，问你是想要你的判断。这篇短文提供dontpastetheai.com链接供你提醒对方，还有不适合发给老板的愤怒版，并欢迎在GitHub上参与改写。",
+          "url": "https://dontpastetheai.com",
+          "source": "dontpastetheai.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-20T09:26:10.003000Z"
+        },
+        {
+          "id": "14c4f74bdc0da7fa9e4d7c6d1a1ef8cf759279d7",
+          "title": "别直接把AI回答粘贴给对方",
+          "title_zh": "别直接把AI回答粘贴给对方",
+          "title_en": "Don't paste the AI, please",
+          "title_original": "Don't paste the AI, please",
+          "summary": "What's the equivalent of \"Google it yourself\" these days? When you ask something of somebody, the expectation of the other side to drop everything and do work for you isn't always appropriate/balanced/appreciated. The underlying problem here is that communication is hard; especially if it's not face to face. People can't read your mind or might not get the full context of your question. Back in the day I learned the hard way that sending a long reply to an email just ensures the other side won't",
+          "recommend_reason_zh": "长邮件没人看、秒回低优先级请求只会添乱——作者用亲身经历总结出三条沟通原则：回复要简短清晰，低优先级请求别立刻回复，想写长回复时优先面谈；并提醒先反思自己提问是否合理。",
+          "url": "https://news.ycombinator.com/item?id=49371857",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-20T08:40:46.840000Z"
+        },
+        {
+          "id": "b6f7bc7997292509751cecb729085e02b469d495",
+          "title": "请不要粘贴AI生成的内容 / Don't paste the AI, please",
+          "title_zh": "请不要粘贴AI生成的内容",
+          "title_en": "Don't paste the AI, please",
+          "title_original": "Don't paste the AI, please",
+          "summary": "If someone asks you a question, paste your answer — not the chatbot's.\nIf someone asks you a question, paste your answer — not the chatbot's.\nWhen someone asks you something, they want your answer.\n        Not a wall of unedited ChatGPT output . A short reply from you beats\n        a long one from a model, every time.\nSomeone asked you a real question. You popped it into a chatbot, copied the answer, and sent it back.\n        It felt fast. It felt helpful. And it usually isn't.\nThe person on the",
+          "recommend_reason_zh": "别把ChatGPT的通用回答直接粘贴给别人——对方问的是你的看法。这篇讽刺短文用“四秒”点出关键：要你的语境、品味和判断，网站还提供带情绪版本和GitHub PR。",
+          "url": "https://dontpastetheai.com",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-20T08:20:44Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News (黑客新闻)",
+        "dontpastetheai.com",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "132dfe0439518720d544f0d1e85d9f268c16eb39",
+          "title": "请不要粘贴AI生成的内容",
+          "title_zh": "请不要粘贴AI生成的内容",
+          "title_en": null,
+          "title_original": "请不要粘贴AI生成的内容",
+          "summary": null,
+          "recommend_reason_zh": "别再粘贴ChatGPT回答了——对方四秒就能拿到通用回复，问你是想要你的判断。这篇短文提供dontpastetheai.com链接供你提醒对方，还有不适合发给老板的愤怒版，并欢迎在GitHub上参与改写。",
+          "url": "https://dontpastetheai.com",
+          "source": "dontpastetheai.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-20T09:26:10.003000Z"
+        },
+        {
+          "id": "14c4f74bdc0da7fa9e4d7c6d1a1ef8cf759279d7",
+          "title": "别直接把AI回答粘贴给对方",
+          "title_zh": "别直接把AI回答粘贴给对方",
+          "title_en": "Don't paste the AI, please",
+          "title_original": "Don't paste the AI, please",
+          "summary": "What's the equivalent of \"Google it yourself\" these days? When you ask something of somebody, the expectation of the other side to drop everything and do work for you isn't always appropriate/balanced/appreciated. The underlying problem here is that communication is hard; especially if it's not face to face. People can't read your mind or might not get the full context of your question. Back in the day I learned the hard way that sending a long reply to an email just ensures the other side won't",
+          "recommend_reason_zh": "长邮件没人看、秒回低优先级请求只会添乱——作者用亲身经历总结出三条沟通原则：回复要简短清晰，低优先级请求别立刻回复，想写长回复时优先面谈；并提醒先反思自己提问是否合理。",
+          "url": "https://news.ycombinator.com/item?id=49371857",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-20T08:40:46.840000Z"
+        },
+        {
+          "id": "b6f7bc7997292509751cecb729085e02b469d495",
+          "title": "请不要粘贴AI生成的内容 / Don't paste the AI, please",
+          "title_zh": "请不要粘贴AI生成的内容",
+          "title_en": "Don't paste the AI, please",
+          "title_original": "Don't paste the AI, please",
+          "summary": "If someone asks you a question, paste your answer — not the chatbot's.\nIf someone asks you a question, paste your answer — not the chatbot's.\nWhen someone asks you something, they want your answer.\n        Not a wall of unedited ChatGPT output . A short reply from you beats\n        a long one from a model, every time.\nSomeone asked you a real question. You popped it into a chatbot, copied the answer, and sent it back.\n        It felt fast. It felt helpful. And it usually isn't.\nThe person on the",
+          "recommend_reason_zh": "别把ChatGPT的通用回答直接粘贴给别人——对方问的是你的看法。这篇讽刺短文用“四秒”点出关键：要你的语境、品味和判断，网站还提供带情绪版本和GitHub PR。",
+          "url": "https://dontpastetheai.com",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-20T08:20:44Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5571,
+      "importance": 0.5571,
+      "importance_score": 0.5571,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9239,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-20T08:20:44Z",
+      "latest_at": "2026-08-20T09:26:10.003000Z",
+      "primary_item": {
+        "id": "132dfe0439518720d544f0d1e85d9f268c16eb39",
+        "title": "请不要粘贴AI生成的内容",
+        "title_zh": "请不要粘贴AI生成的内容",
+        "title_en": null,
+        "title_original": "请不要粘贴AI生成的内容",
+        "summary": null,
+        "recommend_reason_zh": "别再粘贴ChatGPT回答了——对方四秒就能拿到通用回复，问你是想要你的判断。这篇短文提供dontpastetheai.com链接供你提醒对方，还有不适合发给老板的愤怒版，并欢迎在GitHub上参与改写。",
+        "url": "https://dontpastetheai.com",
+        "source": "dontpastetheai.com",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 42,
+      "persona_review": "提醒别直接贴AI生成内容，但没给工具或方案，动手价值有限。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-20T15:00:33.225743Z"
+      }
+    },
+    {
+      "story_id": "story_d727e79f1124",
+      "title": "用Claude折腾27美元的智能手表 / Hacking with Claude on a $27 Smart Watch",
+      "url": "https://news.ycombinator.com/item?id=49374772",
+      "primary_url": "https://news.ycombinator.com/item?id=49374772",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "59f2590b79b16641adbb408a02decbfaae1b9e7e",
+          "title": "用Claude折腾27美元的智能手表 / Hacking with Claude on a $27 Smart Watch",
+          "title_zh": "用Claude折腾27美元的智能手表",
+          "title_en": "Hacking with Claude on a $27 Smart Watch",
+          "title_original": "Hacking with Claude on a $27 Smart Watch",
+          "summary": "reply\nreply\nreply\nWhat's stopping you from using the watch piece by itself or as another type of wearable accessory?\nreply\nreply\n... This seems needlessly confusing/misleading? Author continues to use \"Claude\" throughout the article.\nreply\nreply\nreply\nreply",
+          "recommend_reason_zh": "作者在27美元智能手表上玩转Claude，展示了如何将这块廉价手表用于黑客实验，并探讨了将其单独作为可穿戴配件使用的可能性。",
+          "url": "https://news.ycombinator.com/item?id=49374772",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-20T14:39:08.635000Z"
+        },
+        {
+          "id": "5e0539426f3de075fa166c138da07ccaf646c68c",
+          "title": "用Claude折腾27美元的智能手表 / Hacking with Claude on a $27 Smart Watch",
+          "title_zh": "用Claude折腾27美元的智能手表",
+          "title_en": "Hacking with Claude on a $27 Smart Watch",
+          "title_original": "Hacking with Claude on a $27 Smart Watch",
+          "summary": "The Pine Time is a $27 smart watch that runs open source firmware. I’ve had one sitting in the back of a drawer for a...\nThe Pine Time is a $27 smart watch that runs open source firmware. I’ve had one sitting in the back of a drawer for a...\nHusband. Father. Software engineer. Ubuntu Linux user.\nThe Pine Time is a $27 smart watch that\nruns open source firmware. I’ve had one sitting in the back of a drawer for a\nyear or two. When I saw @steveruizok ’s Tweet\nabout hacking on ESP32 devices with Cla",
+          "recommend_reason_zh": "用Claude等AI模型在27美元PineTime上尝试复刻Casio表盘，实测240x240图蓝牙传输要10分钟、刷屏1-2秒，内存不足只能流式读取。",
+          "url": "https://www.mikekasberg.com/blog/2026/08/19/hacking-with-claude-on-a-27-smart-watch.html",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-20T14:08:09Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News (黑客新闻)",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "59f2590b79b16641adbb408a02decbfaae1b9e7e",
+          "title": "用Claude折腾27美元的智能手表 / Hacking with Claude on a $27 Smart Watch",
+          "title_zh": "用Claude折腾27美元的智能手表",
+          "title_en": "Hacking with Claude on a $27 Smart Watch",
+          "title_original": "Hacking with Claude on a $27 Smart Watch",
+          "summary": "reply\nreply\nreply\nWhat's stopping you from using the watch piece by itself or as another type of wearable accessory?\nreply\nreply\n... This seems needlessly confusing/misleading? Author continues to use \"Claude\" throughout the article.\nreply\nreply\nreply\nreply",
+          "recommend_reason_zh": "作者在27美元智能手表上玩转Claude，展示了如何将这块廉价手表用于黑客实验，并探讨了将其单独作为可穿戴配件使用的可能性。",
+          "url": "https://news.ycombinator.com/item?id=49374772",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-20T14:39:08.635000Z"
+        },
+        {
+          "id": "5e0539426f3de075fa166c138da07ccaf646c68c",
+          "title": "用Claude折腾27美元的智能手表 / Hacking with Claude on a $27 Smart Watch",
+          "title_zh": "用Claude折腾27美元的智能手表",
+          "title_en": "Hacking with Claude on a $27 Smart Watch",
+          "title_original": "Hacking with Claude on a $27 Smart Watch",
+          "summary": "The Pine Time is a $27 smart watch that runs open source firmware. I’ve had one sitting in the back of a drawer for a...\nThe Pine Time is a $27 smart watch that runs open source firmware. I’ve had one sitting in the back of a drawer for a...\nHusband. Father. Software engineer. Ubuntu Linux user.\nThe Pine Time is a $27 smart watch that\nruns open source firmware. I’ve had one sitting in the back of a drawer for a\nyear or two. When I saw @steveruizok ’s Tweet\nabout hacking on ESP32 devices with Cla",
+          "recommend_reason_zh": "用Claude等AI模型在27美元PineTime上尝试复刻Casio表盘，实测240x240图蓝牙传输要10分钟、刷屏1-2秒，内存不足只能流式读取。",
+          "url": "https://www.mikekasberg.com/blog/2026/08/19/hacking-with-claude-on-a-27-smart-watch.html",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-20T14:08:09Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5451,
+      "importance": 0.5451,
+      "importance_score": 0.5451,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9962,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-20T14:08:09Z",
+      "latest_at": "2026-08-20T14:39:08.635000Z",
+      "primary_item": {
+        "id": "59f2590b79b16641adbb408a02decbfaae1b9e7e",
+        "title": "用Claude折腾27美元的智能手表 / Hacking with Claude on a $27 Smart Watch",
+        "title_zh": "用Claude折腾27美元的智能手表",
+        "title_en": "Hacking with Claude on a $27 Smart Watch",
+        "title_original": "Hacking with Claude on a $27 Smart Watch",
+        "summary": "reply\nreply\nreply\nWhat's stopping you from using the watch piece by itself or as another type of wearable accessory?\nreply\nreply\n... This seems needlessly confusing/misleading? Author continues to use \"Claude\" throughout the article.\nreply\nreply\nreply\nreply",
+        "recommend_reason_zh": "作者在27美元智能手表上玩转Claude，展示了如何将这块廉价手表用于黑客实验，并探讨了将其单独作为可穿戴配件使用的可能性。",
+        "url": "https://news.ycombinator.com/item?id=49374772",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "DIY 玩具级演示，思路有启发，但无通用方案，不用行动。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     },
     {
@@ -1425,21 +1757,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7606,
-      "importance": 0.7606,
-      "importance_score": 0.7606,
+      "score": 0.7484,
+      "importance": 0.7484,
+      "importance_score": 0.7484,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9614,
+        "recency": 0.8934,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-20T07:06:44.789536Z",
       "latest_at": "2026-08-20T07:06:44.789536Z",
@@ -1461,373 +1792,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
-      }
-    },
-    {
-      "story_id": "story_cd43b590ecb7",
-      "title": "请不要粘贴AI生成的内容",
-      "url": "https://dontpastetheai.com",
-      "primary_url": "https://dontpastetheai.com",
-      "source": "dontpastetheai.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "132dfe0439518720d544f0d1e85d9f268c16eb39",
-          "title": "请不要粘贴AI生成的内容",
-          "title_zh": "请不要粘贴AI生成的内容",
-          "title_en": null,
-          "title_original": "请不要粘贴AI生成的内容",
-          "summary": "If someone asks you a question, paste your answer — not the chatbot's.\nIf someone asks you a question, paste your answer — not the chatbot's.\nWhen someone asks you something, they want your answer.\n        Not a wall of unedited ChatGPT output . A short reply from you beats\n        a long one from a model, every time.\nSomeone asked you a real question. You popped it into a chatbot, copied the answer, and sent it back.\n        It felt fast. It felt helpful. And it usually isn't.\nThe person on the",
-          "recommend_reason_zh": "别再粘贴ChatGPT回答了——对方四秒就能拿到通用回复，问你是想要你的判断。这篇短文提供dontpastetheai.com链接供你提醒对方，还有不适合发给老板的愤怒版，并欢迎在GitHub上参与改写。",
-          "url": "https://dontpastetheai.com",
-          "source": "dontpastetheai.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-20T09:26:10.003000Z"
-        },
-        {
-          "id": "14c4f74bdc0da7fa9e4d7c6d1a1ef8cf759279d7",
-          "title": "请勿粘贴AI生成内容 / Don't Paste the AI, please",
-          "title_zh": "请勿粘贴AI生成内容",
-          "title_en": "Don't Paste the AI, please",
-          "title_original": "Don't Paste the AI, please",
-          "summary": null,
-          "recommend_reason_zh": "作者用Claude时选择直接粘贴完整上下文，宁可付“LLM税”也不逐次引导；他把Claude的总结当作可恢复的工作摘要，避免反复确认，让双方更同步。本文讲透了这种“resume”机制的价值。",
-          "url": "https://news.ycombinator.com/item?id=49371857",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T08:40:46.840000Z"
-        },
-        {
-          "id": "b6f7bc7997292509751cecb729085e02b469d495",
-          "title": "请不要粘贴AI生成的内容 / Don't Paste the AI, please",
-          "title_zh": "请不要粘贴AI生成的内容",
-          "title_en": "Don't Paste the AI, please",
-          "title_original": "Don't Paste the AI, please",
-          "summary": null,
-          "recommend_reason_zh": "别把ChatGPT的原文粘贴给提问者——对方要的是你的观点和判断，不是四秒就能生成的通用答案。这篇讽刺短文用具体场景告诉你为何简短人工回复胜过冗长模型输出。",
-          "url": "https://dontpastetheai.com",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-20T08:20:44Z"
-        }
-      ],
-      "source_count": 3,
-      "source_names": [
-        "Hacker News (黑客新闻)",
-        "dontpastetheai.com",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "132dfe0439518720d544f0d1e85d9f268c16eb39",
-          "title": "请不要粘贴AI生成的内容",
-          "title_zh": "请不要粘贴AI生成的内容",
-          "title_en": null,
-          "title_original": "请不要粘贴AI生成的内容",
-          "summary": "If someone asks you a question, paste your answer — not the chatbot's.\nIf someone asks you a question, paste your answer — not the chatbot's.\nWhen someone asks you something, they want your answer.\n        Not a wall of unedited ChatGPT output . A short reply from you beats\n        a long one from a model, every time.\nSomeone asked you a real question. You popped it into a chatbot, copied the answer, and sent it back.\n        It felt fast. It felt helpful. And it usually isn't.\nThe person on the",
-          "recommend_reason_zh": "别再粘贴ChatGPT回答了——对方四秒就能拿到通用回复，问你是想要你的判断。这篇短文提供dontpastetheai.com链接供你提醒对方，还有不适合发给老板的愤怒版，并欢迎在GitHub上参与改写。",
-          "url": "https://dontpastetheai.com",
-          "source": "dontpastetheai.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-20T09:26:10.003000Z"
-        },
-        {
-          "id": "14c4f74bdc0da7fa9e4d7c6d1a1ef8cf759279d7",
-          "title": "请勿粘贴AI生成内容 / Don't Paste the AI, please",
-          "title_zh": "请勿粘贴AI生成内容",
-          "title_en": "Don't Paste the AI, please",
-          "title_original": "Don't Paste the AI, please",
-          "summary": null,
-          "recommend_reason_zh": "作者用Claude时选择直接粘贴完整上下文，宁可付“LLM税”也不逐次引导；他把Claude的总结当作可恢复的工作摘要，避免反复确认，让双方更同步。本文讲透了这种“resume”机制的价值。",
-          "url": "https://news.ycombinator.com/item?id=49371857",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T08:40:46.840000Z"
-        },
-        {
-          "id": "b6f7bc7997292509751cecb729085e02b469d495",
-          "title": "请不要粘贴AI生成的内容 / Don't Paste the AI, please",
-          "title_zh": "请不要粘贴AI生成的内容",
-          "title_en": "Don't Paste the AI, please",
-          "title_original": "Don't Paste the AI, please",
-          "summary": null,
-          "recommend_reason_zh": "别把ChatGPT的原文粘贴给提问者——对方要的是你的观点和判断，不是四秒就能生成的通用答案。这篇讽刺短文用具体场景告诉你为何简短人工回复胜过冗长模型输出。",
-          "url": "https://dontpastetheai.com",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-20T08:20:44Z"
-        }
-      ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5698,
-      "importance": 0.5698,
-      "importance_score": 0.5698,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.9942,
-        "story_heat": 0.5
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-20T08:20:44Z",
-      "latest_at": "2026-08-20T09:26:10.003000Z",
-      "primary_item": {
-        "id": "132dfe0439518720d544f0d1e85d9f268c16eb39",
-        "title": "请不要粘贴AI生成的内容",
-        "title_zh": "请不要粘贴AI生成的内容",
-        "title_en": null,
-        "title_original": "请不要粘贴AI生成的内容",
-        "summary": "If someone asks you a question, paste your answer — not the chatbot's.\nIf someone asks you a question, paste your answer — not the chatbot's.\nWhen someone asks you something, they want your answer.\n        Not a wall of unedited ChatGPT output . A short reply from you beats\n        a long one from a model, every time.\nSomeone asked you a real question. You popped it into a chatbot, copied the answer, and sent it back.\n        It felt fast. It felt helpful. And it usually isn't.\nThe person on the",
-        "recommend_reason_zh": "别再粘贴ChatGPT回答了——对方四秒就能拿到通用回复，问你是想要你的判断。这篇短文提供dontpastetheai.com链接供你提醒对方，还有不适合发给老板的愤怒版，并欢迎在GitHub上参与改写。",
-        "url": "https://dontpastetheai.com",
-        "source": "dontpastetheai.com",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 42,
-      "persona_review": "提醒别直接贴AI生成内容，但没给工具或方案，动手价值有限。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
-      }
-    },
-    {
-      "story_id": "story_c7d29fef510b",
-      "title": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-      "url": "https://www.aibase.com/news/30499",
-      "primary_url": "https://www.aibase.com/news/30499",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "a235428c049c7ab794e6c76d0271985dd3ad04eb",
-          "title": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-          "title_zh": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-          "title_en": null,
-          "title_original": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-          "summary": null,
-          "recommend_reason_zh": "JD Logistics首批快递员、仓管员、质检员经涿州认证培训中心集训考核，正式转型为机器人维修工程师；培训结合多家头部机器人公司最新样机，覆盖故障维修流程，未来5年计划提供10万个高新岗位。",
-          "url": "https://www.aibase.com/news/30499",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-20T07:06:44.789536Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "a235428c049c7ab794e6c76d0271985dd3ad04eb",
-          "title": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-          "title_zh": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-          "title_en": null,
-          "title_original": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-          "summary": null,
-          "recommend_reason_zh": "JD Logistics首批快递员、仓管员、质检员经涿州认证培训中心集训考核，正式转型为机器人维修工程师；培训结合多家头部机器人公司最新样机，覆盖故障维修流程，未来5年计划提供10万个高新岗位。",
-          "url": "https://www.aibase.com/news/30499",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-20T07:06:44.789536Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7606,
-      "importance": 0.7606,
-      "importance_score": 0.7606,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9614,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-20T07:06:44.789536Z",
-      "latest_at": "2026-08-20T07:06:44.789536Z",
-      "primary_item": {
-        "id": "a235428c049c7ab794e6c76d0271985dd3ad04eb",
-        "title": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-        "title_zh": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-        "title_en": null,
-        "title_original": "快递员变身AI机器人高薪工程师！京东物流首批学员正式上岗，未来5年豪掷10万个高新岗位",
-        "summary": null,
-        "recommend_reason_zh": "JD Logistics首批快递员、仓管员、质检员经涿州认证培训中心集训考核，正式转型为机器人维修工程师；培训结合多家头部机器人公司最新样机，覆盖故障维修流程，未来5年计划提供10万个高新岗位。",
-        "url": "https://www.aibase.com/news/30499",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 35,
-      "persona_review": "培训新闻与开发者无关，等有实际技术细节再看。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
-      }
-    },
-    {
-      "story_id": "story_f4583eda883d",
-      "title": "大语言模型时代的可扩展软件",
-      "url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
-      "primary_url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
-      "source": "jeremymorrell.dev",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "a5119af9a1f0eff47e22842a0cb7c01346547281",
-          "title": "大语言模型时代的可扩展软件",
-          "title_zh": "大语言模型时代的可扩展软件",
-          "title_en": null,
-          "title_original": "大语言模型时代的可扩展软件",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章提出LLM-native软件模式，以Pi为例说明用户可用自然语言无限扩展核心功能，并探讨在Web上借助Dynamic Workers沙箱实现安全扩展的前景。",
-          "url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
-          "source": "jeremymorrell.dev",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-20T00:38:00.116000Z"
-        },
-        {
-          "id": "7a6969b8dabff4da508b258ce598bbe807d0cd7e",
-          "title": "LLM 时代的可扩展软件 / Extensible Software in the age of LLMs",
-          "title_zh": "LLM 时代的可扩展软件",
-          "title_en": "Extensible Software in the age of LLMs",
-          "title_original": "Extensible Software in the age of LLMs",
-          "summary": null,
-          "recommend_reason_zh": "作者用OCaml实现自研Lisp可扩展环境，三个月来所有计算跑在上面；创建端点只需定义一个Lisp函数，其LLMs称用纯Clojure或Racket复刻可少于10k行。",
-          "url": "https://news.ycombinator.com/item?id=49363668",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-19T17:41:41.670000Z"
-        },
-        {
-          "id": "a5f5af69aec00eed5b2b7b3c372c39314434868e",
-          "title": "大语言模型时代的可扩展软件 / Extensible Software in the age of LLMs",
-          "title_zh": "大语言模型时代的可扩展软件",
-          "title_en": "Extensible Software in the age of LLMs",
-          "title_original": "Extensible Software in the age of LLMs",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章提出LLM时代网页软件的新范式：以稳固核心加沙箱扩展，让用户用自然语言定制功能，并举Pi和Cloudflare Dynamic Workers为例，解释了为何长尾需求能被低成本满足。",
-          "url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-19T16:26:05Z"
-        }
-      ],
-      "source_count": 3,
-      "source_names": [
-        "Hacker News (黑客新闻)",
-        "hackernews",
-        "jeremymorrell.dev"
-      ],
-      "items": [
-        {
-          "id": "a5119af9a1f0eff47e22842a0cb7c01346547281",
-          "title": "大语言模型时代的可扩展软件",
-          "title_zh": "大语言模型时代的可扩展软件",
-          "title_en": null,
-          "title_original": "大语言模型时代的可扩展软件",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章提出LLM-native软件模式，以Pi为例说明用户可用自然语言无限扩展核心功能，并探讨在Web上借助Dynamic Workers沙箱实现安全扩展的前景。",
-          "url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
-          "source": "jeremymorrell.dev",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-20T00:38:00.116000Z"
-        },
-        {
-          "id": "7a6969b8dabff4da508b258ce598bbe807d0cd7e",
-          "title": "LLM 时代的可扩展软件 / Extensible Software in the age of LLMs",
-          "title_zh": "LLM 时代的可扩展软件",
-          "title_en": "Extensible Software in the age of LLMs",
-          "title_original": "Extensible Software in the age of LLMs",
-          "summary": null,
-          "recommend_reason_zh": "作者用OCaml实现自研Lisp可扩展环境，三个月来所有计算跑在上面；创建端点只需定义一个Lisp函数，其LLMs称用纯Clojure或Racket复刻可少于10k行。",
-          "url": "https://news.ycombinator.com/item?id=49363668",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-19T17:41:41.670000Z"
-        },
-        {
-          "id": "a5f5af69aec00eed5b2b7b3c372c39314434868e",
-          "title": "大语言模型时代的可扩展软件 / Extensible Software in the age of LLMs",
-          "title_zh": "大语言模型时代的可扩展软件",
-          "title_en": "Extensible Software in the age of LLMs",
-          "title_original": "Extensible Software in the age of LLMs",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章提出LLM时代网页软件的新范式：以稳固核心加沙箱扩展，让用户用自然语言定制功能，并举Pi和Cloudflare Dynamic Workers为例，解释了为何长尾需求能被低成本满足。",
-          "url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-19T16:26:05Z"
-        }
-      ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5484,
-      "importance": 0.5484,
-      "importance_score": 0.5484,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.8755,
-        "story_heat": 0.5
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-19T16:26:05Z",
-      "latest_at": "2026-08-20T00:38:00.116000Z",
-      "primary_item": {
-        "id": "a5119af9a1f0eff47e22842a0cb7c01346547281",
-        "title": "大语言模型时代的可扩展软件",
-        "title_zh": "大语言模型时代的可扩展软件",
-        "title_en": null,
-        "title_original": "大语言模型时代的可扩展软件",
-        "summary": null,
-        "recommend_reason_zh": "这篇文章提出LLM-native软件模式，以Pi为例说明用户可用自然语言无限扩展核心功能，并探讨在Web上借助Dynamic Workers沙箱实现安全扩展的前景。",
-        "url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
-        "source": "jeremymorrell.dev",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 35,
-      "persona_review": "讲思路没代码，看完不能立马上手，闲时读读就好。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-20T09:56:26.859785Z"
+        "scored_at": "2026-08-20T15:00:33.225743Z"
       }
     }
   ]

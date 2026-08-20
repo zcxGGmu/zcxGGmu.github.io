@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T09:56:31.882723Z",
+  "generated_at": "2026-08-20T15:00:36.759596Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,30 +37,10 @@
       }
     },
     {
-      "story_id": "story_be580d9263f2",
-      "title": "Liquid AI 发布 LFM2.5 系列 QAD Q4_0 量化检查点，恢复 97% 精度损失 / LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
-      "url": "https://huggingface.co/blog/LiquidAI/qad",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 55,
-          "review": "97%恢复精度？怕是跟全精度比，量化损失本来就没多少。"
-        },
-        "paper-police": {
-          "score": 45,
-          "review": "官方博客给出97%精度恢复的数字，缺少论文和第三方复现，权重开源情况待查。"
-        },
-        "pragmatic": {
-          "score": 82,
-          "review": "Q4量化检查点可直接用，精度损失小，适合边缘部署，省内存的今天就能试。"
-        }
-      }
-    },
-    {
       "story_id": "story_56e8099b2502",
       "title": "通义千问官方点赞！Unsloth Dynamic V3 让 Qwen3.8-27B 更小更聪明，1-bit 版 8GB 内存就能跑",
       "url": "https://www.aibase.com/news/30504",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 65,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 82,
           "review": "1-bit量化8GB跑27B，本地部署党可上手试。"
+        }
+      }
+    },
+    {
+      "story_id": "story_a6a38128dce9",
+      "title": "MiniMax Design发布:用自然语言“指挥”视频创作，告别逐帧编辑",
+      "url": "https://www.aibase.com/news/30503",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 45,
+          "review": "自然语言指挥视频听着美好，能示范个非摆拍的完整剪辑不？"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "功能宣称无论文无代码无评测，逐帧编辑对比数据缺，只有新闻稿。"
+        },
+        "pragmatic": {
+          "score": 82,
+          "review": "新工具可试用，做视频工作流的可以上手省掉逐帧编辑。"
         }
       }
     }
