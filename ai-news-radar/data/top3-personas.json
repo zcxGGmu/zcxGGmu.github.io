@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T10:04:24.864685Z",
+  "generated_at": "2026-08-21T15:04:59.559519Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,10 +37,30 @@
       }
     },
     {
+      "story_id": "story_3278f2bc67f3",
+      "title": "面壁智能 OpenBMB 推出 MathForm，面向 Lean 4 数学自动形式化的开源框架、数据集与模型 / 🧮 Introducing MathForm， an open-source framework， dataset， and model for mathematical autoformaliza…",
+      "url": "https://x.com/OpenBMB/status/2090786300194590816",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "开源全家桶挺实在，但基线对比和效果没晒，先验货再吹。"
+        },
+        "paper-police": {
+          "score": 45,
+          "review": "宣称开源但无论文无benchmark，等仓库和评测出来再定论。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "开源可clone，搞Lean 4自动形式化的今天就能上手试。"
+        }
+      }
+    },
+    {
       "story_id": "story_7b114e120e12",
       "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
       "url": "https://www.aibase.com/news/30531",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 75,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 90,
           "review": "开源评估工具可直接上手，跑代码评测不用再看闭源脸色。"
-        }
-      }
-    },
-    {
-      "story_id": "story_73c198965c13",
-      "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-      "url": "https://www.aibase.com/news/30530",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 72,
-          "review": "开源是真，可'真机基座'这词儿是跟风还是真有本事，得看跑分外的实测。"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "只说了开源未见仓库链接，论文和评测都没给，无法核实。"
-        },
-        "pragmatic": {
-          "score": 88,
-          "review": "开源可 clone，做 UI 自动化的今天就能试。"
         }
       }
     }
