@@ -1,48 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_274d1f8b0993|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "政策风向而已，短期不碍开发，数据合规方向可提前留意。",
-      "title_hash": "d10eaa20",
-      "scored_at": "2026-07-31T04:12:32.387981Z"
-    },
-    "story_79215688a7fe|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "宏观评论不提供抓手，涨不涨工资看行业不看这篇。",
-      "title_hash": "e424e740",
-      "scored_at": "2026-07-31T04:12:36.387030Z"
-    },
-    "story_085bdc6ab154|pragmatic|0a5c5b24": {
-      "score": 66,
-      "review": "模板能省起步时间，用 Replit 的可以试试，但别指望质变。",
-      "title_hash": "bec696bd",
-      "scored_at": "2026-07-31T04:12:38.507002Z"
-    },
-    "story_646726dd33dc|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "新工具能clone试，但0.1a0太早，别上生产，等稳定版。",
-      "title_hash": "b2ccc0ad",
-      "scored_at": "2026-07-31T04:12:43.092406Z"
-    },
-    "story_d42b908c4e75|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "多机协同是实打实的新能力，做机器人集成的可先评估接口。",
-      "title_hash": "edbec904",
-      "scored_at": "2026-07-31T04:12:45.654956Z"
-    },
-    "story_cbb764ee9dd7|cynic|f4237a62": {
-      "score": 65,
-      "review": "降价是真的，但“独家”优惠人人可领，独家二字有点虚。",
-      "title_hash": "4c24072d",
-      "scored_at": "2026-07-31T04:12:49.859947Z"
-    },
-    "story_cbb764ee9dd7|paper-police|966065bf": {
-      "score": 20,
-      "review": "只有官方降价推文，无评测数据或代码支撑，价格数字无法独立验证。",
-      "title_hash": "4c24072d",
-      "scored_at": "2026-07-31T04:12:51.890689Z"
-    },
     "story_c8fe6d7c36db|pragmatic|0a5c5b24": {
       "score": 72,
       "review": "结论若属实，私有化部署DeepSeek可少一层审查顾虑。",
@@ -5652,6 +5610,126 @@
       "review": "只有官方公告，无技术文档无代码，等API实测再评价。",
       "title_hash": "5cdd4f0f",
       "scored_at": "2026-08-21T03:25:13.732480Z"
+    },
+    "story_ec9db99faa5b|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "观点文，对动手没直接帮助。真要扫描珍本是个人选择，别被带节奏。",
+      "title_hash": "98e333e4",
+      "scored_at": "2026-08-21T05:01:27.302522Z"
+    },
+    "story_2f5672e7bb6d|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "豆包从聊天转平台，接外部工具和技能，做办公流水的可以盯下接口。",
+      "title_hash": "20aad83e",
+      "scored_at": "2026-08-21T05:57:43.762167Z"
+    },
+    "story_15ad92659081|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "推理速度提升明显，但草稿模型慎用，等稳定版再上生产。",
+      "title_hash": "4e2a0275",
+      "scored_at": "2026-08-21T07:13:39.102874Z"
+    },
+    "story_776e3d1fe586|pragmatic|0a5c5b24": {
+      "score": 68,
+      "review": "多步检索思路可参考，但先确认API开放再决定接入。",
+      "title_hash": "15c91ae7",
+      "scored_at": "2026-08-21T07:13:41.673273Z"
+    },
+    "story_561e92e77f55|pragmatic|0a5c5b24": {
+      "score": 35,
+      "review": "合作新闻，无技术细节，等文档和案例出来再决定要不要看。",
+      "title_hash": "fe9c7e57",
+      "scored_at": "2026-08-21T07:13:43.702586Z"
+    },
+    "story_3268497fb51c|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "8B开源可直接部署，视觉编辑和4K输出即拿即用，适合轻量多模态场景。",
+      "title_hash": "efe7a99c",
+      "scored_at": "2026-08-21T07:13:45.797857Z"
+    },
+    "story_0e71951a8402|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "用 Codex 上 Bedrock 的先去查账单，这个坑能让成本翻十倍。",
+      "title_hash": "7a02e9c1",
+      "scored_at": "2026-08-21T07:13:48.494923Z"
+    },
+    "story_3268497fb51c|cynic|f4237a62": {
+      "score": 70,
+      "review": "8B敢标原生4K，先晒基准和硬件账单再吹。",
+      "title_hash": "efe7a99c",
+      "scored_at": "2026-08-21T07:13:50.718287Z"
+    },
+    "story_3268497fb51c|paper-police|966065bf": {
+      "score": 20,
+      "review": "只说开源未见仓库，无论文无评测，等链接和跑分再定。",
+      "title_hash": "efe7a99c",
+      "scored_at": "2026-08-21T07:13:53.012124Z"
+    },
+    "story_7b114e120e12|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "开源评估工具可直接上手，跑代码评测不用再看闭源脸色。",
+      "title_hash": "614a7d6a",
+      "scored_at": "2026-08-21T08:13:24.776350Z"
+    },
+    "story_73c198965c13|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "开源可 clone，做 UI 自动化的今天就能试。",
+      "title_hash": "6ecd2d65",
+      "scored_at": "2026-08-21T08:13:26.260232Z"
+    },
+    "story_7b114e120e12|cynic|f4237a62": {
+      "score": 75,
+      "review": "开源是好事，但先确认不是阉割版，别急着封神。",
+      "title_hash": "614a7d6a",
+      "scored_at": "2026-08-21T08:13:27.220033Z"
+    },
+    "story_7b114e120e12|paper-police|966065bf": {
+      "score": 20,
+      "review": "报道称开源但无仓库链接，代码和评测均无，无法验证。",
+      "title_hash": "614a7d6a",
+      "scored_at": "2026-08-21T08:13:30.607709Z"
+    },
+    "story_905b51b78524|pragmatic|0a5c5b24": {
+      "score": 42,
+      "review": "公司架构调整，没有新API或模型，等产品落地再动。",
+      "title_hash": "c59918ee",
+      "scored_at": "2026-08-21T09:08:02.204000Z"
+    },
+    "story_79fff4b92bec|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "预告不写代码，等真发出来看效果再说。",
+      "title_hash": "cc91f45e",
+      "scored_at": "2026-08-21T10:04:12.202236Z"
+    },
+    "story_1942460359a8|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "新视觉模型进API，多模态任务今天就能试，留意下价格和限流。",
+      "title_hash": "6cd3a0f5",
+      "scored_at": "2026-08-21T10:04:14.080519Z"
+    },
+    "story_d955f6a06190|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "视觉能力补齐，有OCR或图文任务的可直接试，先确认API是否开放。",
+      "title_hash": "0da431c5",
+      "scored_at": "2026-08-21T10:04:16.738902Z"
+    },
+    "story_530af6e18d4c|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "端侧AI硬件新品，做生态的可以关注，普通开发者暂不用动手。",
+      "title_hash": "0fece306",
+      "scored_at": "2026-08-21T10:04:20.124783Z"
+    },
+    "story_73c198965c13|cynic|f4237a62": {
+      "score": 72,
+      "review": "开源是真，可'真机基座'这词儿是跟风还是真有本事，得看跑分外的实测。",
+      "title_hash": "6ecd2d65",
+      "scored_at": "2026-08-21T10:04:22.411522Z"
+    },
+    "story_73c198965c13|paper-police|966065bf": {
+      "score": 25,
+      "review": "只说了开源未见仓库链接，论文和评测都没给，无法核实。",
+      "title_hash": "6ecd2d65",
+      "scored_at": "2026-08-21T10:04:24.864625Z"
     }
   }
 }

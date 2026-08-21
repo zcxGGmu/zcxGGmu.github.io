@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T04:04:56.722784Z",
+  "generated_at": "2026-08-21T09:52:44.950634Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -48,15 +48,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8331,
-      "importance": 0.8331,
-      "importance_score": 0.8331,
+      "score": 0.8208,
+      "importance": 0.8208,
+      "importance_score": 0.8208,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.8507,
+        "recency": 0.7824,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +85,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -133,15 +133,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8325,
-      "importance": 0.8325,
-      "importance_score": 0.8325,
+      "score": 0.8189,
+      "importance": 0.8189,
+      "importance_score": 0.8189,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.9359,
+        "recency": 0.8607,
         "story_heat": 0.0
       },
       "category": "official",
@@ -170,92 +170,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
-      }
-    },
-    {
-      "story_id": "story_4a9843552c46",
-      "title": "正式推出 AI Futures / Introducing AI Futures",
-      "url": "https://openai.com/index/introducing-ai-futures",
-      "primary_url": "https://openai.com/index/introducing-ai-futures",
-      "source": "OpenAI News",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "bd145d40d86f467dd6a10beed7263e931c9e17f1",
-          "title": "正式推出 AI Futures / Introducing AI Futures",
-          "title_zh": "正式推出 AI Futures",
-          "title_en": "Introducing AI Futures",
-          "title_original": "Introducing AI Futures",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI新博客AI Futures探讨变革性AI如何重塑权力与治理，引用James Madison和David Hume，指出自主系统可能使国家不再依赖民众合作即可维持权力，关乎个人自由存续。",
-          "url": "https://openai.com/index/introducing-ai-futures",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-20T07:00:00Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "OpenAI News"
-      ],
-      "items": [
-        {
-          "id": "bd145d40d86f467dd6a10beed7263e931c9e17f1",
-          "title": "正式推出 AI Futures / Introducing AI Futures",
-          "title_zh": "正式推出 AI Futures",
-          "title_en": "Introducing AI Futures",
-          "title_original": "Introducing AI Futures",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI新博客AI Futures探讨变革性AI如何重塑权力与治理，引用James Madison和David Hume，指出自主系统可能使国家不再依赖民众合作即可维持权力，关乎个人自由存续。",
-          "url": "https://openai.com/index/introducing-ai-futures",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-20T07:00:00Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8048,
-      "importance": 0.8048,
-      "importance_score": 0.8048,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7375,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-20T07:00:00Z",
-      "latest_at": "2026-08-20T07:00:00Z",
-      "primary_item": {
-        "id": "bd145d40d86f467dd6a10beed7263e931c9e17f1",
-        "title": "正式推出 AI Futures / Introducing AI Futures",
-        "title_zh": "正式推出 AI Futures",
-        "title_en": "Introducing AI Futures",
-        "title_original": "Introducing AI Futures",
-        "summary": null,
-        "recommend_reason_zh": "OpenAI新博客AI Futures探讨变革性AI如何重塑权力与治理，引用James Madison和David Hume，指出自主系统可能使国家不再依赖民众合作即可维持权力，关乎个人自由存续。",
-        "url": "https://openai.com/index/introducing-ai-futures",
-        "source": "OpenAI News",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "没看到可用的 API 或工具，纯战略官宣，等有产品再关注。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -303,15 +218,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8193,
-      "importance": 0.8193,
-      "importance_score": 0.8193,
+      "score": 0.8069,
+      "importance": 0.8069,
+      "importance_score": 0.8069,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.863,
+        "recency": 0.7937,
         "story_heat": 0.0
       },
       "category": "official",
@@ -340,7 +255,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
+      }
+    },
+    {
+      "story_id": "story_79fff4b92bec",
+      "title": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+      "url": "https://www.aibase.com/news/30534",
+      "primary_url": "https://www.aibase.com/news/30534",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "3127c67dac98656a13a1fb128d70f0816d6da8d2",
+          "title": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+          "title_zh": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+          "title_en": null,
+          "title_original": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+          "summary": "On the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nOn the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nOn the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nExplore AI Frontiers",
+          "recommend_reason_zh": "8月21日业绩会上，iFLYTEK总裁吴晓如宣布将于1024开发者节发布基于全国产算力的新主力大模型，8月底先推阶段版本，代码能力与Token性价比国内顶尖。",
+          "url": "https://www.aibase.com/news/30534",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-21T09:52:44.950634Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "3127c67dac98656a13a1fb128d70f0816d6da8d2",
+          "title": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+          "title_zh": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+          "title_en": null,
+          "title_original": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+          "summary": "On the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nOn the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nOn the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nExplore AI Frontiers",
+          "recommend_reason_zh": "8月21日业绩会上，iFLYTEK总裁吴晓如宣布将于1024开发者节发布基于全国产算力的新主力大模型，8月底先推阶段版本，代码能力与Token性价比国内顶尖。",
+          "url": "https://www.aibase.com/news/30534",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-21T09:52:44.950634Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 1.0,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-21T09:52:44.950634Z",
+      "latest_at": "2026-08-21T09:52:44.950634Z",
+      "primary_item": {
+        "id": "3127c67dac98656a13a1fb128d70f0816d6da8d2",
+        "title": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+        "title_zh": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+        "title_en": null,
+        "title_original": "国产大模型再迎重磅升级，科大讯飞即将发布全新主力通用大模型",
+        "summary": "On the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nOn the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nOn the afternoon of August 21, during the 2026 semi-annual earnings briefing, iFLYTEK released a major announcement: the company's president Wu Xiaoru revealed\nExplore AI Frontiers",
+        "recommend_reason_zh": "8月21日业绩会上，iFLYTEK总裁吴晓如宣布将于1024开发者节发布基于全国产算力的新主力大模型，8月底先推阶段版本，代码能力与Token性价比国内顶尖。",
+        "url": "https://www.aibase.com/news/30534",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 20,
+      "persona_review": "预告不写代码，等真发出来看效果再说。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -388,15 +387,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7723,
-      "importance": 0.7723,
-      "importance_score": 0.7723,
+      "score": 0.7601,
+      "importance": 0.7601,
+      "importance_score": 0.7601,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.67,
         "source_tier": 1.0,
         "ai_relevance": 1.0,
-        "recency": 0.8403,
+        "recency": 0.7728,
         "story_heat": 0.0
       },
       "category": "official",
@@ -424,63 +423,63 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_f02c0a256fdb",
-      "title": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-      "url": "https://www.aibase.com/news/30522",
-      "primary_url": "https://www.aibase.com/news/30522",
-      "source": "AIbase",
-      "source_name": "AIbase",
+      "story_id": "story_1942460359a8",
+      "title": "DeepSeek-V4-Flash-Vision-Exp 发布",
+      "url": "https://api-docs.deepseek.com/zh-cn/updates",
+      "primary_url": "https://api-docs.deepseek.com/zh-cn/updates",
+      "source": "DeepSeek：API 更新日志",
+      "source_name": "AI HOT",
       "sources": [
         {
-          "id": "29723a13da3409d24ae8006c95bbc51698f5d195",
-          "title": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-          "title_zh": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
+          "id": "3292523df0d3dc1a19bfb08fadf619c3e5dabd12",
+          "title": "DeepSeek-V4-Flash-Vision-Exp 发布",
+          "title_zh": "DeepSeek-V4-Flash-Vision-Exp 发布",
           "title_en": null,
-          "title_original": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-          "summary": null,
-          "recommend_reason_zh": "Anthropic宣布Claude Platform的Computer use、Skills API与Files API正式全面可用，并推出Browser use工具。该更新让Claude单次调用可执行多个连续动作，且符合HIPAA标准，值得企业关注。",
-          "url": "https://www.aibase.com/news/30522",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "title_original": "DeepSeek-V4-Flash-Vision-Exp 发布",
+          "summary": "DeepSeek 上线实验性多模态视觉理解模型 DeepSeek-V4-Flash-Vision-Exp，可通过设置 model='deepseek-v4-flash-vision-exp' 在 API 平台访问。",
+          "recommend_reason_zh": "深度解析DeepSeek-V4-Flash-Vision-Exp：其多模态Agent能力接近Opus-4.8，纯文本与V4-Flash持平；V4-Pro正式版同步发布，API原生支持OpenAI Responses格式，并公布闲时半价峰谷定价。",
+          "url": "https://api-docs.deepseek.com/zh-cn/updates",
+          "source": "DeepSeek：API 更新日志",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-21T09:26:04.727000Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "AIbase"
+        "DeepSeek：API 更新日志"
       ],
       "items": [
         {
-          "id": "29723a13da3409d24ae8006c95bbc51698f5d195",
-          "title": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-          "title_zh": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
+          "id": "3292523df0d3dc1a19bfb08fadf619c3e5dabd12",
+          "title": "DeepSeek-V4-Flash-Vision-Exp 发布",
+          "title_zh": "DeepSeek-V4-Flash-Vision-Exp 发布",
           "title_en": null,
-          "title_original": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-          "summary": null,
-          "recommend_reason_zh": "Anthropic宣布Claude Platform的Computer use、Skills API与Files API正式全面可用，并推出Browser use工具。该更新让Claude单次调用可执行多个连续动作，且符合HIPAA标准，值得企业关注。",
-          "url": "https://www.aibase.com/news/30522",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "title_original": "DeepSeek-V4-Flash-Vision-Exp 发布",
+          "summary": "DeepSeek 上线实验性多模态视觉理解模型 DeepSeek-V4-Flash-Vision-Exp，可通过设置 model='deepseek-v4-flash-vision-exp' 在 API 平台访问。",
+          "recommend_reason_zh": "深度解析DeepSeek-V4-Flash-Vision-Exp：其多模态Agent能力接近Opus-4.8，纯文本与V4-Flash持平；V4-Pro正式版同步发布，API原生支持OpenAI Responses格式，并公布闲时半价峰谷定价。",
+          "url": "https://api-docs.deepseek.com/zh-cn/updates",
+          "source": "DeepSeek：API 更新日志",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-21T09:26:04.727000Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7655,
-      "importance": 0.7655,
-      "importance_score": 0.7655,
+      "score": 0.7514,
+      "importance": 0.7514,
+      "importance_score": 0.7514,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.72,
+        "editorial": 0.67,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9884,
+        "recency": 0.9936,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -488,27 +487,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-21T03:16:28.345445Z",
-      "latest_at": "2026-08-21T03:16:28.345445Z",
+      "earliest_at": "2026-08-21T09:26:04.727000Z",
+      "latest_at": "2026-08-21T09:26:04.727000Z",
       "primary_item": {
-        "id": "29723a13da3409d24ae8006c95bbc51698f5d195",
-        "title": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-        "title_zh": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
+        "id": "3292523df0d3dc1a19bfb08fadf619c3e5dabd12",
+        "title": "DeepSeek-V4-Flash-Vision-Exp 发布",
+        "title_zh": "DeepSeek-V4-Flash-Vision-Exp 发布",
         "title_en": null,
-        "title_original": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-        "summary": null,
-        "recommend_reason_zh": "Anthropic宣布Claude Platform的Computer use、Skills API与Files API正式全面可用，并推出Browser use工具。该更新让Claude单次调用可执行多个连续动作，且符合HIPAA标准，值得企业关注。",
-        "url": "https://www.aibase.com/news/30522",
-        "source": "AIbase",
-        "source_name": "AIbase"
+        "title_original": "DeepSeek-V4-Flash-Vision-Exp 发布",
+        "summary": "DeepSeek 上线实验性多模态视觉理解模型 DeepSeek-V4-Flash-Vision-Exp，可通过设置 model='deepseek-v4-flash-vision-exp' 在 API 平台访问。",
+        "recommend_reason_zh": "深度解析DeepSeek-V4-Flash-Vision-Exp：其多模态Agent能力接近Opus-4.8，纯文本与V4-Flash持平；V4-Pro正式版同步发布，API原生支持OpenAI Responses格式，并公布闲时半价峰谷定价。",
+        "url": "https://api-docs.deepseek.com/zh-cn/updates",
+        "source": "DeepSeek：API 更新日志",
+        "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
       "persona_score": 88,
-      "persona_review": "三个API正式可用，接入就能做自动化操作和文件处理，今天就能试。",
+      "persona_review": "新视觉模型进API，多模态任务今天就能试，留意下价格和限流。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -556,15 +555,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8135,
-      "importance": 0.8135,
-      "importance_score": 0.8135,
+      "score": 0.8015,
+      "importance": 0.8015,
+      "importance_score": 0.8015,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8308,
+        "recency": 0.764,
         "story_heat": 0.0
       },
       "category": "official",
@@ -593,30 +592,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_580a72f5784e",
-      "title": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
-      "url": "https://www.aibase.com/news/30524",
-      "primary_url": "https://www.aibase.com/news/30524",
+      "story_id": "story_d955f6a06190",
+      "title": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
+      "url": "https://www.aibase.com/news/30536",
+      "primary_url": "https://www.aibase.com/news/30536",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "2de5185532d8a7ef7eac44ac381866d91f65b4e8",
-          "title": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
-          "title_zh": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
+          "id": "27715c95a4699a779cc6d328ea42f7c16eecc46b",
+          "title": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
+          "title_zh": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
           "title_en": null,
-          "title_original": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
-          "summary": null,
-          "recommend_reason_zh": "xAI宣布Grok Build结束早期测试，全面向订阅用户开放，覆盖web、iOS、Android平台。用户用自然语言描述应用、游戏或网站，即可在对话中实时生成并运行完整版本，生成速度较7月早期版已大幅提升。",
-          "url": "https://www.aibase.com/news/30524",
+          "title_original": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
+          "summary": "August 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nAugust 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nAugust 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nExplore AI Fronti",
+          "recommend_reason_zh": "DeepSeek Harness升级至0.1.1-rc.1并新增视觉模型V4Flash Vision-Exp，/goal与/plan命令支持图文混合输入，开发者可让AI智能体直接“看图干活”，补齐多模态处理关键一环。",
+          "url": "https://www.aibase.com/news/30536",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "published_at": "2026-08-21T09:52:44.950634Z"
         }
       ],
       "source_count": 1,
@@ -625,31 +624,31 @@
       ],
       "items": [
         {
-          "id": "2de5185532d8a7ef7eac44ac381866d91f65b4e8",
-          "title": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
-          "title_zh": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
+          "id": "27715c95a4699a779cc6d328ea42f7c16eecc46b",
+          "title": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
+          "title_zh": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
           "title_en": null,
-          "title_original": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
-          "summary": null,
-          "recommend_reason_zh": "xAI宣布Grok Build结束早期测试，全面向订阅用户开放，覆盖web、iOS、Android平台。用户用自然语言描述应用、游戏或网站，即可在对话中实时生成并运行完整版本，生成速度较7月早期版已大幅提升。",
-          "url": "https://www.aibase.com/news/30524",
+          "title_original": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
+          "summary": "August 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nAugust 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nAugust 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nExplore AI Fronti",
+          "recommend_reason_zh": "DeepSeek Harness升级至0.1.1-rc.1并新增视觉模型V4Flash Vision-Exp，/goal与/plan命令支持图文混合输入，开发者可让AI智能体直接“看图干活”，补齐多模态处理关键一环。",
+          "url": "https://www.aibase.com/news/30536",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "published_at": "2026-08-21T09:52:44.950634Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7655,
-      "importance": 0.7655,
-      "importance_score": 0.7655,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9884,
+        "recency": 1.0,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -657,110 +656,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-21T03:16:28.345445Z",
-      "latest_at": "2026-08-21T03:16:28.345445Z",
+      "earliest_at": "2026-08-21T09:52:44.950634Z",
+      "latest_at": "2026-08-21T09:52:44.950634Z",
       "primary_item": {
-        "id": "2de5185532d8a7ef7eac44ac381866d91f65b4e8",
-        "title": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
-        "title_zh": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
+        "id": "27715c95a4699a779cc6d328ea42f7c16eecc46b",
+        "title": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
+        "title_zh": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
         "title_en": null,
-        "title_original": "Grok Build重磅上线网页与移动端，人人皆可一句话秒变全栈开发者",
-        "summary": null,
-        "recommend_reason_zh": "xAI宣布Grok Build结束早期测试，全面向订阅用户开放，覆盖web、iOS、Android平台。用户用自然语言描述应用、游戏或网站，即可在对话中实时生成并运行完整版本，生成速度较7月早期版已大幅提升。",
-        "url": "https://www.aibase.com/news/30524",
+        "title_original": "长眼！DeepSeek Flash视觉模型突发更新，支持多模态",
+        "summary": "August 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nAugust 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nAugust 21st news: DeepSeek has carried out intensive iteration on its large model toolchain, officially upgrading DeepSeek Harness to version 0.1.1-rc.1. The bi\nExplore AI Fronti",
+        "recommend_reason_zh": "DeepSeek Harness升级至0.1.1-rc.1并新增视觉模型V4Flash Vision-Exp，/goal与/plan命令支持图文混合输入，开发者可让AI智能体直接“看图干活”，补齐多模态处理关键一环。",
+        "url": "https://www.aibase.com/news/30536",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "工具上线可以试玩，但别真指望秒变全栈，先看生成代码质量。",
+      "persona_score": 75,
+      "persona_review": "视觉能力补齐，有OCR或图文任务的可直接试，先确认API是否开放。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
-      }
-    },
-    {
-      "story_id": "story_07ac88c2e7ee",
-      "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-      "url": "https://www.ithome.com/0/992/239.htm",
-      "primary_url": "https://www.ithome.com/0/992/239.htm",
-      "source": "IT之家（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "639c31e3f086c0a76f0dd5c5b512d606d2e82585",
-          "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-          "title_zh": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-          "title_en": null,
-          "title_original": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-          "summary": "阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页端及深度搜索（DeepSearch）环境。",
-          "recommend_reason_zh": "Qwen-UI-Agent在100+台真机、150+应用环境中训练，真机基准MobileWorld-Real达92.2%，移动端MobileWorld以82.1%领先GPT-5.6 Sol达12个百分点。",
-          "url": "https://www.ithome.com/0/992/239.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-20T09:45:51Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "IT之家（RSS）"
-      ],
-      "items": [
-        {
-          "id": "639c31e3f086c0a76f0dd5c5b512d606d2e82585",
-          "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-          "title_zh": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-          "title_en": null,
-          "title_original": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-          "summary": "阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页端及深度搜索（DeepSearch）环境。",
-          "recommend_reason_zh": "Qwen-UI-Agent在100+台真机、150+应用环境中训练，真机基准MobileWorld-Real达92.2%，移动端MobileWorld以82.1%领先GPT-5.6 Sol达12个百分点。",
-          "url": "https://www.ithome.com/0/992/239.htm",
-          "source": "IT之家（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-20T09:45:51Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7258,
-      "importance": 0.7258,
-      "importance_score": 0.7258,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7676,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-20T09:45:51Z",
-      "latest_at": "2026-08-20T09:45:51Z",
-      "primary_item": {
-        "id": "639c31e3f086c0a76f0dd5c5b512d606d2e82585",
-        "title": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-        "title_zh": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-        "title_en": null,
-        "title_original": "阿里发布 Qwen-UI-Agent，主打让模型真正\"会用\"每一块屏幕",
-        "summary": "阿里巴巴正式推出 Qwen-UI-Agent，一个以真实世界为中心的 GUI 智能体基座模型，覆盖移动端、电脑端、网页端及深度搜索（DeepSearch）环境。",
-        "recommend_reason_zh": "Qwen-UI-Agent在100+台真机、150+应用环境中训练，真机基准MobileWorld-Real达92.2%，移动端MobileWorld以82.1%领先GPT-5.6 Sol达12个百分点。",
-        "url": "https://www.ithome.com/0/992/239.htm",
-        "source": "IT之家（RSS）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 60,
-      "persona_review": "UI Agent 概念不新，等模型或 API 开放再评估，暂时不用动。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -808,15 +724,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8119,
-      "importance": 0.8119,
-      "importance_score": 0.8119,
+      "score": 0.8,
+      "importance": 0.8,
+      "importance_score": 0.8,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8218,
+        "recency": 0.7558,
         "story_heat": 0.0
       },
       "category": "official",
@@ -845,113 +761,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_997206e2df36",
-      "title": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具 / Build production agents with computer use， the Skills API， and the Files API",
-      "url": "https://claude.com/blog/computer-use-skills-api-files-api",
-      "primary_url": "https://claude.com/blog/computer-use-skills-api-files-api",
-      "source": "Claude：Blog（网页）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "21692f84c16d2d2684e76b911b52a09001219157",
-          "title": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具 / Build production agents with computer use， the Skills API， and the Files API",
-          "title_zh": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具",
-          "title_en": "Build production agents with computer use， the Skills API， and the Files API",
-          "title_original": "Build production agents with computer use， the Skills API， and the Files API",
-          "summary": "Anthropic 宣布 Computer Use、Skills API 与 Files API 在 Claude Platform 全面可用，并新增浏览器操作工具，让智能体可操作软件、调用团队技能并返回成品文件。",
-          "recommend_reason_zh": "Claude Platform的Computer use、Skills API与Files API今日全面可用，新增browser use工具让代理在网页中操作，实测最长理赔流程从32分钟缩至13分钟，成本降约30%。",
-          "url": "https://claude.com/blog/computer-use-skills-api-files-api",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-20T20:27:01.660000Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Claude：Blog（网页）"
-      ],
-      "items": [
-        {
-          "id": "21692f84c16d2d2684e76b911b52a09001219157",
-          "title": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具 / Build production agents with computer use， the Skills API， and the Files API",
-          "title_zh": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具",
-          "title_en": "Build production agents with computer use， the Skills API， and the Files API",
-          "title_original": "Build production agents with computer use， the Skills API， and the Files API",
-          "summary": "Anthropic 宣布 Computer Use、Skills API 与 Files API 在 Claude Platform 全面可用，并新增浏览器操作工具，让智能体可操作软件、调用团队技能并返回成品文件。",
-          "recommend_reason_zh": "Claude Platform的Computer use、Skills API与Files API今日全面可用，新增browser use工具让代理在网页中操作，实测最长理赔流程从32分钟缩至13分钟，成本降约30%。",
-          "url": "https://claude.com/blog/computer-use-skills-api-files-api",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-20T20:27:01.660000Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7218,
-      "importance": 0.7218,
-      "importance_score": 0.7218,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.63,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8956,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-20T20:27:01.660000Z",
-      "latest_at": "2026-08-20T20:27:01.660000Z",
-      "primary_item": {
-        "id": "21692f84c16d2d2684e76b911b52a09001219157",
-        "title": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具 / Build production agents with computer use， the Skills API， and the Files API",
-        "title_zh": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具",
-        "title_en": "Build production agents with computer use， the Skills API， and the Files API",
-        "title_original": "Build production agents with computer use， the Skills API， and the Files API",
-        "summary": "Anthropic 宣布 Computer Use、Skills API 与 Files API 在 Claude Platform 全面可用，并新增浏览器操作工具，让智能体可操作软件、调用团队技能并返回成品文件。",
-        "recommend_reason_zh": "Claude Platform的Computer use、Skills API与Files API今日全面可用，新增browser use工具让代理在网页中操作，实测最长理赔流程从32分钟缩至13分钟，成本降约30%。",
-        "url": "https://claude.com/blog/computer-use-skills-api-files-api",
-        "source": "Claude：Blog（网页）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 92,
-      "persona_review": "直接可用的新 API，agent 开发能上手试了，浏览器操作开箱即用。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
-      }
-    },
-    {
-      "story_id": "story_f31ad306af6f",
-      "title": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
-      "url": "https://www.aibase.com/news/30523",
-      "primary_url": "https://www.aibase.com/news/30523",
+      "story_id": "story_530af6e18d4c",
+      "title": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
+      "url": "https://www.aibase.com/news/30535",
+      "primary_url": "https://www.aibase.com/news/30535",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "da75ce5d2e0dfb97c381b81852c31c43906051fd",
-          "title": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
-          "title_zh": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
+          "id": "819f3242f7c77f6583788f0c3f742aede633205a",
+          "title": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
+          "title_zh": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
           "title_en": null,
-          "title_original": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
-          "summary": null,
-          "recommend_reason_zh": "本文报道Alibaba Cloud Qwen AI平台新上线GLM-5.3与DeepSeek-V4-Pro，API已开放，聚焦编程与智能体场景，平台覆盖文本、代码、语音、图像、视频五大生成领域。",
-          "url": "https://www.aibase.com/news/30523",
+          "title_original": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
+          "summary": "RayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nRayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nRayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nExplore AI Fronti",
+          "recommend_reason_zh": "RayNeo iO定位“增强人类AI眼镜”，售价2499元，首发价1996元，支持0-1000度处方，仅重34克；据Counterpoint与IDC数据，RayNeo在2026年Q1 AR眼镜出货量居中国及全球第一。",
+          "url": "https://www.aibase.com/news/30535",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "published_at": "2026-08-21T09:52:44.950634Z"
         }
       ],
       "source_count": 1,
@@ -960,31 +793,31 @@
       ],
       "items": [
         {
-          "id": "da75ce5d2e0dfb97c381b81852c31c43906051fd",
-          "title": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
-          "title_zh": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
+          "id": "819f3242f7c77f6583788f0c3f742aede633205a",
+          "title": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
+          "title_zh": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
           "title_en": null,
-          "title_original": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
-          "summary": null,
-          "recommend_reason_zh": "本文报道Alibaba Cloud Qwen AI平台新上线GLM-5.3与DeepSeek-V4-Pro，API已开放，聚焦编程与智能体场景，平台覆盖文本、代码、语音、图像、视频五大生成领域。",
-          "url": "https://www.aibase.com/news/30523",
+          "title_original": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
+          "summary": "RayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nRayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nRayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nExplore AI Fronti",
+          "recommend_reason_zh": "RayNeo iO定位“增强人类AI眼镜”，售价2499元，首发价1996元，支持0-1000度处方，仅重34克；据Counterpoint与IDC数据，RayNeo在2026年Q1 AR眼镜出货量居中国及全球第一。",
+          "url": "https://www.aibase.com/news/30535",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "published_at": "2026-08-21T09:52:44.950634Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7655,
-      "importance": 0.7655,
-      "importance_score": 0.7655,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9884,
+        "recency": 1.0,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -992,27 +825,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-21T03:16:28.345445Z",
-      "latest_at": "2026-08-21T03:16:28.345445Z",
+      "earliest_at": "2026-08-21T09:52:44.950634Z",
+      "latest_at": "2026-08-21T09:52:44.950634Z",
       "primary_item": {
-        "id": "da75ce5d2e0dfb97c381b81852c31c43906051fd",
-        "title": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
-        "title_zh": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
+        "id": "819f3242f7c77f6583788f0c3f742aede633205a",
+        "title": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
+        "title_zh": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
         "title_en": null,
-        "title_original": "千问AI平台模型矩阵持续扩容，GLM-5.3、DeepSeek-V4-Pro正式上线",
-        "summary": null,
-        "recommend_reason_zh": "本文报道Alibaba Cloud Qwen AI平台新上线GLM-5.3与DeepSeek-V4-Pro，API已开放，聚焦编程与智能体场景，平台覆盖文本、代码、语音、图像、视频五大生成领域。",
-        "url": "https://www.aibase.com/news/30523",
+        "title_original": "雷鸟推出iO AI眼镜，售价2499元支持全天候AI记忆",
+        "summary": "RayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nRayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nRayNeo introduced the new iO series at the 2026 RayNeo AI Glasses product launch event. The first product, RayNeo iO, is positioned as a \"human enhancement AI g\nExplore AI Fronti",
+        "recommend_reason_zh": "RayNeo iO定位“增强人类AI眼镜”，售价2499元，首发价1996元，支持0-1000度处方，仅重34克；据Counterpoint与IDC数据，RayNeo在2026年Q1 AR眼镜出货量居中国及全球第一。",
+        "url": "https://www.aibase.com/news/30535",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "平台上线新模型API，直接可调用，开发者可尝鲜测试效果。",
+      "persona_score": 55,
+      "persona_review": "端侧AI硬件新品，做生态的可以关注，普通开发者暂不用动手。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -1060,15 +893,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8119,
-      "importance": 0.8119,
-      "importance_score": 0.8119,
+      "score": 0.8,
+      "importance": 0.8,
+      "importance_score": 0.8,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8216,
+        "recency": 0.7557,
         "story_heat": 0.0
       },
       "category": "official",
@@ -1097,30 +930,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_3c21505a5dfe",
-      "title": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
-      "url": "https://www.aibase.com/news/30521",
-      "primary_url": "https://www.aibase.com/news/30521",
+      "story_id": "story_905b51b78524",
+      "title": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
+      "url": "https://www.aibase.com/news/30533",
+      "primary_url": "https://www.aibase.com/news/30533",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "9bf23c23227eb2ae64a14f20079c3d1ddd1ea67b",
-          "title": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
-          "title_zh": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
+          "id": "8b4934413b6222572539508e765a783f252dafa6",
+          "title": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
+          "title_zh": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
           "title_en": null,
-          "title_original": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
+          "title_original": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
           "summary": null,
-          "recommend_reason_zh": "皮尤研究中心基于Common Crawl分析50万英文网站发现，ChatGPT发布后上线的网页约35%带AI创作痕迹，其中.com网站比例是.edu与.gov的近十倍。",
-          "url": "https://www.aibase.com/news/30521",
+          "recommend_reason_zh": "韩国互联网巨头Kakao董事会8月21日批准拆分，新设Kakao AI，原公司更名Kakao X，按36%和64%分配；Kakao AI将依托约5000万用户的KakaoTalk打造AI智能代理界面，加速AI战略落地。",
+          "url": "https://www.aibase.com/news/30533",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "published_at": "2026-08-21T08:58:36.547886Z"
         }
       ],
       "source_count": 1,
@@ -1129,31 +962,31 @@
       ],
       "items": [
         {
-          "id": "9bf23c23227eb2ae64a14f20079c3d1ddd1ea67b",
-          "title": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
-          "title_zh": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
+          "id": "8b4934413b6222572539508e765a783f252dafa6",
+          "title": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
+          "title_zh": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
           "title_en": null,
-          "title_original": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
+          "title_original": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
           "summary": null,
-          "recommend_reason_zh": "皮尤研究中心基于Common Crawl分析50万英文网站发现，ChatGPT发布后上线的网页约35%带AI创作痕迹，其中.com网站比例是.edu与.gov的近十倍。",
-          "url": "https://www.aibase.com/news/30521",
+          "recommend_reason_zh": "韩国互联网巨头Kakao董事会8月21日批准拆分，新设Kakao AI，原公司更名Kakao X，按36%和64%分配；Kakao AI将依托约5000万用户的KakaoTalk打造AI智能代理界面，加速AI战略落地。",
+          "url": "https://www.aibase.com/news/30533",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T03:16:28.345445Z"
+          "published_at": "2026-08-21T08:58:36.547886Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7655,
-      "importance": 0.7655,
-      "importance_score": 0.7655,
+      "score": 0.7653,
+      "importance": 0.7653,
+      "importance_score": 0.7653,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9884,
+        "recency": 0.9871,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1161,50 +994,50 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-21T03:16:28.345445Z",
-      "latest_at": "2026-08-21T03:16:28.345445Z",
+      "earliest_at": "2026-08-21T08:58:36.547886Z",
+      "latest_at": "2026-08-21T08:58:36.547886Z",
       "primary_item": {
-        "id": "9bf23c23227eb2ae64a14f20079c3d1ddd1ea67b",
-        "title": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
-        "title_zh": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
+        "id": "8b4934413b6222572539508e765a783f252dafa6",
+        "title": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
+        "title_zh": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
         "title_en": null,
-        "title_original": "皮尤研究:ChatGPT发布后，超三成网页出现AI创作痕迹",
+        "title_original": "韩国互联网巨头Kakao董事会通过拆分方案，拟设立Kakao AI",
         "summary": null,
-        "recommend_reason_zh": "皮尤研究中心基于Common Crawl分析50万英文网站发现，ChatGPT发布后上线的网页约35%带AI创作痕迹，其中.com网站比例是.edu与.gov的近十倍。",
-        "url": "https://www.aibase.com/news/30521",
+        "recommend_reason_zh": "韩国互联网巨头Kakao董事会8月21日批准拆分，新设Kakao AI，原公司更名Kakao X，按36%和64%分配；Kakao AI将依托约5000万用户的KakaoTalk打造AI智能代理界面，加速AI战略落地。",
+        "url": "https://www.aibase.com/news/30533",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "数据提醒做内容的该注意AI痕迹检测，暂不影响干活。",
+      "persona_score": 42,
+      "persona_review": "公司架构调整，没有新API或模型，等产品落地再动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_63917d286fbf",
-      "title": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
-      "url": "https://www.aibase.com/news/30517",
-      "primary_url": "https://www.aibase.com/news/30517",
+      "story_id": "story_7b114e120e12",
+      "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
+      "url": "https://www.aibase.com/news/30531",
+      "primary_url": "https://www.aibase.com/news/30531",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "99715d53f41d612ccc7e6d8bbf3ed72883a8cd65",
-          "title": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
-          "title_zh": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
+          "id": "4994c2aec0b14c7b7efc5c867ad691286091b63f",
+          "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
+          "title_zh": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
           "title_en": null,
-          "title_original": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
+          "title_original": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
           "summary": null,
-          "recommend_reason_zh": "AI训练数据需求爆发，数据标注公司Micro1年化营收8个月内从1亿美元飙至5亿美元，净收入预计1.5-2亿美元，现成数据毛利率达80%-90%，展现市场巨大潜力。",
-          "url": "https://www.aibase.com/news/30517",
+          "recommend_reason_zh": "OpenAI进一步开放Codex Harness核心能力，公开其Agent Loop、线程管理及JSON-RPC集成机制，开发者可基于双向协议构建IDE等定制化agent产品，底层框架全面透明化。",
+          "url": "https://www.aibase.com/news/30531",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T01:57:52.892510Z"
+          "published_at": "2026-08-21T07:57:27.828300Z"
         }
       ],
       "source_count": 1,
@@ -1213,31 +1046,31 @@
       ],
       "items": [
         {
-          "id": "99715d53f41d612ccc7e6d8bbf3ed72883a8cd65",
-          "title": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
-          "title_zh": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
+          "id": "4994c2aec0b14c7b7efc5c867ad691286091b63f",
+          "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
+          "title_zh": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
           "title_en": null,
-          "title_original": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
+          "title_original": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
           "summary": null,
-          "recommend_reason_zh": "AI训练数据需求爆发，数据标注公司Micro1年化营收8个月内从1亿美元飙至5亿美元，净收入预计1.5-2亿美元，现成数据毛利率达80%-90%，展现市场巨大潜力。",
-          "url": "https://www.aibase.com/news/30517",
+          "recommend_reason_zh": "OpenAI进一步开放Codex Harness核心能力，公开其Agent Loop、线程管理及JSON-RPC集成机制，开发者可基于双向协议构建IDE等定制化agent产品，底层框架全面透明化。",
+          "url": "https://www.aibase.com/news/30531",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T01:57:52.892510Z"
+          "published_at": "2026-08-21T07:57:27.828300Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7622,
-      "importance": 0.7622,
-      "importance_score": 0.7622,
+      "score": 0.7627,
+      "importance": 0.7627,
+      "importance_score": 0.7627,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9699,
+        "recency": 0.9726,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1245,50 +1078,50 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-21T01:57:52.892510Z",
-      "latest_at": "2026-08-21T01:57:52.892510Z",
+      "earliest_at": "2026-08-21T07:57:27.828300Z",
+      "latest_at": "2026-08-21T07:57:27.828300Z",
       "primary_item": {
-        "id": "99715d53f41d612ccc7e6d8bbf3ed72883a8cd65",
-        "title": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
-        "title_zh": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
+        "id": "4994c2aec0b14c7b7efc5c867ad691286091b63f",
+        "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
+        "title_zh": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
         "title_en": null,
-        "title_original": "AI训练数据需求激增，Micro1年营收8个月从1亿美元增至5亿美元",
+        "title_original": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
         "summary": null,
-        "recommend_reason_zh": "AI训练数据需求爆发，数据标注公司Micro1年化营收8个月内从1亿美元飙至5亿美元，净收入预计1.5-2亿美元，现成数据毛利率达80%-90%，展现市场巨大潜力。",
-        "url": "https://www.aibase.com/news/30517",
+        "recommend_reason_zh": "OpenAI进一步开放Codex Harness核心能力，公开其Agent Loop、线程管理及JSON-RPC集成机制，开发者可基于双向协议构建IDE等定制化agent产品，底层框架全面透明化。",
+        "url": "https://www.aibase.com/news/30531",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 30,
-      "persona_review": "营收数字是资本故事，和你写代码没关系，等产品线真落地再说。",
+      "persona_score": 90,
+      "persona_review": "开源评估工具可直接上手，跑代码评测不用再看闭源脸色。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_e98fa202cb48",
-      "title": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
-      "url": "https://www.aibase.com/news/30519",
-      "primary_url": "https://www.aibase.com/news/30519",
+      "story_id": "story_73c198965c13",
+      "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+      "url": "https://www.aibase.com/news/30530",
+      "primary_url": "https://www.aibase.com/news/30530",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "24d9be228661134f28d9f0248f3f61d8a10b112e",
-          "title": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
-          "title_zh": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
+          "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
+          "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
           "title_en": null,
-          "title_original": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
+          "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
           "summary": null,
-          "recommend_reason_zh": "Adobe Firefly音频工具全面上线，支持生成音乐、语音和音效，用户可直接创作商业安全音频。调查显示32.7%创作者已用AI音乐，43.2%担忧版权风险。",
-          "url": "https://www.aibase.com/news/30519",
+          "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
+          "url": "https://www.aibase.com/news/30530",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T01:57:52.892510Z"
+          "published_at": "2026-08-21T07:57:27.828300Z"
         }
       ],
       "source_count": 1,
@@ -1297,31 +1130,31 @@
       ],
       "items": [
         {
-          "id": "24d9be228661134f28d9f0248f3f61d8a10b112e",
-          "title": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
-          "title_zh": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
+          "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
+          "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
           "title_en": null,
-          "title_original": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
+          "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
           "summary": null,
-          "recommend_reason_zh": "Adobe Firefly音频工具全面上线，支持生成音乐、语音和音效，用户可直接创作商业安全音频。调查显示32.7%创作者已用AI音乐，43.2%担忧版权风险。",
-          "url": "https://www.aibase.com/news/30519",
+          "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
+          "url": "https://www.aibase.com/news/30530",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T01:57:52.892510Z"
+          "published_at": "2026-08-21T07:57:27.828300Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7622,
-      "importance": 0.7622,
-      "importance_score": 0.7622,
+      "score": 0.7627,
+      "importance": 0.7627,
+      "importance_score": 0.7627,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9699,
+        "recency": 0.9726,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1329,27 +1162,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-21T01:57:52.892510Z",
-      "latest_at": "2026-08-21T01:57:52.892510Z",
+      "earliest_at": "2026-08-21T07:57:27.828300Z",
+      "latest_at": "2026-08-21T07:57:27.828300Z",
       "primary_item": {
-        "id": "24d9be228661134f28d9f0248f3f61d8a10b112e",
-        "title": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
-        "title_zh": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
+        "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
+        "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+        "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
         "title_en": null,
-        "title_original": "Adobe Firefly音频工具全面上线，支持AI生成音乐、语音和音效",
+        "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
         "summary": null,
-        "recommend_reason_zh": "Adobe Firefly音频工具全面上线，支持生成音乐、语音和音效，用户可直接创作商业安全音频。调查显示32.7%创作者已用AI音乐，43.2%担忧版权风险。",
-        "url": "https://www.aibase.com/news/30519",
+        "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
+        "url": "https://www.aibase.com/news/30530",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "可直接生成音频素材，但商用版权和定制性需先确认。",
+      "persona_score": 88,
+      "persona_review": "开源可 clone，做 UI 自动化的今天就能试。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -1512,15 +1345,15 @@
       ],
       "item_count": 5,
       "duplicate_count": 5,
-      "score": 0.6051,
-      "importance": 0.6051,
-      "importance_score": 0.6051,
+      "score": 0.5919,
+      "importance": 0.5919,
+      "importance_score": 0.5919,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9126,
+        "recency": 0.8393,
         "story_heat": 1.0
       },
       "category": "multi_source",
@@ -1547,30 +1380,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_abe339f5a478",
-      "title": "Grok出现异常故障，部分用户遭遇大段乱码回复",
-      "url": "https://www.aibase.com/news/30512",
-      "primary_url": "https://www.aibase.com/news/30512",
+      "story_id": "story_15ad92659081",
+      "title": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
+      "url": "https://www.aibase.com/news/30528",
+      "primary_url": "https://www.aibase.com/news/30528",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "cf8dc0c651dd83ae8cab43e62745855f5cfb6038",
-          "title": "Grok出现异常故障，部分用户遭遇大段乱码回复",
-          "title_zh": "Grok出现异常故障，部分用户遭遇大段乱码回复",
+          "id": "1567b723363c36458c4ff930033d5c8e54b461bc",
+          "title": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
+          "title_zh": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
           "title_en": null,
-          "title_original": "Grok出现异常故障，部分用户遭遇大段乱码回复",
+          "title_original": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
           "summary": null,
-          "recommend_reason_zh": "xAI旗下Grok在Grok.com出现异常故障，部分用户生成PDF后收到乱码回复，链接还指向强化学习研究网站。故障主要影响Grok Lite，X.com上的Grok不受影响，官方称是罕见的临时生成故障。",
-          "url": "https://www.aibase.com/news/30512",
+          "recommend_reason_zh": "Liquid AI与Hugging Face发布LFM2.5系列DSpark草稿模型，GPU推理吞吐最高提升3.18倍，边缘设备达2.87倍；LFM2.5-2.6B函数调用延迟平均降57%，M4Max MacBook Pro上输出达139 tokens/s，且不改变输出质量。",
+          "url": "https://www.aibase.com/news/30528",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T01:57:52.892510Z"
+          "published_at": "2026-08-21T07:08:07.918351Z"
         }
       ],
       "source_count": 1,
@@ -1579,31 +1412,31 @@
       ],
       "items": [
         {
-          "id": "cf8dc0c651dd83ae8cab43e62745855f5cfb6038",
-          "title": "Grok出现异常故障，部分用户遭遇大段乱码回复",
-          "title_zh": "Grok出现异常故障，部分用户遭遇大段乱码回复",
+          "id": "1567b723363c36458c4ff930033d5c8e54b461bc",
+          "title": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
+          "title_zh": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
           "title_en": null,
-          "title_original": "Grok出现异常故障，部分用户遭遇大段乱码回复",
+          "title_original": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
           "summary": null,
-          "recommend_reason_zh": "xAI旗下Grok在Grok.com出现异常故障，部分用户生成PDF后收到乱码回复，链接还指向强化学习研究网站。故障主要影响Grok Lite，X.com上的Grok不受影响，官方称是罕见的临时生成故障。",
-          "url": "https://www.aibase.com/news/30512",
+          "recommend_reason_zh": "Liquid AI与Hugging Face发布LFM2.5系列DSpark草稿模型，GPU推理吞吐最高提升3.18倍，边缘设备达2.87倍；LFM2.5-2.6B函数调用延迟平均降57%，M4Max MacBook Pro上输出达139 tokens/s，且不改变输出质量。",
+          "url": "https://www.aibase.com/news/30528",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-21T01:57:52.892510Z"
+          "published_at": "2026-08-21T07:08:07.918351Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7622,
-      "importance": 0.7622,
-      "importance_score": 0.7622,
+      "score": 0.7606,
+      "importance": 0.7606,
+      "importance_score": 0.7606,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9699,
+        "recency": 0.9612,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1611,27 +1444,309 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-21T01:57:52.892510Z",
-      "latest_at": "2026-08-21T01:57:52.892510Z",
+      "earliest_at": "2026-08-21T07:08:07.918351Z",
+      "latest_at": "2026-08-21T07:08:07.918351Z",
       "primary_item": {
-        "id": "cf8dc0c651dd83ae8cab43e62745855f5cfb6038",
-        "title": "Grok出现异常故障，部分用户遭遇大段乱码回复",
-        "title_zh": "Grok出现异常故障，部分用户遭遇大段乱码回复",
+        "id": "1567b723363c36458c4ff930033d5c8e54b461bc",
+        "title": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
+        "title_zh": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
         "title_en": null,
-        "title_original": "Grok出现异常故障，部分用户遭遇大段乱码回复",
+        "title_original": "LFM2.5 DSpark草稿模型发布，推理速度最高飙升3. 18 倍",
         "summary": null,
-        "recommend_reason_zh": "xAI旗下Grok在Grok.com出现异常故障，部分用户生成PDF后收到乱码回复，链接还指向强化学习研究网站。故障主要影响Grok Lite，X.com上的Grok不受影响，官方称是罕见的临时生成故障。",
-        "url": "https://www.aibase.com/news/30512",
+        "recommend_reason_zh": "Liquid AI与Hugging Face发布LFM2.5系列DSpark草稿模型，GPU推理吞吐最高提升3.18倍，边缘设备达2.87倍；LFM2.5-2.6B函数调用延迟平均降57%，M4Max MacBook Pro上输出达139 tokens/s，且不改变输出质量。",
+        "url": "https://www.aibase.com/news/30528",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "临时故障，用Grok API的留意状态页即可，不用换方案。",
+      "persona_score": 75,
+      "persona_review": "推理速度提升明显，但草稿模型慎用，等稳定版再上生产。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
+      }
+    },
+    {
+      "story_id": "story_0e71951a8402",
+      "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+      "url": "https://github.com/openai/codex/issues/37674",
+      "primary_url": "https://github.com/openai/codex/issues/37674",
+      "source": "github.com",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "4f6170c6f49dbb580b2689a3343cd5624940b6af",
+          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_en": null,
+          "title_original": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "summary": null,
+          "recommend_reason_zh": "Codex 在 AWS Bedrock 上无法启用 GPT-5.6 Sol 的 prompt caching，导致缓存写入占模型花费约 85%，单次请求平均约 88K cache-write tokens，费用增加达 10 倍。",
+          "url": "https://github.com/openai/codex/issues/37674",
+          "source": "github.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-21T07:01:25.605000Z"
+        },
+        {
+          "id": "ce31b0b0c812d5b9a8c32b46a3edbaf271115058",
+          "title": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍 / Codex on AWS bedrock bug causing 10x charges",
+          "title_zh": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍",
+          "title_en": "Codex on AWS bedrock bug causing 10x charges",
+          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "summary": null,
+          "recommend_reason_zh": "AWS Bedrock上Codex的bug可致10倍费用，将web_search设为“disabled”即可规避，一文讲清问题根源与解决步骤。",
+          "url": "https://news.ycombinator.com/item?id=49383326",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T03:46:38.493000Z"
+        },
+        {
+          "id": "10eb6eebcdde74f5993ee358a634dfa0aea5811c",
+          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞 / Codex on AWS bedrock bug causing 10x charges",
+          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_en": "Codex on AWS bedrock bug causing 10x charges",
+          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "summary": null,
+          "recommend_reason_zh": "Codex CLI在Amazon Bedrock Mantle上无法启用GPT-5.6 Sol显式提示缓存，导致缓存写入token占模型估计支出85%；一次会话76个请求产生6.709M写入token，平均每请求约88K，成本显著抬升。",
+          "url": "https://github.com/openai/codex/issues/37674",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-21T03:17:43Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News (黑客新闻)",
+        "github.com",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "4f6170c6f49dbb580b2689a3343cd5624940b6af",
+          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_en": null,
+          "title_original": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "summary": null,
+          "recommend_reason_zh": "Codex 在 AWS Bedrock 上无法启用 GPT-5.6 Sol 的 prompt caching，导致缓存写入占模型花费约 85%，单次请求平均约 88K cache-write tokens，费用增加达 10 倍。",
+          "url": "https://github.com/openai/codex/issues/37674",
+          "source": "github.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-21T07:01:25.605000Z"
+        },
+        {
+          "id": "ce31b0b0c812d5b9a8c32b46a3edbaf271115058",
+          "title": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍 / Codex on AWS bedrock bug causing 10x charges",
+          "title_zh": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍",
+          "title_en": "Codex on AWS bedrock bug causing 10x charges",
+          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "summary": null,
+          "recommend_reason_zh": "AWS Bedrock上Codex的bug可致10倍费用，将web_search设为“disabled”即可规避，一文讲清问题根源与解决步骤。",
+          "url": "https://news.ycombinator.com/item?id=49383326",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T03:46:38.493000Z"
+        },
+        {
+          "id": "10eb6eebcdde74f5993ee358a634dfa0aea5811c",
+          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞 / Codex on AWS bedrock bug causing 10x charges",
+          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_en": "Codex on AWS bedrock bug causing 10x charges",
+          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "summary": null,
+          "recommend_reason_zh": "Codex CLI在Amazon Bedrock Mantle上无法启用GPT-5.6 Sol显式提示缓存，导致缓存写入token占模型估计支出85%；一次会话76个请求产生6.709M写入token，平均每请求约88K，成本显著抬升。",
+          "url": "https://github.com/openai/codex/issues/37674",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-21T03:17:43Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5635,
+      "importance": 0.5635,
+      "importance_score": 0.5635,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9596,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-21T03:17:43Z",
+      "latest_at": "2026-08-21T07:01:25.605000Z",
+      "primary_item": {
+        "id": "4f6170c6f49dbb580b2689a3343cd5624940b6af",
+        "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+        "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+        "title_en": null,
+        "title_original": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+        "summary": null,
+        "recommend_reason_zh": "Codex 在 AWS Bedrock 上无法启用 GPT-5.6 Sol 的 prompt caching，导致缓存写入占模型花费约 85%，单次请求平均约 88K cache-write tokens，费用增加达 10 倍。",
+        "url": "https://github.com/openai/codex/issues/37674",
+        "source": "github.com",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "用 Codex 上 Bedrock 的先去查账单，这个坑能让成本翻十倍。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-21T10:04:10.305168Z"
+      }
+    },
+    {
+      "story_id": "story_ec9db99faa5b",
+      "title": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+      "url": "https://annas-archive.gl/blog/physical-destruction.html",
+      "primary_url": "https://annas-archive.gl/blog/physical-destruction.html",
+      "source": "annas-archive.gl",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "f2e5c6a76f0b93bd11876695de802c3e464bcca4",
+          "title": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "title_zh": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "title_en": null,
+          "title_original": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "summary": null,
+          "recommend_reason_zh": "本文揭露AI公司秘密收购、扫描并销毁数百万实体书，Anthropic的Project Panama因十五亿美元和解被曝光，Anna's Archive呼吁全球志愿者抢在文化消失前扫描上传珍本，以防人类知识被永久私有化。",
+          "url": "https://annas-archive.gl/blog/physical-destruction.html",
+          "source": "annas-archive.gl",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-21T04:05:18.645000Z"
+        },
+        {
+          "id": "7c6483484845cc06a4aa0152508b5d7e6c338248",
+          "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_zh": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本",
+          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "summary": null,
+          "recommend_reason_zh": "版权方强制执行，迫使AI companies切碎想摄入的书；每本只购买、扫描、销毁一次，不顾多副本，呼吁在稀有书消失前扫描。",
+          "url": "https://news.ycombinator.com/item?id=49383026",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T03:16:54.851000Z"
+        },
+        {
+          "id": "fe992ecd16b587c574bebc1af23bdf67ab479169",
+          "title": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧 / AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_zh": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://annas-archive.gl/blog/physical-destruction.html",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-21T02:37:47Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News",
+        "annas-archive.gl",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "f2e5c6a76f0b93bd11876695de802c3e464bcca4",
+          "title": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "title_zh": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "title_en": null,
+          "title_original": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "summary": null,
+          "recommend_reason_zh": "本文揭露AI公司秘密收购、扫描并销毁数百万实体书，Anthropic的Project Panama因十五亿美元和解被曝光，Anna's Archive呼吁全球志愿者抢在文化消失前扫描上传珍本，以防人类知识被永久私有化。",
+          "url": "https://annas-archive.gl/blog/physical-destruction.html",
+          "source": "annas-archive.gl",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-21T04:05:18.645000Z"
+        },
+        {
+          "id": "7c6483484845cc06a4aa0152508b5d7e6c338248",
+          "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_zh": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本",
+          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "summary": null,
+          "recommend_reason_zh": "版权方强制执行，迫使AI companies切碎想摄入的书；每本只购买、扫描、销毁一次，不顾多副本，呼吁在稀有书消失前扫描。",
+          "url": "https://news.ycombinator.com/item?id=49383026",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T03:16:54.851000Z"
+        },
+        {
+          "id": "fe992ecd16b587c574bebc1af23bdf67ab479169",
+          "title": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧 / AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_zh": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://annas-archive.gl/blog/physical-destruction.html",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-21T02:37:47Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5564,
+      "importance": 0.5564,
+      "importance_score": 0.5564,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9198,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-21T02:37:47Z",
+      "latest_at": "2026-08-21T04:05:18.645000Z",
+      "primary_item": {
+        "id": "f2e5c6a76f0b93bd11876695de802c3e464bcca4",
+        "title": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+        "title_zh": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+        "title_en": null,
+        "title_original": "人工智能公司正在摧毁实体书——趁还来得及，赶紧把珍本扫描下来吧",
+        "summary": null,
+        "recommend_reason_zh": "本文揭露AI公司秘密收购、扫描并销毁数百万实体书，Anthropic的Project Panama因十五亿美元和解被曝光，Anna's Archive呼吁全球志愿者抢在文化消失前扫描上传珍本，以防人类知识被永久私有化。",
+        "url": "https://annas-archive.gl/blog/physical-destruction.html",
+        "source": "annas-archive.gl",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 25,
+      "persona_review": "观点文，对动手没直接帮助。真要扫描珍本是个人选择，别被带节奏。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
@@ -1737,15 +1852,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.566,
-      "importance": 0.566,
-      "importance_score": 0.566,
+      "score": 0.552,
+      "importance": 0.552,
+      "importance_score": 0.552,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9736,
+        "recency": 0.8954,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -1772,148 +1887,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     },
     {
-      "story_id": "story_bf863a6b7bf2",
-      "title": "反AI字体被指无用且妨碍无障碍访问",
-      "url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
-      "primary_url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
-      "source": "blog.yaros.ae",
-      "source_name": "Buzzing",
+      "story_id": "story_776e3d1fe586",
+      "title": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
+      "url": "https://www.aibase.com/news/30529",
+      "primary_url": "https://www.aibase.com/news/30529",
+      "source": "AIbase",
+      "source_name": "AIbase",
       "sources": [
         {
-          "id": "33807334c251cc8719f261b04ead884c13a6752d",
-          "title": "反AI字体被指无用且妨碍无障碍访问",
-          "title_zh": "反AI字体被指无用且妨碍无障碍访问",
+          "id": "657ab5eda5b2404dc5aec1aac2b065a5990be4c7",
+          "title": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
+          "title_zh": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
           "title_en": null,
-          "title_original": "反AI字体既无用又有害",
+          "title_original": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
           "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
-          "source": "blog.yaros.ae",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-21T00:05:58.204000Z"
-        },
-        {
-          "id": "15981836d05a99d6f263bd097735060e17cdbac9",
-          "title": "Anti-AI字体无用且有害",
-          "title_zh": "Anti-AI字体无用且有害",
-          "title_en": "Anti-AI fonts are useless and harmful",
-          "title_original": "Anti-AI fonts are useless and harmful",
-          "summary": null,
-          "recommend_reason_zh": "正文仅用‘reply reply’两词，标题即断言Anti-AI fonts无用且有害，文章以极简形式表达立场，警示读者勿被此类字体噱头迷惑。",
-          "url": "https://news.ycombinator.com/item?id=49375719",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T15:39:15.824000Z"
-        },
-        {
-          "id": "9790711c0876f6de125a2911a4f6213eba62288f",
-          "title": "反AI字体无用且有害，并损害无障碍阅读",
-          "title_zh": "反AI字体无用且有害，并损害无障碍阅读",
-          "title_en": "Anti-AI fonts are useless and harmful",
-          "title_original": "Anti-AI fonts are useless and harmful",
-          "summary": null,
-          "recommend_reason_zh": "Anti-AI fonts这类混淆字体既无用又有害：屏幕阅读器会解析出乱码，残障用户首当其冲；且AI公司已借此训练多模态模型，多数已被破解。作者警告，此举会催生集中式身份验证，不如回归纯文本。",
-          "url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-20T15:06:53Z"
+          "recommend_reason_zh": "Mistral AI推出Agentic Search，用多步检索循环替代传统RAG的固定文本块抽取，将复杂文档检索准确率提升至86%，直击企业处理保密财报、合同时的跨源对比痛点。",
+          "url": "https://www.aibase.com/news/30529",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-21T07:08:07.918351Z"
         }
       ],
-      "source_count": 3,
+      "source_count": 1,
       "source_names": [
-        "Hacker News · 24h最热",
-        "blog.yaros.ae",
-        "hackernews"
+        "AIbase"
       ],
       "items": [
         {
-          "id": "33807334c251cc8719f261b04ead884c13a6752d",
-          "title": "反AI字体被指无用且妨碍无障碍访问",
-          "title_zh": "反AI字体被指无用且妨碍无障碍访问",
+          "id": "657ab5eda5b2404dc5aec1aac2b065a5990be4c7",
+          "title": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
+          "title_zh": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
           "title_en": null,
-          "title_original": "反AI字体既无用又有害",
+          "title_original": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
           "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
-          "source": "blog.yaros.ae",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-21T00:05:58.204000Z"
-        },
-        {
-          "id": "15981836d05a99d6f263bd097735060e17cdbac9",
-          "title": "Anti-AI字体无用且有害",
-          "title_zh": "Anti-AI字体无用且有害",
-          "title_en": "Anti-AI fonts are useless and harmful",
-          "title_original": "Anti-AI fonts are useless and harmful",
-          "summary": null,
-          "recommend_reason_zh": "正文仅用‘reply reply’两词，标题即断言Anti-AI fonts无用且有害，文章以极简形式表达立场，警示读者勿被此类字体噱头迷惑。",
-          "url": "https://news.ycombinator.com/item?id=49375719",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T15:39:15.824000Z"
-        },
-        {
-          "id": "9790711c0876f6de125a2911a4f6213eba62288f",
-          "title": "反AI字体无用且有害，并损害无障碍阅读",
-          "title_zh": "反AI字体无用且有害，并损害无障碍阅读",
-          "title_en": "Anti-AI fonts are useless and harmful",
-          "title_original": "Anti-AI fonts are useless and harmful",
-          "summary": null,
-          "recommend_reason_zh": "Anti-AI fonts这类混淆字体既无用又有害：屏幕阅读器会解析出乱码，残障用户首当其冲；且AI公司已借此训练多模态模型，多数已被破解。作者警告，此举会催生集中式身份验证，不如回归纯文本。",
-          "url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-20T15:06:53Z"
+          "recommend_reason_zh": "Mistral AI推出Agentic Search，用多步检索循环替代传统RAG的固定文本块抽取，将复杂文档检索准确率提升至86%，直击企业处理保密财报、合同时的跨源对比痛点。",
+          "url": "https://www.aibase.com/news/30529",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-21T07:08:07.918351Z"
         }
       ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5607,
-      "importance": 0.5607,
-      "importance_score": 0.5607,
-      "importance_label": "多源热议",
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7606,
+      "importance": 0.7606,
+      "importance_score": 0.7606,
+      "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.9441,
-        "story_heat": 0.5
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9612,
+        "story_heat": 0.0
       },
-      "category": "multi_source",
+      "category": "industry",
       "reasons": [
-        "multi_source"
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-20T15:06:53Z",
-      "latest_at": "2026-08-21T00:05:58.204000Z",
+      "earliest_at": "2026-08-21T07:08:07.918351Z",
+      "latest_at": "2026-08-21T07:08:07.918351Z",
       "primary_item": {
-        "id": "33807334c251cc8719f261b04ead884c13a6752d",
-        "title": "反AI字体被指无用且妨碍无障碍访问",
-        "title_zh": "反AI字体被指无用且妨碍无障碍访问",
+        "id": "657ab5eda5b2404dc5aec1aac2b065a5990be4c7",
+        "title": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
+        "title_zh": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
         "title_en": null,
-        "title_original": "反AI字体既无用又有害",
+        "title_original": "Mistral推出Agentic Search，多步检索将复杂文档准确率提升至86%",
         "summary": null,
-        "recommend_reason_zh": null,
-        "url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
-        "source": "blog.yaros.ae",
-        "source_name": "Buzzing"
+        "recommend_reason_zh": "Mistral AI推出Agentic Search，用多步检索循环替代传统RAG的固定文本块抽取，将复杂文档检索准确率提升至86%，直击企业处理保密财报、合同时的跨源对比痛点。",
+        "url": "https://www.aibase.com/news/30529",
+        "source": "AIbase",
+        "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 35,
-      "persona_review": "反AI字体是概念争论，不影响开发选型，有方案再看。",
+      "persona_score": 68,
+      "persona_review": "多步检索思路可参考，但先确认API开放再决定接入。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T04:10:08.954364Z"
+        "scored_at": "2026-08-21T10:04:10.305168Z"
       }
     }
   ]

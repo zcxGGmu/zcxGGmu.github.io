@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T04:10:11.002657Z",
+  "generated_at": "2026-08-21T10:04:24.864685Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_997206e2df36",
-      "title": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具 / Build production agents with computer use， the Skills API， and the Files API",
-      "url": "https://claude.com/blog/computer-use-skills-api-files-api",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 80,
-          "review": "API 全家桶诚意足，但'正式上线'和'稳定好用'隔着一堆坑。"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "官方博客说上线新API，没论文没代码没benchmark，等实测再信。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "直接可用的新 API，agent 开发能上手试了，浏览器操作开箱即用。"
-        }
-      }
-    },
-    {
       "story_id": "story_13b553da3c26",
       "title": "Windows 11 arm64 VS2026 镜像正式可用 / Windows 11 arm64 VS2026 image generally available",
       "url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 65,
@@ -57,22 +37,42 @@
       }
     },
     {
-      "story_id": "story_f02c0a256fdb",
-      "title": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
-      "url": "https://www.aibase.com/news/30522",
+      "story_id": "story_7b114e120e12",
+      "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
+      "url": "https://www.aibase.com/news/30531",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 75,
+          "review": "开源是好事，但先确认不是阉割版，别急着封神。"
+        },
+        "paper-police": {
+          "score": 20,
+          "review": "报道称开源但无仓库链接，代码和评测均无，无法验证。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "开源评估工具可直接上手，跑代码评测不用再看闭源脸色。"
+        }
+      }
+    },
+    {
+      "story_id": "story_73c198965c13",
+      "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+      "url": "https://www.aibase.com/news/30530",
       "rank": 3,
       "reviews": {
         "cynic": {
           "score": 72,
-          "review": "API上线是真，但宣传口径又玩'正式'二字，实测效果等第三方验证。"
+          "review": "开源是真，可'真机基座'这词儿是跟风还是真有本事，得看跑分外的实测。"
         },
         "paper-police": {
-          "score": 18,
-          "review": "只有官方公告，无技术文档无代码，等API实测再评价。"
+          "score": 25,
+          "review": "只说了开源未见仓库链接，论文和评测都没给，无法核实。"
         },
         "pragmatic": {
           "score": 88,
-          "review": "三个API正式可用，接入就能做自动化操作和文件处理，今天就能试。"
+          "review": "开源可 clone，做 UI 自动化的今天就能试。"
         }
       }
     }
