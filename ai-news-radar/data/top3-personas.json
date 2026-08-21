@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T23:53:23.687270Z",
+  "generated_at": "2026-08-21T04:10:11.002657Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -57,22 +57,22 @@
       }
     },
     {
-      "story_id": "story_666a236350be",
-      "title": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍 / Up to 3.2x Faster Inference with LFM2.5-DSpark",
-      "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+      "story_id": "story_f02c0a256fdb",
+      "title": "Claude Platform 正式上线Computer Use、Skills API 与 Files API",
+      "url": "https://www.aibase.com/news/30522",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "提速3.18倍是配合投机解码的极限甜点，单拎草稿模型出来说就是耍流氓。"
+          "score": 72,
+          "review": "API上线是真，但宣传口径又玩'正式'二字，实测效果等第三方验证。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方博客给了推理速度数字，但无论文和无第三方复现，待验证。"
+          "score": 18,
+          "review": "只有官方公告，无技术文档无代码，等API实测再评价。"
         },
         "pragmatic": {
-          "score": 85,
-          "review": "草稿模型提速 3 倍，跑生成任务可试，但需确认兼容性。"
+          "score": 88,
+          "review": "三个API正式可用，接入就能做自动化操作和文件处理，今天就能试。"
         }
       }
     }
