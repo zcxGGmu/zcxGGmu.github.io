@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T15:00:36.759596Z",
+  "generated_at": "2026-08-20T23:53:23.687270Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_5eb7373b87f5",
-      "title": "为前沿模型提供零数据保留功能 / Offering Zero Data Retention for frontier models",
-      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "story_id": "story_997206e2df36",
+      "title": "Claude Platform 正式上线 Computer Use、Skills API 与 Files API，新增浏览器操作工具 / Build production agents with computer use， the Skills API， and the Files API",
+      "url": "https://claude.com/blog/computer-use-skills-api-files-api",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 68,
-          "review": "零保留算实在，但条款细则没晒全，先别急着鼓掌。"
+          "score": 80,
+          "review": "API 全家桶诚意足，但'正式上线'和'稳定好用'隔着一堆坑。"
         },
         "paper-police": {
-          "score": 30,
-          "review": "官方说零保留，无技术报告无第三方核验，等独立验证再提级。"
+          "score": 20,
+          "review": "官方博客说上线新API，没论文没代码没benchmark，等实测再信。"
         },
         "pragmatic": {
-          "score": 82,
-          "review": "数据合规需求直接可满足，企业客户可立刻评估接入。"
+          "score": 92,
+          "review": "直接可用的新 API，agent 开发能上手试了，浏览器操作开箱即用。"
         }
       }
     },
     {
-      "story_id": "story_56e8099b2502",
-      "title": "通义千问官方点赞！Unsloth Dynamic V3 让 Qwen3.8-27B 更小更聪明，1-bit 版 8GB 内存就能跑",
-      "url": "https://www.aibase.com/news/30504",
+      "story_id": "story_13b553da3c26",
+      "title": "Windows 11 arm64 VS2026 镜像正式可用 / Windows 11 arm64 VS2026 image generally available",
+      "url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
       "rank": 2,
       "reviews": {
         "cynic": {
           "score": 65,
-          "review": "1-bit 量化牺牲精度换体积，'更聪明'得看基准测试，8GB 能跑不等于好用。"
+          "review": "镜像上线是例行公事，但至少比某些PPT强，有本事跑个真实负载？"
         },
         "paper-police": {
-          "score": 20,
-          "review": "仅新闻稿无技术细节，无代码无评测，1-bit效果待验证。"
+          "score": 25,
+          "review": "官方公告可用，但无代码无评测，实机验证前只能算声称。"
         },
         "pragmatic": {
-          "score": 82,
-          "review": "1-bit量化8GB跑27B，本地部署党可上手试。"
+          "score": 90,
+          "review": "arm64 开发环境镜像已就绪，Windows 用户今天就能用上 VS2026。"
         }
       }
     },
     {
-      "story_id": "story_a6a38128dce9",
-      "title": "MiniMax Design发布:用自然语言“指挥”视频创作，告别逐帧编辑",
-      "url": "https://www.aibase.com/news/30503",
+      "story_id": "story_666a236350be",
+      "title": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍 / Up to 3.2x Faster Inference with LFM2.5-DSpark",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "自然语言指挥视频听着美好，能示范个非摆拍的完整剪辑不？"
+          "score": 65,
+          "review": "提速3.18倍是配合投机解码的极限甜点，单拎草稿模型出来说就是耍流氓。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "功能宣称无论文无代码无评测，逐帧编辑对比数据缺，只有新闻稿。"
+          "score": 45,
+          "review": "官方博客给了推理速度数字，但无论文和无第三方复现，待验证。"
         },
         "pragmatic": {
-          "score": 82,
-          "review": "新工具可试用，做视频工作流的可以上手省掉逐帧编辑。"
+          "score": 85,
+          "review": "草稿模型提速 3 倍，跑生成任务可试，但需确认兼容性。"
         }
       }
     }
