@@ -1,8 +1,93 @@
 {
-  "generated_at": "2026-08-21T14:53:42.857425Z",
+  "generated_at": "2026-08-21T23:39:12.880480Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
+    {
+      "story_id": "story_f852499667bc",
+      "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
+      "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "primary_url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "source": "GitHub Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "95be4d894cfb7732cd86896767c25f43138d9629",
+          "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
+          "title_zh": "Slack 上的全新 GitHub Copilot 体验。",
+          "title_en": "The new GitHub Copilot experience in Slack",
+          "title_original": "The new GitHub Copilot experience in Slack",
+          "summary": null,
+          "recommend_reason_zh": "GitHub Copilot现已集成进Slack公开预览，可通过@GitHub发起代理会话，异步规划变更、排查问题，并创建专属代码频道，生成的PR需额外审批，确保人在回路。",
+          "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-21T16:07:15Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "GitHub Changelog"
+      ],
+      "items": [
+        {
+          "id": "95be4d894cfb7732cd86896767c25f43138d9629",
+          "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
+          "title_zh": "Slack 上的全新 GitHub Copilot 体验。",
+          "title_en": "The new GitHub Copilot experience in Slack",
+          "title_original": "The new GitHub Copilot experience in Slack",
+          "summary": null,
+          "recommend_reason_zh": "GitHub Copilot现已集成进Slack公开预览，可通过@GitHub发起代理会话，异步规划变更、排查问题，并创建专属代码频道，生成的PR需额外审批，确保人在回路。",
+          "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-21T16:07:15Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8334,
+      "importance": 0.8334,
+      "importance_score": 0.8334,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.91,
+        "recency": 0.8969,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-21T16:07:15Z",
+      "latest_at": "2026-08-21T16:07:15Z",
+      "primary_item": {
+        "id": "95be4d894cfb7732cd86896767c25f43138d9629",
+        "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
+        "title_zh": "Slack 上的全新 GitHub Copilot 体验。",
+        "title_en": "The new GitHub Copilot experience in Slack",
+        "title_original": "The new GitHub Copilot experience in Slack",
+        "summary": null,
+        "recommend_reason_zh": "GitHub Copilot现已集成进Slack公开预览，可通过@GitHub发起代理会话，异步规划变更、排查问题，并创建专属代码频道，生成的PR需额外审批，确保人在回路。",
+        "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+        "source": "GitHub Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 75,
+      "persona_review": "Slack 里直接用 Copilot，团队协作场景能省切换成本，但具体功能还得看文档。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-21T23:48:36.971498Z"
+      }
+    },
     {
       "story_id": "story_371125c1602a",
       "title": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究 / From Atari to EVE Online: Building on 15 Years of AI Research in Games",
@@ -48,15 +133,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8366,
-      "importance": 0.8366,
-      "importance_score": 0.8366,
+      "score": 0.8161,
+      "importance": 0.8161,
+      "importance_score": 0.8161,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.959,
+        "recency": 0.8451,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +170,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -133,15 +218,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8312,
-      "importance": 0.8312,
-      "importance_score": 0.8312,
+      "score": 0.8139,
+      "importance": 0.8139,
+      "importance_score": 0.8139,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.98,
-        "recency": 0.8065,
+        "recency": 0.7107,
         "story_heat": 0.0
       },
       "category": "official",
@@ -170,30 +255,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
-      "story_id": "story_85ec019c932d",
-      "title": "已保存的视图可固定到仓库 Issues 侧边栏，现已全面可用，另有更多更新。 / Pinning saved views to the repository issues sidebar is generally available and more",
-      "url": "https://github.blog/changelog/2026-08-20-pin-projects-views-and-milestones-to-the-repository-sidebar",
-      "primary_url": "https://github.blog/changelog/2026-08-20-pin-projects-views-and-milestones-to-the-repository-sidebar",
+      "story_id": "story_99aa6c57026b",
+      "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
+      "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
+      "primary_url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
       "source": "GitHub Changelog",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "2c4fc71547d52e8375f29f8ac4898b98edf8d7c5",
-          "title": "已保存的视图可固定到仓库 Issues 侧边栏，现已全面可用，另有更多更新。 / Pinning saved views to the repository issues sidebar is generally available and more",
-          "title_zh": "已保存的视图可固定到仓库 Issues 侧边栏，现已全面可用，另有更多更新。",
-          "title_en": "Pinning saved views to the repository issues sidebar is generally available and more",
-          "title_original": "Pinning saved views to the repository issues sidebar is generally available and more",
+          "id": "decada2ec28c4f5c3a53da129b04075e40cc546e",
+          "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
+          "title_zh": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作",
+          "title_en": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+          "title_original": "Shared agentic work with GitHub Copilot in Microsoft Teams",
           "summary": null,
-          "recommend_reason_zh": "GitHub 宣布保存视图固定到仓库 issues 侧边栏功能正式可用，即使侧边栏折叠也能一键访问；同时新增 issues 反应头像显示、Issues Dashboard 密度调节，issue 依赖 REST API 也按 token 权限过滤。",
-          "url": "https://github.blog/changelog/2026-08-20-pin-projects-views-and-milestones-to-the-repository-sidebar",
+          "recommend_reason_zh": "本文介绍如何在Microsoft Teams中通过@GitHub启动GitHub Copilot云代理会话，让讨论变成可共同协作的代理工作区；公共预览版需付费计划并消耗AI积分，仓库管理员还可为Copilot创建的PR增设额外审批，确保人工监督。",
+          "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
           "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-20T23:29:34Z"
+          "published_at": "2026-08-21T16:03:36Z"
         }
       ],
       "source_count": 1,
@@ -202,31 +287,31 @@
       ],
       "items": [
         {
-          "id": "2c4fc71547d52e8375f29f8ac4898b98edf8d7c5",
-          "title": "已保存的视图可固定到仓库 Issues 侧边栏，现已全面可用，另有更多更新。 / Pinning saved views to the repository issues sidebar is generally available and more",
-          "title_zh": "已保存的视图可固定到仓库 Issues 侧边栏，现已全面可用，另有更多更新。",
-          "title_en": "Pinning saved views to the repository issues sidebar is generally available and more",
-          "title_original": "Pinning saved views to the repository issues sidebar is generally available and more",
+          "id": "decada2ec28c4f5c3a53da129b04075e40cc546e",
+          "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
+          "title_zh": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作",
+          "title_en": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+          "title_original": "Shared agentic work with GitHub Copilot in Microsoft Teams",
           "summary": null,
-          "recommend_reason_zh": "GitHub 宣布保存视图固定到仓库 issues 侧边栏功能正式可用，即使侧边栏折叠也能一键访问；同时新增 issues 反应头像显示、Issues Dashboard 密度调节，issue 依赖 REST API 也按 token 权限过滤。",
-          "url": "https://github.blog/changelog/2026-08-20-pin-projects-views-and-milestones-to-the-repository-sidebar",
+          "recommend_reason_zh": "本文介绍如何在Microsoft Teams中通过@GitHub启动GitHub Copilot云代理会话，让讨论变成可共同协作的代理工作区；公共预览版需付费计划并消耗AI积分，仓库管理员还可为Copilot创建的PR增设额外审批，确保人工监督。",
+          "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
           "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-20T23:29:34Z"
+          "published_at": "2026-08-21T16:03:36Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8081,
-      "importance": 0.8081,
-      "importance_score": 0.8081,
+      "score": 0.8333,
+      "importance": 0.8333,
+      "importance_score": 0.8333,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.8006,
+        "ai_relevance": 0.91,
+        "recency": 0.8961,
         "story_heat": 0.0
       },
       "category": "official",
@@ -235,27 +320,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-20T23:29:34Z",
-      "latest_at": "2026-08-20T23:29:34Z",
+      "earliest_at": "2026-08-21T16:03:36Z",
+      "latest_at": "2026-08-21T16:03:36Z",
       "primary_item": {
-        "id": "2c4fc71547d52e8375f29f8ac4898b98edf8d7c5",
-        "title": "已保存的视图可固定到仓库 Issues 侧边栏，现已全面可用，另有更多更新。 / Pinning saved views to the repository issues sidebar is generally available and more",
-        "title_zh": "已保存的视图可固定到仓库 Issues 侧边栏，现已全面可用，另有更多更新。",
-        "title_en": "Pinning saved views to the repository issues sidebar is generally available and more",
-        "title_original": "Pinning saved views to the repository issues sidebar is generally available and more",
+        "id": "decada2ec28c4f5c3a53da129b04075e40cc546e",
+        "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
+        "title_zh": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作",
+        "title_en": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+        "title_original": "Shared agentic work with GitHub Copilot in Microsoft Teams",
         "summary": null,
-        "recommend_reason_zh": "GitHub 宣布保存视图固定到仓库 issues 侧边栏功能正式可用，即使侧边栏折叠也能一键访问；同时新增 issues 反应头像显示、Issues Dashboard 密度调节，issue 依赖 REST API 也按 token 权限过滤。",
-        "url": "https://github.blog/changelog/2026-08-20-pin-projects-views-and-milestones-to-the-repository-sidebar",
+        "recommend_reason_zh": "本文介绍如何在Microsoft Teams中通过@GitHub启动GitHub Copilot云代理会话，让讨论变成可共同协作的代理工作区；公共预览版需付费计划并消耗AI积分，仓库管理员还可为Copilot创建的PR增设额外审批，确保人工监督。",
+        "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
         "source": "GitHub Changelog",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "GitHub 侧边栏固定视图提升浏览效率，日常用 Issues 的可以顺手配置。",
+      "persona_score": 70,
+      "persona_review": "团队协作场景能用上，但只影响 Teams 用户，等具体上手再说。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -361,15 +446,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.789,
-      "importance": 0.789,
-      "importance_score": 0.789,
+      "score": 0.7692,
+      "importance": 0.7692,
+      "importance_score": 0.7692,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.67,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9242,
+        "recency": 0.8144,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -398,63 +483,63 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
-      "story_id": "story_666a236350be",
-      "title": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍 / Up to 3.2x Faster Inference with LFM2.5-DSpark",
-      "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
-      "primary_url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
-      "source": "Hugging Face Blog",
+      "story_id": "story_6b026b4e90dc",
+      "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
+      "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
+      "primary_url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
+      "source": "GitHub Changelog",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "8a28e486c5c80d8b81f7ef6434b41bc0d3758f07",
-          "title": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍 / Up to 3.2x Faster Inference with LFM2.5-DSpark",
-          "title_zh": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍",
-          "title_en": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
-          "title_original": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
+          "id": "cc44bb73c911c9a40dc2229a9e642db5b83bc00f",
+          "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
+          "title_zh": "更好的被屏蔽用户管理工具",
+          "title_en": "Better tools for managing blocked users",
+          "title_original": "Better tools for managing blocked users",
           "summary": null,
-          "recommend_reason_zh": "Liquid AI发布LFM2.5系列DSpark草稿模型，为1.2B、2.6B和8B三款模型带来最高3.2倍推理加速，在MacBook上LFM2.5-2.6B可达约140 tok/s，多工具场景延迟平均降低57%。",
-          "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
-          "source": "Hugging Face Blog",
+          "recommend_reason_zh": "GitHub更新了屏蔽用户管理功能，支持按用户名、全名或邮箱搜索，并可排序和分页长列表，同时清晰区分搜索与屏蔽操作，避免误封。",
+          "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
+          "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-20T16:52:57Z"
+          "published_at": "2026-08-21T14:43:36Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "Hugging Face Blog"
+        "GitHub Changelog"
       ],
       "items": [
         {
-          "id": "8a28e486c5c80d8b81f7ef6434b41bc0d3758f07",
-          "title": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍 / Up to 3.2x Faster Inference with LFM2.5-DSpark",
-          "title_zh": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍",
-          "title_en": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
-          "title_original": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
+          "id": "cc44bb73c911c9a40dc2229a9e642db5b83bc00f",
+          "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
+          "title_zh": "更好的被屏蔽用户管理工具",
+          "title_en": "Better tools for managing blocked users",
+          "title_original": "Better tools for managing blocked users",
           "summary": null,
-          "recommend_reason_zh": "Liquid AI发布LFM2.5系列DSpark草稿模型，为1.2B、2.6B和8B三款模型带来最高3.2倍推理加速，在MacBook上LFM2.5-2.6B可达约140 tok/s，多工具场景延迟平均降低57%。",
-          "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
-          "source": "Hugging Face Blog",
+          "recommend_reason_zh": "GitHub更新了屏蔽用户管理功能，支持按用户名、全名或邮箱搜索，并可排序和分页长列表，同时清晰区分搜索与屏蔽操作，避免误封。",
+          "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
+          "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-20T16:52:57Z"
+          "published_at": "2026-08-21T14:43:36Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.811,
-      "importance": 0.811,
-      "importance_score": 0.811,
+      "score": 0.8222,
+      "importance": 0.8222,
+      "importance_score": 0.8222,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
-        "ai_relevance": 0.95,
-        "recency": 0.7277,
+        "ai_relevance": 0.87,
+        "recency": 0.8791,
         "story_heat": 0.0
       },
       "category": "official",
@@ -463,27 +548,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-20T16:52:57Z",
-      "latest_at": "2026-08-20T16:52:57Z",
+      "earliest_at": "2026-08-21T14:43:36Z",
+      "latest_at": "2026-08-21T14:43:36Z",
       "primary_item": {
-        "id": "8a28e486c5c80d8b81f7ef6434b41bc0d3758f07",
-        "title": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍 / Up to 3.2x Faster Inference with LFM2.5-DSpark",
-        "title_zh": "Hugging Face 发布 LFM2.5 系列 DSpark 草稿模型，推理速度最高提升 3.18 倍",
-        "title_en": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
-        "title_original": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
+        "id": "cc44bb73c911c9a40dc2229a9e642db5b83bc00f",
+        "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
+        "title_zh": "更好的被屏蔽用户管理工具",
+        "title_en": "Better tools for managing blocked users",
+        "title_original": "Better tools for managing blocked users",
         "summary": null,
-        "recommend_reason_zh": "Liquid AI发布LFM2.5系列DSpark草稿模型，为1.2B、2.6B和8B三款模型带来最高3.2倍推理加速，在MacBook上LFM2.5-2.6B可达约140 tok/s，多工具场景延迟平均降低57%。",
-        "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
-        "source": "Hugging Face Blog",
+        "recommend_reason_zh": "GitHub更新了屏蔽用户管理功能，支持按用户名、全名或邮箱搜索，并可排序和分页长列表，同时清晰区分搜索与屏蔽操作，避免误封。",
+        "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
+        "source": "GitHub Changelog",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 85,
-      "persona_review": "草稿模型提速 3 倍，跑生成任务可试，但需确认兼容性。",
+      "persona_score": 60,
+      "persona_review": "平台管理功能优化，对AI开发无直接帮助，日常用GitHub可顺手留意。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -531,21 +616,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7695,
-      "importance": 0.7695,
-      "importance_score": 0.7695,
+      "score": 0.7483,
+      "importance": 0.7483,
+      "importance_score": 0.7483,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9939,
+        "recency": 0.8759,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T14:28:27.351000Z",
       "latest_at": "2026-08-21T14:28:27.351000Z",
@@ -567,92 +651,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
-      }
-    },
-    {
-      "story_id": "story_13b553da3c26",
-      "title": "Windows 11 arm64 VS2026 镜像正式可用 / Windows 11 arm64 VS2026 image generally available",
-      "url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
-      "primary_url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "e3d7b1a7c89459a1e7f611544f5024ba1b88f489",
-          "title": "Windows 11 arm64 VS2026 镜像正式可用 / Windows 11 arm64 VS2026 image generally available",
-          "title_zh": "Windows 11 arm64 VS2026 镜像正式可用",
-          "title_en": "Windows 11 arm64 VS2026 image generally available",
-          "title_original": "Windows 11 arm64 VS2026 image generally available",
-          "summary": null,
-          "recommend_reason_zh": "GitHub 正式推出 Windows 11 arm64 的 Visual Studio 2026 镜像，支持在标准及更大 runner 上使用，并计划于 2026 年 9 月 21 日至 30 日逐步默认迁移，需注意可能破坏依赖 Visual Studio 2022 的工作流。",
-          "url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-20T17:52:38Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "e3d7b1a7c89459a1e7f611544f5024ba1b88f489",
-          "title": "Windows 11 arm64 VS2026 镜像正式可用 / Windows 11 arm64 VS2026 image generally available",
-          "title_zh": "Windows 11 arm64 VS2026 镜像正式可用",
-          "title_en": "Windows 11 arm64 VS2026 image generally available",
-          "title_original": "Windows 11 arm64 VS2026 image generally available",
-          "summary": null,
-          "recommend_reason_zh": "GitHub 正式推出 Windows 11 arm64 的 Visual Studio 2026 镜像，支持在标准及更大 runner 上使用，并计划于 2026 年 9 月 21 日至 30 日逐步默认迁移，需注意可能破坏依赖 Visual Studio 2022 的工作流。",
-          "url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-20T17:52:38Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7969,
-      "importance": 0.7969,
-      "importance_score": 0.7969,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7382,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-20T17:52:38Z",
-      "latest_at": "2026-08-20T17:52:38Z",
-      "primary_item": {
-        "id": "e3d7b1a7c89459a1e7f611544f5024ba1b88f489",
-        "title": "Windows 11 arm64 VS2026 镜像正式可用 / Windows 11 arm64 VS2026 image generally available",
-        "title_zh": "Windows 11 arm64 VS2026 镜像正式可用",
-        "title_en": "Windows 11 arm64 VS2026 image generally available",
-        "title_original": "Windows 11 arm64 VS2026 image generally available",
-        "summary": null,
-        "recommend_reason_zh": "GitHub 正式推出 Windows 11 arm64 的 Visual Studio 2026 镜像，支持在标准及更大 runner 上使用，并计划于 2026 年 9 月 21 日至 30 日逐步默认迁移，需注意可能破坏依赖 Visual Studio 2022 的工作流。",
-        "url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 90,
-      "persona_review": "arm64 开发环境镜像已就绪，Windows 用户今天就能用上 VS2026。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -700,21 +699,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7629,
-      "importance": 0.7629,
-      "importance_score": 0.7629,
+      "score": 0.7432,
+      "importance": 0.7432,
+      "importance_score": 0.7432,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.75,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9241,
+        "recency": 0.8143,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T09:25:43.682000Z",
       "latest_at": "2026-08-21T09:25:43.682000Z",
@@ -736,7 +734,90 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
+      }
+    },
+    {
+      "story_id": "story_a1a025194e2c",
+      "title": "SGLang 推出 Weight Cache Daemon，实现亚秒级引擎重启 / Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+      "url": "https://www.lmsys.org/blog/2026-08-21-sglang-fast-recovery",
+      "primary_url": "https://www.lmsys.org/blog/2026-08-21-sglang-fast-recovery",
+      "source": "LMSYS：Blog（Chatbot Arena 团队）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "1c4bbbb83206a9e870fa90d5c9874c029973b10b",
+          "title": "SGLang 推出 Weight Cache Daemon，实现亚秒级引擎重启 / Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+          "title_zh": "SGLang 推出 Weight Cache Daemon，实现亚秒级引擎重启",
+          "title_en": "Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+          "title_original": "Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+          "summary": "SGLang 团队推出 Weight Cache Daemon，通过 CUDA IPC 零拷贝映射将模型权重加载从约 495 秒降至约 0.63 秒（约 785 倍加速），端到端启动时间减少 93.9%。该守护进程在 GPU 内存中持久化后量化权重，支持多实例共享和亚秒级主备切换，是 Fast Engine Recovery Framework 的第一阶段。",
+          "recommend_reason_zh": "Weight Cache Daemon让SGLang引擎重启从8.52分钟降至亚秒级：通过CUDA IPC零拷贝复用GPU内存中的量化权重，省去占启动93.2%的磁盘加载，专治Ling-2.6-1T等大模型冷启动痛点。",
+          "url": "https://www.lmsys.org/blog/2026-08-21-sglang-fast-recovery",
+          "source": "LMSYS：Blog（Chatbot Arena 团队）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-21T17:56:25.415000Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "LMSYS：Blog（Chatbot Arena 团队）"
+      ],
+      "items": [
+        {
+          "id": "1c4bbbb83206a9e870fa90d5c9874c029973b10b",
+          "title": "SGLang 推出 Weight Cache Daemon，实现亚秒级引擎重启 / Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+          "title_zh": "SGLang 推出 Weight Cache Daemon，实现亚秒级引擎重启",
+          "title_en": "Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+          "title_original": "Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+          "summary": "SGLang 团队推出 Weight Cache Daemon，通过 CUDA IPC 零拷贝映射将模型权重加载从约 495 秒降至约 0.63 秒（约 785 倍加速），端到端启动时间减少 93.9%。该守护进程在 GPU 内存中持久化后量化权重，支持多实例共享和亚秒级主备切换，是 Fast Engine Recovery Framework 的第一阶段。",
+          "recommend_reason_zh": "Weight Cache Daemon让SGLang引擎重启从8.52分钟降至亚秒级：通过CUDA IPC零拷贝复用GPU内存中的量化权重，省去占启动93.2%的磁盘加载，专治Ling-2.6-1T等大模型冷启动痛点。",
+          "url": "https://www.lmsys.org/blog/2026-08-21-sglang-fast-recovery",
+          "source": "LMSYS：Blog（Chatbot Arena 团队）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-21T17:56:25.415000Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7383,
+      "importance": 0.7383,
+      "importance_score": 0.7383,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.67,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9208,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-21T17:56:25.415000Z",
+      "latest_at": "2026-08-21T17:56:25.415000Z",
+      "primary_item": {
+        "id": "1c4bbbb83206a9e870fa90d5c9874c029973b10b",
+        "title": "SGLang 推出 Weight Cache Daemon，实现亚秒级引擎重启 / Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+        "title_zh": "SGLang 推出 Weight Cache Daemon，实现亚秒级引擎重启",
+        "title_en": "Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+        "title_original": "Blog Fast Engine Recovery： Sub-Second Engine Restart for SGLang via Weight Cache Daemon Nowadays， State-of-the-Art （SOTA） models are getting much bigger and reloading the model service after a crash is very expensive. Therefore， we are introducing the Weight Cache Daemon， a persistent GP… Ant Ling Infra Team （Ant Group）， Alibaba， SGLang Team",
+        "summary": "SGLang 团队推出 Weight Cache Daemon，通过 CUDA IPC 零拷贝映射将模型权重加载从约 495 秒降至约 0.63 秒（约 785 倍加速），端到端启动时间减少 93.9%。该守护进程在 GPU 内存中持久化后量化权重，支持多实例共享和亚秒级主备切换，是 Fast Engine Recovery Framework 的第一阶段。",
+        "recommend_reason_zh": "Weight Cache Daemon让SGLang引擎重启从8.52分钟降至亚秒级：通过CUDA IPC零拷贝复用GPU内存中的量化权重，省去占启动93.2%的磁盘加载，专治Ling-2.6-1T等大模型冷启动痛点。",
+        "url": "https://www.lmsys.org/blog/2026-08-21-sglang-fast-recovery",
+        "source": "LMSYS：Blog（Chatbot Arena 团队）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 82,
+      "persona_review": "崩溃恢复从分钟级降到亚秒级，生产环境直接受益。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -784,21 +865,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7573,
-      "importance": 0.7573,
-      "importance_score": 0.7573,
+      "score": 0.7371,
+      "importance": 0.7371,
+      "importance_score": 0.7371,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9426,
+        "recency": 0.8306,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T10:48:10.708106Z",
       "latest_at": "2026-08-21T10:48:10.708106Z",
@@ -820,7 +900,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -868,21 +948,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7538,
-      "importance": 0.7538,
-      "importance_score": 0.7538,
+      "score": 0.733,
+      "importance": 0.733,
+      "importance_score": 0.733,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.69,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9733,
+        "recency": 0.8577,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T13:01:13Z",
       "latest_at": "2026-08-21T13:01:13Z",
@@ -904,176 +983,120 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
-      "story_id": "story_a4fea9f5c87a",
-      "title": "Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率 / Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-      "url": "https://mistral.ai/news/agentic-search",
-      "primary_url": "https://mistral.ai/news/agentic-search",
-      "source": "Mistral AI：News（网页）",
+      "story_id": "story_6330aea85a01",
+      "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+      "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
+      "primary_url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
+      "source": "Claude：Blog（网页）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "294b8bfa7f1dbcaf05bd40143d528810ca70d355",
-          "title": "Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率 / Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-          "title_zh": "Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率",
-          "title_en": "Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-          "title_original": "Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-          "summary": "Mistral 发布 Agentic Search，通过 search、open、navigate、read、grep 五工具的多步检索循环，让模型在长文档与多来源中查找、定位并验证信息。",
-          "recommend_reason_zh": "Agentic Search作为检索层，帮助AI系统在复杂文档间导航、读取并验证信息，提升AI系统结果的准确性和效率。",
-          "url": "https://mistral.ai/news/agentic-search",
-          "source": "Mistral AI：News（网页）",
+          "id": "dfc628933c54c7064a20996ac1c3d860e718d025",
+          "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_zh": "Claude Mythos 5 网络安全能力扩展至更多防御者",
+          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "summary": "Anthropic 宣布 Claude Mythos 5 现已集成至 Claude Security，并即将登陆合作伙伴的网络安全防御工具。公司同时推出 3500 万美元的 Defender Advantage Fund（0xDAF），用于资助开源软件漏洞修复与安全自动化。",
+          "recommend_reason_zh": "本文介绍Claude Mythos 5现已在Claude Security中可用，并即将集成至合作伙伴的防御工具；同时推出3500万美元基金支持开源软件安全，并扩大Cyber Verification Program，让更多防御者安全使用前沿模型。",
+          "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
+          "source": "Claude：Blog（网页）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-20T16:02:07.300000Z"
+          "published_at": "2026-08-21T17:58:29.461000Z"
+        },
+        {
+          "id": "971dde61ec78c8703764ec06ef6c60b4d8ec5efb",
+          "title": "让更多防御者用上 Claude Mythos 5 的网络安全能力 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_zh": "让更多防御者用上 Claude Mythos 5 的网络安全能力",
+          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "summary": null,
+          "recommend_reason_zh": "本文记录Anthropic将Claude Mythos 5集成至安全产品引发的争议：有用户称安全事故中ChatGPT和Claude毫无作用，改用grok才解决问题，并质疑其合作模式。",
+          "url": "https://news.ycombinator.com/item?id=49392331",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T20:41:57.600000Z"
         }
       ],
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "Mistral AI：News（网页）"
+        "Claude：Blog（网页）",
+        "hackernews"
       ],
       "items": [
         {
-          "id": "294b8bfa7f1dbcaf05bd40143d528810ca70d355",
-          "title": "Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率 / Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-          "title_zh": "Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率",
-          "title_en": "Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-          "title_original": "Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-          "summary": "Mistral 发布 Agentic Search，通过 search、open、navigate、read、grep 五工具的多步检索循环，让模型在长文档与多来源中查找、定位并验证信息。",
-          "recommend_reason_zh": "Agentic Search作为检索层，帮助AI系统在复杂文档间导航、读取并验证信息，提升AI系统结果的准确性和效率。",
-          "url": "https://mistral.ai/news/agentic-search",
-          "source": "Mistral AI：News（网页）",
+          "id": "dfc628933c54c7064a20996ac1c3d860e718d025",
+          "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_zh": "Claude Mythos 5 网络安全能力扩展至更多防御者",
+          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "summary": "Anthropic 宣布 Claude Mythos 5 现已集成至 Claude Security，并即将登陆合作伙伴的网络安全防御工具。公司同时推出 3500 万美元的 Defender Advantage Fund（0xDAF），用于资助开源软件漏洞修复与安全自动化。",
+          "recommend_reason_zh": "本文介绍Claude Mythos 5现已在Claude Security中可用，并即将集成至合作伙伴的防御工具；同时推出3500万美元基金支持开源软件安全，并扩大Cyber Verification Program，让更多防御者安全使用前沿模型。",
+          "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
+          "source": "Claude：Blog（网页）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-20T16:02:07.300000Z"
+          "published_at": "2026-08-21T17:58:29.461000Z"
+        },
+        {
+          "id": "971dde61ec78c8703764ec06ef6c60b4d8ec5efb",
+          "title": "让更多防御者用上 Claude Mythos 5 的网络安全能力 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_zh": "让更多防御者用上 Claude Mythos 5 的网络安全能力",
+          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "summary": null,
+          "recommend_reason_zh": "本文记录Anthropic将Claude Mythos 5集成至安全产品引发的争议：有用户称安全事故中ChatGPT和Claude毫无作用，改用grok才解决问题，并质疑其合作模式。",
+          "url": "https://news.ycombinator.com/item?id=49392331",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T20:41:57.600000Z"
         }
       ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7504,
-      "importance": 0.7504,
-      "importance_score": 0.7504,
-      "importance_label": "官方更新",
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.7454,
+      "importance": 0.7454,
+      "importance_score": 0.7454,
+      "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.67,
-        "source_tier": 1.0,
+        "editorial": 0.61,
+        "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7188,
-        "story_heat": 0.0
+        "recency": 0.9213,
+        "story_heat": 0.25
       },
-      "category": "official",
+      "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "multi_source",
+        "high_ai_relevance"
       ],
-      "earliest_at": "2026-08-20T16:02:07.300000Z",
-      "latest_at": "2026-08-20T16:02:07.300000Z",
+      "earliest_at": "2026-08-21T17:58:29.461000Z",
+      "latest_at": "2026-08-21T20:41:57.600000Z",
       "primary_item": {
-        "id": "294b8bfa7f1dbcaf05bd40143d528810ca70d355",
-        "title": "Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率 / Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-        "title_zh": "Mistral 推出 Agentic Search：多步检索提升 AI 系统复杂文档查询准确率",
-        "title_en": "Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-        "title_original": "Agentic Search. More accurate and efficient results from your AI systems. The retrieval layer that helps AI systems navigate， read， and verify information inside and across even the most complex documents.",
-        "summary": "Mistral 发布 Agentic Search，通过 search、open、navigate、read、grep 五工具的多步检索循环，让模型在长文档与多来源中查找、定位并验证信息。",
-        "recommend_reason_zh": "Agentic Search作为检索层，帮助AI系统在复杂文档间导航、读取并验证信息，提升AI系统结果的准确性和效率。",
-        "url": "https://mistral.ai/news/agentic-search",
-        "source": "Mistral AI：News（网页）",
+        "id": "dfc628933c54c7064a20996ac1c3d860e718d025",
+        "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+        "title_zh": "Claude Mythos 5 网络安全能力扩展至更多防御者",
+        "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+        "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+        "summary": "Anthropic 宣布 Claude Mythos 5 现已集成至 Claude Security，并即将登陆合作伙伴的网络安全防御工具。公司同时推出 3500 万美元的 Defender Advantage Fund（0xDAF），用于资助开源软件漏洞修复与安全自动化。",
+        "recommend_reason_zh": "本文介绍Claude Mythos 5现已在Claude Security中可用，并即将集成至合作伙伴的防御工具；同时推出3500万美元基金支持开源软件安全，并扩大Cyber Verification Program，让更多防御者安全使用前沿模型。",
+        "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
+        "source": "Claude：Blog（网页）",
         "source_name": "AI HOT"
       },
       "persona_id": "pragmatic",
-      "persona_score": 78,
-      "persona_review": "复杂文档查询有救了，做 RAG 的可以上手试，没开源但 API 能用。",
+      "persona_score": 55,
+      "persona_review": "安全能力扩展可能涉及权限开放，先查自己的 API 版本是否可用。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
-      }
-    },
-    {
-      "story_id": "story_185e96d8c2f8",
-      "title": "代码扫描新增“已缓解”警报关闭原因 / Code scanning adds a mitigated alert dismissal reason",
-      "url": "https://github.blog/changelog/2026-08-20-code-scanning-adds-a-mitigated-alert-dismissal-reason",
-      "primary_url": "https://github.blog/changelog/2026-08-20-code-scanning-adds-a-mitigated-alert-dismissal-reason",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "f4c17395c04a766662eb04284b415ce431dd4390",
-          "title": "代码扫描新增“已缓解”警报关闭原因 / Code scanning adds a mitigated alert dismissal reason",
-          "title_zh": "代码扫描新增“已缓解”警报关闭原因",
-          "title_en": "Code scanning adds a mitigated alert dismissal reason",
-          "title_original": "Code scanning adds a mitigated alert dismissal reason",
-          "summary": null,
-          "recommend_reason_zh": "GitHub code scanning新增“Mitigated”关闭原因，用于漏洞仍存在但防火墙或网络策略等外部控制已缓解风险，便于区分“Won’t fix”并减少在GitHub外跟踪决策。",
-          "url": "https://github.blog/changelog/2026-08-20-code-scanning-adds-a-mitigated-alert-dismissal-reason",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-20T15:14:31Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "f4c17395c04a766662eb04284b415ce431dd4390",
-          "title": "代码扫描新增“已缓解”警报关闭原因 / Code scanning adds a mitigated alert dismissal reason",
-          "title_zh": "代码扫描新增“已缓解”警报关闭原因",
-          "title_en": "Code scanning adds a mitigated alert dismissal reason",
-          "title_original": "Code scanning adds a mitigated alert dismissal reason",
-          "summary": null,
-          "recommend_reason_zh": "GitHub code scanning新增“Mitigated”关闭原因，用于漏洞仍存在但防火墙或网络策略等外部控制已缓解风险，便于区分“Won’t fix”并减少在GitHub外跟踪决策。",
-          "url": "https://github.blog/changelog/2026-08-20-code-scanning-adds-a-mitigated-alert-dismissal-reason",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-20T15:14:31Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7919,
-      "importance": 0.7919,
-      "importance_score": 0.7919,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7107,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-20T15:14:31Z",
-      "latest_at": "2026-08-20T15:14:31Z",
-      "primary_item": {
-        "id": "f4c17395c04a766662eb04284b415ce431dd4390",
-        "title": "代码扫描新增“已缓解”警报关闭原因 / Code scanning adds a mitigated alert dismissal reason",
-        "title_zh": "代码扫描新增“已缓解”警报关闭原因",
-        "title_en": "Code scanning adds a mitigated alert dismissal reason",
-        "title_original": "Code scanning adds a mitigated alert dismissal reason",
-        "summary": null,
-        "recommend_reason_zh": "GitHub code scanning新增“Mitigated”关闭原因，用于漏洞仍存在但防火墙或网络策略等外部控制已缓解风险，便于区分“Won’t fix”并减少在GitHub外跟踪决策。",
-        "url": "https://github.blog/changelog/2026-08-20-code-scanning-adds-a-mitigated-alert-dismissal-reason",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "扫描告警多了个关闭理由，审计记录更清楚，日常用得上。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -1121,21 +1144,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.755,
-      "importance": 0.755,
-      "importance_score": 0.755,
+      "score": 0.7351,
+      "importance": 0.7351,
+      "importance_score": 0.7351,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9301,
+        "recency": 0.8196,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T09:52:44.950634Z",
       "latest_at": "2026-08-21T09:52:44.950634Z",
@@ -1157,7 +1179,90 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
+      }
+    },
+    {
+      "story_id": "story_23e3c927edf2",
+      "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+      "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
+      "primary_url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
+      "source": "LMSYS：Blog（Chatbot Arena 团队）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "340f16af643dfae465b99366c133369fcb22c060",
+          "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+          "title_zh": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54%",
+          "title_en": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+          "title_original": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+          "summary": "蚂蚁 Ling Infra 团队与 RadixArk SGLang 团队将 Ling-3.0-flash 混合线性注意力 MoE 模型的单请求解码速度从 288 tok/s 提升至 606 tok/s，平均 TPOT 从 3.33 ms 降至 1.53 ms。",
+          "recommend_reason_zh": "本文实测Ling-3.0-flash在4张Blackwell GPU上的投机解码优化：NEXTN路径单请求解码从288 tok/s提至606 tok/s，DSpark路径达1120 tok/s，平均TPOT由3.33ms降至0.78ms，并对比两者性能差异。",
+          "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
+          "source": "LMSYS：Blog（Chatbot Arena 团队）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-21T17:56:25.415000Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "LMSYS：Blog（Chatbot Arena 团队）"
+      ],
+      "items": [
+        {
+          "id": "340f16af643dfae465b99366c133369fcb22c060",
+          "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+          "title_zh": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54%",
+          "title_en": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+          "title_original": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+          "summary": "蚂蚁 Ling Infra 团队与 RadixArk SGLang 团队将 Ling-3.0-flash 混合线性注意力 MoE 模型的单请求解码速度从 288 tok/s 提升至 606 tok/s，平均 TPOT 从 3.33 ms 降至 1.53 ms。",
+          "recommend_reason_zh": "本文实测Ling-3.0-flash在4张Blackwell GPU上的投机解码优化：NEXTN路径单请求解码从288 tok/s提至606 tok/s，DSpark路径达1120 tok/s，平均TPOT由3.33ms降至0.78ms，并对比两者性能差异。",
+          "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
+          "source": "LMSYS：Blog（Chatbot Arena 团队）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-21T17:56:25.415000Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7263,
+      "importance": 0.7263,
+      "importance_score": 0.7263,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.63,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9208,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-21T17:56:25.415000Z",
+      "latest_at": "2026-08-21T17:56:25.415000Z",
+      "primary_item": {
+        "id": "340f16af643dfae465b99366c133369fcb22c060",
+        "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+        "title_zh": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54%",
+        "title_en": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+        "title_original": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
+        "summary": "蚂蚁 Ling Infra 团队与 RadixArk SGLang 团队将 Ling-3.0-flash 混合线性注意力 MoE 模型的单请求解码速度从 288 tok/s 提升至 606 tok/s，平均 TPOT 从 3.33 ms 降至 1.53 ms。",
+        "recommend_reason_zh": "本文实测Ling-3.0-flash在4张Blackwell GPU上的投机解码优化：NEXTN路径单请求解码从288 tok/s提至606 tok/s，DSpark路径达1120 tok/s，平均TPOT由3.33ms降至0.78ms，并对比两者性能差异。",
+        "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
+        "source": "LMSYS：Blog（Chatbot Arena 团队）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "批处理1延迟降54%，用SGLang做低延迟推理的可以照着调参落地。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -1205,21 +1310,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.755,
-      "importance": 0.755,
-      "importance_score": 0.755,
+      "score": 0.7351,
+      "importance": 0.7351,
+      "importance_score": 0.7351,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9301,
+        "recency": 0.8196,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T09:52:44.950634Z",
       "latest_at": "2026-08-21T09:52:44.950634Z",
@@ -1241,7 +1345,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -1289,21 +1393,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.755,
-      "importance": 0.755,
-      "importance_score": 0.755,
+      "score": 0.7351,
+      "importance": 0.7351,
+      "importance_score": 0.7351,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9301,
+        "recency": 0.8196,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T09:52:44.950634Z",
       "latest_at": "2026-08-21T09:52:44.950634Z",
@@ -1325,7 +1428,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -1373,21 +1476,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7529,
-      "importance": 0.7529,
-      "importance_score": 0.7529,
+      "score": 0.7332,
+      "importance": 0.7332,
+      "importance_score": 0.7332,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9181,
+        "recency": 0.809,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T08:58:36.547886Z",
       "latest_at": "2026-08-21T08:58:36.547886Z",
@@ -1409,7 +1511,176 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
+      }
+    },
+    {
+      "story_id": "story_cb8188eda400",
+      "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+      "url": "https://news.ycombinator.com/item?id=49390463",
+      "primary_url": "https://news.ycombinator.com/item?id=49390463",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "972600d94f86b6a673f78e662b72cb49d6b97f80",
+          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
+          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49390463",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T18:31:56.086000Z"
+        },
+        {
+          "id": "3a8930b05c94b8125cf370f22e93906d7609e740",
+          "title": "自托管AI软件工厂难敌前沿模型",
+          "title_zh": "自托管AI软件工厂难敌前沿模型",
+          "title_en": "A self hosted AI software factory",
+          "title_original": "A self hosted AI software factory",
+          "summary": null,
+          "recommend_reason_zh": "自托管AI软件工厂实测：作者用R9700跑编码模型，qwen赢过8B以下对手，但复杂任务经历三次上下文压缩，房间过热叫停；对比Claude Code的20分钟频繁打扰，反思Hermes式AI代理能否真正产出可卖产品。",
+          "url": "https://news.ycombinator.com/item?id=49390463",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T17:31:53.537000Z"
+        },
+        {
+          "id": "c6b9e7419474d9b57041c9f770b2d29589425eaa",
+          "title": "自托管AI软件工厂：一条提示词自动开发并部署应用",
+          "title_zh": "自托管AI软件工厂：一条提示词自动开发并部署应用",
+          "title_en": "A self hosted AI software factory",
+          "title_original": "A self hosted AI software factory",
+          "summary": null,
+          "recommend_reason_zh": "作者用一台2021年i7旧服务器和20英镑Codex订阅，搭建了全自主的沙盒软件工厂：仅靠一句提示就自动创建仓库、编写应用与测试、通过CI、配置Postgres并完成HTTPS部署，全程无需人工干预。",
+          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-21T16:27:52Z"
+        },
+        {
+          "id": "fa15cfb99a8bff4e0ce4825f6aec20eac4d02f1e",
+          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
+          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "summary": null,
+          "recommend_reason_zh": "作者用2021年10代i7/32GB RAM的eBay二手服务器自托管，以£20 Codex订阅驱动单一prompt，自动完成建repo、写应用与测试、CI变绿、配置Postgres并部署HTTPS应用，全程无需人工干预。",
+          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-21T16:27:52Z"
+        }
+      ],
+      "source_count": 4,
+      "source_names": [
+        "Hacker News",
+        "Hacker News (黑客新闻)",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "972600d94f86b6a673f78e662b72cb49d6b97f80",
+          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
+          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://news.ycombinator.com/item?id=49390463",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T18:31:56.086000Z"
+        },
+        {
+          "id": "3a8930b05c94b8125cf370f22e93906d7609e740",
+          "title": "自托管AI软件工厂难敌前沿模型",
+          "title_zh": "自托管AI软件工厂难敌前沿模型",
+          "title_en": "A self hosted AI software factory",
+          "title_original": "A self hosted AI software factory",
+          "summary": null,
+          "recommend_reason_zh": "自托管AI软件工厂实测：作者用R9700跑编码模型，qwen赢过8B以下对手，但复杂任务经历三次上下文压缩，房间过热叫停；对比Claude Code的20分钟频繁打扰，反思Hermes式AI代理能否真正产出可卖产品。",
+          "url": "https://news.ycombinator.com/item?id=49390463",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-21T17:31:53.537000Z"
+        },
+        {
+          "id": "c6b9e7419474d9b57041c9f770b2d29589425eaa",
+          "title": "自托管AI软件工厂：一条提示词自动开发并部署应用",
+          "title_zh": "自托管AI软件工厂：一条提示词自动开发并部署应用",
+          "title_en": "A self hosted AI software factory",
+          "title_original": "A self hosted AI software factory",
+          "summary": null,
+          "recommend_reason_zh": "作者用一台2021年i7旧服务器和20英镑Codex订阅，搭建了全自主的沙盒软件工厂：仅靠一句提示就自动创建仓库、编写应用与测试、通过CI、配置Postgres并完成HTTPS部署，全程无需人工干预。",
+          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-21T16:27:52Z"
+        },
+        {
+          "id": "fa15cfb99a8bff4e0ce4825f6aec20eac4d02f1e",
+          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
+          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "summary": null,
+          "recommend_reason_zh": "作者用2021年10代i7/32GB RAM的eBay二手服务器自托管，以£20 Codex订阅驱动单一prompt，自动完成建repo、写应用与测试、CI变绿、配置Postgres并部署HTTPS应用，全程无需人工干预。",
+          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-21T16:27:52Z"
+        }
+      ],
+      "item_count": 4,
+      "duplicate_count": 4,
+      "score": 0.583,
+      "importance": 0.583,
+      "importance_score": 0.583,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9287,
+        "story_heat": 0.75
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-21T16:27:52Z",
+      "latest_at": "2026-08-21T18:31:56.086000Z",
+      "primary_item": {
+        "id": "972600d94f86b6a673f78e662b72cb49d6b97f80",
+        "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+        "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
+        "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+        "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+        "summary": null,
+        "recommend_reason_zh": null,
+        "url": "https://news.ycombinator.com/item?id=49390463",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "自托管 Agent 流水线有实操参考，想搭私有化 CI/Agent 的可以看。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
@@ -1457,21 +1728,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7504,
-      "importance": 0.7504,
-      "importance_score": 0.7504,
+      "score": 0.7311,
+      "importance": 0.7311,
+      "importance_score": 0.7311,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9047,
+        "recency": 0.7972,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-21T07:57:27.828300Z",
       "latest_at": "2026-08-21T07:57:27.828300Z",
@@ -1493,430 +1763,177 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     },
     {
-      "story_id": "story_c229ae2a5938",
-      "title": "Vomit：用另一个LLM清理Claude 5的token输出 / Vomit: Clean up Claude 5's token output with a separate LLM",
-      "url": "https://news.ycombinator.com/item?id=49375996",
-      "primary_url": "https://news.ycombinator.com/item?id=49375996",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "52e5af4a6ad035c97121c634cd363b7559ef0b0d",
-          "title": "Vomit：用另一个LLM清理Claude 5的token输出 / Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_zh": "Vomit：用另一个LLM清理Claude 5的token输出",
-          "title_en": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_original": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章讲述作者用一份提示词迫使Claude 5每段回复末尾附上要点总结和待办表格，以对抗其充满密集术语、矫揉怪喻、只为显得权威而刻意晦涩的默认输出风格。",
-          "url": "https://news.ycombinator.com/item?id=49375996",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T21:44:58.683000Z"
-        },
-        {
-          "id": "c7897b8b9cbf7d2b9924bf8ce5b17399a9e7afba",
-          "title": "使用另一个大型语言模型（LLM）清理克劳德5的代币呕吐物",
-          "title_zh": "使用另一个大型语言模型（LLM）清理克劳德5的代币呕吐物",
-          "title_en": null,
-          "title_original": "使用另一个大型语言模型（LLM）清理克劳德5的代币呕吐物",
-          "summary": null,
-          "recommend_reason_zh": "Claude 5的token呕吐物让zachahn开发了Vomit，通过本地LLM将其转换为英语，全本地无遥测、无外部依赖，推荐用Llama.app下载GPT-OSS 20B，支持非侵入模式以节省token。",
-          "url": "https://github.com/zachahn/vomit",
-          "source": "github.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-20T18:30:20Z"
-        },
-        {
-          "id": "ae7fdf7294d9ba7423cf32a998ec3fd685f8a640",
-          "title": "用另一个 LLM 清理 Claude 5 的 token 垃圾 / Clean up Claude 5's token vomit with a separate LLM",
-          "title_zh": "用另一个 LLM 清理 Claude 5 的 token 垃圾",
-          "title_en": "Clean up Claude 5's token vomit with a separate LLM",
-          "title_original": "Clean up Claude 5's token vomit with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "用独立的LLM当编辑，按“仅人类和智能体可做动作”等规则清理Claude 5的token vomit，保留细节并改写为清晰口语，避免破折号和自夸，方法具体可照做。",
-          "url": "https://news.ycombinator.com/item?id=49375996",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T15:39:15.824000Z"
-        },
-        {
-          "id": "e3743d8cf6f6c66dfee49ff6cf94f03d4e92ecfd",
-          "title": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物 / Clean up Claude 5's token vomit with a separate LLM",
-          "title_zh": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物",
-          "title_en": "Clean up Claude 5's token vomit with a separate LLM",
-          "title_original": "Clean up Claude 5's token vomit with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "开源工具 Vomit 可将 Claude 5 输出的 token 乱码经本地 LLM 清洗成可读英文，完全本地运行、无遥测无外部依赖，还提供旁路非侵入模式，官方建议用 Llama.app 下载 GPT-OSS 20B 配合使用。",
-          "url": "https://github.com/zachahn/vomit",
-          "source": "HN Algolia · AI 24h",
-          "source_name": "Hacker News",
-          "site_id": "hackernews",
-          "published_at": "2026-08-20T15:26:02Z"
-        },
-        {
-          "id": "1bb37e1d486ff8bb13221ef61f464a4b85857866",
-          "title": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物 / Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_zh": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物",
-          "title_en": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_original": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "Vomit通过本地LLM将Claude 5的token输出转成英文，完全本地运行、无遥测且无外部依赖，还支持非侵入模式，推荐搭配Llama.app下载GPT-OSS 20B使用。",
-          "url": "https://github.com/zachahn/vomit",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-20T15:26:02Z"
-        }
-      ],
-      "source_count": 5,
-      "source_names": [
-        "HN Algolia · AI 24h",
-        "Hacker News (黑客新闻)",
-        "github.com",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "52e5af4a6ad035c97121c634cd363b7559ef0b0d",
-          "title": "Vomit：用另一个LLM清理Claude 5的token输出 / Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_zh": "Vomit：用另一个LLM清理Claude 5的token输出",
-          "title_en": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_original": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章讲述作者用一份提示词迫使Claude 5每段回复末尾附上要点总结和待办表格，以对抗其充满密集术语、矫揉怪喻、只为显得权威而刻意晦涩的默认输出风格。",
-          "url": "https://news.ycombinator.com/item?id=49375996",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T21:44:58.683000Z"
-        },
-        {
-          "id": "c7897b8b9cbf7d2b9924bf8ce5b17399a9e7afba",
-          "title": "使用另一个大型语言模型（LLM）清理克劳德5的代币呕吐物",
-          "title_zh": "使用另一个大型语言模型（LLM）清理克劳德5的代币呕吐物",
-          "title_en": null,
-          "title_original": "使用另一个大型语言模型（LLM）清理克劳德5的代币呕吐物",
-          "summary": null,
-          "recommend_reason_zh": "Claude 5的token呕吐物让zachahn开发了Vomit，通过本地LLM将其转换为英语，全本地无遥测、无外部依赖，推荐用Llama.app下载GPT-OSS 20B，支持非侵入模式以节省token。",
-          "url": "https://github.com/zachahn/vomit",
-          "source": "github.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-20T18:30:20Z"
-        },
-        {
-          "id": "ae7fdf7294d9ba7423cf32a998ec3fd685f8a640",
-          "title": "用另一个 LLM 清理 Claude 5 的 token 垃圾 / Clean up Claude 5's token vomit with a separate LLM",
-          "title_zh": "用另一个 LLM 清理 Claude 5 的 token 垃圾",
-          "title_en": "Clean up Claude 5's token vomit with a separate LLM",
-          "title_original": "Clean up Claude 5's token vomit with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "用独立的LLM当编辑，按“仅人类和智能体可做动作”等规则清理Claude 5的token vomit，保留细节并改写为清晰口语，避免破折号和自夸，方法具体可照做。",
-          "url": "https://news.ycombinator.com/item?id=49375996",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-20T15:39:15.824000Z"
-        },
-        {
-          "id": "e3743d8cf6f6c66dfee49ff6cf94f03d4e92ecfd",
-          "title": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物 / Clean up Claude 5's token vomit with a separate LLM",
-          "title_zh": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物",
-          "title_en": "Clean up Claude 5's token vomit with a separate LLM",
-          "title_original": "Clean up Claude 5's token vomit with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "开源工具 Vomit 可将 Claude 5 输出的 token 乱码经本地 LLM 清洗成可读英文，完全本地运行、无遥测无外部依赖，还提供旁路非侵入模式，官方建议用 Llama.app 下载 GPT-OSS 20B 配合使用。",
-          "url": "https://github.com/zachahn/vomit",
-          "source": "HN Algolia · AI 24h",
-          "source_name": "Hacker News",
-          "site_id": "hackernews",
-          "published_at": "2026-08-20T15:26:02Z"
-        },
-        {
-          "id": "1bb37e1d486ff8bb13221ef61f464a4b85857866",
-          "title": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物 / Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_zh": "使用另一个大型语言模型（LLM）清理Claude5的代币呕吐物",
-          "title_en": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "title_original": "Vomit: Clean up Claude 5's token output with a separate LLM",
-          "summary": null,
-          "recommend_reason_zh": "Vomit通过本地LLM将Claude 5的token输出转成英文，完全本地运行、无遥测且无外部依赖，还支持非侵入模式，推荐搭配Llama.app下载GPT-OSS 20B使用。",
-          "url": "https://github.com/zachahn/vomit",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-20T15:26:02Z"
-        }
-      ],
-      "item_count": 5,
-      "duplicate_count": 5,
-      "score": 0.5813,
-      "importance": 0.5813,
-      "importance_score": 0.5813,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7807,
-        "story_heat": 1.0
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-20T15:26:02Z",
-      "latest_at": "2026-08-20T21:44:58.683000Z",
-      "primary_item": {
-        "id": "52e5af4a6ad035c97121c634cd363b7559ef0b0d",
-        "title": "Vomit：用另一个LLM清理Claude 5的token输出 / Vomit: Clean up Claude 5's token output with a separate LLM",
-        "title_zh": "Vomit：用另一个LLM清理Claude 5的token输出",
-        "title_en": "Vomit: Clean up Claude 5's token output with a separate LLM",
-        "title_original": "Vomit: Clean up Claude 5's token output with a separate LLM",
-        "summary": null,
-        "recommend_reason_zh": "这篇文章讲述作者用一份提示词迫使Claude 5每段回复末尾附上要点总结和待办表格，以对抗其充满密集术语、矫揉怪喻、只为显得权威而刻意晦涩的默认输出风格。",
-        "url": "https://news.ycombinator.com/item?id=49375996",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "类似token清理技巧，对特定场景有用，但多数人用不上。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
-      }
-    },
-    {
-      "story_id": "story_73c198965c13",
-      "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-      "url": "https://www.aibase.com/news/30530",
-      "primary_url": "https://www.aibase.com/news/30530",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
-          "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-          "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-          "title_en": null,
-          "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-          "summary": null,
-          "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
-          "url": "https://www.aibase.com/news/30530",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-21T07:57:27.828300Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
-          "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-          "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-          "title_en": null,
-          "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-          "summary": null,
-          "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
-          "url": "https://www.aibase.com/news/30530",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-21T07:57:27.828300Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7504,
-      "importance": 0.7504,
-      "importance_score": 0.7504,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9047,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-21T07:57:27.828300Z",
-      "latest_at": "2026-08-21T07:57:27.828300Z",
-      "primary_item": {
-        "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
-        "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-        "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-        "title_en": null,
-        "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
-        "summary": null,
-        "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
-        "url": "https://www.aibase.com/news/30530",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "开源可 clone，做 UI 自动化的今天就能试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
-      }
-    },
-    {
-      "story_id": "story_0e71951a8402",
-      "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
-      "url": "https://github.com/openai/codex/issues/37674",
-      "primary_url": "https://github.com/openai/codex/issues/37674",
-      "source": "github.com",
+      "story_id": "story_ed2f5c618aab",
+      "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+      "url": "https://canews24.online/?p=71",
+      "primary_url": "https://canews24.online/?p=71",
+      "source": "canews24.online",
       "source_name": "Buzzing",
       "sources": [
         {
-          "id": "4f6170c6f49dbb580b2689a3343cd5624940b6af",
-          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
-          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "id": "ff26426a8adb8ff4a7c31a6ac9149850259a2625",
+          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
           "title_en": null,
-          "title_original": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_original": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
           "summary": null,
-          "recommend_reason_zh": "Codex 在 AWS Bedrock 上无法启用 GPT-5.6 Sol 的 prompt caching，导致缓存写入占模型花费约 85%，单次请求平均约 88K cache-write tokens，费用增加达 10 倍。",
-          "url": "https://github.com/openai/codex/issues/37674",
-          "source": "github.com",
+          "recommend_reason_zh": "一项由Stockholm University与University of Hong Kong学者完成的追踪27,000名中国学生的研究发现，使用Doubao、DeepSeek等AI工具者六个月内作业成绩平均提高18%，但在无AI辅助的考试中得分比未使用者低20%。",
+          "url": "https://canews24.online/?p=71",
+          "source": "canews24.online",
           "source_name": "Buzzing",
           "site_id": "buzzing",
-          "published_at": "2026-08-21T07:01:25.605000Z"
+          "published_at": "2026-08-21T17:25:45.772000Z"
         },
         {
-          "id": "ce31b0b0c812d5b9a8c32b46a3edbaf271115058",
-          "title": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍 / Codex on AWS bedrock bug causing 10x charges",
-          "title_zh": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍",
-          "title_en": "Codex on AWS bedrock bug causing 10x charges",
-          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "id": "a06a40f4ba95423013d77e6aca040dac3e57e8f5",
+          "title": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_zh": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20%",
+          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
           "summary": null,
-          "recommend_reason_zh": "AWS Bedrock上Codex的bug可致10倍费用，将web_search设为“disabled”即可规避，一文讲清问题根源与解决步骤。",
-          "url": "https://news.ycombinator.com/item?id=49383326",
+          "recommend_reason_zh": "一项研究显示，使用AI辅助完成作业使分数提高18%，但随后考试成绩却下降20%，揭示AI工具可能掩盖真实学习效果，值得关注其背后的教育隐患。",
+          "url": "https://news.ycombinator.com/item?id=49389565",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-21T03:46:38.493000Z"
+          "published_at": "2026-08-21T16:31:50.459000Z"
         },
         {
-          "id": "5501e6dd44004845065f0374df411a0441cba133",
-          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞 / Codex on AWS bedrock bug causing 10x charges",
-          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
-          "title_en": "Codex on AWS bedrock bug causing 10x charges",
-          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "id": "b3cf7db966841b278a436f05c884dd38384c456c",
+          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
           "summary": null,
-          "recommend_reason_zh": "Codex CLI在Amazon Bedrock Mantle上无法启用GPT-5.6 Sol显式提示缓存，导致缓存写入token占模型估计支出85%；一次会话76个请求产生6.709M写入token，平均每请求约88K，成本显著抬升。",
-          "url": "https://github.com/openai/codex/issues/37674",
+          "recommend_reason_zh": "这项追踪27,000名中国12-18岁学生的研究显示，使用Doubao、DeepSeek等AI工具者作业分半年涨18%，但无AI考试中比不用AI的同伴低20%，凸显AI提升作业分却削弱真实掌握的风险。",
+          "url": "https://canews24.online/?p=71",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-21T15:25:42Z"
+        },
+        {
+          "id": "551bbf42d27367ceb414677e5bb42f35ebc915b3",
+          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI boosted homework scores, then exam scores dropped: Study",
+          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "title_en": "AI boosted homework scores, then exam scores dropped: Study",
+          "title_original": "AI boosted homework scores, then exam scores dropped: Study",
+          "summary": null,
+          "recommend_reason_zh": "一项追踪中国2.7万名学生的研究发现，80%学生使用Doubao、DeepSeek等AI工具后作业成绩平均提升18%，但在无AI辅助的考试中反而比不用AI的同学低20%，凸显AI辅助的隐患。",
+          "url": "https://canews24.online/?p=71",
           "source": "Hacker News · 24h最热",
           "source_name": "Zeli",
           "site_id": "zeli",
-          "published_at": "2026-08-21T03:17:43Z"
+          "published_at": "2026-08-21T15:25:42Z"
         }
       ],
-      "source_count": 3,
+      "source_count": 4,
       "source_names": [
+        "Hacker News",
         "Hacker News · 24h最热",
-        "github.com",
+        "canews24.online",
         "hackernews"
       ],
       "items": [
         {
-          "id": "4f6170c6f49dbb580b2689a3343cd5624940b6af",
-          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
-          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "id": "ff26426a8adb8ff4a7c31a6ac9149850259a2625",
+          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
           "title_en": null,
-          "title_original": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+          "title_original": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
           "summary": null,
-          "recommend_reason_zh": "Codex 在 AWS Bedrock 上无法启用 GPT-5.6 Sol 的 prompt caching，导致缓存写入占模型花费约 85%，单次请求平均约 88K cache-write tokens，费用增加达 10 倍。",
-          "url": "https://github.com/openai/codex/issues/37674",
-          "source": "github.com",
+          "recommend_reason_zh": "一项由Stockholm University与University of Hong Kong学者完成的追踪27,000名中国学生的研究发现，使用Doubao、DeepSeek等AI工具者六个月内作业成绩平均提高18%，但在无AI辅助的考试中得分比未使用者低20%。",
+          "url": "https://canews24.online/?p=71",
+          "source": "canews24.online",
           "source_name": "Buzzing",
           "site_id": "buzzing",
-          "published_at": "2026-08-21T07:01:25.605000Z"
+          "published_at": "2026-08-21T17:25:45.772000Z"
         },
         {
-          "id": "ce31b0b0c812d5b9a8c32b46a3edbaf271115058",
-          "title": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍 / Codex on AWS bedrock bug causing 10x charges",
-          "title_zh": "AWS Bedrock 上 Codex 的 bug 导致费用暴涨 10 倍",
-          "title_en": "Codex on AWS bedrock bug causing 10x charges",
-          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "id": "a06a40f4ba95423013d77e6aca040dac3e57e8f5",
+          "title": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_zh": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20%",
+          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
           "summary": null,
-          "recommend_reason_zh": "AWS Bedrock上Codex的bug可致10倍费用，将web_search设为“disabled”即可规避，一文讲清问题根源与解决步骤。",
-          "url": "https://news.ycombinator.com/item?id=49383326",
+          "recommend_reason_zh": "一项研究显示，使用AI辅助完成作业使分数提高18%，但随后考试成绩却下降20%，揭示AI工具可能掩盖真实学习效果，值得关注其背后的教育隐患。",
+          "url": "https://news.ycombinator.com/item?id=49389565",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-21T03:46:38.493000Z"
+          "published_at": "2026-08-21T16:31:50.459000Z"
         },
         {
-          "id": "5501e6dd44004845065f0374df411a0441cba133",
-          "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞 / Codex on AWS bedrock bug causing 10x charges",
-          "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
-          "title_en": "Codex on AWS bedrock bug causing 10x charges",
-          "title_original": "Codex on AWS bedrock bug causing 10x charges",
+          "id": "b3cf7db966841b278a436f05c884dd38384c456c",
+          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
           "summary": null,
-          "recommend_reason_zh": "Codex CLI在Amazon Bedrock Mantle上无法启用GPT-5.6 Sol显式提示缓存，导致缓存写入token占模型估计支出85%；一次会话76个请求产生6.709M写入token，平均每请求约88K，成本显著抬升。",
-          "url": "https://github.com/openai/codex/issues/37674",
+          "recommend_reason_zh": "这项追踪27,000名中国12-18岁学生的研究显示，使用Doubao、DeepSeek等AI工具者作业分半年涨18%，但无AI考试中比不用AI的同伴低20%，凸显AI提升作业分却削弱真实掌握的风险。",
+          "url": "https://canews24.online/?p=71",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-21T15:25:42Z"
+        },
+        {
+          "id": "551bbf42d27367ceb414677e5bb42f35ebc915b3",
+          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI boosted homework scores, then exam scores dropped: Study",
+          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "title_en": "AI boosted homework scores, then exam scores dropped: Study",
+          "title_original": "AI boosted homework scores, then exam scores dropped: Study",
+          "summary": null,
+          "recommend_reason_zh": "一项追踪中国2.7万名学生的研究发现，80%学生使用Doubao、DeepSeek等AI工具后作业成绩平均提升18%，但在无AI辅助的考试中反而比不用AI的同学低20%，凸显AI辅助的隐患。",
+          "url": "https://canews24.online/?p=71",
           "source": "Hacker News · 24h最热",
           "source_name": "Zeli",
           "site_id": "zeli",
-          "published_at": "2026-08-21T03:17:43Z"
+          "published_at": "2026-08-21T15:25:42Z"
         }
       ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5515,
-      "importance": 0.5515,
-      "importance_score": 0.5515,
+      "item_count": 4,
+      "duplicate_count": 4,
+      "score": 0.5803,
+      "importance": 0.5803,
+      "importance_score": 0.5803,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8926,
-        "story_heat": 0.5
+        "recency": 0.914,
+        "story_heat": 0.75
       },
       "category": "multi_source",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-08-21T03:17:43Z",
-      "latest_at": "2026-08-21T07:01:25.605000Z",
+      "earliest_at": "2026-08-21T15:25:42Z",
+      "latest_at": "2026-08-21T17:25:45.772000Z",
       "primary_item": {
-        "id": "4f6170c6f49dbb580b2689a3343cd5624940b6af",
-        "title": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
-        "title_zh": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+        "id": "ff26426a8adb8ff4a7c31a6ac9149850259a2625",
+        "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+        "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
         "title_en": null,
-        "title_original": "Codex 在 AWS Bedrock 上存在一个导致费用增加 10 倍的漏洞",
+        "title_original": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
         "summary": null,
-        "recommend_reason_zh": "Codex 在 AWS Bedrock 上无法启用 GPT-5.6 Sol 的 prompt caching，导致缓存写入占模型花费约 85%，单次请求平均约 88K cache-write tokens，费用增加达 10 倍。",
-        "url": "https://github.com/openai/codex/issues/37674",
-        "source": "github.com",
+        "recommend_reason_zh": "一项由Stockholm University与University of Hong Kong学者完成的追踪27,000名中国学生的研究发现，使用Doubao、DeepSeek等AI工具者六个月内作业成绩平均提高18%，但在无AI辅助的考试中得分比未使用者低20%。",
+        "url": "https://canews24.online/?p=71",
+        "source": "canews24.online",
         "source_name": "Buzzing"
       },
       "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "用 Codex 上 Bedrock 的先去查账单，这个坑能让成本翻十倍。",
+      "persona_score": 55,
+      "persona_review": "教育AI开发者可参考：短期提分易，长期能力需设计验证。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T15:04:54.344147Z"
+        "scored_at": "2026-08-21T23:48:36.971498Z"
       }
     }
   ]

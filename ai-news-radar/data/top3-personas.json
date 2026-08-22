@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T15:04:59.559519Z",
+  "generated_at": "2026-08-21T23:48:36.971704Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_13b553da3c26",
-      "title": "Windows 11 arm64 VS2026 镜像正式可用 / Windows 11 arm64 VS2026 image generally available",
-      "url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 65,
-          "review": "镜像上线是例行公事，但至少比某些PPT强，有本事跑个真实负载？"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "官方公告可用，但无代码无评测，实机验证前只能算声称。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "arm64 开发环境镜像已就绪，Windows 用户今天就能用上 VS2026。"
-        }
-      }
-    },
-    {
       "story_id": "story_3278f2bc67f3",
       "title": "面壁智能 OpenBMB 推出 MathForm，面向 Lean 4 数学自动形式化的开源框架、数据集与模型 / 🧮 Introducing MathForm， an open-source framework， dataset， and model for mathematical autoformaliza…",
       "url": "https://x.com/OpenBMB/status/2090786300194590816",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 72,
@@ -60,7 +40,7 @@
       "story_id": "story_7b114e120e12",
       "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
       "url": "https://www.aibase.com/news/30531",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 75,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 90,
           "review": "开源评估工具可直接上手，跑代码评测不用再看闭源脸色。"
+        }
+      }
+    },
+    {
+      "story_id": "story_1942460359a8",
+      "title": "DeepSeek-V4-Flash-Vision-Exp 发布",
+      "url": "https://api-docs.deepseek.com/zh-cn/updates",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 35,
+          "review": "实验版就敢叫V4？benchmark没影，先发个API更新凑热度。"
+        },
+        "paper-police": {
+          "score": 20,
+          "review": "仅官方日志宣称发布，无论文无代码无第三方跑分，需实测API验证。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "新视觉模型进API，多模态任务今天就能试，留意下价格和限流。"
         }
       }
     }
