@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T23:39:12.880480Z",
+  "generated_at": "2026-08-22T04:50:17.388834Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -48,15 +48,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8334,
-      "importance": 0.8334,
-      "importance_score": 0.8334,
+      "score": 0.8218,
+      "importance": 0.8218,
+      "importance_score": 0.8218,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8969,
+        "recency": 0.8322,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +85,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -133,15 +133,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8161,
-      "importance": 0.8161,
-      "importance_score": 0.8161,
+      "score": 0.8051,
+      "importance": 0.8051,
+      "importance_score": 0.8051,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8451,
+        "recency": 0.7841,
         "story_heat": 0.0
       },
       "category": "official",
@@ -170,92 +170,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
-      }
-    },
-    {
-      "story_id": "story_8ea439a37deb",
-      "title": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象 / Measuring benchmark optimization in speech recognition",
-      "url": "https://huggingface.co/blog/asr-benchmark-optimization",
-      "primary_url": "https://huggingface.co/blog/asr-benchmark-optimization",
-      "source": "Hugging Face Blog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "fe77e56bac5251db7491d1afe78e9985f9471676",
-          "title": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象 / Measuring benchmark optimization in speech recognition",
-          "title_zh": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象",
-          "title_en": "Measuring benchmark optimization in speech recognition",
-          "title_original": "Measuring benchmark optimization in speech recognition",
-          "summary": null,
-          "recommend_reason_zh": "研究发现，11个开源ASR模型中，多个高分模型在VoxPopuli测试中复现错误基准转录，如忽略音频里清晰的“Thank you”，暴露了基准优化问题。",
-          "url": "https://huggingface.co/blog/asr-benchmark-optimization",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T00:00:00Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Hugging Face Blog"
-      ],
-      "items": [
-        {
-          "id": "fe77e56bac5251db7491d1afe78e9985f9471676",
-          "title": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象 / Measuring benchmark optimization in speech recognition",
-          "title_zh": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象",
-          "title_en": "Measuring benchmark optimization in speech recognition",
-          "title_original": "Measuring benchmark optimization in speech recognition",
-          "summary": null,
-          "recommend_reason_zh": "研究发现，11个开源ASR模型中，多个高分模型在VoxPopuli测试中复现错误基准转录，如忽略音频里清晰的“Thank you”，暴露了基准优化问题。",
-          "url": "https://huggingface.co/blog/asr-benchmark-optimization",
-          "source": "Hugging Face Blog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T00:00:00Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8139,
-      "importance": 0.8139,
-      "importance_score": 0.8139,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.98,
-        "recency": 0.7107,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-21T00:00:00Z",
-      "latest_at": "2026-08-21T00:00:00Z",
-      "primary_item": {
-        "id": "fe77e56bac5251db7491d1afe78e9985f9471676",
-        "title": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象 / Measuring benchmark optimization in speech recognition",
-        "title_zh": "测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型\"刷分\"现象",
-        "title_en": "Measuring benchmark optimization in speech recognition",
-        "title_original": "Measuring benchmark optimization in speech recognition",
-        "summary": null,
-        "recommend_reason_zh": "研究发现，11个开源ASR模型中，多个高分模型在VoxPopuli测试中复现错误基准转录，如忽略音频里清晰的“Thank you”，暴露了基准优化问题。",
-        "url": "https://huggingface.co/blog/asr-benchmark-optimization",
-        "source": "Hugging Face Blog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "榜单分可能虚高，挑ASR模型得用自己数据复测。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -303,15 +218,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8333,
-      "importance": 0.8333,
-      "importance_score": 0.8333,
+      "score": 0.8217,
+      "importance": 0.8217,
+      "importance_score": 0.8217,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8961,
+        "recency": 0.8315,
         "story_heat": 0.0
       },
       "category": "official",
@@ -340,7 +255,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -446,15 +361,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.7692,
-      "importance": 0.7692,
-      "importance_score": 0.7692,
+      "score": 0.7586,
+      "importance": 0.7586,
+      "importance_score": 0.7586,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.67,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8144,
+        "recency": 0.7556,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -483,7 +398,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -531,15 +446,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8222,
-      "importance": 0.8222,
-      "importance_score": 0.8222,
+      "score": 0.8108,
+      "importance": 0.8108,
+      "importance_score": 0.8108,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8791,
+        "recency": 0.8156,
         "story_heat": 0.0
       },
       "category": "official",
@@ -568,7 +483,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -616,15 +531,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7483,
-      "importance": 0.7483,
-      "importance_score": 0.7483,
+      "score": 0.7369,
+      "importance": 0.7369,
+      "importance_score": 0.7369,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8759,
+        "recency": 0.8127,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -651,7 +566,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -699,15 +614,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7432,
-      "importance": 0.7432,
-      "importance_score": 0.7432,
+      "score": 0.7326,
+      "importance": 0.7326,
+      "importance_score": 0.7326,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.75,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8143,
+        "recency": 0.7556,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -734,7 +649,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -782,15 +697,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7383,
-      "importance": 0.7383,
-      "importance_score": 0.7383,
+      "score": 0.7264,
+      "importance": 0.7264,
+      "importance_score": 0.7264,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.67,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9208,
+        "recency": 0.8544,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -817,7 +732,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -865,15 +780,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7371,
-      "importance": 0.7371,
-      "importance_score": 0.7371,
+      "score": 0.7263,
+      "importance": 0.7263,
+      "importance_score": 0.7263,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8306,
+        "recency": 0.7707,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -900,7 +815,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -948,15 +863,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.733,
-      "importance": 0.733,
-      "importance_score": 0.733,
+      "score": 0.7218,
+      "importance": 0.7218,
+      "importance_score": 0.7218,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.69,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8577,
+        "recency": 0.7958,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -983,7 +898,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1060,15 +975,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.7454,
-      "importance": 0.7454,
-      "importance_score": 0.7454,
+      "score": 0.7335,
+      "importance": 0.7335,
+      "importance_score": 0.7335,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.61,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9213,
+        "recency": 0.8548,
         "story_heat": 0.25
       },
       "category": "industry",
@@ -1096,7 +1011,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1144,15 +1059,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7351,
-      "importance": 0.7351,
-      "importance_score": 0.7351,
+      "score": 0.7245,
+      "importance": 0.7245,
+      "importance_score": 0.7245,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8196,
+        "recency": 0.7605,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1179,90 +1094,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
-      }
-    },
-    {
-      "story_id": "story_23e3c927edf2",
-      "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-      "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
-      "primary_url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
-      "source": "LMSYS：Blog（Chatbot Arena 团队）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "340f16af643dfae465b99366c133369fcb22c060",
-          "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-          "title_zh": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54%",
-          "title_en": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-          "title_original": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-          "summary": "蚂蚁 Ling Infra 团队与 RadixArk SGLang 团队将 Ling-3.0-flash 混合线性注意力 MoE 模型的单请求解码速度从 288 tok/s 提升至 606 tok/s，平均 TPOT 从 3.33 ms 降至 1.53 ms。",
-          "recommend_reason_zh": "本文实测Ling-3.0-flash在4张Blackwell GPU上的投机解码优化：NEXTN路径单请求解码从288 tok/s提至606 tok/s，DSpark路径达1120 tok/s，平均TPOT由3.33ms降至0.78ms，并对比两者性能差异。",
-          "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
-          "source": "LMSYS：Blog（Chatbot Arena 团队）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-21T17:56:25.415000Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "LMSYS：Blog（Chatbot Arena 团队）"
-      ],
-      "items": [
-        {
-          "id": "340f16af643dfae465b99366c133369fcb22c060",
-          "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-          "title_zh": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54%",
-          "title_en": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-          "title_original": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-          "summary": "蚂蚁 Ling Infra 团队与 RadixArk SGLang 团队将 Ling-3.0-flash 混合线性注意力 MoE 模型的单请求解码速度从 288 tok/s 提升至 606 tok/s，平均 TPOT 从 3.33 ms 降至 1.53 ms。",
-          "recommend_reason_zh": "本文实测Ling-3.0-flash在4张Blackwell GPU上的投机解码优化：NEXTN路径单请求解码从288 tok/s提至606 tok/s，DSpark路径达1120 tok/s，平均TPOT由3.33ms降至0.78ms，并对比两者性能差异。",
-          "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
-          "source": "LMSYS：Blog（Chatbot Arena 团队）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-21T17:56:25.415000Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7263,
-      "importance": 0.7263,
-      "importance_score": 0.7263,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.63,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9208,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-21T17:56:25.415000Z",
-      "latest_at": "2026-08-21T17:56:25.415000Z",
-      "primary_item": {
-        "id": "340f16af643dfae465b99366c133369fcb22c060",
-        "title": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54% / Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-        "title_zh": "Ling-3.0-flash 在 4 块 Blackwell GPU 上如何将批处理 1 解码延迟降低 54%",
-        "title_en": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-        "title_original": "Blog Chasing the Batch-1 Floor： Ling-3.0-flash Speculative Decode on Blackwell Batch-1 decode keeps getting more important. Xiaomi MiMo， for example， announced MiMo-V2.5-Pro UltraSpeed in June， claiming 1，000 tok/s decode on a one-trillion-parameter MoE model. Batch 1 gives an … RadixArk SGLang Team， Ant Ling Infra Team",
-        "summary": "蚂蚁 Ling Infra 团队与 RadixArk SGLang 团队将 Ling-3.0-flash 混合线性注意力 MoE 模型的单请求解码速度从 288 tok/s 提升至 606 tok/s，平均 TPOT 从 3.33 ms 降至 1.53 ms。",
-        "recommend_reason_zh": "本文实测Ling-3.0-flash在4张Blackwell GPU上的投机解码优化：NEXTN路径单请求解码从288 tok/s提至606 tok/s，DSpark路径达1120 tok/s，平均TPOT由3.33ms降至0.78ms，并对比两者性能差异。",
-        "url": "https://www.lmsys.org/blog/2026-08-21-ling3-flash-spec-decode-blackwell",
-        "source": "LMSYS：Blog（Chatbot Arena 团队）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "批处理1延迟降54%，用SGLang做低延迟推理的可以照着调参落地。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1310,15 +1142,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7351,
-      "importance": 0.7351,
-      "importance_score": 0.7351,
+      "score": 0.7245,
+      "importance": 0.7245,
+      "importance_score": 0.7245,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8196,
+        "recency": 0.7605,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1345,7 +1177,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1393,15 +1225,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7351,
-      "importance": 0.7351,
-      "importance_score": 0.7351,
+      "score": 0.7245,
+      "importance": 0.7245,
+      "importance_score": 0.7245,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8196,
+        "recency": 0.7605,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1428,7 +1260,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1476,15 +1308,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7332,
-      "importance": 0.7332,
-      "importance_score": 0.7332,
+      "score": 0.7227,
+      "importance": 0.7227,
+      "importance_score": 0.7227,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.809,
+        "recency": 0.7507,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1511,7 +1343,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1565,7 +1397,7 @@
           "published_at": "2026-08-21T16:27:52Z"
         },
         {
-          "id": "fa15cfb99a8bff4e0ce4825f6aec20eac4d02f1e",
+          "id": "6f0736b2d5d48e16d13b5bebe74c2284c0ab9137",
           "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
           "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
           "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
@@ -1573,16 +1405,16 @@
           "summary": null,
           "recommend_reason_zh": "作者用2021年10代i7/32GB RAM的eBay二手服务器自托管，以£20 Codex订阅驱动单一prompt，自动完成建repo、写应用与测试、CI变绿、配置Postgres并部署HTTPS应用，全程无需人工干预。",
           "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-21T16:27:52Z"
         }
       ],
       "source_count": 4,
       "source_names": [
         "Hacker News",
-        "Hacker News (黑客新闻)",
+        "Hacker News · 24h最热",
         "hackernews"
       ],
       "items": [
@@ -1629,7 +1461,7 @@
           "published_at": "2026-08-21T16:27:52Z"
         },
         {
-          "id": "fa15cfb99a8bff4e0ce4825f6aec20eac4d02f1e",
+          "id": "6f0736b2d5d48e16d13b5bebe74c2284c0ab9137",
           "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
           "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
           "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
@@ -1637,23 +1469,23 @@
           "summary": null,
           "recommend_reason_zh": "作者用2021年10代i7/32GB RAM的eBay二手服务器自托管，以£20 Codex订阅驱动单一prompt，自动完成建repo、写应用与测试、CI变绿、配置Postgres并部署HTTPS应用，全程无需人工干预。",
           "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-21T16:27:52Z"
         }
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.583,
-      "importance": 0.583,
-      "importance_score": 0.583,
+      "score": 0.5709,
+      "importance": 0.5709,
+      "importance_score": 0.5709,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9287,
+        "recency": 0.8617,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -1680,7 +1512,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1728,15 +1560,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7311,
-      "importance": 0.7311,
-      "importance_score": 0.7311,
+      "score": 0.7207,
+      "importance": 0.7207,
+      "importance_score": 0.7207,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7972,
+        "recency": 0.7397,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1763,7 +1595,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     },
     {
@@ -1898,15 +1730,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.5803,
-      "importance": 0.5803,
-      "importance_score": 0.5803,
+      "score": 0.5685,
+      "importance": 0.5685,
+      "importance_score": 0.5685,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.914,
+        "recency": 0.8481,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -1933,7 +1765,202 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-21T23:48:36.971498Z"
+        "scored_at": "2026-08-22T04:55:47.110581Z"
+      }
+    },
+    {
+      "story_id": "story_73c198965c13",
+      "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+      "url": "https://www.aibase.com/news/30530",
+      "primary_url": "https://www.aibase.com/news/30530",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
+          "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "title_en": null,
+          "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "summary": null,
+          "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
+          "url": "https://www.aibase.com/news/30530",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-21T07:57:27.828300Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
+          "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "title_en": null,
+          "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+          "summary": null,
+          "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
+          "url": "https://www.aibase.com/news/30530",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-21T07:57:27.828300Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7207,
+      "importance": 0.7207,
+      "importance_score": 0.7207,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.7397,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-21T07:57:27.828300Z",
+      "latest_at": "2026-08-21T07:57:27.828300Z",
+      "primary_item": {
+        "id": "8cc6ca966d2309492abf1506c74f23ac175077ff",
+        "title": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+        "title_zh": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+        "title_en": null,
+        "title_original": "阿里开源 Qwen-UI-Agent：真机多模态基座模型登场",
+        "summary": null,
+        "recommend_reason_zh": "阿里开源Qwen-UI-Agent，基于100多部真机与150+应用构建真实环境，推出超400任务的MobileWorld-Real基准，支持命令行操作，打通模拟与现实的差距。",
+        "url": "https://www.aibase.com/news/30530",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 88,
+      "persona_review": "开源可 clone，做 UI 自动化的今天就能试。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-22T04:55:47.110581Z"
+      }
+    },
+    {
+      "story_id": "story_63e008230e15",
+      "title": "当 GPU 读取内存时会发生什么",
+      "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+      "primary_url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+      "source": "blog.doubleword.ai",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "66b1814af6e09df1a5e41162d4f667e018909d83",
+          "title": "当 GPU 读取内存时会发生什么",
+          "title_zh": "当 GPU 读取内存时会发生什么",
+          "title_en": null,
+          "title_original": "当 GPU 读取内存时会发生什么",
+          "summary": null,
+          "recommend_reason_zh": "想搞懂GPU内存读取？本文用实测时序逆向追踪RTX 4090上一条LDG.E指令的完整旅程：每通道4字节请求，经4个32字节扇区、一次地址转换、crossbar跨越，落入36个L2切片之一，最终在DRAM中做4次列读取。",
+          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+          "source": "blog.doubleword.ai",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-22T01:41:21.550000Z"
+        },
+        {
+          "id": "308cb247591c6e4fd39c9537327587fd876b63ad",
+          "title": "当 GPU 读取内存时会发生什么 / What happens when a GPU reads memory",
+          "title_zh": "当 GPU 读取内存时会发生什么",
+          "title_en": "What happens when a GPU reads memory",
+          "title_original": "What happens when a GPU reads memory",
+          "summary": null,
+          "recommend_reason_zh": "本文以RTX 4090为对象，逆向追踪LDG.E指令从寄存器、LSU到L2切片及DRAM的完整路径，通过硬件计时实验揭示四个32字节扇区、36个L2切片等未公开细节，适合关注GPU底层性能的读者。",
+          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-21T16:16:42Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News · 24h最热",
+        "blog.doubleword.ai"
+      ],
+      "items": [
+        {
+          "id": "66b1814af6e09df1a5e41162d4f667e018909d83",
+          "title": "当 GPU 读取内存时会发生什么",
+          "title_zh": "当 GPU 读取内存时会发生什么",
+          "title_en": null,
+          "title_original": "当 GPU 读取内存时会发生什么",
+          "summary": null,
+          "recommend_reason_zh": "想搞懂GPU内存读取？本文用实测时序逆向追踪RTX 4090上一条LDG.E指令的完整旅程：每通道4字节请求，经4个32字节扇区、一次地址转换、crossbar跨越，落入36个L2切片之一，最终在DRAM中做4次列读取。",
+          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+          "source": "blog.doubleword.ai",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-22T01:41:21.550000Z"
+        },
+        {
+          "id": "308cb247591c6e4fd39c9537327587fd876b63ad",
+          "title": "当 GPU 读取内存时会发生什么 / What happens when a GPU reads memory",
+          "title_zh": "当 GPU 读取内存时会发生什么",
+          "title_en": "What happens when a GPU reads memory",
+          "title_original": "What happens when a GPU reads memory",
+          "summary": null,
+          "recommend_reason_zh": "本文以RTX 4090为对象，逆向追踪LDG.E指令从寄存器、LSU到L2切片及DRAM的完整路径，通过硬件计时实验揭示四个32字节扇区、36个L2切片等未公开细节，适合关注GPU底层性能的读者。",
+          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-21T16:16:42Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5378,
+      "importance": 0.5378,
+      "importance_score": 0.5378,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9555,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-21T16:16:42Z",
+      "latest_at": "2026-08-22T01:41:21.550000Z",
+      "primary_item": {
+        "id": "66b1814af6e09df1a5e41162d4f667e018909d83",
+        "title": "当 GPU 读取内存时会发生什么",
+        "title_zh": "当 GPU 读取内存时会发生什么",
+        "title_en": null,
+        "title_original": "当 GPU 读取内存时会发生什么",
+        "summary": null,
+        "recommend_reason_zh": "想搞懂GPU内存读取？本文用实测时序逆向追踪RTX 4090上一条LDG.E指令的完整旅程：每通道4字节请求，经4个32字节扇区、一次地址转换、crossbar跨越，落入36个L2切片之一，最终在DRAM中做4次列读取。",
+        "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+        "source": "blog.doubleword.ai",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 62,
+      "persona_review": "深入硬件底层，写GPU优化时能少踩坑，但非刚需。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-22T04:55:47.110581Z"
       }
     }
   ]
