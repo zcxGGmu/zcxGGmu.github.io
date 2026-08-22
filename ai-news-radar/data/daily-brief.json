@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-22T09:43:11.546762Z",
+  "generated_at": "2026-08-22T14:38:33.526685Z",
   "window_hours": 24,
-  "total_items": 18,
+  "total_items": 13,
   "items": [
     {
       "story_id": "story_f852499667bc",
@@ -48,15 +48,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8116,
-      "importance": 0.8116,
-      "importance_score": 0.8116,
+      "score": 0.802,
+      "importance": 0.802,
+      "importance_score": 0.802,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.7756,
+        "recency": 0.7224,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,92 +85,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
-      }
-    },
-    {
-      "story_id": "story_371125c1602a",
-      "title": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究 / From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games",
-      "primary_url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games",
-      "source": "Google DeepMind",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "170a12f11c9a3347096780bfa4e659b0e9daca01",
-          "title": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究 / From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-          "title_zh": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究",
-          "title_en": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-          "title_original": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-          "summary": null,
-          "recommend_reason_zh": "从Atari到EVE Online，Google DeepMind与游戏开发者合作打造SIMA 2等通用智能体，回顾15年间DQN、AlphaGo击败李世石等关键突破。",
-          "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games",
-          "source": "Google DeepMind",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T11:59:48Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Google DeepMind"
-      ],
-      "items": [
-        {
-          "id": "170a12f11c9a3347096780bfa4e659b0e9daca01",
-          "title": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究 / From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-          "title_zh": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究",
-          "title_en": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-          "title_original": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-          "summary": null,
-          "recommend_reason_zh": "从Atari到EVE Online，Google DeepMind与游戏开发者合作打造SIMA 2等通用智能体，回顾15年间DQN、AlphaGo击败李世石等关键突破。",
-          "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games",
-          "source": "Google DeepMind",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T11:59:48Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7955,
-      "importance": 0.7955,
-      "importance_score": 0.7955,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7307,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-21T11:59:48Z",
-      "latest_at": "2026-08-21T11:59:48Z",
-      "primary_item": {
-        "id": "170a12f11c9a3347096780bfa4e659b0e9daca01",
-        "title": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究 / From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-        "title_zh": "从 Atari 到 EVE Online：基于 15 年游戏 AI 研究",
-        "title_en": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-        "title_original": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
-        "summary": null,
-        "recommend_reason_zh": "从Atari到EVE Online，Google DeepMind与游戏开发者合作打造SIMA 2等通用智能体，回顾15年间DQN、AlphaGo击败李世石等关键突破。",
-        "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games",
-        "source": "Google DeepMind",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "研究回顾无新工具，做游戏AI的看看思路就行。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -218,15 +133,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8115,
-      "importance": 0.8115,
-      "importance_score": 0.8115,
+      "score": 0.8019,
+      "importance": 0.8019,
+      "importance_score": 0.8019,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.7749,
+        "recency": 0.7217,
         "story_heat": 0.0
       },
       "category": "official",
@@ -255,7 +170,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
+      }
+    },
+    {
+      "story_id": "story_06a27d0d7448",
+      "title": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+      "url": "https://www.ithome.com/0/993/105.htm",
+      "primary_url": "https://www.ithome.com/0/993/105.htm",
+      "source": "IT之家（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "cf06efb34986b9d10c8d4ad2b59712ed0f1fdc9c",
+          "title": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+          "title_zh": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+          "title_en": null,
+          "title_original": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+          "summary": "第二届世界人形机器人运动会今晚在国家速滑馆\"冰丝带\"开幕，666 支队伍、2056 台机器人参赛，队伍数量较首届增长 138%，机器人数量翻了两番。天工 Ultra 在百米预赛跑出 9.39 秒，打破博尔特 9.58 秒的人类世界纪录；荣耀\"闪电\"以 41.95 秒完成 400 米，同样破人类纪录。本届赛项增至 51 项，多项竞技赛取消人工遥控，全程全自主运行。",
+          "recommend_reason_zh": "天工Ultra以9.39秒打破博尔特百米纪录，荣耀“闪电”400米跑出41.95秒，51个赛项吸引2056台机器人参赛，全程自主竞技看点十足。",
+          "url": "https://www.ithome.com/0/993/105.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-22T14:13:48Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "IT之家（RSS）"
+      ],
+      "items": [
+        {
+          "id": "cf06efb34986b9d10c8d4ad2b59712ed0f1fdc9c",
+          "title": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+          "title_zh": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+          "title_en": null,
+          "title_original": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+          "summary": "第二届世界人形机器人运动会今晚在国家速滑馆\"冰丝带\"开幕，666 支队伍、2056 台机器人参赛，队伍数量较首届增长 138%，机器人数量翻了两番。天工 Ultra 在百米预赛跑出 9.39 秒，打破博尔特 9.58 秒的人类世界纪录；荣耀\"闪电\"以 41.95 秒完成 400 米，同样破人类纪录。本届赛项增至 51 项，多项竞技赛取消人工遥控，全程全自主运行。",
+          "recommend_reason_zh": "天工Ultra以9.39秒打破博尔特百米纪录，荣耀“闪电”400米跑出41.95秒，51个赛项吸引2056台机器人参赛，全程自主竞技看点十足。",
+          "url": "https://www.ithome.com/0/993/105.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-22T14:13:48Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7635,
+      "importance": 0.7635,
+      "importance_score": 0.7635,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.71,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9941,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-22T14:13:48Z",
+      "latest_at": "2026-08-22T14:13:48Z",
+      "primary_item": {
+        "id": "cf06efb34986b9d10c8d4ad2b59712ed0f1fdc9c",
+        "title": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+        "title_zh": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+        "title_en": null,
+        "title_original": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
+        "summary": "第二届世界人形机器人运动会今晚在国家速滑馆\"冰丝带\"开幕，666 支队伍、2056 台机器人参赛，队伍数量较首届增长 138%，机器人数量翻了两番。天工 Ultra 在百米预赛跑出 9.39 秒，打破博尔特 9.58 秒的人类世界纪录；荣耀\"闪电\"以 41.95 秒完成 400 米，同样破人类纪录。本届赛项增至 51 项，多项竞技赛取消人工遥控，全程全自主运行。",
+        "recommend_reason_zh": "天工Ultra以9.39秒打破博尔特百米纪录，荣耀“闪电”400米跑出41.95秒，51个赛项吸引2056台机器人参赛，全程自主竞技看点十足。",
+        "url": "https://www.ithome.com/0/993/105.htm",
+        "source": "IT之家（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 50,
+      "persona_review": "行业秀肌肉，没有可上手的工具或 API，看个热闹。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -303,15 +302,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8008,
-      "importance": 0.8008,
-      "importance_score": 0.8008,
+      "score": 0.7914,
+      "importance": 0.7914,
+      "importance_score": 0.7914,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.7601,
+        "recency": 0.708,
         "story_heat": 0.0
       },
       "category": "official",
@@ -340,90 +339,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
-      }
-    },
-    {
-      "story_id": "story_ab204c545599",
-      "title": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期 / The AI-Native SDLC playbook",
-      "url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
-      "primary_url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
-      "source": "Claude：Blog（网页）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "005c8d0ec7d674a738e61cb654fbac11082cdba3",
-          "title": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期 / The AI-Native SDLC playbook",
-          "title_zh": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期",
-          "title_en": "The AI-Native SDLC playbook",
-          "title_original": "The AI-Native SDLC playbook",
-          "summary": "Anthropic 发布 AI 原生 SDLC 实战手册，提出将传统六阶段软件开发生命周期重构为 AI 嵌入各环节的闭环流程。手册指出，当代码不再是瓶颈时，规划、审查、部署等人速环节成为新约束，需通过 Claude 将需求压缩为 intent.md、以技能编码标准、用持续评测替代阶段门禁，并保留人工对关键代码的审查。",
-          "recommend_reason_zh": "Anthropic Applied AI团队基于客户实践，用Claude Code逐阶段重构SDLC的六个阶段，使其从线性流程变成循环，并以安全审批瓶颈为例，展示如何化解AI代码激增带来的审查积压。",
-          "url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-21T14:28:27.351000Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Claude：Blog（网页）"
-      ],
-      "items": [
-        {
-          "id": "005c8d0ec7d674a738e61cb654fbac11082cdba3",
-          "title": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期 / The AI-Native SDLC playbook",
-          "title_zh": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期",
-          "title_en": "The AI-Native SDLC playbook",
-          "title_original": "The AI-Native SDLC playbook",
-          "summary": "Anthropic 发布 AI 原生 SDLC 实战手册，提出将传统六阶段软件开发生命周期重构为 AI 嵌入各环节的闭环流程。手册指出，当代码不再是瓶颈时，规划、审查、部署等人速环节成为新约束，需通过 Claude 将需求压缩为 intent.md、以技能编码标准、用持续评测替代阶段门禁，并保留人工对关键代码的审查。",
-          "recommend_reason_zh": "Anthropic Applied AI团队基于客户实践，用Claude Code逐阶段重构SDLC的六个阶段，使其从线性流程变成循环，并以安全审批瓶颈为例，展示如何化解AI代码激增带来的审查积压。",
-          "url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-21T14:28:27.351000Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7269,
-      "importance": 0.7269,
-      "importance_score": 0.7269,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.73,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7574,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance"
-      ],
-      "earliest_at": "2026-08-21T14:28:27.351000Z",
-      "latest_at": "2026-08-21T14:28:27.351000Z",
-      "primary_item": {
-        "id": "005c8d0ec7d674a738e61cb654fbac11082cdba3",
-        "title": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期 / The AI-Native SDLC playbook",
-        "title_zh": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期",
-        "title_en": "The AI-Native SDLC playbook",
-        "title_original": "The AI-Native SDLC playbook",
-        "summary": "Anthropic 发布 AI 原生 SDLC 实战手册，提出将传统六阶段软件开发生命周期重构为 AI 嵌入各环节的闭环流程。手册指出，当代码不再是瓶颈时，规划、审查、部署等人速环节成为新约束，需通过 Claude 将需求压缩为 intent.md、以技能编码标准、用持续评测替代阶段门禁，并保留人工对关键代码的审查。",
-        "recommend_reason_zh": "Anthropic Applied AI团队基于客户实践，用Claude Code逐阶段重构SDLC的六个阶段，使其从线性流程变成循环，并以安全审批瓶颈为例，展示如何化解AI代码激增带来的审查积压。",
-        "url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
-        "source": "Claude：Blog（网页）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "讲的是AI辅助开发流程，团队想落地AI编码可以当参考，但别指望直接抄作业。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -500,18 +416,18 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.723,
-      "importance": 0.723,
-      "importance_score": 0.723,
-      "importance_label": "行业动态",
+      "score": 0.7132,
+      "importance": 0.7132,
+      "importance_score": 0.7132,
+      "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.61,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7966,
+        "recency": 0.742,
         "story_heat": 0.25
       },
-      "category": "industry",
+      "category": "watch",
       "reasons": [
         "multi_source",
         "high_ai_relevance"
@@ -536,7 +452,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -670,15 +586,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.5604,
-      "importance": 0.5604,
-      "importance_score": 0.5604,
+      "score": 0.5504,
+      "importance": 0.5504,
+      "importance_score": 0.5504,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8031,
+        "recency": 0.748,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -705,7 +621,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -840,15 +756,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.5581,
-      "importance": 0.5581,
-      "importance_score": 0.5581,
+      "score": 0.5483,
+      "importance": 0.5483,
+      "importance_score": 0.5483,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.7904,
+        "recency": 0.7361,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -875,7 +791,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -952,15 +868,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5261,
-      "importance": 0.5261,
-      "importance_score": 0.5261,
+      "score": 0.5151,
+      "importance": 0.5151,
+      "importance_score": 0.5151,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8905,
+        "recency": 0.8294,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -987,7 +903,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -1064,15 +980,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5134,
-      "importance": 0.5134,
-      "importance_score": 0.5134,
+      "score": 0.5033,
+      "importance": 0.5033,
+      "importance_score": 0.5033,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8203,
+        "recency": 0.764,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1099,7 +1015,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -1176,15 +1092,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5382,
-      "importance": 0.5382,
-      "importance_score": 0.5382,
+      "score": 0.5264,
+      "importance": 0.5264,
+      "importance_score": 0.5264,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.9578,
+        "recency": 0.8921,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1211,231 +1127,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
-      }
-    },
-    {
-      "story_id": "story_634f11907d5e",
-      "title": "我正在变得对人工智能视而不见",
-      "url": "https://cymerys.com/w/im-becoming-ai-blind",
-      "primary_url": "https://cymerys.com/w/im-becoming-ai-blind",
-      "source": "cymerys.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "b0554dda6c8729a87900fa7cfccabee476232512",
-          "title": "我正在变得对人工智能视而不见",
-          "title_zh": "我正在变得对人工智能视而不见",
-          "title_en": null,
-          "title_original": "我正在变得对人工智能视而不见",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章以作者自述揭示了一种新现象：大脑因常见到低质量AI生成文档而自动忽略其内容，举例包括Claude设计文档和20页营销方案，并引用了Florian Roth的规律总结。",
-          "url": "https://cymerys.com/w/im-becoming-ai-blind",
-          "source": "cymerys.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-21T16:37:38.437000Z"
-        },
-        {
-          "id": "febe879f73b0a7f62d32e0919954f590962d24dc",
-          "title": "我正在变得对人工智能视而不见 / I'm becoming AI-blind",
-          "title_zh": "我正在变得对人工智能视而不见",
-          "title_en": "I'm becoming AI-blind",
-          "title_original": "I'm becoming AI-blind",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章讲述了作者因大量接触AI生成内容而变得“AI盲”，无法专注分析带AI痕迹的文档，并列举了Claude设计文档和20页营销deck等具体案例。",
-          "url": "https://cymerys.com/w/im-becoming-ai-blind",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T11:48:05Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "cymerys.com"
-      ],
-      "items": [
-        {
-          "id": "b0554dda6c8729a87900fa7cfccabee476232512",
-          "title": "我正在变得对人工智能视而不见",
-          "title_zh": "我正在变得对人工智能视而不见",
-          "title_en": null,
-          "title_original": "我正在变得对人工智能视而不见",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章以作者自述揭示了一种新现象：大脑因常见到低质量AI生成文档而自动忽略其内容，举例包括Claude设计文档和20页营销方案，并引用了Florian Roth的规律总结。",
-          "url": "https://cymerys.com/w/im-becoming-ai-blind",
-          "source": "cymerys.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-21T16:37:38.437000Z"
-        },
-        {
-          "id": "febe879f73b0a7f62d32e0919954f590962d24dc",
-          "title": "我正在变得对人工智能视而不见 / I'm becoming AI-blind",
-          "title_zh": "我正在变得对人工智能视而不见",
-          "title_en": "I'm becoming AI-blind",
-          "title_original": "I'm becoming AI-blind",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章讲述了作者因大量接触AI生成内容而变得“AI盲”，无法专注分析带AI痕迹的文档，并列举了Claude设计文档和20页营销deck等具体案例。",
-          "url": "https://cymerys.com/w/im-becoming-ai-blind",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T11:48:05Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5064,
-      "importance": 0.5064,
-      "importance_score": 0.5064,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7813,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T11:48:05Z",
-      "latest_at": "2026-08-21T16:37:38.437000Z",
-      "primary_item": {
-        "id": "b0554dda6c8729a87900fa7cfccabee476232512",
-        "title": "我正在变得对人工智能视而不见",
-        "title_zh": "我正在变得对人工智能视而不见",
-        "title_en": null,
-        "title_original": "我正在变得对人工智能视而不见",
-        "summary": null,
-        "recommend_reason_zh": "这篇文章以作者自述揭示了一种新现象：大脑因常见到低质量AI生成文档而自动忽略其内容，举例包括Claude设计文档和20页营销方案，并引用了Florian Roth的规律总结。",
-        "url": "https://cymerys.com/w/im-becoming-ai-blind",
-        "source": "cymerys.com",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 20,
-      "persona_review": "个人絮叨，无工具无数据，对开发者没实际用处。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
-      }
-    },
-    {
-      "story_id": "story_24786bde920b",
-      "title": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-      "url": "https://api-docs.deepseek.com/guides/vision",
-      "primary_url": "https://api-docs.deepseek.com/guides/vision",
-      "source": "api-docs.deepseek.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "5ff43635197f7c87ff88b1a4f3d731bc00a56f89",
-          "title": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-          "title_zh": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-          "title_en": "DeepSeek-v4-flash-vision-exp",
-          "title_original": "DeepSeek-v4-flash-vision-exp",
-          "summary": null,
-          "recommend_reason_zh": "DeepSeek-v4-flash-vision-exp支持图文输入，可描述图片、读取截图文字和解析图表，支持JPEG/PNG/GIF/WebP格式，提供base64、URL及Files API三种传图方式，单图经缩放后最高计384 tokens。",
-          "url": "https://api-docs.deepseek.com/guides/vision",
-          "source": "api-docs.deepseek.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-21T11:49:31.581000Z"
-        },
-        {
-          "id": "c0e5aa36939a18104f0fbf98078d162328862503",
-          "title": "DeepSeek-v4-flash-vision-exp 图像按尺寸缩放 每图 token 上限 384",
-          "title_zh": "DeepSeek-v4-flash-vision-exp 图像按尺寸缩放 每图 token 上限 384",
-          "title_en": "DeepSeek-v4-flash-vision-exp",
-          "title_original": "DeepSeek-v4-flash-vision-exp",
-          "summary": null,
-          "recommend_reason_zh": "DeepSeek-v4-flash-vision-exp 将每张图片自动缩放后按最多 384 个 token 计费，2000×2000 与 5000×5000 的图消耗相同 token，约 400 token/张对应 2500 张/美元，多图独立计费，定价规则清晰透明。",
-          "url": "https://news.ycombinator.com/item?id=49386163",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T11:31:28.365000Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "api-docs.deepseek.com",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "5ff43635197f7c87ff88b1a4f3d731bc00a56f89",
-          "title": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-          "title_zh": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-          "title_en": "DeepSeek-v4-flash-vision-exp",
-          "title_original": "DeepSeek-v4-flash-vision-exp",
-          "summary": null,
-          "recommend_reason_zh": "DeepSeek-v4-flash-vision-exp支持图文输入，可描述图片、读取截图文字和解析图表，支持JPEG/PNG/GIF/WebP格式，提供base64、URL及Files API三种传图方式，单图经缩放后最高计384 tokens。",
-          "url": "https://api-docs.deepseek.com/guides/vision",
-          "source": "api-docs.deepseek.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-21T11:49:31.581000Z"
-        },
-        {
-          "id": "c0e5aa36939a18104f0fbf98078d162328862503",
-          "title": "DeepSeek-v4-flash-vision-exp 图像按尺寸缩放 每图 token 上限 384",
-          "title_zh": "DeepSeek-v4-flash-vision-exp 图像按尺寸缩放 每图 token 上限 384",
-          "title_en": "DeepSeek-v4-flash-vision-exp",
-          "title_original": "DeepSeek-v4-flash-vision-exp",
-          "summary": null,
-          "recommend_reason_zh": "DeepSeek-v4-flash-vision-exp 将每张图片自动缩放后按最多 384 个 token 计费，2000×2000 与 5000×5000 的图消耗相同 token，约 400 token/张对应 2500 张/美元，多图独立计费，定价规则清晰透明。",
-          "url": "https://news.ycombinator.com/item?id=49386163",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T11:31:28.365000Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.497,
-      "importance": 0.497,
-      "importance_score": 0.497,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7289,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T11:31:28.365000Z",
-      "latest_at": "2026-08-21T11:49:31.581000Z",
-      "primary_item": {
-        "id": "5ff43635197f7c87ff88b1a4f3d731bc00a56f89",
-        "title": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-        "title_zh": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-        "title_en": "DeepSeek-v4-flash-vision-exp",
-        "title_original": "DeepSeek-v4-flash-vision-exp",
-        "summary": null,
-        "recommend_reason_zh": "DeepSeek-v4-flash-vision-exp支持图文输入，可描述图片、读取截图文字和解析图表，支持JPEG/PNG/GIF/WebP格式，提供base64、URL及Files API三种传图方式，单图经缩放后最高计384 tokens。",
-        "url": "https://api-docs.deepseek.com/guides/vision",
-        "source": "api-docs.deepseek.com",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 92,
-      "persona_review": "能传图了，多模态需求今天就能接，图表描述可直接用。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -1461,7 +1153,7 @@
           "published_at": "2026-08-21T20:41:57.600000Z"
         },
         {
-          "id": "e6e4e69b79be74fb13870de708c097f9048d2b45",
+          "id": "48aa24f65578ce52e3984df7eead950686309a55",
           "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
           "title_zh": "快速印象：一周用 Codex 比 Claude 多",
           "title_en": "Quick impressions: A week of using Codex more than Claude",
@@ -1469,15 +1161,15 @@
           "summary": null,
           "recommend_reason_zh": "一周实测Codex和Claude，作者记录了10条对比印象：Codex代码注释更少、架构更简单，但rebase时误操作导致4000+行新增；Claude更擅长预判意图，调试时更顺手。这些细节帮你判断哪个AI助手更合适。",
           "url": "https://allaboutcoding.ghinda.com/a-week-of-using-codex-more-than-claude",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-21T19:51:48Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News",
+        "Hacker News · 24h最热",
         "hackernews"
       ],
       "items": [
@@ -1496,7 +1188,7 @@
           "published_at": "2026-08-21T20:41:57.600000Z"
         },
         {
-          "id": "e6e4e69b79be74fb13870de708c097f9048d2b45",
+          "id": "48aa24f65578ce52e3984df7eead950686309a55",
           "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
           "title_zh": "快速印象：一周用 Codex 比 Claude 多",
           "title_en": "Quick impressions: A week of using Codex more than Claude",
@@ -1504,23 +1196,23 @@
           "summary": null,
           "recommend_reason_zh": "一周实测Codex和Claude，作者记录了10条对比印象：Codex代码注释更少、架构更简单，但rebase时误操作导致4000+行新增；Claude更擅长预判意图，调试时更顺手。这些细节帮你判断哪个AI助手更合适。",
           "url": "https://allaboutcoding.ghinda.com/a-week-of-using-codex-more-than-claude",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-21T19:51:48Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5149,
-      "importance": 0.5149,
-      "importance_score": 0.5149,
+      "score": 0.5047,
+      "importance": 0.5047,
+      "importance_score": 0.5047,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8286,
+        "recency": 0.7717,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1547,7 +1239,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -1624,15 +1316,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5104,
-      "importance": 0.5104,
-      "importance_score": 0.5104,
+      "score": 0.5004,
+      "importance": 0.5004,
+      "importance_score": 0.5004,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8031,
+        "recency": 0.748,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1659,7 +1351,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     },
     {
@@ -1736,15 +1428,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5083,
-      "importance": 0.5083,
-      "importance_score": 0.5083,
+      "score": 0.4985,
+      "importance": 0.4985,
+      "importance_score": 0.4985,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.7915,
+        "recency": 0.7372,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1771,231 +1463,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
-      }
-    },
-    {
-      "story_id": "story_deb52648d399",
-      "title": "Claudette：让Claude别再像BuzzFeed文章那样说话 / Claudette: Make Claude stop talking like a BuzzFeed article",
-      "url": "https://news.ycombinator.com/item?id=49388752",
-      "primary_url": "https://news.ycombinator.com/item?id=49388752",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "2ac4eb9cb6b7c646420613d17851698dfc3772be",
-          "title": "Claudette：让Claude别再像BuzzFeed文章那样说话 / Claudette: Make Claude stop talking like a BuzzFeed article",
-          "title_zh": "Claudette：让Claude别再像BuzzFeed文章那样说话",
-          "title_en": "Claudette: Make Claude stop talking like a BuzzFeed article",
-          "title_original": "Claudette: Make Claude stop talking like a BuzzFeed article",
-          "summary": null,
-          "recommend_reason_zh": "用注释块不超过7词、函数名不超过4词限制Claude，示范CLAUDE.md里的canary trick；但Claude仍有约25%概率违反，揭示它为何越写越像BuzzFeed。",
-          "url": "https://news.ycombinator.com/item?id=49388752",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T15:31:47.946000Z"
-        },
-        {
-          "id": "402b2315a53a9fa49c3444b546eb912e0a44bac1",
-          "title": "Claudette：让Claude别再像BuzzFeed文章那样说话 / Claudette: Make Claude Stop Talking Like a BuzzFeed Article",
-          "title_zh": "Claudette：让Claude别再像BuzzFeed文章那样说话",
-          "title_en": "Claudette: Make Claude Stop Talking Like a BuzzFeed Article",
-          "title_original": "Claudette: Make Claude Stop Talking Like a BuzzFeed Article",
-          "summary": null,
-          "recommend_reason_zh": "这个Claude Code技能/debuzz把Claude的回应交给Gemini转成普通英语，例如将同步管道重试逻辑的三处bug及修复建议直接列出，免去\"load-bearing assumption\"式绕圈。",
-          "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T14:31:52Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "2ac4eb9cb6b7c646420613d17851698dfc3772be",
-          "title": "Claudette：让Claude别再像BuzzFeed文章那样说话 / Claudette: Make Claude stop talking like a BuzzFeed article",
-          "title_zh": "Claudette：让Claude别再像BuzzFeed文章那样说话",
-          "title_en": "Claudette: Make Claude stop talking like a BuzzFeed article",
-          "title_original": "Claudette: Make Claude stop talking like a BuzzFeed article",
-          "summary": null,
-          "recommend_reason_zh": "用注释块不超过7词、函数名不超过4词限制Claude，示范CLAUDE.md里的canary trick；但Claude仍有约25%概率违反，揭示它为何越写越像BuzzFeed。",
-          "url": "https://news.ycombinator.com/item?id=49388752",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T15:31:47.946000Z"
-        },
-        {
-          "id": "402b2315a53a9fa49c3444b546eb912e0a44bac1",
-          "title": "Claudette：让Claude别再像BuzzFeed文章那样说话 / Claudette: Make Claude Stop Talking Like a BuzzFeed Article",
-          "title_zh": "Claudette：让Claude别再像BuzzFeed文章那样说话",
-          "title_en": "Claudette: Make Claude Stop Talking Like a BuzzFeed Article",
-          "title_original": "Claudette: Make Claude Stop Talking Like a BuzzFeed Article",
-          "summary": null,
-          "recommend_reason_zh": "这个Claude Code技能/debuzz把Claude的回应交给Gemini转成普通英语，例如将同步管道重试逻辑的三处bug及修复建议直接列出，免去\"load-bearing assumption\"式绕圈。",
-          "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T14:31:52Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5042,
-      "importance": 0.5042,
-      "importance_score": 0.5042,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.769,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T14:31:52Z",
-      "latest_at": "2026-08-21T15:31:47.946000Z",
-      "primary_item": {
-        "id": "2ac4eb9cb6b7c646420613d17851698dfc3772be",
-        "title": "Claudette：让Claude别再像BuzzFeed文章那样说话 / Claudette: Make Claude stop talking like a BuzzFeed article",
-        "title_zh": "Claudette：让Claude别再像BuzzFeed文章那样说话",
-        "title_en": "Claudette: Make Claude stop talking like a BuzzFeed article",
-        "title_original": "Claudette: Make Claude stop talking like a BuzzFeed article",
-        "summary": null,
-        "recommend_reason_zh": "用注释块不超过7词、函数名不超过4词限制Claude，示范CLAUDE.md里的canary trick；但Claude仍有约25%概率违反，揭示它为何越写越像BuzzFeed。",
-        "url": "https://news.ycombinator.com/item?id=49388752",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 78,
-      "persona_review": "能让 Claude 输出更简洁，写代码和文档时省心，今天就能试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
-      }
-    },
-    {
-      "story_id": "story_eee8a3875bec",
-      "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
-      "url": "https://news.ycombinator.com/item?id=49385994",
-      "primary_url": "https://news.ycombinator.com/item?id=49385994",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "ec8348885deb760502635b307347168d61940bf7",
-          "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_zh": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本",
-          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "summary": null,
-          "recommend_reason_zh": "AI companies销毁实体书被比作焚毁亚历山大图书馆，但原文反驳称旧书摊上50美分一本的书籍本就在腐烂，扫描训练反能让80至100年的旧书数字永生。",
-          "url": "https://news.ycombinator.com/item?id=49385994",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T13:01:36.074000Z"
-        },
-        {
-          "id": "8e9cde0067d8fde26e99f379e85edb1980c3bb8f",
-          "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_zh": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本",
-          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://annas-archive.pk/blog/physical-destruction.html",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T10:05:46Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "ec8348885deb760502635b307347168d61940bf7",
-          "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_zh": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本",
-          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "summary": null,
-          "recommend_reason_zh": "AI companies销毁实体书被比作焚毁亚历山大图书馆，但原文反驳称旧书摊上50美分一本的书籍本就在腐烂，扫描训练反能让80至100年的旧书数字永生。",
-          "url": "https://news.ycombinator.com/item?id=49385994",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T13:01:36.074000Z"
-        },
-        {
-          "id": "8e9cde0067d8fde26e99f379e85edb1980c3bb8f",
-          "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_zh": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本",
-          "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://annas-archive.pk/blog/physical-destruction.html",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T10:05:46Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.4993,
-      "importance": 0.4993,
-      "importance_score": 0.4993,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7417,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T10:05:46Z",
-      "latest_at": "2026-08-21T13:01:36.074000Z",
-      "primary_item": {
-        "id": "ec8348885deb760502635b307347168d61940bf7",
-        "title": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本 / AI companies destroy physical books – let's scan rare books before it's too late",
-        "title_zh": "AI公司正在毁掉实体书——趁还来得及，赶紧扫描珍本",
-        "title_en": "AI companies destroy physical books – let's scan rare books before it's too late",
-        "title_original": "AI companies destroy physical books – let's scan rare books before it's too late",
-        "summary": null,
-        "recommend_reason_zh": "AI companies销毁实体书被比作焚毁亚历山大图书馆，但原文反驳称旧书摊上50美分一本的书籍本就在腐烂，扫描训练反能让80至100年的旧书数字永生。",
-        "url": "https://news.ycombinator.com/item?id=49385994",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "对开发者无实操价值，除非你正做古籍数字化项目。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T09:54:59.461134Z"
+        "scored_at": "2026-08-22T14:51:22.022413Z"
       }
     }
   ]

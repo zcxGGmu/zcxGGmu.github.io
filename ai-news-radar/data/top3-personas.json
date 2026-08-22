@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T09:55:13.192212Z",
+  "generated_at": "2026-08-22T14:51:29.816224Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_24786bde920b",
-      "title": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
-      "url": "https://api-docs.deepseek.com/guides/vision",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 65,
-          "review": "实验版挂exp就敢叫v4，图文输入不新鲜，先拿基准测过再说。"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "官方文档自称支持图文，无论文代码和独立评测，能力待验证。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "能传图了，多模态需求今天就能接，图表描述可直接用。"
-        }
-      }
-    },
-    {
       "story_id": "story_355768f68f0e",
       "title": "GPT 5.6 Sol 价格下调 20% / GPT 5.6 Sol 20% price reduction",
       "url": "https://news.ycombinator.com/item?id=49396590",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 25,
@@ -60,7 +40,7 @@
       "story_id": "story_f7faaf469ef0",
       "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
       "url": "https://news.ycombinator.com/item?id=49390739",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 72,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 78,
           "review": "开源可自托管，想绕开官方限流的可以试，但新项目成熟度待验。"
+        }
+      }
+    },
+    {
+      "story_id": "story_f852499667bc",
+      "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
+      "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 55,
+          "review": "换个入口就算新体验？Copilot 还是那个 Copilot。"
+        },
+        "paper-police": {
+          "score": 30,
+          "review": "官方博客仅描述功能，无评测无代码，等实际体验或第三方验证。"
+        },
+        "pragmatic": {
+          "score": 75,
+          "review": "Slack 里直接用 Copilot，团队协作场景能省切换成本，但具体功能还得看文档。"
         }
       }
     }
