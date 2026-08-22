@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T04:55:47.110784Z",
+  "generated_at": "2026-08-22T09:55:13.192212Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_3278f2bc67f3",
-      "title": "面壁智能 OpenBMB 推出 MathForm，面向 Lean 4 数学自动形式化的开源框架、数据集与模型 / 🧮 Introducing MathForm， an open-source framework， dataset， and model for mathematical autoformaliza…",
-      "url": "https://x.com/OpenBMB/status/2090786300194590816",
+      "story_id": "story_24786bde920b",
+      "title": "DeepSeek-v4-flash-vision-exp 支持图文输入，可描述图片与图表",
+      "url": "https://api-docs.deepseek.com/guides/vision",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "开源全家桶挺实在，但基线对比和效果没晒，先验货再吹。"
+          "score": 65,
+          "review": "实验版挂exp就敢叫v4，图文输入不新鲜，先拿基准测过再说。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "宣称开源但无论文无benchmark，等仓库和评测出来再定论。"
+          "score": 25,
+          "review": "官方文档自称支持图文，无论文代码和独立评测，能力待验证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "开源可clone，搞Lean 4自动形式化的今天就能上手试。"
+          "score": 92,
+          "review": "能传图了，多模态需求今天就能接，图表描述可直接用。"
         }
       }
     },
     {
-      "story_id": "story_7b114e120e12",
-      "title": "OpenAI全面开源Codex Harness，AI编程智能体底层能力进一步开放",
-      "url": "https://www.aibase.com/news/30531",
+      "story_id": "story_355768f68f0e",
+      "title": "GPT 5.6 Sol 价格下调 20% / GPT 5.6 Sol 20% price reduction",
+      "url": "https://news.ycombinator.com/item?id=49396590",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 75,
-          "review": "开源是好事，但先确认不是阉割版，别急着封神。"
+          "score": 25,
+          "review": "降价20%也叫发布？性能没变的话，这是清库存吗？"
         },
         "paper-police": {
-          "score": 20,
-          "review": "报道称开源但无仓库链接，代码和评测均无，无法验证。"
+          "score": 25,
+          "review": "只有降价消息，无论文无代码无评测，价格数字也未见官方公告。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "开源评估工具可直接上手，跑代码评测不用再看闭源脸色。"
+          "review": "直接省两成账单，跑批量任务今天就能切换。"
         }
       }
     },
     {
-      "story_id": "story_1942460359a8",
-      "title": "DeepSeek-V4-Flash-Vision-Exp 发布",
-      "url": "https://api-docs.deepseek.com/zh-cn/updates",
+      "story_id": "story_f7faaf469ef0",
+      "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
+      "url": "https://news.ycombinator.com/item?id=49390739",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 35,
-          "review": "实验版就敢叫V4？benchmark没影，先发个API更新凑热度。"
+          "score": 72,
+          "review": "开源诚意有，但自夸“任意”前先跑通十个代理再说。"
         },
         "paper-police": {
           "score": 20,
-          "review": "仅官方日志宣称发布，无论文无代码无第三方跑分，需实测API验证。"
+          "review": "自称开源自托管却无仓库链接，凭一句话无法验证。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "新视觉模型进API，多模态任务今天就能试，留意下价格和限流。"
+          "score": 78,
+          "review": "开源可自托管，想绕开官方限流的可以试，但新项目成熟度待验。"
         }
       }
     }

@@ -1,41 +1,11 @@
 {
   "version": 1,
   "entries": {
-    "story_8adda9102be6|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "安全防护有新招，但没看到可复现的细节，暂不行动。",
-      "title_hash": "92ac24fd",
-      "scored_at": "2026-08-01T06:50:22.659183Z"
-    },
     "story_10739ae4d797|pragmatic|0a5c5b24": {
       "score": 45,
       "review": "理论进展，没有立即可用的工具，等后续应用落地再看。",
       "title_hash": "c1ef9263",
       "scored_at": "2026-08-01T11:52:48.362793Z"
-    },
-    "story_5f7b5ebc21a9|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "数学题解离日常开发太远，没开源没API，等实际产品落地再说。",
-      "title_hash": "b9280565",
-      "scored_at": "2026-08-01T09:42:35.798119Z"
-    },
-    "story_165311a6ce61|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "工具下架说明生成类应用合规风险大，做类似功能的先查政策。",
-      "title_hash": "e3ea3f2b",
-      "scored_at": "2026-08-01T09:42:38.395889Z"
-    },
-    "story_03b9f05044c9|pragmatic|0a5c5b24": {
-      "score": 78,
-      "review": "若已开源可直接试用，做 AI 数据可视化的能省不少模板代码。",
-      "title_hash": "a26059df",
-      "scored_at": "2026-08-01T09:42:47.819007Z"
-    },
-    "story_831ec0929405|pragmatic|0a5c5b24": {
-      "score": 68,
-      "review": "弃用路由器说明直连够用，自建前先评估必要性。",
-      "title_hash": "d0864e09",
-      "scored_at": "2026-08-01T09:42:50.069159Z"
     },
     "story_e2eeec323e5b|pragmatic|0a5c5b24": {
       "score": 62,
@@ -5622,6 +5592,84 @@
       "review": "深入硬件底层，写GPU优化时能少踩坑，但非刚需。",
       "title_hash": "232bf0f9",
       "scored_at": "2026-08-22T03:14:48.553633Z"
+    },
+    "story_b1246b4b0729|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "提醒做教育产品的别只刷作业正确率，评估得看真实掌握度。",
+      "title_hash": "e5aa8676",
+      "scored_at": "2026-08-22T05:48:06.182897Z"
+    },
+    "story_355768f68f0e|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "直接省两成账单，跑批量任务今天就能切换。",
+      "title_hash": "d4963b30",
+      "scored_at": "2026-08-22T07:56:45.764076Z"
+    },
+    "story_deed5dc2807d|pragmatic|0a5c5b24": {
+      "score": 62,
+      "review": "具体对比才有用，但个人体验当参考，别急着换工具。",
+      "title_hash": "fe09a6db",
+      "scored_at": "2026-08-22T07:15:55.455383Z"
+    },
+    "story_355768f68f0e|cynic|f4237a62": {
+      "score": 25,
+      "review": "降价20%也叫发布？性能没变的话，这是清库存吗？",
+      "title_hash": "d4963b30",
+      "scored_at": "2026-08-22T07:57:03.731447Z"
+    },
+    "story_355768f68f0e|paper-police|966065bf": {
+      "score": 25,
+      "review": "只有降价消息，无论文无代码无评测，价格数字也未见官方公告。",
+      "title_hash": "d4963b30",
+      "scored_at": "2026-08-22T07:57:05.338204Z"
+    },
+    "story_f7faaf469ef0|pragmatic|0a5c5b24": {
+      "score": 78,
+      "review": "开源可自托管，想绕开官方限流的可以试，但新项目成熟度待验。",
+      "title_hash": "1028a2d0",
+      "scored_at": "2026-08-22T07:56:48.155052Z"
+    },
+    "story_deb52648d399|pragmatic|0a5c5b24": {
+      "score": 78,
+      "review": "能让 Claude 输出更简洁，写代码和文档时省心，今天就能试。",
+      "title_hash": "1355aba1",
+      "scored_at": "2026-08-22T07:56:55.546259Z"
+    },
+    "story_eee8a3875bec|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "对开发者无实操价值，除非你正做古籍数字化项目。",
+      "title_hash": "c74ccd2f",
+      "scored_at": "2026-08-22T08:58:00.939739Z"
+    },
+    "story_f7faaf469ef0|cynic|f4237a62": {
+      "score": 72,
+      "review": "开源诚意有，但自夸“任意”前先跑通十个代理再说。",
+      "title_hash": "1028a2d0",
+      "scored_at": "2026-08-22T08:58:03.617694Z"
+    },
+    "story_f7faaf469ef0|paper-police|966065bf": {
+      "score": 20,
+      "review": "自称开源自托管却无仓库链接，凭一句话无法验证。",
+      "title_hash": "1028a2d0",
+      "scored_at": "2026-08-22T08:58:05.238901Z"
+    },
+    "story_24786bde920b|pragmatic|0a5c5b24": {
+      "score": 92,
+      "review": "能传图了，多模态需求今天就能接，图表描述可直接用。",
+      "title_hash": "4dc45f55",
+      "scored_at": "2026-08-22T09:55:01.530641Z"
+    },
+    "story_24786bde920b|cynic|f4237a62": {
+      "score": 65,
+      "review": "实验版挂exp就敢叫v4，图文输入不新鲜，先拿基准测过再说。",
+      "title_hash": "4dc45f55",
+      "scored_at": "2026-08-22T09:55:07.951196Z"
+    },
+    "story_24786bde920b|paper-police|966065bf": {
+      "score": 25,
+      "review": "官方文档自称支持图文，无论文代码和独立评测，能力待验证。",
+      "title_hash": "4dc45f55",
+      "scored_at": "2026-08-22T09:55:13.192126Z"
     }
   }
 }
