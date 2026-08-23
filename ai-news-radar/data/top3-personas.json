@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T09:55:46.589146Z",
+  "generated_at": "2026-08-23T14:50:49.863922Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,50 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_ede39af7c879",
-      "title": "MCP更新路线图 聚焦未来规范发布重点",
-      "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 55,
-          "review": "路线图写得像规划，可发布过的规范有几个能跑？"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "路线图只有规划，无代码无评测，等规范落地再议。"
-        },
-        "pragmatic": {
-          "score": 70,
-          "review": "规范方向明确但暂无新版本可上手，集成方先观望。"
-        }
-      }
-    },
-    {
-      "story_id": "story_e2695a874548",
-      "title": "MCP发布新路线图，初始定制协议被指不智",
-      "url": "https://news.ycombinator.com/item?id=49399591",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 42,
-          "review": "路线图没细说就急着否定初始协议，有数据支撑还是纯嘴仗？"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "路线图仅口头表态，无论文代码评测支撑，争议难定。"
-        },
-        "pragmatic": {
-          "score": 70,
-          "review": "MCP路线图定了，搞Agent工具链的该看看接口变没变。"
-        }
-      }
-    },
-    {
       "story_id": "story_fa8a07601060",
       "title": "德克萨斯州一名学生如何揭发了一起恶意AI黑客攻击企图",
       "url": "https://www.reuters.com/world/how-texas-student-blew-whistle-rogue-ai-hacking-attempt-2026-08-20",
-      "rank": 3,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 62,
@@ -73,6 +33,46 @@
         "pragmatic": {
           "score": 55,
           "review": "AI 安全事件提醒，自查下自己的 agent 有没有被 prompt 注入的风险。"
+        }
+      }
+    },
+    {
+      "story_id": "story_88ca2ea32ad4",
+      "title": "NanoGPT 速通前沿",
+      "url": "https://www.primeintellect.ai/research/nanogpt-speedrun",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 65,
+          "review": "速通听着像打游戏，可复现的训练配置敢全量公开吗？"
+        },
+        "paper-police": {
+          "score": 50,
+          "review": "有技术页面和讨论，但缺论文与独立跑分，等开源复现再信。"
+        },
+        "pragmatic": {
+          "score": 55,
+          "review": "训练技巧有参考，但没有现成工具，动手前先看代码。"
+        }
+      }
+    },
+    {
+      "story_id": "story_8a2541a1bf06",
+      "title": "为什么你身边的LLM看起来比实际更“笨”",
+      "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 65,
+          "review": "跑个小模型还怪它笨，怎么不看看你的显卡显存？"
+        },
+        "paper-police": {
+          "score": 10,
+          "review": "论坛经验谈，无论文无代码无基准，主观感受不算数。"
+        },
+        "pragmatic": {
+          "score": 55,
+          "review": "解释本地模型表现差的常见原因，适合排查自己的部署配置，但无新工具。"
         }
       }
     }
