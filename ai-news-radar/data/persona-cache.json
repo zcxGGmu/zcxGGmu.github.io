@@ -1,72 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_7077950cd350|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "识别技巧有点用，但不算刚需，看看就行。",
-      "title_hash": "74a2ae28",
-      "scored_at": "2026-08-01T15:31:30.331197Z"
-    },
-    "story_de533034d9ec|pragmatic|0a5c5b24": {
-      "score": 40,
-      "review": "Acid3是2008年的老测试，通过说明不了现代浏览器水平；没开放下载就看看。",
-      "title_hash": "0f723568",
-      "scored_at": "2026-08-01T15:31:33.010714Z"
-    },
-    "story_2773d42e924b|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "探讨模型推理机制，偏学术，暂无工具落地，看看即可。",
-      "title_hash": "afacf9e6",
-      "scored_at": "2026-08-01T15:31:35.351214Z"
-    },
-    "story_83ab2fec2032|pragmatic|0a5c5b24": {
-      "score": 35,
-      "review": "个人写作习惯声明，无工具价值，不写代码的不用管。",
-      "title_hash": "1fb673f8",
-      "scored_at": "2026-08-01T19:46:15.258014Z"
-    },
-    "story_817116dbd893|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "成本透明性下降，用Cursor的企业得自己记账了。",
-      "title_hash": "221b92bb",
-      "scored_at": "2026-08-01T18:24:34.295097Z"
-    },
-    "story_cb70a765bd5d|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "做内容平台的得提前规划标签方案，但具体技术标准还没落地，先观望。",
-      "title_hash": "4ca356c2",
-      "scored_at": "2026-08-01T17:33:39.515554Z"
-    },
-    "story_31ed9d2f74da|cynic|f4237a62": {
-      "score": 40,
-      "review": "弃用公告比发布还勤，模型没捂热就进博物馆了。",
-      "title_hash": "af39d7de",
-      "scored_at": "2026-08-01T17:33:55.489623Z"
-    },
-    "story_31ed9d2f74da|paper-police|966065bf": {
-      "score": 30,
-      "review": "官方弃用公告只有说法，无论文代码评测支撑，影响待观察。",
-      "title_hash": "af39d7de",
-      "scored_at": "2026-08-01T17:33:57.220359Z"
-    },
-    "story_b49f835a8373|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "论文级优化思路，普通开发者用不上，做推理引擎的可以瞄一眼。",
-      "title_hash": "d45eb6b2",
-      "scored_at": "2026-08-01T18:24:35.915501Z"
-    },
-    "story_2fbe707e9b2f|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "泡沫论不写代码，苹果又没有新动作，等真有产品再盯。",
-      "title_hash": "bc9ba99a",
-      "scored_at": "2026-08-01T18:24:38.474737Z"
-    },
-    "story_e153a884bfe4|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "安全复盘有参考价值，但非今天就要动手的事。",
-      "title_hash": "7fc9e8b4",
-      "scored_at": "2026-08-01T19:46:13.029305Z"
-    },
     "story_bcfdafe93ce8|pragmatic|0a5c5b24": {
       "score": 88,
       "review": "2.6B 本地跑 Agent，隐私和推理成本都省了，今天就能动手试。",
@@ -5658,6 +5592,96 @@
       "review": "官方博客仅描述功能，无评测无代码，等实际体验或第三方验证。",
       "title_hash": "3d51fea2",
       "scored_at": "2026-08-22T14:51:29.816167Z"
+    },
+    "story_90609bd717c3|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "创意行业自掘坟墓，跟开发者关系不大，看看就行。",
+      "title_hash": "af041355",
+      "scored_at": "2026-08-22T15:46:01.722033Z"
+    },
+    "story_deed5dc2807d|cynic|f4237a62": {
+      "score": 38,
+      "review": "一周个人体感就拿来对比，样本量够写评测吗？",
+      "title_hash": "fe09a6db",
+      "scored_at": "2026-08-22T16:50:45.825974Z"
+    },
+    "story_deed5dc2807d|paper-police|966065bf": {
+      "score": 25,
+      "review": "个人体验无评测数据，主观比较难服众，缺实证支撑。",
+      "title_hash": "fe09a6db",
+      "scored_at": "2026-08-22T16:50:47.414251Z"
+    },
+    "story_e106ae18d313|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "MCP规范方向定了，SDK和工具链会跟进，但今天没新东西可用，先关注别急着改。",
+      "title_hash": "c00551f3",
+      "scored_at": "2026-08-22T17:44:01.510635Z"
+    },
+    "story_a2591c776bef|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "IPO风险披露而已，不影响API使用，开发者不用行动。",
+      "title_hash": "dceb7b6f",
+      "scored_at": "2026-08-22T17:44:03.070878Z"
+    },
+    "story_e106ae18d313|cynic|f4237a62": {
+      "score": 35,
+      "review": "路线图画得圆，规范落地前都是纸上谈兵。",
+      "title_hash": "c00551f3",
+      "scored_at": "2026-08-22T17:44:12.564707Z"
+    },
+    "story_e106ae18d313|paper-police|966065bf": {
+      "score": 20,
+      "review": "路线图只算规划声明，无代码无评测，等发布规范再验证。",
+      "title_hash": "c00551f3",
+      "scored_at": "2026-08-22T17:44:14.259244Z"
+    },
+    "story_ede39af7c879|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "规范方向明确但暂无新版本可上手，集成方先观望。",
+      "title_hash": "c00551f3",
+      "scored_at": "2026-08-22T18:58:45.961494Z"
+    },
+    "story_e2695a874548|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "MCP路线图定了，搞Agent工具链的该看看接口变没变。",
+      "title_hash": "fa557599",
+      "scored_at": "2026-08-22T18:58:47.562394Z"
+    },
+    "story_ede39af7c879|cynic|f4237a62": {
+      "score": 55,
+      "review": "路线图写得像规划，可发布过的规范有几个能跑？",
+      "title_hash": "c00551f3",
+      "scored_at": "2026-08-22T18:58:50.288072Z"
+    },
+    "story_ede39af7c879|paper-police|966065bf": {
+      "score": 20,
+      "review": "路线图只有规划，无代码无评测，等规范落地再议。",
+      "title_hash": "c00551f3",
+      "scored_at": "2026-08-22T18:58:52.208865Z"
+    },
+    "story_e2695a874548|cynic|f4237a62": {
+      "score": 42,
+      "review": "路线图没细说就急着否定初始协议，有数据支撑还是纯嘴仗？",
+      "title_hash": "fa557599",
+      "scored_at": "2026-08-22T18:58:54.231158Z"
+    },
+    "story_e2695a874548|paper-police|966065bf": {
+      "score": 20,
+      "review": "路线图仅口头表态，无论文代码评测支撑，争议难定。",
+      "title_hash": "fa557599",
+      "scored_at": "2026-08-22T18:58:56.093608Z"
+    },
+    "story_8a2541a1bf06|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "解释本地模型表现差的常见原因，适合排查自己的部署配置，但无新工具。",
+      "title_hash": "ac68b49c",
+      "scored_at": "2026-08-22T22:49:57.668544Z"
+    },
+    "story_ce8fd18a4317|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "A/B测试没实锤前不用管，等官方文档更新再调整工作流。",
+      "title_hash": "f0b5887c",
+      "scored_at": "2026-08-22T21:44:56.798781Z"
     }
   }
 }

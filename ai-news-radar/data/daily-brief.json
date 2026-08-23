@@ -1,178 +1,8 @@
 {
-  "generated_at": "2026-08-22T14:38:33.526685Z",
+  "generated_at": "2026-08-22T23:34:44.785912Z",
   "window_hours": 24,
-  "total_items": 13,
+  "total_items": 8,
   "items": [
-    {
-      "story_id": "story_f852499667bc",
-      "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
-      "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
-      "primary_url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "95be4d894cfb7732cd86896767c25f43138d9629",
-          "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
-          "title_zh": "Slack 上的全新 GitHub Copilot 体验。",
-          "title_en": "The new GitHub Copilot experience in Slack",
-          "title_original": "The new GitHub Copilot experience in Slack",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot现已集成进Slack公开预览，可通过@GitHub发起代理会话，异步规划变更、排查问题，并创建专属代码频道，生成的PR需额外审批，确保人在回路。",
-          "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T16:07:15Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "95be4d894cfb7732cd86896767c25f43138d9629",
-          "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
-          "title_zh": "Slack 上的全新 GitHub Copilot 体验。",
-          "title_en": "The new GitHub Copilot experience in Slack",
-          "title_original": "The new GitHub Copilot experience in Slack",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot现已集成进Slack公开预览，可通过@GitHub发起代理会话，异步规划变更、排查问题，并创建专属代码频道，生成的PR需额外审批，确保人在回路。",
-          "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T16:07:15Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.802,
-      "importance": 0.802,
-      "importance_score": 0.802,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7224,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-21T16:07:15Z",
-      "latest_at": "2026-08-21T16:07:15Z",
-      "primary_item": {
-        "id": "95be4d894cfb7732cd86896767c25f43138d9629",
-        "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
-        "title_zh": "Slack 上的全新 GitHub Copilot 体验。",
-        "title_en": "The new GitHub Copilot experience in Slack",
-        "title_original": "The new GitHub Copilot experience in Slack",
-        "summary": null,
-        "recommend_reason_zh": "GitHub Copilot现已集成进Slack公开预览，可通过@GitHub发起代理会话，异步规划变更、排查问题，并创建专属代码频道，生成的PR需额外审批，确保人在回路。",
-        "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "Slack 里直接用 Copilot，团队协作场景能省切换成本，但具体功能还得看文档。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
-    {
-      "story_id": "story_99aa6c57026b",
-      "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
-      "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
-      "primary_url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "decada2ec28c4f5c3a53da129b04075e40cc546e",
-          "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
-          "title_zh": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作",
-          "title_en": "Shared agentic work with GitHub Copilot in Microsoft Teams",
-          "title_original": "Shared agentic work with GitHub Copilot in Microsoft Teams",
-          "summary": null,
-          "recommend_reason_zh": "本文介绍如何在Microsoft Teams中通过@GitHub启动GitHub Copilot云代理会话，让讨论变成可共同协作的代理工作区；公共预览版需付费计划并消耗AI积分，仓库管理员还可为Copilot创建的PR增设额外审批，确保人工监督。",
-          "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T16:03:36Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "decada2ec28c4f5c3a53da129b04075e40cc546e",
-          "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
-          "title_zh": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作",
-          "title_en": "Shared agentic work with GitHub Copilot in Microsoft Teams",
-          "title_original": "Shared agentic work with GitHub Copilot in Microsoft Teams",
-          "summary": null,
-          "recommend_reason_zh": "本文介绍如何在Microsoft Teams中通过@GitHub启动GitHub Copilot云代理会话，让讨论变成可共同协作的代理工作区；公共预览版需付费计划并消耗AI积分，仓库管理员还可为Copilot创建的PR增设额外审批，确保人工监督。",
-          "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T16:03:36Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8019,
-      "importance": 0.8019,
-      "importance_score": 0.8019,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7217,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-21T16:03:36Z",
-      "latest_at": "2026-08-21T16:03:36Z",
-      "primary_item": {
-        "id": "decada2ec28c4f5c3a53da129b04075e40cc546e",
-        "title": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作 / Shared agentic work with GitHub Copilot in Microsoft Teams",
-        "title_zh": "在 Microsoft Teams 中与 GitHub Copilot 共享智能体工作",
-        "title_en": "Shared agentic work with GitHub Copilot in Microsoft Teams",
-        "title_original": "Shared agentic work with GitHub Copilot in Microsoft Teams",
-        "summary": null,
-        "recommend_reason_zh": "本文介绍如何在Microsoft Teams中通过@GitHub启动GitHub Copilot云代理会话，让讨论变成可共同协作的代理工作区；公共预览版需付费计划并消耗AI积分，仓库管理员还可为Copilot创建的PR增设额外审批，确保人工监督。",
-        "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 70,
-      "persona_review": "团队协作场景能用上，但只影响 Teams 用户，等具体上手再说。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
     {
       "story_id": "story_06a27d0d7448",
       "title": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
@@ -218,21 +48,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7635,
-      "importance": 0.7635,
-      "importance_score": 0.7635,
+      "score": 0.7419,
+      "importance": 0.7419,
+      "importance_score": 0.7419,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.71,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9941,
+        "recency": 0.8737,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-22T14:13:48Z",
       "latest_at": "2026-08-22T14:13:48Z",
@@ -254,768 +83,765 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
+        "scored_at": "2026-08-22T23:43:44.736424Z"
       }
     },
     {
-      "story_id": "story_6b026b4e90dc",
-      "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
-      "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
-      "primary_url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
+      "story_id": "story_8a2541a1bf06",
+      "title": "为什么你身边的LLM看起来比实际更“笨”",
+      "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+      "primary_url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+      "source": "forum.level1techs.com",
+      "source_name": "Buzzing",
       "sources": [
         {
-          "id": "cc44bb73c911c9a40dc2229a9e642db5b83bc00f",
-          "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
-          "title_zh": "更好的被屏蔽用户管理工具",
-          "title_en": "Better tools for managing blocked users",
-          "title_original": "Better tools for managing blocked users",
+          "id": "3bdc741a631b5a9943ec9c441290a79bdf5e22e7",
+          "title": "为什么你身边的LLM看起来比实际更“笨”",
+          "title_zh": "为什么你身边的LLM看起来比实际更“笨”",
+          "title_en": null,
+          "title_original": "为什么你身边的LLM看起来比实际更“笨”",
           "summary": null,
-          "recommend_reason_zh": "GitHub更新了屏蔽用户管理功能，支持按用户名、全名或邮箱搜索，并可排序和分页长列表，同时清晰区分搜索与屏蔽操作，避免误封。",
-          "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T14:43:36Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "cc44bb73c911c9a40dc2229a9e642db5b83bc00f",
-          "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
-          "title_zh": "更好的被屏蔽用户管理工具",
-          "title_en": "Better tools for managing blocked users",
-          "title_original": "Better tools for managing blocked users",
-          "summary": null,
-          "recommend_reason_zh": "GitHub更新了屏蔽用户管理功能，支持按用户名、全名或邮箱搜索，并可排序和分页长列表，同时清晰区分搜索与屏蔽操作，避免误封。",
-          "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-21T14:43:36Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7914,
-      "importance": 0.7914,
-      "importance_score": 0.7914,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.708,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-21T14:43:36Z",
-      "latest_at": "2026-08-21T14:43:36Z",
-      "primary_item": {
-        "id": "cc44bb73c911c9a40dc2229a9e642db5b83bc00f",
-        "title": "更好的被屏蔽用户管理工具 / Better tools for managing blocked users",
-        "title_zh": "更好的被屏蔽用户管理工具",
-        "title_en": "Better tools for managing blocked users",
-        "title_original": "Better tools for managing blocked users",
-        "summary": null,
-        "recommend_reason_zh": "GitHub更新了屏蔽用户管理功能，支持按用户名、全名或邮箱搜索，并可排序和分页长列表，同时清晰区分搜索与屏蔽操作，避免误封。",
-        "url": "https://github.blog/changelog/2026-08-21-better-tools-for-managing-blocked-users",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 60,
-      "persona_review": "平台管理功能优化，对AI开发无直接帮助，日常用GitHub可顺手留意。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
-    {
-      "story_id": "story_6330aea85a01",
-      "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-      "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
-      "primary_url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
-      "source": "Claude：Blog（网页）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "dfc628933c54c7064a20996ac1c3d860e718d025",
-          "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_zh": "Claude Mythos 5 网络安全能力扩展至更多防御者",
-          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "summary": "Anthropic 宣布 Claude Mythos 5 现已集成至 Claude Security，并即将登陆合作伙伴的网络安全防御工具。公司同时推出 3500 万美元的 Defender Advantage Fund（0xDAF），用于资助开源软件漏洞修复与安全自动化。",
-          "recommend_reason_zh": "本文介绍Claude Mythos 5现已在Claude Security中可用，并即将集成至合作伙伴的防御工具；同时推出3500万美元基金支持开源软件安全，并扩大Cyber Verification Program，让更多防御者安全使用前沿模型。",
-          "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-21T17:58:29.461000Z"
+          "recommend_reason_zh": "本文通过系列实验揭示LLM推理中实现细节的影响，指出量化版本与参考实现的差距，并建议用terminal bench等基准测试衡量真实性能。",
+          "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+          "source": "forum.level1techs.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-22T22:29:26.810000Z"
         },
         {
-          "id": "971dde61ec78c8703764ec06ef6c60b4d8ec5efb",
-          "title": "让更多防御者用上 Claude Mythos 5 的网络安全能力 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_zh": "让更多防御者用上 Claude Mythos 5 的网络安全能力",
-          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "id": "599a31a9650c619bc4ceceb56bd012aa1be1e2fd",
+          "title": "为什么你的本地LLM显得比实际更笨？ / Why your local LLM feels dumber than it is",
+          "title_zh": "为什么你的本地LLM显得比实际更笨？",
+          "title_en": "Why your local LLM feels dumber than it is",
+          "title_original": "Why your local LLM feels dumber than it is",
           "summary": null,
-          "recommend_reason_zh": "本文记录Anthropic将Claude Mythos 5集成至安全产品引发的争议：有用户称安全事故中ChatGPT和Claude毫无作用，改用grok才解决问题，并质疑其合作模式。",
-          "url": "https://news.ycombinator.com/item?id=49392331",
+          "recommend_reason_zh": "这篇“Why your local LLM feels dumber than it is”的专文，拆解了本地模型显得更笨的成因，教你正确评估模型能力，避免因错误配置而低估它。",
+          "url": "https://news.ycombinator.com/item?id=49402232",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-21T20:41:57.600000Z"
+          "published_at": "2026-08-22T20:40:47.378000Z"
+        },
+        {
+          "id": "b55232b916abe6ce04bd936a2b8bc550ab63e6e7",
+          "title": "为什么你身边的LLM看起来比实际更“笨” / Why your local LLM feels dumber than it is",
+          "title_zh": "为什么你身边的LLM看起来比实际更“笨”",
+          "title_en": "Why your local LLM feels dumber than it is",
+          "title_original": "Why your local LLM feels dumber than it is",
+          "summary": null,
+          "recommend_reason_zh": "本地LLM显得变笨，常非模型本身问题，而是推理实现差异所致：不同GPU代际和指令集令token计算的数学过程不同。作者以reference implementation为参照，建议用terminal bench、hle、SWEthis等基准测试替代零样本提示词判断。",
+          "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-22T18:14:16Z"
         }
       ],
-      "source_count": 2,
+      "source_count": 3,
       "source_names": [
-        "Claude：Blog（网页）",
+        "Hacker News",
+        "forum.level1techs.com",
         "hackernews"
       ],
       "items": [
         {
-          "id": "dfc628933c54c7064a20996ac1c3d860e718d025",
-          "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_zh": "Claude Mythos 5 网络安全能力扩展至更多防御者",
-          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "summary": "Anthropic 宣布 Claude Mythos 5 现已集成至 Claude Security，并即将登陆合作伙伴的网络安全防御工具。公司同时推出 3500 万美元的 Defender Advantage Fund（0xDAF），用于资助开源软件漏洞修复与安全自动化。",
-          "recommend_reason_zh": "本文介绍Claude Mythos 5现已在Claude Security中可用，并即将集成至合作伙伴的防御工具；同时推出3500万美元基金支持开源软件安全，并扩大Cyber Verification Program，让更多防御者安全使用前沿模型。",
-          "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-21T17:58:29.461000Z"
+          "id": "3bdc741a631b5a9943ec9c441290a79bdf5e22e7",
+          "title": "为什么你身边的LLM看起来比实际更“笨”",
+          "title_zh": "为什么你身边的LLM看起来比实际更“笨”",
+          "title_en": null,
+          "title_original": "为什么你身边的LLM看起来比实际更“笨”",
+          "summary": null,
+          "recommend_reason_zh": "本文通过系列实验揭示LLM推理中实现细节的影响，指出量化版本与参考实现的差距，并建议用terminal bench等基准测试衡量真实性能。",
+          "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+          "source": "forum.level1techs.com",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-22T22:29:26.810000Z"
         },
         {
-          "id": "971dde61ec78c8703764ec06ef6c60b4d8ec5efb",
-          "title": "让更多防御者用上 Claude Mythos 5 的网络安全能力 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_zh": "让更多防御者用上 Claude Mythos 5 的网络安全能力",
-          "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-          "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
+          "id": "599a31a9650c619bc4ceceb56bd012aa1be1e2fd",
+          "title": "为什么你的本地LLM显得比实际更笨？ / Why your local LLM feels dumber than it is",
+          "title_zh": "为什么你的本地LLM显得比实际更笨？",
+          "title_en": "Why your local LLM feels dumber than it is",
+          "title_original": "Why your local LLM feels dumber than it is",
           "summary": null,
-          "recommend_reason_zh": "本文记录Anthropic将Claude Mythos 5集成至安全产品引发的争议：有用户称安全事故中ChatGPT和Claude毫无作用，改用grok才解决问题，并质疑其合作模式。",
-          "url": "https://news.ycombinator.com/item?id=49392331",
+          "recommend_reason_zh": "这篇“Why your local LLM feels dumber than it is”的专文，拆解了本地模型显得更笨的成因，教你正确评估模型能力，避免因错误配置而低估它。",
+          "url": "https://news.ycombinator.com/item?id=49402232",
           "source": "hackernews",
           "source_name": "NewsNow",
           "site_id": "newsnow",
-          "published_at": "2026-08-21T20:41:57.600000Z"
+          "published_at": "2026-08-22T20:40:47.378000Z"
+        },
+        {
+          "id": "b55232b916abe6ce04bd936a2b8bc550ab63e6e7",
+          "title": "为什么你身边的LLM看起来比实际更“笨” / Why your local LLM feels dumber than it is",
+          "title_zh": "为什么你身边的LLM看起来比实际更“笨”",
+          "title_en": "Why your local LLM feels dumber than it is",
+          "title_original": "Why your local LLM feels dumber than it is",
+          "summary": null,
+          "recommend_reason_zh": "本地LLM显得变笨，常非模型本身问题，而是推理实现差异所致：不同GPU代际和指令集令token计算的数学过程不同。作者以reference implementation为参照，建议用terminal bench、hle、SWEthis等基准测试替代零样本提示词判断。",
+          "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-22T18:14:16Z"
         }
       ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7132,
-      "importance": 0.7132,
-      "importance_score": 0.7132,
-      "importance_label": "值得关注",
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.568,
+      "importance": 0.568,
+      "importance_score": 0.568,
+      "importance_label": "多源热议",
       "importance_breakdown": {
-        "editorial": 0.61,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.742,
-        "story_heat": 0.25
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9844,
+        "story_heat": 0.5
       },
-      "category": "watch",
+      "category": "multi_source",
       "reasons": [
-        "multi_source",
-        "high_ai_relevance"
+        "multi_source"
       ],
-      "earliest_at": "2026-08-21T17:58:29.461000Z",
-      "latest_at": "2026-08-21T20:41:57.600000Z",
+      "earliest_at": "2026-08-22T18:14:16Z",
+      "latest_at": "2026-08-22T22:29:26.810000Z",
       "primary_item": {
-        "id": "dfc628933c54c7064a20996ac1c3d860e718d025",
-        "title": "Claude Mythos 5 网络安全能力扩展至更多防御者 / Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-        "title_zh": "Claude Mythos 5 网络安全能力扩展至更多防御者",
-        "title_en": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-        "title_original": "Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders",
-        "summary": "Anthropic 宣布 Claude Mythos 5 现已集成至 Claude Security，并即将登陆合作伙伴的网络安全防御工具。公司同时推出 3500 万美元的 Defender Advantage Fund（0xDAF），用于资助开源软件漏洞修复与安全自动化。",
-        "recommend_reason_zh": "本文介绍Claude Mythos 5现已在Claude Security中可用，并即将集成至合作伙伴的防御工具；同时推出3500万美元基金支持开源软件安全，并扩大Cyber Verification Program，让更多防御者安全使用前沿模型。",
-        "url": "https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders",
-        "source": "Claude：Blog（网页）",
-        "source_name": "AI HOT"
+        "id": "3bdc741a631b5a9943ec9c441290a79bdf5e22e7",
+        "title": "为什么你身边的LLM看起来比实际更“笨”",
+        "title_zh": "为什么你身边的LLM看起来比实际更“笨”",
+        "title_en": null,
+        "title_original": "为什么你身边的LLM看起来比实际更“笨”",
+        "summary": null,
+        "recommend_reason_zh": "本文通过系列实验揭示LLM推理中实现细节的影响，指出量化版本与参考实现的差距，并建议用terminal bench等基准测试衡量真实性能。",
+        "url": "https://forum.level1techs.com/t/why-your-local-llm-feels-dumber-than-it-is/253917",
+        "source": "forum.level1techs.com",
+        "source_name": "Buzzing"
       },
       "persona_id": "pragmatic",
       "persona_score": 55,
-      "persona_review": "安全能力扩展可能涉及权限开放，先查自己的 API 版本是否可用。",
+      "persona_review": "解释本地模型表现差的常见原因，适合排查自己的部署配置，但无新工具。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
+        "scored_at": "2026-08-22T23:43:44.736424Z"
       }
     },
     {
-      "story_id": "story_cb8188eda400",
-      "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-      "url": "https://news.ycombinator.com/item?id=49390463",
-      "primary_url": "https://news.ycombinator.com/item?id=49390463",
+      "story_id": "story_ede39af7c879",
+      "title": "MCP更新路线图 聚焦未来规范发布重点",
+      "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+      "primary_url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+      "source": "blog.modelcontextprotocol.io",
+      "source_name": "Buzzing",
+      "sources": [
+        {
+          "id": "4a6634b6d5a9ea7db1689332343baee2481ebb88",
+          "title": "MCP更新路线图 聚焦未来规范发布重点",
+          "title_zh": "MCP更新路线图 聚焦未来规范发布重点",
+          "title_en": null,
+          "title_original": "新的MCP路线图",
+          "summary": null,
+          "recommend_reason_zh": "MCP新版路线图聚焦五领域，明确推进server-initiated events、Tasks扩展SEP-2663，并计划以DPoP和Workload Identity Federation标准化agent身份认证。",
+          "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+          "source": "blog.modelcontextprotocol.io",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-22T17:09:20.269000Z"
+        },
+        {
+          "id": "a35f67c1e673bf06079df9d1a4aac299036b2ebf",
+          "title": "MCP更新路线图，聚焦后续规范发布",
+          "title_zh": "MCP更新路线图，聚焦后续规范发布",
+          "title_en": "New MCP Roadmap",
+          "title_original": "New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "MCP发布新版路线图，聚焦五大优先领域，包括server-initiated events、agent identity及DPoP标准化，并展望2026-07-28发布后统一传输模式，值得关注。",
+          "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-22T13:31:34Z"
+        },
+        {
+          "id": "9e684754ff065321bb00f0fbac4c424271f909be",
+          "title": "MCP公布新路线图，聚焦五大优先领域",
+          "title_zh": "MCP公布新路线图，聚焦五大优先领域",
+          "title_en": "The New MCP Roadmap",
+          "title_original": "The New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "新路线图聚焦服务器主动事件、代理身份与工具结果改进，并强调2026-07-28版本后MCP服务器可像普通HTTP服务一样部署。",
+          "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-22T13:31:34Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News",
+        "Hacker News (黑客新闻)",
+        "blog.modelcontextprotocol.io"
+      ],
+      "items": [
+        {
+          "id": "4a6634b6d5a9ea7db1689332343baee2481ebb88",
+          "title": "MCP更新路线图 聚焦未来规范发布重点",
+          "title_zh": "MCP更新路线图 聚焦未来规范发布重点",
+          "title_en": null,
+          "title_original": "新的MCP路线图",
+          "summary": null,
+          "recommend_reason_zh": "MCP新版路线图聚焦五领域，明确推进server-initiated events、Tasks扩展SEP-2663，并计划以DPoP和Workload Identity Federation标准化agent身份认证。",
+          "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+          "source": "blog.modelcontextprotocol.io",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-22T17:09:20.269000Z"
+        },
+        {
+          "id": "a35f67c1e673bf06079df9d1a4aac299036b2ebf",
+          "title": "MCP更新路线图，聚焦后续规范发布",
+          "title_zh": "MCP更新路线图，聚焦后续规范发布",
+          "title_en": "New MCP Roadmap",
+          "title_original": "New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "MCP发布新版路线图，聚焦五大优先领域，包括server-initiated events、agent identity及DPoP标准化，并展望2026-07-28发布后统一传输模式，值得关注。",
+          "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-22T13:31:34Z"
+        },
+        {
+          "id": "9e684754ff065321bb00f0fbac4c424271f909be",
+          "title": "MCP公布新路线图，聚焦五大优先领域",
+          "title_zh": "MCP公布新路线图，聚焦五大优先领域",
+          "title_en": "The New MCP Roadmap",
+          "title_original": "The New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "新路线图聚焦服务器主动事件、代理身份与工具结果改进，并强调2026-07-28版本后MCP服务器可像普通HTTP服务一样部署。",
+          "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-22T13:31:34Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5549,
+      "importance": 0.5549,
+      "importance_score": 0.5549,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9114,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-22T13:31:34Z",
+      "latest_at": "2026-08-22T17:09:20.269000Z",
+      "primary_item": {
+        "id": "4a6634b6d5a9ea7db1689332343baee2481ebb88",
+        "title": "MCP更新路线图 聚焦未来规范发布重点",
+        "title_zh": "MCP更新路线图 聚焦未来规范发布重点",
+        "title_en": null,
+        "title_original": "新的MCP路线图",
+        "summary": null,
+        "recommend_reason_zh": "MCP新版路线图聚焦五领域，明确推进server-initiated events、Tasks扩展SEP-2663，并计划以DPoP和Workload Identity Federation标准化agent身份认证。",
+        "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
+        "source": "blog.modelcontextprotocol.io",
+        "source_name": "Buzzing"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 70,
+      "persona_review": "规范方向明确但暂无新版本可上手，集成方先观望。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-22T23:43:44.736424Z"
+      }
+    },
+    {
+      "story_id": "story_90609bd717c3",
+      "title": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作 / Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+      "url": "https://news.ycombinator.com/item?id=49399941",
+      "primary_url": "https://news.ycombinator.com/item?id=49399941",
       "source": "hackernews",
       "source_name": "NewsNow",
       "sources": [
         {
-          "id": "972600d94f86b6a673f78e662b72cb49d6b97f80",
-          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
-          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "id": "a6b22bf0dbe731ef332786f00dfa983c739c672e",
+          "title": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作 / Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_zh": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作",
+          "title_en": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_original": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "summary": null,
+          "recommend_reason_zh": "作者预测，到2026年8月，用1000美元AI积分即可制作一小时以上长片；他用2000美元Mac对比3亿美元蜘蛛侠续集，呼吁小团队抓住YouTube时刻。",
+          "url": "https://news.ycombinator.com/item?id=49399941",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T15:10:41.142000Z"
+        },
+        {
+          "id": "1fcaa887e5d59edfbbabed5b57999b2ee355d456",
+          "title": "自掘坟墓：好莱坞创意人员训练AI来替代自己 / Digging the grave of my job: Hollywood creatives training AI to do their jobs",
+          "title_zh": "自掘坟墓：好莱坞创意人员训练AI来替代自己",
+          "title_en": "Digging the grave of my job: Hollywood creatives training AI to do their jobs",
+          "title_original": "Digging the grave of my job: Hollywood creatives training AI to do their jobs",
+          "summary": null,
+          "recommend_reason_zh": "好莱坞获奖编剧、导演以时薪12至200美元为Anthropic和OpenAI训练AI，教其写剧本、排拍摄日程；Netflix 2026年1000部作品中已有300部用AI。他们自嘲“亲手挖自己职业的坟墓”。",
+          "url": "https://www.theguardian.com/technology/2026/aug/22/the-hollywood-creatives-training-ai-to-do-their-jobs",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-22T14:13:05Z"
+        },
+        {
+          "id": "15664614551c14a0ad235475e6998fd289277aa8",
+          "title": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作 / Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_zh": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作",
+          "title_en": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_original": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
           "summary": null,
           "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49390463",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T18:31:56.086000Z"
-        },
-        {
-          "id": "3a8930b05c94b8125cf370f22e93906d7609e740",
-          "title": "自托管AI软件工厂难敌前沿模型",
-          "title_zh": "自托管AI软件工厂难敌前沿模型",
-          "title_en": "A self hosted AI software factory",
-          "title_original": "A self hosted AI software factory",
-          "summary": null,
-          "recommend_reason_zh": "自托管AI软件工厂实测：作者用R9700跑编码模型，qwen赢过8B以下对手，但复杂任务经历三次上下文压缩，房间过热叫停；对比Claude Code的20分钟频繁打扰，反思Hermes式AI代理能否真正产出可卖产品。",
-          "url": "https://news.ycombinator.com/item?id=49390463",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T17:31:53.537000Z"
-        },
-        {
-          "id": "c6b9e7419474d9b57041c9f770b2d29589425eaa",
-          "title": "自托管AI软件工厂：一条提示词自动开发并部署应用",
-          "title_zh": "自托管AI软件工厂：一条提示词自动开发并部署应用",
-          "title_en": "A self hosted AI software factory",
-          "title_original": "A self hosted AI software factory",
-          "summary": null,
-          "recommend_reason_zh": "作者用一台2021年i7旧服务器和20英镑Codex订阅，搭建了全自主的沙盒软件工厂：仅靠一句提示就自动创建仓库、编写应用与测试、通过CI、配置Postgres并完成HTTPS部署，全程无需人工干预。",
-          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T16:27:52Z"
-        },
-        {
-          "id": "6f0736b2d5d48e16d13b5bebe74c2284c0ab9137",
-          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
-          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "summary": null,
-          "recommend_reason_zh": "作者用2021年10代i7/32GB RAM的eBay二手服务器自托管，以£20 Codex订阅驱动单一prompt，自动完成建repo、写应用与测试、CI变绿、配置Postgres并部署HTTPS应用，全程无需人工干预。",
-          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
+          "url": "https://www.theguardian.com/technology/2026/aug/22/the-hollywood-creatives-training-ai-to-do-their-jobs",
           "source": "Hacker News · 24h最热",
           "source_name": "Zeli",
           "site_id": "zeli",
-          "published_at": "2026-08-21T16:27:52Z"
+          "published_at": "2026-08-22T14:13:05Z"
         }
       ],
-      "source_count": 4,
+      "source_count": 3,
       "source_names": [
-        "Hacker News",
+        "Hacker News (黑客新闻)",
         "Hacker News · 24h最热",
         "hackernews"
       ],
       "items": [
         {
-          "id": "972600d94f86b6a673f78e662b72cb49d6b97f80",
-          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
-          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+          "id": "a6b22bf0dbe731ef332786f00dfa983c739c672e",
+          "title": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作 / Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_zh": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作",
+          "title_en": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_original": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "summary": null,
+          "recommend_reason_zh": "作者预测，到2026年8月，用1000美元AI积分即可制作一小时以上长片；他用2000美元Mac对比3亿美元蜘蛛侠续集，呼吁小团队抓住YouTube时刻。",
+          "url": "https://news.ycombinator.com/item?id=49399941",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T15:10:41.142000Z"
+        },
+        {
+          "id": "1fcaa887e5d59edfbbabed5b57999b2ee355d456",
+          "title": "自掘坟墓：好莱坞创意人员训练AI来替代自己 / Digging the grave of my job: Hollywood creatives training AI to do their jobs",
+          "title_zh": "自掘坟墓：好莱坞创意人员训练AI来替代自己",
+          "title_en": "Digging the grave of my job: Hollywood creatives training AI to do their jobs",
+          "title_original": "Digging the grave of my job: Hollywood creatives training AI to do their jobs",
+          "summary": null,
+          "recommend_reason_zh": "好莱坞获奖编剧、导演以时薪12至200美元为Anthropic和OpenAI训练AI，教其写剧本、排拍摄日程；Netflix 2026年1000部作品中已有300部用AI。他们自嘲“亲手挖自己职业的坟墓”。",
+          "url": "https://www.theguardian.com/technology/2026/aug/22/the-hollywood-creatives-training-ai-to-do-their-jobs",
+          "source": "Hacker News (黑客新闻)",
+          "source_name": "Info Flow",
+          "site_id": "iris",
+          "published_at": "2026-08-22T14:13:05Z"
+        },
+        {
+          "id": "15664614551c14a0ad235475e6998fd289277aa8",
+          "title": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作 / Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_zh": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作",
+          "title_en": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+          "title_original": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
           "summary": null,
           "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49390463",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T18:31:56.086000Z"
-        },
-        {
-          "id": "3a8930b05c94b8125cf370f22e93906d7609e740",
-          "title": "自托管AI软件工厂难敌前沿模型",
-          "title_zh": "自托管AI软件工厂难敌前沿模型",
-          "title_en": "A self hosted AI software factory",
-          "title_original": "A self hosted AI software factory",
-          "summary": null,
-          "recommend_reason_zh": "自托管AI软件工厂实测：作者用R9700跑编码模型，qwen赢过8B以下对手，但复杂任务经历三次上下文压缩，房间过热叫停；对比Claude Code的20分钟频繁打扰，反思Hermes式AI代理能否真正产出可卖产品。",
-          "url": "https://news.ycombinator.com/item?id=49390463",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T17:31:53.537000Z"
-        },
-        {
-          "id": "c6b9e7419474d9b57041c9f770b2d29589425eaa",
-          "title": "自托管AI软件工厂：一条提示词自动开发并部署应用",
-          "title_zh": "自托管AI软件工厂：一条提示词自动开发并部署应用",
-          "title_en": "A self hosted AI software factory",
-          "title_original": "A self hosted AI software factory",
-          "summary": null,
-          "recommend_reason_zh": "作者用一台2021年i7旧服务器和20英镑Codex订阅，搭建了全自主的沙盒软件工厂：仅靠一句提示就自动创建仓库、编写应用与测试、通过CI、配置Postgres并完成HTTPS部署，全程无需人工干预。",
-          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T16:27:52Z"
-        },
-        {
-          "id": "6f0736b2d5d48e16d13b5bebe74c2284c0ab9137",
-          "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
-          "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-          "summary": null,
-          "recommend_reason_zh": "作者用2021年10代i7/32GB RAM的eBay二手服务器自托管，以£20 Codex订阅驱动单一prompt，自动完成建repo、写应用与测试、CI变绿、配置Postgres并部署HTTPS应用，全程无需人工干预。",
-          "url": "https://blog.jakesaunders.dev/building-an-almost-fully-self-hosted-sandboxed-agentic-software-factory",
+          "url": "https://www.theguardian.com/technology/2026/aug/22/the-hollywood-creatives-training-ai-to-do-their-jobs",
           "source": "Hacker News · 24h最热",
           "source_name": "Zeli",
           "site_id": "zeli",
-          "published_at": "2026-08-21T16:27:52Z"
+          "published_at": "2026-08-22T14:13:05Z"
         }
       ],
-      "item_count": 4,
-      "duplicate_count": 4,
-      "score": 0.5504,
-      "importance": 0.5504,
-      "importance_score": 0.5504,
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5502,
+      "importance": 0.5502,
+      "importance_score": 0.5502,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.748,
-        "story_heat": 0.75
+        "recency": 0.8858,
+        "story_heat": 0.5
       },
       "category": "multi_source",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-08-21T16:27:52Z",
-      "latest_at": "2026-08-21T18:31:56.086000Z",
+      "earliest_at": "2026-08-22T14:13:05Z",
+      "latest_at": "2026-08-22T15:10:41.142000Z",
       "primary_item": {
-        "id": "972600d94f86b6a673f78e662b72cb49d6b97f80",
-        "title": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂 / Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-        "title_zh": "构建一个（几乎）完全自托管、沙箱化的 Agent 软件工厂",
-        "title_en": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
-        "title_original": "Building an (almost) fully self-hosted, sandboxed, agentic software factory",
+        "id": "a6b22bf0dbe731ef332786f00dfa983c739c672e",
+        "title": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作 / Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+        "title_zh": "自掘技能坟墓：好莱坞创意人员正训练AI取代自己的工作",
+        "title_en": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
+        "title_original": "Digging the grave of my skills: Hollywood creatives training AI to do their jobs",
         "summary": null,
-        "recommend_reason_zh": null,
-        "url": "https://news.ycombinator.com/item?id=49390463",
+        "recommend_reason_zh": "作者预测，到2026年8月，用1000美元AI积分即可制作一小时以上长片；他用2000美元Mac对比3亿美元蜘蛛侠续集，呼吁小团队抓住YouTube时刻。",
+        "url": "https://news.ycombinator.com/item?id=49399941",
         "source": "hackernews",
         "source_name": "NewsNow"
       },
       "persona_id": "pragmatic",
-      "persona_score": 72,
-      "persona_review": "自托管 Agent 流水线有实操参考，想搭私有化 CI/Agent 的可以看。",
+      "persona_score": 30,
+      "persona_review": "创意行业自掘坟墓，跟开发者关系不大，看看就行。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
+        "scored_at": "2026-08-22T23:43:44.736424Z"
       }
     },
     {
-      "story_id": "story_ed2f5c618aab",
-      "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-      "url": "https://canews24.online/?p=71",
-      "primary_url": "https://canews24.online/?p=71",
-      "source": "canews24.online",
+      "story_id": "story_ce8fd18a4317",
+      "title": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
+      "url": "https://twitter.com/argofowl/status/2091150597374537729",
+      "primary_url": "https://twitter.com/argofowl/status/2091150597374537729",
+      "source": "twitter.com",
       "source_name": "Buzzing",
       "sources": [
         {
-          "id": "ff26426a8adb8ff4a7c31a6ac9149850259a2625",
-          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "id": "756cbab0cafb5cc40cb78549659cffae8f5b09fa",
+          "title": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
+          "title_zh": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
           "title_en": null,
-          "title_original": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
+          "title_original": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
           "summary": null,
-          "recommend_reason_zh": "一项由Stockholm University与University of Hong Kong学者完成的追踪27,000名中国学生的研究发现，使用Doubao、DeepSeek等AI工具者六个月内作业成绩平均提高18%，但在无AI辅助的考试中得分比未使用者低20%。",
-          "url": "https://canews24.online/?p=71",
-          "source": "canews24.online",
+          "recommend_reason_zh": "Anthropic 正针对 Claude Code 2.1.236+ 的 fable 5 sessions 启动实验，压缩工作量等级（effort scale），并确认是服务端改动而非应用端；旧版本与 Opus 5 不受影响。这是 A/B 测试，所以不是每个人都会看到“High”变成“Low”。",
+          "url": "https://twitter.com/argofowl/status/2091150597374537729",
+          "source": "twitter.com",
           "source_name": "Buzzing",
           "site_id": "buzzing",
-          "published_at": "2026-08-21T17:25:45.772000Z"
+          "published_at": "2026-08-22T21:09:21.713000Z"
         },
         {
-          "id": "a06a40f4ba95423013d77e6aca040dac3e57e8f5",
-          "title": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_zh": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20%",
-          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
+          "id": "929739c0677411630477ec750d3d6e3b86b85881",
+          "title": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试 / Anthropic appears to be A/B testing reduced effort levels in Claude Code",
+          "title_zh": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
+          "title_en": "Anthropic appears to be A/B testing reduced effort levels in Claude Code",
+          "title_original": "Anthropic appears to be A/B testing reduced effort levels in Claude Code",
           "summary": null,
-          "recommend_reason_zh": "一项研究显示，使用AI辅助完成作业使分数提高18%，但随后考试成绩却下降20%，揭示AI工具可能掩盖真实学习效果，值得关注其背后的教育隐患。",
-          "url": "https://news.ycombinator.com/item?id=49389565",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T16:31:50.459000Z"
-        },
-        {
-          "id": "b3cf7db966841b278a436f05c884dd38384c456c",
-          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "summary": null,
-          "recommend_reason_zh": "这项追踪27,000名中国12-18岁学生的研究显示，使用Doubao、DeepSeek等AI工具者作业分半年涨18%，但无AI考试中比不用AI的同伴低20%，凸显AI提升作业分却削弱真实掌握的风险。",
-          "url": "https://canews24.online/?p=71",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T15:25:42Z"
-        },
-        {
-          "id": "551bbf42d27367ceb414677e5bb42f35ebc915b3",
-          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI boosted homework scores, then exam scores dropped: Study",
-          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "title_en": "AI boosted homework scores, then exam scores dropped: Study",
-          "title_original": "AI boosted homework scores, then exam scores dropped: Study",
-          "summary": null,
-          "recommend_reason_zh": "一项追踪中国2.7万名学生的研究发现，80%学生使用Doubao、DeepSeek等AI工具后作业成绩平均提升18%，但在无AI辅助的考试中反而比不用AI的同学低20%，凸显AI辅助的隐患。",
-          "url": "https://canews24.online/?p=71",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T15:25:42Z"
-        }
-      ],
-      "source_count": 4,
-      "source_names": [
-        "Hacker News",
-        "Hacker News · 24h最热",
-        "canews24.online",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "ff26426a8adb8ff4a7c31a6ac9149850259a2625",
-          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "title_en": null,
-          "title_original": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "summary": null,
-          "recommend_reason_zh": "一项由Stockholm University与University of Hong Kong学者完成的追踪27,000名中国学生的研究发现，使用Doubao、DeepSeek等AI工具者六个月内作业成绩平均提高18%，但在无AI辅助的考试中得分比未使用者低20%。",
-          "url": "https://canews24.online/?p=71",
-          "source": "canews24.online",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-21T17:25:45.772000Z"
-        },
-        {
-          "id": "a06a40f4ba95423013d77e6aca040dac3e57e8f5",
-          "title": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_zh": "研究显示，AI使作业成绩提升18%，但考试成绩却下降20%",
-          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "summary": null,
-          "recommend_reason_zh": "一项研究显示，使用AI辅助完成作业使分数提高18%，但随后考试成绩却下降20%，揭示AI工具可能掩盖真实学习效果，值得关注其背后的教育隐患。",
-          "url": "https://news.ycombinator.com/item?id=49389565",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T16:31:50.459000Z"
-        },
-        {
-          "id": "b3cf7db966841b278a436f05c884dd38384c456c",
-          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "title_en": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "title_original": "AI Boosted Homework Scores by 18% – Then Exam Scores Dropped 20%, Study Shows",
-          "summary": null,
-          "recommend_reason_zh": "这项追踪27,000名中国12-18岁学生的研究显示，使用Doubao、DeepSeek等AI工具者作业分半年涨18%，但无AI考试中比不用AI的同伴低20%，凸显AI提升作业分却削弱真实掌握的风险。",
-          "url": "https://canews24.online/?p=71",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T15:25:42Z"
-        },
-        {
-          "id": "551bbf42d27367ceb414677e5bb42f35ebc915b3",
-          "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20% / AI boosted homework scores, then exam scores dropped: Study",
-          "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-          "title_en": "AI boosted homework scores, then exam scores dropped: Study",
-          "title_original": "AI boosted homework scores, then exam scores dropped: Study",
-          "summary": null,
-          "recommend_reason_zh": "一项追踪中国2.7万名学生的研究发现，80%学生使用Doubao、DeepSeek等AI工具后作业成绩平均提升18%，但在无AI辅助的考试中反而比不用AI的同学低20%，凸显AI辅助的隐患。",
-          "url": "https://canews24.online/?p=71",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T15:25:42Z"
-        }
-      ],
-      "item_count": 4,
-      "duplicate_count": 4,
-      "score": 0.5483,
-      "importance": 0.5483,
-      "importance_score": 0.5483,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7361,
-        "story_heat": 0.75
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T15:25:42Z",
-      "latest_at": "2026-08-21T17:25:45.772000Z",
-      "primary_item": {
-        "id": "ff26426a8adb8ff4a7c31a6ac9149850259a2625",
-        "title": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-        "title_zh": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-        "title_en": null,
-        "title_original": "研究表明：人工智能使作业成绩提高了18%——随后考试成绩却下降了20%",
-        "summary": null,
-        "recommend_reason_zh": "一项由Stockholm University与University of Hong Kong学者完成的追踪27,000名中国学生的研究发现，使用Doubao、DeepSeek等AI工具者六个月内作业成绩平均提高18%，但在无AI辅助的考试中得分比未使用者低20%。",
-        "url": "https://canews24.online/?p=71",
-        "source": "canews24.online",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "教育AI开发者可参考：短期提分易，长期能力需设计验证。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
-    {
-      "story_id": "story_63e008230e15",
-      "title": "当 GPU 读取内存时会发生什么",
-      "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-      "primary_url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-      "source": "blog.doubleword.ai",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "66b1814af6e09df1a5e41162d4f667e018909d83",
-          "title": "当 GPU 读取内存时会发生什么",
-          "title_zh": "当 GPU 读取内存时会发生什么",
-          "title_en": null,
-          "title_original": "当 GPU 读取内存时会发生什么",
-          "summary": null,
-          "recommend_reason_zh": "想搞懂GPU内存读取？本文用实测时序逆向追踪RTX 4090上一条LDG.E指令的完整旅程：每通道4字节请求，经4个32字节扇区、一次地址转换、crossbar跨越，落入36个L2切片之一，最终在DRAM中做4次列读取。",
-          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-          "source": "blog.doubleword.ai",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-22T01:41:21.550000Z"
-        },
-        {
-          "id": "308cb247591c6e4fd39c9537327587fd876b63ad",
-          "title": "当 GPU 读取内存时会发生什么 / What happens when a GPU reads memory",
-          "title_zh": "当 GPU 读取内存时会发生什么",
-          "title_en": "What happens when a GPU reads memory",
-          "title_original": "What happens when a GPU reads memory",
-          "summary": null,
-          "recommend_reason_zh": "本文以RTX 4090为对象，逆向追踪LDG.E指令从寄存器、LSU到L2切片及DRAM的完整路径，通过硬件计时实验揭示四个32字节扇区、36个L2切片等未公开细节，适合关注GPU底层性能的读者。",
-          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T16:16:42Z"
+          "recommend_reason_zh": "Anthropic疑似在Claude Code 2.1.236+上对5个会话做A/B测试，缩小努力等级，旧版本和Opus 5不受影响。若你感觉‘high’像‘low’，这篇解读了这个服务端实验的细节。",
+          "url": "https://twitter.com/argofowl/status/2091150597374537729",
+          "source": "HN Algolia · AI 24h",
+          "source_name": "Hacker News",
+          "site_id": "hackernews",
+          "published_at": "2026-08-22T16:58:49Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News · 24h最热",
-        "blog.doubleword.ai"
+        "HN Algolia · AI 24h",
+        "twitter.com"
       ],
       "items": [
         {
-          "id": "66b1814af6e09df1a5e41162d4f667e018909d83",
-          "title": "当 GPU 读取内存时会发生什么",
-          "title_zh": "当 GPU 读取内存时会发生什么",
+          "id": "756cbab0cafb5cc40cb78549659cffae8f5b09fa",
+          "title": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
+          "title_zh": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
           "title_en": null,
-          "title_original": "当 GPU 读取内存时会发生什么",
+          "title_original": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
           "summary": null,
-          "recommend_reason_zh": "想搞懂GPU内存读取？本文用实测时序逆向追踪RTX 4090上一条LDG.E指令的完整旅程：每通道4字节请求，经4个32字节扇区、一次地址转换、crossbar跨越，落入36个L2切片之一，最终在DRAM中做4次列读取。",
-          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-          "source": "blog.doubleword.ai",
+          "recommend_reason_zh": "Anthropic 正针对 Claude Code 2.1.236+ 的 fable 5 sessions 启动实验，压缩工作量等级（effort scale），并确认是服务端改动而非应用端；旧版本与 Opus 5 不受影响。这是 A/B 测试，所以不是每个人都会看到“High”变成“Low”。",
+          "url": "https://twitter.com/argofowl/status/2091150597374537729",
+          "source": "twitter.com",
           "source_name": "Buzzing",
           "site_id": "buzzing",
-          "published_at": "2026-08-22T01:41:21.550000Z"
+          "published_at": "2026-08-22T21:09:21.713000Z"
         },
         {
-          "id": "308cb247591c6e4fd39c9537327587fd876b63ad",
-          "title": "当 GPU 读取内存时会发生什么 / What happens when a GPU reads memory",
-          "title_zh": "当 GPU 读取内存时会发生什么",
-          "title_en": "What happens when a GPU reads memory",
-          "title_original": "What happens when a GPU reads memory",
+          "id": "929739c0677411630477ec750d3d6e3b86b85881",
+          "title": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试 / Anthropic appears to be A/B testing reduced effort levels in Claude Code",
+          "title_zh": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
+          "title_en": "Anthropic appears to be A/B testing reduced effort levels in Claude Code",
+          "title_original": "Anthropic appears to be A/B testing reduced effort levels in Claude Code",
           "summary": null,
-          "recommend_reason_zh": "本文以RTX 4090为对象，逆向追踪LDG.E指令从寄存器、LSU到L2切片及DRAM的完整路径，通过硬件计时实验揭示四个32字节扇区、36个L2切片等未公开细节，适合关注GPU底层性能的读者。",
-          "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T16:16:42Z"
+          "recommend_reason_zh": "Anthropic疑似在Claude Code 2.1.236+上对5个会话做A/B测试，缩小努力等级，旧版本和Opus 5不受影响。若你感觉‘high’像‘low’，这篇解读了这个服务端实验的细节。",
+          "url": "https://twitter.com/argofowl/status/2091150597374537729",
+          "source": "HN Algolia · AI 24h",
+          "source_name": "Hacker News",
+          "site_id": "hackernews",
+          "published_at": "2026-08-22T16:58:49Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5151,
-      "importance": 0.5151,
-      "importance_score": 0.5151,
+      "score": 0.5396,
+      "importance": 0.5396,
+      "importance_score": 0.5396,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8294,
+        "recency": 0.9656,
         "story_heat": 0.25
       },
       "category": "watch",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-08-21T16:16:42Z",
-      "latest_at": "2026-08-22T01:41:21.550000Z",
+      "earliest_at": "2026-08-22T16:58:49Z",
+      "latest_at": "2026-08-22T21:09:21.713000Z",
       "primary_item": {
-        "id": "66b1814af6e09df1a5e41162d4f667e018909d83",
-        "title": "当 GPU 读取内存时会发生什么",
-        "title_zh": "当 GPU 读取内存时会发生什么",
+        "id": "756cbab0cafb5cc40cb78549659cffae8f5b09fa",
+        "title": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
+        "title_zh": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
         "title_en": null,
-        "title_original": "当 GPU 读取内存时会发生什么",
+        "title_original": "Anthropic 似乎正在对 Claude Code 中的工作量降低程度进行 A/B 测试",
         "summary": null,
-        "recommend_reason_zh": "想搞懂GPU内存读取？本文用实测时序逆向追踪RTX 4090上一条LDG.E指令的完整旅程：每通道4字节请求，经4个32字节扇区、一次地址转换、crossbar跨越，落入36个L2切片之一，最终在DRAM中做4次列读取。",
-        "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-        "source": "blog.doubleword.ai",
+        "recommend_reason_zh": "Anthropic 正针对 Claude Code 2.1.236+ 的 fable 5 sessions 启动实验，压缩工作量等级（effort scale），并确认是服务端改动而非应用端；旧版本与 Opus 5 不受影响。这是 A/B 测试，所以不是每个人都会看到“High”变成“Low”。",
+        "url": "https://twitter.com/argofowl/status/2091150597374537729",
+        "source": "twitter.com",
         "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 62,
-      "persona_review": "深入硬件底层，写GPU优化时能少踩坑，但非刚需。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
-    {
-      "story_id": "story_b1246b4b0729",
-      "title": "AI 助力家庭作业分数飙升，考试成绩却随之下滑 / AI Boosted Homework Scores, Then Exam Scores Dropped",
-      "url": "https://news.slashdot.org/story/26/08/21/1951227/ai-boosted-homework-scores-then-exam-scores-dropped",
-      "primary_url": "https://news.slashdot.org/story/26/08/21/1951227/ai-boosted-homework-scores-then-exam-scores-dropped",
-      "source": "Slashdot",
-      "source_name": "TechURLs",
-      "sources": [
-        {
-          "id": "11d756e585cde87457b7a7ab64787465dbf9847a",
-          "title": "AI 助力家庭作业分数飙升，考试成绩却随之下滑 / AI Boosted Homework Scores, Then Exam Scores Dropped",
-          "title_zh": "AI 助力家庭作业分数飙升，考试成绩却随之下滑",
-          "title_en": "AI Boosted Homework Scores, Then Exam Scores Dropped",
-          "title_original": "AI Boosted Homework Scores, Then Exam Scores Dropped",
-          "summary": null,
-          "recommend_reason_zh": "The Economist援引Chegg调查称80%富裕国家本科生用AI学习，英国达94%；但预印本研究发现，AI仅提升作业分，若压缩投入时长，考试分便随之下滑。",
-          "url": "https://news.slashdot.org/story/26/08/21/1951227/ai-boosted-homework-scores-then-exam-scores-dropped",
-          "source": "Slashdot",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T20:00:00Z"
-        },
-        {
-          "id": "db4894f377385d87a3519bb6ace4cd2ab62b8a0e",
-          "title": "AI提升作业分数，考试分数却下降：研究 / AI boosted homework scores, then exam scores dropped: study",
-          "title_zh": "AI提升作业分数，考试分数却下降：研究",
-          "title_en": "AI boosted homework scores, then exam scores dropped: study",
-          "title_original": "AI boosted homework scores, then exam scores dropped: study",
-          "summary": null,
-          "recommend_reason_zh": "这项研究追踪2.6万名学生发现，用生成式AI写作业能提高作业分，却让考试成绩下滑；6个月后无人再花超65分钟做作业，AI反而挤出了最高水平的努力。",
-          "url": "https://news.ycombinator.com/item?id=49357530",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T18:31:56.086000Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Slashdot",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "11d756e585cde87457b7a7ab64787465dbf9847a",
-          "title": "AI 助力家庭作业分数飙升，考试成绩却随之下滑 / AI Boosted Homework Scores, Then Exam Scores Dropped",
-          "title_zh": "AI 助力家庭作业分数飙升，考试成绩却随之下滑",
-          "title_en": "AI Boosted Homework Scores, Then Exam Scores Dropped",
-          "title_original": "AI Boosted Homework Scores, Then Exam Scores Dropped",
-          "summary": null,
-          "recommend_reason_zh": "The Economist援引Chegg调查称80%富裕国家本科生用AI学习，英国达94%；但预印本研究发现，AI仅提升作业分，若压缩投入时长，考试分便随之下滑。",
-          "url": "https://news.slashdot.org/story/26/08/21/1951227/ai-boosted-homework-scores-then-exam-scores-dropped",
-          "source": "Slashdot",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T20:00:00Z"
-        },
-        {
-          "id": "db4894f377385d87a3519bb6ace4cd2ab62b8a0e",
-          "title": "AI提升作业分数，考试分数却下降：研究 / AI boosted homework scores, then exam scores dropped: study",
-          "title_zh": "AI提升作业分数，考试分数却下降：研究",
-          "title_en": "AI boosted homework scores, then exam scores dropped: study",
-          "title_original": "AI boosted homework scores, then exam scores dropped: study",
-          "summary": null,
-          "recommend_reason_zh": "这项研究追踪2.6万名学生发现，用生成式AI写作业能提高作业分，却让考试成绩下滑；6个月后无人再花超65分钟做作业，AI反而挤出了最高水平的努力。",
-          "url": "https://news.ycombinator.com/item?id=49357530",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T18:31:56.086000Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5033,
-      "importance": 0.5033,
-      "importance_score": 0.5033,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.764,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T18:31:56.086000Z",
-      "latest_at": "2026-08-21T20:00:00Z",
-      "primary_item": {
-        "id": "11d756e585cde87457b7a7ab64787465dbf9847a",
-        "title": "AI 助力家庭作业分数飙升，考试成绩却随之下滑 / AI Boosted Homework Scores, Then Exam Scores Dropped",
-        "title_zh": "AI 助力家庭作业分数飙升，考试成绩却随之下滑",
-        "title_en": "AI Boosted Homework Scores, Then Exam Scores Dropped",
-        "title_original": "AI Boosted Homework Scores, Then Exam Scores Dropped",
-        "summary": null,
-        "recommend_reason_zh": "The Economist援引Chegg调查称80%富裕国家本科生用AI学习，英国达94%；但预印本研究发现，AI仅提升作业分，若压缩投入时长，考试分便随之下滑。",
-        "url": "https://news.slashdot.org/story/26/08/21/1951227/ai-boosted-homework-scores-then-exam-scores-dropped",
-        "source": "Slashdot",
-        "source_name": "TechURLs"
       },
       "persona_id": "pragmatic",
       "persona_score": 52,
-      "persona_review": "提醒做教育产品的别只刷作业正确率，评估得看真实掌握度。",
+      "persona_review": "A/B测试没实锤前不用管，等官方文档更新再调整工作流。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
+        "scored_at": "2026-08-22T23:43:44.736424Z"
+      }
+    },
+    {
+      "story_id": "story_e2695a874548",
+      "title": "MCP发布新路线图，初始定制协议被指不智",
+      "url": "https://news.ycombinator.com/item?id=49399591",
+      "primary_url": "https://news.ycombinator.com/item?id=49399591",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "0e2f077268aed88fb421f88ae4403517bd3b6e31",
+          "title": "MCP发布新路线图，初始定制协议被指不智",
+          "title_zh": "MCP发布新路线图，初始定制协议被指不智",
+          "title_en": "New MCP Roadmap",
+          "title_original": "New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "MCP新路线图聚焦代理身份与授权，计划推进DPoP落地，并借Workload Identity Federation、ID-JAG定义标准化路径，取代长期令牌，以适配云端代理场景。",
+          "url": "https://news.ycombinator.com/item?id=49399591",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T18:35:38.893000Z"
+        },
+        {
+          "id": "126ccb3ea5663b832f20fec048de1ac591d03ec8",
+          "title": "MCP新路线图聚焦智能体身份与授权标准化",
+          "title_zh": "MCP新路线图聚焦智能体身份与授权标准化",
+          "title_en": "The New MCP Roadmap",
+          "title_original": "The New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "MCP新路线图明确用DPoP、Workload Identity Federation和ID-JAG grant等标准取代粘贴API key与长期令牌，以解决云端agent身份信任，并继续参与IETF OAuth与WIMSE工作组推动标准演进。",
+          "url": "https://news.ycombinator.com/item?id=49399591",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T14:10:19.326000Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "0e2f077268aed88fb421f88ae4403517bd3b6e31",
+          "title": "MCP发布新路线图，初始定制协议被指不智",
+          "title_zh": "MCP发布新路线图，初始定制协议被指不智",
+          "title_en": "New MCP Roadmap",
+          "title_original": "New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "MCP新路线图聚焦代理身份与授权，计划推进DPoP落地，并借Workload Identity Federation、ID-JAG定义标准化路径，取代长期令牌，以适配云端代理场景。",
+          "url": "https://news.ycombinator.com/item?id=49399591",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T18:35:38.893000Z"
+        },
+        {
+          "id": "126ccb3ea5663b832f20fec048de1ac591d03ec8",
+          "title": "MCP新路线图聚焦智能体身份与授权标准化",
+          "title_zh": "MCP新路线图聚焦智能体身份与授权标准化",
+          "title_en": "The New MCP Roadmap",
+          "title_original": "The New MCP Roadmap",
+          "summary": null,
+          "recommend_reason_zh": "MCP新路线图明确用DPoP、Workload Identity Federation和ID-JAG grant等标准取代粘贴API key与长期令牌，以解决云端agent身份信任，并继续参与IETF OAuth与WIMSE工作组推动标准演进。",
+          "url": "https://news.ycombinator.com/item?id=49399591",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T14:10:19.326000Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5333,
+      "importance": 0.5333,
+      "importance_score": 0.5333,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9305,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-22T14:10:19.326000Z",
+      "latest_at": "2026-08-22T18:35:38.893000Z",
+      "primary_item": {
+        "id": "0e2f077268aed88fb421f88ae4403517bd3b6e31",
+        "title": "MCP发布新路线图，初始定制协议被指不智",
+        "title_zh": "MCP发布新路线图，初始定制协议被指不智",
+        "title_en": "New MCP Roadmap",
+        "title_original": "New MCP Roadmap",
+        "summary": null,
+        "recommend_reason_zh": "MCP新路线图聚焦代理身份与授权，计划推进DPoP落地，并借Workload Identity Federation、ID-JAG定义标准化路径，取代长期令牌，以适配云端代理场景。",
+        "url": "https://news.ycombinator.com/item?id=49399591",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 70,
+      "persona_review": "MCP路线图定了，搞Agent工具链的该看看接口变没变。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-22T23:43:44.736424Z"
+      }
+    },
+    {
+      "story_id": "story_a2591c776bef",
+      "title": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素 / Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+      "url": "https://news.ycombinator.com/item?id=49401229",
+      "primary_url": "https://news.ycombinator.com/item?id=49401229",
+      "source": "hackernews",
+      "source_name": "NewsNow",
+      "sources": [
+        {
+          "id": "53c1f3cf45dfa17d5f20edf41cc25040e57ef49a",
+          "title": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素 / Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_zh": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素",
+          "title_en": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_original": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic即将递交的IPO文件，据知情人士透露，将把AI backlash列为风险因素；文中提到其信用额度已达100亿美元，IPO规模预期追平或超越SpaceX，并呈现公众对数据中心建设的抵制情绪。",
+          "url": "https://news.ycombinator.com/item?id=49401229",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T17:11:08.754000Z"
+        },
+        {
+          "id": "41337639170e8377fa3ca0c7fc5d554d61e9b0d8",
+          "title": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素 / Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_zh": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素",
+          "title_en": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_original": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic IPO在即，招股书将把公众对数据中心的抗议及AI取代工作的恐惧列为风险因素，揭示这家AI巨头上市时面临的社会情绪挑战。",
+          "url": "https://www.cnbc.com/2026/08/21/-anthropic-ipo-filing-will-show-ai-backlash-as-risk-sources-say.html",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-22T16:23:09Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Hacker News · 24h最热",
+        "hackernews"
+      ],
+      "items": [
+        {
+          "id": "53c1f3cf45dfa17d5f20edf41cc25040e57ef49a",
+          "title": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素 / Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_zh": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素",
+          "title_en": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_original": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic即将递交的IPO文件，据知情人士透露，将把AI backlash列为风险因素；文中提到其信用额度已达100亿美元，IPO规模预期追平或超越SpaceX，并呈现公众对数据中心建设的抵制情绪。",
+          "url": "https://news.ycombinator.com/item?id=49401229",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-08-22T17:11:08.754000Z"
+        },
+        {
+          "id": "41337639170e8377fa3ca0c7fc5d554d61e9b0d8",
+          "title": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素 / Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_zh": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素",
+          "title_en": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "title_original": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+          "summary": null,
+          "recommend_reason_zh": "Anthropic IPO在即，招股书将把公众对数据中心的抗议及AI取代工作的恐惧列为风险因素，揭示这家AI巨头上市时面临的社会情绪挑战。",
+          "url": "https://www.cnbc.com/2026/08/21/-anthropic-ipo-filing-will-show-ai-backlash-as-risk-sources-say.html",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-22T16:23:09Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5299,
+      "importance": 0.5299,
+      "importance_score": 0.5299,
+      "importance_label": "值得关注",
+      "importance_breakdown": {
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9118,
+        "story_heat": 0.25
+      },
+      "category": "watch",
+      "reasons": [
+        "multi_source"
+      ],
+      "earliest_at": "2026-08-22T16:23:09Z",
+      "latest_at": "2026-08-22T17:11:08.754000Z",
+      "primary_item": {
+        "id": "53c1f3cf45dfa17d5f20edf41cc25040e57ef49a",
+        "title": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素 / Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+        "title_zh": "知情人士称，Anthropic IPO文件将把AI反对声浪列为风险因素",
+        "title_en": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+        "title_original": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+        "summary": null,
+        "recommend_reason_zh": "Anthropic即将递交的IPO文件，据知情人士透露，将把AI backlash列为风险因素；文中提到其信用额度已达100亿美元，IPO规模预期追平或超越SpaceX，并呈现公众对数据中心建设的抵制情绪。",
+        "url": "https://news.ycombinator.com/item?id=49401229",
+        "source": "hackernews",
+        "source_name": "NewsNow"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 55,
+      "persona_review": "IPO风险披露而已，不影响API使用，开发者不用行动。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-22T23:43:44.736424Z"
       }
     },
     {
@@ -1041,7 +867,7 @@
           "published_at": "2026-08-22T06:43:59.267000Z"
         },
         {
-          "id": "a386741b6b65c710ba3ac756f3a4d056f1e175e0",
+          "id": "fa358399f41d1dd2a221bcfd7f5f1e8204edc01c",
           "title": "GPT 5.6 Sol 价格下调 20% / GPT 5.6 Sol 20% price reduction",
           "title_zh": "GPT 5.6 Sol 价格下调 20%",
           "title_en": "GPT 5.6 Sol 20% price reduction",
@@ -1049,15 +875,15 @@
           "summary": null,
           "recommend_reason_zh": "GPT-5.6 Sol 定价降至每百万输入 token 4 美元、输出 20 美元，输入降价 20%、输出降价 33%，促销价持续至 2026 年 11 月 21 日。",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-22T04:33:06Z"
         }
       ],
       "source_count": 2,
       "source_names": [
-        "Hacker News",
+        "Hacker News · 24h最热",
         "hackernews"
       ],
       "items": [
@@ -1076,7 +902,7 @@
           "published_at": "2026-08-22T06:43:59.267000Z"
         },
         {
-          "id": "a386741b6b65c710ba3ac756f3a4d056f1e175e0",
+          "id": "fa358399f41d1dd2a221bcfd7f5f1e8204edc01c",
           "title": "GPT 5.6 Sol 价格下调 20% / GPT 5.6 Sol 20% price reduction",
           "title_zh": "GPT 5.6 Sol 价格下调 20%",
           "title_en": "GPT 5.6 Sol 20% price reduction",
@@ -1084,23 +910,23 @@
           "summary": null,
           "recommend_reason_zh": "GPT-5.6 Sol 定价降至每百万输入 token 4 美元、输出 20 美元，输入降价 20%、输出降价 33%，促销价持续至 2026 年 11 月 21 日。",
           "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
           "published_at": "2026-08-22T04:33:06Z"
         }
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5264,
-      "importance": 0.5264,
-      "importance_score": 0.5264,
+      "score": 0.5069,
+      "importance": 0.5069,
+      "importance_score": 0.5069,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8921,
+        "recency": 0.7841,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1127,343 +953,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
-    {
-      "story_id": "story_deed5dc2807d",
-      "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
-      "url": "https://news.ycombinator.com/item?id=49393051",
-      "primary_url": "https://news.ycombinator.com/item?id=49393051",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "843f1c8777425b5db989c00d8a227f7bad67acb3",
-          "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
-          "title_zh": "快速印象：一周用 Codex 比 Claude 多",
-          "title_en": "Quick impressions: A week of using Codex more than Claude",
-          "title_original": "Quick impressions: A week of using Codex more than Claude",
-          "summary": null,
-          "recommend_reason_zh": "作者用Codex一周后发现，它比Claude更简单即插即用；omp工具领先Claude Code和Codex数月；Max计划无限opus但有诸多限制；Kimi K3适合前端且敢冒险，Gemini 3.7速度被低估。",
-          "url": "https://news.ycombinator.com/item?id=49393051",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T20:41:57.600000Z"
-        },
-        {
-          "id": "48aa24f65578ce52e3984df7eead950686309a55",
-          "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
-          "title_zh": "快速印象：一周用 Codex 比 Claude 多",
-          "title_en": "Quick impressions: A week of using Codex more than Claude",
-          "title_original": "Quick impressions: A week of using Codex more than Claude",
-          "summary": null,
-          "recommend_reason_zh": "一周实测Codex和Claude，作者记录了10条对比印象：Codex代码注释更少、架构更简单，但rebase时误操作导致4000+行新增；Claude更擅长预判意图，调试时更顺手。这些细节帮你判断哪个AI助手更合适。",
-          "url": "https://allaboutcoding.ghinda.com/a-week-of-using-codex-more-than-claude",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T19:51:48Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "843f1c8777425b5db989c00d8a227f7bad67acb3",
-          "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
-          "title_zh": "快速印象：一周用 Codex 比 Claude 多",
-          "title_en": "Quick impressions: A week of using Codex more than Claude",
-          "title_original": "Quick impressions: A week of using Codex more than Claude",
-          "summary": null,
-          "recommend_reason_zh": "作者用Codex一周后发现，它比Claude更简单即插即用；omp工具领先Claude Code和Codex数月；Max计划无限opus但有诸多限制；Kimi K3适合前端且敢冒险，Gemini 3.7速度被低估。",
-          "url": "https://news.ycombinator.com/item?id=49393051",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T20:41:57.600000Z"
-        },
-        {
-          "id": "48aa24f65578ce52e3984df7eead950686309a55",
-          "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
-          "title_zh": "快速印象：一周用 Codex 比 Claude 多",
-          "title_en": "Quick impressions: A week of using Codex more than Claude",
-          "title_original": "Quick impressions: A week of using Codex more than Claude",
-          "summary": null,
-          "recommend_reason_zh": "一周实测Codex和Claude，作者记录了10条对比印象：Codex代码注释更少、架构更简单，但rebase时误操作导致4000+行新增；Claude更擅长预判意图，调试时更顺手。这些细节帮你判断哪个AI助手更合适。",
-          "url": "https://allaboutcoding.ghinda.com/a-week-of-using-codex-more-than-claude",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-21T19:51:48Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5047,
-      "importance": 0.5047,
-      "importance_score": 0.5047,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7717,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T19:51:48Z",
-      "latest_at": "2026-08-21T20:41:57.600000Z",
-      "primary_item": {
-        "id": "843f1c8777425b5db989c00d8a227f7bad67acb3",
-        "title": "快速印象：一周用 Codex 比 Claude 多 / Quick impressions: A week of using Codex more than Claude",
-        "title_zh": "快速印象：一周用 Codex 比 Claude 多",
-        "title_en": "Quick impressions: A week of using Codex more than Claude",
-        "title_original": "Quick impressions: A week of using Codex more than Claude",
-        "summary": null,
-        "recommend_reason_zh": "作者用Codex一周后发现，它比Claude更简单即插即用；omp工具领先Claude Code和Codex数月；Max计划无限opus但有诸多限制；Kimi K3适合前端且敢冒险，Gemini 3.7速度被低估。",
-        "url": "https://news.ycombinator.com/item?id=49393051",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 62,
-      "persona_review": "具体对比才有用，但个人体验当参考，别急着换工具。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
-    {
-      "story_id": "story_f7faaf469ef0",
-      "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-      "url": "https://news.ycombinator.com/item?id=49390739",
-      "primary_url": "https://news.ycombinator.com/item?id=49390739",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "721a9425e613cdd0c1994fe2006d638afb40fa82",
-          "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_zh": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex",
-          "title_en": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_original": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "summary": null,
-          "recommend_reason_zh": "Proliferate 是一款 AGPL-3.0 开源自托管 AI IDE，支持 Claude Code、Codex、OpenCode、Cursor 与 Grok 协同工作，并允许父代理派生子代理，还能构建带人工审批的可复用工作流。",
-          "url": "https://news.ycombinator.com/item?id=49390739",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T18:31:56.086000Z"
-        },
-        {
-          "id": "2fb34d461666e79502c9ccf726d3c1cbf04e0ea0",
-          "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_zh": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex",
-          "title_en": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_original": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "summary": null,
-          "recommend_reason_zh": "Proliferate是开源自托管的AI IDE，能并行运行Claude Code、Codex、OpenCode等编码代理，每个任务有独立git worktree，支持Docker、Kubernetes及离线部署，还能构建可复用工作流。",
-          "url": "https://github.com/proliferate-ai/proliferate",
-          "source": "HN Algolia · AI 24h",
-          "source_name": "Hacker News",
-          "site_id": "hackernews",
-          "published_at": "2026-08-21T16:47:15Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "HN Algolia · AI 24h",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "721a9425e613cdd0c1994fe2006d638afb40fa82",
-          "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_zh": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex",
-          "title_en": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_original": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "summary": null,
-          "recommend_reason_zh": "Proliferate 是一款 AGPL-3.0 开源自托管 AI IDE，支持 Claude Code、Codex、OpenCode、Cursor 与 Grok 协同工作，并允许父代理派生子代理，还能构建带人工审批的可复用工作流。",
-          "url": "https://news.ycombinator.com/item?id=49390739",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T18:31:56.086000Z"
-        },
-        {
-          "id": "2fb34d461666e79502c9ccf726d3c1cbf04e0ea0",
-          "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_zh": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex",
-          "title_en": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "title_original": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-          "summary": null,
-          "recommend_reason_zh": "Proliferate是开源自托管的AI IDE，能并行运行Claude Code、Codex、OpenCode等编码代理，每个任务有独立git worktree，支持Docker、Kubernetes及离线部署，还能构建可复用工作流。",
-          "url": "https://github.com/proliferate-ai/proliferate",
-          "source": "HN Algolia · AI 24h",
-          "source_name": "Hacker News",
-          "site_id": "hackernews",
-          "published_at": "2026-08-21T16:47:15Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5004,
-      "importance": 0.5004,
-      "importance_score": 0.5004,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.748,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T16:47:15Z",
-      "latest_at": "2026-08-21T18:31:56.086000Z",
-      "primary_item": {
-        "id": "721a9425e613cdd0c1994fe2006d638afb40fa82",
-        "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-        "title_zh": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex",
-        "title_en": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-        "title_original": "Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-        "summary": null,
-        "recommend_reason_zh": "Proliferate 是一款 AGPL-3.0 开源自托管 AI IDE，支持 Claude Code、Codex、OpenCode、Cursor 与 Grok 协同工作，并允许父代理派生子代理，还能构建带人工审批的可复用工作流。",
-        "url": "https://news.ycombinator.com/item?id=49390739",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 78,
-      "persona_review": "开源可自托管，想绕开官方限流的可以试，但新项目成熟度待验。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
-      }
-    },
-    {
-      "story_id": "story_3da7a85e3dd1",
-      "title": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师 / LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-      "url": "https://news.ycombinator.com/item?id=49390910",
-      "primary_url": "https://news.ycombinator.com/item?id=49390910",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "20709f76c7df385c0d5bbd4eb98c04568df63fb8",
-          "title": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师 / LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_zh": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师",
-          "title_en": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_original": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49390910",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T17:31:53.537000Z"
-        },
-        {
-          "id": "24ca2059074e20283084428200fdf793ffb3e570",
-          "title": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师 / LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_zh": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师",
-          "title_en": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_original": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章报道了LiteLLM（YC W23）招聘Rust工程师，主导其从Python到Rust的迁移，目标成为最快的AI网关，支撑每月10亿+请求。值得关注的是单一负责人权限和稳定性优先策略。",
-          "url": "https://jobs.ashbyhq.com/litellm/3f326076-7415-46a1-921e-8a1b1d6ee2b6",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T17:00:23Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "20709f76c7df385c0d5bbd4eb98c04568df63fb8",
-          "title": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师 / LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_zh": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师",
-          "title_en": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_original": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://news.ycombinator.com/item?id=49390910",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-21T17:31:53.537000Z"
-        },
-        {
-          "id": "24ca2059074e20283084428200fdf793ffb3e570",
-          "title": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师 / LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_zh": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师",
-          "title_en": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "title_original": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-          "summary": null,
-          "recommend_reason_zh": "这篇文章报道了LiteLLM（YC W23）招聘Rust工程师，主导其从Python到Rust的迁移，目标成为最快的AI网关，支撑每月10亿+请求。值得关注的是单一负责人权限和稳定性优先策略。",
-          "url": "https://jobs.ashbyhq.com/litellm/3f326076-7415-46a1-921e-8a1b1d6ee2b6",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-21T17:00:23Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.4985,
-      "importance": 0.4985,
-      "importance_score": 0.4985,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7372,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-21T17:00:23Z",
-      "latest_at": "2026-08-21T17:31:53.537000Z",
-      "primary_item": {
-        "id": "20709f76c7df385c0d5bbd4eb98c04568df63fb8",
-        "title": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师 / LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-        "title_zh": "LiteLLM（YC W23）正在招聘 —— Rust / 性能工程师",
-        "title_en": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-        "title_original": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
-        "summary": null,
-        "recommend_reason_zh": null,
-        "url": "https://news.ycombinator.com/item?id=49390910",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 30,
-      "persona_review": "招人是公司家事，对现有开发工作无直接用处，除非你在找工作。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-22T14:51:22.022413Z"
+        "scored_at": "2026-08-22T23:43:44.736424Z"
       }
     }
   ]

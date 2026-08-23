@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T14:51:29.816224Z",
+  "generated_at": "2026-08-22T23:43:44.736575Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_f7faaf469ef0",
-      "title": "Show HN：Proliferate——适用于任意编码代理的开源自托管Codex / Show HN: Proliferate- open-source, self-hostable Codex for any coding agent",
-      "url": "https://news.ycombinator.com/item?id=49390739",
+      "story_id": "story_ede39af7c879",
+      "title": "MCP更新路线图 聚焦未来规范发布重点",
+      "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "开源诚意有，但自夸“任意”前先跑通十个代理再说。"
+          "score": 55,
+          "review": "路线图写得像规划，可发布过的规范有几个能跑？"
         },
         "paper-police": {
           "score": 20,
-          "review": "自称开源自托管却无仓库链接，凭一句话无法验证。"
+          "review": "路线图只有规划，无代码无评测，等规范落地再议。"
         },
         "pragmatic": {
-          "score": 78,
-          "review": "开源可自托管，想绕开官方限流的可以试，但新项目成熟度待验。"
+          "score": 70,
+          "review": "规范方向明确但暂无新版本可上手，集成方先观望。"
         }
       }
     },
     {
-      "story_id": "story_f852499667bc",
-      "title": "Slack 上的全新 GitHub Copilot 体验。 / The new GitHub Copilot experience in Slack",
-      "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "story_id": "story_e2695a874548",
+      "title": "MCP发布新路线图，初始定制协议被指不智",
+      "url": "https://news.ycombinator.com/item?id=49399591",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 55,
-          "review": "换个入口就算新体验？Copilot 还是那个 Copilot。"
+          "score": 42,
+          "review": "路线图没细说就急着否定初始协议，有数据支撑还是纯嘴仗？"
         },
         "paper-police": {
-          "score": 30,
-          "review": "官方博客仅描述功能，无评测无代码，等实际体验或第三方验证。"
+          "score": 20,
+          "review": "路线图仅口头表态，无论文代码评测支撑，争议难定。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "Slack 里直接用 Copilot，团队协作场景能省切换成本，但具体功能还得看文档。"
+          "score": 70,
+          "review": "MCP路线图定了，搞Agent工具链的该看看接口变没变。"
         }
       }
     }
