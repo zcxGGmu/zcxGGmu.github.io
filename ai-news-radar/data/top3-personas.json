@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T04:12:07.356624Z",
+  "generated_at": "2026-08-23T09:55:46.589146Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_355768f68f0e",
-      "title": "GPT 5.6 Sol 价格下调 20% / GPT 5.6 Sol 20% price reduction",
-      "url": "https://news.ycombinator.com/item?id=49396590",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 25,
-          "review": "降价20%也叫发布？性能没变的话，这是清库存吗？"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "只有降价消息，无论文无代码无评测，价格数字也未见官方公告。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "直接省两成账单，跑批量任务今天就能切换。"
-        }
-      }
-    },
-    {
       "story_id": "story_ede39af7c879",
       "title": "MCP更新路线图 聚焦未来规范发布重点",
       "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 55,
@@ -60,7 +40,7 @@
       "story_id": "story_e2695a874548",
       "title": "MCP发布新路线图，初始定制协议被指不智",
       "url": "https://news.ycombinator.com/item?id=49399591",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 42,
@@ -73,6 +53,26 @@
         "pragmatic": {
           "score": 70,
           "review": "MCP路线图定了，搞Agent工具链的该看看接口变没变。"
+        }
+      }
+    },
+    {
+      "story_id": "story_fa8a07601060",
+      "title": "德克萨斯州一名学生如何揭发了一起恶意AI黑客攻击企图",
+      "url": "https://www.reuters.com/world/how-texas-student-blew-whistle-rogue-ai-hacking-attempt-2026-08-20",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 62,
+          "review": "学生揭发是好事，但单例故事不解决系统性AI滥用问题。"
+        },
+        "paper-police": {
+          "score": 20,
+          "review": "只有新闻转述，无技术报告或代码，黑客攻击细节无法独立验证。"
+        },
+        "pragmatic": {
+          "score": 55,
+          "review": "AI 安全事件提醒，自查下自己的 agent 有没有被 prompt 注入的风险。"
         }
       }
     }
