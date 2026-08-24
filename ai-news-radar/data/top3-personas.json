@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T23:48:05.089485Z",
+  "generated_at": "2026-08-24T04:20:39.290594Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_c83125a610d8",
-      "title": "GLM-5.3（开放权重）以五分之一成本击败 Anthropic/OpenAI 模型 / GLM-5.3 (open-weight) beat Anthropic/OpenAI models – for 1/5 the cost",
-      "url": "https://news.ycombinator.com/item?id=49410097",
+      "story_id": "story_78fee6466319",
+      "title": "数学自动形式化迎来重大突破：OpenBMB开源MathForm，8B模型凭实力逆袭大厂",
+      "url": "https://www.aibase.com/news/30559",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "五分之一成本打赢不难，先公布测试集和基线版本再谈颠覆。"
+          "score": 55,
+          "review": "开源是真，逆袭存疑，评测集和基线挑的是哪家？"
         },
         "paper-police": {
-          "score": 20,
-          "review": "只闻其声不见其码，无论文无仓库，成本优势拿什么验证。"
+          "score": 68,
+          "review": "代码开源可查但无论文，评测缺独立验证，等复现再定论。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "开放权重还便宜五倍，直接换模型省钱，跑推理的今天就能测试。"
+          "score": 82,
+          "review": "开源8B模型可直接本地跑，写定理证明或形式化验证的今天就能用。"
         }
       }
     },
     {
-      "story_id": "story_40d699f454ea",
-      "title": "我的 agent.md 如何提升 LLM 辅助代码质量 / My agent.md to improve LLM-assisted code quality",
-      "url": "https://news.ycombinator.com/item?id=49410932",
+      "story_id": "story_078e553a1a1c",
+      "title": "AI时代的入职第一课：Anthropic免费开源内部培训平台，教你如何与AI深度协作",
+      "url": "https://www.aibase.com/news/30539",
       "rank": 2,
       "reviews": {
         "cynic": {
           "score": 72,
-          "review": "把 agent 提示词当工程文档写，方向对，但别指望它万能。"
+          "review": "开源教程当培训平台卖，协作深度还得看人练。"
         },
         "paper-police": {
           "score": 25,
-          "review": "仅个人经验分享，无评测数据，效果无法验证。"
+          "review": "宣称开源但无具体仓库链接，无法验证是否真开源，待上线再评。"
         },
         "pragmatic": {
           "score": 75,
-          "review": "用agent.md给AI立项目上下文，今天就能写上，直接提升辅助编码质量。"
+          "review": "开源可自部署，团队培训 AI 协作直接拿去改，今天就能用。"
         }
       }
     },
     {
-      "story_id": "story_fa8a07601060",
-      "title": "德克萨斯州一名学生如何揭发了一起恶意AI黑客攻击企图",
-      "url": "https://www.reuters.com/world/how-texas-student-blew-whistle-rogue-ai-hacking-attempt-2026-08-20",
+      "story_id": "story_6ec96b1638b3",
+      "title": "万相Wan3.0视频生成模型正式上线，解锁30秒长视频创作新体验",
+      "url": "https://www.aibase.com/news/30562",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 62,
-          "review": "学生揭发是好事，但单例故事不解决系统性AI滥用问题。"
+          "score": 40,
+          "review": "30秒长视频？先看看是不是一镜到底的演示片花，实用起来两回事。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "只有新闻转述，无技术报告或代码，黑客攻击细节无法独立验证。"
+          "score": 15,
+          "review": "新闻稿宣称功能，无论文无代码无评测，空口无凭。"
         },
         "pragmatic": {
-          "score": 55,
-          "review": "AI 安全事件提醒，自查下自己的 agent 有没有被 prompt 注入的风险。"
+          "score": 72,
+          "review": "万相3.0上线，可试玩30秒长视频生成，效果达标再考虑接入。"
         }
       }
     }
