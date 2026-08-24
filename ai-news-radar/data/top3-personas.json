@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T04:20:39.290594Z",
+  "generated_at": "2026-08-24T10:20:00.929576Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_78fee6466319",
-      "title": "数学自动形式化迎来重大突破：OpenBMB开源MathForm，8B模型凭实力逆袭大厂",
-      "url": "https://www.aibase.com/news/30559",
+      "story_id": "story_013a5db6bd34",
+      "title": "OCR一下——从无法复制的文档中提取文本，喂给LLM。 / OCR It – pull text out of un-copyable documents for your LLM",
+      "url": "https://news.ycombinator.com/item?id=49415852",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 55,
-          "review": "开源是真，逆袭存疑，评测集和基线挑的是哪家？"
+          "score": 65,
+          "review": "OCR 又不是新东西，喂给 LLM 前先解决排版混乱再说。"
         },
         "paper-police": {
-          "score": 68,
-          "review": "代码开源可查但无论文，评测缺独立验证，等复现再定论。"
+          "score": 20,
+          "review": "只有标题宣称有OCR功能，无论文代码或评测，证据不足。"
         },
         "pragmatic": {
-          "score": 82,
-          "review": "开源8B模型可直接本地跑，写定理证明或形式化验证的今天就能用。"
+          "score": 72,
+          "review": "扫描件转文字直接喂 LLM，日常处理文档能省时间，可用。"
         }
       }
     },
     {
-      "story_id": "story_078e553a1a1c",
-      "title": "AI时代的入职第一课：Anthropic免费开源内部培训平台，教你如何与AI深度协作",
-      "url": "https://www.aibase.com/news/30539",
+      "story_id": "story_a31e711ee9db",
+      "title": "Codex CLI 0.149.1",
+      "url": "https://developers.openai.com/codex/changelog",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "开源教程当培训平台卖，协作深度还得看人练。"
+          "score": 35,
+          "review": "版本号迭代而已，changelog里连个改动摘要都没有，让人怎么信？"
         },
         "paper-police": {
-          "score": 25,
-          "review": "宣称开源但无具体仓库链接，无法验证是否真开源，待上线再评。"
+          "score": 45,
+          "review": "官方changelog有版本号，但无论文无benchmark，等第三方跑分再定论。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "开源可自部署，团队培训 AI 协作直接拿去改，今天就能用。"
+          "score": 70,
+          "review": "小版本迭代，有需要的看更新日志再升。"
         }
       }
     },
     {
-      "story_id": "story_6ec96b1638b3",
-      "title": "万相Wan3.0视频生成模型正式上线，解锁30秒长视频创作新体验",
-      "url": "https://www.aibase.com/news/30562",
+      "story_id": "story_a0aa94a30a96",
+      "title": "Anthropic Claude 及 API 服务中断 / Anthropic Claude and API service outages",
+      "url": "https://news.ycombinator.com/item?id=49415907",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 40,
-          "review": "30秒长视频？先看看是不是一镜到底的演示片花，实用起来两回事。"
+          "score": 50,
+          "review": "留个标题就完事，中断时长影响范围一概不知，报信还是打哑谜？"
         },
         "paper-police": {
-          "score": 15,
-          "review": "新闻稿宣称功能，无论文无代码无评测，空口无凭。"
+          "score": 22,
+          "review": "仅有中断报道，无根因分析或第三方数据，难以验证影响。"
         },
         "pragmatic": {
-          "score": 72,
-          "review": "万相3.0上线，可试玩30秒长视频生成，效果达标再考虑接入。"
+          "score": 70,
+          "review": "正在跑 Claude API 的团队先降级，等恢复再切回来。"
         }
       }
     }
