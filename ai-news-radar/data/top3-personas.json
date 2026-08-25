@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T15:18:21.652503Z",
+  "generated_at": "2026-08-24T23:48:46.746233Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_013a5db6bd34",
-      "title": "OCR一下——从无法复制的文档中提取文本，喂给LLM。 / OCR It – pull text out of un-copyable documents for your LLM",
-      "url": "https://news.ycombinator.com/item?id=49415852",
+      "story_id": "story_85b41d51c03a",
+      "title": "OpenAI：GPT 5.6 Sol 降价（至少持续至 11 月 21 日）",
+      "url": "https://developers.openai.com/api/docs/pricing",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 65,
-          "review": "OCR 又不是新东西，喂给 LLM 前先解决排版混乱再说。"
+          "score": 55,
+          "review": "降价是实打实的，但换个代号Sol就当新品？先解释下和前代的差距。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "只有标题宣称有OCR功能，无论文代码或评测，证据不足。"
+          "score": 30,
+          "review": "官方定价页确认降价，但无测试数据，性价比需实测验证。"
         },
         "pragmatic": {
-          "score": 72,
-          "review": "扫描件转文字直接喂 LLM，日常处理文档能省时间，可用。"
+          "score": 90,
+          "review": "API 降价直接降成本，跑任务的可趁窗口期切换。"
         }
       }
     },
     {
-      "story_id": "story_a31e711ee9db",
-      "title": "Codex CLI 0.149.1",
-      "url": "https://developers.openai.com/codex/changelog",
+      "story_id": "story_013a5db6bd34",
+      "title": "OCR It——从无法复制的文档中提取文本，供您的LLM使用",
+      "url": "https://github.com/thiagotigaz/ocr-it",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 35,
-          "review": "版本号迭代而已，changelog里连个改动摘要都没有，让人怎么信？"
+          "score": 72,
+          "review": "OCR工具不新鲜，但开源可自托管算实在，别吹成LLM专用神器。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方changelog有版本号，但无论文无benchmark，等第三方跑分再定论。"
+          "score": 72,
+          "review": "代码开源可查，但无评测报告，需自行跑通验证效果。"
         },
         "pragmatic": {
-          "score": 70,
-          "review": "小版本迭代，有需要的看更新日志再升。"
+          "score": 75,
+          "review": "开源OCR工具可clone即用，适合处理扫描件喂给LLM，省去额外API成本。"
         }
       }
     },
     {
-      "story_id": "story_a0aa94a30a96",
-      "title": "Anthropic Claude 及 API 服务中断 / Anthropic Claude and API service outages",
-      "url": "https://news.ycombinator.com/item?id=49415907",
+      "story_id": "story_35aa593beb9e",
+      "title": "Codex MCP server 命令已弃用 / Codex MCP server command deprecated",
+      "url": "https://developers.openai.com/codex/changelog",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 50,
-          "review": "留个标题就完事，中断时长影响范围一概不知，报信还是打哑谜？"
+          "score": 25,
+          "review": "弃用个命令也值得刷存在感？替代品性能数据呢？"
         },
         "paper-police": {
-          "score": 22,
-          "review": "仅有中断报道，无根因分析或第三方数据，难以验证影响。"
+          "score": 40,
+          "review": "官方变更日志可查，但无代码或复现，实际影响待验证。"
         },
         "pragmatic": {
-          "score": 70,
-          "review": "正在跑 Claude API 的团队先降级，等恢复再切回来。"
+          "score": 72,
+          "review": "Codex MCP 命令弃用，在用的赶紧查迁移指南，别等脚本挂了再改。"
         }
       }
     }

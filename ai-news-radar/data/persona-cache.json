@@ -6033,9 +6033,9 @@
     },
     "story_0c44db5345da|pragmatic|0a5c5b24": {
       "score": 55,
-      "review": "个人项目参考价值有限，想抄思路可看，别指望直接上手。",
-      "title_hash": "a06d21d7",
-      "scored_at": "2026-08-24T04:20:35.565264Z"
+      "review": "个人项目，思路可参考，但没开源没API，动手意义有限。",
+      "title_hash": "4202952b",
+      "scored_at": "2026-08-24T20:01:50.201902Z"
     },
     "story_6ec96b1638b3|cynic|f4237a62": {
       "score": 40,
@@ -6122,22 +6122,22 @@
       "scored_at": "2026-08-24T07:47:45.761030Z"
     },
     "story_013a5db6bd34|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "扫描件转文字直接喂 LLM，日常处理文档能省时间，可用。",
-      "title_hash": "28077fb2",
-      "scored_at": "2026-08-24T07:47:50.086721Z"
+      "score": 75,
+      "review": "开源OCR工具可clone即用，适合处理扫描件喂给LLM，省去额外API成本。",
+      "title_hash": "62010d12",
+      "scored_at": "2026-08-24T20:01:48.002158Z"
     },
     "story_013a5db6bd34|cynic|f4237a62": {
-      "score": 65,
-      "review": "OCR 又不是新东西，喂给 LLM 前先解决排版混乱再说。",
-      "title_hash": "28077fb2",
-      "scored_at": "2026-08-24T07:47:53.348336Z"
+      "score": 72,
+      "review": "OCR工具不新鲜，但开源可自托管算实在，别吹成LLM专用神器。",
+      "title_hash": "62010d12",
+      "scored_at": "2026-08-24T20:01:54.476558Z"
     },
     "story_013a5db6bd34|paper-police|966065bf": {
-      "score": 20,
-      "review": "只有标题宣称有OCR功能，无论文代码或评测，证据不足。",
-      "title_hash": "28077fb2",
-      "scored_at": "2026-08-24T07:47:57.680292Z"
+      "score": 72,
+      "review": "代码开源可查，但无评测报告，需自行跑通验证效果。",
+      "title_hash": "62010d12",
+      "scored_at": "2026-08-24T20:01:58.933232Z"
     },
     "story_90d4c934f11a|pragmatic|0a5c5b24": {
       "score": 55,
@@ -6210,6 +6210,90 @@
       "review": "招聘八卦不写代码，等影响工具链再看不迟。",
       "title_hash": "6dcfa872",
       "scored_at": "2026-08-24T13:28:03.377456Z"
+    },
+    "story_929ed190248c|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "没有具体可用的产品细节，开发者先观望。",
+      "title_hash": "dad8bccf",
+      "scored_at": "2026-08-24T16:16:37.622005Z"
+    },
+    "story_63639453173d|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "新硬件还在纸面，等真机评测和价格再考虑升级。",
+      "title_hash": "cae2e32d",
+      "scored_at": "2026-08-24T16:16:40.385117Z"
+    },
+    "story_85b41d51c03a|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "API 降价直接降成本，跑任务的可趁窗口期切换。",
+      "title_hash": "80813e82",
+      "scored_at": "2026-08-24T19:19:53.747779Z"
+    },
+    "story_85b41d51c03a|cynic|f4237a62": {
+      "score": 55,
+      "review": "降价是实打实的，但换个代号Sol就当新品？先解释下和前代的差距。",
+      "title_hash": "80813e82",
+      "scored_at": "2026-08-24T19:20:04.372418Z"
+    },
+    "story_85b41d51c03a|paper-police|966065bf": {
+      "score": 30,
+      "review": "官方定价页确认降价，但无测试数据，性价比需实测验证。",
+      "title_hash": "80813e82",
+      "scored_at": "2026-08-24T19:20:06.314436Z"
+    },
+    "story_35aa593beb9e|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "Codex MCP 命令弃用，在用的赶紧查迁移指南，别等脚本挂了再改。",
+      "title_hash": "e335acbf",
+      "scored_at": "2026-08-24T17:13:09.743143Z"
+    },
+    "story_5c02918da695|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "观点文不产生代码，担心技能退化不如多写两行。",
+      "title_hash": "31931eaf",
+      "scored_at": "2026-08-24T19:19:55.677142Z"
+    },
+    "story_35aa593beb9e|cynic|f4237a62": {
+      "score": 25,
+      "review": "弃用个命令也值得刷存在感？替代品性能数据呢？",
+      "title_hash": "e335acbf",
+      "scored_at": "2026-08-24T17:13:25.763325Z"
+    },
+    "story_35aa593beb9e|paper-police|966065bf": {
+      "score": 40,
+      "review": "官方变更日志可查，但无代码或复现，实际影响待验证。",
+      "title_hash": "e335acbf",
+      "scored_at": "2026-08-24T17:13:30.189565Z"
+    },
+    "story_48d321793dad|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "做政务系统的要留意防滥用，别等业务被刷爆再补。",
+      "title_hash": "e6ddf323",
+      "scored_at": "2026-08-24T18:04:36.076141Z"
+    },
+    "story_6c76364efb57|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "模型再强性价比不够也白搭，选型前先算账。",
+      "title_hash": "15bd7f73",
+      "scored_at": "2026-08-24T19:19:58.032926Z"
+    },
+    "story_014379ecbab9|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "空谈学习路径，没给具体教程或工具，动手党不用管。",
+      "title_hash": "0fd37b42",
+      "scored_at": "2026-08-24T19:19:59.961900Z"
+    },
+    "story_77c848bd2367|pragmatic|0a5c5b24": {
+      "score": 10,
+      "review": "招聘贴而已，与开发日常无关，不用点开。",
+      "title_hash": "ab0794f7",
+      "scored_at": "2026-08-24T19:20:01.356705Z"
+    },
+    "story_a382eafa5b52|pragmatic|0a5c5b24": {
+      "score": 62,
+      "review": "安全研究者提醒：跑不可信模型务必隔离沙箱，部署前查自家推理栈。",
+      "title_hash": "c8c1b47e",
+      "scored_at": "2026-08-24T20:01:52.234172Z"
     }
   }
 }
