@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T23:48:46.746233Z",
+  "generated_at": "2026-08-25T04:17:07.104166Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -57,22 +57,14 @@
       }
     },
     {
-      "story_id": "story_35aa593beb9e",
-      "title": "Codex MCP server 命令已弃用 / Codex MCP server command deprecated",
-      "url": "https://developers.openai.com/codex/changelog",
+      "story_id": "story_929ed190248c",
+      "title": "OpenAI 正为一切构建 AI 智能体，但用户会愿意交出控制权吗？ / OpenAI is building AI agents for everything. Will everyone use them？",
+      "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them",
       "rank": 3,
       "reviews": {
-        "cynic": {
-          "score": 25,
-          "review": "弃用个命令也值得刷存在感？替代品性能数据呢？"
-        },
-        "paper-police": {
-          "score": 40,
-          "review": "官方变更日志可查，但无代码或复现，实际影响待验证。"
-        },
         "pragmatic": {
-          "score": 72,
-          "review": "Codex MCP 命令弃用，在用的赶紧查迁移指南，别等脚本挂了再改。"
+          "score": 50,
+          "review": "没有具体可用的产品细节，开发者先观望。"
         }
       }
     }
