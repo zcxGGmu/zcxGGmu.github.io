@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T10:17:28.652108Z",
+  "generated_at": "2026-08-25T15:33:40.900200Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,26 +37,42 @@
       }
     },
     {
-      "story_id": "story_929ed190248c",
-      "title": "OpenAI 正为一切构建 AI 智能体，但用户会愿意交出控制权吗？ / OpenAI is building AI agents for everything. Will everyone use them？",
-      "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them",
+      "story_id": "story_7ee612916ff0",
+      "title": "Extremely Fast and Accurate Transcription with Granite Speech 5.0 Turbo CTC",
+      "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5-0-470m-turboctc",
       "rank": 2,
       "reviews": {
+        "cynic": {
+          "score": 45,
+          "review": "CTC模型谈极致准确？先亮出和主流端到端方案的对比表再说。"
+        },
+        "paper-police": {
+          "score": 65,
+          "review": "模型权重可下载，评测数字在手，缺学术论文，第三方复现待验证。"
+        },
         "pragmatic": {
-          "score": 50,
-          "review": "没有具体可用的产品细节，开发者先观望。"
+          "score": 88,
+          "review": "新开源CTC转录模型已上线，可clone试用，低延迟场景今天能接。"
         }
       }
     },
     {
-      "story_id": "story_5c02918da695",
-      "title": "对人工智能的依赖将导致编程专业技能的崩溃",
-      "url": "https://larsfaye.com/articles/ai-coding-will-prevent-expertise",
+      "story_id": "story_6411634610d0",
+      "title": "Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original",
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing",
       "rank": 3,
       "reviews": {
+        "cynic": {
+          "score": 35,
+          "review": "压缩反超原版？先看训练步数是不是一样，别拿瘸腿原版比。"
+        },
+        "paper-police": {
+          "score": 45,
+          "review": "博客给了评测数字但没开源代码，等第三方复现再确认更优。"
+        },
         "pragmatic": {
-          "score": 20,
-          "review": "观点文不产生代码，担心技能退化不如多写两行。"
+          "score": 85,
+          "review": "4-bit量化反超全精度，有开源就值得试，省显存还提精度。"
         }
       }
     }

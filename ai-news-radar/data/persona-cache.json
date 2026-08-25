@@ -6290,10 +6290,142 @@
       "scored_at": "2026-08-24T19:20:01.356705Z"
     },
     "story_a382eafa5b52|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "理论探讨，暂无实际利用价值，等 PoC 再说。",
+      "title_hash": "5be61865",
+      "scored_at": "2026-08-25T15:33:14.524020Z"
+    },
+    "story_7ee612916ff0|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "新开源CTC转录模型已上线，可clone试用，低延迟场景今天能接。",
+      "title_hash": "ec555978",
+      "scored_at": "2026-08-25T15:32:29.549005Z"
+    },
+    "story_451d09e98bb5|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "硬件升级对跑本地模型的开发者是利好，但等真机评测再决定换不换。",
+      "title_hash": "994bb6ca",
+      "scored_at": "2026-08-25T15:32:31.621644Z"
+    },
+    "story_b95e33dbd1e9|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "官方秀推理速度，但没开放就用不上，等 API。",
+      "title_hash": "6539cf89",
+      "scored_at": "2026-08-25T15:32:34.318328Z"
+    },
+    "story_6411634610d0|pragmatic|0a5c5b24": {
+      "score": 85,
+      "review": "4-bit量化反超全精度，有开源就值得试，省显存还提精度。",
+      "title_hash": "ea15a420",
+      "scored_at": "2026-08-25T15:32:40.448123Z"
+    },
+    "story_4c08adc024bd|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "安全对抗与日常开发无关，但提示了AI被滥用的现实风险。",
+      "title_hash": "bcf1020b",
+      "scored_at": "2026-08-25T15:32:42.554271Z"
+    },
+    "story_bc5800b304fc|pragmatic|0a5c5b24": {
+      "score": 76,
+      "review": "Gradio 官方工作流指南，照着搭能省调试时间，适合快速部署演示。",
+      "title_hash": "c86d7a9d",
+      "scored_at": "2026-08-25T15:32:45.025648Z"
+    },
+    "story_60dddcf38635|pragmatic|0a5c5b24": {
+      "score": 60,
+      "review": "路线图而已，模型10月才亮相，现在不用动手，等接口出了再看。",
+      "title_hash": "48605ddc",
+      "scored_at": "2026-08-25T15:32:47.300707Z"
+    },
+    "story_e78ba6d6ecd7|pragmatic|0a5c5b24": {
       "score": 62,
-      "review": "安全研究者提醒：跑不可信模型务必隔离沙箱，部署前查自家推理栈。",
-      "title_hash": "c8c1b47e",
-      "scored_at": "2026-08-24T20:01:52.234172Z"
+      "review": "本地跑大模型有新硬件选项，但性价比要等实测，不急就等等。",
+      "title_hash": "c10228d8",
+      "scored_at": "2026-08-25T15:32:51.178070Z"
+    },
+    "story_01e284861740|pragmatic|0a5c5b24": {
+      "score": 42,
+      "review": "没有可用原型或数据，嘴上省成本不如看路测。",
+      "title_hash": "668daed8",
+      "scored_at": "2026-08-25T15:32:53.265344Z"
+    },
+    "story_c4b1ff481103|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "界面升级主要面向终端用户，开发者若不做集成无需行动。",
+      "title_hash": "89a86b75",
+      "scored_at": "2026-08-25T15:32:55.288783Z"
+    },
+    "story_82cd7b823da3|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "集成案例有参考价值，但无通用工具或API，暂不用行动。",
+      "title_hash": "01c72d16",
+      "scored_at": "2026-08-25T15:32:56.531027Z"
+    },
+    "story_79b9ec90a382|pragmatic|0a5c5b24": {
+      "score": 60,
+      "review": "纯AI音乐被卡，辅助工具仍可准入，做音乐AI的需调整定位。",
+      "title_hash": "c43c1f45",
+      "scored_at": "2026-08-25T15:33:01.114538Z"
+    },
+    "story_97f565872705|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "新芯片刚有传闻，等真机评测再决定买不买，现有M5够用。",
+      "title_hash": "6aea3cc7",
+      "scored_at": "2026-08-25T15:33:03.417265Z"
+    },
+    "story_e0ba1a9f4659|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "明年才开售，现在买不到，等真机评测再决定要不要关注。",
+      "title_hash": "9b889dd1",
+      "scored_at": "2026-08-25T15:33:06.052637Z"
+    },
+    "story_2cdc7641002b|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "贴纸功能是娱乐向更新，不涉及API或开发工具，从业者无需关注。",
+      "title_hash": "4c712b38",
+      "scored_at": "2026-08-25T15:33:08.764032Z"
+    },
+    "story_974793f4f4f9|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "考古文，不是工具文；怀念可以，别指望有能抄的代码。",
+      "title_hash": "b0b608ff",
+      "scored_at": "2026-08-25T15:33:10.490083Z"
+    },
+    "story_8acadb205621|pragmatic|0a5c5b24": {
+      "score": 25,
+      "review": "安全团队罢工影响的是Anthropic内部，API照常，开发者不用管。",
+      "title_hash": "533b26c6",
+      "scored_at": "2026-08-25T15:33:12.644217Z"
+    },
+    "story_a3a30019dba2|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "GPT-5.6还没影，Kiro集成存疑，等官方API或开源再动手。",
+      "title_hash": "03f5a737",
+      "scored_at": "2026-08-25T15:33:18.973430Z"
+    },
+    "story_7ee612916ff0|cynic|f4237a62": {
+      "score": 45,
+      "review": "CTC模型谈极致准确？先亮出和主流端到端方案的对比表再说。",
+      "title_hash": "ec555978",
+      "scored_at": "2026-08-25T15:33:21.380477Z"
+    },
+    "story_7ee612916ff0|paper-police|966065bf": {
+      "score": 65,
+      "review": "模型权重可下载，评测数字在手，缺学术论文，第三方复现待验证。",
+      "title_hash": "ec555978",
+      "scored_at": "2026-08-25T15:33:26.407273Z"
+    },
+    "story_6411634610d0|cynic|f4237a62": {
+      "score": 35,
+      "review": "压缩反超原版？先看训练步数是不是一样，别拿瘸腿原版比。",
+      "title_hash": "ea15a420",
+      "scored_at": "2026-08-25T15:33:37.622537Z"
+    },
+    "story_6411634610d0|paper-police|966065bf": {
+      "score": 45,
+      "review": "博客给了评测数字但没开源代码，等第三方复现再确认更优。",
+      "title_hash": "ea15a420",
+      "scored_at": "2026-08-25T15:33:40.900150Z"
     }
   }
 }
