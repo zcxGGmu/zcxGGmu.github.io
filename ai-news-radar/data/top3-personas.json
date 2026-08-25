@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T04:17:07.104166Z",
+  "generated_at": "2026-08-25T10:17:28.652108Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,34 +37,26 @@
       }
     },
     {
-      "story_id": "story_013a5db6bd34",
-      "title": "OCR It——从无法复制的文档中提取文本，供您的LLM使用",
-      "url": "https://github.com/thiagotigaz/ocr-it",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 72,
-          "review": "OCR工具不新鲜，但开源可自托管算实在，别吹成LLM专用神器。"
-        },
-        "paper-police": {
-          "score": 72,
-          "review": "代码开源可查，但无评测报告，需自行跑通验证效果。"
-        },
-        "pragmatic": {
-          "score": 75,
-          "review": "开源OCR工具可clone即用，适合处理扫描件喂给LLM，省去额外API成本。"
-        }
-      }
-    },
-    {
       "story_id": "story_929ed190248c",
       "title": "OpenAI 正为一切构建 AI 智能体，但用户会愿意交出控制权吗？ / OpenAI is building AI agents for everything. Will everyone use them？",
       "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them",
-      "rank": 3,
+      "rank": 2,
       "reviews": {
         "pragmatic": {
           "score": 50,
           "review": "没有具体可用的产品细节，开发者先观望。"
+        }
+      }
+    },
+    {
+      "story_id": "story_5c02918da695",
+      "title": "对人工智能的依赖将导致编程专业技能的崩溃",
+      "url": "https://larsfaye.com/articles/ai-coding-will-prevent-expertise",
+      "rank": 3,
+      "reviews": {
+        "pragmatic": {
+          "score": 20,
+          "review": "观点文不产生代码，担心技能退化不如多写两行。"
         }
       }
     }
