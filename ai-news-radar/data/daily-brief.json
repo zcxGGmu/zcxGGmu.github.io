@@ -1,8 +1,93 @@
 {
-  "generated_at": "2026-08-26T03:18:51.028094Z",
+  "generated_at": "2026-08-26T09:57:41.982743Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
+    {
+      "story_id": "story_4346047ee8ea",
+      "title": "loveholidays 如何借助 Codex 让每个人都成为开发者 / How loveholidays is making everyone a builder with Codex",
+      "url": "https://openai.com/index/loveholidays",
+      "primary_url": "https://openai.com/index/loveholidays",
+      "source": "OpenAI News",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "14383b7f92a78efa35f12af8bae47555ed7c2a55",
+          "title": "loveholidays 如何借助 Codex 让每个人都成为开发者 / How loveholidays is making everyone a builder with Codex",
+          "title_zh": "loveholidays 如何借助 Codex 让每个人都成为开发者",
+          "title_en": "How loveholidays is making everyone a builder with Codex",
+          "title_original": "How loveholidays is making everyone a builder with Codex",
+          "summary": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nDiscover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nDiscover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nAugust 26, 2026\nThe online travel company is",
+          "recommend_reason_zh": "loveholidays用OpenAI Codex让非工程师也能开发上线，AI辅助代码变更一年从7%增至79%，部署频率提升73%，数据平台成功率升至93%。",
+          "url": "https://openai.com/index/loveholidays",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-26T00:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "OpenAI News"
+      ],
+      "items": [
+        {
+          "id": "14383b7f92a78efa35f12af8bae47555ed7c2a55",
+          "title": "loveholidays 如何借助 Codex 让每个人都成为开发者 / How loveholidays is making everyone a builder with Codex",
+          "title_zh": "loveholidays 如何借助 Codex 让每个人都成为开发者",
+          "title_en": "How loveholidays is making everyone a builder with Codex",
+          "title_original": "How loveholidays is making everyone a builder with Codex",
+          "summary": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nDiscover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nDiscover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nAugust 26, 2026\nThe online travel company is",
+          "recommend_reason_zh": "loveholidays用OpenAI Codex让非工程师也能开发上线，AI辅助代码变更一年从7%增至79%，部署频率提升73%，数据平台成功率升至93%。",
+          "url": "https://openai.com/index/loveholidays",
+          "source": "OpenAI News",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-26T00:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8359,
+      "importance": 0.8359,
+      "importance_score": 0.8359,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.95,
+        "recency": 0.866,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-26T00:00:00Z",
+      "latest_at": "2026-08-26T00:00:00Z",
+      "primary_item": {
+        "id": "14383b7f92a78efa35f12af8bae47555ed7c2a55",
+        "title": "loveholidays 如何借助 Codex 让每个人都成为开发者 / How loveholidays is making everyone a builder with Codex",
+        "title_zh": "loveholidays 如何借助 Codex 让每个人都成为开发者",
+        "title_en": "How loveholidays is making everyone a builder with Codex",
+        "title_original": "How loveholidays is making everyone a builder with Codex",
+        "summary": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nDiscover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nDiscover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster.\nAugust 26, 2026\nThe online travel company is",
+        "recommend_reason_zh": "loveholidays用OpenAI Codex让非工程师也能开发上线，AI辅助代码变更一年从7%增至79%，部署频率提升73%，数据平台成功率升至93%。",
+        "url": "https://openai.com/index/loveholidays",
+        "source": "OpenAI News",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 25,
+      "persona_review": "案例软文，没新API没工具，对开发者没啥用。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-26T10:26:59.617228Z"
+      }
+    },
     {
       "story_id": "story_4b7b151c884e",
       "title": "生产前如何评估LLM？ / How to evaluate LLMs before production",
@@ -48,15 +133,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8437,
-      "importance": 0.8437,
-      "importance_score": 0.8437,
+      "score": 0.8285,
+      "importance": 0.8285,
+      "importance_score": 0.8285,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.94,
-        "recency": 0.9206,
+        "recency": 0.8364,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +170,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -133,15 +218,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8392,
-      "importance": 0.8392,
-      "importance_score": 0.8392,
+      "score": 0.8254,
+      "importance": 0.8254,
+      "importance_score": 0.8254,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.99,
-        "recency": 0.84,
+        "recency": 0.7631,
         "story_heat": 0.0
       },
       "category": "official",
@@ -170,7 +255,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -218,15 +303,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8342,
-      "importance": 0.8342,
-      "importance_score": 0.8342,
+      "score": 0.8193,
+      "importance": 0.8193,
+      "importance_score": 0.8193,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.9009,
+        "recency": 0.8185,
         "story_heat": 0.0
       },
       "category": "official",
@@ -255,122 +340,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
-      }
-    },
-    {
-      "story_id": "story_b95e33dbd1e9",
-      "title": "Jalapeño 首批结果：AI 推理速度与效率行业领先 / Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-      "url": "https://openai.com/index/jalapeno-first-results",
-      "primary_url": "https://openai.com/index/jalapeno-first-results",
-      "source": "OpenAI News",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "b3bde5a716f5cd02908984c8fb28a797c214d23e",
-          "title": "Jalapeño 首批结果：AI 推理速度与效率行业领先 / Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-          "title_zh": "Jalapeño 首批结果：AI 推理速度与效率行业领先",
-          "title_en": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-          "title_original": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI自研推理芯片Jalapeño实测数据亮眼：在GPT-OSS 120B、DeepSeek R1、Kimi K2.5 1T上，每瓦AI工作量提升1.5至1.9倍，端到端延迟降低1.7至3.6倍，交互负载性能达2.1至4.1倍。",
-          "url": "https://openai.com/index/jalapeno-first-results",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-25T07:00:00Z"
-        },
-        {
-          "id": "41a3b35044428ad51fdf46c06a544e2679420c47",
-          "title": "Jalapeño 的结果显示，其 AI 推理速度和效率处于行业领先水平。 / Jalapeño's results show industry-leading speed and efficiency in AI inference",
-          "title_zh": "Jalapeño 的结果显示，其 AI 推理速度和效率处于行业领先水平。",
-          "title_en": "Jalapeño's results show industry-leading speed and efficiency in AI inference",
-          "title_original": "Jalapeño's results show industry-leading speed and efficiency in AI inference",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI自研推理芯片Jalapeño实测显示，在GPT-OSS 120B、DeepSeek R1、Kimi K2.5 1T上每瓦AI工作量提升1.5至1.9倍，端到端延迟降低1.7至3.6倍，交互负载性能提高2.1至4.1倍。",
-          "url": "https://openai.com/index/jalapeno-first-results",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-25T14:33:46Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "OpenAI News"
-      ],
-      "items": [
-        {
-          "id": "b3bde5a716f5cd02908984c8fb28a797c214d23e",
-          "title": "Jalapeño 首批结果：AI 推理速度与效率行业领先 / Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-          "title_zh": "Jalapeño 首批结果：AI 推理速度与效率行业领先",
-          "title_en": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-          "title_original": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI自研推理芯片Jalapeño实测数据亮眼：在GPT-OSS 120B、DeepSeek R1、Kimi K2.5 1T上，每瓦AI工作量提升1.5至1.9倍，端到端延迟降低1.7至3.6倍，交互负载性能达2.1至4.1倍。",
-          "url": "https://openai.com/index/jalapeno-first-results",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-25T07:00:00Z"
-        },
-        {
-          "id": "41a3b35044428ad51fdf46c06a544e2679420c47",
-          "title": "Jalapeño 的结果显示，其 AI 推理速度和效率处于行业领先水平。 / Jalapeño's results show industry-leading speed and efficiency in AI inference",
-          "title_zh": "Jalapeño 的结果显示，其 AI 推理速度和效率处于行业领先水平。",
-          "title_en": "Jalapeño's results show industry-leading speed and efficiency in AI inference",
-          "title_original": "Jalapeño's results show industry-leading speed and efficiency in AI inference",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI自研推理芯片Jalapeño实测显示，在GPT-OSS 120B、DeepSeek R1、Kimi K2.5 1T上每瓦AI工作量提升1.5至1.9倍，端到端延迟降低1.7至3.6倍，交互负载性能提高2.1至4.1倍。",
-          "url": "https://openai.com/index/jalapeno-first-results",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-25T14:33:46Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.8312,
-      "importance": 0.8312,
-      "importance_score": 0.8312,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7458,
-        "story_heat": 0.25
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-25T07:00:00Z",
-      "latest_at": "2026-08-25T14:33:46Z",
-      "primary_item": {
-        "id": "b3bde5a716f5cd02908984c8fb28a797c214d23e",
-        "title": "Jalapeño 首批结果：AI 推理速度与效率行业领先 / Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-        "title_zh": "Jalapeño 首批结果：AI 推理速度与效率行业领先",
-        "title_en": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-        "title_original": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-        "summary": null,
-        "recommend_reason_zh": "OpenAI自研推理芯片Jalapeño实测数据亮眼：在GPT-OSS 120B、DeepSeek R1、Kimi K2.5 1T上，每瓦AI工作量提升1.5至1.9倍，端到端延迟降低1.7至3.6倍，交互负载性能达2.1至4.1倍。",
-        "url": "https://openai.com/index/jalapeno-first-results",
-        "source": "OpenAI News",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "只是官方晒基准，没有 API 和开源，暂时用不上。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -418,15 +388,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8169,
-      "importance": 0.8169,
-      "importance_score": 0.8169,
+      "score": 0.8029,
+      "importance": 0.8029,
+      "importance_score": 0.8029,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8493,
+        "recency": 0.7715,
         "story_heat": 0.0
       },
       "category": "official",
@@ -455,7 +425,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -590,15 +560,15 @@
       ],
       "item_count": 4,
       "duplicate_count": 4,
-      "score": 0.8045,
-      "importance": 0.8045,
-      "importance_score": 0.8045,
+      "score": 0.7909,
+      "importance": 0.7909,
+      "importance_score": 0.7909,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.7,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8215,
+        "recency": 0.7463,
         "story_heat": 0.75
       },
       "category": "multi_source",
@@ -627,7 +597,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -675,15 +645,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8307,
-      "importance": 0.8307,
-      "importance_score": 0.8307,
+      "score": 0.8169,
+      "importance": 0.8169,
+      "importance_score": 0.8169,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.8373,
+        "recency": 0.7607,
         "story_heat": 0.0
       },
       "category": "official",
@@ -712,7 +682,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -760,15 +730,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8262,
-      "importance": 0.8262,
-      "importance_score": 0.8262,
+      "score": 0.8113,
+      "importance": 0.8113,
+      "importance_score": 0.8113,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.901,
+        "recency": 0.8185,
         "story_heat": 0.0
       },
       "category": "official",
@@ -797,115 +767,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
-      "story_id": "story_6e67842f0f7e",
-      "title": "海量智能背后的全栈技术 / The full stack behind abundant intelligence",
-      "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
-      "primary_url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
-      "source": "OpenAI News",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "c11537df89677eb075157ecdbf835a264160de84",
-          "title": "海量智能背后的全栈技术 / The full stack behind abundant intelligence",
-          "title_zh": "海量智能背后的全栈技术",
-          "title_en": "The full stack behind abundant intelligence",
-          "title_original": "The full stack behind abundant intelligence",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI CFO Sarah Friar详解自研推理芯片Jalapeño实测：在InferenceX基准上处理GPT-OSS 120B，每千瓦峰值吞吐更高、token延迟更低，并兼顾DeepSeek R1和Kimi K2。",
-          "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-25T07:05:00Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "OpenAI News"
-      ],
-      "items": [
-        {
-          "id": "c11537df89677eb075157ecdbf835a264160de84",
-          "title": "海量智能背后的全栈技术 / The full stack behind abundant intelligence",
-          "title_zh": "海量智能背后的全栈技术",
-          "title_en": "The full stack behind abundant intelligence",
-          "title_original": "The full stack behind abundant intelligence",
-          "summary": null,
-          "recommend_reason_zh": "OpenAI CFO Sarah Friar详解自研推理芯片Jalapeño实测：在InferenceX基准上处理GPT-OSS 120B，每千瓦峰值吞吐更高、token延迟更低，并兼顾DeepSeek R1和Kimi K2。",
-          "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
-          "source": "OpenAI News",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-25T07:05:00Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8064,
-      "importance": 0.8064,
-      "importance_score": 0.8064,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7467,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-25T07:05:00Z",
-      "latest_at": "2026-08-25T07:05:00Z",
-      "primary_item": {
-        "id": "c11537df89677eb075157ecdbf835a264160de84",
-        "title": "海量智能背后的全栈技术 / The full stack behind abundant intelligence",
-        "title_zh": "海量智能背后的全栈技术",
-        "title_en": "The full stack behind abundant intelligence",
-        "title_original": "The full stack behind abundant intelligence",
-        "summary": null,
-        "recommend_reason_zh": "OpenAI CFO Sarah Friar详解自研推理芯片Jalapeño实测：在InferenceX基准上处理GPT-OSS 120B，每千瓦峰值吞吐更高、token延迟更低，并兼顾DeepSeek R1和Kimi K2。",
-        "url": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
-        "source": "OpenAI News",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 50,
-      "persona_review": "讲了基础设施思路，没有新工具，暂不用行动。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
-      }
-    },
-    {
-      "story_id": "story_ca9e0be58fae",
-      "title": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
-      "url": "https://www.aibase.com/news/30627",
-      "primary_url": "https://www.aibase.com/news/30627",
+      "story_id": "story_b2c58e34aaf2",
+      "title": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
+      "url": "https://www.aibase.com/news/30643",
+      "primary_url": "https://www.aibase.com/news/30643",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "970deee819eb74f62f66cf1aa3fb7d948e150dc1",
-          "title": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
-          "title_zh": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
+          "id": "e7e32fb7f0eab15151de74bb45858e7c92d2819c",
+          "title": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
+          "title_zh": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
           "title_en": null,
-          "title_original": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
-          "summary": "Stability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nStability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nStability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nExplore AI Fronti",
-          "recommend_reason_zh": "Stability AI完成7600万美元B轮融资，EA与Sony Music、Universal Music、Warner Music三大唱片及AMD风投共同押注，印证AI公司与内容版权方从对抗走向共存。",
-          "url": "https://www.aibase.com/news/30627",
+          "title_original": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
+          "summary": "On August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nOn August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nOn August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nExplore AI Fronti",
+          "recommend_reason_zh": "京东发布“Super Brain”大模型3.0，将亿级包裹端到端最优路径规划从分钟级压缩至秒级，并首次实现仓储到配送全流程AI一体化调度，堪称物流行业规模最大的供应链大模型应用。",
+          "url": "https://www.aibase.com/news/30643",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
+          "published_at": "2026-08-26T09:57:41.982743Z"
         }
       ],
       "source_count": 1,
@@ -914,18 +799,18 @@
       ],
       "items": [
         {
-          "id": "970deee819eb74f62f66cf1aa3fb7d948e150dc1",
-          "title": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
-          "title_zh": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
+          "id": "e7e32fb7f0eab15151de74bb45858e7c92d2819c",
+          "title": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
+          "title_zh": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
           "title_en": null,
-          "title_original": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
-          "summary": "Stability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nStability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nStability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nExplore AI Fronti",
-          "recommend_reason_zh": "Stability AI完成7600万美元B轮融资，EA与Sony Music、Universal Music、Warner Music三大唱片及AMD风投共同押注，印证AI公司与内容版权方从对抗走向共存。",
-          "url": "https://www.aibase.com/news/30627",
+          "title_original": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
+          "summary": "On August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nOn August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nOn August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nExplore AI Fronti",
+          "recommend_reason_zh": "京东发布“Super Brain”大模型3.0，将亿级包裹端到端最优路径规划从分钟级压缩至秒级，并首次实现仓储到配送全流程AI一体化调度，堪称物流行业规模最大的供应链大模型应用。",
+          "url": "https://www.aibase.com/news/30643",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
+          "published_at": "2026-08-26T09:57:41.982743Z"
         }
       ],
       "item_count": 1,
@@ -946,27 +831,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-26T03:18:51.028094Z",
-      "latest_at": "2026-08-26T03:18:51.028094Z",
+      "earliest_at": "2026-08-26T09:57:41.982743Z",
+      "latest_at": "2026-08-26T09:57:41.982743Z",
       "primary_item": {
-        "id": "970deee819eb74f62f66cf1aa3fb7d948e150dc1",
-        "title": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
-        "title_zh": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
+        "id": "e7e32fb7f0eab15151de74bb45858e7c92d2819c",
+        "title": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
+        "title_zh": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
         "title_en": null,
-        "title_original": "Stability AI 完成 7600 万美元 B 轮：EA 与三大唱片巨头齐押注",
-        "summary": "Stability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nStability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nStability AI announced on the 25th in California time that it has completed a $76 million Series B funding round. The funds will be used to drive the developmen\nExplore AI Fronti",
-        "recommend_reason_zh": "Stability AI完成7600万美元B轮融资，EA与Sony Music、Universal Music、Warner Music三大唱片及AMD风投共同押注，印证AI公司与内容版权方从对抗走向共存。",
-        "url": "https://www.aibase.com/news/30627",
+        "title_original": "京东发布“超脑”大模型3.0，亿级包裹路径规划提速至秒级",
+        "summary": "On August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nOn August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nOn August 26th, JD.com officially launched its \"Super Brain\" large model 3.0 at the 18th International Transportation Technology and Equipment Exhibition. Compa\nExplore AI Fronti",
+        "recommend_reason_zh": "京东发布“Super Brain”大模型3.0，将亿级包裹端到端最优路径规划从分钟级压缩至秒级，并首次实现仓储到配送全流程AI一体化调度，堪称物流行业规模最大的供应链大模型应用。",
+        "url": "https://www.aibase.com/news/30643",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "融资新闻，不开放产品，跟开发者没关系。",
+      "persona_score": 55,
+      "persona_review": "物流优化场景落地，非通用工具，做相关方向可参考思路。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -1014,15 +899,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8236,
-      "importance": 0.8236,
-      "importance_score": 0.8236,
+      "score": 0.8104,
+      "importance": 0.8104,
+      "importance_score": 0.8104,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.7976,
+        "recency": 0.7246,
         "story_heat": 0.0
       },
       "category": "official",
@@ -1051,7 +936,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -1099,15 +984,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8228,
-      "importance": 0.8228,
-      "importance_score": 0.8228,
+      "score": 0.8083,
+      "importance": 0.8083,
+      "importance_score": 0.8083,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8824,
+        "recency": 0.8016,
         "story_heat": 0.0
       },
       "category": "official",
@@ -1136,7 +1021,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
+      }
+    },
+    {
+      "story_id": "story_c84a4b0b7ec0",
+      "title": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+      "url": "https://www.aibase.com/news/30644",
+      "primary_url": "https://www.aibase.com/news/30644",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "635fad4f1a3dfd8bdc6b528bf144f2c457a53192",
+          "title": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+          "title_zh": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+          "title_en": null,
+          "title_original": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+          "summary": "NVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nNVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nNVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nExplore AI Fronti",
+          "recommend_reason_zh": null,
+          "url": "https://www.aibase.com/news/30644",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:57:41.982743Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "635fad4f1a3dfd8bdc6b528bf144f2c457a53192",
+          "title": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+          "title_zh": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+          "title_en": null,
+          "title_original": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+          "summary": "NVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nNVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nNVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nExplore AI Fronti",
+          "recommend_reason_zh": null,
+          "url": "https://www.aibase.com/news/30644",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:57:41.982743Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 1.0,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-26T09:57:41.982743Z",
+      "latest_at": "2026-08-26T09:57:41.982743Z",
+      "primary_item": {
+        "id": "635fad4f1a3dfd8bdc6b528bf144f2c457a53192",
+        "title": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+        "title_zh": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+        "title_en": null,
+        "title_original": "华尔街关注等英伟达二季报：能否继续扛旗 AI 板块成焦点",
+        "summary": "NVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nNVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nNVIDIA will unveil its second-quarter results on the 26th local time, closing this round of tech earnings season. As the most closely watched chip company in th\nExplore AI Fronti",
+        "recommend_reason_zh": null,
+        "url": "https://www.aibase.com/news/30644",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 20,
+      "persona_review": "财报预测不影响写代码，AI板块波动是资本游戏。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -1184,15 +1153,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7426,
-      "importance": 0.7426,
-      "importance_score": 0.7426,
+      "score": 0.7287,
+      "importance": 0.7287,
+      "importance_score": 0.7287,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8446,
+        "recency": 0.7673,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1219,91 +1188,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
-      }
-    },
-    {
-      "story_id": "story_9910593f328e",
-      "title": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-      "url": "https://www.aibase.com/news/30625",
-      "primary_url": "https://www.aibase.com/news/30625",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "b61d57d1b1b12c8780f90dd26923afc3e8c95321",
-          "title": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-          "title_zh": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-          "title_en": null,
-          "title_original": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-          "summary": "Robotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nRobotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nRobotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nExplore AI Fronti",
-          "recommend_reason_zh": "Generalist估值达30亿美元，8VC领投2亿美元使B轮累计6亿美元；其1.5代模型让机器人观看3至12秒视频演示即可学会新任务，创始团队来自Google DeepMind与Boston Dynamics。",
-          "url": "https://www.aibase.com/news/30625",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "b61d57d1b1b12c8780f90dd26923afc3e8c95321",
-          "title": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-          "title_zh": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-          "title_en": null,
-          "title_original": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-          "summary": "Robotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nRobotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nRobotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nExplore AI Fronti",
-          "recommend_reason_zh": "Generalist估值达30亿美元，8VC领投2亿美元使B轮累计6亿美元；其1.5代模型让机器人观看3至12秒视频演示即可学会新任务，创始团队来自Google DeepMind与Boston Dynamics。",
-          "url": "https://www.aibase.com/news/30625",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 1.0,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T03:18:51.028094Z",
-      "latest_at": "2026-08-26T03:18:51.028094Z",
-      "primary_item": {
-        "id": "b61d57d1b1b12c8780f90dd26923afc3e8c95321",
-        "title": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-        "title_zh": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-        "title_en": null,
-        "title_original": "机器人初创公司 Generalist 完成新一轮融资，估值达30亿美元",
-        "summary": "Robotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nRobotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nRobotics startup Generalist has reached a valuation of $3 billion following a recent $200 million funding round led by 8VC. Regulatory filings and sources revea\nExplore AI Fronti",
-        "recommend_reason_zh": "Generalist估值达30亿美元，8VC领投2亿美元使B轮累计6亿美元；其1.5代模型让机器人观看3至12秒视频演示即可学会新任务，创始团队来自Google DeepMind与Boston Dynamics。",
-        "url": "https://www.aibase.com/news/30625",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 22,
-      "persona_review": "融资数字听听就行，没产品没接口，动手党无需关注。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
@@ -1351,15 +1236,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8206,
-      "importance": 0.8206,
-      "importance_score": 0.8206,
+      "score": 0.8063,
+      "importance": 0.8063,
+      "importance_score": 0.8063,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.87,
+        "recency": 0.7904,
         "story_heat": 0.0
       },
       "category": "official",
@@ -1388,425 +1273,538 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
-      "story_id": "story_6ccc5b93e71a",
-      "title": "OpenWorker 新版发布，内置网络安全智能体 / OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-      "url": "https://x.com/AndrewYNg/status/2092315079576555806",
-      "primary_url": "https://x.com/AndrewYNg/status/2092315079576555806",
-      "source": "X：Andrew Ng（DeepLearning.AI 创始人） (@AndrewYNg)",
-      "source_name": "AI HOT",
+      "story_id": "story_04e4cb4fff13",
+      "title": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+      "url": "https://www.aibase.com/news/30641",
+      "primary_url": "https://www.aibase.com/news/30641",
+      "source": "AIbase",
+      "source_name": "AIbase",
       "sources": [
         {
-          "id": "d1d7d8b4938352b2de83fe45b4d0d2ec94555d49",
-          "title": "OpenWorker 新版发布，内置网络安全智能体 / OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-          "title_zh": "OpenWorker 新版发布，内置网络安全智能体",
-          "title_en": "OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-          "title_original": "OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-          "summary": "Andrew Ng 旗下开源智能体 OpenWorker 发布新版，强化安全工作流。其 harness 完全开源，安全团队可审计无后门。新版内置代码漏洞扫描、依赖供应链注入检测和云安全配置检查三类网络安全智能体，并支持本地运行开源权重模型以保护敏感代码。",
-          "recommend_reason_zh": "OpenWorker新版开源代理可在笔记本上完成任务，新增多项安全流程功能，因初始版本对网络安全很有用，攻击者已开始使用。",
-          "url": "https://x.com/AndrewYNg/status/2092315079576555806",
-          "source": "X：Andrew Ng（DeepLearning.AI 创始人） (@AndrewYNg)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-25T18:16:02Z"
+          "id": "ed095435e215db2390cfbd254edfd2016a91de88",
+          "title": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+          "title_zh": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+          "title_en": null,
+          "title_original": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+          "summary": null,
+          "recommend_reason_zh": "Artificial Analysis与Liquid AI合作，在iPhone 17 Pro上对4-bit量化后8GB内的模型做本地跑分，涵盖函数调用等五类基准。16K上下文下Nanbeige4.2-3B与LFM2.5-2.6B平均分最高；限时1分钟则LFM2.5-8B-A1B居首。",
+          "url": "https://www.aibase.com/news/30641",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:02:26.665859Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "X：Andrew Ng（DeepLearning.AI 创始人） (@AndrewYNg)"
+        "AIbase"
       ],
       "items": [
         {
-          "id": "d1d7d8b4938352b2de83fe45b4d0d2ec94555d49",
-          "title": "OpenWorker 新版发布，内置网络安全智能体 / OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-          "title_zh": "OpenWorker 新版发布，内置网络安全智能体",
-          "title_en": "OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-          "title_original": "OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-          "summary": "Andrew Ng 旗下开源智能体 OpenWorker 发布新版，强化安全工作流。其 harness 完全开源，安全团队可审计无后门。新版内置代码漏洞扫描、依赖供应链注入检测和云安全配置检查三类网络安全智能体，并支持本地运行开源权重模型以保护敏感代码。",
-          "recommend_reason_zh": "OpenWorker新版开源代理可在笔记本上完成任务，新增多项安全流程功能，因初始版本对网络安全很有用，攻击者已开始使用。",
-          "url": "https://x.com/AndrewYNg/status/2092315079576555806",
-          "source": "X：Andrew Ng（DeepLearning.AI 创始人） (@AndrewYNg)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-25T18:16:02Z"
+          "id": "ed095435e215db2390cfbd254edfd2016a91de88",
+          "title": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+          "title_zh": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+          "title_en": null,
+          "title_original": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+          "summary": null,
+          "recommend_reason_zh": "Artificial Analysis与Liquid AI合作，在iPhone 17 Pro上对4-bit量化后8GB内的模型做本地跑分，涵盖函数调用等五类基准。16K上下文下Nanbeige4.2-3B与LFM2.5-2.6B平均分最高；限时1分钟则LFM2.5-8B-A1B居首。",
+          "url": "https://www.aibase.com/news/30641",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:02:26.665859Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7306,
-      "importance": 0.7306,
-      "importance_score": 0.7306,
+      "score": 0.7652,
+      "importance": 0.7652,
+      "importance_score": 0.7652,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.67,
+        "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8775,
+        "recency": 0.9868,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance"
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-25T18:16:02Z",
-      "latest_at": "2026-08-25T18:16:02Z",
+      "earliest_at": "2026-08-26T09:02:26.665859Z",
+      "latest_at": "2026-08-26T09:02:26.665859Z",
       "primary_item": {
-        "id": "d1d7d8b4938352b2de83fe45b4d0d2ec94555d49",
-        "title": "OpenWorker 新版发布，内置网络安全智能体 / OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-        "title_zh": "OpenWorker 新版发布，内置网络安全智能体",
-        "title_en": "OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-        "title_original": "OpenWorker -- an open source agent that doesn't just chat but completes tasks on your laptop -- just…",
-        "summary": "Andrew Ng 旗下开源智能体 OpenWorker 发布新版，强化安全工作流。其 harness 完全开源，安全团队可审计无后门。新版内置代码漏洞扫描、依赖供应链注入检测和云安全配置检查三类网络安全智能体，并支持本地运行开源权重模型以保护敏感代码。",
-        "recommend_reason_zh": "OpenWorker新版开源代理可在笔记本上完成任务，新增多项安全流程功能，因初始版本对网络安全很有用，攻击者已开始使用。",
-        "url": "https://x.com/AndrewYNg/status/2092315079576555806",
-        "source": "X：Andrew Ng（DeepLearning.AI 创始人） (@AndrewYNg)",
-        "source_name": "AI HOT"
+        "id": "ed095435e215db2390cfbd254edfd2016a91de88",
+        "title": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+        "title_zh": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+        "title_en": null,
+        "title_original": "Artificial Analysis 联手 Liquid AI 发手机端 AI 跑分：iPhone 17 Pro 跑 8GB 内模型座次出炉",
+        "summary": null,
+        "recommend_reason_zh": "Artificial Analysis与Liquid AI合作，在iPhone 17 Pro上对4-bit量化后8GB内的模型做本地跑分，涵盖函数调用等五类基准。16K上下文下Nanbeige4.2-3B与LFM2.5-2.6B平均分最高；限时1分钟则LFM2.5-8B-A1B居首。",
+        "url": "https://www.aibase.com/news/30641",
+        "source": "AIbase",
+        "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 85,
-      "persona_review": "开源可 clone，本地任务自动化直接上手试，比纯聊天多了实际用途。",
+      "persona_score": 72,
+      "persona_review": "端侧模型跑分实测，移动端部署选型可参考，但别只看单一指标。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
-      "story_id": "story_fb0dc79a0364",
-      "title": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑 / Claude's memory works everywhere， and you decide what's in it",
-      "url": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it",
-      "primary_url": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it",
-      "source": "Claude：Blog（网页）",
-      "source_name": "AI HOT",
+      "story_id": "story_6ec774358beb",
+      "title": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+      "url": "https://www.aibase.com/news/30642",
+      "primary_url": "https://www.aibase.com/news/30642",
+      "source": "AIbase",
+      "source_name": "AIbase",
       "sources": [
         {
-          "id": "a4abeec045a4d6f73b7bd3f023a245e64406b37c",
-          "title": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑 / Claude's memory works everywhere， and you decide what's in it",
-          "title_zh": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑",
-          "title_en": "Claude's memory works everywhere， and you decide what's in it",
-          "title_original": "Claude's memory works everywhere， and you decide what's in it",
-          "summary": "Claude 即日起将聊天与 Claude Cowork 的记忆统一，用户在任一场景对话时都能调用此前积累的上下文，减少重复解释。记忆会在聊天过程中实时更新，用户可在 Memory 设置中按主题查看、编辑或删除每条记忆。健康、信仰等敏感话题默认不存储，但可在设置中开启，且敏感识别号、犯罪记录等始终不会被保存。",
-          "recommend_reason_zh": "Anthropic让Claude的记忆在Chat与Cowork间同步，可逐条查看、编辑或删除；默认不存健康、信仰等敏感信息，但可手动开启。例如对话中提及截止日改到9月，下次无需重述。",
-          "url": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-25T18:02:04.743000Z"
+          "id": "4fdc09e33404fe440223712200ab0692b8cad3a8",
+          "title": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+          "title_zh": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+          "title_en": null,
+          "title_original": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+          "summary": null,
+          "recommend_reason_zh": "Yuezhitan正与Microsoft、Amazon、Google谈判，以30%分成方式托管开源模型Kimi K3，若达成将成为中国AI公司与美国云巨头首个重大分成合作，值得关注。",
+          "url": "https://www.aibase.com/news/30642",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:02:26.665859Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "Claude：Blog（网页）"
+        "AIbase"
       ],
       "items": [
         {
-          "id": "a4abeec045a4d6f73b7bd3f023a245e64406b37c",
-          "title": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑 / Claude's memory works everywhere， and you decide what's in it",
-          "title_zh": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑",
-          "title_en": "Claude's memory works everywhere， and you decide what's in it",
-          "title_original": "Claude's memory works everywhere， and you decide what's in it",
-          "summary": "Claude 即日起将聊天与 Claude Cowork 的记忆统一，用户在任一场景对话时都能调用此前积累的上下文，减少重复解释。记忆会在聊天过程中实时更新，用户可在 Memory 设置中按主题查看、编辑或删除每条记忆。健康、信仰等敏感话题默认不存储，但可在设置中开启，且敏感识别号、犯罪记录等始终不会被保存。",
-          "recommend_reason_zh": "Anthropic让Claude的记忆在Chat与Cowork间同步，可逐条查看、编辑或删除；默认不存健康、信仰等敏感信息，但可手动开启。例如对话中提及截止日改到9月，下次无需重述。",
-          "url": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it",
-          "source": "Claude：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-25T18:02:04.743000Z"
+          "id": "4fdc09e33404fe440223712200ab0692b8cad3a8",
+          "title": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+          "title_zh": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+          "title_en": null,
+          "title_original": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+          "summary": null,
+          "recommend_reason_zh": "Yuezhitan正与Microsoft、Amazon、Google谈判，以30%分成方式托管开源模型Kimi K3，若达成将成为中国AI公司与美国云巨头首个重大分成合作，值得关注。",
+          "url": "https://www.aibase.com/news/30642",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:02:26.665859Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.73,
-      "importance": 0.73,
-      "importance_score": 0.73,
+      "score": 0.7652,
+      "importance": 0.7652,
+      "importance_score": 0.7652,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.67,
+        "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8746,
+        "recency": 0.9868,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance"
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-25T18:02:04.743000Z",
-      "latest_at": "2026-08-25T18:02:04.743000Z",
+      "earliest_at": "2026-08-26T09:02:26.665859Z",
+      "latest_at": "2026-08-26T09:02:26.665859Z",
       "primary_item": {
-        "id": "a4abeec045a4d6f73b7bd3f023a245e64406b37c",
-        "title": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑 / Claude's memory works everywhere， and you decide what's in it",
-        "title_zh": "Claude 记忆功能全面打通聊天与 Cowork，用户可逐条查看和编辑",
-        "title_en": "Claude's memory works everywhere， and you decide what's in it",
-        "title_original": "Claude's memory works everywhere， and you decide what's in it",
-        "summary": "Claude 即日起将聊天与 Claude Cowork 的记忆统一，用户在任一场景对话时都能调用此前积累的上下文，减少重复解释。记忆会在聊天过程中实时更新，用户可在 Memory 设置中按主题查看、编辑或删除每条记忆。健康、信仰等敏感话题默认不存储，但可在设置中开启，且敏感识别号、犯罪记录等始终不会被保存。",
-        "recommend_reason_zh": "Anthropic让Claude的记忆在Chat与Cowork间同步，可逐条查看、编辑或删除；默认不存健康、信仰等敏感信息，但可手动开启。例如对话中提及截止日改到9月，下次无需重述。",
-        "url": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it",
-        "source": "Claude：Blog（网页）",
-        "source_name": "AI HOT"
+        "id": "4fdc09e33404fe440223712200ab0692b8cad3a8",
+        "title": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+        "title_zh": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+        "title_en": null,
+        "title_original": "中国AI出海杀入巨头腹地，月之暗面携Kimi K3洽谈美云巨头30%分成",
+        "summary": null,
+        "recommend_reason_zh": "Yuezhitan正与Microsoft、Amazon、Google谈判，以30%分成方式托管开源模型Kimi K3，若达成将成为中国AI公司与美国云巨头首个重大分成合作，值得关注。",
+        "url": "https://www.aibase.com/news/30642",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 42,
+      "persona_review": "商业分成谈判离代码远，开发者暂无需行动，看后续产品兼容性。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-26T10:26:59.617228Z"
+      }
+    },
+    {
+      "story_id": "story_9ac4990f24cf",
+      "title": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+      "url": "https://www.aibase.com/news/30640",
+      "primary_url": "https://www.aibase.com/news/30640",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "3ce25d705d0a8b4fd3d222564172a8b11930f9fc",
+          "title": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+          "title_zh": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+          "title_en": null,
+          "title_original": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+          "summary": null,
+          "recommend_reason_zh": "Mei O宣布小红书2026年渠道战略聚焦行业深耕等四个维度，向代理商开放覆盖全流程的AI能力，推动其从广告投放升级为行业经营伙伴。",
+          "url": "https://www.aibase.com/news/30640",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:02:26.665859Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "3ce25d705d0a8b4fd3d222564172a8b11930f9fc",
+          "title": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+          "title_zh": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+          "title_en": null,
+          "title_original": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+          "summary": null,
+          "recommend_reason_zh": "Mei O宣布小红书2026年渠道战略聚焦行业深耕等四个维度，向代理商开放覆盖全流程的AI能力，推动其从广告投放升级为行业经营伙伴。",
+          "url": "https://www.aibase.com/news/30640",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T09:02:26.665859Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7652,
+      "importance": 0.7652,
+      "importance_score": 0.7652,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9868,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-26T09:02:26.665859Z",
+      "latest_at": "2026-08-26T09:02:26.665859Z",
+      "primary_item": {
+        "id": "3ce25d705d0a8b4fd3d222564172a8b11930f9fc",
+        "title": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+        "title_zh": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+        "title_en": null,
+        "title_original": "小红书开放代理商全流程 AI 能力，押注\"行业经营伙伴\"升级",
+        "summary": null,
+        "recommend_reason_zh": "Mei O宣布小红书2026年渠道战略聚焦行业深耕等四个维度，向代理商开放覆盖全流程的AI能力，推动其从广告投放升级为行业经营伙伴。",
+        "url": "https://www.aibase.com/news/30640",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 52,
+      "persona_review": "代理商生态升级，做小红书代运营的可以跟，写代码的暂时无关。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-26T10:26:59.617228Z"
+      }
+    },
+    {
+      "story_id": "story_0be877002fab",
+      "title": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+      "url": "https://www.aibase.com/news/30638",
+      "primary_url": "https://www.aibase.com/news/30638",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "fa9973acbcbf885dbcdabeccdb1cdd39977bb2ca",
+          "title": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+          "title_zh": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+          "title_en": null,
+          "title_original": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+          "summary": null,
+          "recommend_reason_zh": "DeepSeek 前 7 月营收达 4.75 亿元，约为 2025 全年 10 倍，净亏损从 9.35 亿元收窄至 7.15 亿元；二轮融资拟募 50 亿元、目标估值 500 亿元，并已聘投行筹备明年 IPO。",
+          "url": "https://www.aibase.com/news/30638",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T07:59:56.395212Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "fa9973acbcbf885dbcdabeccdb1cdd39977bb2ca",
+          "title": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+          "title_zh": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+          "title_en": null,
+          "title_original": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+          "summary": null,
+          "recommend_reason_zh": "DeepSeek 前 7 月营收达 4.75 亿元，约为 2025 全年 10 倍，净亏损从 9.35 亿元收窄至 7.15 亿元；二轮融资拟募 50 亿元、目标估值 500 亿元，并已聘投行筹备明年 IPO。",
+          "url": "https://www.aibase.com/news/30638",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T07:59:56.395212Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7626,
+      "importance": 0.7626,
+      "importance_score": 0.7626,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9721,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-26T07:59:56.395212Z",
+      "latest_at": "2026-08-26T07:59:56.395212Z",
+      "primary_item": {
+        "id": "fa9973acbcbf885dbcdabeccdb1cdd39977bb2ca",
+        "title": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+        "title_zh": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+        "title_en": null,
+        "title_original": "DeepSeek 前 7 月营收 4.75 亿元激增 9 倍，5000 亿估值二轮融资在途",
+        "summary": null,
+        "recommend_reason_zh": "DeepSeek 前 7 月营收达 4.75 亿元，约为 2025 全年 10 倍，净亏损从 9.35 亿元收窄至 7.15 亿元；二轮融资拟募 50 亿元、目标估值 500 亿元，并已聘投行筹备明年 IPO。",
+        "url": "https://www.aibase.com/news/30638",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 30,
+      "persona_review": "营收估值是商业故事，不影响接口和价格，等产品更新再看。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-26T10:26:59.617228Z"
+      }
+    },
+    {
+      "story_id": "story_a2e3eb29cde0",
+      "title": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+      "url": "https://www.aibase.com/news/30637",
+      "primary_url": "https://www.aibase.com/news/30637",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "bae37707d92e86e5a34c8b499894153366250552",
+          "title": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+          "title_zh": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+          "title_en": null,
+          "title_original": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+          "summary": null,
+          "recommend_reason_zh": "本文详解OpenRouter新推出的统一异步视频生成API，如何化解不同视频模型在端点、参数、轮询逻辑上的适配难题，并说明以异步架构应对生成耗时、避免serverless超时等长连接风险。",
+          "url": "https://www.aibase.com/news/30637",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T07:59:56.395212Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "bae37707d92e86e5a34c8b499894153366250552",
+          "title": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+          "title_zh": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+          "title_en": null,
+          "title_original": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+          "summary": null,
+          "recommend_reason_zh": "本文详解OpenRouter新推出的统一异步视频生成API，如何化解不同视频模型在端点、参数、轮询逻辑上的适配难题，并说明以异步架构应对生成耗时、避免serverless超时等长连接风险。",
+          "url": "https://www.aibase.com/news/30637",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-26T07:59:56.395212Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7626,
+      "importance": 0.7626,
+      "importance_score": 0.7626,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9721,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-26T07:59:56.395212Z",
+      "latest_at": "2026-08-26T07:59:56.395212Z",
+      "primary_item": {
+        "id": "bae37707d92e86e5a34c8b499894153366250552",
+        "title": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+        "title_zh": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+        "title_en": null,
+        "title_original": "一站式搞定多模型：OpenRouter 推出异步视频生成 API 接入指南",
+        "summary": null,
+        "recommend_reason_zh": "本文详解OpenRouter新推出的统一异步视频生成API，如何化解不同视频模型在端点、参数、轮询逻辑上的适配难题，并说明以异步架构应对生成耗时、避免serverless超时等长连接风险。",
+        "url": "https://www.aibase.com/news/30637",
+        "source": "AIbase",
+        "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
       "persona_score": 75,
-      "persona_review": "记忆可编辑可控制，接多轮对话项目时值得上手试。",
+      "persona_review": "直接抄文档就能接多模型视频生成，省去逐个对接的麻烦。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     },
     {
-      "story_id": "story_5ca3b0209061",
-      "title": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-      "url": "https://www.aibase.com/news/30624",
-      "primary_url": "https://www.aibase.com/news/30624",
-      "source": "AIbase",
-      "source_name": "AIbase",
+      "story_id": "story_97f565872705",
+      "title": "Apple新款M6芯片核心更多，AI算力更强 / Apple&#8217;s new M6 chip gets more cores and more AI compute",
+      "url": "https://www.theverge.com/tech/984118/apple-m6-m5-ultra-chip-mac-mini-studio",
+      "primary_url": "https://www.theverge.com/tech/984118/apple-m6-m5-ultra-chip-mac-mini-studio",
+      "source": "The Verge",
+      "source_name": "Curated Media",
       "sources": [
         {
-          "id": "9638a7abc25afedb563d2cb47043d2196a1eb373",
-          "title": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-          "title_zh": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-          "title_en": null,
-          "title_original": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-          "summary": "Message source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nMessage source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nMessage source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nExplore AI Fronti",
-          "recommend_reason_zh": "OpenAI被曝秘密完成新模型Bel的预训练，参数超10T，欲做GPT-6后AGI基座；并称Anthropic因算力受限，拟明年初重回领先。",
-          "url": "https://www.aibase.com/news/30624",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "9638a7abc25afedb563d2cb47043d2196a1eb373",
-          "title": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-          "title_zh": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-          "title_en": null,
-          "title_original": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-          "summary": "Message source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nMessage source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nMessage source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nExplore AI Fronti",
-          "recommend_reason_zh": "OpenAI被曝秘密完成新模型Bel的预训练，参数超10T，欲做GPT-6后AGI基座；并称Anthropic因算力受限，拟明年初重回领先。",
-          "url": "https://www.aibase.com/news/30624",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 1.0,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T03:18:51.028094Z",
-      "latest_at": "2026-08-26T03:18:51.028094Z",
-      "primary_item": {
-        "id": "9638a7abc25afedb563d2cb47043d2196a1eb373",
-        "title": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-        "title_zh": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-        "title_en": null,
-        "title_original": "消息称OpenAI 秘密预训练 Bel 模型：超 10T 参数，剑指 GPT-6 后 AGI 基座",
-        "summary": "Message source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nMessage source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nMessage source @synthwavedd broke the news on the X platform that OpenAI has completed the pre-training of its next-generation model Bel, the direct successor t\nExplore AI Fronti",
-        "recommend_reason_zh": "OpenAI被曝秘密完成新模型Bel的预训练，参数超10T，欲做GPT-6后AGI基座；并称Anthropic因算力受限，拟明年初重回领先。",
-        "url": "https://www.aibase.com/news/30624",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 35,
-      "persona_review": "秘密预训练的传言，没开放没demo，动不了手，先观望。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
-      }
-    },
-    {
-      "story_id": "story_ef0766deca41",
-      "title": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-      "url": "https://www.aibase.com/news/30626",
-      "primary_url": "https://www.aibase.com/news/30626",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "3bf6204d0e99e831055b27285e72453bac63fe06",
-          "title": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-          "title_zh": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-          "title_en": null,
-          "title_original": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-          "summary": "Alphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nAlphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nAlphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nExplore AI Fronti",
-          "recommend_reason_zh": "谷歌正式发布Gemini Enterprise for Legal，为律所提供法律软件插件支持和可独立处理专业任务的AI agents，并允许用户在多个模型间自由选择，全面对标行业巨头。",
-          "url": "https://www.aibase.com/news/30626",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "3bf6204d0e99e831055b27285e72453bac63fe06",
-          "title": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-          "title_zh": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-          "title_en": null,
-          "title_original": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-          "summary": "Alphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nAlphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nAlphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nExplore AI Fronti",
-          "recommend_reason_zh": "谷歌正式发布Gemini Enterprise for Legal，为律所提供法律软件插件支持和可独立处理专业任务的AI agents，并允许用户在多个模型间自由选择，全面对标行业巨头。",
-          "url": "https://www.aibase.com/news/30626",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T03:18:51.028094Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7676,
-      "importance": 0.7676,
-      "importance_score": 0.7676,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 1.0,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T03:18:51.028094Z",
-      "latest_at": "2026-08-26T03:18:51.028094Z",
-      "primary_item": {
-        "id": "3bf6204d0e99e831055b27285e72453bac63fe06",
-        "title": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-        "title_zh": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-        "title_en": null,
-        "title_original": "谷歌正式杀入法律AI赛道：Gemini Enterprise for Legal重磅发布，全面对标行业巨头",
-        "summary": "Alphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nAlphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nAlphabet's Google announced on Tuesday the expansion of its Gemini Enterprise AI platform, officially launching a dedicated tool for law firms and legal profess\nExplore AI Fronti",
-        "recommend_reason_zh": "谷歌正式发布Gemini Enterprise for Legal，为律所提供法律软件插件支持和可独立处理专业任务的AI agents，并允许用户在多个模型间自由选择，全面对标行业巨头。",
-        "url": "https://www.aibase.com/news/30626",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 70,
-      "persona_review": "法律AI赛道有新玩家，做法律服务的可关注其API与定价。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
-      }
-    },
-    {
-      "story_id": "story_ddb1a121f62b",
-      "title": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
-      "url": "https://www.aibase.com/news/30610",
-      "primary_url": "https://www.aibase.com/news/30610",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "c36d75ce522bea77bb66afccc0ad9e7dd20c7d84",
-          "title": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
-          "title_zh": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
-          "title_en": null,
-          "title_original": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
+          "id": "73f20681e3310a757758f9c3769d821c5fabbbc9",
+          "title": "Apple新款M6芯片核心更多，AI算力更强 / Apple&#8217;s new M6 chip gets more cores and more AI compute",
+          "title_zh": "Apple新款M6芯片核心更多，AI算力更强",
+          "title_en": "Apple&#8217;s new M6 chip gets more cores and more AI compute",
+          "title_original": "Apple&#8217;s new M6 chip gets more cores and more AI compute",
           "summary": null,
-          "recommend_reason_zh": "本文披露Anthropic以超30万亿美元TAM支撑2万亿估值，超越SpaceX的28.5万亿纪录；并引用Q2营收116亿美元、首现调整后盈利等数据，剖析其IPO雄心与隐忧。",
-          "url": "https://www.aibase.com/news/30610",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T01:58:48.294879Z"
+          "recommend_reason_zh": null,
+          "url": "https://www.theverge.com/tech/984118/apple-m6-m5-ultra-chip-mac-mini-studio",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-25T13:00:00Z"
+        },
+        {
+          "id": "b1d7abe7c8bff5d6873d03816b3c1eb79fde5e0e",
+          "title": "Apple新款M6芯片配备更多核心，AI算力更强 / Apple’s new M6 chip gets more cores and more AI compute",
+          "title_zh": "Apple新款M6芯片配备更多核心，AI算力更强",
+          "title_en": "Apple’s new M6 chip gets more cores and more AI compute",
+          "title_original": "Apple’s new M6 chip gets more cores and more AI compute",
+          "summary": null,
+          "recommend_reason_zh": "Apple发布首款2nm的M6芯片，配备12核CPU、12核GPU与双16核神经引擎，支持32GB内存；同时“最强大”M5 Ultra最多80核GPU、512GB内存，随新Mac Studio于9月22日发售。",
+          "url": "https://www.theverge.com/tech/984118/apple-m6-m5-ultra-chip-mac-mini-studio",
+          "source": "The Verge",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-25T13:00:00Z"
         }
       ],
-      "source_count": 1,
+      "source_count": 2,
       "source_names": [
-        "AIbase"
+        "The Verge"
       ],
       "items": [
         {
-          "id": "c36d75ce522bea77bb66afccc0ad9e7dd20c7d84",
-          "title": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
-          "title_zh": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
-          "title_en": null,
-          "title_original": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
+          "id": "73f20681e3310a757758f9c3769d821c5fabbbc9",
+          "title": "Apple新款M6芯片核心更多，AI算力更强 / Apple&#8217;s new M6 chip gets more cores and more AI compute",
+          "title_zh": "Apple新款M6芯片核心更多，AI算力更强",
+          "title_en": "Apple&#8217;s new M6 chip gets more cores and more AI compute",
+          "title_original": "Apple&#8217;s new M6 chip gets more cores and more AI compute",
           "summary": null,
-          "recommend_reason_zh": "本文披露Anthropic以超30万亿美元TAM支撑2万亿估值，超越SpaceX的28.5万亿纪录；并引用Q2营收116亿美元、首现调整后盈利等数据，剖析其IPO雄心与隐忧。",
-          "url": "https://www.aibase.com/news/30610",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-08-26T01:58:48.294879Z"
+          "recommend_reason_zh": null,
+          "url": "https://www.theverge.com/tech/984118/apple-m6-m5-ultra-chip-mac-mini-studio",
+          "source": "The Verge",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-25T13:00:00Z"
+        },
+        {
+          "id": "b1d7abe7c8bff5d6873d03816b3c1eb79fde5e0e",
+          "title": "Apple新款M6芯片配备更多核心，AI算力更强 / Apple’s new M6 chip gets more cores and more AI compute",
+          "title_zh": "Apple新款M6芯片配备更多核心，AI算力更强",
+          "title_en": "Apple’s new M6 chip gets more cores and more AI compute",
+          "title_original": "Apple’s new M6 chip gets more cores and more AI compute",
+          "summary": null,
+          "recommend_reason_zh": "Apple发布首款2nm的M6芯片，配备12核CPU、12核GPU与双16核神经引擎，支持32GB内存；同时“最强大”M5 Ultra最多80核GPU、512GB内存，随新Mac Studio于9月22日发售。",
+          "url": "https://www.theverge.com/tech/984118/apple-m6-m5-ultra-chip-mac-mini-studio",
+          "source": "The Verge",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-25T13:00:00Z"
         }
       ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7642,
-      "importance": 0.7642,
-      "importance_score": 0.7642,
-      "importance_label": "行业动态",
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5768,
+      "importance": 0.5768,
+      "importance_score": 0.5768,
+      "importance_label": "值得关注",
       "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9809,
-        "story_heat": 0.0
+        "editorial": 0.504,
+        "source_tier": 0.58,
+        "ai_relevance": 0.7,
+        "recency": 0.7388,
+        "story_heat": 0.25
       },
-      "category": "industry",
+      "category": "watch",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "multi_source"
       ],
-      "earliest_at": "2026-08-26T01:58:48.294879Z",
-      "latest_at": "2026-08-26T01:58:48.294879Z",
+      "earliest_at": "2026-08-25T13:00:00Z",
+      "latest_at": "2026-08-25T13:00:00Z",
       "primary_item": {
-        "id": "c36d75ce522bea77bb66afccc0ad9e7dd20c7d84",
-        "title": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
-        "title_zh": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
-        "title_en": null,
-        "title_original": "Anthropic 冲击全球最大 IPO：画 30 万亿美元市场蓝图，估值锚定 2 万亿",
+        "id": "73f20681e3310a757758f9c3769d821c5fabbbc9",
+        "title": "Apple新款M6芯片核心更多，AI算力更强 / Apple&#8217;s new M6 chip gets more cores and more AI compute",
+        "title_zh": "Apple新款M6芯片核心更多，AI算力更强",
+        "title_en": "Apple&#8217;s new M6 chip gets more cores and more AI compute",
+        "title_original": "Apple&#8217;s new M6 chip gets more cores and more AI compute",
         "summary": null,
-        "recommend_reason_zh": "本文披露Anthropic以超30万亿美元TAM支撑2万亿估值，超越SpaceX的28.5万亿纪录；并引用Q2营收116亿美元、首现调整后盈利等数据，剖析其IPO雄心与隐忧。",
-        "url": "https://www.aibase.com/news/30610",
-        "source": "AIbase",
-        "source_name": "AIbase"
+        "recommend_reason_zh": null,
+        "url": "https://www.theverge.com/tech/984118/apple-m6-m5-ultra-chip-mac-mini-studio",
+        "source": "The Verge",
+        "source_name": "Curated Media"
       },
       "persona_id": "pragmatic",
-      "persona_score": 20,
-      "persona_review": "IPO 蓝图不写代码，估值再高也影响不到今天的选型。",
+      "persona_score": 50,
+      "persona_review": "芯片迭代对本地跑模型的开发者是利好，但没具体规格和发售日，不用急着换。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-26T03:35:59.067949Z"
+        "scored_at": "2026-08-26T10:26:59.617228Z"
       }
     }
   ]
