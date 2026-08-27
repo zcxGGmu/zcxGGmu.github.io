@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>awesome-gpt-image-2：532 个案例如何变成可复用的图像提示词系统 - zcxGGmu's Blog</title>
+  <meta name="description" content="从案例检索、21 套模板到 Agent Skill，拆解如何把 GPT-Image-2 的视觉生成从反复试错变成可复盘、可授权、可交付的工作流。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/awesome-gpt-image-2-532-cases-prompt-engineering/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="awesome-gpt-image-2：532 个案例如何变成可复用的图像提示词系统"><meta property="og:description" content="从案例检索、21 套模板到 Agent Skill，拆解如何把 GPT-Image-2 的视觉生成从反复试错变成可复盘、可授权、可交付的工作流。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/awesome-gpt-image-2-532-cases-prompt-engineering/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/awesome-gpt-image-2-532-cases-prompt-engineering/cover.svg')"><div class="post-title">awesome-gpt-image-2：532 个案例如何变成可复用的图像提示词系统<div class="post-subtitle">从案例检索、21 套模板到 Agent Skill，拆解如何把 GPT-Image-2 的视觉生成从反复试错变成可复盘、可授权、可交付的工作流。</div><div class="post-meta"><time itemprop="datePublished">2026-08-28</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/AI%E5%B7%A5%E5%85%B7/">AI工具</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/AI%20Skills/">AI Skills</a>&nbsp;<a href="/tags/AI%20Agent/">AI Agent</a>&nbsp;<a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>&nbsp;<a href="/tags/GitHub/">GitHub</a>&nbsp;<a href="/tags/GPT-Image-2/">GPT-Image-2</a>&nbsp;<a href="/tags/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/">图像生成</a>&nbsp;<a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/">提示词工程</a>&nbsp;<a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/">工作流</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 9 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>生成式图像的难点通常不在于“能不能生成”，而在于能否稳定得到符合用途的成品。只写一句“做一张海报”，模型往往需要自行猜测受众、版式、信息层级、文字内容、比例和禁用元素；任何一个条件猜错，结果就会变成反复试错。</p>
+<p><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a> 提供了一种更工程化的入口：把 GPT-Image-2 的案例、提示词模板、分类标签和可复用的 Agent Skill 放在同一套资料结构里。它的价值不只是收集图片，而是把“从目标到提示词”的推导过程显式化，让一次成功经验可以被检索、比较和改写。</p>
+
+<h2 id="case-library">一、案例库解决的是检索问题</h2>
+<p>项目整理了 532 个案例，覆盖信息图、应用界面、活动海报、商品广告、人物摄影、历史题材等 13 类方向。案例数量的意义不在于让人逐张浏览，而在于提供足够密集的参照样本：当需求属于某个常见视觉任务时，可以先找到结构相近的成品，再分析其标题位置、模块数量、颜色关系、主体比例和文字密度。</p>
+<p>这种方法改变了提示词的起点。传统做法从一句模糊描述开始，生成结果不理想后再不断追加形容词；案例驱动的做法先确定成品类型，再从相似案例中提取可迁移的结构。检索得到的不是一条必须照抄的指令，而是一组关于布局、层级和限制条件的具体假设。</p>
+
+<h2 id="prompt-templates">二、模板把视觉目标拆成可检查的字段</h2>
+<p>仓库还提供 21 套提示词模板，用来把主题、受众、比例、文案、模块关系和禁用元素分开填写。模板不会只要求“画一张城市图”，而会继续追问给谁看、分成几个模块、模块之间如何连接、标题写什么、背景采用深色还是浅色，以及中文是否必须准确显示。</p>
+<p>一个可执行的模板至少应包含六块信息：画面要表达什么，元素如何排列，整体采用什么视觉风格，必须出现哪些文字，输出采用什么比例，以及明确不要出现什么。字段化的好处是容易复查，缺少受众或比例时可以在生成前发现，而不是等成品出来才猜测失败原因。</p>
+<p>模板并不是固定答案。它更像一张检查表，帮助使用者把品牌色、字体、版式和交付规格补进去。对有固定设计规范的团队，模板可以沉淀为统一输入接口，减少每个人用不同方式描述同一类需求。</p>
+
+<h2 id="agent-skill">三、Agent Skill 将案例检索接入任务流程</h2>
+<p>项目把案例匹配与提示词拆解整理成一个 Agent Skill，可安装到支持 Skills 的编码工具中。使用者只需给出具体任务，Skill 先判断它属于信息图、商品图、界面图还是其他视觉类型，再匹配场景标签和相近案例，最后按字段输出更完整的提示词。</p>
+<p>例如，要为 Codex 设计一张中文信息图，可以把编程任务拆成“读取文件、制定修改、编辑代码、运行测试、交付结果”五个模块。Skill 会进一步约束从左到右的顺序、16:9 比例、浅色网格背景、深色文字、执行步骤的绿色标识、每个模块只保留短标题和简单图标，并明确中文不能乱码、模块不能打乱。</p>
+<p>这套流程的关键不是保证每次结果完全相同。图像模型仍然会受版本、随机性和文字生成能力影响；Skill 的作用是把最容易遗漏的构图、比例、文字和限制条件提前组织好。结果不理想时，使用者也能知道应该修改哪个字段，而不用重新从一句模糊描述开始。</p>
+
+<h2 id="reproducibility">四、可复用提示词需要保留推导过程</h2>
+<p>如果只保存最终提示词，团队很难知道它为什么有效。更可靠的资料结构应同时保存目标、参考案例、模板版本、修改过的字段、生成结果和人工评价。这样下一次遇到相似需求时，可以区分哪些条件是任务本身要求的，哪些只是某次生成的偶然选择。</p>
+<p>案例的复用也要避免表面复制。相似海报的颜色和构图可以提供启发，但产品名称、人物身份、品牌资产和具体文案必须替换为获得授权的内容。复用的对象应是信息层级与提示词结构，而不是未经确认的第三方素材。</p>
+
+<h2 id="service-boundaries">五、开源代码、在线站点和模型服务是三层边界</h2>
+<p>项目代码采用 MIT License，但仓库说明部分案例和图片参考了公开社区内容，这并不等于所有素材都可以直接商用。使用案例学习结构通常风险较低，把具体人物、角色、品牌或图片直接用于商业项目时，仍应回到原始来源确认授权、商标和肖像边界。</p>
+<p>开源仓库、在线网站和第三方图片 API 也应分开评估。公开代码的许可证解决的是代码再利用条件；在线站点可能涉及登录、会员、支付和用户配额；图像模型 API 则可能按调用、分辨率或输出类型收费。把这些层混为一个“免费项目”，会导致成本和责任判断失真。</p>
+<p>实际接入时，至少要记录模型版本、服务端点、调用费用、输出保存位置和数据是否会离开本地。对于企业素材、客户图片和未公开产品信息，应先确认服务条款与数据留存策略，再决定是否允许进入在线生成链路。</p>
+
+<h2 id="workflow">六、从需求到成品可以形成五步工作流</h2>
+<p>第一步是定义任务类型和受众，明确最终要解决的信息传达问题。第二步是从案例库找到两到三个相近结构，记录它们的版式、模块和文字特征。第三步是打开对应模板，补齐主题、比例、文案、品牌规范和限制条件。第四步是让 Skill 生成结构化提示词，再交给 GPT-Image-2 或其他兼容模型执行。第五步是对成品做文字、布局、授权和用途检查。</p>
+<p>这条链路把“提示词调试”变成了可复盘的设计过程。每次失败都可以归因到任务定义、案例匹配、字段缺失、模型能力或后处理，而不是笼统地说模型发挥不稳定。对重复性较高的海报和信息图任务，还可以把经过验证的字段组合保存为团队模板。</p>
+
+<h2 id="evaluation">七、评价标准要从抽卡次数转向交付质量</h2>
+<p>生成图片不应只看第一眼是否漂亮。信息图要检查文字准确率、阅读顺序、模块关系和信息是否完整；商品图要检查主体、规格、品牌元素与背景是否一致；界面图要检查组件层级、状态和可读性；人物或历史题材还要额外检查事实、版权和刻板印象风险。</p>
+<p>可以为每类任务建立一张验收表：文字是否可直接使用，比例是否符合投放位置，关键元素是否缺失，是否存在不可接受的变形，是否使用了未经授权的素材，调用成本是否在预算内。这样的指标比单纯比较生成次数更接近真实交付价值。</p>
+
+<h2 id="adoption">八、适合从低风险、可编辑的任务开始</h2>
+<p>最适合试点的是公开资料信息图、内部流程示意图、无敏感数据的活动草稿和产品概念探索。这些任务容易定义输入和输出，也便于在发布前由设计或业务人员复核。涉及客户隐私、未发布产品、支付广告或重要品牌资产时，应先使用脱敏样本和低分辨率草稿。</p>
+<p>当团队发现某种模板连续提高了首轮可用率，再把它固化为 Skill；当某类案例需要人工修订时，把修订原因写回字段和验收表；当服务费用或授权边界发生变化时，更新模板说明和接入规则。这样，案例库才会从资料目录变成不断迭代的设计基础设施。</p>
+
+<h2 id="conclusion">九、结论：把视觉生成变成可复用的设计接口</h2>
+<p>awesome-gpt-image-2 的核心启发，是把图像生成从一句自然语言愿望，推进到案例检索、模板填写、Skill 路由、模型执行和人工验收组成的工作流。532 个案例提供参照，21 套模板提供结构，Agent Skill 负责匹配与拆解，最终成品仍需要由使用者承担事实、授权和质量判断。</p>
+<p>对于个人创作者，最实用的方式是把模板当作检查表，再写入自己的品牌规范；对于团队，则可以进一步保存案例、字段、模型版本和评价结果。生成模型的随机性不会消失，但一个结构化的输入与复盘系统，能够显著减少无方向的反复尝试，让每次改进都留下可以复用的经验。</p>
+
+<h2 id="source-index">源码与资料索引</h2>
+<ul>
+<li><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>：案例库、模板与 Skill。</li>
+</ul>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/generation-burden-east-asia-catch-up-population-dividend/">上一篇<br>这一代人在承受什么：人口红利、社会结构与代际差异</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#case-library">一、案例库解决的是检索问题</a><a class="toc-link toc-level-2" href="#prompt-templates">二、模板把视觉目标拆成可检查的字段</a><a class="toc-link toc-level-2" href="#agent-skill">三、Agent Skill 将案例检索接入任务流程</a><a class="toc-link toc-level-2" href="#reproducibility">四、可复用提示词需要保留推导过程</a><a class="toc-link toc-level-2" href="#service-boundaries">五、开源代码、在线站点和模型服务是三层边界</a><a class="toc-link toc-level-2" href="#workflow">六、从需求到成品可以形成五步工作流</a><a class="toc-link toc-level-2" href="#evaluation">七、评价标准要从抽卡次数转向交付质量</a><a class="toc-link toc-level-2" href="#adoption">八、适合从低风险、可编辑的任务开始</a><a class="toc-link toc-level-2" href="#conclusion">九、结论：把视觉生成变成可复用的设计接口</a><a class="toc-link toc-level-2" href="#source-index">源码与资料索引</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
