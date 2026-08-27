@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T16:32:16.735797Z",
+  "generated_at": "2026-08-27T00:02:49.557205Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,10 +37,30 @@
       }
     },
     {
+      "story_id": "story_a3eb56560645",
+      "title": "Claude in Chrome 正式全面上线 / Claude in Chrome is generally available",
+      "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 68,
+          "review": "扩展谈不上全面，也就Chrome用户多算个优势。"
+        },
+        "paper-police": {
+          "score": 30,
+          "review": "官方博客发布即可用，但无第三方独立评测，证据单薄。"
+        },
+        "pragmatic": {
+          "score": 92,
+          "review": "Chrome 里直接调 Claude，省去切换窗口，日常写代码查资料今天就能用。"
+        }
+      }
+    },
+    {
       "story_id": "story_4ff4202e3dc7",
       "title": "用 Sentence Transformers 训练与微调多向量嵌入模型 / Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers",
       "url": "https://huggingface.co/blog/train-multi-vector-encoder",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 90,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 90,
           "review": "直接照着练手，多向量嵌入有官方教程了。"
-        }
-      }
-    },
-    {
-      "story_id": "story_741a74c53da2",
-      "title": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494157&idx=1&sn=6837b15a07d2518842eb6c6b53a3eb3c",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 60,
-          "review": "只报总参数不提激活数，AA指数57是自己定的吧？"
-        },
-        "paper-police": {
-          "score": 25,
-          "review": "仅公众号宣称开源，无论文无代码无第三方评测，数字无法验证。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "开源可跑，价格仅为 Opus 1/40，直接替换低成本推理方案。"
         }
       }
     }
