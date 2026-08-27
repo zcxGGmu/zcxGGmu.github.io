@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T00:02:49.557205Z",
+  "generated_at": "2026-08-27T10:12:12.142933Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,10 +37,30 @@
       }
     },
     {
+      "story_id": "story_436604b0f1e6",
+      "title": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter / Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
+      "url": "https://x.com/jietang/status/2092850258573471936",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 55,
+          "review": "登顶只报个分，对手条件全不提，国产芯片成了万能遮羞布。"
+        },
+        "paper-police": {
+          "score": 20,
+          "review": "只有推特宣称，无论文无代码无第三方跑分，等OpenRouter榜独立验证再论。"
+        },
+        "pragmatic": {
+          "score": 92,
+          "review": "模型已上线且价格极低，跑推理任务可以直接换，国产芯片方案值得一试。"
+        }
+      }
+    },
+    {
       "story_id": "story_a3eb56560645",
       "title": "Claude in Chrome 正式全面上线 / Claude in Chrome is generally available",
       "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-      "rank": 2,
+      "rank": 3,
       "reviews": {
         "cynic": {
           "score": 68,
@@ -53,26 +73,6 @@
         "pragmatic": {
           "score": 92,
           "review": "Chrome 里直接调 Claude，省去切换窗口，日常写代码查资料今天就能用。"
-        }
-      }
-    },
-    {
-      "story_id": "story_4ff4202e3dc7",
-      "title": "用 Sentence Transformers 训练与微调多向量嵌入模型 / Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers",
-      "url": "https://huggingface.co/blog/train-multi-vector-encoder",
-      "rank": 3,
-      "reviews": {
-        "cynic": {
-          "score": 90,
-          "review": "官方手把手教程，比只喊口号的实在，但多向量又成新卷点。"
-        },
-        "paper-police": {
-          "score": 45,
-          "review": "官方教程给了方法和代码片段，但无benchmark复现，等第三方验证。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "直接照着练手，多向量嵌入有官方教程了。"
         }
       }
     }
