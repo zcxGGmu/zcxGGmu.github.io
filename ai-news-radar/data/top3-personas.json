@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T10:12:12.142933Z",
+  "generated_at": "2026-08-28T05:43:58.124374Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_ddd2368b2c0c",
-      "title": "Qwen3.8-Flash 开源，Qwen4 架构预览 / API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-      "url": "https://x.com/Alibaba_Qwen/status/2092636376990990503",
+      "story_id": "story_f91eb53884bc",
+      "title": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制 / Gemini Omni 1.1 Flash lets you build with more control",
+      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
       "rank": 1,
       "reviews": {
         "cynic": {
           "score": 70,
-          "review": "开源和API是实锤，但架构预览又是张饼，跑分见真章。"
+          "review": "“更强控制”是比上一版快10%还是换了API名？没给基线数，只能按牙膏挤算。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "官方推文称开源但无仓库链接和评测数据，无法验证真伪。"
+          "score": 50,
+          "review": "仅有官方博客评测数字，无代码无论文，等第三方复现。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "新模型已开源且API上线，可直接clone或调用，跑推理的今天就能试。"
+          "score": 88,
+          "review": "新模型已上线，视频生成控制更强，做多模态的可以直接试 API。"
         }
       }
     },
     {
-      "story_id": "story_436604b0f1e6",
-      "title": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter / Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-      "url": "https://x.com/jietang/status/2092850258573471936",
+      "story_id": "story_500c35f48384",
+      "title": "Midjourney 开放 V8.2 图像编辑模型测试 / Edit Model for V8",
+      "url": "https://updates.midjourney.com/edit-model-for-v8",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 55,
-          "review": "登顶只报个分，对手条件全不提，国产芯片成了万能遮羞布。"
+          "score": 60,
+          "review": "编辑模型又见测试版，先发张原图和编辑后的对比再说亮点。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "只有推特宣称，无论文无代码无第三方跑分，等OpenRouter榜独立验证再论。"
+          "score": 45,
+          "review": "官方公告给了测试入口，但无开源无第三方评测，等实测再定论。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "模型已上线且价格极低，跑推理任务可以直接换，国产芯片方案值得一试。"
+          "score": 85,
+          "review": "V8.2 编辑模型已开放测试，设计师今天就能试，注意测试版稳定性。"
         }
       }
     },
     {
-      "story_id": "story_a3eb56560645",
-      "title": "Claude in Chrome 正式全面上线 / Claude in Chrome is generally available",
-      "url": "https://claude.com/blog/claude-in-chrome-generally-available",
+      "story_id": "story_b92ae1b5e663",
+      "title": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型 / Gemini-3.5-Transcribe",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 68,
-          "review": "扩展谈不上全面，也就Chrome用户多算个优势。"
+          "score": 45,
+          "review": "'更精准'对比的是自家上一代吧，第三方数据呢？"
         },
         "paper-police": {
-          "score": 30,
-          "review": "官方博客发布即可用，但无第三方独立评测，证据单薄。"
+          "score": 45,
+          "review": "官方博客给了模型细节和性能数字，但无论文无代码，缺独立验证。"
         },
         "pragmatic": {
-          "score": 92,
-          "review": "Chrome 里直接调 Claude，省去切换窗口，日常写代码查资料今天就能用。"
+          "score": 80,
+          "review": "若API已开放，语音转写选型可立即升级，降错率就是省成本。"
         }
       }
     }

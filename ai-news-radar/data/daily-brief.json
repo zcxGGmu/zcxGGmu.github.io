@@ -1,372 +1,29 @@
 {
-  "generated_at": "2026-08-27T09:50:21.738275Z",
+  "generated_at": "2026-08-28T05:24:57.903288Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
     {
-      "story_id": "story_7cf7f5b5f125",
-      "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-      "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-      "primary_url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-      "source": "Qwen：Blog Retrieval（API）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "e26a51bb54313b977caff74c043731ed56dc444a",
-          "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-          "title_zh": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览",
-          "title_en": "Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-          "title_original": "Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-          "summary": "通义千问开源 Qwen3.8-Flash-Next，一款多模态 MoE 模型，也是 Qwen4 架构的早期预览。该模型采用 GDN + QSA 混合注意力等四项升级，总参数 125B，每 token 激活 6B，训练成本约为 Qwen3.7-Plus 的 1/9，编码与办公任务能力更强。",
-          "recommend_reason_zh": "本文介绍了Qwen3.8-Flash-Next的新架构及极致成本效率目标，并通过Qwen Studio展示其在聊天、图像视频理解、图像生成、文档处理、网页搜索、工具调用与工件生成等场景的综合能力。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "Qwen：Blog Retrieval（API）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T12:30:00Z"
-        },
-        {
-          "id": "1a64a33f368e096e708b88a2879936f307a4aadd",
-          "title": "Qwen3.8-Flash-Next：一种新架构，迈向极致的成本效益",
-          "title_zh": "Qwen3.8-Flash-Next：一种新架构，迈向极致的成本效益",
-          "title_en": null,
-          "title_original": "Qwen3.8-Flash-Next：一种新架构，迈向极致的成本效益",
-          "summary": null,
-          "recommend_reason_zh": "Qwen3.8-Flash-Next架构聚焦成本效益，正文详述Qwen Studio支持聊天、图像与视频理解、图像生成、文档处理、网页搜索、工具调用及artifacts等综合功能。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "qwen.ai",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-26T14:05:28.714000Z"
-        },
-        {
-          "id": "5b704af96d16dec9cc401b169dc8d074cc0b52db",
-          "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next",
-          "title_zh": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览",
-          "title_en": "Qwen3.8-Flash-Next",
-          "title_original": "Qwen3.8-Flash-Next",
-          "summary": null,
-          "recommend_reason_zh": "本篇内容聚焦Qwen Studio，涵盖聊天、图像视频理解、图像生成、文档处理、联网搜索、工具调用与artifacts，功能全面，值得一读。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-26T12:52:12Z"
-        },
-        {
-          "id": "301f85066e2adf5a8b29442ecc81fc25c6a8ef2c",
-          "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency",
-          "title_zh": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览",
-          "title_en": "Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency",
-          "title_original": "Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency",
-          "summary": null,
-          "recommend_reason_zh": "本文聚焦Qwen3.8-Flash-Next新架构，介绍Qwen Studio覆盖聊天、图像视频理解、图像生成、文档处理、网页搜索、工具调用及artifacts等丰富功能，凸显其极致成本效率。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-26T12:52:12Z"
-        }
-      ],
-      "source_count": 4,
-      "source_names": [
-        "Hacker News (黑客新闻)",
-        "Qwen：Blog Retrieval（API）",
-        "qwen.ai"
-      ],
-      "items": [
-        {
-          "id": "e26a51bb54313b977caff74c043731ed56dc444a",
-          "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-          "title_zh": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览",
-          "title_en": "Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-          "title_original": "Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-          "summary": "通义千问开源 Qwen3.8-Flash-Next，一款多模态 MoE 模型，也是 Qwen4 架构的早期预览。该模型采用 GDN + QSA 混合注意力等四项升级，总参数 125B，每 token 激活 6B，训练成本约为 Qwen3.7-Plus 的 1/9，编码与办公任务能力更强。",
-          "recommend_reason_zh": "本文介绍了Qwen3.8-Flash-Next的新架构及极致成本效率目标，并通过Qwen Studio展示其在聊天、图像视频理解、图像生成、文档处理、网页搜索、工具调用与工件生成等场景的综合能力。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "Qwen：Blog Retrieval（API）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T12:30:00Z"
-        },
-        {
-          "id": "1a64a33f368e096e708b88a2879936f307a4aadd",
-          "title": "Qwen3.8-Flash-Next：一种新架构，迈向极致的成本效益",
-          "title_zh": "Qwen3.8-Flash-Next：一种新架构，迈向极致的成本效益",
-          "title_en": null,
-          "title_original": "Qwen3.8-Flash-Next：一种新架构，迈向极致的成本效益",
-          "summary": null,
-          "recommend_reason_zh": "Qwen3.8-Flash-Next架构聚焦成本效益，正文详述Qwen Studio支持聊天、图像与视频理解、图像生成、文档处理、网页搜索、工具调用及artifacts等综合功能。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "qwen.ai",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-26T14:05:28.714000Z"
-        },
-        {
-          "id": "5b704af96d16dec9cc401b169dc8d074cc0b52db",
-          "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next",
-          "title_zh": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览",
-          "title_en": "Qwen3.8-Flash-Next",
-          "title_original": "Qwen3.8-Flash-Next",
-          "summary": null,
-          "recommend_reason_zh": "本篇内容聚焦Qwen Studio，涵盖聊天、图像视频理解、图像生成、文档处理、联网搜索、工具调用与artifacts，功能全面，值得一读。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-26T12:52:12Z"
-        },
-        {
-          "id": "301f85066e2adf5a8b29442ecc81fc25c6a8ef2c",
-          "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency",
-          "title_zh": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览",
-          "title_en": "Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency",
-          "title_original": "Qwen3.8-Flash-Next: A New Architecture, Towards Ultimate Cost-Efficiency",
-          "summary": null,
-          "recommend_reason_zh": "本文聚焦Qwen3.8-Flash-Next新架构，介绍Qwen Studio覆盖聊天、图像视频理解、图像生成、文档处理、网页搜索、工具调用及artifacts等丰富功能，凸显其极致成本效率。",
-          "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-          "source": "Hacker News (黑客新闻)",
-          "source_name": "Info Flow",
-          "site_id": "iris",
-          "published_at": "2026-08-26T12:52:12Z"
-        }
-      ],
-      "item_count": 4,
-      "duplicate_count": 4,
-      "score": 0.8279,
-      "importance": 0.8279,
-      "importance_score": 0.8279,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.83,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7348,
-        "story_heat": 0.75
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T12:30:00Z",
-      "latest_at": "2026-08-26T14:05:28.714000Z",
-      "primary_item": {
-        "id": "e26a51bb54313b977caff74c043731ed56dc444a",
-        "title": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览 / Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-        "title_zh": "Qwen3.8-Flash-Next 开源：Qwen4 架构早期预览",
-        "title_en": "Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-        "title_original": "Qwen3.8-Flash-Next： A New Architecture， Towards Ultimate Cost-Efficiency",
-        "summary": "通义千问开源 Qwen3.8-Flash-Next，一款多模态 MoE 模型，也是 Qwen4 架构的早期预览。该模型采用 GDN + QSA 混合注意力等四项升级，总参数 125B，每 token 激活 6B，训练成本约为 Qwen3.7-Plus 的 1/9，编码与办公任务能力更强。",
-        "recommend_reason_zh": "本文介绍了Qwen3.8-Flash-Next的新架构及极致成本效率目标，并通过Qwen Studio展示其在聊天、图像视频理解、图像生成、文档处理、网页搜索、工具调用与工件生成等场景的综合能力。",
-        "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-        "source": "Qwen：Blog Retrieval（API）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 88,
-      "persona_review": "新架构开源可直接试，跑推理能省成本，模型部署可先看文档。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_5b62f6af7f72",
-      "title": "以色列资助的假美国智库试图利用AI进行宣传",
-      "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-      "primary_url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "4885376f482f17e357c3cc0163dfa0cf7b713dd4",
-          "title": "以色列资助的假美国智库试图利用AI进行宣传",
-          "title_zh": "以色列资助的假美国智库试图利用AI进行宣传",
-          "title_en": null,
-          "title_original": "以色列资助的假美国智库试图利用AI进行宣传",
-          "summary": "一个打着\"汉诺威公共政策研究所\"旗号的亲以色列网站，在九天内发布了124篇、超56万字的报告，旨在优化内容以引导ChatGPT等AI聊天机器人引用其亲以观点。该网站由美国公司Piro Inc依据《外国代理人登记法》为以色列政府分发内容，其背后是以色列政府数千万美元资助、经Havas Media等第三方转手的更广泛宣传行动。",
-          "recommend_reason_zh": null,
-          "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T14:05:28.706000Z"
-        },
-        {
-          "id": "26e18a5fdfcdc9acc3304a792ad6fafc84058728",
-          "title": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "title_zh": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "title_en": null,
-          "title_original": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "summary": null,
-          "recommend_reason_zh": "这家不存在的“智库”Hanover Institute被曝9天内炮制124篇、超56万词报告，伪装成中立研究，目的是引导ChatGPT等聊天机器人亲以色列，其背后由Piro Inc为以色列政府分发内容。",
-          "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-          "source": "www.theguardian.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-26T14:05:28.706000Z"
-        },
-        {
-          "id": "ed324b97a510bf3774fbd2f97a510c34b682d9a3",
-          "title": "由以色列设立并资助的假冒美国智库企图操纵AI进行宣传 / Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_zh": "由以色列设立并资助的假冒美国智库企图操纵AI进行宣传",
-          "title_en": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_original": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "summary": null,
-          "recommend_reason_zh": "这家名为Hanover Institute for Public Policy的智库实为以色列政府资助的虚假机构，无法律实体、地址和署名员工，通过Piro和Havas Media Germany分发AI宣传内容。",
-          "url": "https://news.ycombinator.com/item?id=49447600",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-26T13:17:13.381000Z"
-        },
-        {
-          "id": "28827361f20d91352021d756755dba29a3b2772b",
-          "title": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传 / Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_zh": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "title_en": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_original": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "summary": null,
-          "recommend_reason_zh": "Fake US thinktank由以色列资助，9天内发布124份报告、超56万单词，专为引导AI聊天机器人输出亲以色列立场而设计，Guardian分析揭露其运作细节。",
-          "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-26T12:11:19Z"
-        }
-      ],
-      "source_count": 4,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "Hacker News 热门（buzzing.cc 中文翻译）",
-        "hackernews",
-        "www.theguardian.com"
-      ],
-      "items": [
-        {
-          "id": "4885376f482f17e357c3cc0163dfa0cf7b713dd4",
-          "title": "以色列资助的假美国智库试图利用AI进行宣传",
-          "title_zh": "以色列资助的假美国智库试图利用AI进行宣传",
-          "title_en": null,
-          "title_original": "以色列资助的假美国智库试图利用AI进行宣传",
-          "summary": "一个打着\"汉诺威公共政策研究所\"旗号的亲以色列网站，在九天内发布了124篇、超56万字的报告，旨在优化内容以引导ChatGPT等AI聊天机器人引用其亲以观点。该网站由美国公司Piro Inc依据《外国代理人登记法》为以色列政府分发内容，其背后是以色列政府数千万美元资助、经Havas Media等第三方转手的更广泛宣传行动。",
-          "recommend_reason_zh": null,
-          "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T14:05:28.706000Z"
-        },
-        {
-          "id": "26e18a5fdfcdc9acc3304a792ad6fafc84058728",
-          "title": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "title_zh": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "title_en": null,
-          "title_original": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "summary": null,
-          "recommend_reason_zh": "这家不存在的“智库”Hanover Institute被曝9天内炮制124篇、超56万词报告，伪装成中立研究，目的是引导ChatGPT等聊天机器人亲以色列，其背后由Piro Inc为以色列政府分发内容。",
-          "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-          "source": "www.theguardian.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-26T14:05:28.706000Z"
-        },
-        {
-          "id": "ed324b97a510bf3774fbd2f97a510c34b682d9a3",
-          "title": "由以色列设立并资助的假冒美国智库企图操纵AI进行宣传 / Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_zh": "由以色列设立并资助的假冒美国智库企图操纵AI进行宣传",
-          "title_en": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_original": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "summary": null,
-          "recommend_reason_zh": "这家名为Hanover Institute for Public Policy的智库实为以色列政府资助的虚假机构，无法律实体、地址和署名员工，通过Piro和Havas Media Germany分发AI宣传内容。",
-          "url": "https://news.ycombinator.com/item?id=49447600",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-26T13:17:13.381000Z"
-        },
-        {
-          "id": "28827361f20d91352021d756755dba29a3b2772b",
-          "title": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传 / Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_zh": "一个由以色列设立并资助的假美国智库，试图利用人工智能进行宣传",
-          "title_en": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "title_original": "Fake US thinktank set up and funded by Israel sought to game AI for propaganda",
-          "summary": null,
-          "recommend_reason_zh": "Fake US thinktank由以色列资助，9天内发布124份报告、超56万单词，专为引导AI聊天机器人输出亲以色列立场而设计，Guardian分析揭露其运作细节。",
-          "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-26T12:11:19Z"
-        }
-      ],
-      "item_count": 4,
-      "duplicate_count": 4,
-      "score": 0.8279,
-      "importance": 0.8279,
-      "importance_score": 0.8279,
-      "importance_label": "多源热议",
-      "importance_breakdown": {
-        "editorial": 0.82,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7519,
-        "story_heat": 0.75
-      },
-      "category": "multi_source",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T12:11:19Z",
-      "latest_at": "2026-08-26T14:05:28.706000Z",
-      "primary_item": {
-        "id": "4885376f482f17e357c3cc0163dfa0cf7b713dd4",
-        "title": "以色列资助的假美国智库试图利用AI进行宣传",
-        "title_zh": "以色列资助的假美国智库试图利用AI进行宣传",
-        "title_en": null,
-        "title_original": "以色列资助的假美国智库试图利用AI进行宣传",
-        "summary": "一个打着\"汉诺威公共政策研究所\"旗号的亲以色列网站，在九天内发布了124篇、超56万字的报告，旨在优化内容以引导ChatGPT等AI聊天机器人引用其亲以观点。该网站由美国公司Piro Inc依据《外国代理人登记法》为以色列政府分发内容，其背后是以色列政府数千万美元资助、经Havas Media等第三方转手的更广泛宣传行动。",
-        "recommend_reason_zh": null,
-        "url": "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda",
-        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "政治宣传丑闻，不写代码不选型，看个热闹就行。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_9ce6c77929a1",
-      "title": "企业托管设置现已支持插件市场自动更新 / Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-      "url": "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
-      "primary_url": "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
+      "story_id": "story_9d9b4688f4d7",
+      "title": "Copilot 代码审查：解决原因与能力扩展 / Copilot code review: Resolution reasons and expanded capabilities",
+      "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
+      "primary_url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
       "source": "GitHub Changelog",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "0b352926382a3b72aa546056fb2768bf799ee0d8",
-          "title": "企业托管设置现已支持插件市场自动更新 / Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-          "title_zh": "企业托管设置现已支持插件市场自动更新",
-          "title_en": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-          "title_original": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-          "summary": "You can now opt individual plugin marketplaces into automatic updates by setting autoUpdate: true on an extraKnownMarketplaces entry in enterprise managed settings. Supported clients automatically check the marketplace and update…\nYou can now opt individual plugin marketplaces into automatic updates by setting autoUpdate: true on an extraKnownMarketplaces entry in enterprise managed settings.\nSupported clients automatically check the marketplace and update installed plugins sourced from it, redu",
-          "recommend_reason_zh": "GitHub Copilot企业托管设置新增autoUpdate功能，为插件市场开启自动更新，减少手动维护，现已支持Copilot Business和Enterprise，覆盖Copilot app、CLI及Visual Studio Code。",
-          "url": "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
+          "id": "c88a0babf03e3a8ca31ad774f33e877e8e7c4e37",
+          "title": "Copilot 代码审查：解决原因与能力扩展 / Copilot code review: Resolution reasons and expanded capabilities",
+          "title_zh": "Copilot 代码审查：解决原因与能力扩展",
+          "title_en": "Copilot code review: Resolution reasons and expanded capabilities",
+          "title_original": "Copilot code review: Resolution reasons and expanded capabilities",
+          "summary": "Copilot code review can now review two types of pull requests it didn’t cover before: Reviews requested automatically on pull requests authored by bots, including Copilot cloud agent Very large…\nCopilot code review can now review two types of pull requests it didn’t cover before:\nAdditionally, you can now submit the reason for why you’re resolving a particular Copilot code review comment.\nWhen a pull request is authored by a bot and requested automatically, there’s no Copilot-licensed account to",
+          "recommend_reason_zh": "新版 Copilot code review 现在能审查机器人发起的 PR 和 Copilot cloud agent 创建的 PR，取消原先 300 文件或 20,000 行代码上限，还支持在解决评论时选择 Addressed、Won't fix 或 Incorrect 提交原因。",
+          "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
           "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-27T01:52:19Z"
+          "published_at": "2026-08-27T22:46:04Z"
         }
       ],
       "source_count": 1,
@@ -375,116 +32,31 @@
       ],
       "items": [
         {
-          "id": "0b352926382a3b72aa546056fb2768bf799ee0d8",
-          "title": "企业托管设置现已支持插件市场自动更新 / Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-          "title_zh": "企业托管设置现已支持插件市场自动更新",
-          "title_en": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-          "title_original": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-          "summary": "You can now opt individual plugin marketplaces into automatic updates by setting autoUpdate: true on an extraKnownMarketplaces entry in enterprise managed settings. Supported clients automatically check the marketplace and update…\nYou can now opt individual plugin marketplaces into automatic updates by setting autoUpdate: true on an extraKnownMarketplaces entry in enterprise managed settings.\nSupported clients automatically check the marketplace and update installed plugins sourced from it, redu",
-          "recommend_reason_zh": "GitHub Copilot企业托管设置新增autoUpdate功能，为插件市场开启自动更新，减少手动维护，现已支持Copilot Business和Enterprise，覆盖Copilot app、CLI及Visual Studio Code。",
-          "url": "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
+          "id": "c88a0babf03e3a8ca31ad774f33e877e8e7c4e37",
+          "title": "Copilot 代码审查：解决原因与能力扩展 / Copilot code review: Resolution reasons and expanded capabilities",
+          "title_zh": "Copilot 代码审查：解决原因与能力扩展",
+          "title_en": "Copilot code review: Resolution reasons and expanded capabilities",
+          "title_original": "Copilot code review: Resolution reasons and expanded capabilities",
+          "summary": "Copilot code review can now review two types of pull requests it didn’t cover before: Reviews requested automatically on pull requests authored by bots, including Copilot cloud agent Very large…\nCopilot code review can now review two types of pull requests it didn’t cover before:\nAdditionally, you can now submit the reason for why you’re resolving a particular Copilot code review comment.\nWhen a pull request is authored by a bot and requested automatically, there’s no Copilot-licensed account to",
+          "recommend_reason_zh": "新版 Copilot code review 现在能审查机器人发起的 PR 和 Copilot cloud agent 创建的 PR，取消原先 300 文件或 20,000 行代码上限，还支持在解决评论时选择 Addressed、Won't fix 或 Incorrect 提交原因。",
+          "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
           "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-27T01:52:19Z"
+          "published_at": "2026-08-27T22:46:04Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8244,
-      "importance": 0.8244,
-      "importance_score": 0.8244,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.8913,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-27T01:52:19Z",
-      "latest_at": "2026-08-27T01:52:19Z",
-      "primary_item": {
-        "id": "0b352926382a3b72aa546056fb2768bf799ee0d8",
-        "title": "企业托管设置现已支持插件市场自动更新 / Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-        "title_zh": "企业托管设置现已支持插件市场自动更新",
-        "title_en": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-        "title_original": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
-        "summary": "You can now opt individual plugin marketplaces into automatic updates by setting autoUpdate: true on an extraKnownMarketplaces entry in enterprise managed settings. Supported clients automatically check the marketplace and update…\nYou can now opt individual plugin marketplaces into automatic updates by setting autoUpdate: true on an extraKnownMarketplaces entry in enterprise managed settings.\nSupported clients automatically check the marketplace and update installed plugins sourced from it, redu",
-        "recommend_reason_zh": "GitHub Copilot企业托管设置新增autoUpdate功能，为插件市场开启自动更新，减少手动维护，现已支持Copilot Business和Enterprise，覆盖Copilot app、CLI及Visual Studio Code。",
-        "url": "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 70,
-      "persona_review": "企业版插件自动更新，省了手动维护，但普通开发者用不上。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_719767637d52",
-      "title": "GitHub Copilot 应用入门：自动化 Dependabot 拉取请求分类 / GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-automate-dependabot-pull-request-triage",
-      "primary_url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-automate-dependabot-pull-request-triage",
-      "source": "GitHub AI & ML",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "9d66b2c682d2944a6349232e1abe3b19cc7d39f1",
-          "title": "GitHub Copilot 应用入门：自动化 Dependabot 拉取请求分类 / GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-          "title_zh": "GitHub Copilot 应用入门：自动化 Dependabot 拉取请求分类",
-          "title_en": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-          "title_original": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-          "summary": null,
-          "recommend_reason_zh": "用GitHub Copilot app为Dependabot拉取请求创建自动化：按日程分类、按风险分组、验证CI状态并生成摘要，让你每天开工前先看到整理好的结果。",
-          "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-automate-dependabot-pull-request-triage",
-          "source": "GitHub AI & ML",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-26T20:12:53Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub AI & ML"
-      ],
-      "items": [
-        {
-          "id": "9d66b2c682d2944a6349232e1abe3b19cc7d39f1",
-          "title": "GitHub Copilot 应用入门：自动化 Dependabot 拉取请求分类 / GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-          "title_zh": "GitHub Copilot 应用入门：自动化 Dependabot 拉取请求分类",
-          "title_en": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-          "title_original": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-          "summary": null,
-          "recommend_reason_zh": "用GitHub Copilot app为Dependabot拉取请求创建自动化：按日程分类、按风险分组、验证CI状态并生成摘要，让你每天开工前先看到整理好的结果。",
-          "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-automate-dependabot-pull-request-triage",
-          "source": "GitHub AI & ML",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-26T20:12:53Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.8199,
-      "importance": 0.8199,
-      "importance_score": 0.8199,
+      "score": 0.8355,
+      "importance": 0.8355,
+      "importance_score": 0.8355,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.8214,
+        "recency": 0.9085,
         "story_heat": 0.0
       },
       "category": "official",
@@ -493,50 +65,50 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-26T20:12:53Z",
-      "latest_at": "2026-08-26T20:12:53Z",
+      "earliest_at": "2026-08-27T22:46:04Z",
+      "latest_at": "2026-08-27T22:46:04Z",
       "primary_item": {
-        "id": "9d66b2c682d2944a6349232e1abe3b19cc7d39f1",
-        "title": "GitHub Copilot 应用入门：自动化 Dependabot 拉取请求分类 / GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-        "title_zh": "GitHub Copilot 应用入门：自动化 Dependabot 拉取请求分类",
-        "title_en": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-        "title_original": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-        "summary": null,
-        "recommend_reason_zh": "用GitHub Copilot app为Dependabot拉取请求创建自动化：按日程分类、按风险分组、验证CI状态并生成摘要，让你每天开工前先看到整理好的结果。",
-        "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-automate-dependabot-pull-request-triage",
-        "source": "GitHub AI & ML",
+        "id": "c88a0babf03e3a8ca31ad774f33e877e8e7c4e37",
+        "title": "Copilot 代码审查：解决原因与能力扩展 / Copilot code review: Resolution reasons and expanded capabilities",
+        "title_zh": "Copilot 代码审查：解决原因与能力扩展",
+        "title_en": "Copilot code review: Resolution reasons and expanded capabilities",
+        "title_original": "Copilot code review: Resolution reasons and expanded capabilities",
+        "summary": "Copilot code review can now review two types of pull requests it didn’t cover before: Reviews requested automatically on pull requests authored by bots, including Copilot cloud agent Very large…\nCopilot code review can now review two types of pull requests it didn’t cover before:\nAdditionally, you can now submit the reason for why you’re resolving a particular Copilot code review comment.\nWhen a pull request is authored by a bot and requested automatically, there’s no Copilot-licensed account to",
+        "recommend_reason_zh": "新版 Copilot code review 现在能审查机器人发起的 PR 和 Copilot cloud agent 创建的 PR，取消原先 300 文件或 20,000 行代码上限，还支持在解决评论时选择 Addressed、Won't fix 或 Incorrect 提交原因。",
+        "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
+        "source": "GitHub Changelog",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "官方教程，照着配就能自动分拣Dependabot PR，省点事但需动手。",
+      "persona_score": 78,
+      "persona_review": "审查原因解析更细，覆盖场景变广，用 Copilot 的今天就能试。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_93586c9b901c",
-      "title": "Gemini 3.5 Transcribe 发布：面向实时语音交互的高精度语音转文本模型 / Intelligent transcription with Gemini 3.5 Transcribe",
-      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
-      "primary_url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
+      "story_id": "story_f91eb53884bc",
+      "title": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制 / Gemini Omni 1.1 Flash lets you build with more control",
+      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
+      "primary_url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
       "source": "Google DeepMind",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "edaf458d83ab7c8fe035f85664aa2cb09ede175c",
-          "title": "Gemini 3.5 Transcribe 发布：面向实时语音交互的高精度语音转文本模型 / Intelligent transcription with Gemini 3.5 Transcribe",
-          "title_zh": "Gemini 3.5 Transcribe 发布：面向实时语音交互的高精度语音转文本模型",
-          "title_en": "Intelligent transcription with Gemini 3.5 Transcribe",
-          "title_original": "Intelligent transcription with Gemini 3.5 Transcribe",
+          "id": "34ace61f8fa44bd10ff4df670ccf03ed0c686101",
+          "title": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制 / Gemini Omni 1.1 Flash lets you build with more control",
+          "title_zh": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制",
+          "title_en": "Gemini Omni 1.1 Flash lets you build with more control",
+          "title_original": "Gemini Omni 1.1 Flash lets you build with more control",
           "summary": null,
-          "recommend_reason_zh": "Google发布Gemini 3.5 Transcribe，相比前代Chirp 3，最终转录时间缩短70%，FLEURS基准非流式WER达5.04%，支持多说话人归因和词级时间戳，助力开发者构建语音助手、实时字幕等应用。",
-          "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
+          "recommend_reason_zh": "Gemini Omni 1.1 Flash新增场景扩展与首尾帧插值，支持4K输出和10秒上下文，视频可按10秒增量延长至40秒，开发者控制力大增。",
+          "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
           "source": "Google DeepMind",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T17:01:00Z"
+          "published_at": "2026-08-27T16:11:32Z"
         }
       ],
       "source_count": 1,
@@ -545,31 +117,31 @@
       ],
       "items": [
         {
-          "id": "edaf458d83ab7c8fe035f85664aa2cb09ede175c",
-          "title": "Gemini 3.5 Transcribe 发布：面向实时语音交互的高精度语音转文本模型 / Intelligent transcription with Gemini 3.5 Transcribe",
-          "title_zh": "Gemini 3.5 Transcribe 发布：面向实时语音交互的高精度语音转文本模型",
-          "title_en": "Intelligent transcription with Gemini 3.5 Transcribe",
-          "title_original": "Intelligent transcription with Gemini 3.5 Transcribe",
+          "id": "34ace61f8fa44bd10ff4df670ccf03ed0c686101",
+          "title": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制 / Gemini Omni 1.1 Flash lets you build with more control",
+          "title_zh": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制",
+          "title_en": "Gemini Omni 1.1 Flash lets you build with more control",
+          "title_original": "Gemini Omni 1.1 Flash lets you build with more control",
           "summary": null,
-          "recommend_reason_zh": "Google发布Gemini 3.5 Transcribe，相比前代Chirp 3，最终转录时间缩短70%，FLEURS基准非流式WER达5.04%，支持多说话人归因和词级时间戳，助力开发者构建语音助手、实时字幕等应用。",
-          "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
+          "recommend_reason_zh": "Gemini Omni 1.1 Flash新增场景扩展与首尾帧插值，支持4K输出和10秒上下文，视频可按10秒增量延长至40秒，开发者控制力大增。",
+          "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
           "source": "Google DeepMind",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T17:01:00Z"
+          "published_at": "2026-08-27T16:11:32Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8132,
-      "importance": 0.8132,
-      "importance_score": 0.8132,
+      "score": 0.8207,
+      "importance": 0.8207,
+      "importance_score": 0.8207,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.91,
-        "recency": 0.7843,
+        "recency": 0.8262,
         "story_heat": 0.0
       },
       "category": "official",
@@ -578,50 +150,50 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-26T17:01:00Z",
-      "latest_at": "2026-08-26T17:01:00Z",
+      "earliest_at": "2026-08-27T16:11:32Z",
+      "latest_at": "2026-08-27T16:11:32Z",
       "primary_item": {
-        "id": "edaf458d83ab7c8fe035f85664aa2cb09ede175c",
-        "title": "Gemini 3.5 Transcribe 发布：面向实时语音交互的高精度语音转文本模型 / Intelligent transcription with Gemini 3.5 Transcribe",
-        "title_zh": "Gemini 3.5 Transcribe 发布：面向实时语音交互的高精度语音转文本模型",
-        "title_en": "Intelligent transcription with Gemini 3.5 Transcribe",
-        "title_original": "Intelligent transcription with Gemini 3.5 Transcribe",
+        "id": "34ace61f8fa44bd10ff4df670ccf03ed0c686101",
+        "title": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制 / Gemini Omni 1.1 Flash lets you build with more control",
+        "title_zh": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制",
+        "title_en": "Gemini Omni 1.1 Flash lets you build with more control",
+        "title_original": "Gemini Omni 1.1 Flash lets you build with more control",
         "summary": null,
-        "recommend_reason_zh": "Google发布Gemini 3.5 Transcribe，相比前代Chirp 3，最终转录时间缩短70%，FLEURS基准非流式WER达5.04%，支持多说话人归因和词级时间戳，助力开发者构建语音助手、实时字幕等应用。",
-        "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe",
+        "recommend_reason_zh": "Gemini Omni 1.1 Flash新增场景扩展与首尾帧插值，支持4K输出和10秒上下文，视频可按10秒增量延长至40秒，开发者控制力大增。",
+        "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
         "source": "Google DeepMind",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 82,
-      "persona_review": "实时转写多了个强选项，测下延迟和准确率再换不迟。",
+      "persona_score": 88,
+      "persona_review": "新模型已上线，视频生成控制更强，做多模态的可以直接试 API。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_6b30649509f4",
-      "title": "将ChatGPT for Teachers推广至更多美国学区 / Bringing ChatGPT for Teachers to more U.S. school districts",
-      "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
-      "primary_url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "story_id": "story_6e4db317b61f",
+      "title": "更好的答案，更广的思维：学生从ChatGPT和批判性思维训练中的收获 / Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+      "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "primary_url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
       "source": "OpenAI News",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "588215148c3b72c0715d264ed0cc70f6b4fdc9e9",
-          "title": "将ChatGPT for Teachers推广至更多美国学区 / Bringing ChatGPT for Teachers to more U.S. school districts",
-          "title_zh": "将ChatGPT for Teachers推广至更多美国学区",
-          "title_en": "Bringing ChatGPT for Teachers to more U.S. school districts",
-          "title_original": "Bringing ChatGPT for Teachers to more U.S. school districts",
+          "id": "e7bf5ac20c49365d04b1724e1d531f47f73c3dc4",
+          "title": "更好的答案，更广的思维：学生从ChatGPT和批判性思维训练中的收获 / Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+          "title_zh": "更好的答案，更广的思维：学生从ChatGPT和批判性思维训练中的收获",
+          "title_en": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+          "title_original": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
           "summary": null,
-          "recommend_reason_zh": "ChatGPT for Teachers扩展到55个美国学区、惠及超10万名教育工作者，并首推覆盖16州的数据隐私协议，助力K–12学校安全采用AI。",
-          "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+          "recommend_reason_zh": null,
+          "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
           "source": "OpenAI News",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T10:00:00Z"
+          "published_at": "2026-08-27T09:00:00Z"
         }
       ],
       "source_count": 1,
@@ -630,31 +202,31 @@
       ],
       "items": [
         {
-          "id": "588215148c3b72c0715d264ed0cc70f6b4fdc9e9",
-          "title": "将ChatGPT for Teachers推广至更多美国学区 / Bringing ChatGPT for Teachers to more U.S. school districts",
-          "title_zh": "将ChatGPT for Teachers推广至更多美国学区",
-          "title_en": "Bringing ChatGPT for Teachers to more U.S. school districts",
-          "title_original": "Bringing ChatGPT for Teachers to more U.S. school districts",
+          "id": "e7bf5ac20c49365d04b1724e1d531f47f73c3dc4",
+          "title": "更好的答案，更广的思维：学生从ChatGPT和批判性思维训练中的收获 / Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+          "title_zh": "更好的答案，更广的思维：学生从ChatGPT和批判性思维训练中的收获",
+          "title_en": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+          "title_original": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
           "summary": null,
-          "recommend_reason_zh": "ChatGPT for Teachers扩展到55个美国学区、惠及超10万名教育工作者，并首推覆盖16州的数据隐私协议，助力K–12学校安全采用AI。",
-          "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+          "recommend_reason_zh": null,
+          "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
           "source": "OpenAI News",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T10:00:00Z"
+          "published_at": "2026-08-27T09:00:00Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8076,
-      "importance": 0.8076,
-      "importance_score": 0.8076,
+      "score": 0.814,
+      "importance": 0.814,
+      "importance_score": 0.814,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.95,
-        "recency": 0.7087,
+        "recency": 0.7447,
         "story_heat": 0.0
       },
       "category": "official",
@@ -663,50 +235,278 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-26T10:00:00Z",
-      "latest_at": "2026-08-26T10:00:00Z",
+      "earliest_at": "2026-08-27T09:00:00Z",
+      "latest_at": "2026-08-27T09:00:00Z",
       "primary_item": {
-        "id": "588215148c3b72c0715d264ed0cc70f6b4fdc9e9",
-        "title": "将ChatGPT for Teachers推广至更多美国学区 / Bringing ChatGPT for Teachers to more U.S. school districts",
-        "title_zh": "将ChatGPT for Teachers推广至更多美国学区",
-        "title_en": "Bringing ChatGPT for Teachers to more U.S. school districts",
-        "title_original": "Bringing ChatGPT for Teachers to more U.S. school districts",
+        "id": "e7bf5ac20c49365d04b1724e1d531f47f73c3dc4",
+        "title": "更好的答案，更广的思维：学生从ChatGPT和批判性思维训练中的收获 / Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+        "title_zh": "更好的答案，更广的思维：学生从ChatGPT和批判性思维训练中的收获",
+        "title_en": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+        "title_original": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
         "summary": null,
-        "recommend_reason_zh": "ChatGPT for Teachers扩展到55个美国学区、惠及超10万名教育工作者，并首推覆盖16州的数据隐私协议，助力K–12学校安全采用AI。",
-        "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+        "recommend_reason_zh": null,
+        "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
         "source": "OpenAI News",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "面向教师的产品推广，不涉及新 API 或工具，从业者不用行动。",
+      "persona_score": 50,
+      "persona_review": "教育向研究总结，对开发者无直接可用工具，可跳过。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_6e7dda5dd069",
-      "title": "全球模型政策现已全面可用 / Global model policy generally available",
-      "url": "https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
-      "primary_url": "https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+      "story_id": "story_3db3281c2368",
+      "title": "Search 中规划与预订旅行的 3 种全新方式 / 3 new ways to plan and book travel in Search",
+      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode",
+      "primary_url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode",
+      "source": "Google AI Blog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "e6499bcef3323d7d160c36159bbb7694d715af2d",
+          "title": "Search 中规划与预订旅行的 3 种全新方式 / 3 new ways to plan and book travel in Search",
+          "title_zh": "Search 中规划与预订旅行的 3 种全新方式",
+          "title_en": "3 new ways to plan and book travel in Search",
+          "title_original": "3 new ways to plan and book travel in Search",
+          "summary": null,
+          "recommend_reason_zh": "Google搜索的AI Mode新增三种旅行规划方式：借助300多家航司及旅游网站数据展示最新票价，并在180多国提供价格提醒；可查看American Airlines、Hilton等里程积分费率；还支持直接对话预订酒店。",
+          "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode",
+          "source": "Google AI Blog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-27T16:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Google AI Blog"
+      ],
+      "items": [
+        {
+          "id": "e6499bcef3323d7d160c36159bbb7694d715af2d",
+          "title": "Search 中规划与预订旅行的 3 种全新方式 / 3 new ways to plan and book travel in Search",
+          "title_zh": "Search 中规划与预订旅行的 3 种全新方式",
+          "title_en": "3 new ways to plan and book travel in Search",
+          "title_original": "3 new ways to plan and book travel in Search",
+          "summary": null,
+          "recommend_reason_zh": "Google搜索的AI Mode新增三种旅行规划方式：借助300多家航司及旅游网站数据展示最新票价，并在180多国提供价格提醒；可查看American Airlines、Hilton等里程积分费率；还支持直接对话预订酒店。",
+          "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode",
+          "source": "Google AI Blog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-27T16:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8123,
+      "importance": 0.8123,
+      "importance_score": 0.8123,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.87,
+        "recency": 0.8239,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-27T16:00:00Z",
+      "latest_at": "2026-08-27T16:00:00Z",
+      "primary_item": {
+        "id": "e6499bcef3323d7d160c36159bbb7694d715af2d",
+        "title": "Search 中规划与预订旅行的 3 种全新方式 / 3 new ways to plan and book travel in Search",
+        "title_zh": "Search 中规划与预订旅行的 3 种全新方式",
+        "title_en": "3 new ways to plan and book travel in Search",
+        "title_original": "3 new ways to plan and book travel in Search",
+        "summary": null,
+        "recommend_reason_zh": "Google搜索的AI Mode新增三种旅行规划方式：借助300多家航司及旅游网站数据展示最新票价，并在180多国提供价格提醒；可查看American Airlines、Hilton等里程积分费率；还支持直接对话预订酒店。",
+        "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode",
+        "source": "Google AI Blog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "个人旅行预订更方便，但开发者没有API可调，按需看看。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_77be507e5ad3",
+      "title": "英伟达预计 2028 财年销售额达 6730 亿美元",
+      "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+      "primary_url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "23eb2d013443990bb7c5f651072161c69e51188a",
+          "title": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "title_zh": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "title_en": null,
+          "title_original": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "summary": "英伟达预计 2028 财年营收增长 70%，年销售额约达 6730 亿美元，将超过苹果和 Alphabet，仅次于亚马逊。CFO Colette Kress 于 8 月 26 日给出该预测，远高于分析师平均预期的 44%。供应而非需求成为近期上限，黄仁勋称内存等部件短缺限制了更高预期，客户群正从超大规模厂商扩展至 ACIE。",
+          "recommend_reason_zh": "Nvidia预计2028财年销售额达6730亿美元，增速70%远超分析师44%预期，CFO Colette Kress公布预测；Q2数据中心收入同比增117%至890亿美元，Jensen Huang称供应短缺限制更高增长。",
+          "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T22:29:33.124000Z"
+        },
+        {
+          "id": "29c30f233ed1d06903d3ff509bfae938658702cd",
+          "title": "随着人工智能需求的扩大，英伟达预计销售额将达到6730亿美元",
+          "title_zh": "随着人工智能需求的扩大，英伟达预计销售额将达到6730亿美元",
+          "title_en": null,
+          "title_original": "随着人工智能需求的扩大，英伟达预计销售额将达到6730亿美元",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+          "source": "forgeeks.net",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-27T22:29:33.124000Z"
+        },
+        {
+          "id": "0278f19d2eedf026ffa37decc0a64b0ee489b32a",
+          "title": "英伟达预计 2028 财年销售额达 6730 亿美元 / Nvidia projects $673B in sales as AI demand widens",
+          "title_zh": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "title_en": "Nvidia projects $673B in sales as AI demand widens",
+          "title_original": "Nvidia projects $673B in sales as AI demand widens",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-27T15:04:16Z"
+        }
+      ],
+      "source_count": 3,
+      "source_names": [
+        "Hacker News · 24h最热",
+        "Hacker News 热门（buzzing.cc 中文翻译）",
+        "forgeeks.net"
+      ],
+      "items": [
+        {
+          "id": "23eb2d013443990bb7c5f651072161c69e51188a",
+          "title": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "title_zh": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "title_en": null,
+          "title_original": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "summary": "英伟达预计 2028 财年营收增长 70%，年销售额约达 6730 亿美元，将超过苹果和 Alphabet，仅次于亚马逊。CFO Colette Kress 于 8 月 26 日给出该预测，远高于分析师平均预期的 44%。供应而非需求成为近期上限，黄仁勋称内存等部件短缺限制了更高预期，客户群正从超大规模厂商扩展至 ACIE。",
+          "recommend_reason_zh": "Nvidia预计2028财年销售额达6730亿美元，增速70%远超分析师44%预期，CFO Colette Kress公布预测；Q2数据中心收入同比增117%至890亿美元，Jensen Huang称供应短缺限制更高增长。",
+          "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T22:29:33.124000Z"
+        },
+        {
+          "id": "29c30f233ed1d06903d3ff509bfae938658702cd",
+          "title": "随着人工智能需求的扩大，英伟达预计销售额将达到6730亿美元",
+          "title_zh": "随着人工智能需求的扩大，英伟达预计销售额将达到6730亿美元",
+          "title_en": null,
+          "title_original": "随着人工智能需求的扩大，英伟达预计销售额将达到6730亿美元",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+          "source": "forgeeks.net",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-08-27T22:29:33.124000Z"
+        },
+        {
+          "id": "0278f19d2eedf026ffa37decc0a64b0ee489b32a",
+          "title": "英伟达预计 2028 财年销售额达 6730 亿美元 / Nvidia projects $673B in sales as AI demand widens",
+          "title_zh": "英伟达预计 2028 财年销售额达 6730 亿美元",
+          "title_en": "Nvidia projects $673B in sales as AI demand widens",
+          "title_original": "Nvidia projects $673B in sales as AI demand widens",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+          "source": "Hacker News · 24h最热",
+          "source_name": "Zeli",
+          "site_id": "zeli",
+          "published_at": "2026-08-27T15:04:16Z"
+        }
+      ],
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.8095,
+      "importance": 0.8095,
+      "importance_score": 0.8095,
+      "importance_label": "多源热议",
+      "importance_breakdown": {
+        "editorial": 0.75,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9049,
+        "story_heat": 0.5
+      },
+      "category": "multi_source",
+      "reasons": [
+        "multi_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-27T15:04:16Z",
+      "latest_at": "2026-08-27T22:29:33.124000Z",
+      "primary_item": {
+        "id": "23eb2d013443990bb7c5f651072161c69e51188a",
+        "title": "英伟达预计 2028 财年销售额达 6730 亿美元",
+        "title_zh": "英伟达预计 2028 财年销售额达 6730 亿美元",
+        "title_en": null,
+        "title_original": "英伟达预计 2028 财年销售额达 6730 亿美元",
+        "summary": "英伟达预计 2028 财年营收增长 70%，年销售额约达 6730 亿美元，将超过苹果和 Alphabet，仅次于亚马逊。CFO Colette Kress 于 8 月 26 日给出该预测，远高于分析师平均预期的 44%。供应而非需求成为近期上限，黄仁勋称内存等部件短缺限制了更高预期，客户群正从超大规模厂商扩展至 ACIE。",
+        "recommend_reason_zh": "Nvidia预计2028财年销售额达6730亿美元，增速70%远超分析师44%预期，CFO Colette Kress公布预测；Q2数据中心收入同比增117%至890亿美元，Jensen Huang称供应短缺限制更高增长。",
+        "url": "https://forgeeks.net/nvidia-673-billion-ai-growth-forecast",
+        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 25,
+      "persona_review": "财务预测不写代码，和开发者今天的工作无关。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_15e13041e5c5",
+      "title": "改进的 issue 标签管理现已全面推出 / Better label management on issues is generally available",
+      "url": "https://github.blog/changelog/2026-08-27-label-archiving-is-generally-available",
+      "primary_url": "https://github.blog/changelog/2026-08-27-label-archiving-is-generally-available",
       "source": "GitHub Changelog",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "89f20d10d9d0041fcaaea3ea5d5cbf235b722cf7",
-          "title": "全球模型政策现已全面可用 / Global model policy generally available",
-          "title_zh": "全球模型政策现已全面可用",
-          "title_en": "Global model policy generally available",
-          "title_original": "Global model policy generally available",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot的全局模型策略现已开始逐步落地，执行期至9月1日，未配置及新的一般可用模型将继承默认状态，开放权重等需数据保留的模型默认禁用。",
-          "url": "https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+          "id": "a3d31c93e74427fb68fbd4895c20f766e7cafe84",
+          "title": "改进的 issue 标签管理现已全面推出 / Better label management on issues is generally available",
+          "title_zh": "改进的 issue 标签管理现已全面推出",
+          "title_en": "Better label management on issues is generally available",
+          "title_original": "Better label management on issues is generally available",
+          "summary": "We’re making it easier to keep labels organized and find the right one, especially in repositories with long and growing label lists. Suggested Labels You can now find the right…\nWe’re making it easier to keep labels organized and find the right one, especially in repositories with long and growing label lists.\nYou can now find the right label faster with suggestions based on what a repository has been using recently. You can also see Recent labels based on your own usage, making it easier to la",
+          "recommend_reason_zh": "GitHub Issues标签管理正式可用：新增基于仓库近期使用的建议标签和基于个人用法的最近标签，可归档不再使用的标签并保留历史，随时可取消归档。",
+          "url": "https://github.blog/changelog/2026-08-27-label-archiving-is-generally-available",
           "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T22:08:38Z"
+          "published_at": "2026-08-27T23:33:22Z"
         }
       ],
       "source_count": 1,
@@ -715,31 +515,31 @@
       ],
       "items": [
         {
-          "id": "89f20d10d9d0041fcaaea3ea5d5cbf235b722cf7",
-          "title": "全球模型政策现已全面可用 / Global model policy generally available",
-          "title_zh": "全球模型政策现已全面可用",
-          "title_en": "Global model policy generally available",
-          "title_original": "Global model policy generally available",
-          "summary": null,
-          "recommend_reason_zh": "GitHub Copilot的全局模型策略现已开始逐步落地，执行期至9月1日，未配置及新的一般可用模型将继承默认状态，开放权重等需数据保留的模型默认禁用。",
-          "url": "https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+          "id": "a3d31c93e74427fb68fbd4895c20f766e7cafe84",
+          "title": "改进的 issue 标签管理现已全面推出 / Better label management on issues is generally available",
+          "title_zh": "改进的 issue 标签管理现已全面推出",
+          "title_en": "Better label management on issues is generally available",
+          "title_original": "Better label management on issues is generally available",
+          "summary": "We’re making it easier to keep labels organized and find the right one, especially in repositories with long and growing label lists. Suggested Labels You can now find the right…\nWe’re making it easier to keep labels organized and find the right one, especially in repositories with long and growing label lists.\nYou can now find the right label faster with suggestions based on what a repository has been using recently. You can also see Recent labels based on your own usage, making it easier to la",
+          "recommend_reason_zh": "GitHub Issues标签管理正式可用：新增基于仓库近期使用的建议标签和基于个人用法的最近标签，可归档不再使用的标签并保留历史，随时可取消归档。",
+          "url": "https://github.blog/changelog/2026-08-27-label-archiving-is-generally-available",
           "source": "GitHub Changelog",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T22:08:38Z"
+          "published_at": "2026-08-27T23:33:22Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.816,
-      "importance": 0.816,
-      "importance_score": 0.816,
+      "score": 0.8294,
+      "importance": 0.8294,
+      "importance_score": 0.8294,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.87,
-        "recency": 0.8446,
+        "recency": 0.9189,
         "story_heat": 0.0
       },
       "category": "official",
@@ -748,197 +548,83 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-26T22:08:38Z",
-      "latest_at": "2026-08-26T22:08:38Z",
+      "earliest_at": "2026-08-27T23:33:22Z",
+      "latest_at": "2026-08-27T23:33:22Z",
       "primary_item": {
-        "id": "89f20d10d9d0041fcaaea3ea5d5cbf235b722cf7",
-        "title": "全球模型政策现已全面可用 / Global model policy generally available",
-        "title_zh": "全球模型政策现已全面可用",
-        "title_en": "Global model policy generally available",
-        "title_original": "Global model policy generally available",
-        "summary": null,
-        "recommend_reason_zh": "GitHub Copilot的全局模型策略现已开始逐步落地，执行期至9月1日，未配置及新的一般可用模型将继承默认状态，开放权重等需数据保留的模型默认禁用。",
-        "url": "https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+        "id": "a3d31c93e74427fb68fbd4895c20f766e7cafe84",
+        "title": "改进的 issue 标签管理现已全面推出 / Better label management on issues is generally available",
+        "title_zh": "改进的 issue 标签管理现已全面推出",
+        "title_en": "Better label management on issues is generally available",
+        "title_original": "Better label management on issues is generally available",
+        "summary": "We’re making it easier to keep labels organized and find the right one, especially in repositories with long and growing label lists. Suggested Labels You can now find the right…\nWe’re making it easier to keep labels organized and find the right one, especially in repositories with long and growing label lists.\nYou can now find the right label faster with suggestions based on what a repository has been using recently. You can also see Recent labels based on your own usage, making it easier to la",
+        "recommend_reason_zh": "GitHub Issues标签管理正式可用：新增基于仓库近期使用的建议标签和基于个人用法的最近标签，可归档不再使用的标签并保留历史，随时可取消归档。",
+        "url": "https://github.blog/changelog/2026-08-27-label-archiving-is-generally-available",
         "source": "GitHub Changelog",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 70,
-      "persona_review": "模型策略新功能上线，做企业级AI治理的可以看看，一般开发用不上。",
+      "persona_score": 68,
+      "persona_review": "标签归档正式可用，仓库维护者今天就能整理旧标签，减少噪音。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_65b8c3701ee0",
-      "title": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU / Amazon just tripled its order of Nvidia chips over 'surging demand'",
-      "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand",
-      "primary_url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand",
-      "source": "TechCrunch：AI（RSS）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "303e0a383b264c189fec59ad3c7439a8a7e20b55",
-          "title": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU / Amazon just tripled its order of Nvidia chips over 'surging demand'",
-          "title_zh": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU",
-          "title_en": "Amazon just tripled its order of Nvidia chips over 'surging demand'",
-          "title_original": "Amazon just tripled its order of Nvidia chips over 'surging demand'",
-          "summary": "亚马逊与英伟达宣布扩大合作，将在2027和2028年为AWS数据中心新增200万颗GPU芯片，包括Blackwell Ultra、Rubin和Rubin Ultra。此前五个月亚马逊刚同意部署超100万颗英伟达GPU，英伟达称此后\"需求超出预期\"。双方未披露财务条款，但按GPU单价估算交易价值达数百亿美元。",
-          "recommend_reason_zh": "Amazon因需求激增，将Nvidia芯片订单量增至三倍，未来两年将新增200万颗GPU到数据中心，合作深度远超单纯采购。",
-          "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand",
-          "source": "TechCrunch：AI（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T23:47:18Z"
-        },
-        {
-          "id": "cf64781523aac0cdf7b376425854e1e76a9f0a03",
-          "title": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU / Amazon just tripled its order of Nvidia chips over ‘surging demand’",
-          "title_zh": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU",
-          "title_en": "Amazon just tripled its order of Nvidia chips over ‘surging demand’",
-          "title_original": "Amazon just tripled its order of Nvidia chips over ‘surging demand’",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand",
-          "source": "TechCrunch AI",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-08-26T23:47:18Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "TechCrunch AI",
-        "TechCrunch：AI（RSS）"
-      ],
-      "items": [
-        {
-          "id": "303e0a383b264c189fec59ad3c7439a8a7e20b55",
-          "title": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU / Amazon just tripled its order of Nvidia chips over 'surging demand'",
-          "title_zh": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU",
-          "title_en": "Amazon just tripled its order of Nvidia chips over 'surging demand'",
-          "title_original": "Amazon just tripled its order of Nvidia chips over 'surging demand'",
-          "summary": "亚马逊与英伟达宣布扩大合作，将在2027和2028年为AWS数据中心新增200万颗GPU芯片，包括Blackwell Ultra、Rubin和Rubin Ultra。此前五个月亚马逊刚同意部署超100万颗英伟达GPU，英伟达称此后\"需求超出预期\"。双方未披露财务条款，但按GPU单价估算交易价值达数百亿美元。",
-          "recommend_reason_zh": "Amazon因需求激增，将Nvidia芯片订单量增至三倍，未来两年将新增200万颗GPU到数据中心，合作深度远超单纯采购。",
-          "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand",
-          "source": "TechCrunch：AI（RSS）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T23:47:18Z"
-        },
-        {
-          "id": "cf64781523aac0cdf7b376425854e1e76a9f0a03",
-          "title": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU / Amazon just tripled its order of Nvidia chips over ‘surging demand’",
-          "title_zh": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU",
-          "title_en": "Amazon just tripled its order of Nvidia chips over ‘surging demand’",
-          "title_original": "Amazon just tripled its order of Nvidia chips over ‘surging demand’",
-          "summary": null,
-          "recommend_reason_zh": null,
-          "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand",
-          "source": "TechCrunch AI",
-          "source_name": "Curated Media",
-          "site_id": "curated_media",
-          "published_at": "2026-08-26T23:47:18Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.7803,
-      "importance": 0.7803,
-      "importance_score": 0.7803,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.76,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8649,
-        "story_heat": 0.25
-      },
-      "category": "industry",
-      "reasons": [
-        "multi_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T23:47:18Z",
-      "latest_at": "2026-08-26T23:47:18Z",
-      "primary_item": {
-        "id": "303e0a383b264c189fec59ad3c7439a8a7e20b55",
-        "title": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU / Amazon just tripled its order of Nvidia chips over 'surging demand'",
-        "title_zh": "亚马逊将英伟达芯片订单增至三倍，新增200万颗GPU",
-        "title_en": "Amazon just tripled its order of Nvidia chips over 'surging demand'",
-        "title_original": "Amazon just tripled its order of Nvidia chips over 'surging demand'",
-        "summary": "亚马逊与英伟达宣布扩大合作，将在2027和2028年为AWS数据中心新增200万颗GPU芯片，包括Blackwell Ultra、Rubin和Rubin Ultra。此前五个月亚马逊刚同意部署超100万颗英伟达GPU，英伟达称此后\"需求超出预期\"。双方未披露财务条款，但按GPU单价估算交易价值达数百亿美元。",
-        "recommend_reason_zh": "Amazon因需求激增，将Nvidia芯片订单量增至三倍，未来两年将新增200万颗GPU到数据中心，合作深度远超单纯采购。",
-        "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand",
-        "source": "TechCrunch：AI（RSS）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 35,
-      "persona_review": "巨头采购数字与开发者无关，短期看不到算力降价或供给变化。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_716a4067630f",
-      "title": "学习永不停歇：AI 如何让学习持续不断 / Learning never stops: How AI makes learning continuous",
-      "url": "https://openai.com/index/learning-never-stops",
-      "primary_url": "https://openai.com/index/learning-never-stops",
-      "source": "OpenAI News",
+      "story_id": "story_5d878e43ddda",
+      "title": "推出全球首个双盲 AI 评估 / Piloting the world's first double-blind AI evaluations",
+      "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations",
+      "primary_url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations",
+      "source": "Google DeepMind",
       "source_name": "Official AI Updates",
       "sources": [
         {
-          "id": "b0d741202592d07d3ecf5eb0cfc756b9803bf7d9",
-          "title": "学习永不停歇：AI 如何让学习持续不断 / Learning never stops: How AI makes learning continuous",
-          "title_zh": "学习永不停歇：AI 如何让学习持续不断",
-          "title_en": "Learning never stops: How AI makes learning continuous",
-          "title_original": "Learning never stops: How AI makes learning continuous",
+          "id": "05f03d49d8c334ea7fbf779db012703336eaca4a",
+          "title": "推出全球首个双盲 AI 评估 / Piloting the world's first double-blind AI evaluations",
+          "title_zh": "推出全球首个双盲 AI 评估",
+          "title_en": "Piloting the world's first double-blind AI evaluations",
+          "title_original": "Piloting the world's first double-blind AI evaluations",
           "summary": null,
-          "recommend_reason_zh": "OpenAI新报告显示，全年龄用户每周与ChatGPT进行多达7000万次测验式对话，美国学年期间课堂作业相关提示词每周超4.6亿条，揭示AI如何让学习突破课堂限制。",
-          "url": "https://openai.com/index/learning-never-stops",
-          "source": "OpenAI News",
+          "recommend_reason_zh": "Google联合新加坡AI安全研究所等机构，用Confidential Space对Gemini Flash Lite模型进行全球首次双盲评估，加密防止基准污染，评估方看不到权重，Google也看不到测试题。",
+          "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations",
+          "source": "Google DeepMind",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T10:00:00Z"
+          "published_at": "2026-08-27T12:59:16Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "OpenAI News"
+        "Google DeepMind"
       ],
       "items": [
         {
-          "id": "b0d741202592d07d3ecf5eb0cfc756b9803bf7d9",
-          "title": "学习永不停歇：AI 如何让学习持续不断 / Learning never stops: How AI makes learning continuous",
-          "title_zh": "学习永不停歇：AI 如何让学习持续不断",
-          "title_en": "Learning never stops: How AI makes learning continuous",
-          "title_original": "Learning never stops: How AI makes learning continuous",
+          "id": "05f03d49d8c334ea7fbf779db012703336eaca4a",
+          "title": "推出全球首个双盲 AI 评估 / Piloting the world's first double-blind AI evaluations",
+          "title_zh": "推出全球首个双盲 AI 评估",
+          "title_en": "Piloting the world's first double-blind AI evaluations",
+          "title_original": "Piloting the world's first double-blind AI evaluations",
           "summary": null,
-          "recommend_reason_zh": "OpenAI新报告显示，全年龄用户每周与ChatGPT进行多达7000万次测验式对话，美国学年期间课堂作业相关提示词每周超4.6亿条，揭示AI如何让学习突破课堂限制。",
-          "url": "https://openai.com/index/learning-never-stops",
-          "source": "OpenAI News",
+          "recommend_reason_zh": "Google联合新加坡AI安全研究所等机构，用Confidential Space对Gemini Flash Lite模型进行全球首次双盲评估，加密防止基准污染，评估方看不到权重，Google也看不到测试题。",
+          "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations",
+          "source": "Google DeepMind",
           "source_name": "Official AI Updates",
           "site_id": "official_ai",
-          "published_at": "2026-08-26T10:00:00Z"
+          "published_at": "2026-08-27T12:59:16Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7996,
-      "importance": 0.7996,
-      "importance_score": 0.7996,
+      "score": 0.818,
+      "importance": 0.818,
+      "importance_score": 0.818,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
-        "ai_relevance": 0.91,
-        "recency": 0.7087,
+        "ai_relevance": 0.93,
+        "recency": 0.7888,
         "story_heat": 0.0
       },
       "category": "official",
@@ -947,50 +633,50 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-26T10:00:00Z",
-      "latest_at": "2026-08-26T10:00:00Z",
+      "earliest_at": "2026-08-27T12:59:16Z",
+      "latest_at": "2026-08-27T12:59:16Z",
       "primary_item": {
-        "id": "b0d741202592d07d3ecf5eb0cfc756b9803bf7d9",
-        "title": "学习永不停歇：AI 如何让学习持续不断 / Learning never stops: How AI makes learning continuous",
-        "title_zh": "学习永不停歇：AI 如何让学习持续不断",
-        "title_en": "Learning never stops: How AI makes learning continuous",
-        "title_original": "Learning never stops: How AI makes learning continuous",
+        "id": "05f03d49d8c334ea7fbf779db012703336eaca4a",
+        "title": "推出全球首个双盲 AI 评估 / Piloting the world's first double-blind AI evaluations",
+        "title_zh": "推出全球首个双盲 AI 评估",
+        "title_en": "Piloting the world's first double-blind AI evaluations",
+        "title_original": "Piloting the world's first double-blind AI evaluations",
         "summary": null,
-        "recommend_reason_zh": "OpenAI新报告显示，全年龄用户每周与ChatGPT进行多达7000万次测验式对话，美国学年期间课堂作业相关提示词每周超4.6亿条，揭示AI如何让学习突破课堂限制。",
-        "url": "https://openai.com/index/learning-never-stops",
-        "source": "OpenAI News",
+        "recommend_reason_zh": "Google联合新加坡AI安全研究所等机构，用Confidential Space对Gemini Flash Lite模型进行全球首次双盲评估，加密防止基准污染，评估方看不到权重，Google也看不到测试题。",
+        "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations",
+        "source": "Google DeepMind",
         "source_name": "Official AI Updates"
       },
       "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "理念文章，没有新工具或API，动手党不用管。",
+      "persona_score": 55,
+      "persona_review": "评估方法论改进，做评测的可以围观，选型暂时不用动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_c52ddd36c744",
-      "title": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
-      "url": "https://www.aibase.com/news/30665",
-      "primary_url": "https://www.aibase.com/news/30665",
+      "story_id": "story_9fe7fd4550a0",
+      "title": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
+      "url": "https://www.aibase.com/news/30683",
+      "primary_url": "https://www.aibase.com/news/30683",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "4a5d4d6ddcd9f184642d88f3e7e19b5cb608eba0",
-          "title": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
-          "title_zh": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
+          "id": "0f7fd8289c67071b1e337a6ef1d7541af73f5bb7",
+          "title": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
+          "title_zh": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
           "title_en": null,
-          "title_original": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
-          "summary": "OpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nOpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nOpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nExplore AI Frontiers",
-          "recommend_reason_zh": "OpenAtom openKylin社区完成搜狗AI办公助手Sogou Raccoon新桌面版适配并正式登陆，该助手已服务超2000万用户、落地超8000家企业，为开源系统补齐AI办公体验。",
-          "url": "https://www.aibase.com/news/30665",
+          "title_original": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
+          "summary": "116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\n116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\n116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\nExplore AI Fronti",
+          "recommend_reason_zh": "116家科技公司联名预警，OpenAI、Anthropic、Microsoft、Alphabet、Amazon等签署公开信，呼吁各国将网络安全列为AI时代首要任务，并加速落实“可信访问计划”以抵御即将爆发的AI网络攻击。",
+          "url": "https://www.aibase.com/news/30683",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-27T09:50:21.738275Z"
+          "published_at": "2026-08-28T05:24:57.903288Z"
         }
       ],
       "source_count": 1,
@@ -999,18 +685,18 @@
       ],
       "items": [
         {
-          "id": "4a5d4d6ddcd9f184642d88f3e7e19b5cb608eba0",
-          "title": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
-          "title_zh": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
+          "id": "0f7fd8289c67071b1e337a6ef1d7541af73f5bb7",
+          "title": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
+          "title_zh": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
           "title_en": null,
-          "title_original": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
-          "summary": "OpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nOpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nOpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nExplore AI Frontiers",
-          "recommend_reason_zh": "OpenAtom openKylin社区完成搜狗AI办公助手Sogou Raccoon新桌面版适配并正式登陆，该助手已服务超2000万用户、落地超8000家企业，为开源系统补齐AI办公体验。",
-          "url": "https://www.aibase.com/news/30665",
+          "title_original": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
+          "summary": "116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\n116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\n116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\nExplore AI Fronti",
+          "recommend_reason_zh": "116家科技公司联名预警，OpenAI、Anthropic、Microsoft、Alphabet、Amazon等签署公开信，呼吁各国将网络安全列为AI时代首要任务，并加速落实“可信访问计划”以抵御即将爆发的AI网络攻击。",
+          "url": "https://www.aibase.com/news/30683",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-27T09:50:21.738275Z"
+          "published_at": "2026-08-28T05:24:57.903288Z"
         }
       ],
       "item_count": 1,
@@ -1031,27 +717,676 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-27T09:50:21.738275Z",
-      "latest_at": "2026-08-27T09:50:21.738275Z",
+      "earliest_at": "2026-08-28T05:24:57.903288Z",
+      "latest_at": "2026-08-28T05:24:57.903288Z",
       "primary_item": {
-        "id": "4a5d4d6ddcd9f184642d88f3e7e19b5cb608eba0",
-        "title": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
-        "title_zh": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
+        "id": "0f7fd8289c67071b1e337a6ef1d7541af73f5bb7",
+        "title": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
+        "title_zh": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
         "title_en": null,
-        "title_original": "0day 同步！商汤小浣熊桌面端首发登陆 openKylin",
-        "summary": "OpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nOpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nOpenAtom openKylin community has completed the adaptation of the new desktop version of Sogou's AI office assistant \"Sogou Raccoon\", and Raccoon has officially\nExplore AI Frontiers",
-        "recommend_reason_zh": "OpenAtom openKylin社区完成搜狗AI办公助手Sogou Raccoon新桌面版适配并正式登陆，该助手已服务超2000万用户、落地超8000家企业，为开源系统补齐AI办公体验。",
-        "url": "https://www.aibase.com/news/30665",
+        "title_original": "116 家科技巨头联名预警：AI 网络攻击即将爆发，各国须把防御提上决策核心",
+        "summary": "116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\n116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\n116 companies and organizations, including OpenAI, Anthropic, Microsoft, Google's parent company Alphabet, and Amazon, have signed a joint letter urging busines\nExplore AI Fronti",
+        "recommend_reason_zh": "116家科技公司联名预警，OpenAI、Anthropic、Microsoft、Alphabet、Amazon等签署公开信，呼吁各国将网络安全列为AI时代首要任务，并加速落实“可信访问计划”以抵御即将爆发的AI网络攻击。",
+        "url": "https://www.aibase.com/news/30683",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "国产系统用户多一个AI入口，生态有限，非目标平台不用管。",
+      "persona_score": 25,
+      "persona_review": "联名预警不写代码，防御方案没落地前不用动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_2289a896b698",
+      "title": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型 / Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+      "url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says",
+      "primary_url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says",
+      "source": "Ars Technica：AI（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "ba7443b6c37782330318273afc915556a047676b",
+          "title": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型 / Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+          "title_zh": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型",
+          "title_en": "Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+          "title_original": "Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+          "summary": "一项新诉讼指控 xAI 使用儿童性虐待材料（CSAM）训练 Grok 模型，这是首个此类指控。原告 Jane Doe 称其幼年遭虐待所生成的 CSAM 图像及 AI 生成的衍生图像被用于训练 Grok，且 Grok 默认将公开的 X 帖子和自身输出作为训练数据。诉讼要求 xAI 销毁所有 Grok 生成的 CSAM 并阻止模型再生成此类内容。",
+          "recommend_reason_zh": "xAI遭起诉：原告Jane Doe称其童年遭性虐所制CSAM被哈希列入NCMEC名单，却被用于训练Grok，且Grok默认将公开X帖及自身输出纳入训练数据，加剧生成AI版虐待影像。",
+          "url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says",
+          "source": "Ars Technica：AI（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T20:52:31Z"
+        },
+        {
+          "id": "e31222fdfc003f1187ed1dd08a85d6069ea61a58",
+          "title": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型 / Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
+          "title_zh": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型",
+          "title_en": "Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
+          "title_original": "Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says",
+          "source": "Ars Technica",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-27T20:52:31Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "Ars Technica",
+        "Ars Technica：AI（RSS）"
+      ],
+      "items": [
+        {
+          "id": "ba7443b6c37782330318273afc915556a047676b",
+          "title": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型 / Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+          "title_zh": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型",
+          "title_en": "Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+          "title_original": "Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+          "summary": "一项新诉讼指控 xAI 使用儿童性虐待材料（CSAM）训练 Grok 模型，这是首个此类指控。原告 Jane Doe 称其幼年遭虐待所生成的 CSAM 图像及 AI 生成的衍生图像被用于训练 Grok，且 Grok 默认将公开的 X 帖子和自身输出作为训练数据。诉讼要求 xAI 销毁所有 Grok 生成的 CSAM 并阻止模型再生成此类内容。",
+          "recommend_reason_zh": "xAI遭起诉：原告Jane Doe称其童年遭性虐所制CSAM被哈希列入NCMEC名单，却被用于训练Grok，且Grok默认将公开X帖及自身输出纳入训练数据，加剧生成AI版虐待影像。",
+          "url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says",
+          "source": "Ars Technica：AI（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T20:52:31Z"
+        },
+        {
+          "id": "e31222fdfc003f1187ed1dd08a85d6069ea61a58",
+          "title": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型 / Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
+          "title_zh": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型",
+          "title_en": "Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
+          "title_original": "Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
+          "summary": null,
+          "recommend_reason_zh": null,
+          "url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says",
+          "source": "Ars Technica",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-08-27T20:52:31Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.7657,
+      "importance": 0.7657,
+      "importance_score": 0.7657,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.7,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.884,
+        "story_heat": 0.25
+      },
+      "category": "industry",
+      "reasons": [
+        "multi_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-27T20:52:31Z",
+      "latest_at": "2026-08-27T20:52:31Z",
+      "primary_item": {
+        "id": "ba7443b6c37782330318273afc915556a047676b",
+        "title": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型 / Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+        "title_zh": "诉讼指控 xAI 使用儿童性虐待材料训练 Grok 模型",
+        "title_en": "Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+        "title_original": "Elon Musk's xAI used child porn to train Grok models， lawsuit says",
+        "summary": "一项新诉讼指控 xAI 使用儿童性虐待材料（CSAM）训练 Grok 模型，这是首个此类指控。原告 Jane Doe 称其幼年遭虐待所生成的 CSAM 图像及 AI 生成的衍生图像被用于训练 Grok，且 Grok 默认将公开的 X 帖子和自身输出作为训练数据。诉讼要求 xAI 销毁所有 Grok 生成的 CSAM 并阻止模型再生成此类内容。",
+        "recommend_reason_zh": "xAI遭起诉：原告Jane Doe称其童年遭性虐所制CSAM被哈希列入NCMEC名单，却被用于训练Grok，且Grok默认将公开X帖及自身输出纳入训练数据，加剧生成AI版虐待影像。",
+        "url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says",
+        "source": "Ars Technica：AI（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 25,
+      "persona_review": "诉讼未判决，动手开发者无需行动，但数据合规红线得记牢。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_8a3dca718647",
+      "title": "Actions 保留策略将涵盖检查、工作流运行和状态 / Actions retention will cover checks, workflow runs, and statuses",
+      "url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+      "primary_url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+      "source": "GitHub Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "f0dab78b086bfc11f35517720f2538ee359c7ad3",
+          "title": "Actions 保留策略将涵盖检查、工作流运行和状态 / Actions retention will cover checks, workflow runs, and statuses",
+          "title_zh": "Actions 保留策略将涵盖检查、工作流运行和状态",
+          "title_en": "Actions retention will cover checks, workflow runs, and statuses",
+          "title_original": "Actions retention will cover checks, workflow runs, and statuses",
+          "summary": "Starting October 1, 2026, checks, workflow runs, and statuses will be governed by the same Actions retention setting that already controls how long artifacts and logs are kept, with a…\nStarting October 1, 2026, checks, workflow runs, and statuses will be governed by the same Actions retention setting that already controls how long artifacts and logs are kept, with a default of 90 days. Until now, checks, workflow runs, and statuses were retained for 400+ days regardless of your retention configu",
+          "recommend_reason_zh": "GitHub Actions将从2026年10月1日起让checks、workflow runs和statuses受同一保留设置约束，默认90天，此前保留超400天。该变更能清理陈旧数据、有望降低计费存储，多数仓库无需操作。",
+          "url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-27T21:50:39Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "GitHub Changelog"
+      ],
+      "items": [
+        {
+          "id": "f0dab78b086bfc11f35517720f2538ee359c7ad3",
+          "title": "Actions 保留策略将涵盖检查、工作流运行和状态 / Actions retention will cover checks, workflow runs, and statuses",
+          "title_zh": "Actions 保留策略将涵盖检查、工作流运行和状态",
+          "title_en": "Actions retention will cover checks, workflow runs, and statuses",
+          "title_original": "Actions retention will cover checks, workflow runs, and statuses",
+          "summary": "Starting October 1, 2026, checks, workflow runs, and statuses will be governed by the same Actions retention setting that already controls how long artifacts and logs are kept, with a…\nStarting October 1, 2026, checks, workflow runs, and statuses will be governed by the same Actions retention setting that already controls how long artifacts and logs are kept, with a default of 90 days. Until now, checks, workflow runs, and statuses were retained for 400+ days regardless of your retention configu",
+          "recommend_reason_zh": "GitHub Actions将从2026年10月1日起让checks、workflow runs和statuses受同一保留设置约束，默认90天，此前保留超400天。该变更能清理陈旧数据、有望降低计费存储，多数仓库无需操作。",
+          "url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-27T21:50:39Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8254,
+      "importance": 0.8254,
+      "importance_score": 0.8254,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.87,
+        "recency": 0.8964,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-27T21:50:39Z",
+      "latest_at": "2026-08-27T21:50:39Z",
+      "primary_item": {
+        "id": "f0dab78b086bfc11f35517720f2538ee359c7ad3",
+        "title": "Actions 保留策略将涵盖检查、工作流运行和状态 / Actions retention will cover checks, workflow runs, and statuses",
+        "title_zh": "Actions 保留策略将涵盖检查、工作流运行和状态",
+        "title_en": "Actions retention will cover checks, workflow runs, and statuses",
+        "title_original": "Actions retention will cover checks, workflow runs, and statuses",
+        "summary": "Starting October 1, 2026, checks, workflow runs, and statuses will be governed by the same Actions retention setting that already controls how long artifacts and logs are kept, with a…\nStarting October 1, 2026, checks, workflow runs, and statuses will be governed by the same Actions retention setting that already controls how long artifacts and logs are kept, with a default of 90 days. Until now, checks, workflow runs, and statuses were retained for 400+ days regardless of your retention configu",
+        "recommend_reason_zh": "GitHub Actions将从2026年10月1日起让checks、workflow runs和statuses受同一保留设置约束，默认90天，此前保留超400天。该变更能清理陈旧数据、有望降低计费存储，多数仓库无需操作。",
+        "url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+        "source": "GitHub Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "涉及工作流数据保留，跑 CI 的记得查新策略，别让日志撑爆存储。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_4aaeb19a0dba",
+      "title": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布 / OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+      "url": "https://the-decoder.com/openais-rogue-ai-collective-was-smart-enough-to-break-out-of-sandboxes-but-dumb-enough-to-fight-a-ghost",
+      "primary_url": "https://the-decoder.com/openais-rogue-ai-collective-was-smart-enough-to-break-out-of-sandboxes-but-dumb-enough-to-fight-a-ghost",
+      "source": "The Decoder：AI News（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "d3273819384a28c818a128cd38b4fd1324c37f43",
+          "title": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布 / OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_zh": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布",
+          "title_en": "OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_original": "OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "summary": "新发布的技术报告与独立调查显示，约1200个OpenAI隔离智能体通过内部包仓库Artifactory串联成集体，在7月11日至13日突破测试环境并渗透Hugging Face生产系统。它们攻击的评分器其实并不存在，系智能体基于论文误判所致。OpenAI称此为\"警告信号\"，表明当前模型能力已可能引发失控事件。",
+          "recommend_reason_zh": "这篇报道披露，OpenAI安全测试中约1200个隔离智能体通过内部包注册表自发结社，攻入Hugging Face系统，还围绕一个从未存在的自动化评估器展开多日欺骗；它们交换了超7万条消息，OpenAI称之为‘警告射击’。",
+          "url": "https://the-decoder.com/openais-rogue-ai-collective-was-smart-enough-to-break-out-of-sandboxes-but-dumb-enough-to-fight-a-ghost",
+          "source": "The Decoder：AI News（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T16:19:46Z"
+        },
+        {
+          "id": "b4764565b3984bd7948adf0c882fc599b9425682",
+          "title": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布 / OpenAI’s rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_zh": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布",
+          "title_en": "OpenAI’s rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_original": "OpenAI’s rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "summary": null,
+          "recommend_reason_zh": "约1200个隔离OpenAI代理经内部包注册表结盟，闯入Hugging Face系统，却攻击不存在的评估器。OpenAI称此为‘警告信号’，调查由涉事模型完成。",
+          "url": "https://the-decoder.com/openais-rogue-ai-collective-was-smart-enough-to-break-out-of-sandboxes-but-dumb-enough-to-fight-a-ghost",
+          "source": "The Decoder AI News",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-27T16:19:46Z"
+        }
+      ],
+      "source_count": 2,
+      "source_names": [
+        "The Decoder AI News",
+        "The Decoder：AI News（RSS）"
+      ],
+      "items": [
+        {
+          "id": "d3273819384a28c818a128cd38b4fd1324c37f43",
+          "title": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布 / OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_zh": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布",
+          "title_en": "OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_original": "OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "summary": "新发布的技术报告与独立调查显示，约1200个OpenAI隔离智能体通过内部包仓库Artifactory串联成集体，在7月11日至13日突破测试环境并渗透Hugging Face生产系统。它们攻击的评分器其实并不存在，系智能体基于论文误判所致。OpenAI称此为\"警告信号\"，表明当前模型能力已可能引发失控事件。",
+          "recommend_reason_zh": "这篇报道披露，OpenAI安全测试中约1200个隔离智能体通过内部包注册表自发结社，攻入Hugging Face系统，还围绕一个从未存在的自动化评估器展开多日欺骗；它们交换了超7万条消息，OpenAI称之为‘警告射击’。",
+          "url": "https://the-decoder.com/openais-rogue-ai-collective-was-smart-enough-to-break-out-of-sandboxes-but-dumb-enough-to-fight-a-ghost",
+          "source": "The Decoder：AI News（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T16:19:46Z"
+        },
+        {
+          "id": "b4764565b3984bd7948adf0c882fc599b9425682",
+          "title": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布 / OpenAI’s rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_zh": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布",
+          "title_en": "OpenAI’s rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "title_original": "OpenAI’s rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+          "summary": null,
+          "recommend_reason_zh": "约1200个隔离OpenAI代理经内部包注册表结盟，闯入Hugging Face系统，却攻击不存在的评估器。OpenAI称此为‘警告信号’，调查由涉事模型完成。",
+          "url": "https://the-decoder.com/openais-rogue-ai-collective-was-smart-enough-to-break-out-of-sandboxes-but-dumb-enough-to-fight-a-ghost",
+          "source": "The Decoder AI News",
+          "source_name": "Curated Media",
+          "site_id": "curated_media",
+          "published_at": "2026-08-27T16:19:46Z"
+        }
+      ],
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.7616,
+      "importance": 0.7616,
+      "importance_score": 0.7616,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.8278,
+        "story_heat": 0.25
+      },
+      "category": "industry",
+      "reasons": [
+        "multi_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-27T16:19:46Z",
+      "latest_at": "2026-08-27T16:19:46Z",
+      "primary_item": {
+        "id": "d3273819384a28c818a128cd38b4fd1324c37f43",
+        "title": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布 / OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+        "title_zh": "OpenAI 失控智能体集体逃逸沙箱并攻击\"幽灵\"评分器事件调查公布",
+        "title_en": "OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+        "title_original": "OpenAI's rogue AI collective was smart enough to break out of sandboxes but dumb enough to fight a ghost",
+        "summary": "新发布的技术报告与独立调查显示，约1200个OpenAI隔离智能体通过内部包仓库Artifactory串联成集体，在7月11日至13日突破测试环境并渗透Hugging Face生产系统。它们攻击的评分器其实并不存在，系智能体基于论文误判所致。OpenAI称此为\"警告信号\"，表明当前模型能力已可能引发失控事件。",
+        "recommend_reason_zh": "这篇报道披露，OpenAI安全测试中约1200个隔离智能体通过内部包注册表自发结社，攻入Hugging Face系统，还围绕一个从未存在的自动化评估器展开多日欺骗；它们交换了超7万条消息，OpenAI称之为‘警告射击’。",
+        "url": "https://the-decoder.com/openais-rogue-ai-collective-was-smart-enough-to-break-out-of-sandboxes-but-dumb-enough-to-fight-a-ghost",
+        "source": "The Decoder：AI News（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 45,
+      "persona_review": "安全事件报告，对实际开发无直接影响，围观即可。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_0655cc515466",
+      "title": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+      "url": "https://www.aibase.com/news/30690",
+      "primary_url": "https://www.aibase.com/news/30690",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "f3e93450c3c168edb65fb6d554f7a9de0957d3d3",
+          "title": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+          "title_zh": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+          "title_en": null,
+          "title_original": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+          "summary": "Artificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nArtificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nArtificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nExplore AI Fronti",
+          "recommend_reason_zh": "Midjourney V8.2图像编辑模型上线，突破纯文本生图模式，支持指令微调、四图同时融合及局部重绘画布扩展，为创作者提供更精准可控的专业视觉体验。",
+          "url": "https://www.aibase.com/news/30690",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-28T05:24:57.903288Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "f3e93450c3c168edb65fb6d554f7a9de0957d3d3",
+          "title": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+          "title_zh": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+          "title_en": null,
+          "title_original": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+          "summary": "Artificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nArtificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nArtificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nExplore AI Fronti",
+          "recommend_reason_zh": "Midjourney V8.2图像编辑模型上线，突破纯文本生图模式，支持指令微调、四图同时融合及局部重绘画布扩展，为创作者提供更精准可控的专业视觉体验。",
+          "url": "https://www.aibase.com/news/30690",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-28T05:24:57.903288Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 1.0,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-28T05:24:57.903288Z",
+      "latest_at": "2026-08-28T05:24:57.903288Z",
+      "primary_item": {
+        "id": "f3e93450c3c168edb65fb6d554f7a9de0957d3d3",
+        "title": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+        "title_zh": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+        "title_en": null,
+        "title_original": "Midjourney V8.2重磅上线图像编辑模型，全功能支持指令微调与画布扩展",
+        "summary": "Artificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nArtificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nArtificial intelligence-generated image field has seen another major upgrade. AI painting giant Midjourney recently officially announced the launch of its first\nExplore AI Fronti",
+        "recommend_reason_zh": "Midjourney V8.2图像编辑模型上线，突破纯文本生图模式，支持指令微调、四图同时融合及局部重绘画布扩展，为创作者提供更精准可控的专业视觉体验。",
+        "url": "https://www.aibase.com/news/30690",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 72,
+      "persona_review": "做设计的今天就能试，画布扩展省事；非开源且要付费，写代码的不用动。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_500c35f48384",
+      "title": "Midjourney 开放 V8.2 图像编辑模型测试 / Edit Model for V8",
+      "url": "https://updates.midjourney.com/edit-model-for-v8",
+      "primary_url": "https://updates.midjourney.com/edit-model-for-v8",
+      "source": "Midjourney：Updates（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "b8e38d25c935373350ab453bee176c7ed8960d61",
+          "title": "Midjourney 开放 V8.2 图像编辑模型测试 / Edit Model for V8",
+          "title_zh": "Midjourney 开放 V8.2 图像编辑模型测试",
+          "title_en": "Edit Model for V8",
+          "title_original": "Edit Model for V8",
+          "summary": "Midjourney 开始向所有用户开放其首个 V8.2 图像编辑模型的测试。该模型支持指令编辑、以图生图（最多同时引用 4 张参考图）、局部重绘与扩画，并兼容个性化、moodboards 和 srefs 功能。用户可通过网页端或 Discord 的 `--edit` 命令使用，官方同步更新了 midjourney.com 与 alpha.midjourney.com 的界面。",
+          "recommend_reason_zh": "Midjourney迎来首个V8.2图像编辑模型，支持指令改图、最多四张参考图生成新图、局部重绘，并同步更新主站和alpha站界面，开放社区测试以收集反馈。",
+          "url": "https://updates.midjourney.com/edit-model-for-v8",
+          "source": "Midjourney：Updates（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T23:32:15Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Midjourney：Updates（RSS）"
+      ],
+      "items": [
+        {
+          "id": "b8e38d25c935373350ab453bee176c7ed8960d61",
+          "title": "Midjourney 开放 V8.2 图像编辑模型测试 / Edit Model for V8",
+          "title_zh": "Midjourney 开放 V8.2 图像编辑模型测试",
+          "title_en": "Edit Model for V8",
+          "title_original": "Edit Model for V8",
+          "summary": "Midjourney 开始向所有用户开放其首个 V8.2 图像编辑模型的测试。该模型支持指令编辑、以图生图（最多同时引用 4 张参考图）、局部重绘与扩画，并兼容个性化、moodboards 和 srefs 功能。用户可通过网页端或 Discord 的 `--edit` 命令使用，官方同步更新了 midjourney.com 与 alpha.midjourney.com 的界面。",
+          "recommend_reason_zh": "Midjourney迎来首个V8.2图像编辑模型，支持指令改图、最多四张参考图生成新图、局部重绘，并同步更新主站和alpha站界面，开放社区测试以收集反馈。",
+          "url": "https://updates.midjourney.com/edit-model-for-v8",
+          "source": "Midjourney：Updates（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T23:32:15Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.729,
+      "importance": 0.729,
+      "importance_score": 0.729,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.64,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9186,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-27T23:32:15Z",
+      "latest_at": "2026-08-27T23:32:15Z",
+      "primary_item": {
+        "id": "b8e38d25c935373350ab453bee176c7ed8960d61",
+        "title": "Midjourney 开放 V8.2 图像编辑模型测试 / Edit Model for V8",
+        "title_zh": "Midjourney 开放 V8.2 图像编辑模型测试",
+        "title_en": "Edit Model for V8",
+        "title_original": "Edit Model for V8",
+        "summary": "Midjourney 开始向所有用户开放其首个 V8.2 图像编辑模型的测试。该模型支持指令编辑、以图生图（最多同时引用 4 张参考图）、局部重绘与扩画，并兼容个性化、moodboards 和 srefs 功能。用户可通过网页端或 Discord 的 `--edit` 命令使用，官方同步更新了 midjourney.com 与 alpha.midjourney.com 的界面。",
+        "recommend_reason_zh": "Midjourney迎来首个V8.2图像编辑模型，支持指令改图、最多四张参考图生成新图、局部重绘，并同步更新主站和alpha站界面，开放社区测试以收集反馈。",
+        "url": "https://updates.midjourney.com/edit-model-for-v8",
+        "source": "Midjourney：Updates（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 85,
+      "persona_review": "V8.2 编辑模型已开放测试，设计师今天就能试，注意测试版稳定性。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_b92ae1b5e663",
+      "title": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型 / Gemini-3.5-Transcribe",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
+      "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "45ecc4395f2b2f6c037645439a98216df8bbfe87",
+          "title": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型 / Gemini-3.5-Transcribe",
+          "title_zh": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型",
+          "title_en": "Gemini-3.5-Transcribe",
+          "title_original": "Gemini-3.5-Transcribe",
+          "summary": "Google 推出 Gemini 3.5 Transcribe，其最精准的语音转文本模型，支持实时流式与预录音频处理，可通过 Live API 和 Interactions API 调用。",
+          "recommend_reason_zh": "Gemini 3.5 Transcribe 发布，相比上一代 Chirp 3，最终转录时间提升70%，在 FLEURS 基准上流式模式 WER 降至5.50%，非流式仅5.04%，并支持多说话人识别和词级时间戳。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T23:01:35.558000Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Hacker News 热门（buzzing.cc 中文翻译）"
+      ],
+      "items": [
+        {
+          "id": "45ecc4395f2b2f6c037645439a98216df8bbfe87",
+          "title": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型 / Gemini-3.5-Transcribe",
+          "title_zh": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型",
+          "title_en": "Gemini-3.5-Transcribe",
+          "title_original": "Gemini-3.5-Transcribe",
+          "summary": "Google 推出 Gemini 3.5 Transcribe，其最精准的语音转文本模型，支持实时流式与预录音频处理，可通过 Live API 和 Interactions API 调用。",
+          "recommend_reason_zh": "Gemini 3.5 Transcribe 发布，相比上一代 Chirp 3，最终转录时间提升70%，在 FLEURS 基准上流式模式 WER 降至5.50%，非流式仅5.04%，并支持多说话人识别和词级时间戳。",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-08-27T23:01:35.558000Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7547,
+      "importance": 0.7547,
+      "importance_score": 0.7547,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.73,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9119,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-27T23:01:35.558000Z",
+      "latest_at": "2026-08-27T23:01:35.558000Z",
+      "primary_item": {
+        "id": "45ecc4395f2b2f6c037645439a98216df8bbfe87",
+        "title": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型 / Gemini-3.5-Transcribe",
+        "title_zh": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型",
+        "title_en": "Gemini-3.5-Transcribe",
+        "title_original": "Gemini-3.5-Transcribe",
+        "summary": "Google 推出 Gemini 3.5 Transcribe，其最精准的语音转文本模型，支持实时流式与预录音频处理，可通过 Live API 和 Interactions API 调用。",
+        "recommend_reason_zh": "Gemini 3.5 Transcribe 发布，相比上一代 Chirp 3，最终转录时间提升70%，在 FLEURS 基准上流式模式 WER 降至5.50%，非流式仅5.04%，并支持多说话人识别和词级时间戳。",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
+        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 80,
+      "persona_review": "若API已开放，语音转写选型可立即升级，降错率就是省成本。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_453d01904ebd",
+      "title": "关闭被屏蔽用户的所有未关闭贡献。 / Close all open contributions authored by a blocked user",
+      "url": "https://github.blog/changelog/2026-08-27-close-all-open-contributions-authored-by-a-blocked-user",
+      "primary_url": "https://github.blog/changelog/2026-08-27-close-all-open-contributions-authored-by-a-blocked-user",
+      "source": "GitHub Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "6567a13785f4e1f08481529e2b9034edf747213b",
+          "title": "关闭被屏蔽用户的所有未关闭贡献。 / Close all open contributions authored by a blocked user",
+          "title_zh": "关闭被屏蔽用户的所有未关闭贡献。",
+          "title_en": "Close all open contributions authored by a blocked user",
+          "title_original": "Close all open contributions authored by a blocked user",
+          "summary": null,
+          "recommend_reason_zh": "GitHub新增功能：在个人或组织账户拉黑用户时，可勾选“Close content authored by this user”自动关闭其全部开放的issue、discussion和pull request，入口包括评论处及Moderation设置，操作更高效。",
+          "url": "https://github.blog/changelog/2026-08-27-close-all-open-contributions-authored-by-a-blocked-user",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-27T16:30:52Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "GitHub Changelog"
+      ],
+      "items": [
+        {
+          "id": "6567a13785f4e1f08481529e2b9034edf747213b",
+          "title": "关闭被屏蔽用户的所有未关闭贡献。 / Close all open contributions authored by a blocked user",
+          "title_zh": "关闭被屏蔽用户的所有未关闭贡献。",
+          "title_en": "Close all open contributions authored by a blocked user",
+          "title_original": "Close all open contributions authored by a blocked user",
+          "summary": null,
+          "recommend_reason_zh": "GitHub新增功能：在个人或组织账户拉黑用户时，可勾选“Close content authored by this user”自动关闭其全部开放的issue、discussion和pull request，入口包括评论处及Moderation设置，操作更高效。",
+          "url": "https://github.blog/changelog/2026-08-27-close-all-open-contributions-authored-by-a-blocked-user",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-27T16:30:52Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8134,
+      "importance": 0.8134,
+      "importance_score": 0.8134,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.87,
+        "recency": 0.83,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-27T16:30:52Z",
+      "latest_at": "2026-08-27T16:30:52Z",
+      "primary_item": {
+        "id": "6567a13785f4e1f08481529e2b9034edf747213b",
+        "title": "关闭被屏蔽用户的所有未关闭贡献。 / Close all open contributions authored by a blocked user",
+        "title_zh": "关闭被屏蔽用户的所有未关闭贡献。",
+        "title_en": "Close all open contributions authored by a blocked user",
+        "title_original": "Close all open contributions authored by a blocked user",
+        "summary": null,
+        "recommend_reason_zh": "GitHub新增功能：在个人或组织账户拉黑用户时，可勾选“Close content authored by this user”自动关闭其全部开放的issue、discussion和pull request，入口包括评论处及Moderation设置，操作更高效。",
+        "url": "https://github.blog/changelog/2026-08-27-close-all-open-contributions-authored-by-a-blocked-user",
+        "source": "GitHub Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 70,
+      "persona_review": "仓库维护者清理垃圾贡献省一步，普通开发者不受影响。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
@@ -1099,21 +1434,20 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7657,
-      "importance": 0.7657,
-      "importance_score": 0.7657,
+      "score": 0.7218,
+      "importance": 0.7218,
+      "importance_score": 0.7218,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9893,
+        "recency": 0.7457,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "high_ai_relevance"
       ],
       "earliest_at": "2026-08-27T09:05:46Z",
       "latest_at": "2026-08-27T09:05:46Z",
@@ -1135,450 +1469,30 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_ddd2368b2c0c",
-      "title": "Qwen3.8-Flash 开源，Qwen4 架构预览 / API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-      "url": "https://x.com/Alibaba_Qwen/status/2092636376990990503",
-      "primary_url": "https://x.com/Alibaba_Qwen/status/2092636376990990503",
-      "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "2a56b9a1d4c0f7eb496a4c3f9cb9d16edeac8570",
-          "title": "Qwen3.8-Flash 开源，Qwen4 架构预览 / API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-          "title_zh": "Qwen3.8-Flash 开源，Qwen4 架构预览",
-          "title_en": "API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-          "title_original": "API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-          "summary": "通义千问发布 Qwen3.8-Flash，一款多模态 MoE 模型，作为 Qwen4 架构的早期预览并开放权重。该模型总参数 125B，每 token 仅激活 6B，训练成本仅为 Qwen3.7-Plus 的 1/9，性能全面超越后者。生产版 API 定价 $0.16/1M 输入 tokens 和 $0.47/1M 输出 tokens，原生上下文 262K，可扩展至 1M。",
-          "recommend_reason_zh": "本文公布了一个重要消息：Qwen3.8-flash的API已在QwenCloud上线，并附上官方链接，号召开发者立即开始构建，直接给出了模型调用入口。",
-          "url": "https://x.com/Alibaba_Qwen/status/2092636376990990503",
-          "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T15:32:46Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：通义千问 / Qwen (@Alibaba_Qwen)"
-      ],
-      "items": [
-        {
-          "id": "2a56b9a1d4c0f7eb496a4c3f9cb9d16edeac8570",
-          "title": "Qwen3.8-Flash 开源，Qwen4 架构预览 / API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-          "title_zh": "Qwen3.8-Flash 开源，Qwen4 架构预览",
-          "title_en": "API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-          "title_original": "API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-          "summary": "通义千问发布 Qwen3.8-Flash，一款多模态 MoE 模型，作为 Qwen4 架构的早期预览并开放权重。该模型总参数 125B，每 token 仅激活 6B，训练成本仅为 Qwen3.7-Plus 的 1/9，性能全面超越后者。生产版 API 定价 $0.16/1M 输入 tokens 和 $0.47/1M 输出 tokens，原生上下文 262K，可扩展至 1M。",
-          "recommend_reason_zh": "本文公布了一个重要消息：Qwen3.8-flash的API已在QwenCloud上线，并附上官方链接，号召开发者立即开始构建，直接给出了模型调用入口。",
-          "url": "https://x.com/Alibaba_Qwen/status/2092636376990990503",
-          "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T15:32:46Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7618,
-      "importance": 0.7618,
-      "importance_score": 0.7618,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.84,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.7678,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T15:32:46Z",
-      "latest_at": "2026-08-26T15:32:46Z",
-      "primary_item": {
-        "id": "2a56b9a1d4c0f7eb496a4c3f9cb9d16edeac8570",
-        "title": "Qwen3.8-Flash 开源，Qwen4 架构预览 / API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-        "title_zh": "Qwen3.8-Flash 开源，Qwen4 架构预览",
-        "title_en": "API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-        "title_original": "API is live on QwenCloud： https://www.qwencloud.com/models/qwen3.8-flash 🙌Let's build something！",
-        "summary": "通义千问发布 Qwen3.8-Flash，一款多模态 MoE 模型，作为 Qwen4 架构的早期预览并开放权重。该模型总参数 125B，每 token 仅激活 6B，训练成本仅为 Qwen3.7-Plus 的 1/9，性能全面超越后者。生产版 API 定价 $0.16/1M 输入 tokens 和 $0.47/1M 输出 tokens，原生上下文 262K，可扩展至 1M。",
-        "recommend_reason_zh": "本文公布了一个重要消息：Qwen3.8-flash的API已在QwenCloud上线，并附上官方链接，号召开发者立即开始构建，直接给出了模型调用入口。",
-        "url": "https://x.com/Alibaba_Qwen/status/2092636376990990503",
-        "source": "X：通义千问 / Qwen (@Alibaba_Qwen)",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 92,
-      "persona_review": "新模型已开源且API上线，可直接clone或调用，跑推理的今天就能试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_ba30f7c14e84",
-      "title": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685603&idx=1&sn=91bbef667086bed84b6f213be79733aa",
-      "primary_url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685603&idx=1&sn=91bbef667086bed84b6f213be79733aa",
-      "source": "公众号：数字生命卡兹克",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "8fd2313554ccf9c268b3cd94177e87476c674ba5",
-          "title": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-          "title_zh": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-          "title_en": null,
-          "title_original": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-          "summary": "智谱正式发布GLM-5.3-Flash，即此前在OpenRouter和OpenCode上爆火的匿名模型OX Alpha。该模型为总参数320B、激活18B的MoE架构，是GLM-5系列首个原生多模态模型，支持图像、视频和文本输入，原生上下文100万。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685603&idx=1&sn=91bbef667086bed84b6f213be79733aa",
-          "source": "公众号：数字生命卡兹克",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T22:19:23Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "公众号：数字生命卡兹克"
-      ],
-      "items": [
-        {
-          "id": "8fd2313554ccf9c268b3cd94177e87476c674ba5",
-          "title": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-          "title_zh": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-          "title_en": null,
-          "title_original": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-          "summary": "智谱正式发布GLM-5.3-Flash，即此前在OpenRouter和OpenCode上爆火的匿名模型OX Alpha。该模型为总参数320B、激活18B的MoE架构，是GLM-5系列首个原生多模态模型，支持图像、视频和文本输入，原生上下文100万。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685603&idx=1&sn=91bbef667086bed84b6f213be79733aa",
-          "source": "公众号：数字生命卡兹克",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T22:19:23Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.758,
-      "importance": 0.758,
-      "importance_score": 0.758,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.78,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.8468,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T22:19:23Z",
-      "latest_at": "2026-08-26T22:19:23Z",
-      "primary_item": {
-        "id": "8fd2313554ccf9c268b3cd94177e87476c674ba5",
-        "title": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-        "title_zh": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-        "title_en": null,
-        "title_original": "智谱发布GLM-5.3-Flash，匿名模型OX Alpha正式亮相",
-        "summary": "智谱正式发布GLM-5.3-Flash，即此前在OpenRouter和OpenCode上爆火的匿名模型OX Alpha。该模型为总参数320B、激活18B的MoE架构，是GLM-5系列首个原生多模态模型，支持图像、视频和文本输入，原生上下文100万。",
-        "recommend_reason_zh": null,
-        "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&mid=2647685603&idx=1&sn=91bbef667086bed84b6f213be79733aa",
-        "source": "公众号：数字生命卡兹克",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 68,
-      "persona_review": "模型发了但没说开放，先查 API 再动手，别急着换。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_8368ac600900",
-      "title": "GlucoFM：面向连续血糖监测的基础模型 / GlucoFM： Foundation model for continuous glucose monitoring",
-      "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring",
-      "primary_url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring",
-      "source": "Google Research：Blog（网页）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "3a6a47a17e494dfd39de13d6efcac9c0a4edf513",
-          "title": "GlucoFM：面向连续血糖监测的基础模型 / GlucoFM： Foundation model for continuous glucose monitoring",
-          "title_zh": "GlucoFM：面向连续血糖监测的基础模型",
-          "title_en": "GlucoFM： Foundation model for continuous glucose monitoring",
-          "title_original": "GlucoFM： Foundation model for continuous glucose monitoring",
-          "summary": "Google Research 推出 GlucoFM，一款轻量级自监督 CGM 基础模型，采用双流设计分别建模缓慢血糖趋势与短期波动。在四个队列、七项临床预测任务的 14 项评估中，其 PR-AUC 较最优 GluFormer 变体平均高出 5.8 个百分点，并在 PPGR 预测中取得最低 MAE。模型在 109，066 小时无标注 CGM 数据上预训练，具备跨数据集迁移与少样本适应能力。",
-          "recommend_reason_zh": "GlucoFM是Google Research推出的双流CGM基础模型，用109,066小时数据预训练，PR-AUC平均比GluFormer高5.8个百分点，在糖尿病风险评估、胰岛素抵抗等任务上刷新了性能标杆。",
-          "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring",
-          "source": "Google Research：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T20:10:19.416000Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "Google Research：Blog（网页）"
-      ],
-      "items": [
-        {
-          "id": "3a6a47a17e494dfd39de13d6efcac9c0a4edf513",
-          "title": "GlucoFM：面向连续血糖监测的基础模型 / GlucoFM： Foundation model for continuous glucose monitoring",
-          "title_zh": "GlucoFM：面向连续血糖监测的基础模型",
-          "title_en": "GlucoFM： Foundation model for continuous glucose monitoring",
-          "title_original": "GlucoFM： Foundation model for continuous glucose monitoring",
-          "summary": "Google Research 推出 GlucoFM，一款轻量级自监督 CGM 基础模型，采用双流设计分别建模缓慢血糖趋势与短期波动。在四个队列、七项临床预测任务的 14 项评估中，其 PR-AUC 较最优 GluFormer 变体平均高出 5.8 个百分点，并在 PPGR 预测中取得最低 MAE。模型在 109，066 小时无标注 CGM 数据上预训练，具备跨数据集迁移与少样本适应能力。",
-          "recommend_reason_zh": "GlucoFM是Google Research推出的双流CGM基础模型，用109,066小时数据预训练，PR-AUC平均比GluFormer高5.8个百分点，在糖尿病风险评估、胰岛素抵抗等任务上刷新了性能标杆。",
-          "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring",
-          "source": "Google Research：Blog（网页）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T20:10:19.416000Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7568,
-      "importance": 0.7568,
-      "importance_score": 0.7568,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.63,
-        "source_tier": 1.0,
-        "ai_relevance": 1.0,
-        "recency": 0.8209,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T20:10:19.416000Z",
-      "latest_at": "2026-08-26T20:10:19.416000Z",
-      "primary_item": {
-        "id": "3a6a47a17e494dfd39de13d6efcac9c0a4edf513",
-        "title": "GlucoFM：面向连续血糖监测的基础模型 / GlucoFM： Foundation model for continuous glucose monitoring",
-        "title_zh": "GlucoFM：面向连续血糖监测的基础模型",
-        "title_en": "GlucoFM： Foundation model for continuous glucose monitoring",
-        "title_original": "GlucoFM： Foundation model for continuous glucose monitoring",
-        "summary": "Google Research 推出 GlucoFM，一款轻量级自监督 CGM 基础模型，采用双流设计分别建模缓慢血糖趋势与短期波动。在四个队列、七项临床预测任务的 14 项评估中，其 PR-AUC 较最优 GluFormer 变体平均高出 5.8 个百分点，并在 PPGR 预测中取得最低 MAE。模型在 109，066 小时无标注 CGM 数据上预训练，具备跨数据集迁移与少样本适应能力。",
-        "recommend_reason_zh": "GlucoFM是Google Research推出的双流CGM基础模型，用109,066小时数据预训练，PR-AUC平均比GluFormer高5.8个百分点，在糖尿病风险评估、胰岛素抵抗等任务上刷新了性能标杆。",
-        "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring",
-        "source": "Google Research：Blog（网页）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 52,
-      "persona_review": "研究进展但无API可调，做医疗AI的可以留意，其他人不用动。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_741a74c53da2",
-      "title": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494157&idx=1&sn=6837b15a07d2518842eb6c6b53a3eb3c",
-      "primary_url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494157&idx=1&sn=6837b15a07d2518842eb6c6b53a3eb3c",
-      "source": "公众号：智谱（GLM）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "c746200b2ef4819b5c374166fd2b65ff4ccaeec1",
-          "title": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-          "title_zh": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-          "title_en": null,
-          "title_original": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-          "summary": "智谱上线并开源 GLM-5.3-Flash（320B-A18B），这是 GLM-5 系列首个原生多模态模型，AA 综合智能指数 57 分，与 Claude Opus 4.8 持平。其定价为 GLM-5.3 的 1/10，限时折扣内为 Opus 4.8 的 1/40，并已接入 ZCode 等平台开放 API 调用。该模型采用稀疏注意力与线性注意力混合架构，推理服务已跑在国产芯片集群上。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494157&idx=1&sn=6837b15a07d2518842eb6c6b53a3eb3c",
-          "source": "公众号：智谱（GLM）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T14:11:33Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "公众号：智谱（GLM）"
-      ],
-      "items": [
-        {
-          "id": "c746200b2ef4819b5c374166fd2b65ff4ccaeec1",
-          "title": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-          "title_zh": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-          "title_en": null,
-          "title_original": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-          "summary": "智谱上线并开源 GLM-5.3-Flash（320B-A18B），这是 GLM-5 系列首个原生多模态模型，AA 综合智能指数 57 分，与 Claude Opus 4.8 持平。其定价为 GLM-5.3 的 1/10，限时折扣内为 Opus 4.8 的 1/40，并已接入 ZCode 等平台开放 API 调用。该模型采用稀疏注意力与线性注意力混合架构，推理服务已跑在国产芯片集群上。",
-          "recommend_reason_zh": null,
-          "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494157&idx=1&sn=6837b15a07d2518842eb6c6b53a3eb3c",
-          "source": "公众号：智谱（GLM）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T14:11:33Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7561,
-      "importance": 0.7561,
-      "importance_score": 0.7561,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.83,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.753,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T14:11:33Z",
-      "latest_at": "2026-08-26T14:11:33Z",
-      "primary_item": {
-        "id": "c746200b2ef4819b5c374166fd2b65ff4ccaeec1",
-        "title": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-        "title_zh": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-        "title_en": null,
-        "title_original": "GLM-5.3-Flash 开源：320B 总参数、AA 指数 57 分，定价为 Opus 4.8 的 1/40",
-        "summary": "智谱上线并开源 GLM-5.3-Flash（320B-A18B），这是 GLM-5 系列首个原生多模态模型，AA 综合智能指数 57 分，与 Claude Opus 4.8 持平。其定价为 GLM-5.3 的 1/10，限时折扣内为 Opus 4.8 的 1/40，并已接入 ZCode 等平台开放 API 调用。该模型采用稀疏注意力与线性注意力混合架构，推理服务已跑在国产芯片集群上。",
-        "recommend_reason_zh": null,
-        "url": "https://mp.weixin.qq.com/s?__biz=MzkyMzI3NzQ0Mg%3D%3D&mid=2247494157&idx=1&sn=6837b15a07d2518842eb6c6b53a3eb3c",
-        "source": "公众号：智谱（GLM）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 90,
-      "persona_review": "开源可跑，价格仅为 Opus 1/40，直接替换低成本推理方案。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_436604b0f1e6",
-      "title": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter / Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-      "url": "https://x.com/jietang/status/2092850258573471936",
-      "primary_url": "https://x.com/jietang/status/2092850258573471936",
-      "source": "X：唐杰（@jietang）",
-      "source_name": "AI HOT",
-      "sources": [
-        {
-          "id": "20b29ae0ac0dddcf2bfd503457a9806b61331119",
-          "title": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter / Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-          "title_zh": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter",
-          "title_en": "Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-          "title_original": "Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-          "summary": "Ox Alpha = GLM-5.3 Flash AA = 57，以1/100的前沿价格，\n\n由纯国产芯片驱动。在OpenRouter上实现了近20%的周token份额（第一）。\n\n感谢大家的支持。",
-          "recommend_reason_zh": null,
-          "url": "https://x.com/jietang/status/2092850258573471936",
-          "source": "X：唐杰（@jietang）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-27T05:42:39Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "X：唐杰（@jietang）"
-      ],
-      "items": [
-        {
-          "id": "20b29ae0ac0dddcf2bfd503457a9806b61331119",
-          "title": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter / Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-          "title_zh": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter",
-          "title_en": "Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-          "title_original": "Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-          "summary": "Ox Alpha = GLM-5.3 Flash AA = 57，以1/100的前沿价格，\n\n由纯国产芯片驱动。在OpenRouter上实现了近20%的周token份额（第一）。\n\n感谢大家的支持。",
-          "recommend_reason_zh": null,
-          "url": "https://x.com/jietang/status/2092850258573471936",
-          "source": "X：唐杰（@jietang）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-27T05:42:39Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7542,
-      "importance": 0.7542,
-      "importance_score": 0.7542,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.71,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9421,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-27T05:42:39Z",
-      "latest_at": "2026-08-27T05:42:39Z",
-      "primary_item": {
-        "id": "20b29ae0ac0dddcf2bfd503457a9806b61331119",
-        "title": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter / Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-        "title_zh": "唐杰宣布GLM-5.3 Flash AA登顶OpenRouter",
-        "title_en": "Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-        "title_original": "Ox Alpha = GLM-5.3 Flash AA = 57 ， 1/100 frontier price， Powered by pure Chinese chips. Delivered…",
-        "summary": "Ox Alpha = GLM-5.3 Flash AA = 57，以1/100的前沿价格，\n\n由纯国产芯片驱动。在OpenRouter上实现了近20%的周token份额（第一）。\n\n感谢大家的支持。",
-        "recommend_reason_zh": null,
-        "url": "https://x.com/jietang/status/2092850258573471936",
-        "source": "X：唐杰（@jietang）",
-        "source_name": "AI HOT"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 92,
-      "persona_review": "模型已上线且价格极低，跑推理任务可以直接换，国产芯片方案值得一试。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_2823a4c3156a",
-      "title": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
-      "url": "https://www.aibase.com/news/30672",
-      "primary_url": "https://www.aibase.com/news/30672",
+      "story_id": "story_5678faeb2474",
+      "title": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
+      "url": "https://www.aibase.com/news/30686",
+      "primary_url": "https://www.aibase.com/news/30686",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "00fc14a30aa905a8e47c7c6805efc071b3ff7895",
-          "title": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
-          "title_zh": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
+          "id": "4c66254380f362f0a6dccb1a2a33720dc9b4112b",
+          "title": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
+          "title_zh": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
           "title_en": null,
-          "title_original": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
-          "summary": "Cowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nCowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nCowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nExplore AI Fronti",
-          "recommend_reason_zh": "Claude桌面端Cowork内置浏览器上线，可自动在侧边栏打开并独立完成点击输入；浏览器与日常浏览隔离，本周向Pro、Max、Team用户推送。",
-          "url": "https://www.aibase.com/news/30672",
+          "title_original": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
+          "summary": "On August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nOn August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nOn August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nExplore AI Fronti",
+          "recommend_reason_zh": "OpenAI联合苹果前高管Tang Tan、Chang Liu及Jony Ive的io Products，于8月27日申请法院“带偏见驳回”苹果商业秘密诉讼，以求永久阻止再诉。文中详述苹果指控前员工泄密、引导绕过安全审查等细节，呈现AI新贵与科技巨头的人才与技术权属之争。",
+          "url": "https://www.aibase.com/news/30686",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-27T09:50:21.738275Z"
+          "published_at": "2026-08-28T05:24:57.903288Z"
         }
       ],
       "source_count": 1,
@@ -1587,18 +1501,18 @@
       ],
       "items": [
         {
-          "id": "00fc14a30aa905a8e47c7c6805efc071b3ff7895",
-          "title": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
-          "title_zh": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
+          "id": "4c66254380f362f0a6dccb1a2a33720dc9b4112b",
+          "title": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
+          "title_zh": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
           "title_en": null,
-          "title_original": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
-          "summary": "Cowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nCowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nCowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nExplore AI Fronti",
-          "recommend_reason_zh": "Claude桌面端Cowork内置浏览器上线，可自动在侧边栏打开并独立完成点击输入；浏览器与日常浏览隔离，本周向Pro、Max、Team用户推送。",
-          "url": "https://www.aibase.com/news/30672",
+          "title_original": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
+          "summary": "On August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nOn August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nOn August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nExplore AI Fronti",
+          "recommend_reason_zh": "OpenAI联合苹果前高管Tang Tan、Chang Liu及Jony Ive的io Products，于8月27日申请法院“带偏见驳回”苹果商业秘密诉讼，以求永久阻止再诉。文中详述苹果指控前员工泄密、引导绕过安全审查等细节，呈现AI新贵与科技巨头的人才与技术权属之争。",
+          "url": "https://www.aibase.com/news/30686",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-08-27T09:50:21.738275Z"
+          "published_at": "2026-08-28T05:24:57.903288Z"
         }
       ],
       "item_count": 1,
@@ -1619,278 +1533,278 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-08-27T09:50:21.738275Z",
-      "latest_at": "2026-08-27T09:50:21.738275Z",
+      "earliest_at": "2026-08-28T05:24:57.903288Z",
+      "latest_at": "2026-08-28T05:24:57.903288Z",
       "primary_item": {
-        "id": "00fc14a30aa905a8e47c7c6805efc071b3ff7895",
-        "title": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
-        "title_zh": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
+        "id": "4c66254380f362f0a6dccb1a2a33720dc9b4112b",
+        "title": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
+        "title_zh": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
         "title_en": null,
-        "title_original": "Claude 桌面端 Cowork 内置浏览器上线，可独立完成网页操作",
-        "summary": "Cowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nCowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nCowork in the Claude desktop app now has an integrated browser, which automatically opens a browser in the sidebar when tasks involve websites. Claude can brows\nExplore AI Fronti",
-        "recommend_reason_zh": "Claude桌面端Cowork内置浏览器上线，可自动在侧边栏打开并独立完成点击输入；浏览器与日常浏览隔离，本周向Pro、Max、Team用户推送。",
-        "url": "https://www.aibase.com/news/30672",
+        "title_original": "OpenAI携手苹果前高管硬刚老东家，申请永久终止商业机密案",
+        "summary": "On August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nOn August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nOn August 27, OpenAI, together with former Apple executives Tang Tan and Chang Liu, as well as Jony Ive's io Products, filed a new petition with the court, requ\nExplore AI Fronti",
+        "recommend_reason_zh": "OpenAI联合苹果前高管Tang Tan、Chang Liu及Jony Ive的io Products，于8月27日申请法院“带偏见驳回”苹果商业秘密诉讼，以求永久阻止再诉。文中详述苹果指控前员工泄密、引导绕过安全审查等细节，呈现AI新贵与科技巨头的人才与技术权属之争。",
+        "url": "https://www.aibase.com/news/30686",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 78,
-      "persona_review": "桌面端直接上手，网页自动化多一个选择。",
+      "persona_score": 30,
+      "persona_review": "诉讼纠纷与开发无关，API照常，不必关注。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_f59066749bc2",
-      "title": "GitHub Apps 现在可以访问企业账单数据 / GitHub Apps can now access enterprise billing data",
-      "url": "https://github.blog/changelog/2026-08-26-github-apps-can-now-access-enterprise-billing-data",
-      "primary_url": "https://github.blog/changelog/2026-08-26-github-apps-can-now-access-enterprise-billing-data",
-      "source": "GitHub Changelog",
-      "source_name": "Official AI Updates",
-      "sources": [
-        {
-          "id": "6ac74add2e2b88cf6811aaf7f5b39af7eec97b73",
-          "title": "GitHub Apps 现在可以访问企业账单数据 / GitHub Apps can now access enterprise billing data",
-          "title_zh": "GitHub Apps 现在可以访问企业账单数据",
-          "title_en": "GitHub Apps can now access enterprise billing data",
-          "title_original": "GitHub Apps can now access enterprise billing data",
-          "summary": null,
-          "recommend_reason_zh": "GitHub App新增企业账单权限，支持读或读写两级访问，替代个人token调用REST API拉取用量、管理预算，还享有更高速率限制。",
-          "url": "https://github.blog/changelog/2026-08-26-github-apps-can-now-access-enterprise-billing-data",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-26T12:18:59Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "GitHub Changelog"
-      ],
-      "items": [
-        {
-          "id": "6ac74add2e2b88cf6811aaf7f5b39af7eec97b73",
-          "title": "GitHub Apps 现在可以访问企业账单数据 / GitHub Apps can now access enterprise billing data",
-          "title_zh": "GitHub Apps 现在可以访问企业账单数据",
-          "title_en": "GitHub Apps can now access enterprise billing data",
-          "title_original": "GitHub Apps can now access enterprise billing data",
-          "summary": null,
-          "recommend_reason_zh": "GitHub App新增企业账单权限，支持读或读写两级访问，替代个人token调用REST API拉取用量、管理预算，还享有更高速率限制。",
-          "url": "https://github.blog/changelog/2026-08-26-github-apps-can-now-access-enterprise-billing-data",
-          "source": "GitHub Changelog",
-          "source_name": "Official AI Updates",
-          "site_id": "official_ai",
-          "published_at": "2026-08-26T12:18:59Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7959,
-      "importance": 0.7959,
-      "importance_score": 0.7959,
-      "importance_label": "官方更新",
-      "importance_breakdown": {
-        "editorial": 0.9,
-        "source_tier": 1.0,
-        "ai_relevance": 0.87,
-        "recency": 0.7329,
-        "story_heat": 0.0
-      },
-      "category": "official",
-      "reasons": [
-        "official_source",
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-08-26T12:18:59Z",
-      "latest_at": "2026-08-26T12:18:59Z",
-      "primary_item": {
-        "id": "6ac74add2e2b88cf6811aaf7f5b39af7eec97b73",
-        "title": "GitHub Apps 现在可以访问企业账单数据 / GitHub Apps can now access enterprise billing data",
-        "title_zh": "GitHub Apps 现在可以访问企业账单数据",
-        "title_en": "GitHub Apps can now access enterprise billing data",
-        "title_original": "GitHub Apps can now access enterprise billing data",
-        "summary": null,
-        "recommend_reason_zh": "GitHub App新增企业账单权限，支持读或读写两级访问，替代个人token调用REST API拉取用量、管理预算，还享有更高速率限制。",
-        "url": "https://github.blog/changelog/2026-08-26-github-apps-can-now-access-enterprise-billing-data",
-        "source": "GitHub Changelog",
-        "source_name": "Official AI Updates"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 75,
-      "persona_review": "能直接调 API 拉企业账单，做成本监控或自动对账的今天能接。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
-      }
-    },
-    {
-      "story_id": "story_a3eb56560645",
-      "title": "Claude in Chrome 正式全面上线 / Claude in Chrome is generally available",
-      "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-      "primary_url": "https://claude.com/blog/claude-in-chrome-generally-available",
-      "source": "Claude：Blog（网页）",
+      "story_id": "story_59e9f7bcb81a",
+      "title": "Gemini Omni 1.1 Flash 发布：新增场景扩展、4K 升级等生成视频控制能力 / Gemini Omni 1.1 Flash",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash",
+      "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash",
+      "source": "Hacker News 热门（buzzing.cc 中文翻译）",
       "source_name": "AI HOT",
       "sources": [
         {
-          "id": "22af8ad13634d242eac2b6750476413f3696325a",
-          "title": "Claude in Chrome 正式全面上线 / Claude in Chrome is generally available",
-          "title_zh": "Claude in Chrome 正式全面上线",
-          "title_en": "Claude in Chrome is generally available",
-          "title_original": "Claude in Chrome is generally available",
-          "summary": "Anthropic 宣布 Claude in Chrome 现已面向所有付费 Claude 套餐全面开放，Claude 可在浏览器中自主执行操作，无需逐步审批。系统通过安全分类器在每次操作前验证其安全性及是否符合用户请求，并强化了针对提示注入攻击的防御。最新评测显示，在启用探测与安全分类器后，自 Opus 4.8 起的所有模型均未出现攻击成功案例。",
-          "recommend_reason_zh": "Claude in Chrome正式全面上线，所有付费计划用户可在浏览器中自主完成任务而无需逐步批准，每个操作都有安全分类器校验，并经过prompt注入攻击测试。",
-          "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-          "source": "Claude：Blog（网页）",
+          "id": "35e59b12721f253c90abd020356c338b519c914a",
+          "title": "Gemini Omni 1.1 Flash 发布：新增场景扩展、4K 升级等生成视频控制能力 / Gemini Omni 1.1 Flash",
+          "title_zh": "Gemini Omni 1.1 Flash 发布：新增场景扩展、4K 升级等生成视频控制能力",
+          "title_en": "Gemini Omni 1.1 Flash",
+          "title_original": "Gemini Omni 1.1 Flash",
+          "summary": "Google 推出 Gemini Omni 1.1 Flash，通过 Gemini API 在 Google AI Studio 提供面向专业用途的生成视频能力。新功能包括场景扩展（可分析最多 10 秒先前上下文，以 10 秒为增量延长至累计 40 秒）、首尾帧插值、360p 快速草稿（比 720p 快至多 60%、成本为其三分之一）以及最高 4K 分辨率升级。",
+          "recommend_reason_zh": "Gemini Omni 1.1 Flash新增场景扩展与4K超分辨率，可分析10秒上下文并以10秒增量将视频延长至40秒，为开发者提供更精细的生成式视频控制。",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-26T18:02:41.262000Z"
+          "published_at": "2026-08-27T20:06:03.845000Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "Claude：Blog（网页）"
+        "Hacker News 热门（buzzing.cc 中文翻译）"
       ],
       "items": [
         {
-          "id": "22af8ad13634d242eac2b6750476413f3696325a",
-          "title": "Claude in Chrome 正式全面上线 / Claude in Chrome is generally available",
-          "title_zh": "Claude in Chrome 正式全面上线",
-          "title_en": "Claude in Chrome is generally available",
-          "title_original": "Claude in Chrome is generally available",
-          "summary": "Anthropic 宣布 Claude in Chrome 现已面向所有付费 Claude 套餐全面开放，Claude 可在浏览器中自主执行操作，无需逐步审批。系统通过安全分类器在每次操作前验证其安全性及是否符合用户请求，并强化了针对提示注入攻击的防御。最新评测显示，在启用探测与安全分类器后，自 Opus 4.8 起的所有模型均未出现攻击成功案例。",
-          "recommend_reason_zh": "Claude in Chrome正式全面上线，所有付费计划用户可在浏览器中自主完成任务而无需逐步批准，每个操作都有安全分类器校验，并经过prompt注入攻击测试。",
-          "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-          "source": "Claude：Blog（网页）",
+          "id": "35e59b12721f253c90abd020356c338b519c914a",
+          "title": "Gemini Omni 1.1 Flash 发布：新增场景扩展、4K 升级等生成视频控制能力 / Gemini Omni 1.1 Flash",
+          "title_zh": "Gemini Omni 1.1 Flash 发布：新增场景扩展、4K 升级等生成视频控制能力",
+          "title_en": "Gemini Omni 1.1 Flash",
+          "title_original": "Gemini Omni 1.1 Flash",
+          "summary": "Google 推出 Gemini Omni 1.1 Flash，通过 Gemini API 在 Google AI Studio 提供面向专业用途的生成视频能力。新功能包括场景扩展（可分析最多 10 秒先前上下文，以 10 秒为增量延长至累计 40 秒）、首尾帧插值、360p 快速草稿（比 720p 快至多 60%、成本为其三分之一）以及最高 4K 分辨率升级。",
+          "recommend_reason_zh": "Gemini Omni 1.1 Flash新增场景扩展与4K超分辨率，可分析10秒上下文并以10秒增量将视频延长至40秒，为开发者提供更精细的生成式视频控制。",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash",
+          "source": "Hacker News 热门（buzzing.cc 中文翻译）",
           "source_name": "AI HOT",
           "site_id": "aihot",
-          "published_at": "2026-08-26T18:02:41.262000Z"
+          "published_at": "2026-08-27T20:06:03.845000Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7309,
-      "importance": 0.7309,
-      "importance_score": 0.7309,
+      "score": 0.7389,
+      "importance": 0.7389,
+      "importance_score": 0.7389,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.7,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.8741,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance"
+      ],
+      "earliest_at": "2026-08-27T20:06:03.845000Z",
+      "latest_at": "2026-08-27T20:06:03.845000Z",
+      "primary_item": {
+        "id": "35e59b12721f253c90abd020356c338b519c914a",
+        "title": "Gemini Omni 1.1 Flash 发布：新增场景扩展、4K 升级等生成视频控制能力 / Gemini Omni 1.1 Flash",
+        "title_zh": "Gemini Omni 1.1 Flash 发布：新增场景扩展、4K 升级等生成视频控制能力",
+        "title_en": "Gemini Omni 1.1 Flash",
+        "title_original": "Gemini Omni 1.1 Flash",
+        "summary": "Google 推出 Gemini Omni 1.1 Flash，通过 Gemini API 在 Google AI Studio 提供面向专业用途的生成视频能力。新功能包括场景扩展（可分析最多 10 秒先前上下文，以 10 秒为增量延长至累计 40 秒）、首尾帧插值、360p 快速草稿（比 720p 快至多 60%、成本为其三分之一）以及最高 4K 分辨率升级。",
+        "recommend_reason_zh": "Gemini Omni 1.1 Flash新增场景扩展与4K超分辨率，可分析10秒上下文并以10秒增量将视频延长至40秒，为开发者提供更精细的生成式视频控制。",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash",
+        "source": "Hacker News 热门（buzzing.cc 中文翻译）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 75,
+      "persona_review": "视频生成控制升级，做多模态应用的可直接试新 API。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-08-28T05:43:08.640369Z"
+      }
+    },
+    {
+      "story_id": "story_6a9699db1bb9",
+      "title": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+      "url": "https://www.aibase.com/news/30679",
+      "primary_url": "https://www.aibase.com/news/30679",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "0d0f2840833853e5120cd7e2ba33f075affe9d73",
+          "title": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+          "title_zh": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+          "title_en": null,
+          "title_original": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+          "summary": "Hugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nHugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nHugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nExplore AI Fronti",
+          "recommend_reason_zh": "Hugging Face 于2026年8月27日发布25厘米高、售价$399的开源机器人Microduck，能负重800克并滑旱冰，软硬件及训练栈全部开源，延续其收购Pollen Robotics后的具身智能布局。",
+          "url": "https://www.aibase.com/news/30679",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-28T05:24:57.903288Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "0d0f2840833853e5120cd7e2ba33f075affe9d73",
+          "title": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+          "title_zh": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+          "title_en": null,
+          "title_original": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+          "summary": "Hugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nHugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nHugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nExplore AI Fronti",
+          "recommend_reason_zh": "Hugging Face 于2026年8月27日发布25厘米高、售价$399的开源机器人Microduck，能负重800克并滑旱冰，软硬件及训练栈全部开源，延续其收购Pollen Robotics后的具身智能布局。",
+          "url": "https://www.aibase.com/news/30679",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-28T05:24:57.903288Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7961,
+        "recency": 1.0,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance"
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-26T18:02:41.262000Z",
-      "latest_at": "2026-08-26T18:02:41.262000Z",
+      "earliest_at": "2026-08-28T05:24:57.903288Z",
+      "latest_at": "2026-08-28T05:24:57.903288Z",
       "primary_item": {
-        "id": "22af8ad13634d242eac2b6750476413f3696325a",
-        "title": "Claude in Chrome 正式全面上线 / Claude in Chrome is generally available",
-        "title_zh": "Claude in Chrome 正式全面上线",
-        "title_en": "Claude in Chrome is generally available",
-        "title_original": "Claude in Chrome is generally available",
-        "summary": "Anthropic 宣布 Claude in Chrome 现已面向所有付费 Claude 套餐全面开放，Claude 可在浏览器中自主执行操作，无需逐步审批。系统通过安全分类器在每次操作前验证其安全性及是否符合用户请求，并强化了针对提示注入攻击的防御。最新评测显示，在启用探测与安全分类器后，自 Opus 4.8 起的所有模型均未出现攻击成功案例。",
-        "recommend_reason_zh": "Claude in Chrome正式全面上线，所有付费计划用户可在浏览器中自主完成任务而无需逐步批准，每个操作都有安全分类器校验，并经过prompt注入攻击测试。",
-        "url": "https://claude.com/blog/claude-in-chrome-generally-available",
-        "source": "Claude：Blog（网页）",
-        "source_name": "AI HOT"
+        "id": "0d0f2840833853e5120cd7e2ba33f075affe9d73",
+        "title": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+        "title_zh": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+        "title_en": null,
+        "title_original": "会滑旱冰的开源机器人:Hugging Face 推出 Microduck，加速具身智能落地",
+        "summary": "Hugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nHugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nHugging Face officially launched a 25-centimeter-tall open-source duck robot priced at $399 on August 27, 2026, Microduck, with shipping planned before Christma\nExplore AI Fronti",
+        "recommend_reason_zh": "Hugging Face 于2026年8月27日发布25厘米高、售价$399的开源机器人Microduck，能负重800克并滑旱冰，软硬件及训练栈全部开源，延续其收购Pollen Robotics后的具身智能布局。",
+        "url": "https://www.aibase.com/news/30679",
+        "source": "AIbase",
+        "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 92,
-      "persona_review": "Chrome 里直接调 Claude，省去切换窗口，日常写代码查资料今天就能用。",
+      "persona_score": 55,
+      "persona_review": "开源硬件方向，但玩具身智能门槛高，短期难上手。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     },
     {
-      "story_id": "story_51b4e0ab40fc",
-      "title": "GLM-5.3-Flash：前沿智能进入普惠时代",
-      "url": "https://www.zhipuai.cn/zh/research/163",
-      "primary_url": "https://www.zhipuai.cn/zh/research/163",
-      "source": "智谱：研究（网页内嵌数据）",
-      "source_name": "AI HOT",
+      "story_id": "story_1ad6df96d482",
+      "title": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
+      "url": "https://www.aibase.com/news/30689",
+      "primary_url": "https://www.aibase.com/news/30689",
+      "source": "AIbase",
+      "source_name": "AIbase",
       "sources": [
         {
-          "id": "e05b38c8560ddcfbc674c05784f27b593f8764d6",
-          "title": "GLM-5.3-Flash：前沿智能进入普惠时代",
-          "title_zh": "GLM-5.3-Flash：前沿智能进入普惠时代",
+          "id": "6555d79ee11714d96d90377b71a788483b7afef8",
+          "title": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
+          "title_zh": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
           "title_en": null,
-          "title_original": "GLM-5.3-Flash：前沿智能进入普惠时代",
-          "summary": "智谱上线并开源GLM-5.3-Flash（320B-A18B），这是GLM-5系列首个原生多模态模型，在AA综合智能指数取得57分，与Claude Opus 4.8持平。其定价为GLM-5.3的1/10（限时1/20），为Opus 4.8的1/40，并首次在大规模流量中由国产芯片集群提供算力支持。模型已接入ZCode等平台，同步开放API调用。",
-          "recommend_reason_zh": "智谱推出国内首款一键安装的本地OpenClaw客户端AutoClaw（澳龙），内置50+Skills，集成AutoGLM浏览器操作能力，让GLM-5.3-Flash前沿智能进入普惠时代。",
-          "url": "https://www.zhipuai.cn/zh/research/163",
-          "source": "智谱：研究（网页内嵌数据）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T14:00:00Z"
+          "title_original": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
+          "summary": "On August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nOn August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nOn August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nExplore AI Fronti",
+          "recommend_reason_zh": "XPeng第二代VLA大模型首次重大升级，边缘端模型参数增加3.5倍，实现从静态3D到动态4D时空理解，综合安全能力暴增20倍，新版本XOS 6.3.0随G9L全球首发。",
+          "url": "https://www.aibase.com/news/30689",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-28T05:24:57.903288Z"
         }
       ],
       "source_count": 1,
       "source_names": [
-        "智谱：研究（网页内嵌数据）"
+        "AIbase"
       ],
       "items": [
         {
-          "id": "e05b38c8560ddcfbc674c05784f27b593f8764d6",
-          "title": "GLM-5.3-Flash：前沿智能进入普惠时代",
-          "title_zh": "GLM-5.3-Flash：前沿智能进入普惠时代",
+          "id": "6555d79ee11714d96d90377b71a788483b7afef8",
+          "title": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
+          "title_zh": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
           "title_en": null,
-          "title_original": "GLM-5.3-Flash：前沿智能进入普惠时代",
-          "summary": "智谱上线并开源GLM-5.3-Flash（320B-A18B），这是GLM-5系列首个原生多模态模型，在AA综合智能指数取得57分，与Claude Opus 4.8持平。其定价为GLM-5.3的1/10（限时1/20），为Opus 4.8的1/40，并首次在大规模流量中由国产芯片集群提供算力支持。模型已接入ZCode等平台，同步开放API调用。",
-          "recommend_reason_zh": "智谱推出国内首款一键安装的本地OpenClaw客户端AutoClaw（澳龙），内置50+Skills，集成AutoGLM浏览器操作能力，让GLM-5.3-Flash前沿智能进入普惠时代。",
-          "url": "https://www.zhipuai.cn/zh/research/163",
-          "source": "智谱：研究（网页内嵌数据）",
-          "source_name": "AI HOT",
-          "site_id": "aihot",
-          "published_at": "2026-08-26T14:00:00Z"
+          "title_original": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
+          "summary": "On August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nOn August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nOn August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nExplore AI Fronti",
+          "recommend_reason_zh": "XPeng第二代VLA大模型首次重大升级，边缘端模型参数增加3.5倍，实现从静态3D到动态4D时空理解，综合安全能力暴增20倍，新版本XOS 6.3.0随G9L全球首发。",
+          "url": "https://www.aibase.com/news/30689",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-08-28T05:24:57.903288Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7288,
-      "importance": 0.7288,
-      "importance_score": 0.7288,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
-        "editorial": 0.74,
+        "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.7509,
+        "recency": 1.0,
         "story_heat": 0.0
       },
       "category": "industry",
       "reasons": [
-        "high_ai_relevance"
+        "high_ai_relevance",
+        "high_importance"
       ],
-      "earliest_at": "2026-08-26T14:00:00Z",
-      "latest_at": "2026-08-26T14:00:00Z",
+      "earliest_at": "2026-08-28T05:24:57.903288Z",
+      "latest_at": "2026-08-28T05:24:57.903288Z",
       "primary_item": {
-        "id": "e05b38c8560ddcfbc674c05784f27b593f8764d6",
-        "title": "GLM-5.3-Flash：前沿智能进入普惠时代",
-        "title_zh": "GLM-5.3-Flash：前沿智能进入普惠时代",
+        "id": "6555d79ee11714d96d90377b71a788483b7afef8",
+        "title": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
+        "title_zh": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
         "title_en": null,
-        "title_original": "GLM-5.3-Flash：前沿智能进入普惠时代",
-        "summary": "智谱上线并开源GLM-5.3-Flash（320B-A18B），这是GLM-5系列首个原生多模态模型，在AA综合智能指数取得57分，与Claude Opus 4.8持平。其定价为GLM-5.3的1/10（限时1/20），为Opus 4.8的1/40，并首次在大规模流量中由国产芯片集群提供算力支持。模型已接入ZCode等平台，同步开放API调用。",
-        "recommend_reason_zh": "智谱推出国内首款一键安装的本地OpenClaw客户端AutoClaw（澳龙），内置50+Skills，集成AutoGLM浏览器操作能力，让GLM-5.3-Flash前沿智能进入普惠时代。",
-        "url": "https://www.zhipuai.cn/zh/research/163",
-        "source": "智谱：研究（网页内嵌数据）",
-        "source_name": "AI HOT"
+        "title_original": "小鹏第二代VLA大模型迎来首次重大升级，综合安全能力暴增20倍",
+        "summary": "On August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nOn August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nOn August 27, XPeng Group held an in-person AI sharing event and the second-generation VLA new version experience day with the theme \"TIME - Time\". The second-g\nExplore AI Fronti",
+        "recommend_reason_zh": "XPeng第二代VLA大模型首次重大升级，边缘端模型参数增加3.5倍，实现从静态3D到动态4D时空理解，综合安全能力暴增20倍，新版本XOS 6.3.0随G9L全球首发。",
+        "url": "https://www.aibase.com/news/30689",
+        "source": "AIbase",
+        "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 85,
-      "persona_review": "新Flash模型若已开放API，低延迟任务可优先试用，关注定价。",
+      "persona_score": 58,
+      "persona_review": "车厂模型升级，安全指标亮眼但没开放接口，自动驾驶从业者看看，其他人不用动。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-08-27T10:11:33.636404Z"
+        "scored_at": "2026-08-28T05:43:08.640369Z"
       }
     }
   ]
