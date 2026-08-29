@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T05:43:58.124374Z",
+  "generated_at": "2026-08-28T19:09:54.726833Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_f91eb53884bc",
-      "title": "Gemini Omni 1.1 Flash 发布，为开发者提供更强生成式视频控制 / Gemini Omni 1.1 Flash lets you build with more control",
-      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control",
+      "story_id": "story_17c35f7f6315",
+      "title": "GLM-5.3 开源权重，智能体编码与网防最强 / GLM-5.3 is now open-weight. Our most capable model for agentic coding and cyber defense is now avai…",
+      "url": "https://x.com/Zai_org/status/2093354097122455713",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "“更强控制”是比上一版快10%还是换了API名？没给基线数，只能按牙膏挤算。"
+          "score": 68,
+          "review": "权重开源不假，可'最强'是自己封的，benchmark又挑了哪几家对比？"
         },
         "paper-police": {
-          "score": 50,
-          "review": "仅有官方博客评测数字，无代码无论文，等第三方复现。"
+          "score": 20,
+          "review": "仅社交账号宣称开源权重，无仓库无评测，需见代码与跑分。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "新模型已上线，视频生成控制更强，做多模态的可以直接试 API。"
+          "score": 90,
+          "review": "开源权重直接能跑，智能体编码和网防场景今天就能上手。"
         }
       }
     },
     {
-      "story_id": "story_500c35f48384",
-      "title": "Midjourney 开放 V8.2 图像编辑模型测试 / Edit Model for V8",
-      "url": "https://updates.midjourney.com/edit-model-for-v8",
+      "story_id": "story_b09bfd8d0320",
+      "title": "AI 工程师笔记本：在 Colab 上免费、无需框架即可使用 RAG/智能体/评估工具",
+      "url": "https://github.com/calmrocks/ai-engineer-notebooks",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 60,
-          "review": "编辑模型又见测试版，先发张原图和编辑后的对比再说亮点。"
+          "score": 72,
+          "review": "免费资源挺实在，但'无需框架'只是不用自己搭，库照样装。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方公告给了测试入口，但无开源无第三方评测，等实测再定论。"
+          "score": 58,
+          "review": "代码开源可复现，但缺论文和基准测试，证据链少一角。"
         },
         "pragmatic": {
-          "score": 85,
-          "review": "V8.2 编辑模型已开放测试，设计师今天就能试，注意测试版稳定性。"
+          "score": 88,
+          "review": "Colab 免费用，无需框架就能跑 RAG 和评估，适合快速试原型。"
         }
       }
     },
     {
-      "story_id": "story_b92ae1b5e663",
-      "title": "Gemini 3.5 Transcribe 发布：更精准的实时语音转写模型 / Gemini-3.5-Transcribe",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe",
+      "story_id": "story_b6eb5e452efd",
+      "title": "腾讯混元发布 Hy4 preview：770B 总参数、1M 上下文，开源上线",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&mid=2247498484&idx=1&sn=0db140a12b8e18601ac933788045c831",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "'更精准'对比的是自家上一代吧，第三方数据呢？"
+          "score": 72,
+          "review": "770B总参数只字不提激活参数，1M上下文敢晒长文本压力测试吗？"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方博客给了模型细节和性能数字，但无论文无代码，缺独立验证。"
+          "score": 20,
+          "review": "仅公众号宣称开源，无论文无代码链接，参数数字待验证。"
         },
         "pragmatic": {
-          "score": 80,
-          "review": "若API已开放，语音转写选型可立即升级，降错率就是省成本。"
+          "score": 88,
+          "review": "开源可下载，1M 上下文直接上手测，长文本场景省心。"
         }
       }
     }
