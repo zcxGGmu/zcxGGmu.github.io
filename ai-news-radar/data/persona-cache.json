@@ -1,72 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_5a089134551b|pragmatic|0a5c5b24": {
-      "score": 65,
-      "review": "官方周更，翻一下 changelog 看有没有踩中你的功能点。",
-      "title_hash": "9dc9e154",
-      "scored_at": "2026-08-08T02:37:17.354007Z"
-    },
-    "story_ac99d2dd14d0|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "讲的是规模化用AI写代码怎么控成本，涉及计费策略的团队可参考。",
-      "title_hash": "0336bc04",
-      "scored_at": "2026-08-08T07:30:33.272518Z"
-    },
-    "story_06de520f313d|cynic|f4237a62": {
-      "score": 78,
-      "review": "用力分级总算落地，早该如此，不然每次审查都像被AI轰炸。",
-      "title_hash": "57ae74a8",
-      "scored_at": "2026-08-08T07:30:35.161370Z"
-    },
-    "story_06de520f313d|paper-police|966065bf": {
-      "score": 25,
-      "review": "官方changelog宣称全面可用，但无文档无评测数据，待实操验证。",
-      "title_hash": "57ae74a8",
-      "scored_at": "2026-08-08T07:30:36.790460Z"
-    },
-    "story_619c631f8dd4|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "官方话术不必当真，没开放就是没得用，等真发 API 再说。",
-      "title_hash": "4a076afe",
-      "scored_at": "2026-08-08T09:15:25.357201Z"
-    },
-    "story_e1fa47f5bc52|pragmatic|0a5c5b24": {
-      "score": 52,
-      "review": "文档透露苹果将集成阿里千问，但暂无接口和工具，观望即可。",
-      "title_hash": "fd4706a8",
-      "scored_at": "2026-08-08T10:07:55.226571Z"
-    },
-    "story_f60b263d7545|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "浏览器跑在V8隔离里，做爬虫和自动化可关注，等开放再试。",
-      "title_hash": "5ab8558b",
-      "scored_at": "2026-08-08T11:01:44.803044Z"
-    },
-    "story_8d401dc43acf|pragmatic|0a5c5b24": {
-      "score": 52,
-      "review": "模型没开放，短期用不上；但对气象AI赛道是正面信号。",
-      "title_hash": "fcba05a2",
-      "scored_at": "2026-08-08T11:52:12.042238Z"
-    },
-    "story_125df7bc2ccc|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "企业砍AI预算，开发者需重视成本，选型优先性价比方案。",
-      "title_hash": "9ab1ddda",
-      "scored_at": "2026-08-08T13:20:20.548145Z"
-    },
-    "story_1f7d8d6cb096|cynic|f4237a62": {
-      "score": 72,
-      "review": "终于补上企业版的功能缺口，但第三方应用的安全审计怕是又要让管理员头疼。",
-      "title_hash": "78656fd4",
-      "scored_at": "2026-08-08T13:20:22.489730Z"
-    },
-    "story_1f7d8d6cb096|paper-police|966065bf": {
-      "score": 78,
-      "review": "官方changelog有据可查，功能已实装，但缺第三方验证。",
-      "title_hash": "78656fd4",
-      "scored_at": "2026-08-08T13:20:27.756804Z"
-    },
     "story_90b3cceba55e|pragmatic|0a5c5b24": {
       "score": 55,
       "review": "流量占比预测对开发暂无用，做反爬和流量治理的可留意趋势。",
@@ -6212,10 +6146,10 @@
       "scored_at": "2026-08-29T02:28:59.460900Z"
     },
     "story_3eef6a7665a4|pragmatic|0a5c5b24": {
-      "score": 30,
-      "review": "对多数开发者无直接冲击，但用 Cursor 的得找替代方案了。",
-      "title_hash": "eb98b016",
-      "scored_at": "2026-08-29T02:29:00.610237Z"
+      "score": 20,
+      "review": "收购决策离代码很远，等有实际工具变化再关注。",
+      "title_hash": "322dbba5",
+      "scored_at": "2026-08-29T14:48:07.892831Z"
     },
     "story_1f83857579b6|pragmatic|0a5c5b24": {
       "score": 62,
@@ -6288,6 +6222,90 @@
       "review": "代码开源可复现，但缺独立基准评测，实际效果需自己跑一遍。",
       "title_hash": "9c5fe686",
       "scored_at": "2026-08-29T02:29:34.520133Z"
+    },
+    "story_476454fb33cb|pragmatic|0a5c5b24": {
+      "score": 50,
+      "review": "研究向进展，暂无直接落地工具，做 Agent 研究的可围观。",
+      "title_hash": "ab00d0fc",
+      "scored_at": "2026-08-29T09:27:13.077091Z"
+    },
+    "story_f868cb38abf4|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "权重开源可下载，智能体编程场景直接可用，不用等排期。",
+      "title_hash": "235eb584",
+      "scored_at": "2026-08-29T09:27:18.660238Z"
+    },
+    "story_0155c1000eca|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "Mac Studio 跑 27B 的实测数据，有硬件的直接照抄配置。",
+      "title_hash": "d30db030",
+      "scored_at": "2026-08-29T09:27:21.112958Z"
+    },
+    "story_ae76d315b7d4|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "偏研究向的脑洞，暂无现成工具，不用急着动手。",
+      "title_hash": "182e629a",
+      "scored_at": "2026-08-29T09:27:23.352969Z"
+    },
+    "story_f868cb38abf4|cynic|f4237a62": {
+      "score": 78,
+      "review": "开源权重有了，但'网络防御'的实战数据呢？别只给个名号。",
+      "title_hash": "235eb584",
+      "scored_at": "2026-08-29T09:27:28.173242Z"
+    },
+    "story_f868cb38abf4|paper-police|966065bf": {
+      "score": 25,
+      "review": "仅媒体报道称开源，未见权重链接或论文，无法验证真实存在。",
+      "title_hash": "235eb584",
+      "scored_at": "2026-08-29T09:27:30.249304Z"
+    },
+    "story_0155c1000eca|cynic|f4237a62": {
+      "score": 82,
+      "review": "Mac Studio 跑通开源模型不稀奇，但有实测数据，比空口吹强。",
+      "title_hash": "d30db030",
+      "scored_at": "2026-08-29T09:27:32.377811Z"
+    },
+    "story_0155c1000eca|paper-police|966065bf": {
+      "score": 45,
+      "review": "给了一手实测数字但无代码无独立验证，自己测的自己信？",
+      "title_hash": "d30db030",
+      "scored_at": "2026-08-29T09:27:34.428470Z"
+    },
+    "story_ff4f232dd5ce|pragmatic|0a5c5b24": {
+      "score": 70,
+      "review": "CLI 发新版本，先扫一眼 changelog，有用就升，没影响就等。",
+      "title_hash": "0c8a7f4f",
+      "scored_at": "2026-08-29T14:48:04.238140Z"
+    },
+    "story_1df6423d9095|pragmatic|0a5c5b24": {
+      "score": 82,
+      "review": "开源本地可跑，做音频工具链的今天就能集成，省云费用。",
+      "title_hash": "47761258",
+      "scored_at": "2026-08-29T14:48:06.670008Z"
+    },
+    "story_a91a944f2677|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "公司选址影响城市，跟开发者写代码无关。",
+      "title_hash": "b7fc96f3",
+      "scored_at": "2026-08-29T14:48:09.285243Z"
+    },
+    "story_fb6e40a3017d|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "偏研究方向，暂无落地工具。做视觉检测的可以关注技术选型。",
+      "title_hash": "585fa9d0",
+      "scored_at": "2026-08-29T14:48:10.846124Z"
+    },
+    "story_1df6423d9095|cynic|f4237a62": {
+      "score": 75,
+      "review": "开源本地化是好事，但分离效果和采样率别藏着，拉出来遛遛。",
+      "title_hash": "47761258",
+      "scored_at": "2026-08-29T14:48:14.951391Z"
+    },
+    "story_1df6423d9095|paper-police|966065bf": {
+      "score": 55,
+      "review": "代码开源可自查，但无论文和基准测试，效果待验证。",
+      "title_hash": "47761258",
+      "scored_at": "2026-08-29T14:48:17.635988Z"
     }
   }
 }

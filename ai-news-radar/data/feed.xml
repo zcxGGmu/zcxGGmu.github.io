@@ -5,8 +5,16 @@
 <link>https://news.learnprompt.pro</link>
 <description>24 小时 AI 更新雷达的策展精选：官方发布、模型上新、高信号讨论。</description>
 <language>zh-cn</language>
-<lastBuildDate>Sat, 29 Aug 2026 02:12:29 +0000</lastBuildDate>
+<lastBuildDate>Sat, 29 Aug 2026 14:29:14 +0000</lastBuildDate>
 <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="https://news.learnprompt.pro/data/feed.xml"/>
+<item>
+<title>Codex CLI 0.151.0</title>
+<link>https://developers.openai.com/codex/changelog</link>
+<guid isPermaLink="true">https://developers.openai.com/codex/changelog</guid>
+<description>CLI 发新版本，先扫一眼 changelog，有用就升，没影响就等。（OpenAI Codex Changelog）</description>
+<category>官方更新</category>
+<pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+</item>
 <item>
 <title>Visual Studio 中 GitHub Copilot 的八月更新 / GitHub Copilot in Visual Studio — August update</title>
 <link>https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2</link>
@@ -16,12 +24,12 @@
 <pubDate>Fri, 28 Aug 2026 20:24:20 +0000</pubDate>
 </item>
 <item>
-<title>OpenAI 决定终止向 Cursor 提供模型，因 SpaceX 收购后合规风险 / Our decision on Cursor following its acquisition by SpaceX</title>
-<link>https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex</link>
-<guid isPermaLink="true">https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex</guid>
-<description>对多数开发者无直接冲击，但用 Cursor 的得找替代方案了。（OpenAI News）</description>
-<category>官方更新</category>
-<pubDate>Fri, 28 Aug 2026 06:00:00 +0000</pubDate>
+<title>开放世界多智能体环境中的自主数学发现</title>
+<link>https://arxiv.org/abs/2608.23691</link>
+<guid isPermaLink="true">https://arxiv.org/abs/2608.23691</guid>
+<description>研究向进展，暂无直接落地工具，做 Agent 研究的可围观。（Hacker News 热门（buzzing.cc 中文翻译））</description>
+<category>多源热议</category>
+<pubDate>Sat, 29 Aug 2026 07:32:16 +0000</pubDate>
 </item>
 <item>
 <title>GitHub Copilot 每周更新 — 8月24日 / GitHub Copilot weekly releases — August 24</title>
@@ -32,30 +40,6 @@
 <pubDate>Fri, 28 Aug 2026 20:13:22 +0000</pubDate>
 </item>
 <item>
-<title>Anthropic 让 Claude 自主训练模型以缓解对齐失败 / Automated researchers can reliably mitigate alignment failures</title>
-<link>https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures</link>
-<guid isPermaLink="true">https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures</guid>
-<description>研究进展，不是现成工具，等封装成框架再动手。（Anthropic：Research（发表成果 · 网页））</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 17:25:56 +0000</pubDate>
-</item>
-<item>
-<title>Terminal-Bench-Science 0.1：评估科研工作流中的 AI 智能体</title>
-<link>https://www.terminal-bench-science.ai/announcement</link>
-<guid isPermaLink="true">https://www.terminal-bench-science.ai/announcement</guid>
-<description>科研场景智能体测评来了，跑分前先看任务定义是否贴合你的工作流。（Hacker News 热门（buzzing.cc 中文翻译））</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 12:04:47 +0000</pubDate>
-</item>
-<item>
-<title>GitHub Copilot 政策和计费即将迎来调整 / Upcoming changes to GitHub Copilot policies and billing</title>
-<link>https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing</link>
-<guid isPermaLink="true">https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing</guid>
-<description>Copilot 计费调整直接动账单，看具体涨跌再决定换不换。（GitHub Changelog）</description>
-<category>官方更新</category>
-<pubDate>Fri, 28 Aug 2026 11:37:19 +0000</pubDate>
-</item>
-<item>
 <title>OpenAI 终止与 Cursor 合作，11 月 12 日生效 / We unfortunately have decided that we cannot continue providing access to our models through Cursor …</title>
 <link>https://x.com/thsottiaux/status/2093515916076343774</link>
 <guid isPermaLink="true">https://x.com/thsottiaux/status/2093515916076343774</guid>
@@ -64,92 +48,28 @@
 <pubDate>Sat, 29 Aug 2026 01:47:44 +0000</pubDate>
 </item>
 <item>
-<title>腾讯混元发布 Hy4 preview：770B 总参数、1M 上下文，开源上线</title>
-<link>https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&amp;mid=2247498484&amp;idx=1&amp;sn=0db140a12b8e18601ac933788045c831</link>
-<guid isPermaLink="true">https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&amp;mid=2247498484&amp;idx=1&amp;sn=0db140a12b8e18601ac933788045c831</guid>
-<description>开源可下载，1M 上下文直接上手测，长文本场景省心。（公众号：腾讯混元）</description>
+<title>智谱开源 GLM-5.3 模型权重，主打智能体编程与网络防御</title>
+<link>https://www.ithome.com/0/995/896.htm</link>
+<guid isPermaLink="true">https://www.ithome.com/0/995/896.htm</guid>
+<description>权重开源可下载，智能体编程场景直接可用，不用等排期。（IT之家（RSS））</description>
 <category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 06:03:48 +0000</pubDate>
+<pubDate>Sat, 29 Aug 2026 04:31:21 +0000</pubDate>
 </item>
 <item>
-<title>联邦法官裁定特朗普政府将 Anthropic 列入黑名单违法 / Trump blacklisting of "woke" Anthropic deemed illegal by federal judge</title>
-<link>https://arstechnica.com/tech-policy/2026/08/trump-blacklisting-of-woke-anthropic-deemed-illegal-by-federal-judge</link>
-<guid isPermaLink="true">https://arstechnica.com/tech-policy/2026/08/trump-blacklisting-of-woke-anthropic-deemed-illegal-by-federal-judge</guid>
-<description>法律纠纷不影响 API 和模型，开发者不用动。（Ars Technica：AI（RSS））</description>
+<title>Anthropic 让 Claude 自主训练模型以缓解对齐失败 / Automated researchers can reliably mitigate alignment failures</title>
+<link>https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures</link>
+<guid isPermaLink="true">https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures</guid>
+<description>研究进展，不是现成工具，等封装成框架再动手。（Anthropic：Research（发表成果 · 网页））</description>
 <category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 18:07:55 +0000</pubDate>
+<pubDate>Fri, 28 Aug 2026 17:25:56 +0000</pubDate>
 </item>
 <item>
-<title>腾讯WorkBuddy首发接入Hy4preview:国内外版同步，开启两周限免</title>
-<link>https://www.aibase.com/news/30699</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30699</guid>
-<description>仅是WorkBuddy产品功能更新，无API开放，开发者不必行动。（AIbase）</description>
+<title>在本地运行 Qwen3.8 27B：来自我的 Mac Studio 的实际数据</title>
+<link>https://terminalbytes.com/run-qwen-3-8-27b-locally</link>
+<guid isPermaLink="true">https://terminalbytes.com/run-qwen-3-8-27b-locally</guid>
+<description>Mac Studio 跑 27B 的实测数据，有硬件的直接照抄配置。（Hacker News 热门（buzzing.cc 中文翻译））</description>
 <category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 16:43:30 +0000</pubDate>
-</item>
-<item>
-<title>Gemini 3.5 Transcribe 完整指南：告别 ASR 转录难题 / Stop Wrestling with ASR： The Complete Guide to Gemini 3.5 Transcribe 🎙️</title>
-<link>https://dev.to/googleai/stop-wrestling-with-asr-the-complete-guide-to-gemini-35-transcribe-1m6i</link>
-<guid isPermaLink="true">https://dev.to/googleai/stop-wrestling-with-asr-the-complete-guide-to-gemini-35-transcribe-1m6i</guid>
-<description>官方教程可直接抄，今天就能实现音频转写，省掉ASR选型调研。（Google AI：DEV 作者专属（RSS））</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 13:34:29 +0000</pubDate>
-</item>
-<item>
-<title>OpenAI 攻击 Hugging Face 事件的 5 个教训 / 5 lessons from the OpenAI / Hugging Face incident</title>
-<link>https://garymarcus.substack.com/p/5-lessons-from-the-openai-hugging</link>
-<guid isPermaLink="true">https://garymarcus.substack.com/p/5-lessons-from-the-openai-hugging</guid>
-<description>事件本身是行业摩擦，对日常开发无直接帮助，围观即可。（Gary Marcus：The Road to AI We Can Trust（RSS））</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 18:24:05 +0000</pubDate>
-</item>
-<item>
-<title>腾讯混元 Hy4 preview 开源：770B 参数、百万上下文，稳居开源第一梯队</title>
-<link>https://www.aibase.com/news/30698</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30698</guid>
-<description>开源可下载，长文本任务有新选择，先查许可证和显存需求。（AIbase）</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 15:43:30 +0000</pubDate>
-</item>
-<item>
-<title>AI 工程师笔记本：在 Colab 上免费、无需框架即可使用 RAG/智能体/评估工具</title>
-<link>https://github.com/calmrocks/ai-engineer-notebooks</link>
-<guid isPermaLink="true">https://github.com/calmrocks/ai-engineer-notebooks</guid>
-<description>开源notebook直接跑RAG和agent，Colab免费可用，想快速上手的现在就能抄。（Hacker News 热门（buzzing.cc 中文翻译））</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 08:36:31 +0000</pubDate>
-</item>
-<item>
-<title>腾讯混元大模型王炸升级:770B旗舰新版Hy4preview震撼开源，直奔开源第一梯队</title>
-<link>https://www.aibase.com/news/30697</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30697</guid>
-<description>腾讯开源770B大模型，权重可拿但要烧算力，等量化版再试。（AIbase）</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 15:43:30 +0000</pubDate>
-</item>
-<item>
-<title>Anthropic 推出 MHS 硬件标准，首次重拳杀入物理 AI 赛道</title>
-<link>https://www.aibase.com/news/30692</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30692</guid>
-<description>硬件标准刚落地，生态未成型，等配套方案出现再研究。（AIbase）</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 14:43:30 +0000</pubDate>
-</item>
-<item>
-<title>Anthropic 首度胜诉，推翻五角大楼的供应链风险标签 / Anthropic gets its first court win over the Pentagon’s supply-chain risk label</title>
-<link>https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label</link>
-<guid isPermaLink="true">https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label</guid>
-<description>企业法律纠纷，不写代码，对开发选型无影响。（TechCrunch AI）</description>
-<category>值得关注</category>
-<pubDate>Fri, 28 Aug 2026 12:46:12 +0000</pubDate>
-</item>
-<item>
-<title>Anthropic重磅发布模型硬件标准MHS，AI Agent正式迈向实体操控</title>
-<link>https://www.aibase.com/news/30693</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30693</guid>
-<description>标准刚出还没落地，做硬件集成的可以盯接口文档，其余观望。（AIbase）</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 14:43:30 +0000</pubDate>
+<pubDate>Sat, 29 Aug 2026 07:00:22 +0000</pubDate>
 </item>
 <item>
 <title>DLSS 5 泄露，mod 作者把 Nvidia 的 AI 效果用到了所有东西上 / DLSS 5 leaked and modders are putting Nvidia&amp;#8217;s AI effects on everything</title>
@@ -160,12 +80,44 @@
 <pubDate>Fri, 28 Aug 2026 16:22:16 +0000</pubDate>
 </item>
 <item>
-<title>微博通报孙宇晨谷爱凌聊天记录系 AI 炮制，造谣账号遭永久关闭</title>
-<link>https://www.aibase.com/news/30696</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30696</guid>
-<description>AI 造假案例，平台治理信号，与开发选型无关。（AIbase）</description>
-<category>行业动态</category>
-<pubDate>Fri, 28 Aug 2026 14:43:30 +0000</pubDate>
+<title>StemDeck，一款免费、开源且本地化的AI茎叶分离器</title>
+<link>https://github.com/stemdeckapp/stemdeck</link>
+<guid isPermaLink="true">https://github.com/stemdeckapp/stemdeck</guid>
+<description>开源本地可跑，做音频工具链的今天就能集成，省云费用。（github.com）</description>
+<category>多源热议</category>
+<pubDate>Sat, 29 Aug 2026 10:12:23 +0000</pubDate>
+</item>
+<item>
+<title>我不小心把LLM内存变成了程序分析</title>
+<link>https://pwning.systems/posts/llm-memory-program-analysis</link>
+<guid isPermaLink="true">https://pwning.systems/posts/llm-memory-program-analysis</guid>
+<description>偏研究向的脑洞，暂无现成工具，不用急着动手。（pwning.systems）</description>
+<category>多源热议</category>
+<pubDate>Sat, 29 Aug 2026 06:44:16 +0000</pubDate>
+</item>
+<item>
+<title>关于Cursor被SpaceX收购后的决定</title>
+<link>https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex</link>
+<guid isPermaLink="true">https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex</guid>
+<description>收购决策离代码很远，等有实际工具变化再关注。（openai.com）</description>
+<category>值得关注</category>
+<pubDate>Sat, 29 Aug 2026 03:16:20 +0000</pubDate>
+</item>
+<item>
+<title>OpenAI 和 Anthropic 正在毁掉旧金山 / OpenAI and Anthropic are ruining San Francisco</title>
+<link>https://www.sfgate.com/local/article/open-ai-anthropic-ruining-sf-22404657.php</link>
+<guid isPermaLink="true">https://www.sfgate.com/local/article/open-ai-anthropic-ruining-sf-22404657.php</guid>
+<description>公司选址影响城市，跟开发者写代码无关。（HN Algolia · AI 24h）</description>
+<category>值得关注</category>
+<pubDate>Sat, 29 Aug 2026 02:57:13 +0000</pubDate>
+</item>
+<item>
+<title>用 AI 识别假冒化妆品 / Identifying fake cosmetics using AI</title>
+<link>https://news.ycombinator.com/item?id=49484925</link>
+<guid isPermaLink="true">https://news.ycombinator.com/item?id=49484925</guid>
+<description>偏研究方向，暂无落地工具。做视觉检测的可以关注技术选型。（hackernews）</description>
+<category>值得关注</category>
+<pubDate>Sat, 29 Aug 2026 02:12:54 +0000</pubDate>
 </item>
 </channel>
 </rss>

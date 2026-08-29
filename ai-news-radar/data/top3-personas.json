@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T02:29:34.520181Z",
+  "generated_at": "2026-08-29T14:48:17.636044Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_b6eb5e452efd",
-      "title": "腾讯混元发布 Hy4 preview：770B 总参数、1M 上下文，开源上线",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&mid=2247498484&idx=1&sn=0db140a12b8e18601ac933788045c831",
+      "story_id": "story_f868cb38abf4",
+      "title": "智谱开源 GLM-5.3 模型权重，主打智能体编程与网络防御",
+      "url": "https://www.ithome.com/0/995/896.htm",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "770B总参数只字不提激活参数，1M上下文敢晒长文本压力测试吗？"
+          "score": 78,
+          "review": "开源权重有了，但'网络防御'的实战数据呢？别只给个名号。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "仅公众号宣称开源，无论文无代码链接，参数数字待验证。"
+          "score": 25,
+          "review": "仅媒体报道称开源，未见权重链接或论文，无法验证真实存在。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "开源可下载，1M 上下文直接上手测，长文本场景省心。"
+          "score": 90,
+          "review": "权重开源可下载，智能体编程场景直接可用，不用等排期。"
         }
       }
     },
     {
-      "story_id": "story_f32fc9a9ab68",
-      "title": "腾讯混元 Hy4 preview 开源：770B 参数、百万上下文，稳居开源第一梯队",
-      "url": "https://www.aibase.com/news/30698",
+      "story_id": "story_0155c1000eca",
+      "title": "在本地运行 Qwen3.8 27B：来自我的 Mac Studio 的实际数据",
+      "url": "https://terminalbytes.com/run-qwen-3-8-27b-locally",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "参数和上下文实打实，但性能对比没给全，先看评测再说。"
+          "score": 82,
+          "review": "Mac Studio 跑通开源模型不稀奇，但有实测数据，比空口吹强。"
         },
         "paper-police": {
           "score": 45,
-          "review": "新闻称开源但缺具体仓库和评测，数字待验证。"
+          "review": "给了一手实测数字但无代码无独立验证，自己测的自己信？"
         },
         "pragmatic": {
-          "score": 86,
-          "review": "开源可下载，长文本任务有新选择，先查许可证和显存需求。"
+          "score": 88,
+          "review": "Mac Studio 跑 27B 的实测数据，有硬件的直接照抄配置。"
         }
       }
     },
     {
-      "story_id": "story_6040dd8a1f6e",
-      "title": "AI 工程师笔记本：在 Colab 上免费、无需框架即可使用 RAG/智能体/评估工具",
-      "url": "https://github.com/calmrocks/ai-engineer-notebooks",
+      "story_id": "story_1df6423d9095",
+      "title": "StemDeck，一款免费、开源且本地化的AI茎叶分离器",
+      "url": "https://github.com/stemdeckapp/stemdeck",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 78,
-          "review": "Colab免费额度跑跑demo还行，真上生产怕是得先充值。"
+          "score": 75,
+          "review": "开源本地化是好事，但分离效果和采样率别藏着，拉出来遛遛。"
         },
         "paper-police": {
-          "score": 72,
-          "review": "代码开源可复现，但缺独立基准评测，实际效果需自己跑一遍。"
+          "score": 55,
+          "review": "代码开源可自查，但无论文和基准测试，效果待验证。"
         },
         "pragmatic": {
-          "score": 86,
-          "review": "开源notebook直接跑RAG和agent，Colab免费可用，想快速上手的现在就能抄。"
+          "score": 82,
+          "review": "开源本地可跑，做音频工具链的今天就能集成，省云费用。"
         }
       }
     }
