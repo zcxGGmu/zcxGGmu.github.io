@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T19:09:54.726833Z",
+  "generated_at": "2026-08-29T02:29:34.520181Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,50 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_17c35f7f6315",
-      "title": "GLM-5.3 开源权重，智能体编码与网防最强 / GLM-5.3 is now open-weight. Our most capable model for agentic coding and cyber defense is now avai…",
-      "url": "https://x.com/Zai_org/status/2093354097122455713",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 68,
-          "review": "权重开源不假，可'最强'是自己封的，benchmark又挑了哪几家对比？"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "仅社交账号宣称开源权重，无仓库无评测，需见代码与跑分。"
-        },
-        "pragmatic": {
-          "score": 90,
-          "review": "开源权重直接能跑，智能体编码和网防场景今天就能上手。"
-        }
-      }
-    },
-    {
-      "story_id": "story_b09bfd8d0320",
-      "title": "AI 工程师笔记本：在 Colab 上免费、无需框架即可使用 RAG/智能体/评估工具",
-      "url": "https://github.com/calmrocks/ai-engineer-notebooks",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 72,
-          "review": "免费资源挺实在，但'无需框架'只是不用自己搭，库照样装。"
-        },
-        "paper-police": {
-          "score": 58,
-          "review": "代码开源可复现，但缺论文和基准测试，证据链少一角。"
-        },
-        "pragmatic": {
-          "score": 88,
-          "review": "Colab 免费用，无需框架就能跑 RAG 和评估，适合快速试原型。"
-        }
-      }
-    },
-    {
       "story_id": "story_b6eb5e452efd",
       "title": "腾讯混元发布 Hy4 preview：770B 总参数、1M 上下文，开源上线",
       "url": "https://mp.weixin.qq.com/s?__biz=MzkwODU2OTQyNQ%3D%3D&mid=2247498484&idx=1&sn=0db140a12b8e18601ac933788045c831",
-      "rank": 3,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 72,
@@ -73,6 +33,46 @@
         "pragmatic": {
           "score": 88,
           "review": "开源可下载，1M 上下文直接上手测，长文本场景省心。"
+        }
+      }
+    },
+    {
+      "story_id": "story_f32fc9a9ab68",
+      "title": "腾讯混元 Hy4 preview 开源：770B 参数、百万上下文，稳居开源第一梯队",
+      "url": "https://www.aibase.com/news/30698",
+      "rank": 2,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "参数和上下文实打实，但性能对比没给全，先看评测再说。"
+        },
+        "paper-police": {
+          "score": 45,
+          "review": "新闻称开源但缺具体仓库和评测，数字待验证。"
+        },
+        "pragmatic": {
+          "score": 86,
+          "review": "开源可下载，长文本任务有新选择，先查许可证和显存需求。"
+        }
+      }
+    },
+    {
+      "story_id": "story_6040dd8a1f6e",
+      "title": "AI 工程师笔记本：在 Colab 上免费、无需框架即可使用 RAG/智能体/评估工具",
+      "url": "https://github.com/calmrocks/ai-engineer-notebooks",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 78,
+          "review": "Colab免费额度跑跑demo还行，真上生产怕是得先充值。"
+        },
+        "paper-police": {
+          "score": 72,
+          "review": "代码开源可复现，但缺独立基准评测，实际效果需自己跑一遍。"
+        },
+        "pragmatic": {
+          "score": 86,
+          "review": "开源notebook直接跑RAG和agent，Colab免费可用，想快速上手的现在就能抄。"
         }
       }
     }
