@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T00:28:27.418240Z",
+  "generated_at": "2026-08-30T14:05:54.637910Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_f868cb38abf4",
-      "title": "智谱开源 GLM-5.3 模型权重，主打智能体编程与网络防御",
-      "url": "https://www.ithome.com/0/995/896.htm",
+      "story_id": "story_7c1d44ff3ca2",
+      "title": "Claude 将每周限额永久提高25% / Claude permanently raising weekly limits by 25%",
+      "url": "https://news.ycombinator.com/item?id=49491282",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 78,
-          "review": "开源权重有了，但'网络防御'的实战数据呢？别只给个名号。"
+          "score": 70,
+          "review": "提额25%是实在的，但免费用户那点额度加了也还是不够跑大活。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "仅媒体报道称开源，未见权重链接或论文，无法验证真实存在。"
+          "score": 20,
+          "review": "官方公告一句，无数值无复现，限额如何提升无从查证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "权重开源可下载，智能体编程场景直接可用，不用等排期。"
+          "score": 75,
+          "review": "每周用量多两成半，跑长任务不用卡着算额度。"
         }
       }
     },
     {
-      "story_id": "story_0155c1000eca",
-      "title": "在本地运行 Qwen3.8 27B：来自我的 Mac Studio 的实际数据",
-      "url": "https://terminalbytes.com/run-qwen-3-8-27b-locally",
+      "story_id": "story_78610e902a47",
+      "title": "Claude 会话 URL 默认附加到提交信息和 PR 描述中 / Claude Session URL appended to commit messages and PR descriptions by default",
+      "url": "https://news.ycombinator.com/item?id=49498201",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 82,
-          "review": "Mac Studio 跑通开源模型不稀奇，但有实测数据，比空口吹强。"
+          "score": 35,
+          "review": "默认把会话URL塞进提交信息，是替GitHub测隐私底线吗？"
         },
         "paper-police": {
-          "score": 45,
-          "review": "给了一手实测数字但无代码无独立验证，自己测的自己信？"
+          "score": 20,
+          "review": "仅凭帖子标题，无官方变更日志或代码佐证，功能细节待验证。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "Mac Studio 跑 27B 的实测数据，有硬件的直接照抄配置。"
+          "score": 72,
+          "review": "提交信息多了 URL，团队协作留意隐私，可查配置关掉。"
         }
       }
     },
     {
-      "story_id": "story_1df6423d9095",
-      "title": "StemDeck，一款免费、开源且本地化的AI茎叶分离器",
-      "url": "https://github.com/stemdeckapp/stemdeck",
+      "story_id": "story_593496b70a8b",
+      "title": "何夕2077 AI 深度信号周报 (2026-W35)：智能体自治危机、稀疏激活架构与具身智能融资潮",
+      "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-30-hexi-2077-ai-weekly-2026-w35",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 75,
-          "review": "开源本地化是好事，但分离效果和采样率别藏着，拉出来遛遛。"
+          "score": 45,
+          "review": "三个热点拼一盘菜，深度信号怕是只留在标题里。"
         },
         "paper-police": {
-          "score": 55,
-          "review": "代码开源可自查，但无论文和基准测试，效果待验证。"
+          "score": 20,
+          "review": "周报性质无论文无代码，说法多验证少，缺原始出处。"
         },
         "pragmatic": {
-          "score": 82,
-          "review": "开源本地可跑，做音频工具链的今天就能集成，省云费用。"
+          "score": 55,
+          "review": "周报汇总三方动态，暂无可直接上手的工具，看个方向即可。"
         }
       }
     }

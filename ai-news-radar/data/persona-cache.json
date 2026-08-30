@@ -1,102 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_56cf4cefef8c|pragmatic|0a5c5b24": {
-      "score": 78,
-      "review": "跨会话传消息，多窗口协作能省点事，适合在用Claude Code的团队。",
-      "title_hash": "103708e5",
-      "scored_at": "2026-08-09T07:28:01.403112Z"
-    },
-    "story_56cf4cefef8c|cynic|f4237a62": {
-      "score": 45,
-      "review": "跨会话发消息就叫新功能？先演示下消息不丢再说。",
-      "title_hash": "103708e5",
-      "scored_at": "2026-08-09T07:28:03.112135Z"
-    },
-    "story_56cf4cefef8c|paper-police|966065bf": {
-      "score": 22,
-      "review": "仅官方文档介绍功能，无论文代码或第三方评测，可信度待验证。",
-      "title_hash": "103708e5",
-      "scored_at": "2026-08-09T07:28:05.645111Z"
-    },
-    "story_019e440fd20f|pragmatic|0a5c5b24": {
-      "score": 40,
-      "review": "宏观风向，不产生可直接上手的工具，看看就行。",
-      "title_hash": "30433f15",
-      "scored_at": "2026-08-09T04:44:21.266053Z"
-    },
-    "story_5309a01ab201|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "行业周报，无直接可用的工具或API，扫一眼找细节即可。",
-      "title_hash": "cf8f98ad",
-      "scored_at": "2026-08-09T04:44:27.924205Z"
-    },
-    "story_5ce40a057274|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "对开发者影响有限，写手可能受限，别指望绕过，等官方细则。",
-      "title_hash": "8374bcfb",
-      "scored_at": "2026-08-09T04:44:29.326514Z"
-    },
-    "story_c679b82f6543|pragmatic|0a5c5b24": {
-      "score": 80,
-      "review": "安全工具，能直接拦住 Agent 乱读密钥和跑危险命令，生产环境可部署。",
-      "title_hash": "ce242367",
-      "scored_at": "2026-08-09T06:02:29.508893Z"
-    },
-    "story_c679b82f6543|cynic|f4237a62": {
-      "score": 45,
-      "review": "拦截器是好事，但演示里能挡的风险和真实世界的差距，敢晒规则集吗？",
-      "title_hash": "ce242367",
-      "scored_at": "2026-08-09T06:02:32.802875Z"
-    },
-    "story_c679b82f6543|paper-police|966065bf": {
-      "score": 25,
-      "review": "只有标题描述，无代码无评测，拦截效果无法验证。",
-      "title_hash": "ce242367",
-      "scored_at": "2026-08-09T06:02:37.144939Z"
-    },
-    "story_5da542bcba7e|pragmatic|0a5c5b24": {
-      "score": 62,
-      "review": "常见方法组合的教程，入门可看，老手不必花时间。",
-      "title_hash": "12b61c3d",
-      "scored_at": "2026-08-09T08:12:47.017253Z"
-    },
-    "story_89f0f7e97237|pragmatic|0a5c5b24": {
-      "score": 52,
-      "review": "玩法更新看着热闹，但没提API或价格变化，先观望再动手。",
-      "title_hash": "665139e7",
-      "scored_at": "2026-08-09T11:01:35.852626Z"
-    },
-    "story_86c94d047e72|pragmatic|0a5c5b24": {
-      "score": 32,
-      "review": "AI成本挤压巨头预算，对选型无直接影响，留意供应商涨价信号。",
-      "title_hash": "8d1e2af8",
-      "scored_at": "2026-08-09T11:01:38.220759Z"
-    },
-    "story_d0c89c4c036a|pragmatic|0a5c5b24": {
-      "score": 52,
-      "review": "事件时间线可作安全复盘参考，但无直接可用的工具或接口变化。",
-      "title_hash": "cd0b2685",
-      "scored_at": "2026-08-09T11:54:10.447136Z"
-    },
-    "story_a845b0ff7812|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "事件时间线值得扫一眼，确认自己没受影响即可，无需行动。",
-      "title_hash": "f18055b2",
-      "scored_at": "2026-08-09T13:28:20.792407Z"
-    },
-    "story_db4e33c200ca|pragmatic|0a5c5b24": {
-      "score": 30,
-      "review": "数据中心选址是公司政治，不影响你写代码，无需行动。",
-      "title_hash": "2cd54b0e",
-      "scored_at": "2026-08-09T13:28:23.425449Z"
-    },
-    "story_ca48e27df6dc|pragmatic|0a5c5b24": {
-      "score": 35,
-      "review": "概念展示，未见可用实现，等具体代码和 benchmark 再动手。",
-      "title_hash": "63a60006",
-      "scored_at": "2026-08-09T13:28:26.350857Z"
-    },
     "story_ea708b7a6475|pragmatic|0a5c5b24": {
       "score": 45,
       "review": "攻击事件跟日常开发无关，除非正好用这几家API，否则不用动。",
@@ -6222,6 +6126,72 @@
       "review": "训练中的神秘文明是噱头偏多，对日常开发选型无直接帮助，可作谈资。",
       "title_hash": "30aef4e6",
       "scored_at": "2026-08-30T00:28:27.418066Z"
+    },
+    "story_dd08dad2c32e|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "版权官司离代码远，但若败诉或影响Claude训练数据，长期留意即可。",
+      "title_hash": "c25fcdef",
+      "scored_at": "2026-08-30T14:05:27.506950Z"
+    },
+    "story_fc264aa8f148|pragmatic|0a5c5b24": {
+      "score": 48,
+      "review": "案例听着漂亮，但没给具体推法，只能当趋势参考。",
+      "title_hash": "a46d9ab9",
+      "scored_at": "2026-08-30T14:05:30.993949Z"
+    },
+    "story_593496b70a8b|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "周报汇总三方动态，暂无可直接上手的工具，看个方向即可。",
+      "title_hash": "13f32c76",
+      "scored_at": "2026-08-30T14:05:33.949464Z"
+    },
+    "story_78610e902a47|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "提交信息多了 URL，团队协作留意隐私，可查配置关掉。",
+      "title_hash": "d124b8ae",
+      "scored_at": "2026-08-30T14:05:35.575592Z"
+    },
+    "story_e533eefb8531|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "监管层提醒AI法律建议不可靠，做法律相关产品的得自查合规，无直接影响。",
+      "title_hash": "e84dc518",
+      "scored_at": "2026-08-30T14:05:36.927872Z"
+    },
+    "story_7c1d44ff3ca2|cynic|f4237a62": {
+      "score": 70,
+      "review": "提额25%是实在的，但免费用户那点额度加了也还是不够跑大活。",
+      "title_hash": "cf3f4258",
+      "scored_at": "2026-08-30T14:05:40.113624Z"
+    },
+    "story_7c1d44ff3ca2|paper-police|966065bf": {
+      "score": 20,
+      "review": "官方公告一句，无数值无复现，限额如何提升无从查证。",
+      "title_hash": "cf3f4258",
+      "scored_at": "2026-08-30T14:05:41.838249Z"
+    },
+    "story_78610e902a47|cynic|f4237a62": {
+      "score": 35,
+      "review": "默认把会话URL塞进提交信息，是替GitHub测隐私底线吗？",
+      "title_hash": "d124b8ae",
+      "scored_at": "2026-08-30T14:05:45.707740Z"
+    },
+    "story_78610e902a47|paper-police|966065bf": {
+      "score": 20,
+      "review": "仅凭帖子标题，无官方变更日志或代码佐证，功能细节待验证。",
+      "title_hash": "d124b8ae",
+      "scored_at": "2026-08-30T14:05:47.712876Z"
+    },
+    "story_593496b70a8b|cynic|f4237a62": {
+      "score": 45,
+      "review": "三个热点拼一盘菜，深度信号怕是只留在标题里。",
+      "title_hash": "13f32c76",
+      "scored_at": "2026-08-30T14:05:51.762609Z"
+    },
+    "story_593496b70a8b|paper-police|966065bf": {
+      "score": 20,
+      "review": "周报性质无论文无代码，说法多验证少，缺原始出处。",
+      "title_hash": "13f32c76",
+      "scored_at": "2026-08-30T14:05:54.637857Z"
     }
   }
 }
