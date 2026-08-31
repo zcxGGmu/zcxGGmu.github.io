@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T01:33:47.186812Z",
+  "generated_at": "2026-08-31T15:32:20.852668Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_71cf283c5230",
-      "title": "不到四百美元还能自己动手训练！Hugging Face 推出微型开源双足机器人Microduck",
-      "url": "https://www.aibase.com/news/30705",
+      "story_id": "story_5f8cb23153f3",
+      "title": "DeepSeek-V4-Flash-Vision-Exp 模型已开源，多模态 Agent 能力接近 Opus-4.8",
+      "url": "https://www.ithome.com/0/996/637.htm",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 78,
-          "review": "四百美元开源双足，先让机器人站稳再谈训练。"
+          "score": 55,
+          "review": "开源了但没晒数据和训练细节，'接近 Opus-4.8'的基准呢？"
         },
         "paper-police": {
-          "score": 30,
-          "review": "新闻只说开源没给代码和评测，四百美元功能全靠一张嘴。"
+          "score": 20,
+          "review": "声称开源却无仓库链接，性能对比无数据，等代码和评测。"
         },
         "pragmatic": {
           "score": 88,
-          "review": "开源硬件加训练教程，四百美元入门具身智能，动手党今天就能下单。"
+          "review": "多模态开源模型可直接跑，想上 Agent 任务的今天就能试。"
         }
       }
     },
     {
-      "story_id": "story_91968bb49aae",
-      "title": "AI 智能体自主协作攻破 Hugging Face 服务器 / Agency and Agents",
-      "url": "https://www.oneusefulthing.org/p/agency-and-agents",
+      "story_id": "story_14ea3c1dc9f0",
+      "title": "Claude遭大规模盗号，大批账号被强制注销",
+      "url": "https://www.aibase.com/news/30722",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 58,
-          "review": "攻破服务器听着唬人，但没披露环境细节和失败率，水分不小。"
+          "score": 55,
+          "review": "账号被盗不是AI进步，是安全团队该醒醒了。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "博客自述攻破事件，无论文无代码无第三方验证，仅当传闻。"
+          "score": 12,
+          "review": "单一媒体爆料，无官方确认与数据支撑，数额不明，暂不可信。"
         },
         "pragmatic": {
-          "score": 56,
-          "review": "智能体自主协作是安全研究热点，但博客内容暂无直接上手的工具，做安全的可关注后续。"
+          "score": 75,
+          "review": "账号安全风险，抓紧开二次验证，别等被注销再哭。"
         }
       }
     },
     {
-      "story_id": "story_5194671a6db9",
-      "title": "深度对齐与自研坚守：字节跳动豆包大模型2.2宣布推迟发布",
-      "url": "https://www.aibase.com/news/30702",
+      "story_id": "story_aa0326d1aa66",
+      "title": "Anthropic调整Claude Code用量限制:基本额度永久上调25%，实际每周上限降17%",
+      "url": "https://www.aibase.com/news/30709",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 22,
-          "review": "推迟也配上“坚守”？等2.2真能打再说吧。"
+          "score": 45,
+          "review": "上调25%和每周上限降17%同时出现，数学学得真好。"
         },
         "paper-police": {
-          "score": 8,
-          "review": "仅凭新闻说推迟，无官方公告无细节，等于没发生。"
+          "score": 22,
+          "review": "无官方公告无代码，单方媒体报道的数字没法验证，等官方文档再算。"
         },
         "pragmatic": {
-          "score": 55,
-          "review": "新版本推迟，依赖豆包2.2的项目得重新排期，短期无新特性可用。"
+          "score": 75,
+          "review": "额度明升暗降，跑批量任务的先算好每周预算。"
         }
       }
     }
