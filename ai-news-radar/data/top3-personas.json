@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T15:31:42.763349Z",
+  "generated_at": "2026-08-31T01:33:47.186812Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_7c1d44ff3ca2",
-      "title": "Claude 将每周限额永久提高25% / Claude permanently raising weekly limits by 25%",
-      "url": "https://news.ycombinator.com/item?id=49491282",
+      "story_id": "story_71cf283c5230",
+      "title": "不到四百美元还能自己动手训练！Hugging Face 推出微型开源双足机器人Microduck",
+      "url": "https://www.aibase.com/news/30705",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 70,
-          "review": "提额25%是实在的，但免费用户那点额度加了也还是不够跑大活。"
+          "score": 78,
+          "review": "四百美元开源双足，先让机器人站稳再谈训练。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "官方公告一句，无数值无复现，限额如何提升无从查证。"
+          "score": 30,
+          "review": "新闻只说开源没给代码和评测，四百美元功能全靠一张嘴。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "每周用量多两成半，跑长任务不用卡着算额度。"
+          "score": 88,
+          "review": "开源硬件加训练教程，四百美元入门具身智能，动手党今天就能下单。"
         }
       }
     },
     {
-      "story_id": "story_78610e902a47",
-      "title": "Claude 会话 URL 默认附加到提交信息和 PR 描述中 / Claude Session URL appended to commit messages and PR descriptions by default",
-      "url": "https://news.ycombinator.com/item?id=49498201",
+      "story_id": "story_91968bb49aae",
+      "title": "AI 智能体自主协作攻破 Hugging Face 服务器 / Agency and Agents",
+      "url": "https://www.oneusefulthing.org/p/agency-and-agents",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 35,
-          "review": "默认把会话URL塞进提交信息，是替GitHub测隐私底线吗？"
+          "score": 58,
+          "review": "攻破服务器听着唬人，但没披露环境细节和失败率，水分不小。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "仅凭帖子标题，无官方变更日志或代码佐证，功能细节待验证。"
+          "score": 25,
+          "review": "博客自述攻破事件，无论文无代码无第三方验证，仅当传闻。"
         },
         "pragmatic": {
-          "score": 72,
-          "review": "提交信息多了 URL，团队协作留意隐私，可查配置关掉。"
+          "score": 56,
+          "review": "智能体自主协作是安全研究热点，但博客内容暂无直接上手的工具，做安全的可关注后续。"
         }
       }
     },
     {
-      "story_id": "story_593496b70a8b",
-      "title": "何夕2077 AI 深度信号周报 (2026-W35)：智能体自治危机、稀疏激活架构与具身智能融资潮",
-      "url": "https://hex2077.dev/zh-CN/blog/weekly/2026-08-30-hexi-2077-ai-weekly-2026-w35",
+      "story_id": "story_5194671a6db9",
+      "title": "深度对齐与自研坚守：字节跳动豆包大模型2.2宣布推迟发布",
+      "url": "https://www.aibase.com/news/30702",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "三个热点拼一盘菜，深度信号怕是只留在标题里。"
+          "score": 22,
+          "review": "推迟也配上“坚守”？等2.2真能打再说吧。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "周报性质无论文无代码，说法多验证少，缺原始出处。"
+          "score": 8,
+          "review": "仅凭新闻说推迟，无官方公告无细节，等于没发生。"
         },
         "pragmatic": {
           "score": 55,
-          "review": "周报汇总三方动态，暂无可直接上手的工具，看个方向即可。"
+          "review": "新版本推迟，依赖豆包2.2的项目得重新排期，短期无新特性可用。"
         }
       }
     }
