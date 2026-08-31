@@ -24,12 +24,14 @@ import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from xml.etree import ElementTree as ET
 
 
 sys.dont_write_bytecode = True
 
 TASKS = Path(__file__).resolve().parent
 PREV_WRAPPER = TASKS / "publish-video-batch-bv1rp-bv1mn-20260831.py"
+CHART_ROOT = TASKS / "video-batch-20260831-bv1qy-bv1ug-followup" / "generated-slide-charts"
 DRAFTS = TASKS / "drafts"
 OUT_DIR = Path("/tmp/video-batch-bv1qy-bv1ug-followup-20260831-output")
 
@@ -102,7 +104,15 @@ pub.base.POSTS = [
 ]
 
 pub.SCREENSHOT_SOURCES = {
-    "shenghong-technology-nomura-q2-margin-capex-ai-pcb": [],
+    "shenghong-technology-nomura-q2-margin-capex-ai-pcb": [
+        (CHART_ROOT / "01-profit-quality.svg", "01-profit-quality.svg"),
+        (CHART_ROOT / "02-margin-waterfall.svg", "02-margin-waterfall.svg"),
+        (CHART_ROOT / "03-capex-scale.svg", "03-capex-scale.svg"),
+        (CHART_ROOT / "04-platform-upgrade.svg", "04-platform-upgrade.svg"),
+        (CHART_ROOT / "05-risk-matrix.svg", "05-risk-matrix.svg"),
+        (CHART_ROOT / "06-capex-trap-loop.svg", "06-capex-trap-loop.svg"),
+        (CHART_ROOT / "07-verification-checklist.svg", "07-verification-checklist.svg"),
+    ],
     "poor-economics-choice-risk-policy-execution": [],
 }
 
@@ -125,6 +135,28 @@ def render_asset_check() -> None:
         ).stdout
         if "pixelWidth: 1600" not in probe or "pixelHeight: 900" not in probe or png.stat().st_size < 4096:
             raise RuntimeError(f"cover render failed: {post.slug}: {probe}")
+        for _, dest in pub.SCREENSHOT_SOURCES[post.slug]:
+            chart = OUT_DIR / f"images/posts/{post.slug}/{dest}"
+            ET.parse(chart)
+            if chart.suffix.lower() != ".svg":
+                raise RuntimeError(f"unexpected chart asset type: {post.slug}/{dest}")
+            chart_png = Path(f"/tmp/{post.slug}-{chart.stem}.png")
+            subprocess.run(
+                ["sips", "-s", "format", "png", str(chart), "--out", str(chart_png)],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            chart_probe = subprocess.run(
+                ["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(chart_png)],
+                check=True,
+                stdout=subprocess.PIPE,
+                text=True,
+            ).stdout
+            if "pixelWidth: 1200" not in chart_probe or "pixelHeight: 675" not in chart_probe:
+                raise RuntimeError(f"chart render failed: {post.slug}/{dest}: {chart_probe}")
+            if chart_png.stat().st_size < 8192:
+                raise RuntimeError(f"chart render unexpectedly small: {post.slug}/{dest}")
 
 
 def create_commit(outputs: dict[str, str | None], binary_outputs: dict[str, bytes], ref) -> str:
@@ -151,7 +183,7 @@ def create_commit(outputs: dict[str, str | None], binary_outputs: dict[str, byte
     commit = pub.base.run_gh(
         ["-X", "POST", pub.base.endpoint("git/commits"), "--input", "-"],
         {
-            "message": "Publish follow-up video-derived articles 2026-08-31",
+            "message": "Update Shenghong article slide charts 2026-08-31",
             "tree": tree["sha"],
             "parents": [ref.commit_sha],
         },

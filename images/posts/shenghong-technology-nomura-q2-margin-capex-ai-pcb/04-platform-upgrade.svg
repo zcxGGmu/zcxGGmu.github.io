@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Blackwell 到 Rubin 的平台升级</title>
+  <desc id="desc">下一代 AI 平台提升层数、低损耗材料、热管理和信号完整性要求，推动 PCB 制造体系升级。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eef2ff"/>
+      <stop offset="1" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#312e81" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6366f1"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="86" y="104" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">从 Blackwell 到 Rubin，PCB 门槛继续抬高</text>
+  <text x="86" y="143" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#64748b">算力平台越强，板级互连越像高速精密工程，而不只是线路板扩产。</text>
+
+  <g font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+    <rect x="108" y="236" width="300" height="210" rx="26" fill="#f8fafc" stroke="#c7d2fe"/>
+    <text x="258" y="296" text-anchor="middle" font-size="32" font-weight="800" fill="#1e1b4b">Blackwell</text>
+    <text x="258" y="342" text-anchor="middle" font-size="18" fill="#475569">高端 AI 服务器板</text>
+    <text x="258" y="378" text-anchor="middle" font-size="18" fill="#475569">高层数、高可靠性</text>
+    <text x="258" y="414" text-anchor="middle" font-size="18" fill="#475569">进入规模放量阶段</text>
+
+    <path d="M438 340 L748 340" stroke="#6366f1" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+    <text x="593" y="306" text-anchor="middle" font-size="18" font-weight="700" fill="#4f46e5">平台升级</text>
+    <text x="593" y="386" text-anchor="middle" font-size="16" fill="#64748b">速度、功耗、密度同时上行</text>
+
+    <rect x="784" y="210" width="310" height="262" rx="28" fill="#eef2ff" stroke="#a5b4fc"/>
+    <text x="939" y="276" text-anchor="middle" font-size="36" font-weight="800" fill="#312e81">Rubin</text>
+    <text x="939" y="324" text-anchor="middle" font-size="18" fill="#4338ca">更高层数与更厚板</text>
+    <text x="939" y="360" text-anchor="middle" font-size="18" fill="#4338ca">更低介质损耗</text>
+    <text x="939" y="396" text-anchor="middle" font-size="18" fill="#4338ca">更强散热与信号完整性</text>
+    <text x="939" y="432" text-anchor="middle" font-size="18" fill="#4338ca">更长认证与爬坡周期</text>
+  </g>
+
+  <g transform="translate(124 532)" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+    <rect x="0" y="0" width="952" height="56" rx="18" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="32" y="36" font-size="18" font-weight="700" fill="#0f172a">估值逻辑：</text>
+    <text x="122" y="36" font-size="18" fill="#334155">今天的资本开支，购买的是未来认证壁垒、订单份额和折旧摊薄机会。</text>
+  </g>
+</svg>

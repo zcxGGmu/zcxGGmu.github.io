@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">后续验证清单</title>
+  <desc id="desc">判断估值逻辑是否兑现，要连续跟踪订单、良率、利用率、现金流和价格传导。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#064e3b" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="86" y="104" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">读懂后续财报：五条线同时验证</text>
+  <text x="86" y="143" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#64748b">目标价背后不是单个季度利润，而是一组关于订单、产能和现金流的连续假设。</text>
+
+  <g transform="translate(94 206)" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+    <rect x="0" y="0" width="988" height="326" rx="24" fill="#f8fafc" stroke="#e2e8f0"/>
+    <g transform="translate(34 38)">
+      <circle cx="28" cy="28" r="22" fill="#2563eb"/>
+      <text x="28" y="35" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">1</text>
+      <text x="72" y="24" font-size="20" font-weight="800" fill="#0f172a">订单确认</text>
+      <text x="72" y="54" font-size="16" fill="#475569">Rubin 相关导入是否明确，核心客户份额是否稳定。</text>
+    </g>
+    <g transform="translate(34 118)">
+      <circle cx="28" cy="28" r="22" fill="#16a34a"/>
+      <text x="28" y="35" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">2</text>
+      <text x="72" y="24" font-size="20" font-weight="800" fill="#0f172a">良率稳定</text>
+      <text x="72" y="54" font-size="16" fill="#475569">高层数、低损耗材料和精密孔位能否批量低波动。</text>
+    </g>
+    <g transform="translate(34 198)">
+      <circle cx="28" cy="28" r="22" fill="#f97316"/>
+      <text x="28" y="35" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">3</text>
+      <text x="72" y="24" font-size="20" font-weight="800" fill="#0f172a">产能利用率</text>
+      <text x="72" y="54" font-size="16" fill="#475569">新增设备是否接近满负荷，单位折旧能否被摊薄。</text>
+    </g>
+    <g transform="translate(520 78)">
+      <circle cx="28" cy="28" r="22" fill="#7c3aed"/>
+      <text x="28" y="35" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">4</text>
+      <text x="72" y="24" font-size="20" font-weight="800" fill="#0f172a">自由现金流</text>
+      <text x="72" y="54" font-size="16" fill="#475569">扩产、存货、应收与经营现金流是否保持平衡。</text>
+    </g>
+    <g transform="translate(520 176)">
+      <circle cx="28" cy="28" r="22" fill="#0891b2"/>
+      <text x="28" y="35" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">5</text>
+      <text x="72" y="24" font-size="20" font-weight="800" fill="#0f172a">价格传导</text>
+      <text x="72" y="54" font-size="16" fill="#475569">材料涨价能否通过报价、升级产品或长期协议转出。</text>
+    </g>
+  </g>
+
+  <g transform="translate(150 574)" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+    <text x="0" y="0" font-size="18" fill="#475569">若五条线同步改善，短期毛利率压力更像门票；任一条明显掉队，估值假设需要重新打折。</text>
+  </g>
+</svg>

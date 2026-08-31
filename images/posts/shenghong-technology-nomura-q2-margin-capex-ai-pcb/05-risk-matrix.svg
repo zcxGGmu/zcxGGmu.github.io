@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">高资本开支风险矩阵</title>
+  <desc id="desc">客户分散、技术路线、AI 资本开支周期和材料成本都会影响新增产能兑现。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#fff1f2"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#881337" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="86" y="104" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">看多逻辑越强，越要把硬风险放进同一张图</text>
+  <text x="86" y="143" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#64748b">71 亿元资本开支是门票，也是负担；关键在于订单、技术路线和周期能否配合。</text>
+
+  <g transform="translate(126 210)" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+    <line x1="0" y1="330" x2="760" y2="330" stroke="#cbd5e1" stroke-width="3"/>
+    <line x1="0" y1="330" x2="0" y2="0" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="664" y="366" font-size="17" fill="#64748b">发生概率</text>
+    <text x="-48" y="18" font-size="17" fill="#64748b" transform="rotate(-90 -48 18)">影响强度</text>
+    <line x1="380" y1="0" x2="380" y2="330" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="8 10"/>
+    <line x1="0" y1="165" x2="760" y2="165" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="8 10"/>
+    <rect x="410" y="26" width="250" height="82" rx="20" fill="#fee2e2" stroke="#fecaca"/>
+    <text x="436" y="59" font-size="18" font-weight="700" fill="#991b1b">客户分散化</text>
+    <text x="436" y="89" font-size="15" fill="#7f1d1d">份额下降，利用率低于预期</text>
+    <rect x="480" y="188" width="246" height="82" rx="20" fill="#ffedd5" stroke="#fed7aa"/>
+    <text x="506" y="221" font-size="18" font-weight="700" fill="#9a3412">AI开支周期降温</text>
+    <text x="506" y="251" font-size="15" fill="#9a3412">下游预算收缩会放大波动</text>
+    <rect x="134" y="50" width="238" height="82" rx="20" fill="#fef3c7" stroke="#fde68a"/>
+    <text x="160" y="83" font-size="18" font-weight="700" fill="#92400e">封装路线变化</text>
+    <text x="160" y="113" font-size="15" fill="#92400e">部分互连需求可能被绕开</text>
+    <rect x="122" y="218" width="238" height="82" rx="20" fill="#e0f2fe" stroke="#bae6fd"/>
+    <text x="148" y="251" font-size="18" font-weight="700" fill="#075985">材料与价格传导</text>
+    <text x="148" y="281" font-size="15" fill="#075985">成本先涨，报价调整滞后</text>
+  </g>
+
+  <g transform="translate(914 238)" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+    <rect x="0" y="0" width="178" height="244" rx="24" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="89" y="52" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">核心结论</text>
+    <text x="28" y="100" font-size="16" fill="#475569">折旧刚性</text>
+    <text x="28" y="136" font-size="16" fill="#475569">订单弹性</text>
+    <text x="28" y="172" font-size="16" fill="#475569">技术不确定</text>
+    <text x="28" y="208" font-size="16" fill="#475569">周期传导快</text>
+  </g>
+</svg>
