@@ -167,7 +167,7 @@ def create_commit(outputs: dict[str, str | None], binary_outputs: dict[str, byte
             continue
         blob = pub.base.run_gh(
             ["-X", "POST", pub.base.endpoint("git/blobs"), "--input", "-"],
-            {"content": content, "encoding": "utf-8"},
+            {"content": base64.b64encode(content.encode("utf-8")).decode("ascii"), "encoding": "base64"},
         )
         entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
     for path, content in sorted(binary_outputs.items()):
