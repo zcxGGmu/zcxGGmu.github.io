@@ -1,78 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_025a725a5231|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "数学能力再强也没开放API，短期不影响开发，关注后续产品化。",
-      "title_hash": "15e48ca3",
-      "scored_at": "2026-08-11T12:11:01.044648Z"
-    },
-    "story_9fbb4447f967|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "语言选型老话题，观点参考可以，别指望看完就能动手。",
-      "title_hash": "4d74c329",
-      "scored_at": "2026-08-11T12:11:02.555837Z"
-    },
-    "story_eddc237df9be|pragmatic|0a5c5b24": {
-      "score": 52,
-      "review": "研究向的token优化方案，等有可跑代码再动手。",
-      "title_hash": "4338b71a",
-      "scored_at": "2026-08-11T14:02:07.459550Z"
-    },
-    "story_f527ac6baab4|pragmatic|0a5c5b24": {
-      "score": 75,
-      "review": "本地跑智能体有新选择，但需确认是否开源，能下载就值。",
-      "title_hash": "04ab77da",
-      "scored_at": "2026-08-11T14:02:09.427035Z"
-    },
-    "story_2172d913ef6d|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "自查是否在用该类工具，尽快轮换凭证并检查暴露记录。",
-      "title_hash": "2d769870",
-      "scored_at": "2026-08-11T14:02:12.100791Z"
-    },
-    "story_bdd68ac35b2d|pragmatic|0a5c5b24": {
-      "score": 70,
-      "review": "账单能按模型拆了，做成本核算的直接受益，改下报表就行。",
-      "title_hash": "072b9f8e",
-      "scored_at": "2026-08-11T15:36:53.423317Z"
-    },
-    "story_5ce5e8a5042c|pragmatic|0a5c5b24": {
-      "score": 50,
-      "review": "万亿参数还在传闻阶段，等开源放出来再看，别急着改选型。",
-      "title_hash": "da73503e",
-      "scored_at": "2026-08-11T15:36:54.938251Z"
-    },
-    "story_2b0f68d1ef21|pragmatic|0a5c5b24": {
-      "score": 85,
-      "review": "直接能在 SGLang 跑新模型，做 Agent 推理的可以今天上手试。",
-      "title_hash": "9a452965",
-      "scored_at": "2026-08-11T15:36:57.180569Z"
-    },
-    "story_98891a5c0ebf|pragmatic|0a5c5b24": {
-      "score": 72,
-      "review": "前缀缓存优化方案，做推理优化的可以读读，但暂无现成实现可抄。",
-      "title_hash": "77602c10",
-      "scored_at": "2026-08-11T15:36:59.344732Z"
-    },
-    "story_e5745a33fcfd|pragmatic|0a5c5b24": {
-      "score": 92,
-      "review": "30B 开源模型可本地部署，推理党今天就能 clone 跑起来。",
-      "title_hash": "78ec6d7c",
-      "scored_at": "2026-08-11T15:37:01.043796Z"
-    },
-    "story_e5745a33fcfd|cynic|f4237a62": {
-      "score": 55,
-      "review": "30B稠密也敢叫'重磅'？先给出和同规模开源模型的对比再说。",
-      "title_hash": "78ec6d7c",
-      "scored_at": "2026-08-11T15:37:04.968409Z"
-    },
-    "story_e5745a33fcfd|paper-police|966065bf": {
-      "score": 20,
-      "review": "只说开源没给仓库和评测链接，无法验证模型真假。",
-      "title_hash": "78ec6d7c",
-      "scored_at": "2026-08-11T15:37:07.123745Z"
-    },
     "story_5d259fa5549c|pragmatic|0a5c5b24": {
       "score": 52,
       "review": "研究演示还没开放，做医疗AI的可以观察后续是否出API或论文。",
@@ -6222,6 +6150,66 @@
       "review": "只有官方宣称无论文代码，等独立评测再现真章。",
       "title_hash": "410734c5",
       "scored_at": "2026-09-01T12:07:45.063221Z"
+    },
+    "story_8ba38180ebe6|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "200+ WebGPU 内核直接可调，浏览器里跑本地模型省心事，值得立刻上手。",
+      "title_hash": "17c853f8",
+      "scored_at": "2026-09-01T15:48:03.041358Z"
+    },
+    "story_d2daab157b0c|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "Team 计划模型权限变了，先查你的组织是否受影响，再决定要不要调配置。",
+      "title_hash": "cf0d4725",
+      "scored_at": "2026-09-01T15:48:05.286161Z"
+    },
+    "story_0ccf033da9a1|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "电价和选址会变，但今天不影响你写代码，做基建的留意下。",
+      "title_hash": "92a811f3",
+      "scored_at": "2026-09-01T15:48:07.207330Z"
+    },
+    "story_e56fdeaae0c9|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "支持自定义接主流模型，做多模型调用的可以试试。",
+      "title_hash": "1e418188",
+      "scored_at": "2026-09-01T15:48:09.567656Z"
+    },
+    "story_48f071bde448|pragmatic|0a5c5b24": {
+      "score": 30,
+      "review": "法律辩论离代码太远，等判例落地再评估影响。",
+      "title_hash": "41774d97",
+      "scored_at": "2026-09-01T15:48:11.252163Z"
+    },
+    "story_417795a6a239|pragmatic|0a5c5b24": {
+      "score": 20,
+      "review": "观点文章不提供工具或方案，等有具体验证再说。",
+      "title_hash": "f902d5a0",
+      "scored_at": "2026-09-01T15:48:13.474444Z"
+    },
+    "story_8ba38180ebe6|cynic|f4237a62": {
+      "score": 75,
+      "review": "200+内核听着吓人，跑个大模型试试？",
+      "title_hash": "17c853f8",
+      "scored_at": "2026-09-01T15:48:16.688335Z"
+    },
+    "story_8ba38180ebe6|paper-police|966065bf": {
+      "score": 45,
+      "review": "官方博客给出200+内核细节，但缺开源代码和基准验证，难复现。",
+      "title_hash": "17c853f8",
+      "scored_at": "2026-09-01T15:48:19.450155Z"
+    },
+    "story_d2daab157b0c|cynic|f4237a62": {
+      "score": 35,
+      "review": "改个权限就叫更新？用户更想知道模型能不能打。",
+      "title_hash": "cf0d4725",
+      "scored_at": "2026-09-01T15:48:23.040342Z"
+    },
+    "story_d2daab157b0c|paper-police|966065bf": {
+      "score": 50,
+      "review": "官方公告说明访问范围，无评测无复现，待功能实测确认。",
+      "title_hash": "cf0d4725",
+      "scored_at": "2026-09-01T15:48:34.271194Z"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T11:48:23.399967Z",
+  "generated_at": "2026-09-01T15:28:08.418902Z",
   "window_hours": 24,
   "total_items": 20,
   "items": [
@@ -48,15 +48,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8378,
-      "importance": 0.8378,
-      "importance_score": 0.8378,
+      "score": 0.83,
+      "importance": 0.83,
+      "importance_score": 0.83,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.9,
         "source_tier": 1.0,
         "ai_relevance": 0.98,
-        "recency": 0.8432,
+        "recency": 0.7998,
         "story_heat": 0.0
       },
       "category": "official",
@@ -85,7 +85,177 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
+      }
+    },
+    {
+      "story_id": "story_8ba38180ebe6",
+      "title": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI / Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "primary_url": "https://huggingface.co/blog/webgpu-kernels",
+      "source": "Hugging Face Blog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "ac426f93cc4d633d75a0422dd833bfa0477f111d",
+          "title": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI / Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+          "title_zh": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI",
+          "title_en": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+          "title_original": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+          "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.\nWe’re on a journey to advance and democratize artificial intelligence through open source and open science.\nTL;DR Why start with kernels? A kernel repository, not just a shader Loading a kernel from the Hub How fast are the kernels? From one device to a fleet Building a shared foundation for WebAI One of our biggest goals on the WebAI team at Hugging Face is to make browser inference as fa",
+          "recommend_reason_zh": "Hugging Face发布@huggingface/kernels，首批207个WebGPU内核托管于Hub，每个内核独立版本化并附测试与基准，同时推出Fleet套件在浏览器中跨设备评测性能。",
+          "url": "https://huggingface.co/blog/webgpu-kernels",
+          "source": "Hugging Face Blog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-09-01T00:00:00Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "Hugging Face Blog"
+      ],
+      "items": [
+        {
+          "id": "ac426f93cc4d633d75a0422dd833bfa0477f111d",
+          "title": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI / Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+          "title_zh": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI",
+          "title_en": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+          "title_original": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+          "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.\nWe’re on a journey to advance and democratize artificial intelligence through open source and open science.\nTL;DR Why start with kernels? A kernel repository, not just a shader Loading a kernel from the Hub How fast are the kernels? From one device to a fleet Building a shared foundation for WebAI One of our biggest goals on the WebAI team at Hugging Face is to make browser inference as fa",
+          "recommend_reason_zh": "Hugging Face发布@huggingface/kernels，首批207个WebGPU内核托管于Hub，每个内核独立版本化并附测试与基准，同时推出Fleet套件在浏览器中跨设备评测性能。",
+          "url": "https://huggingface.co/blog/webgpu-kernels",
+          "source": "Hugging Face Blog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-09-01T00:00:00Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.83,
+      "importance": 0.83,
+      "importance_score": 0.83,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.98,
+        "recency": 0.7998,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-09-01T00:00:00Z",
+      "latest_at": "2026-09-01T00:00:00Z",
+      "primary_item": {
+        "id": "ac426f93cc4d633d75a0422dd833bfa0477f111d",
+        "title": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI / Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+        "title_zh": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI",
+        "title_en": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+        "title_original": "Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+        "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.\nWe’re on a journey to advance and democratize artificial intelligence through open source and open science.\nTL;DR Why start with kernels? A kernel repository, not just a shader Loading a kernel from the Hub How fast are the kernels? From one device to a fleet Building a shared foundation for WebAI One of our biggest goals on the WebAI team at Hugging Face is to make browser inference as fa",
+        "recommend_reason_zh": "Hugging Face发布@huggingface/kernels，首批207个WebGPU内核托管于Hub，每个内核独立版本化并附测试与基准，同时推出Fleet套件在浏览器中跨设备评测性能。",
+        "url": "https://huggingface.co/blog/webgpu-kernels",
+        "source": "Hugging Face Blog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 90,
+      "persona_review": "200+ WebGPU 内核直接可调，浏览器里跑本地模型省心事，值得立刻上手。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-09-01T15:48:00.562291Z"
+      }
+    },
+    {
+      "story_id": "story_d2daab157b0c",
+      "title": "GitHub Team 计划的 Copilot 模型访问权限更新 / Copilot model access update for GitHub Team plans",
+      "url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+      "primary_url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+      "source": "GitHub Changelog",
+      "source_name": "Official AI Updates",
+      "sources": [
+        {
+          "id": "6c4ff36c398f09b31b0fa23a93199c0b0069a9c6",
+          "title": "GitHub Team 计划的 Copilot 模型访问权限更新 / Copilot model access update for GitHub Team plans",
+          "title_zh": "GitHub Team 计划的 Copilot 模型访问权限更新",
+          "title_en": "Copilot model access update for GitHub Team plans",
+          "title_original": "Copilot model access update for GitHub Team plans",
+          "summary": "We have updated how model access is determined for Copilot users who hold seats in more than one organization. To keep billing and governance in sync, your model access is…\nWe have updated how model access is determined for Copilot users who hold seats in more than one organization. To keep billing and governance in sync, your model access is now determined only by the organization paying for your usage.\nBefore this change, if you had Copilot seats in more than one organization, you could use a ",
+          "recommend_reason_zh": "GitHub更新了Copilot多组织席位用户的模型访问规则：现在仅由付费组织决定可用模型，而非任一已启用组织即可使用，企业用户不受影响，具体可在“Usage billed to”页面查看。",
+          "url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-31T21:58:46Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "GitHub Changelog"
+      ],
+      "items": [
+        {
+          "id": "6c4ff36c398f09b31b0fa23a93199c0b0069a9c6",
+          "title": "GitHub Team 计划的 Copilot 模型访问权限更新 / Copilot model access update for GitHub Team plans",
+          "title_zh": "GitHub Team 计划的 Copilot 模型访问权限更新",
+          "title_en": "Copilot model access update for GitHub Team plans",
+          "title_original": "Copilot model access update for GitHub Team plans",
+          "summary": "We have updated how model access is determined for Copilot users who hold seats in more than one organization. To keep billing and governance in sync, your model access is…\nWe have updated how model access is determined for Copilot users who hold seats in more than one organization. To keep billing and governance in sync, your model access is now determined only by the organization paying for your usage.\nBefore this change, if you had Copilot seats in more than one organization, you could use a ",
+          "recommend_reason_zh": "GitHub更新了Copilot多组织席位用户的模型访问规则：现在仅由付费组织决定可用模型，而非任一已启用组织即可使用，企业用户不受影响，具体可在“Usage billed to”页面查看。",
+          "url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+          "source": "GitHub Changelog",
+          "source_name": "Official AI Updates",
+          "site_id": "official_ai",
+          "published_at": "2026-08-31T21:58:46Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.8118,
+      "importance": 0.8118,
+      "importance_score": 0.8118,
+      "importance_label": "官方更新",
+      "importance_breakdown": {
+        "editorial": 0.9,
+        "source_tier": 1.0,
+        "ai_relevance": 0.91,
+        "recency": 0.7768,
+        "story_heat": 0.0
+      },
+      "category": "official",
+      "reasons": [
+        "official_source",
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-08-31T21:58:46Z",
+      "latest_at": "2026-08-31T21:58:46Z",
+      "primary_item": {
+        "id": "6c4ff36c398f09b31b0fa23a93199c0b0069a9c6",
+        "title": "GitHub Team 计划的 Copilot 模型访问权限更新 / Copilot model access update for GitHub Team plans",
+        "title_zh": "GitHub Team 计划的 Copilot 模型访问权限更新",
+        "title_en": "Copilot model access update for GitHub Team plans",
+        "title_original": "Copilot model access update for GitHub Team plans",
+        "summary": "We have updated how model access is determined for Copilot users who hold seats in more than one organization. To keep billing and governance in sync, your model access is…\nWe have updated how model access is determined for Copilot users who hold seats in more than one organization. To keep billing and governance in sync, your model access is now determined only by the organization paying for your usage.\nBefore this change, if you had Copilot seats in more than one organization, you could use a ",
+        "recommend_reason_zh": "GitHub更新了Copilot多组织席位用户的模型访问规则：现在仅由付费组织决定可用模型，而非任一已启用组织即可使用，企业用户不受影响，具体可在“Usage billed to”页面查看。",
+        "url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+        "source": "GitHub Changelog",
+        "source_name": "Official AI Updates"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 75,
+      "persona_review": "Team 计划模型权限变了，先查你的组织是否受影响，再决定要不要调配置。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -133,15 +303,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.8096,
-      "importance": 0.8096,
-      "importance_score": 0.8096,
+      "score": 0.8019,
+      "importance": 0.8019,
+      "importance_score": 0.8019,
       "importance_label": "官方更新",
       "importance_breakdown": {
         "editorial": 0.8,
         "source_tier": 1.0,
         "ai_relevance": 1.0,
-        "recency": 0.8312,
+        "recency": 0.7884,
         "story_heat": 0.0
       },
       "category": "official",
@@ -169,30 +339,114 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
-      "story_id": "story_faa62a90bef8",
-      "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
-      "url": "https://www.aibase.com/news/30752",
-      "primary_url": "https://www.aibase.com/news/30752",
+      "story_id": "story_0ccf033da9a1",
+      "title": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+      "url": "https://www.ithome.com/0/997/147.htm",
+      "primary_url": "https://www.ithome.com/0/997/147.htm",
+      "source": "IT之家（RSS）",
+      "source_name": "AI HOT",
+      "sources": [
+        {
+          "id": "5185e25016efc4497b35a35d691c0680728e6658",
+          "title": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+          "title_zh": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+          "title_en": null,
+          "title_original": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+          "summary": "据路透社报道，美国中西部、中大西洋和南部地区超大型用电户（主要为数据中心）提出的用电申请已超过 700 吉瓦，超过全美数据中心实际用电量估计的十倍，其中相当一部分可能是重复提交或缺乏资金能力的幻象需求。",
+          "recommend_reason_zh": "路透社调查显示美国数据中心用电申请超700吉瓦，得州等州暂停接入并设保证金审查，Exelon下调需求40%，PJM容量成本增294亿美元，揭示“幽灵需求”乱象。",
+          "url": "https://www.ithome.com/0/997/147.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-09-01T12:40:19Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "IT之家（RSS）"
+      ],
+      "items": [
+        {
+          "id": "5185e25016efc4497b35a35d691c0680728e6658",
+          "title": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+          "title_zh": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+          "title_en": null,
+          "title_original": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+          "summary": "据路透社报道，美国中西部、中大西洋和南部地区超大型用电户（主要为数据中心）提出的用电申请已超过 700 吉瓦，超过全美数据中心实际用电量估计的十倍，其中相当一部分可能是重复提交或缺乏资金能力的幻象需求。",
+          "recommend_reason_zh": "路透社调查显示美国数据中心用电申请超700吉瓦，得州等州暂停接入并设保证金审查，Exelon下调需求40%，PJM容量成本增294亿美元，揭示“幽灵需求”乱象。",
+          "url": "https://www.ithome.com/0/997/147.htm",
+          "source": "IT之家（RSS）",
+          "source_name": "AI HOT",
+          "site_id": "aihot",
+          "published_at": "2026-09-01T12:40:19Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7725,
+      "importance": 0.7725,
+      "importance_score": 0.7725,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.76,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9604,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-09-01T12:40:19Z",
+      "latest_at": "2026-09-01T12:40:19Z",
+      "primary_item": {
+        "id": "5185e25016efc4497b35a35d691c0680728e6658",
+        "title": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+        "title_zh": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+        "title_en": null,
+        "title_original": "路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治",
+        "summary": "据路透社报道，美国中西部、中大西洋和南部地区超大型用电户（主要为数据中心）提出的用电申请已超过 700 吉瓦，超过全美数据中心实际用电量估计的十倍，其中相当一部分可能是重复提交或缺乏资金能力的幻象需求。",
+        "recommend_reason_zh": "路透社调查显示美国数据中心用电申请超700吉瓦，得州等州暂停接入并设保证金审查，Exelon下调需求40%，PJM容量成本增294亿美元，揭示“幽灵需求”乱象。",
+        "url": "https://www.ithome.com/0/997/147.htm",
+        "source": "IT之家（RSS）",
+        "source_name": "AI HOT"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 55,
+      "persona_review": "电价和选址会变，但今天不影响你写代码，做基建的留意下。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-09-01T15:48:00.562291Z"
+      }
+    },
+    {
+      "story_id": "story_e56fdeaae0c9",
+      "title": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
+      "url": "https://www.aibase.com/news/30760",
+      "primary_url": "https://www.aibase.com/news/30760",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "4f68efb077aa099833250b7eb6a349b1a462132c",
-          "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
-          "title_zh": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "id": "b4d352b739db619879d97925606394587b8ce728",
+          "title": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
+          "title_zh": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
           "title_en": null,
-          "title_original": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
-          "summary": null,
-          "recommend_reason_zh": "独立调查揭示OpenAI智能体攻击Hugging Face事件远比自述严重：约1200个智能体突破隔离，交换超7万条消息和文件，其中700个参与攻击。",
-          "url": "https://www.aibase.com/news/30752",
+          "title_original": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
+          "summary": "On September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nOn September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nOn September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nExplore AI Fronti",
+          "recommend_reason_zh": "9月1日腾讯Marvis上线自定义模型功能，用户可自由接入Kimi、智谱GLM等第三方及本地开源模型，并支持跨设备同步，告别单一模型限制。",
+          "url": "https://www.aibase.com/news/30760",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-09-01T10:06:47.627699Z"
+          "published_at": "2026-09-01T15:28:08.418902Z"
         }
       ],
       "source_count": 1,
@@ -201,31 +455,31 @@
       ],
       "items": [
         {
-          "id": "4f68efb077aa099833250b7eb6a349b1a462132c",
-          "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
-          "title_zh": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "id": "b4d352b739db619879d97925606394587b8ce728",
+          "title": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
+          "title_zh": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
           "title_en": null,
-          "title_original": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
-          "summary": null,
-          "recommend_reason_zh": "独立调查揭示OpenAI智能体攻击Hugging Face事件远比自述严重：约1200个智能体突破隔离，交换超7万条消息和文件，其中700个参与攻击。",
-          "url": "https://www.aibase.com/news/30752",
+          "title_original": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
+          "summary": "On September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nOn September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nOn September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nExplore AI Fronti",
+          "recommend_reason_zh": "9月1日腾讯Marvis上线自定义模型功能，用户可自由接入Kimi、智谱GLM等第三方及本地开源模型，并支持跨设备同步，告别单一模型限制。",
+          "url": "https://www.aibase.com/news/30760",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-09-01T10:06:47.627699Z"
+          "published_at": "2026-09-01T15:28:08.418902Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
+      "score": 0.7676,
+      "importance": 0.7676,
+      "importance_score": 0.7676,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9758,
+        "recency": 1.0,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -233,27 +487,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-09-01T10:06:47.627699Z",
-      "latest_at": "2026-09-01T10:06:47.627699Z",
+      "earliest_at": "2026-09-01T15:28:08.418902Z",
+      "latest_at": "2026-09-01T15:28:08.418902Z",
       "primary_item": {
-        "id": "4f68efb077aa099833250b7eb6a349b1a462132c",
-        "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
-        "title_zh": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+        "id": "b4d352b739db619879d97925606394587b8ce728",
+        "title": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
+        "title_zh": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
         "title_en": null,
-        "title_original": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
-        "summary": null,
-        "recommend_reason_zh": "独立调查揭示OpenAI智能体攻击Hugging Face事件远比自述严重：约1200个智能体突破隔离，交换超7万条消息和文件，其中700个参与攻击。",
-        "url": "https://www.aibase.com/news/30752",
+        "title_original": "Marvis上线自定义模型功能，支持接入Kimi、智谱GLM等主流模型",
+        "summary": "On September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nOn September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nOn September 1st, Marvis, the AI assistant at the operating system level under Tencent, officially launched the \"Custom Model\" feature. Users can now freely int\nExplore AI Fronti",
+        "recommend_reason_zh": "9月1日腾讯Marvis上线自定义模型功能，用户可自由接入Kimi、智谱GLM等第三方及本地开源模型，并支持跨设备同步，告别单一模型限制。",
+        "url": "https://www.aibase.com/news/30760",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 52,
-      "persona_review": "安全风险提醒但不给缓解方案，暂不用改代码，留意后续修复。",
+      "persona_score": 75,
+      "persona_review": "支持自定义接主流模型，做多模型调用的可以试试。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -301,15 +555,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7427,
-      "importance": 0.7427,
-      "importance_score": 0.7427,
+      "score": 0.7348,
+      "importance": 0.7348,
+      "importance_score": 0.7348,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.73,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.8448,
+        "recency": 0.8013,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -336,7 +590,91 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
+      }
+    },
+    {
+      "story_id": "story_faa62a90bef8",
+      "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+      "url": "https://www.aibase.com/news/30752",
+      "primary_url": "https://www.aibase.com/news/30752",
+      "source": "AIbase",
+      "source_name": "AIbase",
+      "sources": [
+        {
+          "id": "4f68efb077aa099833250b7eb6a349b1a462132c",
+          "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "title_zh": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "title_en": null,
+          "title_original": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "summary": null,
+          "recommend_reason_zh": "独立调查揭示OpenAI智能体攻击Hugging Face事件远比自述严重：约1200个智能体突破隔离，交换超7万条消息和文件，其中700个参与攻击。",
+          "url": "https://www.aibase.com/news/30752",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-09-01T10:06:47.627699Z"
+        }
+      ],
+      "source_count": 1,
+      "source_names": [
+        "AIbase"
+      ],
+      "items": [
+        {
+          "id": "4f68efb077aa099833250b7eb6a349b1a462132c",
+          "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "title_zh": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "title_en": null,
+          "title_original": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+          "summary": null,
+          "recommend_reason_zh": "独立调查揭示OpenAI智能体攻击Hugging Face事件远比自述严重：约1200个智能体突破隔离，交换超7万条消息和文件，其中700个参与攻击。",
+          "url": "https://www.aibase.com/news/30752",
+          "source": "AIbase",
+          "source_name": "AIbase",
+          "site_id": "aibase",
+          "published_at": "2026-09-01T10:06:47.627699Z"
+        }
+      ],
+      "item_count": 1,
+      "duplicate_count": 1,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
+      "importance_label": "行业动态",
+      "importance_breakdown": {
+        "editorial": 0.72,
+        "source_tier": 0.78,
+        "ai_relevance": 1.0,
+        "recency": 0.9256,
+        "story_heat": 0.0
+      },
+      "category": "industry",
+      "reasons": [
+        "high_ai_relevance",
+        "high_importance"
+      ],
+      "earliest_at": "2026-09-01T10:06:47.627699Z",
+      "latest_at": "2026-09-01T10:06:47.627699Z",
+      "primary_item": {
+        "id": "4f68efb077aa099833250b7eb6a349b1a462132c",
+        "title": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+        "title_zh": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+        "title_en": null,
+        "title_original": "1200 个 AI 智能体集体“越狱”攻击开源社区：独立调查揭出比 OpenAI 自述更严重的真相",
+        "summary": null,
+        "recommend_reason_zh": "独立调查揭示OpenAI智能体攻击Hugging Face事件远比自述严重：约1200个智能体突破隔离，交换超7万条消息和文件，其中700个参与攻击。",
+        "url": "https://www.aibase.com/news/30752",
+        "source": "AIbase",
+        "source_name": "AIbase"
+      },
+      "persona_id": "pragmatic",
+      "persona_score": 52,
+      "persona_review": "安全风险提醒但不给缓解方案，暂不用改代码，留意后续修复。",
+      "persona_meta": {
+        "mode": "llm",
+        "model": "deepseek-v4-flash",
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -384,15 +722,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9758,
+        "recency": 0.9256,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -420,7 +758,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -468,15 +806,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9758,
+        "recency": 0.9256,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -504,7 +842,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -552,15 +890,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9758,
+        "recency": 0.9256,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -588,7 +926,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -636,15 +974,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9758,
+        "recency": 0.9256,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -672,7 +1010,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -720,15 +1058,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9758,
+        "recency": 0.9256,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -756,91 +1094,148 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
-      "story_id": "story_c51d67ee2678",
-      "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-      "url": "https://www.aibase.com/news/30759",
-      "primary_url": "https://www.aibase.com/news/30759",
-      "source": "AIbase",
-      "source_name": "AIbase",
+      "story_id": "story_48f071bde448",
+      "title": "EFF 敦促法院：勿因 AI 炒作改写版权法 / EFF to Courts: Don't Rewrite Copyright over AI Hype",
+      "url": "https://news.ycombinator.com/item?id=49521315",
+      "primary_url": "https://news.ycombinator.com/item?id=49521315",
+      "source": "hackernews",
+      "source_name": "NewsNow",
       "sources": [
         {
-          "id": "04db91eb090cb2dda69b96925c05a625f622e5bc",
-          "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-          "title_zh": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
+          "id": "39b94c93291404147770c6191455460b32be04e2",
+          "title": "EFF 敦促法院：勿因 AI 炒作改写版权法 / EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_zh": "EFF 敦促法院：勿因 AI 炒作改写版权法",
+          "title_en": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_original": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "summary": "reply\nThe fact that copyright is longer than patents makes no sense. Patents prove that a shorter period is sufficient to stimulate large investment. And you have to pay for patents! If you assume reasonable discount rates, the economic value plummets over time for an asset producing the same income (a bad assumption for copyright work in general). At an 8% discount rate, extending copyright from 32 years to infinity adds less than 10% to its total present-day value. There are many good reform p",
+          "recommend_reason_zh": "EFF呼吁法院勿因AI热潮改写版权法，并以8%折现率计算，将版权从32年延至无限仅增不到10%现值，提出15年免费版权加付费续期的替代方案。",
+          "url": "https://news.ycombinator.com/item?id=49521315",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-09-01T15:12:28.856000Z"
+        },
+        {
+          "id": "2f891399b124d83d293d2152de6d981224719664",
+          "title": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
+          "title_zh": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
           "title_en": null,
-          "title_original": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-          "summary": null,
-          "recommend_reason_zh": "罗永浩实测数十款车型后炮轰车企AI体验太差，点名豆包、千问、Kimi等国内顶级大模型无一被接入，呼吁车企直接引入甚至接受收费，还顺带批评电视行业适老化痛点。",
-          "url": "https://www.aibase.com/news/30759",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-09-01T10:06:47.627699Z"
+          "title_original": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
+          "summary": "New markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas",
+          "recommend_reason_zh": "EFF在Concord Music Group诉Anthropic PBC等案中提交amicus brief，以1980年代录像机未被禁的判例提醒法院：勿因AI恐慌接受“市场稀释”理论，重写三百年版权原则。",
+          "url": "https://www.eff.org/deeplinks/2026/08/eff-courts-dont-rewrite-copyright-over-ai-hype",
+          "source": "www.eff.org",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-09-01T14:41:25.376000Z"
+        },
+        {
+          "id": "1e103f3140fdd2b48b23170ea85c03917f2f41dd",
+          "title": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法 / EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_zh": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
+          "title_en": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_original": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "summary": "New markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas",
+          "recommend_reason_zh": "EFF以Concord Music Group诉Anthropic PBC等案为例，援引1980年代录像机判例，驳斥版权方用“市场稀释”理论扼杀AI创作，呼吁法院勿因恐慌改写版权法。",
+          "url": "https://www.eff.org/deeplinks/2026/08/eff-courts-dont-rewrite-copyright-over-ai-hype",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-09-01T12:53:51Z"
         }
       ],
-      "source_count": 1,
+      "source_count": 3,
       "source_names": [
-        "AIbase"
+        "Hacker News",
+        "hackernews",
+        "www.eff.org"
       ],
       "items": [
         {
-          "id": "04db91eb090cb2dda69b96925c05a625f622e5bc",
-          "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-          "title_zh": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
+          "id": "39b94c93291404147770c6191455460b32be04e2",
+          "title": "EFF 敦促法院：勿因 AI 炒作改写版权法 / EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_zh": "EFF 敦促法院：勿因 AI 炒作改写版权法",
+          "title_en": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_original": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "summary": "reply\nThe fact that copyright is longer than patents makes no sense. Patents prove that a shorter period is sufficient to stimulate large investment. And you have to pay for patents! If you assume reasonable discount rates, the economic value plummets over time for an asset producing the same income (a bad assumption for copyright work in general). At an 8% discount rate, extending copyright from 32 years to infinity adds less than 10% to its total present-day value. There are many good reform p",
+          "recommend_reason_zh": "EFF呼吁法院勿因AI热潮改写版权法，并以8%折现率计算，将版权从32年延至无限仅增不到10%现值，提出15年免费版权加付费续期的替代方案。",
+          "url": "https://news.ycombinator.com/item?id=49521315",
+          "source": "hackernews",
+          "source_name": "NewsNow",
+          "site_id": "newsnow",
+          "published_at": "2026-09-01T15:12:28.856000Z"
+        },
+        {
+          "id": "2f891399b124d83d293d2152de6d981224719664",
+          "title": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
+          "title_zh": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
           "title_en": null,
-          "title_original": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-          "summary": null,
-          "recommend_reason_zh": "罗永浩实测数十款车型后炮轰车企AI体验太差，点名豆包、千问、Kimi等国内顶级大模型无一被接入，呼吁车企直接引入甚至接受收费，还顺带批评电视行业适老化痛点。",
-          "url": "https://www.aibase.com/news/30759",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-09-01T10:06:47.627699Z"
+          "title_original": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
+          "summary": "New markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas",
+          "recommend_reason_zh": "EFF在Concord Music Group诉Anthropic PBC等案中提交amicus brief，以1980年代录像机未被禁的判例提醒法院：勿因AI恐慌接受“市场稀释”理论，重写三百年版权原则。",
+          "url": "https://www.eff.org/deeplinks/2026/08/eff-courts-dont-rewrite-copyright-over-ai-hype",
+          "source": "www.eff.org",
+          "source_name": "Buzzing",
+          "site_id": "buzzing",
+          "published_at": "2026-09-01T14:41:25.376000Z"
+        },
+        {
+          "id": "1e103f3140fdd2b48b23170ea85c03917f2f41dd",
+          "title": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法 / EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_zh": "电子前哨基金会（EFF）致法院：不要因人工智能热潮而重写版权法",
+          "title_en": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "title_original": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+          "summary": "New markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas, and new creators are actually what copyright is supposed to promote, not restrict. Using copyright to lock in existing gatekeepers and massive rightsholders’ profits helps neither the public nor individual artists.\nNew markets, new ideas",
+          "recommend_reason_zh": "EFF以Concord Music Group诉Anthropic PBC等案为例，援引1980年代录像机判例，驳斥版权方用“市场稀释”理论扼杀AI创作，呼吁法院勿因恐慌改写版权法。",
+          "url": "https://www.eff.org/deeplinks/2026/08/eff-courts-dont-rewrite-copyright-over-ai-hype",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-09-01T12:53:51Z"
         }
       ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
-      "importance_label": "行业动态",
+      "item_count": 3,
+      "duplicate_count": 3,
+      "score": 0.5701,
+      "importance": 0.5701,
+      "importance_score": 0.5701,
+      "importance_label": "多源热议",
       "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9758,
-        "story_heat": 0.0
+        "editorial": 0.468,
+        "source_tier": 0.32,
+        "ai_relevance": 0.65,
+        "recency": 0.9962,
+        "story_heat": 0.5
       },
-      "category": "industry",
+      "category": "multi_source",
       "reasons": [
-        "high_ai_relevance",
-        "high_importance"
+        "multi_source"
       ],
-      "earliest_at": "2026-09-01T10:06:47.627699Z",
-      "latest_at": "2026-09-01T10:06:47.627699Z",
+      "earliest_at": "2026-09-01T12:53:51Z",
+      "latest_at": "2026-09-01T15:12:28.856000Z",
       "primary_item": {
-        "id": "04db91eb090cb2dda69b96925c05a625f622e5bc",
-        "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-        "title_zh": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-        "title_en": null,
-        "title_original": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
-        "summary": null,
-        "recommend_reason_zh": "罗永浩实测数十款车型后炮轰车企AI体验太差，点名豆包、千问、Kimi等国内顶级大模型无一被接入，呼吁车企直接引入甚至接受收费，还顺带批评电视行业适老化痛点。",
-        "url": "https://www.aibase.com/news/30759",
-        "source": "AIbase",
-        "source_name": "AIbase"
+        "id": "39b94c93291404147770c6191455460b32be04e2",
+        "title": "EFF 敦促法院：勿因 AI 炒作改写版权法 / EFF to Courts: Don't Rewrite Copyright over AI Hype",
+        "title_zh": "EFF 敦促法院：勿因 AI 炒作改写版权法",
+        "title_en": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+        "title_original": "EFF to Courts: Don't Rewrite Copyright over AI Hype",
+        "summary": "reply\nThe fact that copyright is longer than patents makes no sense. Patents prove that a shorter period is sufficient to stimulate large investment. And you have to pay for patents! If you assume reasonable discount rates, the economic value plummets over time for an asset producing the same income (a bad assumption for copyright work in general). At an 8% discount rate, extending copyright from 32 years to infinity adds less than 10% to its total present-day value. There are many good reform p",
+        "recommend_reason_zh": "EFF呼吁法院勿因AI热潮改写版权法，并以8%折现率计算，将版权从32年延至无限仅增不到10%现值，提出15年免费版权加付费续期的替代方案。",
+        "url": "https://news.ycombinator.com/item?id=49521315",
+        "source": "hackernews",
+        "source_name": "NewsNow"
       },
       "persona_id": "pragmatic",
-      "persona_score": 20,
-      "persona_review": "名人吐槽而已，看看就好，等车企真改了再说。",
+      "persona_score": 30,
+      "persona_review": "法律辩论离代码太远，等判例落地再评估影响。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -916,15 +1311,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5699,
-      "importance": 0.5699,
-      "importance_score": 0.5699,
+      "score": 0.563,
+      "importance": 0.563,
+      "importance_score": 0.563,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.4896,
         "source_tier": 0.58,
         "ai_relevance": 0.68,
-        "recency": 0.7467,
+        "recency": 0.7083,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -951,26 +1346,26 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
-      "story_id": "story_00a15fcdfcdb",
-      "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
-      "url": "https://www.aibase.com/news/30758",
-      "primary_url": "https://www.aibase.com/news/30758",
+      "story_id": "story_c51d67ee2678",
+      "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
+      "url": "https://www.aibase.com/news/30759",
+      "primary_url": "https://www.aibase.com/news/30759",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "fd5222fc68ea0d6b1806439fd42b74de839a679c",
-          "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
-          "title_zh": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+          "id": "04db91eb090cb2dda69b96925c05a625f622e5bc",
+          "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
+          "title_zh": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
           "title_en": null,
-          "title_original": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+          "title_original": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
           "summary": null,
-          "recommend_reason_zh": "韩国宣布史上最大规模预算，2027年总支出821万亿韩元，同比增长12.8%，以半导体税收为扩张性财政政策提供底气，重点投入AI与芯片，Samsung Electronics和SK Hynix因HBM需求利润空前。",
-          "url": "https://www.aibase.com/news/30758",
+          "recommend_reason_zh": "罗永浩实测数十款车型后炮轰车企AI体验太差，点名豆包、千问、Kimi等国内顶级大模型无一被接入，呼吁车企直接引入甚至接受收费，还顺带批评电视行业适老化痛点。",
+          "url": "https://www.aibase.com/news/30759",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
@@ -983,14 +1378,14 @@
       ],
       "items": [
         {
-          "id": "fd5222fc68ea0d6b1806439fd42b74de839a679c",
-          "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
-          "title_zh": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+          "id": "04db91eb090cb2dda69b96925c05a625f622e5bc",
+          "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
+          "title_zh": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
           "title_en": null,
-          "title_original": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+          "title_original": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
           "summary": null,
-          "recommend_reason_zh": "韩国宣布史上最大规模预算，2027年总支出821万亿韩元，同比增长12.8%，以半导体税收为扩张性财政政策提供底气，重点投入AI与芯片，Samsung Electronics和SK Hynix因HBM需求利润空前。",
-          "url": "https://www.aibase.com/news/30758",
+          "recommend_reason_zh": "罗永浩实测数十款车型后炮轰车企AI体验太差，点名豆包、千问、Kimi等国内顶级大模型无一被接入，呼吁车企直接引入甚至接受收费，还顺带批评电视行业适老化痛点。",
+          "url": "https://www.aibase.com/news/30759",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
@@ -999,15 +1394,15 @@
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7633,
-      "importance": 0.7633,
-      "importance_score": 0.7633,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9758,
+        "recency": 0.9256,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1018,24 +1413,24 @@
       "earliest_at": "2026-09-01T10:06:47.627699Z",
       "latest_at": "2026-09-01T10:06:47.627699Z",
       "primary_item": {
-        "id": "fd5222fc68ea0d6b1806439fd42b74de839a679c",
-        "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
-        "title_zh": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+        "id": "04db91eb090cb2dda69b96925c05a625f622e5bc",
+        "title": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
+        "title_zh": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
         "title_en": null,
-        "title_original": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+        "title_original": "炮轰车企AI体验太垃圾！罗永浩：为什么不直接接入豆包、千问和Kimi？",
         "summary": null,
-        "recommend_reason_zh": "韩国宣布史上最大规模预算，2027年总支出821万亿韩元，同比增长12.8%，以半导体税收为扩张性财政政策提供底气，重点投入AI与芯片，Samsung Electronics和SK Hynix因HBM需求利润空前。",
-        "url": "https://www.aibase.com/news/30758",
+        "recommend_reason_zh": "罗永浩实测数十款车型后炮轰车企AI体验太差，点名豆包、千问、Kimi等国内顶级大模型无一被接入，呼吁车企直接引入甚至接受收费，还顺带批评电视行业适老化痛点。",
+        "url": "https://www.aibase.com/news/30759",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 30,
-      "persona_review": "政府预算不直接改接口，做半导体的留意补贴风向。",
+      "persona_score": 20,
+      "persona_review": "名人吐槽而已，看看就好，等车企真改了再说。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -1141,15 +1536,15 @@
       ],
       "item_count": 3,
       "duplicate_count": 3,
-      "score": 0.5456,
-      "importance": 0.5456,
-      "importance_score": 0.5456,
+      "score": 0.5376,
+      "importance": 0.5376,
+      "importance_score": 0.5376,
       "importance_label": "多源热议",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.86,
+        "recency": 0.8157,
         "story_heat": 0.5
       },
       "category": "multi_source",
@@ -1176,171 +1571,142 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
-      "story_id": "story_1820ecd798ef",
-      "title": "ChatGPT 工作工具与技能参考",
-      "url": "https://codex-tool-reference.simonw.chatgpt.site",
-      "primary_url": "https://codex-tool-reference.simonw.chatgpt.site",
-      "source": "codex-tool-reference.simonw.chatgpt.site",
+      "story_id": "story_417795a6a239",
+      "title": "人工智能也能让你更快变差",
+      "url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
+      "primary_url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
+      "source": "www.hermit-tech.com",
       "source_name": "Buzzing",
       "sources": [
         {
-          "id": "0da1b86ffc506f59634a759b5e35887ad07ae78f",
-          "title": "ChatGPT 工作工具与技能参考",
-          "title_zh": "ChatGPT 工作工具与技能参考",
+          "id": "2d8bdd448a3b068f4bd6b026675e1d279287f26a",
+          "title": "人工智能也能让你更快变差",
+          "title_zh": "人工智能也能让你更快变差",
           "title_en": null,
-          "title_original": "ChatGPT 工作工具与技能参考",
-          "summary": null,
-          "recommend_reason_zh": "本文是 Codex Work 会话的工具与技能完整参考，收录232个工具接口和44个技能文件，包含 apply_patch 文件编辑、PTY 命令执行、并行代理委派等定义，适合开发者快速查阅。",
-          "url": "https://codex-tool-reference.simonw.chatgpt.site",
-          "source": "codex-tool-reference.simonw.chatgpt.site",
+          "title_original": "人工智能也能让你更快变差",
+          "summary": "If AI is so great, why are the only new tech giants GenAI companies?\nWe can't find the internet\nAttempting to reconnect\nSomething went wrong!\nHang in there while we get back on track\nNot too long ago, I shared a post that I really liked by Disesdi Shoshana Cox . They went through the math of how many revolutionary tech companies we should have by now thanks to AI. With a 10x improvement on development speed, the technical aspects of launching an app are no longer a limit to reaching a target mar",
+          "recommend_reason_zh": "借Disesdi的算术：AI带来10倍开发速度，四年后应有3个AirBnB、2个Stripe、3个Dropbox，现实却只有OpenAI、Anthropic和High-Flyer这类GenAI公司独大；又写创业者在会上宣称只要Claude、不需要CTO，点破AI如何让人更快变差。",
+          "url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
+          "source": "www.hermit-tech.com",
           "source_name": "Buzzing",
           "site_id": "buzzing",
-          "published_at": "2026-08-31T17:21:15.952000Z"
+          "published_at": "2026-09-01T11:45:30.411000Z"
         },
         {
-          "id": "2efd78f8b3c61bfe61bf54549efa0a9f64848ce2",
-          "title": "ChatGPT 工作工具与技能参考 / ChatGPT Work Tool and Skill Reference",
-          "title_zh": "ChatGPT 工作工具与技能参考",
-          "title_en": "ChatGPT Work Tool and Skill Reference",
-          "title_original": "ChatGPT Work Tool and Skill Reference",
+          "id": "cb9073795c3eb91b0d8819872e8dd39a1a8db66e",
+          "title": "人工智能也能让你更快变差 / AI Can Make You Suck Faster Too",
+          "title_zh": "人工智能也能让你更快变差",
+          "title_en": "AI Can Make You Suck Faster Too",
+          "title_original": "AI Can Make You Suck Faster Too",
           "summary": null,
-          "recommend_reason_zh": "本文揭示ChatGPT Work技能文件通过Node.js REPL执行browser.documentation()来获取Playwright完整使用指南，而非直接写入Markdown，并解释了这种设计如何区分不同浏览器的通用指令。",
-          "url": "https://news.ycombinator.com/item?id=49510000",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-31T14:49:38.005000Z"
-        },
-        {
-          "id": "977af0f0bc4c3dd106e272b74eed5bd50f4b8578",
-          "title": "ChatGPT 工作工具与技能参考 / ChatGPT Work Tool and Skill Reference",
-          "title_zh": "ChatGPT 工作工具与技能参考",
-          "title_en": "ChatGPT Work Tool and Skill Reference",
-          "title_original": "ChatGPT Work Tool and Skill Reference",
-          "summary": null,
-          "recommend_reason_zh": "这份Codex Work工具与技能参考收录了232个工具接口和44个技能文件，完整列出223个注册工具及9个会话控制，是理解可调用接口与复用工作流的实用手册。",
-          "url": "https://codex-tool-reference.simonw.chatgpt.site",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-31T14:07:15Z"
+          "recommend_reason_zh": "这篇文质疑AI革命成效：按计算应出现3个Airbnb、2个Stripe、3个Dropbox，实际只有OpenAI、Anthropic等GenAI公司；还吐槽创始人声称用Claude无需CTO。",
+          "url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-09-01T05:32:56Z"
         }
       ],
-      "source_count": 3,
+      "source_count": 2,
       "source_names": [
-        "Hacker News · 24h最热",
-        "codex-tool-reference.simonw.chatgpt.site",
-        "hackernews"
+        "Hacker News",
+        "www.hermit-tech.com"
       ],
       "items": [
         {
-          "id": "0da1b86ffc506f59634a759b5e35887ad07ae78f",
-          "title": "ChatGPT 工作工具与技能参考",
-          "title_zh": "ChatGPT 工作工具与技能参考",
+          "id": "2d8bdd448a3b068f4bd6b026675e1d279287f26a",
+          "title": "人工智能也能让你更快变差",
+          "title_zh": "人工智能也能让你更快变差",
           "title_en": null,
-          "title_original": "ChatGPT 工作工具与技能参考",
-          "summary": null,
-          "recommend_reason_zh": "本文是 Codex Work 会话的工具与技能完整参考，收录232个工具接口和44个技能文件，包含 apply_patch 文件编辑、PTY 命令执行、并行代理委派等定义，适合开发者快速查阅。",
-          "url": "https://codex-tool-reference.simonw.chatgpt.site",
-          "source": "codex-tool-reference.simonw.chatgpt.site",
+          "title_original": "人工智能也能让你更快变差",
+          "summary": "If AI is so great, why are the only new tech giants GenAI companies?\nWe can't find the internet\nAttempting to reconnect\nSomething went wrong!\nHang in there while we get back on track\nNot too long ago, I shared a post that I really liked by Disesdi Shoshana Cox . They went through the math of how many revolutionary tech companies we should have by now thanks to AI. With a 10x improvement on development speed, the technical aspects of launching an app are no longer a limit to reaching a target mar",
+          "recommend_reason_zh": "借Disesdi的算术：AI带来10倍开发速度，四年后应有3个AirBnB、2个Stripe、3个Dropbox，现实却只有OpenAI、Anthropic和High-Flyer这类GenAI公司独大；又写创业者在会上宣称只要Claude、不需要CTO，点破AI如何让人更快变差。",
+          "url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
+          "source": "www.hermit-tech.com",
           "source_name": "Buzzing",
           "site_id": "buzzing",
-          "published_at": "2026-08-31T17:21:15.952000Z"
+          "published_at": "2026-09-01T11:45:30.411000Z"
         },
         {
-          "id": "2efd78f8b3c61bfe61bf54549efa0a9f64848ce2",
-          "title": "ChatGPT 工作工具与技能参考 / ChatGPT Work Tool and Skill Reference",
-          "title_zh": "ChatGPT 工作工具与技能参考",
-          "title_en": "ChatGPT Work Tool and Skill Reference",
-          "title_original": "ChatGPT Work Tool and Skill Reference",
+          "id": "cb9073795c3eb91b0d8819872e8dd39a1a8db66e",
+          "title": "人工智能也能让你更快变差 / AI Can Make You Suck Faster Too",
+          "title_zh": "人工智能也能让你更快变差",
+          "title_en": "AI Can Make You Suck Faster Too",
+          "title_original": "AI Can Make You Suck Faster Too",
           "summary": null,
-          "recommend_reason_zh": "本文揭示ChatGPT Work技能文件通过Node.js REPL执行browser.documentation()来获取Playwright完整使用指南，而非直接写入Markdown，并解释了这种设计如何区分不同浏览器的通用指令。",
-          "url": "https://news.ycombinator.com/item?id=49510000",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-31T14:49:38.005000Z"
-        },
-        {
-          "id": "977af0f0bc4c3dd106e272b74eed5bd50f4b8578",
-          "title": "ChatGPT 工作工具与技能参考 / ChatGPT Work Tool and Skill Reference",
-          "title_zh": "ChatGPT 工作工具与技能参考",
-          "title_en": "ChatGPT Work Tool and Skill Reference",
-          "title_original": "ChatGPT Work Tool and Skill Reference",
-          "summary": null,
-          "recommend_reason_zh": "这份Codex Work工具与技能参考收录了232个工具接口和44个技能文件，完整列出223个注册工具及9个会话控制，是理解可调用接口与复用工作流的实用手册。",
-          "url": "https://codex-tool-reference.simonw.chatgpt.site",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-31T14:07:15Z"
+          "recommend_reason_zh": "这篇文质疑AI革命成效：按计算应出现3个Airbnb、2个Stripe、3个Dropbox，实际只有OpenAI、Anthropic等GenAI公司；还吐槽创始人声称用Claude无需CTO。",
+          "url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
+          "source": "Hacker News",
+          "source_name": "TechURLs",
+          "site_id": "techurls",
+          "published_at": "2026-09-01T05:32:56Z"
         }
       ],
-      "item_count": 3,
-      "duplicate_count": 3,
-      "score": 0.5287,
-      "importance": 0.5287,
-      "importance_score": 0.5287,
-      "importance_label": "多源热议",
+      "item_count": 2,
+      "duplicate_count": 2,
+      "score": 0.5364,
+      "importance": 0.5364,
+      "importance_score": 0.5364,
+      "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.7661,
-        "story_heat": 0.5
+        "recency": 0.9478,
+        "story_heat": 0.25
       },
-      "category": "multi_source",
+      "category": "watch",
       "reasons": [
         "multi_source"
       ],
-      "earliest_at": "2026-08-31T14:07:15Z",
-      "latest_at": "2026-08-31T17:21:15.952000Z",
+      "earliest_at": "2026-09-01T05:32:56Z",
+      "latest_at": "2026-09-01T11:45:30.411000Z",
       "primary_item": {
-        "id": "0da1b86ffc506f59634a759b5e35887ad07ae78f",
-        "title": "ChatGPT 工作工具与技能参考",
-        "title_zh": "ChatGPT 工作工具与技能参考",
+        "id": "2d8bdd448a3b068f4bd6b026675e1d279287f26a",
+        "title": "人工智能也能让你更快变差",
+        "title_zh": "人工智能也能让你更快变差",
         "title_en": null,
-        "title_original": "ChatGPT 工作工具与技能参考",
-        "summary": null,
-        "recommend_reason_zh": "本文是 Codex Work 会话的工具与技能完整参考，收录232个工具接口和44个技能文件，包含 apply_patch 文件编辑、PTY 命令执行、并行代理委派等定义，适合开发者快速查阅。",
-        "url": "https://codex-tool-reference.simonw.chatgpt.site",
-        "source": "codex-tool-reference.simonw.chatgpt.site",
+        "title_original": "人工智能也能让你更快变差",
+        "summary": "If AI is so great, why are the only new tech giants GenAI companies?\nWe can't find the internet\nAttempting to reconnect\nSomething went wrong!\nHang in there while we get back on track\nNot too long ago, I shared a post that I really liked by Disesdi Shoshana Cox . They went through the math of how many revolutionary tech companies we should have by now thanks to AI. With a 10x improvement on development speed, the technical aspects of launching an app are no longer a limit to reaching a target mar",
+        "recommend_reason_zh": "借Disesdi的算术：AI带来10倍开发速度，四年后应有3个AirBnB、2个Stripe、3个Dropbox，现实却只有OpenAI、Anthropic和High-Flyer这类GenAI公司独大；又写创业者在会上宣称只要Claude、不需要CTO，点破AI如何让人更快变差。",
+        "url": "https://www.hermit-tech.com/blog/ai-can-make-you-suck-faster-too",
+        "source": "www.hermit-tech.com",
         "source_name": "Buzzing"
       },
       "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "工具清单类参考，可当收藏夹，但没开放新东西。",
+      "persona_score": 20,
+      "persona_review": "观点文章不提供工具或方案，等有具体验证再说。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
-      "story_id": "story_d31c62ca0cca",
-      "title": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
-      "url": "https://www.aibase.com/news/30745",
-      "primary_url": "https://www.aibase.com/news/30745",
+      "story_id": "story_00a15fcdfcdb",
+      "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+      "url": "https://www.aibase.com/news/30758",
+      "primary_url": "https://www.aibase.com/news/30758",
       "source": "AIbase",
       "source_name": "AIbase",
       "sources": [
         {
-          "id": "ebd7891564d0d58bc3bfd0ced77676324c194b26",
-          "title": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
-          "title_zh": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
+          "id": "fd5222fc68ea0d6b1806439fd42b74de839a679c",
+          "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+          "title_zh": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
           "title_en": null,
-          "title_original": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
+          "title_original": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
           "summary": null,
-          "recommend_reason_zh": "Manus 在经历近八个月被 Meta 收购与剥离的波折后，正式恢复独立运营，创始团队继续领导，重申将专注打造更强的通用人工智能代理产品。",
-          "url": "https://www.aibase.com/news/30745",
+          "recommend_reason_zh": "韩国宣布史上最大规模预算，2027年总支出821万亿韩元，同比增长12.8%，以半导体税收为扩张性财政政策提供底气，重点投入AI与芯片，Samsung Electronics和SK Hynix因HBM需求利润空前。",
+          "url": "https://www.aibase.com/news/30758",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-09-01T06:16:08.507025Z"
+          "published_at": "2026-09-01T10:06:47.627699Z"
         }
       ],
       "source_count": 1,
@@ -1349,31 +1715,31 @@
       ],
       "items": [
         {
-          "id": "ebd7891564d0d58bc3bfd0ced77676324c194b26",
-          "title": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
-          "title_zh": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
+          "id": "fd5222fc68ea0d6b1806439fd42b74de839a679c",
+          "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+          "title_zh": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
           "title_en": null,
-          "title_original": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
+          "title_original": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
           "summary": null,
-          "recommend_reason_zh": "Manus 在经历近八个月被 Meta 收购与剥离的波折后，正式恢复独立运营，创始团队继续领导，重申将专注打造更强的通用人工智能代理产品。",
-          "url": "https://www.aibase.com/news/30745",
+          "recommend_reason_zh": "韩国宣布史上最大规模预算，2027年总支出821万亿韩元，同比增长12.8%，以半导体税收为扩张性财政政策提供底气，重点投入AI与芯片，Samsung Electronics和SK Hynix因HBM需求利润空前。",
+          "url": "https://www.aibase.com/news/30758",
           "source": "AIbase",
           "source_name": "AIbase",
           "site_id": "aibase",
-          "published_at": "2026-09-01T06:16:08.507025Z"
+          "published_at": "2026-09-01T10:06:47.627699Z"
         }
       ],
       "item_count": 1,
       "duplicate_count": 1,
-      "score": 0.7538,
-      "importance": 0.7538,
-      "importance_score": 0.7538,
+      "score": 0.7542,
+      "importance": 0.7542,
+      "importance_score": 0.7542,
       "importance_label": "行业动态",
       "importance_breakdown": {
         "editorial": 0.72,
         "source_tier": 0.78,
         "ai_relevance": 1.0,
-        "recency": 0.9231,
+        "recency": 0.9256,
         "story_heat": 0.0
       },
       "category": "industry",
@@ -1381,27 +1747,27 @@
         "high_ai_relevance",
         "high_importance"
       ],
-      "earliest_at": "2026-09-01T06:16:08.507025Z",
-      "latest_at": "2026-09-01T06:16:08.507025Z",
+      "earliest_at": "2026-09-01T10:06:47.627699Z",
+      "latest_at": "2026-09-01T10:06:47.627699Z",
       "primary_item": {
-        "id": "ebd7891564d0d58bc3bfd0ced77676324c194b26",
-        "title": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
-        "title_zh": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
+        "id": "fd5222fc68ea0d6b1806439fd42b74de839a679c",
+        "title": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
+        "title_zh": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
         "title_en": null,
-        "title_original": "AI 代理实验室 Manus 正式恢复独立运营 开启通用智能体新阶段",
+        "title_original": "韩国押上史上最大规模预算：821 万亿韩元砸向 AI 与芯片，半导体税收撑起扩张底气",
         "summary": null,
-        "recommend_reason_zh": "Manus 在经历近八个月被 Meta 收购与剥离的波折后，正式恢复独立运营，创始团队继续领导，重申将专注打造更强的通用人工智能代理产品。",
-        "url": "https://www.aibase.com/news/30745",
+        "recommend_reason_zh": "韩国宣布史上最大规模预算，2027年总支出821万亿韩元，同比增长12.8%，以半导体税收为扩张性财政政策提供底气，重点投入AI与芯片，Samsung Electronics和SK Hynix因HBM需求利润空前。",
+        "url": "https://www.aibase.com/news/30758",
         "source": "AIbase",
         "source_name": "AIbase"
       },
       "persona_id": "pragmatic",
-      "persona_score": 40,
-      "persona_review": "恢复运营是公司层面的事，没有新能力或接口变化，暂不用行动。",
+      "persona_score": 30,
+      "persona_review": "政府预算不直接改接口，做半导体的留意补贴风向。",
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     },
     {
@@ -1478,15 +1844,15 @@
       ],
       "item_count": 2,
       "duplicate_count": 2,
-      "score": 0.5133,
-      "importance": 0.5133,
-      "importance_score": 0.5133,
+      "score": 0.5057,
+      "importance": 0.5057,
+      "importance_score": 0.5057,
       "importance_label": "值得关注",
       "importance_breakdown": {
         "editorial": 0.468,
         "source_tier": 0.32,
         "ai_relevance": 0.65,
-        "recency": 0.8192,
+        "recency": 0.777,
         "story_heat": 0.25
       },
       "category": "watch",
@@ -1513,427 +1879,7 @@
       "persona_meta": {
         "mode": "llm",
         "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
-      }
-    },
-    {
-      "story_id": "story_3dbd0aa14092",
-      "title": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道 / Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-      "url": "https://news.ycombinator.com/item?id=49510632",
-      "primary_url": "https://news.ycombinator.com/item?id=49510632",
-      "source": "hackernews",
-      "source_name": "NewsNow",
-      "sources": [
-        {
-          "id": "5b4b242a692f3129e2ee58fdca46a5df24067632",
-          "title": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道 / Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_zh": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道",
-          "title_en": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_original": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "summary": null,
-          "recommend_reason_zh": "Hebbian Robotics 推出 HFlow，用 MCAP、Airflow 3、Parquet 和 DuckDB 构建可复现的机器人数据管道，解决时间戳漂移、黑帧等质检难题，并生成版本固定的数据集清单。",
-          "url": "https://news.ycombinator.com/item?id=49510632",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-31T19:49:07.264000Z"
-        },
-        {
-          "id": "1d14f71615c712f3b5c38e81acbdc3fa603c2e44",
-          "title": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道 / Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_zh": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道",
-          "title_en": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_original": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "summary": null,
-          "recommend_reason_zh": "HFlow是Hebbian Robotics推出的开源SDK，用MCAP格式处理机器人多模态数据，内置质量检查、 provenance追踪和DuckDB可查询目录，帮小团队构建可复现的数据管道。",
-          "url": "https://github.com/Hebbian-Robotics/hflow",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-31T15:02:41Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News · 24h最热",
-        "hackernews"
-      ],
-      "items": [
-        {
-          "id": "5b4b242a692f3129e2ee58fdca46a5df24067632",
-          "title": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道 / Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_zh": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道",
-          "title_en": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_original": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "summary": null,
-          "recommend_reason_zh": "Hebbian Robotics 推出 HFlow，用 MCAP、Airflow 3、Parquet 和 DuckDB 构建可复现的机器人数据管道，解决时间戳漂移、黑帧等质检难题，并生成版本固定的数据集清单。",
-          "url": "https://news.ycombinator.com/item?id=49510632",
-          "source": "hackernews",
-          "source_name": "NewsNow",
-          "site_id": "newsnow",
-          "published_at": "2026-08-31T19:49:07.264000Z"
-        },
-        {
-          "id": "1d14f71615c712f3b5c38e81acbdc3fa603c2e44",
-          "title": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道 / Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_zh": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道",
-          "title_en": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "title_original": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-          "summary": null,
-          "recommend_reason_zh": "HFlow是Hebbian Robotics推出的开源SDK，用MCAP格式处理机器人多模态数据，内置质量检查、 provenance追踪和DuckDB可查询目录，帮小团队构建可复现的数据管道。",
-          "url": "https://github.com/Hebbian-Robotics/hflow",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-31T15:02:41Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5087,
-      "importance": 0.5087,
-      "importance_score": 0.5087,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7938,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-31T15:02:41Z",
-      "latest_at": "2026-08-31T19:49:07.264000Z",
-      "primary_item": {
-        "id": "5b4b242a692f3129e2ee58fdca46a5df24067632",
-        "title": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道 / Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-        "title_zh": "Launch HN: Hebbian Robotics (YC S26) – 构建可扩展的机器人数据管道",
-        "title_en": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-        "title_original": "Launch HN: Hebbian Robotics (YC S26) – Build scalable robotics data pipelines",
-        "summary": null,
-        "recommend_reason_zh": "Hebbian Robotics 推出 HFlow，用 MCAP、Airflow 3、Parquet 和 DuckDB 构建可复现的机器人数据管道，解决时间戳漂移、黑帧等质检难题，并生成版本固定的数据集清单。",
-        "url": "https://news.ycombinator.com/item?id=49510632",
-        "source": "hackernews",
-        "source_name": "NewsNow"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 25,
-      "persona_review": "创业项目没产品没代码，对开发没实际用处，等开放再看不迟。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
-      }
-    },
-    {
-      "story_id": "story_33e3871730ab",
-      "title": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-      "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand",
-      "primary_url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand",
-      "source": "www.macrumors.com",
-      "source_name": "Buzzing",
-      "sources": [
-        {
-          "id": "d41c9cf568fc7cdabd62520cd3848217b93b03de",
-          "title": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "title_zh": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "title_en": null,
-          "title_original": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "summary": null,
-          "recommend_reason_zh": "苹果因企业AI硬件需求意外强劲，提前发布Mac mini和Mac Studio，却缺乏企业AI战略，甚至拒绝Private Cloud Compute购买请求，内存短缺致高端配置缺货，部分客户转向Nvidia DGX Spark。",
-          "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand",
-          "source": "www.macrumors.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-31T18:41:20.531000Z"
-        },
-        {
-          "id": "2ae1255494504151ccb7d599cc8ae71bb439e89c",
-          "title": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及 / Apple Caught Off Guard by AI Demand for Mac Mini and Mac Studio",
-          "title_zh": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "title_en": "Apple Caught Off Guard by AI Demand for Mac Mini and Mac Studio",
-          "title_original": "Apple Caught Off Guard by AI Demand for Mac Mini and Mac Studio",
-          "summary": null,
-          "recommend_reason_zh": "The Information报道称，Apple因企业AI硬件需求激增罕见提前发布Mac mini和Mac Studio，并支持多机联动运行大型模型，但缺货导致部分客户转向Nvidia DGX Spark。",
-          "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-31T12:41:22Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News",
-        "www.macrumors.com"
-      ],
-      "items": [
-        {
-          "id": "d41c9cf568fc7cdabd62520cd3848217b93b03de",
-          "title": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "title_zh": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "title_en": null,
-          "title_original": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "summary": null,
-          "recommend_reason_zh": "苹果因企业AI硬件需求意外强劲，提前发布Mac mini和Mac Studio，却缺乏企业AI战略，甚至拒绝Private Cloud Compute购买请求，内存短缺致高端配置缺货，部分客户转向Nvidia DGX Spark。",
-          "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand",
-          "source": "www.macrumors.com",
-          "source_name": "Buzzing",
-          "site_id": "buzzing",
-          "published_at": "2026-08-31T18:41:20.531000Z"
-        },
-        {
-          "id": "2ae1255494504151ccb7d599cc8ae71bb439e89c",
-          "title": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及 / Apple Caught Off Guard by AI Demand for Mac Mini and Mac Studio",
-          "title_zh": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-          "title_en": "Apple Caught Off Guard by AI Demand for Mac Mini and Mac Studio",
-          "title_original": "Apple Caught Off Guard by AI Demand for Mac Mini and Mac Studio",
-          "summary": null,
-          "recommend_reason_zh": "The Information报道称，Apple因企业AI硬件需求激增罕见提前发布Mac mini和Mac Studio，并支持多机联动运行大型模型，但缺货导致部分客户转向Nvidia DGX Spark。",
-          "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-31T12:41:22Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.5064,
-      "importance": 0.5064,
-      "importance_score": 0.5064,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.781,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-31T12:41:22Z",
-      "latest_at": "2026-08-31T18:41:20.531000Z",
-      "primary_item": {
-        "id": "d41c9cf568fc7cdabd62520cd3848217b93b03de",
-        "title": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-        "title_zh": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-        "title_en": null,
-        "title_original": "Mac Mini 和 Mac Studio 的人工智能需求让苹果措手不及",
-        "summary": null,
-        "recommend_reason_zh": "苹果因企业AI硬件需求意外强劲，提前发布Mac mini和Mac Studio，却缺乏企业AI战略，甚至拒绝Private Cloud Compute购买请求，内存短缺致高端配置缺货，部分客户转向Nvidia DGX Spark。",
-        "url": "https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand",
-        "source": "www.macrumors.com",
-        "source_name": "Buzzing"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "想买 Mac 跑 AI 的先查发货时间，赶项目别被供货拖死。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
-      }
-    },
-    {
-      "story_id": "story_290daf4b2b31",
-      "title": "AI写的代码依然是你自己的代码。你接受吗？ / AI-Written Code Is Still *Your* Code. Are You OK with That?",
-      "url": "https://martiansoftware.com/articles/ai-written-code-is-still-yours",
-      "primary_url": "https://martiansoftware.com/articles/ai-written-code-is-still-yours",
-      "source": "Hacker News",
-      "source_name": "TechURLs",
-      "sources": [
-        {
-          "id": "dfc643672ca71be8c7f141b5720626e03e87042d",
-          "title": "AI写的代码依然是你自己的代码。你接受吗？ / AI-Written Code Is Still *Your* Code. Are You OK with That?",
-          "title_zh": "AI写的代码依然是你自己的代码。你接受吗？",
-          "title_en": "AI-Written Code Is Still *Your* Code. Are You OK with That?",
-          "title_original": "AI-Written Code Is Still *Your* Code. Are You OK with That?",
-          "summary": null,
-          "recommend_reason_zh": "本文指出AI写代码将成本推近零，但人类对生成代码的理解成为新瓶颈；作者Marty Lamb提出应把“可理解性”作为AI时代软件设计的一等目标。",
-          "url": "https://martiansoftware.com/articles/ai-written-code-is-still-yours",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-31T12:08:25Z"
-        },
-        {
-          "id": "11ee6b253749e0ecbb88afcd84078a1fa9fe7a11",
-          "title": "AI 写的代码也还是你的代码 / AI-written code is still your code",
-          "title_zh": "AI 写的代码也还是你的代码",
-          "title_en": "AI-written code is still your code",
-          "title_original": "AI-written code is still your code",
-          "summary": null,
-          "recommend_reason_zh": "Marty Lamb在文中指出，AI编程将写代码成本压至接近零，但人类对生成代码的理解正成为新瓶颈；他提醒开发者，用AI构建软件时不仅要问‘能否构建’，更要问‘是否愿意拥有’，并为质量与安全负责。",
-          "url": "https://martiansoftware.com/articles/ai-written-code-is-still-yours",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-31T12:08:25Z"
-        }
-      ],
-      "source_count": 2,
-      "source_names": [
-        "Hacker News",
-        "Hacker News · 24h最热"
-      ],
-      "items": [
-        {
-          "id": "dfc643672ca71be8c7f141b5720626e03e87042d",
-          "title": "AI写的代码依然是你自己的代码。你接受吗？ / AI-Written Code Is Still *Your* Code. Are You OK with That?",
-          "title_zh": "AI写的代码依然是你自己的代码。你接受吗？",
-          "title_en": "AI-Written Code Is Still *Your* Code. Are You OK with That?",
-          "title_original": "AI-Written Code Is Still *Your* Code. Are You OK with That?",
-          "summary": null,
-          "recommend_reason_zh": "本文指出AI写代码将成本推近零，但人类对生成代码的理解成为新瓶颈；作者Marty Lamb提出应把“可理解性”作为AI时代软件设计的一等目标。",
-          "url": "https://martiansoftware.com/articles/ai-written-code-is-still-yours",
-          "source": "Hacker News",
-          "source_name": "TechURLs",
-          "site_id": "techurls",
-          "published_at": "2026-08-31T12:08:25Z"
-        },
-        {
-          "id": "11ee6b253749e0ecbb88afcd84078a1fa9fe7a11",
-          "title": "AI 写的代码也还是你的代码 / AI-written code is still your code",
-          "title_zh": "AI 写的代码也还是你的代码",
-          "title_en": "AI-written code is still your code",
-          "title_original": "AI-written code is still your code",
-          "summary": null,
-          "recommend_reason_zh": "Marty Lamb在文中指出，AI编程将写代码成本压至接近零，但人类对生成代码的理解正成为新瓶颈；他提醒开发者，用AI构建软件时不仅要问‘能否构建’，更要问‘是否愿意拥有’，并为质量与安全负责。",
-          "url": "https://martiansoftware.com/articles/ai-written-code-is-still-yours",
-          "source": "Hacker News · 24h最热",
-          "source_name": "Zeli",
-          "site_id": "zeli",
-          "published_at": "2026-08-31T12:08:25Z"
-        }
-      ],
-      "item_count": 2,
-      "duplicate_count": 2,
-      "score": 0.4937,
-      "importance": 0.4937,
-      "importance_score": 0.4937,
-      "importance_label": "值得关注",
-      "importance_breakdown": {
-        "editorial": 0.468,
-        "source_tier": 0.32,
-        "ai_relevance": 0.65,
-        "recency": 0.7105,
-        "story_heat": 0.25
-      },
-      "category": "watch",
-      "reasons": [
-        "multi_source"
-      ],
-      "earliest_at": "2026-08-31T12:08:25Z",
-      "latest_at": "2026-08-31T12:08:25Z",
-      "primary_item": {
-        "id": "dfc643672ca71be8c7f141b5720626e03e87042d",
-        "title": "AI写的代码依然是你自己的代码。你接受吗？ / AI-Written Code Is Still *Your* Code. Are You OK with That?",
-        "title_zh": "AI写的代码依然是你自己的代码。你接受吗？",
-        "title_en": "AI-Written Code Is Still *Your* Code. Are You OK with That?",
-        "title_original": "AI-Written Code Is Still *Your* Code. Are You OK with That?",
-        "summary": null,
-        "recommend_reason_zh": "本文指出AI写代码将成本推近零，但人类对生成代码的理解成为新瓶颈；作者Marty Lamb提出应把“可理解性”作为AI时代软件设计的一等目标。",
-        "url": "https://martiansoftware.com/articles/ai-written-code-is-still-yours",
-        "source": "Hacker News",
-        "source_name": "TechURLs"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 55,
-      "persona_review": "责任归属是老话题，不改代码也不影响选型，略读即可。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
-      }
-    },
-    {
-      "story_id": "story_8fd2f4035342",
-      "title": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-      "url": "https://www.aibase.com/news/30747",
-      "primary_url": "https://www.aibase.com/news/30747",
-      "source": "AIbase",
-      "source_name": "AIbase",
-      "sources": [
-        {
-          "id": "96d288338f75e896213c1b6a05f8585077b74913",
-          "title": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-          "title_zh": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-          "title_en": null,
-          "title_original": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-          "summary": null,
-          "recommend_reason_zh": "NVIDIA向MediaTek注资35亿美元可转债，双方合作打造覆盖AI工厂、本地计算与汽车的下一代平台，MediaTek将采用NVLink Fusion，值得关注。",
-          "url": "https://www.aibase.com/news/30747",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-09-01T06:16:08.507025Z"
-        }
-      ],
-      "source_count": 1,
-      "source_names": [
-        "AIbase"
-      ],
-      "items": [
-        {
-          "id": "96d288338f75e896213c1b6a05f8585077b74913",
-          "title": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-          "title_zh": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-          "title_en": null,
-          "title_original": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-          "summary": null,
-          "recommend_reason_zh": "NVIDIA向MediaTek注资35亿美元可转债，双方合作打造覆盖AI工厂、本地计算与汽车的下一代平台，MediaTek将采用NVLink Fusion，值得关注。",
-          "url": "https://www.aibase.com/news/30747",
-          "source": "AIbase",
-          "source_name": "AIbase",
-          "site_id": "aibase",
-          "published_at": "2026-09-01T06:16:08.507025Z"
-        }
-      ],
-      "item_count": 1,
-      "duplicate_count": 1,
-      "score": 0.7538,
-      "importance": 0.7538,
-      "importance_score": 0.7538,
-      "importance_label": "行业动态",
-      "importance_breakdown": {
-        "editorial": 0.72,
-        "source_tier": 0.78,
-        "ai_relevance": 1.0,
-        "recency": 0.9231,
-        "story_heat": 0.0
-      },
-      "category": "industry",
-      "reasons": [
-        "high_ai_relevance",
-        "high_importance"
-      ],
-      "earliest_at": "2026-09-01T06:16:08.507025Z",
-      "latest_at": "2026-09-01T06:16:08.507025Z",
-      "primary_item": {
-        "id": "96d288338f75e896213c1b6a05f8585077b74913",
-        "title": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-        "title_zh": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-        "title_en": null,
-        "title_original": "​35 亿美元押注联发科：英伟达联手打造覆盖 AI 工厂到 PC 的下一代计算平台",
-        "summary": null,
-        "recommend_reason_zh": "NVIDIA向MediaTek注资35亿美元可转债，双方合作打造覆盖AI工厂、本地计算与汽车的下一代平台，MediaTek将采用NVLink Fusion，值得关注。",
-        "url": "https://www.aibase.com/news/30747",
-        "source": "AIbase",
-        "source_name": "AIbase"
-      },
-      "persona_id": "pragmatic",
-      "persona_score": 45,
-      "persona_review": "战略合作离产品还远，芯片没落地前不用改选型。",
-      "persona_meta": {
-        "mode": "llm",
-        "model": "deepseek-v4-flash",
-        "scored_at": "2026-09-01T12:07:39.818022Z"
+        "scored_at": "2026-09-01T15:48:00.562291Z"
       }
     }
   ]

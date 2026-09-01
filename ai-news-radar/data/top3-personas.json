@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T12:07:45.063286Z",
+  "generated_at": "2026-09-01T15:48:34.271244Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,10 +17,30 @@
   ],
   "items": [
     {
+      "story_id": "story_8ba38180ebe6",
+      "title": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI / Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
+      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "rank": 1,
+      "reviews": {
+        "cynic": {
+          "score": 75,
+          "review": "200+内核听着吓人，跑个大模型试试？"
+        },
+        "paper-police": {
+          "score": 45,
+          "review": "官方博客给出200+内核细节，但缺开源代码和基准验证，难复现。"
+        },
+        "pragmatic": {
+          "score": 90,
+          "review": "200+ WebGPU 内核直接可调，浏览器里跑本地模型省心事，值得立刻上手。"
+        }
+      }
+    },
+    {
       "story_id": "story_08b8473c055e",
       "title": "DeepSeek 首个开源多模态模型来了：这双“眼睛”不给人类看图，专供 Agent 干活",
       "url": "https://www.aibase.com/news/30755",
-      "rank": 1,
+      "rank": 2,
       "reviews": {
         "cynic": {
           "score": 72,
@@ -37,42 +57,22 @@
       }
     },
     {
-      "story_id": "story_946b48cdca28",
-      "title": "Codex CLI 0.152.0",
-      "url": "https://developers.openai.com/codex/changelog",
-      "rank": 2,
-      "reviews": {
-        "cynic": {
-          "score": 40,
-          "review": "版本号倒是勤快，改动说明敢不敢贴出来？"
-        },
-        "paper-police": {
-          "score": 60,
-          "review": "官方变更日志有细节，代码开源，但无独立benchmark验证。"
-        },
-        "pragmatic": {
-          "score": 60,
-          "review": "常规迭代，看日志确认是否影响现有工作流。"
-        }
-      }
-    },
-    {
-      "story_id": "story_d50e38f3313d",
-      "title": "Runway发布首个界面世界模型Solaris，实时逐帧生成动态交互界面",
-      "url": "https://www.aibase.com/news/30756",
+      "story_id": "story_d2daab157b0c",
+      "title": "GitHub Team 计划的 Copilot 模型访问权限更新 / Copilot model access update for GitHub Team plans",
+      "url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 60,
-          "review": "“首个”界面世界模型？先亮出非演示场景的延迟和成本再吹。"
+          "score": 35,
+          "review": "改个权限就叫更新？用户更想知道模型能不能打。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "只有官方宣称无论文代码，等独立评测再现真章。"
+          "score": 50,
+          "review": "官方公告说明访问范围，无评测无复现，待功能实测确认。"
         },
         "pragmatic": {
-          "score": 55,
-          "review": "方向有意思，但没开放 API 前不用急着上手，先看样例。"
+          "score": 75,
+          "review": "Team 计划模型权限变了，先查你的组织是否受影响，再决定要不要调配置。"
         }
       }
     }
