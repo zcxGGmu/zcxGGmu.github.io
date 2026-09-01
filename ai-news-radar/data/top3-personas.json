@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T15:32:20.852668Z",
+  "generated_at": "2026-09-01T02:12:19.053440Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -37,42 +37,42 @@
       }
     },
     {
-      "story_id": "story_14ea3c1dc9f0",
-      "title": "Claude遭大规模盗号，大批账号被强制注销",
-      "url": "https://www.aibase.com/news/30722",
+      "story_id": "story_0e86c779cdf8",
+      "title": "DeepSeek首个视觉实验模型正式开源，3050亿参数对标顶尖水平",
+      "url": "https://www.aibase.com/news/30735",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 55,
-          "review": "账号被盗不是AI进步，是安全团队该醒醒了。"
+          "score": 72,
+          "review": "参数够大，但“对标顶尖”的对比基线呢？别又挑自家擅长的榜。"
         },
         "paper-police": {
-          "score": 12,
-          "review": "单一媒体爆料，无官方确认与数据支撑，数额不明，暂不可信。"
+          "score": 70,
+          "review": "开源代码可查但缺论文和第三方评测，先复现再定标杆。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "账号安全风险，抓紧开二次验证，别等被注销再哭。"
+          "score": 82,
+          "review": "开源可下载，但3050亿参数部署门槛高，小团队先看技术报告，别急着跑。"
         }
       }
     },
     {
-      "story_id": "story_aa0326d1aa66",
-      "title": "Anthropic调整Claude Code用量限制:基本额度永久上调25%，实际每周上限降17%",
-      "url": "https://www.aibase.com/news/30709",
+      "story_id": "story_bd6dbcbcc36a",
+      "title": "VS Code 版 GitHub Copilot 2026 年 8 月更新 / GitHub Copilot in VS Code, August 2026 releases",
+      "url": "https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "上调25%和每周上限降17%同时出现，数学学得真好。"
+          "score": 67,
+          "review": "例行更新，无对比数据，性能提升全靠脑补。"
         },
         "paper-police": {
-          "score": 22,
-          "review": "无官方公告无代码，单方媒体报道的数字没法验证，等官方文档再算。"
+          "score": 50,
+          "review": "官方changelog有具体更新细节，但无第三方验证，等实测反馈再定。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "额度明升暗降，跑批量任务的先算好每周预算。"
+          "score": 70,
+          "review": "例行月度更新，看看新特性是否影响你的提交流程，一般不用急着升级。"
         }
       }
     }
