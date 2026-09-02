@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">独立性过滤器</title>
+  <desc id="desc">证据越靠近利益相关方，越需要额外外部验证。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#1e293b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="54" y="48" width="1092" height="12" rx="6" fill="#7c3aed"/>
+  <text x="86" y="112" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">独立性过滤器</text>
+  <text x="1076" y="112" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="800" fill="#06b6d4">FRAME 06</text>
+  <g>
+  <rect x="88" y="154" width="320" height="205" rx="22" fill="#eff6ff" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="88" y="154" width="320" height="10" rx="5" fill="#7c3aed"/>
+  <text x="112" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">亲属证词</text>
+  <text x="112" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">相关方</text>
+  <text x="112" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">容易受到关系影响</text>
+</g><g>
+  <rect x="432" y="154" width="320" height="205" rx="22" fill="#fff7ed" stroke="#06b6d4" stroke-width="2"/>
+  <rect x="432" y="154" width="320" height="10" rx="5" fill="#06b6d4"/>
+  <text x="456" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">内部满意度</text>
+  <text x="456" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">自我评价</text>
+  <text x="456" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">企业给自己打分风险高</text>
+</g><g>
+  <rect x="776" y="154" width="320" height="205" rx="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <rect x="776" y="154" width="320" height="10" rx="5" fill="#10b981"/>
+  <text x="800" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">赞助测评</text>
+  <text x="800" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">商业利益</text>
+  <text x="800" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">评价体系可能被付费扭曲</text>
+</g><g>
+  <rect x="88" y="396" width="320" height="205" rx="22" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="88" y="396" width="320" height="10" rx="5" fill="#8b5cf6"/>
+  <text x="112" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">品牌专栏</text>
+  <text x="112" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">广告边界</text>
+  <text x="112" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">媒体权威可能被借用</text>
+</g><g>
+  <rect x="432" y="396" width="320" height="205" rx="22" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <rect x="432" y="396" width="320" height="10" rx="5" fill="#64748b"/>
+  <text x="456" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">学术圈层</text>
+  <text x="456" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">利益交换</text>
+  <text x="456" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">审稿与引用也可能失真</text>
+</g><g>
+  <rect x="776" y="396" width="320" height="205" rx="22" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <rect x="776" y="396" width="320" height="10" rx="5" fill="#ef4444"/>
+  <text x="800" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">检验方法</text>
+  <text x="800" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">外部系统</text>
+  <text x="800" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">独立来源更有证据价值</text>
+</g>
+</svg>
