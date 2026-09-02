@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T01:26:00.147652Z",
+  "generated_at": "2026-09-02T06:25:33.059290Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,30 +17,10 @@
   ],
   "items": [
     {
-      "story_id": "story_f114cba13f57",
-      "title": "Meta 首个实时音频感知模型来了：20 多人同时说话也能分轨转写，每千分钟 3 美元",
-      "url": "https://www.aibase.com/news/30762",
-      "rank": 1,
-      "reviews": {
-        "cynic": {
-          "score": 65,
-          "review": "20人分轨不新鲜，'首个'这词当别人都聋了？价格倒真不贵。"
-        },
-        "paper-police": {
-          "score": 20,
-          "review": "只有新闻通稿，无论文无代码无评测，分轨效果和价格都没法验证。"
-        },
-        "pragmatic": {
-          "score": 92,
-          "review": "实时分轨转写API已开放，价格便宜，直接接入即可处理多人会议。"
-        }
-      }
-    },
-    {
       "story_id": "story_0684dd59481d",
       "title": "Claude Fable 5.1 已正式登陆 GitHub Copilot / Claude Fable 5.1 is generally available in GitHub Copilot",
       "url": "https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
-      "rank": 2,
+      "rank": 1,
       "reviews": {
         "cynic": {
           "score": 70,
@@ -57,22 +37,42 @@
       }
     },
     {
-      "story_id": "story_3fbd977c397b",
-      "title": "地球最强大模型打起价格战！Anthropic发布Fable 5.1：性能狂飙且成本骤降四成",
-      "url": "https://www.aibase.com/news/30763",
-      "rank": 3,
+      "story_id": "story_9235b0b9bda1",
+      "title": "Anthropic 双发 Claude Fable 5.1 与 Mythos 5.1：编程跑分翻倍，缓存读取费用直降 75%",
+      "url": "https://www.aibase.com/news/30767",
+      "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 45,
-          "review": "'地球最强大'的标准是什么？先晒出完整基准对比和第三方复现再说。"
+          "score": 35,
+          "review": "跑分翻倍不提对比基线，费用直降怕是按扩容后单价偷换概念。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "只有新闻稿宣称性能成本，无论文无代码无评测，无法验证。"
+          "score": 20,
+          "review": "仅一家媒体宣称性能翻倍，无论文无代码无独立评测，等公开证据。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "新模型已发布，性能提升还降价四成，跑任务的可以直接评估迁移。"
+          "review": "编程跑分翻倍且缓存读取降价75%，写代码和批量任务直接受益，今天就该切。"
+        }
+      }
+    },
+    {
+      "story_id": "story_730fa9d1ab54",
+      "title": "Copilot 代码审查现在可以批准 pull requests 了 / Copilot code review can now approve pull requests",
+      "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests",
+      "rank": 3,
+      "reviews": {
+        "cynic": {
+          "score": 72,
+          "review": "批准PR这步终于补上，但别指望它比人审更懂业务逻辑。"
+        },
+        "paper-police": {
+          "score": 25,
+          "review": "官方 changelog 宣称能力，无代码无评测，待独立验证。"
+        },
+        "pragmatic": {
+          "score": 88,
+          "review": "PR审批能自动化了，审查流程少一步手工，今天就能配。"
         }
       }
     }

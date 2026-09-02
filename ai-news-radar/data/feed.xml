@@ -5,15 +5,15 @@
 <link>https://news.learnprompt.pro</link>
 <description>24 小时 AI 更新雷达的策展精选：官方发布、模型上新、高信号讨论。</description>
 <language>zh-cn</language>
-<lastBuildDate>Wed, 02 Sep 2026 01:02:14 +0000</lastBuildDate>
+<lastBuildDate>Wed, 02 Sep 2026 05:53:00 +0000</lastBuildDate>
 <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="https://news.learnprompt.pro/data/feed.xml"/>
 <item>
-<title>BenchMIRT：LLM基准测试到底在衡量什么？ / BenchMIRT: What are LLM benchmarks actually measuring?</title>
-<link>https://huggingface.co/blog/allenai/benchmirt</link>
-<guid isPermaLink="true">https://huggingface.co/blog/allenai/benchmirt</guid>
-<description>基准有效性讨论，不改变今天选型，做评估研究可参考。（Hugging Face Blog）</description>
+<title>Anthropic 发布 Claude Fable 5.1 与 Claude Mythos 5.1 / Introducing Claude Fable 5.1 and Claude Mythos 5.1</title>
+<link>https://www.anthropic.com/claude-fable-and-mythos-5-1</link>
+<guid isPermaLink="true">https://www.anthropic.com/claude-fable-and-mythos-5-1</guid>
+<description>虚构模型发布，无实际产品可动手，别浪费时间。（Anthropic：Newsroom（网页））</description>
 <category>官方更新</category>
-<pubDate>Tue, 01 Sep 2026 21:39:07 +0000</pubDate>
+<pubDate>Wed, 02 Sep 2026 03:33:48 +0000</pubDate>
 </item>
 <item>
 <title>OpenAI 评定 Astra 达到网络安全 Critical 能力阈值，将受限发布 / Path to Astra: critical capabilities and frontier safeguards</title>
@@ -21,7 +21,15 @@
 <guid isPermaLink="true">https://openai.com/index/path-to-astra</guid>
 <description>受限发布等于普通开发者碰不到，等公开接口再评估。（OpenAI News）</description>
 <category>官方更新</category>
-<pubDate>Tue, 01 Sep 2026 13:00:00 +0000</pubDate>
+<pubDate>Wed, 02 Sep 2026 03:13:14 +0000</pubDate>
+</item>
+<item>
+<title>BenchMIRT：LLM基准测试到底在衡量什么？ / BenchMIRT: What are LLM benchmarks actually measuring?</title>
+<link>https://huggingface.co/blog/allenai/benchmirt</link>
+<guid isPermaLink="true">https://huggingface.co/blog/allenai/benchmirt</guid>
+<description>基准有效性讨论，不改变今天选型，做评估研究可参考。（Hugging Face Blog）</description>
+<category>官方更新</category>
+<pubDate>Tue, 01 Sep 2026 21:39:07 +0000</pubDate>
 </item>
 <item>
 <title>Google Workspace 推出图像创作编辑工具 Google Pics / Try Google Pics: Easy image creation and editing in Google Workspace</title>
@@ -72,12 +80,20 @@
 <pubDate>Tue, 01 Sep 2026 17:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Fable 5.1 系统卡披露隐蔽任务与监控难度上升等安全发现 / Some super interting revelation from the system card of Fable 5.1. - Anthropic says its own model …</title>
-<link>https://x.com/rohanpaul_ai/status/2094873718237565197</link>
-<guid isPermaLink="true">https://x.com/rohanpaul_ai/status/2094873718237565197</guid>
-<description>安全披露有参考价值，但没新工具可上手，安全团队可留意，普通开发不用动。（X：Rohan Paul (@rohanpaul_ai)）</description>
+<title>Nvidia 接近以 129 亿美元收购 Hugging Face / Bloomberg： Nvidia is nearing a $12.9B Hugging Face acquisition. At this price， its about 2.9x Hugg…</title>
+<link>https://x.com/rohanpaul_ai/status/2094975190468010368</link>
+<guid isPermaLink="true">https://x.com/rohanpaul_ai/status/2094975190468010368</guid>
+<description>收购没落地前不影响写代码，等交易定了再看平台政策。（X：Rohan Paul (@rohanpaul_ai)）</description>
 <category>行业动态</category>
-<pubDate>Tue, 01 Sep 2026 19:43:09 +0000</pubDate>
+<pubDate>Wed, 02 Sep 2026 02:26:22 +0000</pubDate>
+</item>
+<item>
+<title>Anthropic 双发 Claude Fable 5.1 与 Mythos 5.1：编程跑分翻倍，缓存读取费用直降 75%</title>
+<link>https://www.aibase.com/news/30767</link>
+<guid isPermaLink="true">https://www.aibase.com/news/30767</guid>
+<description>编程跑分翻倍且缓存读取降价75%，写代码和批量任务直接受益，今天就该切。（AIbase）</description>
+<category>行业动态</category>
+<pubDate>Wed, 02 Sep 2026 05:53:00 +0000</pubDate>
 </item>
 <item>
 <title>Claude Fable 5.1 已正式登陆 GitHub Copilot / Claude Fable 5.1 is generally available in GitHub Copilot</title>
@@ -104,20 +120,36 @@
 <pubDate>Tue, 01 Sep 2026 12:00:00 +0000</pubDate>
 </item>
 <item>
-<title>Meta 首个实时音频感知模型来了：20 多人同时说话也能分轨转写，每千分钟 3 美元</title>
-<link>https://www.aibase.com/news/30762</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30762</guid>
-<description>实时分轨转写API已开放，价格便宜，直接接入即可处理多人会议。（AIbase）</description>
-<category>行业动态</category>
-<pubDate>Wed, 02 Sep 2026 01:02:14 +0000</pubDate>
-</item>
-<item>
 <title>Anthropic 发布 Claude Fable 5.1 与 Claude Mythos 5.1，作者实测分享使用建议 / it's a very good model， I spent a lot of time diving into it- longer write up coming but try it on…</title>
 <link>https://x.com/trq212/status/2094945951865520458</link>
 <guid isPermaLink="true">https://x.com/trq212/status/2094945951865520458</guid>
 <description>新模型测评参考有价值，但未提API和价格，先观望再动手。（X：Thariq (@trq212)）</description>
 <category>行业动态</category>
 <pubDate>Wed, 02 Sep 2026 00:30:11 +0000</pubDate>
+</item>
+<item>
+<title>Qwen3.8-Max-0902 登顶 Code Arena 并以 $5/MToken 领跑 Pareto 前沿 / 🏆 #1 overall on Code Arena， and top of the Pareto frontier at $5/MToken. Thanks！ @arena Give Qwen3…</title>
+<link>https://x.com/Alibaba_Qwen/status/2094982928371794077</link>
+<guid isPermaLink="true">https://x.com/Alibaba_Qwen/status/2094982928371794077</guid>
+<description>Qwen新模型API性能领先且定价实惠，写代码的可以直接上手试。（X：通义千问 / Qwen (@Alibaba_Qwen)）</description>
+<category>行业动态</category>
+<pubDate>Wed, 02 Sep 2026 02:57:07 +0000</pubDate>
+</item>
+<item>
+<title>美团 LongCat-2.0 上线 Cline 免费试用 / LongCat-2.0 is now free to try in @cline ！ 🐱</title>
+<link>https://x.com/Meituan_LongCat/status/2094996391387111865</link>
+<guid isPermaLink="true">https://x.com/Meituan_LongCat/status/2094996391387111865</guid>
+<description>免费试用即战力，视觉任务可直接在 Cline 里跑，值得上手测一轮。（X：美团 LongCat (@Meituan_LongCat)）</description>
+<category>行业动态</category>
+<pubDate>Wed, 02 Sep 2026 03:50:37 +0000</pubDate>
+</item>
+<item>
+<title>UU远程新版本上线：完整 TUI 渲染与多终端会话管理，强化远程 Vibe Coding 体验</title>
+<link>https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647685772&amp;idx=1&amp;sn=a073c30899a7f420147673def8209609</link>
+<guid isPermaLink="true">https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA%3D%3D&amp;mid=2647685772&amp;idx=1&amp;sn=a073c30899a7f420147673def8209609</guid>
+<description>远程开发工具更新，但没开源和价格，先观望再下手。（公众号：数字生命卡兹克）</description>
+<category>行业动态</category>
+<pubDate>Wed, 02 Sep 2026 03:32:20 +0000</pubDate>
 </item>
 <item>
 <title>路透社调查：美国 AI 数据中心现大量幽灵用电需求，得州等多州出手整治</title>
@@ -128,44 +160,12 @@
 <pubDate>Tue, 01 Sep 2026 12:40:19 +0000</pubDate>
 </item>
 <item>
-<title>为单个用户预算设定有效期 / Set an expiration date for individual user budgets</title>
-<link>https://github.blog/changelog/2026-09-01-set-an-expiration-date-for-individual-user-budgets</link>
-<guid isPermaLink="true">https://github.blog/changelog/2026-09-01-set-an-expiration-date-for-individual-user-budgets</guid>
-<description>给预算设过期时间，团队开销管理更省心，管理员今天就能配。（GitHub Changelog）</description>
-<category>官方更新</category>
-<pubDate>Tue, 01 Sep 2026 20:23:13 +0000</pubDate>
-</item>
-<item>
-<title>OpenAI首个达“关键”门槛的Astra因能力太强遭安全限速</title>
-<link>https://www.aibase.com/news/30761</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30761</guid>
-<description>能力被限速意味着接口还没放开，想接入还得等官方开放。（AIbase）</description>
+<title>OpenAI CEO直说“不喜欢智能眼镜”：跟戴摄像机的人讲话很不舒服，扎克伯格暂时松口气</title>
+<link>https://www.aibase.com/news/30765</link>
+<guid isPermaLink="true">https://www.aibase.com/news/30765</guid>
+<description>高管吐槽不写代码，硬件选型别被一句话带偏。（AIbase）</description>
 <category>行业动态</category>
-<pubDate>Wed, 02 Sep 2026 01:02:14 +0000</pubDate>
-</item>
-<item>
-<title>地球最强大模型打起价格战！Anthropic发布Fable 5.1：性能狂飙且成本骤降四成</title>
-<link>https://www.aibase.com/news/30763</link>
-<guid isPermaLink="true">https://www.aibase.com/news/30763</guid>
-<description>新模型已发布，性能提升还降价四成，跑任务的可以直接评估迁移。（AIbase）</description>
-<category>行业动态</category>
-<pubDate>Wed, 02 Sep 2026 01:02:14 +0000</pubDate>
-</item>
-<item>
-<title>在个人仓库中阻止用户评论讨论 / Block users from discussion comments in personal repositories</title>
-<link>https://github.blog/changelog/2026-09-01-block-users-from-discussion-comments-in-personal-repositories</link>
-<guid isPermaLink="true">https://github.blog/changelog/2026-09-01-block-users-from-discussion-comments-in-personal-repositories</guid>
-<description>个人仓库可以拉黑评论者了，开源维护者省心一点，小功能但能用。（GitHub Changelog）</description>
-<category>官方更新</category>
-<pubDate>Tue, 01 Sep 2026 16:30:01 +0000</pubDate>
-</item>
-<item>
-<title>GitHub CLI：在 issues、pull requests 和评论中添加媒体 / GitHub CLI: Media in issues, pull requests, and comments</title>
-<link>https://github.blog/changelog/2026-09-01-github-cli-media-in-issues-pull-requests-and-comments</link>
-<guid isPermaLink="true">https://github.blog/changelog/2026-09-01-github-cli-media-in-issues-pull-requests-and-comments</guid>
-<description>CLI 传图传视频更顺手，自动化提 issue 的脚本今天就能加媒体。（GitHub Changelog）</description>
-<category>官方更新</category>
-<pubDate>Tue, 01 Sep 2026 12:35:59 +0000</pubDate>
+<pubDate>Wed, 02 Sep 2026 05:53:00 +0000</pubDate>
 </item>
 </channel>
 </rss>
