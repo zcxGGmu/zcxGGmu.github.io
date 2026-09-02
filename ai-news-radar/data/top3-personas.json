@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T15:48:34.271244Z",
+  "generated_at": "2026-09-02T01:26:00.147652Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_8ba38180ebe6",
-      "title": "推出 @huggingface/kernels：200+ WebGPU 内核，支持本地 AI / Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI",
-      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "story_id": "story_f114cba13f57",
+      "title": "Meta 首个实时音频感知模型来了：20 多人同时说话也能分轨转写，每千分钟 3 美元",
+      "url": "https://www.aibase.com/news/30762",
       "rank": 1,
       "reviews": {
         "cynic": {
-          "score": 75,
-          "review": "200+内核听着吓人，跑个大模型试试？"
+          "score": 65,
+          "review": "20人分轨不新鲜，'首个'这词当别人都聋了？价格倒真不贵。"
         },
         "paper-police": {
-          "score": 45,
-          "review": "官方博客给出200+内核细节，但缺开源代码和基准验证，难复现。"
+          "score": 20,
+          "review": "只有新闻通稿，无论文无代码无评测，分轨效果和价格都没法验证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "200+ WebGPU 内核直接可调，浏览器里跑本地模型省心事，值得立刻上手。"
+          "score": 92,
+          "review": "实时分轨转写API已开放，价格便宜，直接接入即可处理多人会议。"
         }
       }
     },
     {
-      "story_id": "story_08b8473c055e",
-      "title": "DeepSeek 首个开源多模态模型来了：这双“眼睛”不给人类看图，专供 Agent 干活",
-      "url": "https://www.aibase.com/news/30755",
+      "story_id": "story_0684dd59481d",
+      "title": "Claude Fable 5.1 已正式登陆 GitHub Copilot / Claude Fable 5.1 is generally available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "开源值得点赞，但“不给人类看图”这话说得，好像人类以前看图是靠它似的。"
+          "score": 70,
+          "review": "登陆不算新闻，能告诉我比上代强在哪吗？"
         },
         "paper-police": {
-          "score": 8,
-          "review": "缺论文缺代码缺评测，新闻说开源但无仓库链接。"
+          "score": 25,
+          "review": "官方公告只说了可用，无性能数据无代码无评测，暂无法验证。"
         },
         "pragmatic": {
           "score": 90,
-          "review": "Agent直接加视觉，开源可clone，今天就能上手试。"
+          "review": "代码补全直接换新模型，今天就能在 Copilot 里用。"
         }
       }
     },
     {
-      "story_id": "story_d2daab157b0c",
-      "title": "GitHub Team 计划的 Copilot 模型访问权限更新 / Copilot model access update for GitHub Team plans",
-      "url": "https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+      "story_id": "story_3fbd977c397b",
+      "title": "地球最强大模型打起价格战！Anthropic发布Fable 5.1：性能狂飙且成本骤降四成",
+      "url": "https://www.aibase.com/news/30763",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 35,
-          "review": "改个权限就叫更新？用户更想知道模型能不能打。"
+          "score": 45,
+          "review": "'地球最强大'的标准是什么？先晒出完整基准对比和第三方复现再说。"
         },
         "paper-police": {
-          "score": 50,
-          "review": "官方公告说明访问范围，无评测无复现，待功能实测确认。"
+          "score": 25,
+          "review": "只有新闻稿宣称性能成本，无论文无代码无评测，无法验证。"
         },
         "pragmatic": {
-          "score": 75,
-          "review": "Team 计划模型权限变了，先查你的组织是否受影响，再决定要不要调配置。"
+          "score": 90,
+          "review": "新模型已发布，性能提升还降价四成，跑任务的可以直接评估迁移。"
         }
       }
     }

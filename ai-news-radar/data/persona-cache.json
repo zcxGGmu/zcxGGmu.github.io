@@ -1,150 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "story_5d259fa5549c|pragmatic|0a5c5b24": {
-      "score": 52,
-      "review": "研究演示还没开放，做医疗AI的可以观察后续是否出API或论文。",
-      "title_hash": "a5efa1cb",
-      "scored_at": "2026-08-11T18:25:51.100309Z"
-    },
-    "story_2bcee1a44f59|pragmatic|0a5c5b24": {
-      "score": 52,
-      "review": "广告测试不影响API，但免费版体验要变，留意后续官方细则。",
-      "title_hash": "621aeb90",
-      "scored_at": "2026-08-11T17:28:35.663701Z"
-    },
-    "story_2b5700449511|pragmatic|0a5c5b24": {
-      "score": 87,
-      "review": "Google Cloud的PG迁移加了Gemini辅助，迁移用户今天就能上手。",
-      "title_hash": "b6cfd1ac",
-      "scored_at": "2026-08-11T17:28:46.427941Z"
-    },
-    "story_fbc94e6886a3|pragmatic|0a5c5b24": {
-      "score": 25,
-      "review": "预测帖不写代码，等真出现失控再操心。",
-      "title_hash": "8cdd7cdd",
-      "scored_at": "2026-08-11T17:28:47.732273Z"
-    },
-    "story_2b5700449511|cynic|f4237a62": {
-      "score": 45,
-      "review": "又给老工具贴AI标签，迁移加速了没基准数据，先跑个TPC-H再说。",
-      "title_hash": "b6cfd1ac",
-      "scored_at": "2026-08-11T17:28:49.838970Z"
-    },
-    "story_2b5700449511|paper-police|966065bf": {
-      "score": 45,
-      "review": "官方博客有细节但无独立验证，等实际迁移数据再定论。",
-      "title_hash": "b6cfd1ac",
-      "scored_at": "2026-08-11T17:28:51.593362Z"
-    },
-    "story_2b0f68d1ef21|cynic|f4237a62": {
-      "score": 70,
-      "review": "Day-0支持是常规操作，先跑个真实负载看加速比再说。",
-      "title_hash": "9a452965",
-      "scored_at": "2026-08-11T17:28:54.697994Z"
-    },
-    "story_2b0f68d1ef21|paper-police|966065bf": {
-      "score": 20,
-      "review": "仅博客宣称支持，无代码或评测链接，Day-0 说法缺实证。",
-      "title_hash": "9a452965",
-      "scored_at": "2026-08-11T17:28:57.600186Z"
-    },
-    "story_f1aeb278b794|pragmatic|0a5c5b24": {
-      "score": 80,
-      "review": "macOS 虚拟机跑 LLM 提速 11-16 倍，教程可照抄，本地推理党今天就能试。",
-      "title_hash": "116abe4b",
-      "scored_at": "2026-08-11T18:25:53.852394Z"
-    },
-    "story_c157368be595|pragmatic|0a5c5b24": {
-      "score": 45,
-      "review": "安全研究提醒，别在提示词里放敏感信息，等官方修复。",
-      "title_hash": "477bacc9",
-      "scored_at": "2026-08-11T18:25:55.997010Z"
-    },
-    "story_d2ab71462f26|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "用户量大说明生态稳了，但今天没有新接口可薅，先观望。",
-      "title_hash": "e49c8ebd",
-      "scored_at": "2026-08-11T18:25:58.523415Z"
-    },
-    "story_c246dedc40ae|pragmatic|0a5c5b24": {
-      "score": 90,
-      "review": "Copilot 集成新模型，写代码可立即切换体验，效率党直接上手。",
-      "title_hash": "79ec979e",
-      "scored_at": "2026-08-11T19:35:18.804384Z"
-    },
-    "story_7799176b7000|pragmatic|0a5c5b24": {
-      "score": 82,
-      "review": "桌面端能导入其他 Agent 的项目数据，迁移工作流今天就能试。",
-      "title_hash": "d2010f42",
-      "scored_at": "2026-08-11T19:35:20.632559Z"
-    },
-    "story_cdfccbf00748|pragmatic|0a5c5b24": {
-      "score": 68,
-      "review": "想审计 Copilot 请求或做安全拦截的，这篇实操经验可直接抄。",
-      "title_hash": "6b3830e1",
-      "scored_at": "2026-08-11T19:35:23.070258Z"
-    },
-    "story_c246dedc40ae|cynic|f4237a62": {
-      "score": 65,
-      "review": "换了个模型名就发 changelog，性能对比和实际体验呢？",
-      "title_hash": "79ec979e",
-      "scored_at": "2026-08-11T19:35:26.069825Z"
-    },
-    "story_c246dedc40ae|paper-police|966065bf": {
-      "score": 25,
-      "review": "官方公告但无技术细节和评测，仅称可用，缺论文和独立验证。",
-      "title_hash": "79ec979e",
-      "scored_at": "2026-08-11T19:35:28.795420Z"
-    },
-    "story_d21fb74b185b|pragmatic|0a5c5b24": {
-      "score": 78,
-      "review": "JetBrains 用户能接 Ollama 本地模型和记忆了，IDE 里直接玩，值得升级体验。",
-      "title_hash": "efa88adb",
-      "scored_at": "2026-08-11T22:20:25.364428Z"
-    },
-    "story_8bee042859df|pragmatic|0a5c5b24": {
-      "score": 88,
-      "review": "多角色视频生成已上线，做短片可直接上手试。",
-      "title_hash": "ae02c697",
-      "scored_at": "2026-08-11T21:23:53.378405Z"
-    },
-    "story_8a4c14a3381a|pragmatic|0a5c5b24": {
-      "score": 55,
-      "review": "用户规模反映生态成熟度，选型可参考，但今天没有可上手的动作。",
-      "title_hash": "c5592b0b",
-      "scored_at": "2026-08-11T21:23:55.520239Z"
-    },
-    "story_f4f6d73ecb41|pragmatic|0a5c5b24": {
-      "score": 68,
-      "review": "自托管企业用户可提前测试新特性，生产环境建议等正式版。",
-      "title_hash": "8187d19a",
-      "scored_at": "2026-08-11T21:23:58.211097Z"
-    },
-    "story_3e367c2a90f0|pragmatic|0a5c5b24": {
-      "score": 75,
-      "review": "省了手动迁移规则集的功夫，仓库多的团队今天就能少踩坑。",
-      "title_hash": "4236958d",
-      "scored_at": "2026-08-11T21:23:59.833504Z"
-    },
-    "story_8bee042859df|cynic|f4237a62": {
-      "score": 45,
-      "review": "五十个角色参考听着唬人，渲染时长和实际效果敢晒出来吗？",
-      "title_hash": "ae02c697",
-      "scored_at": "2026-08-11T21:24:03.908965Z"
-    },
-    "story_8bee042859df|paper-police|966065bf": {
-      "score": 20,
-      "review": "仅官方推文宣称，无论文代码评测，等独立验证。",
-      "title_hash": "ae02c697",
-      "scored_at": "2026-08-11T21:24:06.532360Z"
-    },
-    "story_761a27a82638|pragmatic|0a5c5b24": {
-      "score": 75,
-      "review": "AWS 用户可直接调用，省去自建部署，适合现有云工作流团队。",
-      "title_hash": "6a575b24",
-      "scored_at": "2026-08-11T22:20:28.169785Z"
-    },
     "story_0655dcabfd8f|pragmatic|0a5c5b24": {
       "score": 48,
       "review": "宏观规划不写代码，等具体项目落地再动手。",
@@ -6152,10 +6008,10 @@
       "scored_at": "2026-09-01T12:07:45.063221Z"
     },
     "story_8ba38180ebe6|pragmatic|0a5c5b24": {
-      "score": 90,
-      "review": "200+ WebGPU 内核直接可调，浏览器里跑本地模型省心事，值得立刻上手。",
-      "title_hash": "17c853f8",
-      "scored_at": "2026-09-01T15:48:03.041358Z"
+      "score": 88,
+      "review": "开源内核即拿即用，浏览器端跑模型性能直接提升。",
+      "title_hash": "6cbad976",
+      "scored_at": "2026-09-01T20:22:20.141079Z"
     },
     "story_d2daab157b0c|pragmatic|0a5c5b24": {
       "score": 75,
@@ -6188,16 +6044,16 @@
       "scored_at": "2026-09-01T15:48:13.474444Z"
     },
     "story_8ba38180ebe6|cynic|f4237a62": {
-      "score": 75,
-      "review": "200+内核听着吓人，跑个大模型试试？",
-      "title_hash": "17c853f8",
-      "scored_at": "2026-09-01T15:48:16.688335Z"
+      "score": 82,
+      "review": "内核数够唬人，跑起来帧率见真章，别又是个基准测试特供。",
+      "title_hash": "6cbad976",
+      "scored_at": "2026-09-01T20:22:43.254209Z"
     },
     "story_8ba38180ebe6|paper-police|966065bf": {
-      "score": 45,
-      "review": "官方博客给出200+内核细节，但缺开源代码和基准验证，难复现。",
-      "title_hash": "17c853f8",
-      "scored_at": "2026-09-01T15:48:19.450155Z"
+      "score": 55,
+      "review": "官方博客有细节数字，但缺开源代码和独立评测，等复现再定论。",
+      "title_hash": "6cbad976",
+      "scored_at": "2026-09-01T20:22:45.382987Z"
     },
     "story_d2daab157b0c|cynic|f4237a62": {
       "score": 35,
@@ -6210,6 +6066,198 @@
       "review": "官方公告说明访问范围，无评测无复现，待功能实测确认。",
       "title_hash": "cf0d4725",
       "scored_at": "2026-09-01T15:48:34.271194Z"
+    },
+    "story_944fc7884d19|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "官方图编工具进 Workspace，日常文档配图能少切一个窗口。",
+      "title_hash": "f6692843",
+      "scored_at": "2026-09-01T20:22:18.311710Z"
+    },
+    "story_7ec800fd62d3|pragmatic|0a5c5b24": {
+      "score": 62,
+      "review": "功能官方展示了，但API是否开放没细说，做视频Agent的先观望。",
+      "title_hash": "6e57b2e2",
+      "scored_at": "2026-09-01T20:22:24.554567Z"
+    },
+    "story_ad13bde463ce|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "讲理念的官方文章，没给具体工具或接口，从业者扫一眼即可。",
+      "title_hash": "abbdbaa4",
+      "scored_at": "2026-09-01T20:22:26.908902Z"
+    },
+    "story_c5bbc19a185e|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "个人仓库可以拉黑评论者了，开源维护者省心一点，小功能但能用。",
+      "title_hash": "09eafb7d",
+      "scored_at": "2026-09-01T20:22:29.438970Z"
+    },
+    "story_d048fe91383f|pragmatic|0a5c5b24": {
+      "score": 82,
+      "review": "医疗行业API接入开放，做健康应用的可以研究，其他领域暂无关。",
+      "title_hash": "4738ed57",
+      "scored_at": "2026-09-01T20:22:31.410045Z"
+    },
+    "story_5537a1603458|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "安全披露有参考价值，但没新工具可上手，安全团队可留意，普通开发不用动。",
+      "title_hash": "780b3d60",
+      "scored_at": "2026-09-01T20:22:35.793218Z"
+    },
+    "story_360d8006f7ec|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "安全事件复盘值得读，自建部署的该检查沙箱隔离了。",
+      "title_hash": "a8685112",
+      "scored_at": "2026-09-01T20:22:37.949101Z"
+    },
+    "story_6f36d8876ee7|pragmatic|0a5c5b24": {
+      "score": 65,
+      "review": "小版本更新，先看模型卡和 API 变更，现有项目不急升。",
+      "title_hash": "73110052",
+      "scored_at": "2026-09-01T20:22:41.316849Z"
+    },
+    "story_d048fe91383f|cynic|f4237a62": {
+      "score": 68,
+      "review": "病历接上ChatGPT只是接口便利，离诊断智慧还差一个医生。",
+      "title_hash": "4738ed57",
+      "scored_at": "2026-09-01T20:22:48.659322Z"
+    },
+    "story_d048fe91383f|paper-police|966065bf": {
+      "score": 30,
+      "review": "官方公告无技术细节和验证，等实际接入后独立测试再定。",
+      "title_hash": "4738ed57",
+      "scored_at": "2026-09-01T20:22:50.760063Z"
+    },
+    "story_94cad6318b8f|pragmatic|0a5c5b24": {
+      "score": 52,
+      "review": "基准有效性讨论，不改变今天选型，做评估研究可参考。",
+      "title_hash": "0a14d057",
+      "scored_at": "2026-09-01T23:47:17.218413Z"
+    },
+    "story_0ce11be79fc0|pragmatic|0a5c5b24": {
+      "score": 55,
+      "review": "受限发布等于普通开发者碰不到，等公开接口再评估。",
+      "title_hash": "395f2f86",
+      "scored_at": "2026-09-01T23:47:20.570812Z"
+    },
+    "story_730fa9d1ab54|pragmatic|0a5c5b24": {
+      "score": 88,
+      "review": "PR审批能自动化了，审查流程少一步手工，今天就能配。",
+      "title_hash": "f2dfe933",
+      "scored_at": "2026-09-01T23:47:22.470490Z"
+    },
+    "story_842216100d96|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "迁移上云更顺滑，GHES用户今天就能用，省去手工搬家。",
+      "title_hash": "4d47414d",
+      "scored_at": "2026-09-01T23:47:24.610664Z"
+    },
+    "story_8fd24e2f72d6|pragmatic|0a5c5b24": {
+      "score": 48,
+      "review": "官方汇总帖，没具体细节；点进去看有没有开放 API 再决定行动。",
+      "title_hash": "8045b156",
+      "scored_at": "2026-09-01T23:47:26.738638Z"
+    },
+    "story_f7b63d022353|pragmatic|0a5c5b24": {
+      "score": 15,
+      "review": "常规版本号更新，无新功能或API变化，不用花时间。",
+      "title_hash": "33326c8b",
+      "scored_at": "2026-09-01T23:47:32.968683Z"
+    },
+    "story_392cc5c32bd1|pragmatic|0a5c5b24": {
+      "score": 72,
+      "review": "新模型更强但贵20%，跑批量任务前先算账，不急换。",
+      "title_hash": "9fc4acf2",
+      "scored_at": "2026-09-01T23:47:35.280336Z"
+    },
+    "story_5de5820ec3a1|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "给预算设过期时间，团队开销管理更省心，管理员今天就能配。",
+      "title_hash": "75dad4c7",
+      "scored_at": "2026-09-01T23:47:37.532312Z"
+    },
+    "story_730fa9d1ab54|cynic|f4237a62": {
+      "score": 72,
+      "review": "批准PR这步终于补上，但别指望它比人审更懂业务逻辑。",
+      "title_hash": "f2dfe933",
+      "scored_at": "2026-09-01T23:47:39.962492Z"
+    },
+    "story_730fa9d1ab54|paper-police|966065bf": {
+      "score": 25,
+      "review": "官方 changelog 宣称能力，无代码无评测，待独立验证。",
+      "title_hash": "f2dfe933",
+      "scored_at": "2026-09-01T23:47:42.059063Z"
+    },
+    "story_0684dd59481d|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "代码补全直接换新模型，今天就能在 Copilot 里用。",
+      "title_hash": "d77dfd2a",
+      "scored_at": "2026-09-02T01:25:30.203674Z"
+    },
+    "story_f114cba13f57|pragmatic|0a5c5b24": {
+      "score": 92,
+      "review": "实时分轨转写API已开放，价格便宜，直接接入即可处理多人会议。",
+      "title_hash": "560e70d9",
+      "scored_at": "2026-09-02T01:25:33.485769Z"
+    },
+    "story_81b03dbe87b3|pragmatic|0a5c5b24": {
+      "score": 75,
+      "review": "新模型测评参考有价值，但未提API和价格，先观望再动手。",
+      "title_hash": "695e00f6",
+      "scored_at": "2026-09-02T01:25:38.107469Z"
+    },
+    "story_457ce16eae5d|pragmatic|0a5c5b24": {
+      "score": 45,
+      "review": "能力被限速意味着接口还没放开，想接入还得等官方开放。",
+      "title_hash": "940c2fba",
+      "scored_at": "2026-09-02T01:25:41.019226Z"
+    },
+    "story_3fbd977c397b|pragmatic|0a5c5b24": {
+      "score": 90,
+      "review": "新模型已发布，性能提升还降价四成，跑任务的可以直接评估迁移。",
+      "title_hash": "3cdf10b8",
+      "scored_at": "2026-09-02T01:25:43.108412Z"
+    },
+    "story_f1c64ea64db1|pragmatic|0a5c5b24": {
+      "score": 82,
+      "review": "CLI 传图传视频更顺手，自动化提 issue 的脚本今天就能加媒体。",
+      "title_hash": "91e899fb",
+      "scored_at": "2026-09-02T01:25:45.058569Z"
+    },
+    "story_f114cba13f57|cynic|f4237a62": {
+      "score": 65,
+      "review": "20人分轨不新鲜，'首个'这词当别人都聋了？价格倒真不贵。",
+      "title_hash": "560e70d9",
+      "scored_at": "2026-09-02T01:25:48.934290Z"
+    },
+    "story_f114cba13f57|paper-police|966065bf": {
+      "score": 20,
+      "review": "只有新闻通稿，无论文无代码无评测，分轨效果和价格都没法验证。",
+      "title_hash": "560e70d9",
+      "scored_at": "2026-09-02T01:25:50.714413Z"
+    },
+    "story_0684dd59481d|cynic|f4237a62": {
+      "score": 70,
+      "review": "登陆不算新闻，能告诉我比上代强在哪吗？",
+      "title_hash": "d77dfd2a",
+      "scored_at": "2026-09-02T01:25:52.594994Z"
+    },
+    "story_0684dd59481d|paper-police|966065bf": {
+      "score": 25,
+      "review": "官方公告只说了可用，无性能数据无代码无评测，暂无法验证。",
+      "title_hash": "d77dfd2a",
+      "scored_at": "2026-09-02T01:25:55.489048Z"
+    },
+    "story_3fbd977c397b|cynic|f4237a62": {
+      "score": 45,
+      "review": "'地球最强大'的标准是什么？先晒出完整基准对比和第三方复现再说。",
+      "title_hash": "3cdf10b8",
+      "scored_at": "2026-09-02T01:25:57.893424Z"
+    },
+    "story_3fbd977c397b|paper-police|966065bf": {
+      "score": 25,
+      "review": "只有新闻稿宣称性能成本，无论文无代码无评测，无法验证。",
+      "title_hash": "3cdf10b8",
+      "scored_at": "2026-09-02T01:26:00.147595Z"
     }
   }
 }
