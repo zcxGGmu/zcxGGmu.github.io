@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T06:25:33.059290Z",
+  "generated_at": "2026-09-03T01:29:04.401886Z",
   "model": "deepseek-v4-flash",
   "personas": [
     {
@@ -17,62 +17,62 @@
   ],
   "items": [
     {
-      "story_id": "story_0684dd59481d",
-      "title": "Claude Fable 5.1 已正式登陆 GitHub Copilot / Claude Fable 5.1 is generally available in GitHub Copilot",
-      "url": "https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
+      "story_id": "story_f2e8c1eb7be1",
+      "title": "内容排除功能现已全面登陆 Copilot 应用及 CLI / Content exclusions generally available in Copilot app and CLI",
+      "url": "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli",
       "rank": 1,
       "reviews": {
         "cynic": {
           "score": 70,
-          "review": "登陆不算新闻，能告诉我比上代强在哪吗？"
+          "review": "让用户屏蔽代码库这功能本来就该有，捂了这么久才转正。"
         },
         "paper-police": {
-          "score": 25,
-          "review": "官方公告只说了可用，无性能数据无代码无评测，暂无法验证。"
+          "score": 50,
+          "review": "官方公告有据可查，但无代码无benchmark，功能需自行验证。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "代码补全直接换新模型，今天就能在 Copilot 里用。"
+          "score": 85,
+          "review": "Copilot内容排除全平台可用，敏感仓库屏蔽今天就能配。"
         }
       }
     },
     {
-      "story_id": "story_9235b0b9bda1",
-      "title": "Anthropic 双发 Claude Fable 5.1 与 Mythos 5.1：编程跑分翻倍，缓存读取费用直降 75%",
-      "url": "https://www.aibase.com/news/30767",
+      "story_id": "story_2231837c4c72",
+      "title": "Cursor 推出 Self-Hosted Machines，云智能体可在企业自有机器上执行 / Run cloud agents on machines you manage",
+      "url": "https://cursor.com/blog/self-hosted-machines",
       "rank": 2,
       "reviews": {
         "cynic": {
-          "score": 35,
-          "review": "跑分翻倍不提对比基线，费用直降怕是按扩容后单价偷换概念。"
+          "score": 72,
+          "review": "自托管不新鲜，但智能体跑在私有机器上总算给企业留了点安全感。"
         },
         "paper-police": {
-          "score": 20,
-          "review": "仅一家媒体宣称性能翻倍，无论文无代码无独立评测，等公开证据。"
+          "score": 35,
+          "review": "仅有官方博客描述，无开源无第三方验证，缺实际部署证据。"
         },
         "pragmatic": {
-          "score": 90,
-          "review": "编程跑分翻倍且缓存读取降价75%，写代码和批量任务直接受益，今天就该切。"
+          "score": 85,
+          "review": "自托管让 agent 跑在自己机器上，规避数据外泄，合规需求高的团队可试。"
         }
       }
     },
     {
-      "story_id": "story_730fa9d1ab54",
-      "title": "Copilot 代码审查现在可以批准 pull requests 了 / Copilot code review can now approve pull requests",
-      "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests",
+      "story_id": "story_0fd4fc0249e5",
+      "title": "Google DeepMind 发布 Gemini 3.8 Flash 与 3.8 Flash Cyber 两款新模型 / Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber",
       "rank": 3,
       "reviews": {
         "cynic": {
-          "score": 72,
-          "review": "批准PR这步终于补上，但别指望它比人审更懂业务逻辑。"
+          "score": 65,
+          "review": "官方发布没有跑分没有对比，闪个名字就想让我高潮？"
         },
         "paper-police": {
           "score": 25,
-          "review": "官方 changelog 宣称能力，无代码无评测，待独立验证。"
+          "review": "仅官方博客声明，无论文代码，评测数字待第三方复现。"
         },
         "pragmatic": {
-          "score": 88,
-          "review": "PR审批能自动化了，审查流程少一步手工，今天就能配。"
+          "score": 82,
+          "review": "新模型今天能上手测，跑任务先看定价和限流，别急着改线上。"
         }
       }
     }
