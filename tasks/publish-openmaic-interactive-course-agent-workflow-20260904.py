@@ -37,7 +37,7 @@ base.PINNED_PREFIX = [
 
 SLUG = "openmaic-interactive-course-agent-workflow"
 BODY = (TASKS / "openmaic-interactive-course-agent-workflow-body-20260904.html").read_text(encoding="utf-8")
-REMOTE_SNAPSHOT = Path("/tmp/zcxgh-pages-20260904")
+REMOTE_SNAPSHOT = Path("/tmp/zcxgh-pages-20260904-v2")
 base.POSTS = [base.Post(
     slug=SLUG,
     title="OpenMAIC：把主题与资料转成可审查的多 Agent 互动课程",
