@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI数据中心电力链</title>
+  <desc id="desc">液冷、储能、预制电力模块和800V直流架构成为算力扩张的基础条件。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#1e293b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="54" y="48" width="1092" height="12" rx="6" fill="#7c3aed"/>
+  <text x="86" y="112" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI数据中心电力链</text>
+  <text x="1076" y="112" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="800" fill="#0ea5e9">FRAME 08</text>
+  <g>
+  <rect x="88" y="154" width="320" height="205" rx="22" fill="#eff6ff" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="88" y="154" width="320" height="10" rx="5" fill="#7c3aed"/>
+  <text x="112" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">用电占比</text>
+  <text x="112" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">约5%</text>
+  <text x="112" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">2030数据中心</text>
+</g><g>
+  <rect x="432" y="154" width="320" height="205" rx="22" fill="#fff7ed" stroke="#0ea5e9" stroke-width="2"/>
+  <rect x="432" y="154" width="320" height="10" rx="5" fill="#0ea5e9"/>
+  <text x="456" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">增量需求</text>
+  <text x="456" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">约50%CAGR</text>
+  <text x="456" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">AI电力需求</text>
+</g><g>
+  <rect x="776" y="154" width="320" height="205" rx="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <rect x="776" y="154" width="320" height="10" rx="5" fill="#10b981"/>
+  <text x="800" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">数据中心</text>
+  <text x="800" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">70%新订单</text>
+  <text x="800" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">AI相关</text>
+</g><g>
+  <rect x="88" y="396" width="320" height="205" rx="22" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="88" y="396" width="320" height="10" rx="5" fill="#8b5cf6"/>
+  <text x="112" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">冷却方式</text>
+  <text x="112" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">液冷</text>
+  <text x="112" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">高功率密度</text>
+</g><g>
+  <rect x="432" y="396" width="320" height="205" rx="22" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <rect x="432" y="396" width="320" height="10" rx="5" fill="#64748b"/>
+  <text x="456" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">储能方向</text>
+  <text x="456" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">钠离子ESS</text>
+  <text x="456" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">削峰稳压</text>
+</g><g>
+  <rect x="776" y="396" width="320" height="205" rx="22" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <rect x="776" y="396" width="320" height="10" rx="5" fill="#ef4444"/>
+  <text x="800" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">供电架构</text>
+  <text x="800" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">800V直流</text>
+  <text x="800" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">快速部署</text>
+</g>
+</svg>
