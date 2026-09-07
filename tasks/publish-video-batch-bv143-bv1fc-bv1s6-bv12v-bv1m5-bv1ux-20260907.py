@@ -12,6 +12,7 @@ from __future__ import annotations
 import base64
 import importlib.util
 import re
+import requests
 import subprocess
 import sys
 import time
@@ -278,8 +279,87 @@ def verify_remote_publish(commit_sha: str, card_count: int, total_pages: int, bi
 
 
 pub.render_asset_check = render_asset_check
-pub.create_commit = create_commit
 pub.verify_remote_publish = verify_remote_publish
+
+
+GITHUB_TOKEN: str | None = None
+
+
+def github_token() -> str:
+    global GITHUB_TOKEN
+    if GITHUB_TOKEN is None:
+        result = subprocess.run(["gh", "auth", "token"], check=True, capture_output=True, text=True)
+        GITHUB_TOKEN = result.stdout.strip()
+        if not GITHUB_TOKEN:
+            raise RuntimeError("GitHub token is empty")
+    return GITHUB_TOKEN
+
+
+def api_json(method: str, endpoint: str, payload: dict | None = None) -> dict:
+    url = f"https://api.github.com/{endpoint}"
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "Authorization": f"Bearer {github_token()}",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": "codex-publisher/2026-09-07",
+    }
+    retryable = {408, 409, 429, 500, 502, 503, 504}
+    for attempt in range(6):
+        try:
+            response = requests.request(method, url, headers=headers, json=payload, timeout=(10, 60))
+        except requests.RequestException as exc:
+            if attempt < 5:
+                time.sleep(2 + attempt * 3)
+                continue
+            raise RuntimeError(f"GitHub API request failed after retries: {method} {endpoint}: {exc}") from exc
+        if response.status_code < 400:
+            return response.json() if response.content else {}
+        if attempt < 5 and response.status_code in retryable:
+            time.sleep(2 + attempt * 3)
+            continue
+        raise RuntimeError(f"GitHub API {method} {endpoint} failed: {response.status_code} {response.text[:500]}")
+
+
+def run_gh_requests_compat(args: list[str], payload: dict | None = None):
+    filtered = [arg for arg in args if arg not in {"--input", "-"}]
+    if len(filtered) >= 3 and filtered[0] == "-X":
+        return api_json(filtered[1], filtered[2], payload)
+    if len(filtered) == 1:
+        return api_json("GET", filtered[0], payload)
+    raise RuntimeError(f"Unsupported gh compatibility args: {args}")
+
+
+def create_commit_requests(outputs: dict[str, str | None], binary_outputs: dict[str, bytes], ref) -> str:
+    entries = []
+    for path, content in sorted(outputs.items()):
+        if content is None:
+            entries.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
+            continue
+        blob = api_json(
+            "POST",
+            pub.base.endpoint("git/blobs"),
+            {"content": base64.b64encode(content.encode("utf-8")).decode("ascii"), "encoding": "base64"},
+        )
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    for path, content in sorted(binary_outputs.items()):
+        blob = api_json(
+            "POST",
+            pub.base.endpoint("git/blobs"),
+            {"content": base64.b64encode(content).decode("ascii"), "encoding": "base64"},
+        )
+        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+    tree = api_json("POST", pub.base.endpoint("git/trees"), {"base_tree": ref.tree_sha, "tree": entries})
+    commit = api_json(
+        "POST",
+        pub.base.endpoint("git/commits"),
+        {"message": "Publish video-derived articles 2026-09-07", "tree": tree["sha"], "parents": [ref.commit_sha]},
+    )
+    api_json("PATCH", pub.base.endpoint(f"git/refs/heads/{pub.base.BRANCH}"), {"sha": commit["sha"], "force": False})
+    return commit["sha"]
+
+
+pub.create_commit = create_commit_requests
+pub.base.run_gh = run_gh_requests_compat
 
 
 if __name__ == "__main__":
