@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">落地路径：先统一格式，再补治理字段</title>
+  <desc id="desc">个人笔记、代码项目、数据库、API 和业务流程，都可以从最小 OKF 知识包开始。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#1e293b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="54" y="48" width="1092" height="12" rx="6" fill="#7C3AED"/>
+  <text x="86" y="112" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="34" font-weight="800" fill="#0F172A">落地路径：先统一格式，再补治理字段</text>
+  <text x="1076" y="112" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="800" fill="#14B8A6">FRAME 10</text>
+  <g>
+  <rect x="88" y="154" width="320" height="205" rx="22" fill="#eff6ff" stroke="#7C3AED" stroke-width="2"/>
+  <rect x="88" y="154" width="320" height="10" rx="5" fill="#7C3AED"/>
+  <text x="112" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">个人知识库</text>
+  <text x="112" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0F172A">Obsidian</text>
+  <text x="112" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">沉淀长期可复用知识</text>
+</g><g>
+  <rect x="432" y="154" width="320" height="205" rx="22" fill="#fff7ed" stroke="#14B8A6" stroke-width="2"/>
+  <rect x="432" y="154" width="320" height="10" rx="5" fill="#14B8A6"/>
+  <text x="456" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">代码项目</text>
+  <text x="456" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0F172A">OKF文件夹</text>
+  <text x="456" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">保存架构、模块关系和长期记忆</text>
+</g><g>
+  <rect x="776" y="154" width="320" height="205" rx="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <rect x="776" y="154" width="320" height="10" rx="5" fill="#10b981"/>
+  <text x="800" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">数据库</text>
+  <text x="800" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0F172A">指标口径</text>
+  <text x="800" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">用计算验证约束查询逻辑</text>
+</g><g>
+  <rect x="88" y="396" width="320" height="205" rx="22" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="88" y="396" width="320" height="10" rx="5" fill="#8b5cf6"/>
+  <text x="112" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">API文档</text>
+  <text x="112" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0F172A">接口约定</text>
+  <text x="112" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">让智能体理解调用边界</text>
+</g><g>
+  <rect x="432" y="396" width="320" height="205" rx="22" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <rect x="432" y="396" width="320" height="10" rx="5" fill="#64748b"/>
+  <text x="456" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">业务流程</text>
+  <text x="456" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0F172A">流程知识</text>
+  <text x="456" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">让任务执行有上下文</text>
+</g><g>
+  <rect x="776" y="396" width="320" height="205" rx="22" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <rect x="776" y="396" width="320" height="10" rx="5" fill="#ef4444"/>
+  <text x="800" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">起步原则</text>
+  <text x="800" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0F172A">只需Type</text>
+  <text x="800" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">按需求逐步增加字段</text>
+</g>
+</svg>
