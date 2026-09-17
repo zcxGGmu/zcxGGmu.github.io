@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>AI存储瓶颈转移：容量退潮后，带宽、互连与底层器件重估 - zcxGGmu's Blog</title>
+  <meta name="description" content="AI硬件的瓶颈正在从单纯堆内存容量，转向带宽、CPU逻辑处理、ABF载板、无源器件、先进封装和二阶供应链验证。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="AI存储瓶颈转移：容量退潮后，带宽、互连与底层器件重估"><meta property="og:description" content="AI硬件的瓶颈正在从单纯堆内存容量，转向带宽、CPU逻辑处理、ABF载板、无源器件、先进封装和二阶供应链验证。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/cover.svg')"><div class="post-title">AI存储瓶颈转移：容量退潮后，带宽、互连与底层器件重估<div class="post-subtitle">AI硬件的瓶颈正在从单纯堆内存容量，转向带宽、CPU逻辑处理、ABF载板、无源器件、先进封装和二阶供应链验证。</div><div class="post-meta"><time itemprop="datePublished">2026-09-17</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E4%BA%A7%E4%B8%9A%E7%A0%94%E7%A9%B6/">产业研究</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/AI%E5%AD%98%E5%82%A8/">AI存储</a>&nbsp;<a href="/tags/HBM/">HBM</a>&nbsp;<a href="/tags/KV%E7%BC%93%E5%AD%98/">KV缓存</a>&nbsp;<a href="/tags/%E5%B8%A6%E5%AE%BD/">带宽</a>&nbsp;<a href="/tags/%E4%BA%92%E8%BF%9E/">互连</a>&nbsp;<a href="/tags/%E4%BB%A3%E7%90%86%E5%9E%8BAI/">代理型AI</a>&nbsp;<a href="/tags/CPU/">CPU</a>&nbsp;<a href="/tags/ABF%E8%BD%BD%E6%9D%BF/">ABF载板</a>&nbsp;<a href="/tags/%E6%97%A0%E6%BA%90%E5%99%A8%E4%BB%B6/">无源器件</a>&nbsp;<a href="/tags/%E5%85%88%E8%BF%9B%E5%B0%81%E8%A3%85/">先进封装</a>&nbsp;<a href="/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93%E8%AE%BE%E5%A4%87/">半导体设备</a>&nbsp;<a href="/tags/%E4%B8%8D%E6%9E%84%E6%88%90%E6%8A%95%E8%B5%84%E5%BB%BA%E8%AE%AE/">不构成投资建议</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 18 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>AI硬件的主线正在发生一次不太容易被直接看见的迁移。过去一年，市场习惯把大模型等同于GPU和高带宽内存，认为算力故事的核心就是更多显卡、更多HBM、更大的内存池。但新的矛盾正在出现：模型架构开始主动节省容量，供给端内存产能也在释放，真正稀缺的东西逐步转向数据搬运速度、芯片之间的信号通道、主板上的电力稳定，以及能够支撑复杂逻辑调度的CPU体系。</p>
+<p>这不是一句简单的“内存不重要了”。HBM仍然重要，容量仍然是训练和推理的基础资源，只是边际瓶颈不再只由容量决定。软件层面对KV缓存的优化，把过去粗放消耗内存的方式压缩下来；与此同时，代理型AI把任务规划、条件分支、工具调用和自我修正推到前台，这类串行逻辑负载并不完全适合GPU的并行计算，CPU的角色因此被重新抬高。</p>
+<p>当CPU使用量被重新推高，物理世界立刻接管叙事。CPU需要更复杂的ABF载板完成信号路由，主板需要更多高可靠无源器件吸收电压尖峰，先进封装要把芯片、载板和互连组织在更高密度的系统里，检测设备要在更复杂的EUV工艺中保证良率。AI不是只把钱送给第一层芯片公司，它会沿着瓶颈逐级向上游传导。</p>
+<p>这条链条最值得警惕的地方在于，它同时包含真实变化和巨大不确定性。CPU和GPU消耗比例是否真会逼近1比1，代理型AI在企业端普及速度有多快，TDK的十倍收入目标能否兑现，LaserTec能否吃到A14带来的新检测订单，东京电子毛利率能否按乐观节奏站上50%，都还需要时间验证。</p>
+<p>因此，本文不把AI硬件看成单个环节的风口，而把它拆成一条从软件优化到物理瓶颈的传导链。只有把容量、带宽、互连、CPU、载板、无源器件、设备和订单验证放在同一张图里，才能看清这一轮重估真正发生在哪里，也才能避免把每一个上游故事都简单理解成确定兑现。</p>
+<p>全文按 软件架构省容量、代理型AI吃逻辑、CPU重回主板中心、带宽互连和底层器件成为新瓶颈 展开。每一节先用一张可独立阅读的幻灯片式图表把主线压缩出来，再把事实、因果、约束、风险和可验证信号拆开。重点不是罗列信息，而是把判断放回可复盘的结构里。</p>
+<h2 id="capacity-is-not-only-bottleneck">容量不再是唯一瓶颈：AI硬件从“能装多少”转向“能搬多快”</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/01-capacity-is-not-only-bottleneck.svg" alt="AI存储瓶颈的迁移" loading="lazy"><figcaption>内存容量仍是底座，但边际矛盾正在转向带宽、互连和数据调度效率。</figcaption></figure>
+<p>大模型早期的硬件想象非常直接：参数越多、上下文越长、并发越高，就越需要更多内存。这个阶段，HBM和大容量内存几乎天然站在聚光灯下，因为它们决定模型能不能装得下、跑得动、扩得开。市场也因此形成一种惯性，把AI硬件周期简单理解为内存容量周期。</p>
+<p>但容量并不是永远线性扩张的唯一变量。当模型架构开始优化KV缓存，当推理框架学会更高效地保存上下文，当算法不再用粗放方式重复读取全部历史信息，原本被容量吞掉的一部分需求就会释放出来。容量从最尖锐的瓶颈，逐渐变成众多约束中的一环。</p>
+<p>真正开始抬头的是带宽和互连。AI系统不是静态仓库，而是高速流水线。数据能不能从内存搬到计算单元，能不能在CPU、GPU、加速器、网卡和存储之间低延迟流动，往往比账面容量更影响实际吞吐。</p>
+<p>因此，硬件判断要从“谁的容量最大”升级到“谁能让数据最快、最稳、最少损耗地流动”。这一变化会把供应链焦点从单一内存厂，扩展到载板、连接、封装、供电、检测和系统级设计。</p>
+<p>把这一层拆开，旧主线是堆容量；新矛盾是搬运速度；软件变化是省KV缓存。这些信息共同指向一个判断：内存容量仍是底座，但边际矛盾正在转向带宽、互连和数据调度效率。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：供给变化要看产能释放改变供需平衡；硬件焦点要看芯片之间通道更关键；投资含义要看资金从第一层扩散到二阶环节。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，旧主线、新矛盾、软件变化构成这一节的主轴。堆容量对应HBM和大内存池是显性叙事；搬运速度对应数据进出决定真实吞吐；省KV缓存对应架构优化减少粗放占用。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，供给变化、硬件焦点、投资含义是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：旧主线=堆容量（HBM和大内存池是显性叙事）；新矛盾=搬运速度（数据进出决定真实吞吐）；软件变化=省KV缓存（架构优化减少粗放占用）；供给变化=内存放量（产能释放改变供需平衡）；硬件焦点=带宽+互连（芯片之间通道更关键）；投资含义=瓶颈重估（资金从第一层扩散到二阶环节）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，容量不再是唯一瓶颈：AI硬件从“能装多少”转向“能搬多快”并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="kv-cache-optimization">KV缓存优化：软件先动手压缩了内存黑洞</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/02-kv-cache-optimization.svg" alt="KV缓存从完整记录到关键摘要" loading="lazy"><figcaption>模型架构减少KV缓存需求，意味着软件正在主动改变硬件消耗曲线。</figcaption></figure>
+<p>KV缓存可以理解为模型在处理上下文时保留的关键中间记录。过去的粗放模式像一场超大型庭审，每问一个新问题，都要把大量历史材料摊开复核。这个过程需要巨大的“桌面”，而桌面对应的就是内存容量。</p>
+<p>架构优化改变了这件事。更高效的模型不再机械保留所有内容，而是把关键判决、关键证据和真正有用的上下文压缩出来。这样一来，模型并不是不需要内存，而是同样任务所需的内存边际强度下降了。</p>
+<p>当软件侧开始主动省内存，供给侧又有更多内存产能投放，容量型资产的供需平衡就会变得微妙。此前市场愿意为“永远缺容量”支付高估值，但如果容量约束被软硬两端同时缓解，估值逻辑就不能只靠旧故事延续。</p>
+<p>这正是存储瓶颈迁移的起点。容量从唯一答案变成问题的一部分，带宽、互连和系统架构开始进入定价模型。真正的AI硬件竞争，不再是静态堆料，而是动态吞吐。</p>
+<p>把这一层拆开，传统方式是完整记录；资源需求是大桌面；新方式是关键摘要。这些信息共同指向一个判断：模型架构减少KV缓存需求，意味着软件正在主动改变硬件消耗曲线。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：硬件结果要看边际需求被压缩；供给叠加要看供需拐点更敏感；新瓶颈要看容量之外看吞吐。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，传统方式、资源需求、新方式构成这一节的主轴。完整记录对应上下文像一万页档案；大桌面对应对应更大内存容量；关键摘要对应只保留核心证据。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，硬件结果、供给叠加、新瓶颈是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：传统方式=完整记录（上下文像一万页档案）；资源需求=大桌面（对应更大内存容量）；新方式=关键摘要（只保留核心证据）；硬件结果=容量压力下降（边际需求被压缩）；供给叠加=产能释放（供需拐点更敏感）；新瓶颈=读写效率（容量之外看吞吐）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，KV缓存优化：软件先动手压缩了内存黑洞并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="agentic-ai-and-cpu-return">代理型AI把CPU重新推回核心位置</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/03-agentic-ai-and-cpu-return.svg" alt="从生成式任务到代理型任务" loading="lazy"><figcaption>代理型AI需要规划、分支、工具调用和纠错，CPU更擅长处理这类复杂串行逻辑。</figcaption></figure>
+<p>生成式AI更像一个按照提示完成输出的创作者，大量计算可以拆成并行矩阵运算，GPU自然成为中心。代理型AI的角色不同，它要拆任务、定计划、判断分支、调用外部工具、检查结果并自我修正。这个过程不是简单堆并行算力就能解决。</p>
+<p>复杂串行逻辑正是CPU的传统优势。CPU负责控制流、任务调度、条件分支、异常处理和系统协调。当AI从一次性生成走向持续执行，CPU在服务器中的负载权重就会被重新抬高。</p>
+<p>所谓CPU和GPU消耗比例逼近1比1，不应被理解成已经发生的确定事实，而是一个方向性推演。它表达的是：AI工作负载正在从单纯“算”扩展到“管、调、判、改”。只要这种软件形态继续普及，CPU相关硬件链条就会获得新的解释框架。</p>
+<p>但方向推演不等于即时兑现。企业端代理型AI部署速度、英伟达等平台对逻辑处理的生态优化、云厂商服务器架构选择，都会影响CPU需求实际释放速度。这里既有预期差，也有兑现风险。</p>
+<p>把这一层拆开，生成式AI是并行概率；代理型AI是项目经理；任务形态是串行逻辑。这些信息共同指向一个判断：代理型AI需要规划、分支、工具调用和纠错，CPU更擅长处理这类复杂串行逻辑。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：CPU优势要看处理条件与流程；推演方向要看CPU/GPU消耗比例被重估；物理影响要看信号和供电随之变化。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，生成式AI、代理型AI、任务形态构成这一节的主轴。并行概率对应GPU天然适配；项目经理对应自主规划和调用工具；串行逻辑对应分支判断更复杂。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，CPU优势、推演方向、物理影响是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：生成式AI=并行概率（GPU天然适配）；代理型AI=项目经理（自主规划和调用工具）；任务形态=串行逻辑（分支判断更复杂）；CPU优势=调度控制（处理条件与流程）；推演方向=接近1比1（CPU/GPU消耗比例被重估）；物理影响=主板重构（信号和供电随之变化）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，代理型AI把CPU重新推回核心位置并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="abf-substrate-road">ABF载板：CPU重估最终落到信号立交桥</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/04-abf-substrate-road.svg" alt="ABF载板的瓶颈传导" loading="lazy"><figcaption>CPU承担更多代理型负载后，芯片与主板之间需要更精密的信号路由。</figcaption></figure>
+<p>当CPU重新成为AI服务器的重要变量，变化不会停留在概念层面。CPU要处理更复杂的逻辑分支，就需要在不同运算单元之间高频传递电信号。纳米级芯片要和毫米级主板连接，中间必须依赖更大、更精密、更可靠的ABF载板。</p>
+<p>ABF载板像芯片世界里的立交桥。没有足够复杂的路由能力，电信号就会拥堵、延迟和损耗。服务器主板的每一次架构升级，最终都会在载板尺寸、层数、材料、良率和交付能力上留下痕迹。</p>
+<p>景硕上调2027和2028财年资本开支，并把资金投向CPU使用的ABF载板，是供应链底层用真金白银投票的信号。更重要的是，若与台积电共同推进EMIB等先进封装方案，说明载板扩产并不只是单家公司自说自话，而是和下游先进制程路线绑定。</p>
+<p>不过载板扩产也有反身性风险。如果CPU需求兑现慢于预期，提前扩出来的高规格产能会变成利润压力。材料厂通常比市场叙事更保守，它们的扩产值得重视，但不能替代最终订单和稼动率验证。</p>
+<p>把这一层拆开，代表公司是景硕；资本开支是16/19亿新台币；使用对象是CPU载板。这些信息共同指向一个判断：CPU承担更多代理型负载后，芯片与主板之间需要更精密的信号路由。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：物理功能要看连接芯片和主板；合作信号要看先进封装背书；风险点要看CPU需求若不兑现会反噬利润。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，代表公司、资本开支、使用对象构成这一节的主轴。景硕对应底层材料厂率先扩产；16/19亿新台币对应2027/2028财年上调；CPU载板对应服务复杂信号路由。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，物理功能、合作信号、风险点是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：代表公司=景硕（底层材料厂率先扩产）；资本开支=16/19亿新台币（2027/2028财年上调）；使用对象=CPU载板（服务复杂信号路由）；物理功能=立交桥（连接芯片和主板）；合作信号=台积电+EMIB（先进封装背书）；风险点=产能过剩（CPU需求若不兑现会反噬利润）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，ABF载板：CPU重估最终落到信号立交桥并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="passive-components-power-shock">无源器件：AI服务器里的电力减震器</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/05-passive-components-power-shock.svg" alt="从算力满载到电压尖峰" loading="lazy"><figcaption>服务器功耗暴增后，电容、电感等无源器件承担吸收冲击、稳定供电和保护芯片的任务。</figcaption></figure>
+<p>AI服务器越强，越不是只多几颗芯片那么简单。CPU和GPU满载运行时会吞噬海量电力，瞬间电流变化会在主板上形成电压尖峰。如果这些冲击直接打到昂贵处理器上，稳定性、寿命甚至安全都会出问题。</p>
+<p>无源器件在这里扮演电力系统减震器。电容、电感等器件不负责计算，却负责把电压波动压下来，把电源噪声滤掉，把芯片运行环境稳定住。算力越密集，供电越剧烈，减震器就越多、越小、越高端。</p>
+<p>TDK把AI数据中心相关无源器件收入从100亿日元推向1000亿日元的目标，背后不是普通螺丝钉逻辑，而是服务器电力密度跃迁。主板空间极其宝贵，不可能靠粗暴堆大元件解决问题，因此气相沉积箔等材料工艺变得关键。</p>
+<p>小型化、耐高温、高可靠和大规模一致性，是无源器件能不能吃到AI周期的核心。这里的机会不显眼，却非常贴近物理瓶颈；只要服务器功耗继续上行，供电稳定链条就会持续获得价值重估。</p>
+<p>把这一层拆开，代表公司是TDK；收入目标是100亿到1000亿日元；核心功能是减震器。这些信息共同指向一个判断：服务器功耗暴增后，电容、电感等无源器件承担吸收冲击、稳定供电和保护芯片的任务。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：主板矛盾要看不能无限堆大器件；技术抓手要看小型化和耐高温；需求来源要看CPU/GPU瞬时电流冲击。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，代表公司、收入目标、核心功能构成这一节的主轴。TDK对应AI数据中心无源器件指引激进；100亿到1000亿日元对应2025-2030年十倍增长；减震器对应吸收电压尖峰。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，主板矛盾、技术抓手、需求来源是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：代表公司=TDK（AI数据中心无源器件指引激进）；收入目标=100亿到1000亿日元（2025-2030年十倍增长）；核心功能=减震器（吸收电压尖峰）；主板矛盾=寸土寸金（不能无限堆大器件）；技术抓手=气相沉积箔（小型化和耐高温）；需求来源=满载功耗（CPU/GPU瞬时电流冲击）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，无源器件：AI服务器里的电力减震器并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="rsi-trigger">RSI是时间变量：AI自己优化AI，硬件节奏被倒逼加速</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/06-rsi-trigger.svg" alt="递归自我改进与硬件节奏" loading="lazy"><figcaption>如果AI开始写代码优化自身，软件迭代速度可能倒逼硬件从线性升级走向更快重构。</figcaption></figure>
+<p>递归自我改进是这条逻辑里最具不确定性、也最具想象力的变量。过去半导体硬件升级大体跟着人类工程师、摩尔定律和工艺节点节奏走。软件也进步，但多数情况下仍由人类团队规划和实施。</p>
+<p>如果AI开始大规模参与自身代码、架构和工具链优化，软件迭代速度就可能加快。它可能设计出更省内存、更依赖带宽、更强调工具调用的新架构，也可能把一部分过去固定在GPU上的负载重新分配给CPU、网络和存储系统。</p>
+<p>硬件供应链最怕的不是需求增长，而是需求形态突然改变。芯片、载板、封装、连接器、无源器件和检测工具都有建设周期，如果软件瓶颈在短时间内迁移，硬件会被迫追赶。</p>
+<p>这也是为什么带宽与互连讨论必须和RSI放在一起看。若AI能力增长仍按人类节奏缓慢推进，硬件重构可以从容发生；若软件进入更快自我迭代，底层硬件不跟上就会成为新的上限。</p>
+<p>把这一层拆开，核心概念是RSI；软件变化是自己写代码；需求形态是更省容量。这些信息共同指向一个判断：如果AI开始写代码优化自身，软件迭代速度可能倒逼硬件从线性升级走向更快重构。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：新消耗要看数据通道压力上升；硬件压力要看否则锁死能力增长；开放问题要看人类路线图还是AI自身。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，核心概念、软件变化、需求形态构成这一节的主轴。RSI对应递归自我改进；自己写代码对应迭代速度不再只靠人类；更省容量对应模型架构主动变化。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，新消耗、硬件压力、开放问题是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：核心概念=RSI（递归自我改进）；软件变化=自己写代码（迭代速度不再只靠人类）；需求形态=更省容量（模型架构主动变化）；新消耗=更吃带宽（数据通道压力上升）；硬件压力=立即跟上（否则锁死能力增长）；开放问题=谁扣发令枪（人类路线图还是AI自身）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，RSI是时间变量：AI自己优化AI，硬件节奏被倒逼加速并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="first-and-second-derivative">一阶导数已经拥挤，二阶供应链才有预期差</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/07-first-and-second-derivative.svg" alt="AI供应链定价层级" loading="lazy"><figcaption>英伟达、台积电等一阶资产已被充分拥抱，设备、检测和材料环节更依赖预期差。</figcaption></figure>
+<p>AI硬件投资最容易犯的错误，是把所有相关公司都当成同一层资产。英伟达和台积电属于一阶资产，需求传导短、市场认知充分、资金拥挤度高。它们仍可能继续增长，但估值里已经反映了大量长期乐观预期。</p>
+<p>二阶供应链的机会来自模型没有完全算进去的变化。例如设备、检测、材料和器件企业不直接卖AI芯片，却可能因为工艺复杂度、服务器功耗和封装密度提升而获得额外订单。</p>
+<p>二阶导数交易的关键，不是“离AI越远越便宜”，而是“离AI有真实传导，但市场还没有充分量化”。如果只是名称相关、收入占比极低、订单不可验证，那不是预期差，而是故事差。</p>
+<p>所以，这类机会必须用订单、稼动率、毛利率、客户验证和资本开支交叉验证。逻辑链越长，越需要真实数据把每一环钉住。</p>
+<p>把这一层拆开，一阶资产是芯片/代工；定价状态是较充分；二阶资产是设备/检测。这些信息共同指向一个判断：英伟达、台积电等一阶资产已被充分拥抱，设备、检测和材料环节更依赖预期差。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：三阶信号要看更底层但弹性隐蔽；交易核心要看看模型漏算了什么；验证方式要看不能只靠逻辑链。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，一阶资产、定价状态、二阶资产构成这一节的主轴。芯片/代工对应直接受益于AI资本开支；较充分对应宏大叙事已被拥抱；设备/检测对应离终端需求隔一层。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，三阶信号、交易核心、验证方式是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：一阶资产=芯片/代工（直接受益于AI资本开支）；定价状态=较充分（宏大叙事已被拥抱）；二阶资产=设备/检测（离终端需求隔一层）；三阶信号=材料/器件（更底层但弹性隐蔽）；交易核心=预期差（看模型漏算了什么）；验证方式=订单+毛利（不能只靠逻辑链）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，一阶导数已经拥挤，二阶供应链才有预期差并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="lasertec-a14-euv">LaserTec案例：A14和EUV层数增加如何制造检测设备增量</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/08-lasertec-a14-euv.svg" alt="A14工艺与检测工具需求" loading="lazy"><figcaption>如果A14推进后额外增加EUV工艺层，掩模检测工具需求可能被重新上修。</figcaption></figure>
+<p>LaserTec的价值不在于它离AI最近，而在于它处在先进制造复杂度上升的必经环节。它不做芯片，也不做光刻机，而是做光掩模检测工具，用来检查极高价值的制造模板是否存在微小瑕疵。</p>
+<p>近期市场把它2027财年订单预期从4000亿日元下修到3500亿日元，短期利空已经进入价格。但如果台积电推进A14后额外增加约三层EUV工艺，检测需求可能出现模型外增量。</p>
+<p>在纳米级制造里，每多一层EUV都意味着掩模瑕疵风险、良率损耗和检测要求上升。晶圆厂为了保护良率，必须采购更先进的检测工具。这个增量如果最终落成订单，就会修正市场对设备需求的理解。</p>
+<p>但这仍然必须回到验证。A14工艺推进、EUV层数增加、客户采购订单和交付节奏，缺一不可。二阶导数机会之所以诱人，正因为它不是人人都能直接看见；也正因为看不见，更不能用想象替代合同。</p>
+<p>把这一层拆开，公司定位是LaserTec；短期利空是4000亿下修3500亿；潜在增量是A14。这些信息共同指向一个判断：如果A14推进后额外增加EUV工艺层，掩模检测工具需求可能被重新上修。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：工艺变化要看复杂度几何上升；客户动作要看真实PO才是验证；投资焦点要看看模型是否重估。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，公司定位、短期利空、潜在增量构成这一节的主轴。LaserTec对应光掩模检测工具；4000亿下修3500亿对应2027财年预期被调低；A14对应先进节点推进。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，工艺变化、客户动作、投资焦点是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：公司定位=LaserTec（光掩模检测工具）；短期利空=4000亿下修3500亿（2027财年预期被调低）；潜在增量=A14（先进节点推进）；工艺变化=多三层EUV（复杂度几何上升）；客户动作=台积电订单（真实PO才是验证）；投资焦点=漏算订单（看模型是否重估）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，LaserTec案例：A14和EUV层数增加如何制造检测设备增量并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="tel-margin-debate">东京电子的50%毛利率，是设备股兑现速度的试金石</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/09-tel-margin-debate.svg" alt="设备商利润兑现分歧" loading="lazy"><figcaption>设备股补涨逻辑能否成立，要看订单强度能否转成毛利率扩张。</figcaption></figure>
+<p>半导体设备股的重估不能只看订单，也要看利润率。订单增长如果来自低毛利产品、交付成本上升、供应链紧张或客户议价加强，最终未必能转成利润扩张。东京电子的50%毛利率目标因此成为一个重要观察点。</p>
+<p>乐观路径认为，内存厂扩产带来的强劲订单可以让TEL在2027年3月左右提前实现50%毛利率。保守路径则认为兑现会拖到2028年上半年。这不是小时间差，而是估值折现差。</p>
+<p>在强周期行业里，利润兑现晚一年，市场给的估值就可能完全不同。尤其当股价已经提前反映二阶供应链补涨逻辑时，毛利率迟迟不上台阶会削弱整个框架。</p>
+<p>因此，设备股要回到财报验证。收入增长、订单积压、产品结构、毛利率和现金流必须同向改善，才说明AI硬件瓶颈迁移真正变成了企业盈利。</p>
+<p>把这一层拆开，代表公司是东京电子/TEL；乐观情形是2027年3月；保守情形是2028年上半年。这些信息共同指向一个判断：设备股补涨逻辑能否成立，要看订单强度能否转成毛利率扩张。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：驱动因素要看强订单带来规模效应；风险含义要看补涨逻辑失去支撑；跟踪指标要看用结果替代口号。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，代表公司、乐观情形、保守情形构成这一节的主轴。东京电子/TEL对应半导体设备巨头；2027年3月对应提前实现50%毛利率；2028年上半年对应兑现节奏延后。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，驱动因素、风险含义、跟踪指标是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：代表公司=东京电子/TEL（半导体设备巨头）；乐观情形=2027年3月（提前实现50%毛利率）；保守情形=2028年上半年（兑现节奏延后）；驱动因素=内存扩产订单（强订单带来规模效应）；风险含义=迟迟不到50%（补涨逻辑失去支撑）；跟踪指标=财报毛利率（用结果替代口号）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，东京电子的50%毛利率，是设备股兑现速度的试金石并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<h2 id="verification-checklist">三组验证信号：近期看CPU，中期看毛利，远期看订单</h2>
+<figure class="post-figure"><img src="/images/posts/ai-memory-bottleneck-bandwidth-interconnect-abf-passive/10-verification-checklist.svg" alt="AI硬件瓶颈迁移验证表" loading="lazy"><figcaption>富士康CPU、TEL毛利率和台积电A14订单，是检验这条逻辑是否兑现的三个时间锚。</figcaption></figure>
+<p>这条AI硬件瓶颈迁移链条可以归纳为三组验证信号。近期看富士康能否在台积电最先进的N2节点上推出CPU，这是检验CPU重新争夺话语权的早期信号。若CPU生态没有实际产品落地，载板和主板重构逻辑就缺少第一个抓手。</p>
+<p>中期看东京电子2027年3月前后的毛利率。如果设备商能够借内存与先进工艺扩产实现50%毛利率，说明订单强度已经转化为盈利能力；若目标明显延后，设备补涨逻辑要打折。</p>
+<p>远期看台积电A14工艺推进后，是否给LaserTec带来EUV相关检测工具采购订单。真正的PO比任何预测都更有分量，因为它把工艺复杂度、客户需求和供应商收入连在一起。</p>
+<p>最终，这一轮AI硬件重估不该被简化成“买谁最像AI”。容量、带宽、互连、CPU、ABF载板、无源器件、设备和检测都可能受益，但每一环都必须接受量化和订单验证。以上内容仅用于产业与商业模式分析，不构成任何投资建议。</p>
+<p>把这一层拆开，近期信号是富士康CPU；中期信号是TEL 50%；远期信号是A14订单。这些信息共同指向一个判断：富士康CPU、TEL毛利率和台积电A14订单，是检验这条逻辑是否兑现的三个时间锚。如果只抓住单个数字、单个事件或单个情绪，很容易忽略真正推动结果变化的链条。</p>
+<p>真正需要反复校验的是：核心风险要看1比1仍需量化；需求风险要看CPU扩产兑现延后；结论原则要看不把故事当结果。顺风环境会放大优势，也会放大执行偏差；约束条件一旦变化，结论就必须同步修正。</p>
+<p>从结构上看，近期信号、中期信号、远期信号构成这一节的主轴。富士康CPU对应N2节点是否如期推出；TEL 50%对应2027年3月毛利率；A14订单对应LaserTec能否拿到EUV采购。这些指标的意义不在于孤立高低，而在于能否互相验证：需求给方向，供给或制度定边界，成本、现金流、时间和行为反馈负责把判断落地。</p>
+<p>落实到现实决策，核心风险、需求风险、结论原则是同等重要的约束。只要收入、成本、库存、政策、组织、时间或外部规则发生变化，原本看似确定的路径就可能重新分叉。</p>
+<p>这张图表的六个坐标可以直接作为复盘清单：近期信号=富士康CPU（N2节点是否如期推出）；中期信号=TEL 50%（2027年3月毛利率）；远期信号=A14订单（LaserTec能否拿到EUV采购）；核心风险=比例口径不清（1比1仍需量化）；需求风险=代理普及慢（CPU扩产兑现延后）；结论原则=数据校验（不把故事当结果）。逐项核对之后，才能判断这一节讲的是已经落地的事实、正在爬坡的趋势，还是仍需要时间兑现的假设。</p>
+<p>如果把它放到更长时间维度里，三组验证信号：近期看CPU，中期看毛利，远期看订单并不是孤立章节，而是整篇文章主线的一段截面。它既回答当下为什么会出现这种变化，也提示下一轮数据披露时应该看哪里：看真实需求是否继续、看供给约束是否松动、看利润率是否跟随改善、看参与者行为是否与叙事保持一致。</p>
+<p>以上内容仅用于产业、商业模式与市场结构分析，不构成投资建议。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/ai-doom-apocalypse-history-risk-governance/">下一篇<br>AI末日论：世界为何痴迷AI启示录的简史</a><a class="older-posts" href="/2026/weichai-power-ai-data-center-sofc-valuation-gap/">上一篇<br>潍柴动力的AI电力想象：SOFC、重卡下行与27%估值缺口</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#capacity-is-not-only-bottleneck">容量不再是唯一瓶颈：AI硬件从“能装多少”转向“能搬多快”</a><a class="toc-link toc-level-2" href="#kv-cache-optimization">KV缓存优化：软件先动手压缩了内存黑洞</a><a class="toc-link toc-level-2" href="#agentic-ai-and-cpu-return">代理型AI把CPU重新推回核心位置</a><a class="toc-link toc-level-2" href="#abf-substrate-road">ABF载板：CPU重估最终落到信号立交桥</a><a class="toc-link toc-level-2" href="#passive-components-power-shock">无源器件：AI服务器里的电力减震器</a><a class="toc-link toc-level-2" href="#rsi-trigger">RSI是时间变量：AI自己优化AI，硬件节奏被倒逼加速</a><a class="toc-link toc-level-2" href="#first-and-second-derivative">一阶导数已经拥挤，二阶供应链才有预期差</a><a class="toc-link toc-level-2" href="#lasertec-a14-euv">LaserTec案例：A14和EUV层数增加如何制造检测设备增量</a><a class="toc-link toc-level-2" href="#tel-margin-debate">东京电子的50%毛利率，是设备股兑现速度的试金石</a><a class="toc-link toc-level-2" href="#verification-checklist">三组验证信号：近期看CPU，中期看毛利，远期看订单</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
