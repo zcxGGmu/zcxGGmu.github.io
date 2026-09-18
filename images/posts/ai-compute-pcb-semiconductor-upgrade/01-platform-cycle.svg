@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI硬件升级：从芯片性能走向系统连接</title>
+  <desc id="desc">GPU、TPU、ASIC与高速光互联同时升级，PCB成为连接计算、交换、供电与散热的系统底座。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#1e293b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="54" y="48" width="1092" height="12" rx="6" fill="#2563eb"/>
+  <text x="86" y="112" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI硬件升级：从芯片性能走向系统连接</text>
+  <text x="1076" y="112" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="800" fill="#14b8a6">FRAME 01</text>
+  <g>
+  <rect x="88" y="154" width="320" height="205" rx="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <rect x="88" y="154" width="320" height="10" rx="5" fill="#2563eb"/>
+  <text x="112" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">平台变化</text>
+  <text x="112" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">代际切换</text>
+  <text x="112" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">GPU、</text>
+<text x="112" y="332" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">TPU与ASIC进入新产品周期</text>
+</g><g>
+  <rect x="432" y="154" width="320" height="205" rx="22" fill="#fff7ed" stroke="#14b8a6" stroke-width="2"/>
+  <rect x="432" y="154" width="320" height="10" rx="5" fill="#14b8a6"/>
+  <text x="456" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">连接速度</text>
+  <text x="456" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">224G/448G</text>
+  <text x="456" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">高速信号传输要求继续上升</text>
+</g><g>
+  <rect x="776" y="154" width="320" height="205" rx="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <rect x="776" y="154" width="320" height="10" rx="5" fill="#10b981"/>
+  <text x="800" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">材料方向</text>
+  <text x="800" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">M6→M9</text>
+  <text x="800" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">低损耗CCL等级持续上移</text>
+</g><g>
+  <rect x="88" y="396" width="320" height="205" rx="22" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="88" y="396" width="320" height="10" rx="5" fill="#8b5cf6"/>
+  <text x="112" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">工艺方向</text>
+  <text x="112" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">HDI/MSAP</text>
+  <text x="112" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">线路密度和加工精度提升</text>
+</g><g>
+  <rect x="432" y="396" width="320" height="205" rx="22" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <rect x="432" y="396" width="320" height="10" rx="5" fill="#64748b"/>
+  <text x="456" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">需求变量</text>
+  <text x="456" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">机柜放量</text>
+  <text x="456" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">平台量产带动PCB随整机增长</text>
+</g><g>
+  <rect x="776" y="396" width="320" height="205" rx="22" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <rect x="776" y="396" width="320" height="10" rx="5" fill="#ef4444"/>
+  <text x="800" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">行业特征</text>
+  <text x="800" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">半导体化</text>
+  <text x="800" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">材料、设备、良率共同决定门槛</text>
+</g>
+</svg>

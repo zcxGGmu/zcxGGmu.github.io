@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">光学封装的精度约束</title>
+  <desc id="desc">光与芯片之间的耦合对微米级偏差敏感，贴装、FAU和测试构成CPO量产的关键门槛。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#1e293b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="579" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="54" y="48" width="1092" height="12" rx="6" fill="#0f766e"/>
+  <text x="86" y="112" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">光学封装的精度约束</text>
+  <text x="1076" y="112" text-anchor="end" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="18" font-weight="800" fill="#f97316">FRAME 05</text>
+  <g>
+  <rect x="88" y="154" width="320" height="205" rx="22" fill="#eff6ff" stroke="#0f766e" stroke-width="2"/>
+  <rect x="88" y="154" width="320" height="10" rx="5" fill="#0f766e"/>
+  <text x="112" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">核心对象</text>
+  <text x="112" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">光芯片</text>
+  <text x="112" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">完成调制、分光和收发功能</text>
+</g><g>
+  <rect x="432" y="154" width="320" height="205" rx="22" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <rect x="432" y="154" width="320" height="10" rx="5" fill="#f97316"/>
+  <text x="456" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">耦合要求</text>
+  <text x="456" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">微米级</text>
+  <text x="456" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">位置偏差会显著放大光损耗</text>
+</g><g>
+  <rect x="776" y="154" width="320" height="205" rx="22" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <rect x="776" y="154" width="320" height="10" rx="5" fill="#10b981"/>
+  <text x="800" y="202" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">关键部件</text>
+  <text x="800" y="259" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">FAU</text>
+  <text x="800" y="311" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">负责光纤阵列与芯片连接</text>
+</g><g>
+  <rect x="88" y="396" width="320" height="205" rx="22" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="88" y="396" width="320" height="10" rx="5" fill="#8b5cf6"/>
+  <text x="112" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">工艺环节</text>
+  <text x="112" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">贴装/测试</text>
+  <text x="112" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">需要高精度设备与稳定流程</text>
+</g><g>
+  <rect x="432" y="396" width="320" height="205" rx="22" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <rect x="432" y="396" width="320" height="10" rx="5" fill="#64748b"/>
+  <text x="456" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">量产风险</text>
+  <text x="456" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">良率</text>
+  <text x="456" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">小偏差可能带来批量报废</text>
+</g><g>
+  <rect x="776" y="396" width="320" height="205" rx="22" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <rect x="776" y="396" width="320" height="10" rx="5" fill="#ef4444"/>
+  <text x="800" y="444" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="19" font-weight="700" fill="#334155">价值迁移</text>
+  <text x="800" y="501" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="31" font-weight="800" fill="#0f172a">先进封装</text>
+  <text x="800" y="553" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif" font-size="16" font-weight="500" fill="#475569">封装环节占比与重要性提高</text>
+</g>
+</svg>
