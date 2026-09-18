@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="generator" content="Custom static archive"><title>M9会降到M4吗：CPO换代下PCB与CCL的价值迁移 - zcxGGmu's Blog</title>
+  <meta name="description" content="围绕高端CCL降规格叙事，拆解CPO、ScaleUp与ScaleOut架构变化，判断机柜内PCB与铜缆的真实占比，梳理M9、M10、PTFE材料升级、电子布与树脂风险，以及载板、MPO和光引擎的价值迁移路径。"><meta name="author" content="zcxGGmu"><meta name="theme-color" content="#f8fafc">
+  <meta property="og:url" content="https://zcxggmu.github.io/2026/m9-m4-cpo-pcb-ccl-value-transfer/"><meta property="og:site_name" content="zcxGGmu's Blog">
+  <meta property="og:title" content="M9会降到M4吗：CPO换代下PCB与CCL的价值迁移"><meta property="og:description" content="围绕高端CCL降规格叙事，拆解CPO、ScaleUp与ScaleOut架构变化，判断机柜内PCB与铜缆的真实占比，梳理M9、M10、PTFE材料升级、电子布与树脂风险，以及载板、MPO和光引擎的价值迁移路径。"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://zcxggmu.github.io/2026/m9-m4-cpo-pcb-ccl-value-transfer/">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <script>(function(){var key="blog-theme";var sidebarKey="blog-sidebar-collapsed";var theme="";try{theme=localStorage.getItem(key)||""}catch(_){}if(theme!=="light"&&theme!=="dark"){theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;try{if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");}catch(_){}})();</script>
+  <link rel="stylesheet" href="/scss/journal.min.css" media="screen"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap"><link rel="stylesheet" href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen"><meta name="color-scheme" content="light dark">
+</head><body>
+<a class="skip-link" href="#main-content">跳到主要内容</a><div id="app">
+<div class="single-column-drawer-container" id="drawer"><div class="drawer-content"><div class="drawer-profile"><img class="drawer-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div></div>
+<div id="drawer-overlay" class="single-column-drawer-overlay" style="display:none" role="button" tabindex="0" aria-label="关闭菜单" onclick="toggleDrawer()" onkeydown="(event.key===&quot;Enter&quot;||event.key===&quot; &quot;||event.key===&quot;Escape&quot;)&amp;&amp;(event.preventDefault(),toggleDrawer())"></div>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container"><div id="navBackground" class="nav-background"></div><div class="container container-narrow nav-content"><button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" aria-label="打开菜单" aria-expanded="false" onclick="toggleDrawer()"><span class="nav-menu-symbol" aria-hidden="true">☰</span></button><a id="navTitle" class="navbar-brand" href="/">zcxGGmu's Blog</a><button class="theme-toggle theme-toggle-mobile" type="button" data-theme-toggle title="切换深色模式" aria-label="切换深色模式" aria-pressed="false"><span class="material-icons theme-toggle-icon" aria-hidden="true">dark_mode</span></button></div></nav>
+<div class="single-column-header-container" id="pageHead"><a href="/"><img class="mobile-site-avatar" src="/images/avatar.png" alt="zcxGGmu" loading="lazy"><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div>
+<div id="content"><div id="streamContainer" class="stream-container" role="main"><div id="main-content"></div><div class="post-list-container post-list-container-shadow"><article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/cover.svg')"><div class="post-title">M9会降到M4吗：CPO换代下PCB与CCL的价值迁移<div class="post-subtitle">围绕高端CCL降规格叙事，拆解CPO、ScaleUp与ScaleOut架构变化，判断机柜内PCB与铜缆的真实占比，梳理M9、M10、PTFE材料升级、电子布与树脂风险，以及载板、MPO和光引擎的价值迁移路径。</div><div class="post-meta"><time itemprop="datePublished">2026-09-18</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E4%BA%A7%E4%B8%9A%E7%A0%94%E7%A9%B6/">产业研究</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/M9/">M9</a>&nbsp;<a href="/tags/M10/">M10</a>&nbsp;<a href="/tags/PTFE/">PTFE</a>&nbsp;<a href="/tags/CPO/">CPO</a>&nbsp;<a href="/tags/ScaleUp/">ScaleUp</a>&nbsp;<a href="/tags/ScaleOut/">ScaleOut</a>&nbsp;<a href="/tags/PCB/">PCB</a>&nbsp;<a href="/tags/CCL/">CCL</a>&nbsp;<a href="/tags/%E8%BD%BD%E6%9D%BF/">载板</a>&nbsp;<a href="/tags/MPO/">MPO</a>&nbsp;<a href="/tags/%E5%85%89%E5%BC%95%E6%93%8E/">光引擎</a>&nbsp;<a href="/tags/NVLink/">NVLink</a>&nbsp;<a href="/tags/448G/">448G</a>&nbsp;<a href="/tags/%E7%94%B5%E5%AD%90%E5%B8%83/">电子布</a>&nbsp;<a href="/tags/%E6%A0%91%E8%84%82/">树脂</a>&nbsp;<a href="/tags/%E4%BB%B7%E5%80%BC%E8%BF%81%E7%A7%BB/">价值迁移</a>&nbsp;<a href="/tags/%E4%B8%8D%E6%9E%84%E6%88%90%E6%8A%95%E8%B5%84%E5%BB%BA%E8%AE%AE/">不构成投资建议</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 15 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>高端CCL会不会从M9降到M4，表面上是材料规格问题，实质上是AI机柜互联架构正在发生重排。只要高速电信号仍需要在PCB和铜缆里跑较长距离，低损耗材料就有明确价值；一旦光连接把主芯片附近的长距离电走线切走，部分主板确实可能回到更低规格。但这不等于整个PCB和CCL链条失去价值。</p>
+<p>真正需要拆开的，是ScaleUp、ScaleOut、机柜内和机柜间四个不同场景。主芯片附近的连接方式变化，不能直接外推到整柜，更不能外推到所有服务器。当前机柜内部仍有大量计算板、交换板、背板、铜缆和短距电互联，价值变化更可能表现为从主板向载板、交换结构、光引擎和高端材料的重新分配。</p>
+<p>核心判断是：高端CCL降规格叙事有一半成立，但它描述的是某些电走线被压缩，而不是需求全面消失。2026至2027年更像情绪和预期冲击，2028年以后看大规模架构导入，拉长到2030年，真正决定产业链涨跌的变量是448G、NVLink光化、M10和PTFE的实际渗透速度。</p>
+<p>要把这件事看清楚，还需要把“用量”和“价值量”分开。假设一块主板因为光引擎前移而减少了几层高速电走线，材料面积可能下降，但剩余板层的加工精度、阻抗控制、热可靠性和良率要求可能更高；同时，载板、交换板、光引擎基板和高速连接器会增加新的验证环节。产业链的收入不会沿着一张主板的面积线性变化，而是随着信号路径和制造难度重新分配。</p>
+<p>本文不把任何单一平台的结构方案当成全行业定论，而是用可验证的工程变量做跟踪框架：看高速链路究竟缩短多少，看电连接被替代的是哪一段，看M8、M9、M10和PTFE的导入是否进入量产，再看电子布、树脂、铜箔和载板供应商能否获得稳定认证。只有这些变量连续兑现，降规格或再升级的判断才值得从主题叙事上升到产业结论。</p>
+<p>第一个跟踪变量是链路位置，而不是材料名称。主芯片到交换芯片之间、交换芯片到机柜外部之间、封装到载板之间，面对的距离、速率、散热和维修条件都不同。相同的M9或M10牌号放在不同位置，承担的损耗预算并不相同；如果不先画出路径，就容易把某个局部方案误读为全套设备的材料替换。</p>
+<p>第二个变量是板卡的功能边界。计算板、交换板、背板、载板和光电混合模块的价值，不能用同一套面积或吨数口径衡量。计算板可能减少一部分长距离布线，交换板却可能因为端口密度提高而增加层数，载板还要在更小尺寸上承受更严格的热循环。看板材需求，必须把板卡功能、层数、通道数量和认证状态放在同一张表里。</p>
+<p>第三个变量是有效供给。高端材料的名义产能、通过客户验证的产能和当季能够稳定交付的产能，往往不是一个数字。新的树脂配方或电子布规格即使已经完成设备安装，也要经过压合窗口、钻孔、可靠性和批次一致性测试。供应约束能否转化为利润，取决于有效产能而不是公告中的规划产能。</p>
+<p>第四个变量是时间窗口。2026至2027年要观察的是样品、客户导入和平台设计冻结，2028年要观察的是大规模量产与材料结构变化，2030年才适合回看光化是否真正改变整柜电连接的总长度。把远期方向提前当成当期利润，或者把当期局部变化外推成长期终局，都会放大判断误差。</p>
+<p>最后还要保留反证条件。如果光引擎成本下降慢于预期、448G升级带来新的电连接密度，或者M10与PTFE在可靠性和良率上迟迟无法规模导入，那么高端CCL的压力可能弱于市场想象；反过来，如果NVLink光化、MPO和光电混合封装同步加速，主板之外的载板、连接器和光引擎材料就需要重新估值。</p>
+<p>这套判断也解释了为什么不能只用季度出货量做结论。季度出货会受到客户备货、平台切换和库存节奏影响，真正有持续性的信号应当来自材料认证数量、不同板卡的高端料号占比、订单排期、良率以及客户是否愿意为更低损耗支付溢价。把这些信号放在同一条时间线上，才能区分一次性的产品切换与能够延续到2030年的结构性迁移。</p>
+<p>所以，所谓降规格并不是一个简单的利空标签，而是一道需要拆到链路、板卡和材料的判断题。先确认电信号是否真的离开主板，再确认价值是否转移到载板、交换板和光引擎，最后用订单、认证和良率验证兑现速度，结论才不会被单一牌号的涨跌带偏。</p>
+<p>最终应当跟踪的是整柜互联的总成本、总功耗和总可靠性，而不是单块主板的牌号。</p>
+<p>这也是价值迁移比降规标签更重要的原因。</p>
+<p>判断重心应放在架构兑现，而不是口号传播。</p>
+<p>这才是长期跟踪的起点。</p>
+<p>持续校验。</p>
+<h2 id="rumor-deconstruction">一、M9降到M4的叙事，为什么一半成立一半不成立</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/01-rumor-deconstruction.svg" alt="降规格叙事的成立边界" loading="lazy"><figcaption>高端CCL的压力来自电走线缩短，但主板、载板和交换结构不会同步降级。</figcaption></figure>
+<p>M9会降到M4这个说法，抓住了一个真实变化：当主芯片附近直接转入光连接，高速电信号在主板上的走线长度会被压缩，主板不再承担过去那么长的损耗预算。对于只负责低速控制、供电和局部管理的板卡，材料等级自然可能下移，部分M8、M9需求会被M4或更低规格替代。这个局部逻辑没有问题。</p>
+<p>问题在于，市场很容易把主板的变化外推成整个机柜的变化。AI服务器包括计算板、交换板、背板、连接器、铜缆、光模块、载板和电源散热系统。即便主芯片附近出现光化，GPU到交换网络之间仍可能保留短距高速电连接，交换板内部也仍然需要处理大量高速信号，材料需求不会沿着一条直线归零。</p>
+<p>判断高端CCL是否真正降级，不能只问某一块板用什么牌号，而要问高速信号的总路径被压缩了多少、剩余路径由谁承担、损耗预算是否转移到连接器和光引擎。信号可能先经过封装内互联，再经过载板，再进入短距铜缆或交换板，最后才进入光引擎。每一段的材料要求不同，价值会沿着路径重新分配。</p>
+<p>M4、M6、M8、M9和M10并不是对所有场景统一适用的产品，而是对应不同损耗、频率、层数、加工窗口和可靠性要求。主板的一段走线降级，并不代表载板、交换板和高密度互联全部降级；反过来，某些载板和光电混合结构升级，也可能抵消主板部分的单价压力。</p>
+<p>当前最合理的结论是“局部降规、整体迁移”。短期先看高端CCL公司的情绪冲击，中期看板材结构是否从主板转向载板和交换结构，长期看光连接的速度提升是否快到足以让整柜的电走线显著缩短。</p>
+<p>把这一层拆开，市场叙事是M9→M4；成立条件是短走线；不成立处是全机柜降规。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：高端CCL的压力来自电走线缩短，但主板、载板和交换结构不会同步降级。</p>
+<p>后续判断要同步反向校验。核心材料需要看仍是高端高速互联的重要材料层；替代方向需要看EML、硅光和光引擎承担更多长距离传输；投资含义需要看不要把局部降规等同于需求归零。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+<h2 id="scaleup-scaleout">二、ScaleUp与ScaleOut不是一回事，光化速度也不会同步</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/02-scaleup-scaleout.svg" alt="ScaleUp与ScaleOut的互联边界" loading="lazy"><figcaption>ScaleUp强调同一机柜内的高带宽低时延，ScaleOut强调跨节点扩展，两者的材料和光化节奏不同。</figcaption></figure>
+<p>ScaleUp和ScaleOut的区别，是理解CPO换代的第一道门槛。ScaleUp解决的是同一机柜内部多个GPU、CPU、交换芯片和加速器之间的高带宽互联，核心要求是低时延、高并发和紧凑布局。ScaleOut解决的是多个服务器、多个机柜甚至多个数据中心之间的扩展，距离更长、路径更复杂，对光模块和网络架构的依赖更高。</p>
+<p>在ScaleOut场景，光连接的经济性通常更容易成立。跨柜距离越长，电信号损耗越高，铜缆和PCB需要付出更多材料、均衡和功耗成本，光模块或光引擎的相对优势就越明显。也正因为如此，市场看到光化趋势后，容易直接推导出以后都不用高端板材，但ScaleUp的路径更短，铜连接的成本和时延优势仍然存在。</p>
+<p>同一机柜内的关键变化是路径重构，而不是介质单一化。主芯片附近的信号可以更早进入光引擎，但GPU与交换芯片之间仍可能通过短距铜缆、封装基板、计算板和交换板连接。此时高端材料的用量可能下降，材料的单位价值却未必同步下降，因为剩余位置需要更高层数、更密集的布线和更严格的阻抗控制。</p>
+<p>ScaleUp更新节奏更快，平台设计可能在一代产品内完成多次调整。只要交换芯片带宽继续提升，机柜内走线的密度和信号完整性就会变得更苛刻。某些环节减少长距离电走线，另一些环节则承担更高的单板复杂度。对于PCB制造商和材料供应商，必须识别每一代产品中走线长度、层数、板厚和材料牌号的组合变化。</p>
+<p>判断高端CCL需求不能只看光模块出货，也不能只看主芯片旁边是否出现光引擎。更有效的做法，是分别测算ScaleUp和ScaleOut的链路长度、带宽、功耗和可靠性要求，再把材料需求映射到计算板、交换板、背板、载板和光电混合模块。</p>
+<p>把这一层拆开，ScaleUp是柜内互联；ScaleOut是柜间互联；关键约束是时延/带宽。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：ScaleUp强调同一机柜内的高带宽低时延，ScaleOut强调跨节点扩展，两者的材料和光化节奏不同。</p>
+<p>后续判断要同步反向校验。当前介质需要看机柜内部仍占较大比例；演进路径需要看先替代长距离和高损耗链路；材料判断需要看不能用ScaleOut结论覆盖ScaleUp。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+<h2 id="cabinet-wiring-share">三、机柜内PCB和铜缆仍是主力，价值变化取决于走线长度</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/03-cabinet-wiring-share.svg" alt="机柜内互联的现实构成" loading="lazy"><figcaption>当前机柜内部仍由PCB和铜缆承担大量互联，光化先替代长距离链路，短距电连接不会同步消失。</figcaption></figure>
+<p>当前机柜内部仍然是PCB和铜缆的世界。计算板把GPU、CPU和加速器组织在一起，交换板负责把多个计算节点接入网络，背板和线缆把不同板卡连接起来。即使主芯片周围的长距离高速电走线被光连接替代，机柜内部的电连接仍然承担大量控制、管理、供电和局部高速信号。</p>
+<p>现阶段约80%的服务器机柜内部，仍然由铜缆和PCB完成互联。这个比例不会永久不变，但足以说明短期需求不会因为一条降规格叙事就消失。更关键的是，机柜内互联的价值不只由面积决定，还由层数、线宽线距、材料损耗、阻抗控制、钻孔、压合和良率共同决定。</p>
+<p>如果机柜内部速度继续提升，板材升级可能以两种方式发生。第一种是同样的板面积承载更多通道，要求更细的线宽线距、更高的层数和更严格的信号完整性；第二种是局部长距离走线被光化后，剩余电连接变短，但连接密度和接口数量增加。两者都会抬高制造复杂度，只是价值不再平均分布在每一块传统主板上。</p>
+<p>高速铜缆也不是简单的替代品。短距场景里它有低成本、低时延和易维护优势，但随着速率提升，线缆长度、屏蔽、连接器、均衡和功耗都会成为约束。光连接会先切入损耗最敏感、距离最长、维护成本最高的链路，保留铜缆的部分则更集中于短距离和高密度场景。</p>
+<p>因此，机柜内PCB和铜缆的占比下降，并不自动等于相关企业收入下降。需要进一步判断的是，减少的是低价值长走线，还是高价值高层数板卡；是材料用量下降，还是单板复杂度上升；是主板数量减少，还是载板、交换板和光电接口数量增加。</p>
+<p>把这一层拆开，当前结构是PCB+铜缆；柜内占比是约80%；信号路径是计算板→交换板。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：当前机柜内部仍由PCB和铜缆承担大量互联，光化先替代长距离链路，短距电连接不会同步消失。</p>
+<p>后续判断要同步反向校验。变化方向需要看高频电走线会向芯片和连接器附近收敛；补偿变量需要看单位板复杂度和加工难度继续提高；结论需要看总价值看组合而非单一材料牌号。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+<h2 id="value-transfer">四、主板降规不等于产业链变差，真正发生的是价值从主板转向载板</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/04-value-transfer.svg" alt="CPO换代下的价值迁移路径" loading="lazy"><figcaption>主板的部分高速价值会被光连接切走，但载板、交换板、光引擎和高密度接口获得新的价值份额。</figcaption></figure>
+<p>如果只看传统高端主板，降规格叙事确实会带来压力。主板过去需要承担较长的高速信号路径，M8、M9等低损耗材料的价值，来自为24G乃至更高频率信号提供传输窗口。当信号在主芯片附近快速进入光连接，主板的高速部分被压缩，部分高端材料的面积和用量会减少。</p>
+<p>但AI系统的价值不是静止在主板上。承载CPU、GPU和加速器的载板，往往要同时满足更大的尺寸、更高的层数、更严的线宽线距、更高的平整度和更复杂的封装互联。载板不是主板的简单缩小版，它在加工精度、材料匹配、热机械可靠性和信号完整性方面有更高要求。</p>
+<p>交换板也是重要的承接环节。交换芯片带宽提高后，板内通道数量、布线密度和功耗管理都会上升，哪怕单条高速走线变短，整板的复杂度仍会增加。更高的层数、更严的阻抗窗口和更高的良率要求，会让交换板从连接配件变成决定整柜性能和交付节奏的关键部件。</p>
+<p>光引擎和MPO接口代表另一种价值迁移。光引擎把电信号转换为光信号，减少高频电走线对板材和连接器的压力；MPO等高密度光纤接口则需要更高的装配精度、端面管理和可靠性。它们不一定完全替代PCB，但会把一部分系统价值转移到光电封装、光纤组件和连接器结构。</p>
+<p>真正应该问的问题不是CCL还有没有需求，而是每个AI机柜的互联价值由哪些部件分担。当主板份额下降、载板和交换板升级、光引擎和MPO增加时，产业链会从单一材料驱动转向多环节协同驱动。谁能同时覆盖高端PCB、载板、光电封装或高速连接，谁更有机会承接这次结构变化。</p>
+<p>把这一层拆开，承压环节是高端主板；承接环节是载板；同步升级是交换板。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：主板的部分高速价值会被光连接切走，但载板、交换板、光引擎和高密度接口获得新的价值份额。</p>
+<p>后续判断要同步反向校验。新增价值需要看把电信号尽早转换为光信号；连接器需要看光纤密度提升带来接口结构升级；核心判断需要看份额重分配而不是总需求蒸发。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+<h2 id="material-upgrade">五、M9、M10与PTFE仍有升级路线，材料溢价的风险在于导入节奏</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/05-material-upgrade.svg" alt="高速材料升级的三条路线" loading="lazy"><figcaption>M9、M10和PTFE代表不同的低损耗路线，真正的风险不是技术停止，而是高规格材料导入慢于预期。</figcaption></figure>
+<p>M9、M10和PTFE并不是同一条产品线的简单迭代，而是对不同损耗预算、加工窗口和应用场景的响应。M9更像当前高端高速互联的重要台阶，M10则对应更高带宽和更严苛的信号完整性要求，PTFE在超低损耗、高频和部分特殊结构中具备独立价值。它们的共同点是材料性能更强、验证周期更长、批量导入更依赖客户认证。</p>
+<p>材料公司的利润弹性，来自高规格牌号的性能溢价，而不是单纯来自树脂和玻纤的物理用量。只要终端设备持续升级，高端材料就可以通过更高价格、更高认证壁垒和更高客户黏性提升利润率。反过来，如果CPO把电走线压缩得太快，部分M9和M10的导入时间被推迟，市场对材料升级的预期就会迅速降温。</p>
+<p>当前最需要区分的是技术路线仍然成立和短期订单马上放量两个判断。行业可能已经完成M9或PTFE的研发、送样和部分认证，但真正带来收入的，还要经过客户验证、整机测试、量产爬坡和良率稳定。光化趋势会改变每一代平台的材料用量和导入时间，但不一定会让技术路线本身失效。</p>
+<p>M10的产业意义尤其需要谨慎。更高规格材料通常对应更高的研发投入、设备适配和加工难度，市场会先交易想象空间，再等待实际平台导入。如果未来高带宽互联仍有部分电路径保留，M10可能在交换板、载板和高密度接口附近出现；如果448G时代大量链路提前光化，M10的放量就可能慢于此前预期。</p>
+<p>判断材料升级是否兑现，不能只看宣传口径，需要建立完整的验证链：是否拿到客户样品订单，是否进入整机测试，是否形成稳定量产，是否在多个平台复制，是否带来平均售价和毛利率改善。对M9、M10和PTFE的研究，核心不是押注某个牌号永远升级，而是跟踪高规格材料在不同链路上的实际占比。</p>
+<p>把这一层拆开，M9路线是低损耗；M10路线是下一代；PTFE路线是超低损耗。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：M9、M10和PTFE代表不同的低损耗路线，真正的风险不是技术停止，而是高规格材料导入慢于预期。</p>
+<p>后续判断要同步反向校验。溢价来源需要看性能、良率和验证周期共同定价；主要风险需要看光化加速会推迟部分牌号放量；验证方法需要看订单、样品、量产和客户验证要分开。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+<h2 id="upstream-risk">六、上游电子布与树脂的风险更集中，因为价格更绑定高规格CCL</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/06-upstream-risk.svg" alt="电子布与树脂的暴露点" loading="lazy"><figcaption>上游电子布和树脂的盈利更依赖高规格CCL的持续升级，降规格叙事若被验证，压力会先传导到材料上游。</figcaption></figure>
+<p>上游电子布和树脂，是这条链里对高规格CCL最敏感的环节。M9加Q布、M10加Q布的组合，本质上是通过纤维结构、树脂体系和介电性能共同满足更高频率信号要求。下游主板如果部分降规，上游面对的不是单一客户减少一块板，而是高端牌号的订单结构、价格体系和产能利用率可能同时变化。</p>
+<p>电子布的风险在于产品结构差异。普通电子布可以覆盖更广泛的传统板材，但Q布和更高等级的电子布需要更严格的纤维均匀性、厚度控制和供应稳定性，客户认证也更慢。高端需求一旦放量，利润弹性往往更强；但高端需求一旦延后，价格压力和库存压力也会更集中。</p>
+<p>树脂的风险则更偏向配方和性能。低损耗树脂需要在介电常数、介质损耗、流动性、耐热性、加工窗口和可靠性之间取得平衡。材料升级通常不是把某一种树脂换成更贵的版本，而是整套压合、固化和板材工艺一起调整。光化速度变快后，树脂配方的导入周期可能被拉长，需求节奏也会更不平滑。</p>
+<p>从市场定价看，上游材料会比PCB制造更早反映情绪变化。PCB制造商可以通过计算板、交换板、载板和其他订单来重新配置产能，上游电子布和树脂的高端产能则更容易绑定某一类牌号。如果降规叙事被广泛接受，最先承压的可能不是所有PCB公司，而是高端材料价差最敏感的供应商。</p>
+<p>跟踪上游风险，需要把销量、价格和结构拆开看。高端Q布出货增加但价差收窄，未必代表需求健康；树脂订单增长但高规格占比下降，也未必代表材料升级兑现。真正有意义的指标包括高端牌号占比、M8以上材料的价格差、客户认证数量、库存天数和新增产能释放节奏。</p>
+<p>把这一层拆开，电子布是Q布；树脂是低损耗；绑定关系是M8+。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：上游电子布和树脂的盈利更依赖高规格CCL的持续升级，降规格叙事若被验证，压力会先传导到材料上游。</p>
+<p>后续判断要同步反向校验。风险方式需要看高端材料用量和溢价同时受压；传导速度需要看情绪和库存先于终端平台变化；跟踪指标需要看看高端与普通牌号的价差变化。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+<h2 id="timeline-448g">七、2028是大规模导入观察点，2030要看448G和NVLink是否全面光化</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/07-timeline-448g.svg" alt="2026至2030的技术时间表" loading="lazy"><figcaption>2026至2027年更多是情绪冲击，2028年看新平台导入，2030年看448G与NVLink光化是否重塑整柜链路。</figcaption></figure>
+<p>时间表决定了短期情绪和长期产业逻辑之间的距离。2026至2027年，既有平台的设计、认证、备料和交付仍然具有惯性，单一架构传闻很难立刻改变已经排定的订单。对于PCB和CCL公司来说，这一阶段更像估值和预期冲击，真正的收入变化要等新平台切换到量产。</p>
+<p>2028年以后，平台导入会成为关键观察窗口。随着CPU、GPU和交换架构出现更大规模的光互联配置，主板的高速部分可能进一步缩短，载板、交换板、光引擎和光纤接口的结构变化会更明显。Rubin Ultra之类平台如果大规模采用新的互联方式，才足以把局部降规变成可量化的BOM变化。</p>
+<p>448G是更远期的压力测试。速率提升以后，铜线在PCB上的可用距离会继续缩短，5至10厘米的走线都可能需要重新评估损耗、均衡和功耗。如果电连接不能在可接受的成本和可靠性下完成，光连接就会从局部替代走向更大范围渗透。那时，靠CCL升级不断提高平均售价的旧逻辑会发生根本变化。</p>
+<p>NVLink的光化进度尤其重要，因为它直接决定ScaleUp内部的电互联剩余空间。若NVLink在机柜内部仍保留大量铜连接，PCB和铜缆的需求会继续存在，只是更集中于高密度短距部分；若NVLink大范围转向光连接，主板和交换板的高速路径会再次被压缩，光引擎、MPO和光纤组件的价值权重会明显提升。</p>
+<p>拉长到2030年，产业研究的重点不再是判断某一个材料牌号涨不涨，而是看整柜互联的物理路径有没有被重新定义。需要同时观察448G规格、NVLink光化、M10和PTFE实际导入、载板层数和光引擎数量。如果这些信号同步向光连接倾斜，CCL的增长逻辑就必须从材料升级切换到结构升级。</p>
+<p>把这一层拆开，2026-2027是情绪期；2028以后是导入期；Rubin Ultra是关键点。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：2026至2027年更多是情绪冲击，2028年看新平台导入，2030年看448G与NVLink光化是否重塑整柜链路。</p>
+<p>后续判断要同步反向校验。448G需要看电走线距离可能压缩到更短范围；NVLink需要看ScaleUp链路何时大范围采用光连接；2030判断需要看材料、PCB和光电价值重新排序。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+<h2 id="beneficiaries-and-checklist">八、受益方向从单一CCL扩展到载板、MPO与光引擎</h2>
+<figure class="post-figure"><img src="/images/posts/m9-m4-cpo-pcb-ccl-value-transfer/08-beneficiaries-and-checklist.svg" alt="价值迁移后的受益环节与验证清单" loading="lazy"><figcaption>载板、MPO、高速光引擎和具备多场景制造能力的PCB厂商，更可能承接CPO换代后的新增价值。</figcaption></figure>
+<p>如果把价值迁移画成一张图，载板首先会从中受益。CPU、GPU和交换芯片的封装越来越复杂，载板承担的不是简单导线，而是电源完整性、信号完整性、散热和机械可靠性的共同约束。主板的部分高速路径被光化后，芯片端的封装和载板反而需要更高精度来完成剩余信号的短距离传输。</p>
+<p>MPO等高密度光纤接口则受益于机柜光化后的连接密度提升。光链路增加之后，机柜内的光纤管理、端口布局、插拔可靠性和维护效率成为新的工程问题。MPO不是所有光化价值的全部，但它代表了光纤从单个模块走向高密度系统连接的趋势，价值会随着端口数量和带宽升级而增加。</p>
+<p>光引擎是另一个关键承接环节。它把电信号尽早转换为光信号，缩短高频电走线，降低损耗和均衡压力。光引擎的价值不仅在器件本身，还在于它与芯片封装、板级布线、散热、供电和连接器的协同设计。谁能把光引擎嵌入系统级架构，谁就更有机会获得从单点器件到平台集成的溢价。</p>
+<p>PCB制造商也不会被简单淘汰，但能力门槛会发生变化。只做传统主板、产品结构单一的公司，可能更容易暴露在降规格压力下；同时具备计算板、交换板、载板、光电混合板和高端制造能力的企业，更有机会承接订单迁移。判断企业竞争力，应该看客户认证周期、量产良率、复杂板占比和不同互联场景之间的切换能力。</p>
+<p>这套结论需要用一张验证表持续复核：看平台BOM中主板、载板、交换板和光引擎的数量变化；看ScaleUp与ScaleOut的光化比例；看M9、M10、PTFE与普通牌号的结构价差；看电子布、树脂和MPO的客户认证进展；看量产良率是否把技术路线转化为稳定交付。只要信号路径还需要电连接，PCB和CCL就不会消失；只要光连接持续切走长距离电路径，价值就会向载板、MPO和光引擎移动。以上内容仅用于产业、商业模式与市场结构分析，不构成投资建议。</p>
+<p>把这一层拆开，载板是高精度；MPO是高密度；光引擎是电转光。这些并不是孤立信息，而是从高速电信号路径、机柜内互联结构、材料升级节奏和产业链议价权四个层面判断CCL需求是消失还是迁移之间的连续传导：载板、MPO、高速光引擎和具备多场景制造能力的PCB厂商，更可能承接CPO换代后的新增价值。</p>
+<p>后续判断要同步反向校验。PCB制造需要看计算板、交换板和载板能力更重要；铜缆需要看保留在低时延、低成本和高密度场景；判断框架需要看用平台BOM、光化比例和材料价差复核结论。只要其中任何一环发生逆转，结论就要重新估价；如果这些条件继续同向强化，框架的解释力会明显提高。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts">下一篇<br>没有更新的文章</a><a class="older-posts" href="/2026/zirconia-ai-compute-material-domestic-substitution/">上一篇<br>氧化锆站上AI算力风口：从传统陶瓷到高端结构材料</a></nav>
+    </article></div></div></div>
+<div class="side-container"><div class="nav-head"><a href="/" style="text-decoration:none;color:inherit"><div class="nav-title">🌀zcxGGmu's Blog</div><div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a></div><div class="nav-link-list"><a class="a-block nav-link-item active" href="/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div><div class="nav-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" target="_blank" rel="noopener noreferrer">Diary</a> by <a href="/">zcxGGmu</a><br>© 2026 zcxGGmu's Blog<br><span>备案信息占位</span></div></div>
+<div id="extraContainer" class="extra-container"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#rumor-deconstruction">一、M9降到M4的叙事，为什么一半成立一半不成立</a><a class="toc-link toc-level-2" href="#scaleup-scaleout">二、ScaleUp与ScaleOut不是一回事，光化速度也不会同步</a><a class="toc-link toc-level-2" href="#cabinet-wiring-share">三、机柜内PCB和铜缆仍是主力，价值变化取决于走线长度</a><a class="toc-link toc-level-2" href="#value-transfer">四、主板降规不等于产业链变差，真正发生的是价值从主板转向载板</a><a class="toc-link toc-level-2" href="#material-upgrade">五、M9、M10与PTFE仍有升级路线，材料溢价的风险在于导入节奏</a><a class="toc-link toc-level-2" href="#upstream-risk">六、上游电子布与树脂的风险更集中，因为价格更绑定高规格CCL</a><a class="toc-link toc-level-2" href="#timeline-448g">七、2028是大规模导入观察点，2030要看448G和NVLink是否全面光化</a><a class="toc-link toc-level-2" href="#beneficiaries-and-checklist">八、受益方向从单一CCL扩展到载板、MPO与光引擎</a></nav></div></div><div class="pagination"><a id="globalBackToTop" class="pagination-action animated-visibility invisible" href="#top"><span class="pagination-action-icon" aria-hidden="true">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" target="_blank" rel="noopener noreferrer">GitHub</a><br><a href="mailto:placeholder@example.com">Email</a><br><a href="/index.xml">RSS</a><br><hr>魔改自 Diary by zcxGGmu<br>© 2026 zcxGGmu's Blog</div></div><script src="/js/journal.js"></script><script src="/js/code-enhance.js"></script></body></html>
