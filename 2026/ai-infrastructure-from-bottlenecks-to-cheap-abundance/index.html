@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="Custom static archive" name="generator"/>
+<title>人工智能基础设施：从瓶颈狂热到廉价普及 - zcxGGmu's Blog</title>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" name="description"/>
+<meta content="zcxGGmu" name="author"/>
+<meta content="#f8fafc" name="theme-color"/>
+<meta content="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" property="og:url"/>
+<meta content="zcxGGmu's Blog" property="og:site_name"/>
+<meta content="人工智能基础设施：从瓶颈狂热到廉价普及" property="og:title"/>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" property="og:description"/>
+<meta content="zh_cn" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" rel="canonical"/>
+<link href="/images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+<link href="/scss/journal.min.css" media="screen" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap" rel="stylesheet"/>
+<link href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen" rel="stylesheet"/>
+<meta content="light dark" name="color-scheme"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<div id="app">
+<div class="single-column-drawer-container" id="drawer">
+<div class="drawer-content"><div class="drawer-profile"><img alt="zcxGGmu" class="drawer-avatar" loading="lazy" src="/images/avatar.png"/><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+</div>
+<div aria-label="关闭菜单" class="single-column-drawer-overlay" id="drawer-overlay" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&amp;&amp;(event.preventDefault(),toggleDrawer())' role="button" style="display:none" tabindex="0"></div>
+<nav class="navbar sticky-top navbar-light single-column-nav-container" id="navBar">
+<div class="nav-background" id="navBackground"></div>
+<div class="container container-narrow nav-content">
+<button aria-expanded="false" aria-label="打开菜单" class="nav-dropdown-toggle" id="nav_dropdown_btn" onclick="toggleDrawer()" type="button"><span aria-hidden="true" class="nav-menu-symbol">☰</span></button>
+<a class="navbar-brand" href="/" id="navTitle">zcxGGmu's Blog</a>
+<button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-mobile" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button>
+</div>
+</nav>
+<div class="single-column-header-container" id="pageHead">
+<a href="/"><img alt="zcxGGmu" class="mobile-site-avatar" loading="lazy" src="/images/avatar.png"/><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+</div>
+<div id="content">
+<div class="stream-container" id="streamContainer" role="main">
+<div id="main-content"></div>
+<div class="post-list-container post-list-container-shadow">
+<article class="post">
+<div class="post-head-wrapper" style="background-image:url('/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/cover.svg')">
+<div class="post-title">人工智能基础设施：从瓶颈狂热到廉价普及<div class="post-subtitle">铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。</div><div class="post-meta"><time itemprop="datePublished">2026-10-21</time>  <span aria-hidden="true" class="meta-icon">▣</span> <a href="/categories/科技与产业/">科技与产业</a>  <span aria-hidden="true" class="meta-icon">◇</span> <a href="/tags/人工智能/">人工智能</a> <a href="/tags/基础设施/">基础设施</a> <a href="/tags/算力/">算力</a> <a href="/tags/技术周期/">技术周期</a> <a href="/tags/产业链/">产业链</a> <a href="/tags/科技史/">科技史</a>  <span aria-hidden="true" class="meta-icon">◷</span> 5 min</div></div>
+</div>
+<div class="post-body-wrapper"><div class="post-body" v-pre=""><h2 id="1-基础设施越普及单价越接近公用事业">1. 基础设施越普及，单价越接近公用事业</h2><p><img alt="铁路、电网、互联网和人工智能从稀缺技术走向普及服务的时间轴" loading="lazy" src="/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/chapter-01.svg"/></p><p>当一种技术像空气和水一样不可或缺，只要没有垄断，它的商业价值就会越来越接近公用事业。跨越上千公里的火车票只需百来元，能够冶炼几十公斤钢铁的电费还不到几瓶饮料的钱，来自地球另一端的高清视频也只需几毛钱流量费。铁路、电力和互联网都经历了从前沿技术到日常服务的过程。人工智能虽然属于新技术，但三十年前的上网、一百年前的电力、二百年前的火车在当时同样是前沿甚至被称作“黑科技”。它们都需要大规模基础设施建设，并在供给扩张后逐渐降低价格。基础设施企业的共同特征是资本开支巨大、资产回报率偏低、回报周期漫长，经过早期情绪推动的估值和盈利增长后，往往回到社会平均利润率。 因此，判断人工智能的商业化阶段，不能只看某个模型的能力，也要看单位算力、单位存储和单位传输成本是否已经低到足以让更多企业使用。基础设施价格下降会扩大需求，需求扩大又会催生更多应用，应用层的利润来源与建设底层设施的利润来源并不相同。</p><h2 id="2-ai行情反复围绕算力瓶颈展开">2. AI行情反复围绕算力瓶颈展开</h2><p><img alt="AI算力扩张从芯片封装、服务器到光互联和电力散热的瓶颈链条" loading="lazy" src="/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/chapter-02.svg"/></p><p>过去三年的人工智能行情，资金反复沿着基础设施流水线寻找瓶颈。大模型初次爆发时，芯片封装产能不足、显卡交付困难，资金集中到晶圆和先进封装；封装扩充后，服务器、机架和数据中心成为瓶颈；设备堆起来后，电力和散热跟不上，核电、制冷设备受到追捧。推理和智能代理的消耗增加后，储存、传输、高带宽存储、高速互联和定制芯片相继成为主线。铜缆出现物理瓶颈后，800G、1.6T光模块、共封装光学又被追逐；光模块扩产后，资金再次回到电力、变压器和液冷散热。木桶每解决一个旧卡点，下一个物理极限就暴露出来。 资金沿供应链追逐瓶颈时，产业链上的订单、产能和估值会相互强化；但一旦需求增速不及预期，杠杆和折旧会反过来放大下行。光模块、交换机、制冷和电力设备都可能出现同样的路径。</p><h2 id="3-钢轨铜缆与橡胶历史上的瓶颈炒作">3. 钢轨、铜缆与橡胶：历史上的瓶颈炒作</h2><p><img alt="熟铁轨、铜缆、天然橡胶和光纤等历史瓶颈的价格与估值狂热" loading="lazy" src="/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/chapter-03.svg"/></p><p>铁路建设时期，熟铁轨质地较软，繁忙线路每隔几个月就会变形开裂。市场据此相信熟铁产能将长期供不应求，铁料价格五年内接近翻三倍，伦敦证券交易所铁厂股价平均上涨近十倍，部分龙头接近二十倍。电力革命初期，爱迪生直流输电需要粗铜缆降低电阻，铜矿和电缆股被推高；高压电线、变压器和发电机线圈还需要绝缘材料，南美天然橡胶成为新的瓶颈，1895年至1910年价格上涨500%，部分核心公司股价四五年间上涨20至30倍。互联网泡沫时，资本五年向电信行业投入约5000亿美元，铺设3900万英里光纤，带宽需求翻倍的叙事把交换机和电信设备订单推向多年以后。 这些案例共同说明，供应链瓶颈并非永久稀缺。新工艺、替代材料和规模化产能会不断改变供需关系。短期的价格和估值，不能直接替代对技术路线和资本回报的长期判断。</p><h2 id="4-技术替代会击穿瓶颈溢价">4. 技术替代会击穿瓶颈溢价</h2><p><img alt="贝塞麦炼钢、交流电、合成塑料和波分复用消除瓶颈的技术替代图" loading="lazy" src="/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/chapter-04.svg"/></p><p>超额利润会吸引资本和研发去消除瓶颈。1856年贝塞麦酸性转炉炼钢法把空气直接吹入熔融生铁，解决了液态钢低成本量产问题，钢轨寿命超过熟铁轨十倍。随后传统熟铁厂巨头估值从高位回落，约95%的欧美传统熟铁厂破产。特斯拉交流电与变压器技术克服了直流远距离输电损耗，不再需要比腰粗的铜缆。1907年合成树脂和廉价陶瓷绝缘材料出现，价格仅为天然橡胶的十分之一。电网建成后，电力基建股转为低成长、重折旧的红利行业。互联网时期，密集波分复用让一根旧光纤同时传输160多种激光，全球97.5%的光纤一度闲置，跨洋带宽价格下跌90%，超过60家电信巨头破产，行业市值蒸发约2万亿美元。 基础设施的沉重资产属性意味着行业需要持续提高利用率，才能摊薄折旧和融资成本。互联网光纤在高峰期过度建设后，低价转让给后来者，正是利用率和资产价格重新定价的结果。</p><h2 id="5-卖铲子未必等于建立长期帝国">5. 卖铲子未必等于建立长期帝国</h2><p><img alt="淘金热中的运输、汇兑业务与后来金融企业，以及基础设施废墟上的新应用" loading="lazy" src="/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/chapter-05.svg"/></p><p>淘金热中的卖铲子企业能在早期获得订单，但工具迭代、矿区勘探完成或需求转向后，库存可能变成废铁。西部淘金热中，亨利·威尔斯和威廉·法戈一方面武装押运黄金和货物，另一方面在矿区收购黄金并兑换汇票，后来发展出美国运通和富国银行。两家公司如今合计年净利润超过320亿美元，总市值一度超过4100亿美元，而当年众多矿业和铁器企业中超过90%后来破产或消失。基础设施狂热仍有历史作用：铁路留下低价运输网络，孕育邮购零售和全国分销；电网廉价化催生汽车流水线、白色家电、影视娱乐和电解铝；互联网泡沫破裂后，廉价的海底和陆地光纤为谷歌、奈飞、亚马逊、AWS以及淘宝、微信、字节跳动等生态提供条件。 铁路、电力和互联网的应用层都在基础设施价格下降后才获得广泛用户。人工智能也可能遵循同样顺序：先由资本承担建设成本，再由低价算力释放应用创新。</p><h2 id="6-ai基建仍在扩张但融资约束已经出现">6. AI基建仍在扩张，但融资约束已经出现</h2><p><img alt="AI算力投资中的芯片折旧、融资利率、现金流和长期采购承诺风险" loading="lazy" src="/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/chapter-06.svg"/></p><p>人工智能基础设施建设正在经历类似的高投入阶段。铁路留下的钢轨和海底光纤可以使用几十年，而数百亿美元购入的算力芯片迭代周期可能只有一到两年。全球主要经济体的流动性和害怕错过机会的情绪，使资本继续留在算力投资上，但超额投资最终会带来过剩。算力公司融资成本已出现压力：某大型模型企业为购买芯片筹集600亿美元融资债，其中420亿美元优先债需要芯片合作方担保，180亿美元次级债有90亿美元由黑石承接，利率超过10%，而同评级公开债券约7%。该企业单季营收168亿美元，仍需以未来五年芯片租约作抵押。谷歌上市22年来首次出现季度负自由现金流，二季度为负58.55亿美元；另一家模型企业一年内背上950亿美元芯片债和5180亿美元长期算力采购承诺。 当融资利率上升、企业自由现金流转负、采购承诺超过自身支付能力时，算力扩张就会从资本开支问题转化为信用问题。观察债务结构和现金流，比单看收入增速更能反映周期风险。</p><h2 id="7-基础设施廉价化之后应用才会成为主角">7. 基础设施廉价化之后，应用才会成为主角</h2><p><img alt="AI基础设施从高价稀缺到低价普及并孕育应用生态的阶段图" loading="lazy" src="/images/posts/ai-infrastructure-from-bottlenecks-to-cheap-abundance/chapter-07.svg"/></p><p>人工智能并未因为基础设施阶段的风险而失去长期意义。真正的现象级应用尚未全部出现，长期价值也远未结束，但基础设施行情可能经历阶段性萧条甚至崩盘。历史上，熟铁轨狂欢持续四年后被转炉炼钢击穿，早期电力股繁荣持续六年后被交流电与合成材料改变，网络与光纤狂欢持续五年后进入互联网危机。AI同样可能在新技术消除算力瓶颈时发生创造性破坏。当一种技术昂贵到只有巨头用得起时，它更像资本赌场；当它便宜到街边小店都觉得不值得计价，才真正成为新时代基础设施。基础设施建设者、应用生态和最终用户在周期中的位置不同，行业方向判断正确，也不代表中途不会经历大幅亏损。 因此，AI基建的历史作用与其投资回报需要分开观察。它可能推动技术普及和社会效率提升，但早期建设者仍会面临过剩、折旧、融资和替代技术带来的损失。</p><hr id="EOF"/><p class="last-modified">最后整理于 2026-10-21</p></div></div>
+<nav class="post-pagination"><a class="newer-posts">下一篇
+等待更新</a><a class="older-posts">上一篇
+等待更新</a></nav>
+</article>
+</div>
+</div>
+</div>
+<div class="side-container" id="sideContainer">
+<button aria-expanded="true" aria-label="收起左侧边栏" class="sidebar-collapse-toggle" data-sidebar-collapse-toggle="" title="收起左侧边栏" type="button">
+<span aria-hidden="true" class="material-icons sidebar-collapse-icon">chevron_left</span>
+</button>
+<a class="a-block nav-head false" href="/">
+<img alt="zcxGGmu" class="site-avatar" loading="lazy" src="/images/avatar.png"/>
+<div class="nav-title">zcxGGmu's Blog</div>
+<div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+</a>
+<div class="theme-switcher theme-switcher-desktop"><button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-desktop" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button></div>
+<div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+<div class="nav-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<div class="extra-container" id="extraContainer"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#一1270-万毕业生压力不只来自人数">一、1270 万毕业生，压力不只来自人数</a><a class="toc-link toc-level-2" href="#二学历回报取决于岗位结构">二、学历回报取决于岗位结构</a><a class="toc-link toc-level-2" href="#三入职并不等于就业安全">三、入职并不等于就业安全</a><a class="toc-link toc-level-2" href="#四房地产消费疲软与行业调整如何影响岗位">四、房地产、消费疲软与行业调整如何影响岗位</a><a class="toc-link toc-level-2" href="#五全职儿女与付费坐办公室反映了什么">五、“全职儿女”与付费坐办公室，反映了什么</a><a class="toc-link toc-level-2" href="#六判断就业压力不能只看失业人数">六、判断就业压力，不能只看失业人数</a><a class="toc-link toc-level-2" href="#结语毕业生需要的不是一句再努力一点">结语：毕业生需要的不是一句“再努力一点”</a></nav></div></div><div class="pagination"><a class="pagination-action animated-visibility invisible" href="#top" id="globalBackToTop"><span aria-hidden="true" class="pagination-action-icon">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<script src="/js/journal.js"></script>
+<script src="/js/code-enhance.js"></script>
+<script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+<script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+<script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+<script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>

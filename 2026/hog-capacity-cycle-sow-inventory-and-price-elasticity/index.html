@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="Custom static archive" name="generator"/>
+<title>生猪产能去化为何仍然缓慢：母猪样本、疫病与价格弹性 - zcxGGmu's Blog</title>
+<meta content="官方母猪存栏、规模场样本、种猪销量和淘汰数据呈现不同的产能变化。样本结构、生产效率和疫病韧性会影响供给判断；猪价推演必须把数据口径与假设分开。" name="description"/>
+<meta content="zcxGGmu" name="author"/>
+<meta content="#f8fafc" name="theme-color"/>
+<meta content="https://zcxggmu.github.io/2026/hog-capacity-cycle-sow-inventory-and-price-elasticity/" property="og:url"/>
+<meta content="zcxGGmu's Blog" property="og:site_name"/>
+<meta content="生猪产能去化为何仍然缓慢：母猪样本、疫病与价格弹性" property="og:title"/>
+<meta content="官方母猪存栏、规模场样本、种猪销量和淘汰数据呈现不同的产能变化。样本结构、生产效率和疫病韧性会影响供给判断；猪价推演必须把数据口径与假设分开。" property="og:description"/>
+<meta content="zh_cn" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://zcxggmu.github.io/2026/hog-capacity-cycle-sow-inventory-and-price-elasticity/" rel="canonical"/>
+<link href="/images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+<link href="/scss/journal.min.css" media="screen" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap" rel="stylesheet"/>
+<link href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen" rel="stylesheet"/>
+<meta content="light dark" name="color-scheme"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<div id="app">
+<div class="single-column-drawer-container" id="drawer">
+<div class="drawer-content"><div class="drawer-profile"><img alt="zcxGGmu" class="drawer-avatar" loading="lazy" src="/images/avatar.png"/><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+</div>
+<div aria-label="关闭菜单" class="single-column-drawer-overlay" id="drawer-overlay" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&amp;&amp;(event.preventDefault(),toggleDrawer())' role="button" style="display:none" tabindex="0"></div>
+<nav class="navbar sticky-top navbar-light single-column-nav-container" id="navBar">
+<div class="nav-background" id="navBackground"></div>
+<div class="container container-narrow nav-content">
+<button aria-expanded="false" aria-label="打开菜单" class="nav-dropdown-toggle" id="nav_dropdown_btn" onclick="toggleDrawer()" type="button"><span aria-hidden="true" class="nav-menu-symbol">☰</span></button>
+<a class="navbar-brand" href="/" id="navTitle">zcxGGmu's Blog</a>
+<button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-mobile" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button>
+</div>
+</nav>
+<div class="single-column-header-container" id="pageHead">
+<a href="/"><img alt="zcxGGmu" class="mobile-site-avatar" loading="lazy" src="/images/avatar.png"/><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+</div>
+<div id="content">
+<div class="stream-container" id="streamContainer" role="main">
+<div id="main-content"></div>
+<div class="post-list-container post-list-container-shadow">
+<article class="post">
+<div class="post-head-wrapper" style="background-image:url('/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/cover.svg')">
+<div class="post-title">生猪产能去化为何仍然缓慢：母猪样本、疫病与价格弹性<div class="post-subtitle">官方母猪存栏、规模场样本、种猪销量和淘汰数据呈现不同的产能变化。样本结构、生产效率和疫病韧性会影响供给判断；猪价推演必须把数据口径与假设分开。</div><div class="post-meta"><time itemprop="datePublished">2026-10-21</time>  <span aria-hidden="true" class="meta-icon">▣</span> <a href="/categories/农业与周期/">农业与周期</a>  <span aria-hidden="true" class="meta-icon">◇</span> <a href="/tags/生猪/">生猪</a> <a href="/tags/能繁母猪/">能繁母猪</a> <a href="/tags/产能去化/">产能去化</a> <a href="/tags/猪价/">猪价</a> <a href="/tags/规模养殖/">规模养殖</a> <a href="/tags/农业周期/">农业周期</a>  <span aria-hidden="true" class="meta-icon">◷</span> 5 min</div></div>
+</div>
+<div class="post-body-wrapper"><div class="post-body" v-pre=""><h2 id="1-产能去化有多快取决于数据口径">1. 产能去化有多快，取决于数据口径</h2><p><img alt="全国能繁母猪统计与规模场样本的产能去化对比图" loading="lazy" src="/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/chapter-01.svg"/></p><p>对生猪供给的判断，首先要区分全国统计和企业样本。全国能繁母猪数据在所述时点尚未完整公布，按高点约4080万头比较，截至6月的降幅约6.5%；把7月至9月纳入估算后，偏中性的累计降幅约8%至9%，较乐观情形约10%，但这些是估算而非已公布的最终值。规模场监测样本截至9月累计下降约5.7%，不到6%。该样本以中大型养殖企业为主，不能代表全国全部养殖户。全国口径与样本口径差异，可能反映小规模养殖主体去化更快，也可能来自样本构成、统计时间和生产效率差异。 如果只看官方存栏绝对数，可能忽略生产效率提高带来的实际供应增加。PSY等效率指标会影响每头母猪的年出栏能力，因此同样的存栏数量不一定对应同样的商品猪供应。</p><h2 id="2-母猪存栏传导到商品猪价格存在时滞">2. 母猪存栏传导到商品猪价格存在时滞</h2><p><img alt="能繁母猪存栏变化经过繁育周期传导到商品猪出栏与猪价的时间轴" loading="lazy" src="/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/chapter-02.svg"/></p><p>母猪存栏不是当月商品猪供应量的同义词，生产效率和繁育周期会改变两者之间的关系。全国母猪绝对数量的阶段性高点被放在2025年6月左右；综合母猪数量与生产效率后，供给能力高点大致对应这一阶段，随后传导到2026年4月的猪价低点。该时点日猪价曾跌破每公斤9元，行业亏损较重。之后屠宰量和批发量略有下降，猪价呈现弱势震荡修复。另一个以中大型场为主的样本把高点放在2025年11月，因而对应2026年9月仍有较大的出栏压力。不同样本的滞后关系不同，不能用单一月份直接推算全行业供给拐点。 2026年4月的价格低点与此前母猪高点之间存在滞后，说明当前价格不只由当月存栏决定，还受到育肥周期、屠宰量和消费季节性影响。</p><h2 id="3-规模场样本显示去化幅度仍偏小">3. 规模场样本显示去化幅度仍偏小</h2><p><img alt="规模场样本月度环比及同比去化幅度对比" loading="lazy" src="/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/chapter-03.svg"/></p><p>规模场监测样本中，2025年11月附近出现样本高点，之后至9月累计下降约5.7%。其中7月环比下降约1.2%，8月约下降0.3%，9月约下降0.5%；同比降幅分别约4.7%、5%和5.4%。除受水灾影响的7月外，环比下降多数只有零点几。对照没有水灾的2023年8月至2024年1月，样本曾连续六个月每月下降1%以上，10月至12月部分月份达到约2%，同比降幅可达10%。这说明当前规模场样本所呈现的产能去化更慢，养殖体系的韧性有所增强。第三方样本可能显示更大的8、9月降幅，差异需要结合样本范围解释。 7月水灾造成样本环比降幅扩大，但不能把一次性灾害造成的去化当成长期趋势。对比不同年份时，也要考虑疫情强弱和防疫设施覆盖率的变化。</p><h2 id="4-疫病防控与种猪销量解释产能韧性">4. 疫病防控与种猪销量解释产能韧性</h2><p><img alt="空气过滤防疫设施、种猪销售、补栏和淘汰量之间的关联图" loading="lazy" src="/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/chapter-04.svg"/></p><p>规模猪场防疫水平提高是样本去化放缓的一种解释。过去部分种猪场尚未配置空气过滤等设施，后来空气过滤和智能化设备的普及提高了防护能力。即使出现水灾，淘汰母猪数量和价格也没有重现2023年那种大幅变化。与此同时，种猪销售和补栏数据偏弱：样本外销量在2025年6月前通常超过3万头，之后多在2.6万至2.8万头；2025年末至2026年初一度约2.2万至2.4万头，后续有阶段性回升。累计外销量同比下降约6%至7%，外销加自用也下降约5%至7%；淘汰量累计同比增加约27%。这些指标与产能整体去化相符，但单个企业样本无法给出全国母猪总量。 种猪外销量下降意味着养殖户补栏意愿减弱，淘汰量上升则说明亏损和资金压力正在推动退出。两者结合，比单看某月母猪存栏更能描述行业行为。</p><h2 id="5-去化主要发生在中小养殖主体">5. 去化主要发生在中小养殖主体</h2><p><img alt="按养殖规模划分的产能去化速度和出栏占比结构" loading="lazy" src="/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/chapter-05.svg"/></p><p>样本内能繁母猪占比较高的是存栏5000头以上企业，约占样本的70%。5000头以下企业在多个时段每月去化约1%至2%；5000至2万头企业降幅较小，2万头以上企业更慢，因此大场占比较高的综合样本整体降幅不到6%。产能去化的主力更可能是中小场和散户。行业统计中，年出栏500头以下的养殖户贡献的出栏量理论上约占两成，但这个比例存在口径问题：部分散户出栏的生猪可能来自规模场购入仔猪，按最终出栏主体分类会影响对真正小规模生产占比的判断。不能仅凭出栏规模或母猪存栏区间推定其实际产能贡献。 大型猪场防疫和融资能力较强，能够在低价期维持产能；中小场更容易因现金流、疫病和饲料成本退出。因此，供给出清速度通常由边际成本最高、资金最脆弱的主体决定。</p><h2 id="6-价格推演需要把假设和结果分开">6. 价格推演需要把假设和结果分开</h2><p><img alt="供给减少幅度、价格弹性假设与猪价情景推演表" loading="lazy" src="/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/chapter-06.svg"/></p><p>对未来价格的推算采用了供给变化与价格弹性的粗略关系：年度供给减少1个百分点，价格大约上涨5%，即约1比5，但月度关系可能在1比3到1比10之间波动。以2024年11月约3950万头的母猪数据为参照，若后续供给能力下降约7%、生产效率不变，按1比5推算，猪价可比当前水平上涨约30%，对应每公斤约13元。若假设当前供需平衡的母猪数量约为3600万至3700万头，则约13元/公斤可能接近平衡区间。这个推算高度依赖生产效率、消费和时间窗口，不能当作确定预测。若春节前价格长期低于11元/公斤，可能促使产能进一步去化3至4个百分点，模型推演中的价格区间可上移到15至16元/公斤；相应盈利也可能回到每头约200至300元的区间。 如果春节前低价持续，亏损会进一步改变补栏决策；如果消费恢复或价格提前反弹，部分主体可能延后淘汰，导致供给修复慢于理论推演。</p><h2 id="7-疫病和成本决定小场出清节奏">7. 疫病和成本决定小场出清节奏</h2><p><img alt="猪场成本、疫病扰动和规模差异共同决定产能退出的因果图" loading="lazy" src="/images/posts/hog-capacity-cycle-sow-inventory-and-price-elasticity/chapter-07.svg"/></p><p>所述时点的疫病总体较稳定，南方雨水较多时江西、福建等地出现局部情况，主要影响肥猪抛售和局部价格；北方降温、降雨可能带来短期扰动，但尚未显示对全国供给产生重大影响。疫病更多增加企业成本，资金链脆弱的中小养殖主体更容易因此退出，大型集团场的产能则相对稳定。集团场完全成本约每公斤12.5至12.6元，现金成本约11至11.5元；中小养殖户正常生产时成本可能略低，但疫病发生率和资金承受力会削弱成本优势。未来观察重点包括官方母猪存栏、样本补栏与淘汰量、天气和疫病、春节前猪价能否持续低于11元，以及生产效率是否继续提高。整条判断链需要由多个指标验证，不能只看单一猪价或母猪存栏。 成本数据也需要区分完全成本和现金成本。现金成本低于售价时，企业仍可能暂时生产，但长期不能覆盖折旧、人工和资金成本时，最终仍会退出。 因此，猪价周期的关键不是寻找一个单独的平衡点，而是持续比较存栏、效率、补栏、淘汰、疫病和消费。只有这些指标在同一方向上持续变化，供需平衡和盈利区间的判断才会更稳定。 供给判断还要结合消费端。如果消费量保持稳定，母猪和效率变化才可以用于推算价格弹性；若消费季节性、收入变化或替代品价格改变，供需平衡的母猪数量也会变化。期货价格可以反映市场预期，但不能替代现货出栏、屠宰和库存数据。</p><hr id="EOF"/><p class="last-modified">最后整理于 2026-10-21</p></div></div>
+<nav class="post-pagination"><a class="newer-posts">下一篇
+等待更新</a><a class="older-posts">上一篇
+等待更新</a></nav>
+</article>
+</div>
+</div>
+</div>
+<div class="side-container" id="sideContainer">
+<button aria-expanded="true" aria-label="收起左侧边栏" class="sidebar-collapse-toggle" data-sidebar-collapse-toggle="" title="收起左侧边栏" type="button">
+<span aria-hidden="true" class="material-icons sidebar-collapse-icon">chevron_left</span>
+</button>
+<a class="a-block nav-head false" href="/">
+<img alt="zcxGGmu" class="site-avatar" loading="lazy" src="/images/avatar.png"/>
+<div class="nav-title">zcxGGmu's Blog</div>
+<div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+</a>
+<div class="theme-switcher theme-switcher-desktop"><button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-desktop" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button></div>
+<div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+<div class="nav-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<div class="extra-container" id="extraContainer"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#一1270-万毕业生压力不只来自人数">一、1270 万毕业生，压力不只来自人数</a><a class="toc-link toc-level-2" href="#二学历回报取决于岗位结构">二、学历回报取决于岗位结构</a><a class="toc-link toc-level-2" href="#三入职并不等于就业安全">三、入职并不等于就业安全</a><a class="toc-link toc-level-2" href="#四房地产消费疲软与行业调整如何影响岗位">四、房地产、消费疲软与行业调整如何影响岗位</a><a class="toc-link toc-level-2" href="#五全职儿女与付费坐办公室反映了什么">五、“全职儿女”与付费坐办公室，反映了什么</a><a class="toc-link toc-level-2" href="#六判断就业压力不能只看失业人数">六、判断就业压力，不能只看失业人数</a><a class="toc-link toc-level-2" href="#结语毕业生需要的不是一句再努力一点">结语：毕业生需要的不是一句“再努力一点”</a></nav></div></div><div class="pagination"><a class="pagination-action animated-visibility invisible" href="#top" id="globalBackToTop"><span aria-hidden="true" class="pagination-action-icon">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<script src="/js/journal.js"></script>
+<script src="/js/code-enhance.js"></script>
+<script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+<script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+<script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+<script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
