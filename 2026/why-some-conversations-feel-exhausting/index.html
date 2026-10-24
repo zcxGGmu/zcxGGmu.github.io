@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="Custom static archive" name="generator"/>
+<title>为什么跟有的人聊天这么累？ - zcxGGmu's Blog</title>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" name="description"/>
+<meta content="zcxGGmu" name="author"/>
+<meta content="#f8fafc" name="theme-color"/>
+<meta content="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" property="og:url"/>
+<meta content="zcxGGmu's Blog" property="og:site_name"/>
+<meta content="人工智能基础设施：从瓶颈狂热到廉价普及" property="og:title"/>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" property="og:description"/>
+<meta content="zh_cn" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" rel="canonical"/>
+<link href="/images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+<link href="/scss/journal.min.css" media="screen" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap" rel="stylesheet"/>
+<link href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen" rel="stylesheet"/>
+<meta content="light dark" name="color-scheme"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<div id="app">
+<div class="single-column-drawer-container" id="drawer">
+<div class="drawer-content"><div class="drawer-profile"><img alt="zcxGGmu" class="drawer-avatar" loading="lazy" src="/images/avatar.png"/><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+</div>
+<div aria-label="关闭菜单" class="single-column-drawer-overlay" id="drawer-overlay" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&amp;&amp;(event.preventDefault(),toggleDrawer())' role="button" style="display:none" tabindex="0"></div>
+<nav class="navbar sticky-top navbar-light single-column-nav-container" id="navBar">
+<div class="nav-background" id="navBackground"></div>
+<div class="container container-narrow nav-content">
+<button aria-expanded="false" aria-label="打开菜单" class="nav-dropdown-toggle" id="nav_dropdown_btn" onclick="toggleDrawer()" type="button"><span aria-hidden="true" class="nav-menu-symbol">☰</span></button>
+<a class="navbar-brand" href="/" id="navTitle">zcxGGmu's Blog</a>
+<button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-mobile" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button>
+</div>
+</nav>
+<div class="single-column-header-container" id="pageHead">
+<a href="/"><img alt="zcxGGmu" class="mobile-site-avatar" loading="lazy" src="/images/avatar.png"/><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+</div>
+<div id="content">
+<div class="stream-container" id="streamContainer" role="main">
+<div id="main-content"></div>
+<div class="post-list-container post-list-container-shadow">
+<article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/why-some-conversations-feel-exhausting/cover.svg')"><div class="post-title">为什么跟有的人聊天这么累？<div class="post-subtitle">聊天结束后的疲惫，不一定来自说了多少话。持续倾听、控制自己的表情和语气、等待对方停下来，或反复表达却得不到回应，都可能让交流变成一项额外的心理负担。常见情形包括替他人承接情绪、对话长期围绕一方展开，以及拒绝不断被忽视…</div><div class="post-meta"><time itemprop="datePublished">2026-10-24</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/">个人成长</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a>&nbsp;<a href="/tags/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/">人际关系</a>&nbsp;<a href="/tags/%E6%83%85%E7%BB%AA%E5%8A%B3%E5%8A%A8/">情绪劳动</a>&nbsp;<a href="/tags/%E6%B2%9F%E9%80%9A/">沟通</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 10 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><p>聊天结束后的疲惫，不一定来自说了多少话。持续倾听、控制自己的表情和语气、等待对方停下来，或反复表达却得不到回应，都可能让交流变成一项额外的心理负担。常见情形包括替他人承接情绪、对话长期围绕一方展开，以及拒绝不断被忽视。</p>
+<figure class="post-figure"><img src="/images/posts/why-some-conversations-feel-exhausting/01-chapter-01.svg" alt="当真实感受与外在回应不一致时，倾听者还需额外管理表情、眼神和语气。" loading="lazy"><figcaption>当真实感受与外在回应不一致时，倾听者还需额外管理表情、眼神和语气。</figcaption></figure>
+<h2 id="情绪劳动-倾听也需要管理情绪">情绪劳动：倾听也需要管理情绪</h2>
+<p>社会学家阿莉·霍克希尔德提出“情绪劳动”概念，用来描述人们为适应工作场合而管理和表达情绪的劳动。空乘、护士和服务人员等岗位会要求从业者展现符合情境的情绪；这种管理与表演需要付出精力。</p>
+<p>类似的负担也可能出现在日常交往里：有人把熟人当作随时可用的倾诉对象，长时间讲述家事或烦恼，却不关心对方是否愿意听，也不需要对方作出实质回应。讲述者可能感觉轻松了，听者却感到精力被耗尽。</p>
+<p>即使听者只作简短附和，内心的厌烦也可能与外在表现不一致。为了维持友善的表情、眼神和语气，听者需要压住真实反应，这种“心里不耐烦、脸上仍要配合”的表层扮演会增加消耗。职业服务人员的微笑通常属于有报酬的工作要求；私人关系中的类似付出则未必获得对等回馈。</p>
+<figure class="post-figure"><img src="/images/posts/why-some-conversations-feel-exhausting/02-chapter-02.svg" alt="回应把注意力留给对方时可继续交流；迅速转回自己时，倾听与情绪管理负担集中在一方。" loading="lazy"><figcaption>回应把注意力留给对方时可继续交流；迅速转回自己时，倾听与情绪管理负担集中在一方。</figcaption></figure>
+<h2 id="对话式自恋-交流变成单向广播">对话式自恋：交流变成单向广播</h2>
+<p>社会学家查尔斯·德伯用“对话式自恋”描述一种以自我为中心的交谈模式。其关键不在于谈到自己，而在于怎样回应对方：支持型回应会把注意力留给刚才发言的人，例如接着询问对方的工作压力；转移型回应则把话题迅速拉回自己，例如听到对方说工作压力大，马上转为讲自己的项目，之后长时间持续输出。</p>
+<p>在这种对话里，一方承担了听取、理解和记忆大量信息的工作，也要压住自己插话或讲述经历的冲动，并判断何时发言才不会显得不关心对方。即使刚获得表达机会，话题也可能再次被转回对方身上，听者因而需要处理失落和委屈；如果最终不再表达，还要继续监测对方何时结束。</p>
+<p>社会交换理论关注人际互动中的成本与回报。交谈中的注意力、倾听和情绪回应都可以视为关系投入。较为互惠的互动允许双方轮流倾诉和回应；若一方持续获得听众、却很少回应对方，交流就容易形成单向付出。长时间无法轮流表达，会让看似普通的聊天变成多项并行的心理任务。</p>
+<figure class="post-figure"><img src="/images/posts/why-some-conversations-feel-exhausting/03-chapter-03.svg" alt="拒绝被反复忽略，可能削弱继续沟通的预期，并伴随更高的紧张和防御感。" loading="lazy"><figcaption>拒绝被反复忽略，可能削弱继续沟通的预期，并伴随更高的紧张和防御感。</figcaption></figure>
+<h2 id="边界失效-拒绝无效会触发防御">边界失效：拒绝无效会触发防御</h2>
+<p>反复被忽略的“不”会改变交流体验。例如，父母问孩子是否想吃某道菜，孩子说不想吃后，仍被反复劝说“尝一口”；对话可能一直持续到孩子照做，或因冲突而结束。最后出现的“我也是为你好”并没有改变此前拒绝未被接纳的事实。</p>
+<p>习得性无助实验常被用来说明，持续面对无法控制的负面结果，可能使人形成“无论怎么做都没有用”的预期。实验中的动物在后来可以离开时仍不行动。这里的情境是一个类比：当表达长期不被听见，人可能逐渐放弃沟通，把互动转为防御。</p>
+<p>防御状态可能伴随较高的生理唤醒，例如心跳加快、肌肉紧绷，并出现准备对抗或逃开的感受。若人在这种状态下还要维持顺从、友善的外在表现，紧张与情绪管理的负担会叠加，交流因此更加费力。</p>
+<figure class="post-figure"><img src="/images/posts/why-some-conversations-feel-exhausting/04-chapter-04.svg" alt="管理注意力投入、减少强迫性表演，并在沟通无效时用简短行动结束互动。" loading="lazy"><figcaption>管理注意力投入、减少强迫性表演，并在沟通无效时用简短行动结束互动。</figcaption></figure>
+<h2 id="降低聊天消耗的三种做法">降低聊天消耗的三种做法</h2>
+<p>第一，承认注意力和共情能力有限。倾听、共情和协助梳理问题都需要投入；专业心理咨询或倾诉服务按时段或分钟收费，也说明持续、专注的倾听是一种有成本的服务。日常交往中可以留意：倾诉是否长期由同一方发起，回应是否有来有往，再决定投入多少时间和精力。</p>
+<p>第二，减少不必要的情绪表演。遇到习惯单向倾诉的人，可以先识别自己正在承担情绪劳动，不必把每次回应都做得充分、热情。重点是停止强迫自己表演出与真实感受完全相反的状态，并把精力转回正在做的事情。</p>
+<p>第三，当语言提示一再无效时，用清楚的行动结束互动。电话持续过久时，可以简短说明需要忙别的事并挂断；面对面交谈时，可以说明需要接电话或休息；对不愿做的事，可以直接拒绝。结束一段让人疲惫的谈话，不必无限补充理由；“我累了”本身可以成为边界表达。</p>
+<figure class="post-figure"><img src="/images/posts/why-some-conversations-feel-exhausting/05-chapter-05.svg" alt="持续单向倾诉与回应不足可能让人减少表达；观察反复出现的互动模式有助于判断是否失衡。" loading="lazy"><figcaption>持续单向倾诉与回应不足可能让人减少表达；观察反复出现的互动模式有助于判断是否失衡。</figcaption></figure>
+<h2 id="疲惫感提示关系缺少互惠">疲惫感提示关系缺少互惠</h2>
+<p>聊天后疲惫、越来越不想说话，甚至想独处，可能与长期缺少互相回应的体验有关。若一段关系长期由一方倾诉、另一方倾听和安抚，后者可能逐渐失去表达意愿，并感到自己一直在单向输出。</p>
+<p>这些感受本身不能单独证明对方有意索取，也不能仅凭一次不愉快的谈话判断整段关系。可以观察互动是否反复出现：双方有没有轮流表达，对方是否能听见拒绝，以及自己提出需求时是否获得回应。共情、耐心和注意力都有限；在持续失衡的关系中设置边界，有助于减少不必要的消耗。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/high-share-low-profit-export-competition/">下一篇<br>高份额低利润如何培养外部竞争者</a><a class="older-posts" href="/2026/why-rule-followers-feel-tired/">上一篇<br>为什么守规矩的人这么累？</a></nav>
+    </article>
+</div>
+</div>
+</div>
+<div class="side-container" id="sideContainer">
+<button aria-expanded="true" aria-label="收起左侧边栏" class="sidebar-collapse-toggle" data-sidebar-collapse-toggle="" title="收起左侧边栏" type="button">
+<span aria-hidden="true" class="material-icons sidebar-collapse-icon">chevron_left</span>
+</button>
+<a class="a-block nav-head false" href="/">
+<img alt="zcxGGmu" class="site-avatar" loading="lazy" src="/images/avatar.png"/>
+<div class="nav-title">zcxGGmu's Blog</div>
+<div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+</a>
+<div class="theme-switcher theme-switcher-desktop"><button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-desktop" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button></div>
+<div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+<div class="nav-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<div class="extra-container" id="extraContainer"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#情绪劳动-倾听也需要管理情绪">情绪劳动：倾听也需要管理情绪</a><a class="toc-link toc-level-2" href="#对话式自恋-交流变成单向广播">对话式自恋：交流变成单向广播</a><a class="toc-link toc-level-2" href="#边界失效-拒绝无效会触发防御">边界失效：拒绝无效会触发防御</a><a class="toc-link toc-level-2" href="#降低聊天消耗的三种做法">降低聊天消耗的三种做法</a><a class="toc-link toc-level-2" href="#疲惫感提示关系缺少互惠">疲惫感提示关系缺少互惠</a></nav></div></div><div class="pagination"><a class="pagination-action animated-visibility invisible" href="#top" id="globalBackToTop"><span aria-hidden="true" class="pagination-action-icon">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<script src="/js/journal.js"></script>
+<script src="/js/code-enhance.js"></script>
+<script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+<script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+<script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+<script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
