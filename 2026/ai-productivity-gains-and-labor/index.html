@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="Custom static archive" name="generator"/>
+<title>人工智能提高效率后，收益如何分配 - zcxGGmu's Blog</title>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" name="description"/>
+<meta content="zcxGGmu" name="author"/>
+<meta content="#f8fafc" name="theme-color"/>
+<meta content="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" property="og:url"/>
+<meta content="zcxGGmu's Blog" property="og:site_name"/>
+<meta content="人工智能基础设施：从瓶颈狂热到廉价普及" property="og:title"/>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" property="og:description"/>
+<meta content="zh_cn" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" rel="canonical"/>
+<link href="/images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+<link href="/scss/journal.min.css" media="screen" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap" rel="stylesheet"/>
+<link href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen" rel="stylesheet"/>
+<meta content="light dark" name="color-scheme"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<div id="app">
+<div class="single-column-drawer-container" id="drawer">
+<div class="drawer-content"><div class="drawer-profile"><img alt="zcxGGmu" class="drawer-avatar" loading="lazy" src="/images/avatar.png"/><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+</div>
+<div aria-label="关闭菜单" class="single-column-drawer-overlay" id="drawer-overlay" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&amp;&amp;(event.preventDefault(),toggleDrawer())' role="button" style="display:none" tabindex="0"></div>
+<nav class="navbar sticky-top navbar-light single-column-nav-container" id="navBar">
+<div class="nav-background" id="navBackground"></div>
+<div class="container container-narrow nav-content">
+<button aria-expanded="false" aria-label="打开菜单" class="nav-dropdown-toggle" id="nav_dropdown_btn" onclick="toggleDrawer()" type="button"><span aria-hidden="true" class="nav-menu-symbol">☰</span></button>
+<a class="navbar-brand" href="/" id="navTitle">zcxGGmu's Blog</a>
+<button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-mobile" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button>
+</div>
+</nav>
+<div class="single-column-header-container" id="pageHead">
+<a href="/"><img alt="zcxGGmu" class="mobile-site-avatar" loading="lazy" src="/images/avatar.png"/><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+</div>
+<div id="content">
+<div class="stream-container" id="streamContainer" role="main">
+<div id="main-content"></div>
+<div class="post-list-container post-list-container-shadow">
+<article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/ai-productivity-gains-and-labor/cover.svg')"><div class="post-title">人工智能提高效率后，收益如何分配<div class="post-subtitle">一份于10月23日公布的人工智能与就业相关文件提出，鼓励企业探索失业缓冲期安排，对可能造成较大就业冲击的人工智能应用进行风险评估，并把相关风险纳入规模性失业风险防范机制。文件所述措施强调提前识别影响、告知劳动者并支持…</div><div class="post-meta"><time itemprop="datePublished">2026-10-26</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;<a href="/tags/%E5%B0%B1%E4%B8%9A/">就业</a>&nbsp;<a href="/tags/%E5%8A%B3%E5%8A%A8%E5%B8%82%E5%9C%BA/">劳动市场</a>&nbsp;<a href="/tags/%E6%94%B6%E5%85%A5%E5%88%86%E9%85%8D/">收入分配</a>&nbsp;<a href="/tags/%E8%81%8C%E4%B8%9A%E5%9F%B9%E8%AE%AD/">职业培训</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 14 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><figure class="post-figure"><img src="/images/posts/ai-productivity-gains-and-labor/01-chapter-01.svg" alt="就业相关安排提出风险评估、失业缓冲和转岗支持等方向，落地效果取决于执行细节。" loading="lazy"><figcaption>就业相关安排提出风险评估、失业缓冲和转岗支持等方向，落地效果取决于执行细节。</figcaption></figure>
+<h2 id="就业政策开始关注技术应用的冲击">就业政策开始关注技术应用的冲击</h2>
+<p>一份于10月23日公布的人工智能与就业相关文件提出，鼓励企业探索失业缓冲期安排，对可能造成较大就业冲击的人工智能应用进行风险评估，并把相关风险纳入规模性失业风险防范机制。文件所述措施强调提前识别影响、告知劳动者并支持转岗；“鼓励探索”本身并不代表所有企业已经承担统一的强制义务。</p>
+<p>这类安排反映出人工智能的影响不再只被放在研发和效率框架内讨论。对家庭而言，岗位变化可能直接关系到房贷、教育和医疗支出。政策措施能否发挥作用，还取决于通知时间、转岗机会、培训质量和收入保障等具体执行条件。</p>
+<figure class="post-figure"><img src="/images/posts/ai-productivity-gains-and-labor/02-chapter-02.svg" alt="人工智能可以压缩处理成本并重组任务，但收益归属取决于企业决策和市场环境。" loading="lazy"><figcaption>人工智能可以压缩处理成本并重组任务，但收益归属取决于企业决策和市场环境。</figcaption></figure>
+<h2 id="效率收益不会自动转化为劳动者收入">效率收益不会自动转化为劳动者收入</h2>
+<p>当企业用智能客服处理常见问题、由少数员工承担复杂投诉时，管理成本可能下降，处理速度也可能提高。企业节省的人工支出会如何使用，取决于经营决策和市场环境。它可能反映在利润、产品价格、技术采购或新的业务投入中，也可能伴随岗位减少；效率提升本身并不能决定收益由谁获得。</p>
+<p>人工智能对工作内容的影响往往先表现为任务重组。文案、翻译、设计、基础编程、行政整理、数据处理和初级客服等工作出现辅助或部分自动完成的可能。岗位未必立即消失，但团队人数、招聘数量、技能要求和工作量可能变化。员工即便保住岗位，也可能面对更多职责而工资没有同步上升。</p>
+<p>因此，判断技术进步对就业的影响，不能只看单位时间产出或企业成本，还应观察劳动者的工资、工时、岗位稳定性和晋升机会。企业利润增长与劳动者生活改善之间并非自动相连。</p>
+<figure class="post-figure"><img src="/images/posts/ai-productivity-gains-and-labor/03-chapter-03.svg" alt="企业可能先缩减招聘入口；初级岗位减少会影响新人积累经验与长期人才供给。" loading="lazy"><figcaption>企业可能先缩减招聘入口；初级岗位减少会影响新人积累经验与长期人才供给。</figcaption></figure>
+<h2 id="入门岗位减少会影响人才培养链条">入门岗位减少会影响人才培养链条</h2>
+<p>企业采用人工智能后，可能先减少新增招聘，而不是一次性裁撤现有员工。部门出现空缺时，管理者可能优先评估能否用工具完成任务。入门岗位因此面临收缩压力，刚毕业的求职者和转行者可能更难获得积累经验的第一份工作。</p>
+<p>初级岗位也是职业训练的一部分。程序员通常需要通过具体项目逐步掌握系统设计，编辑需要从资料整理和稿件修改开始熟悉行业。如果企业普遍减少这些岗位，短期可以降低成本，长期却可能削弱新人培养和人才梯队。</p>
+<p>岗位转型也存在空间错配和能力错配。新岗位可能集中在特定城市，要求不同学历、技能和工作经历；被替代岗位的劳动者不一定能够通过短期培训直接转入其中。2026届普通高校毕业生预计约1270万人、较上一届增加48万人的背景下，岗位入口数量和青年就业承接能力需要一并观察。</p>
+<figure class="post-figure"><img src="/images/posts/ai-productivity-gains-and-labor/04-chapter-04.svg" alt="岗位总量预测无法说明具体劳动者能否进入新岗位，影响还取决于地域、技能与工资。" loading="lazy"><figcaption>岗位总量预测无法说明具体劳动者能否进入新岗位，影响还取决于地域、技能与工资。</figcaption></figure>
+<h2 id="新岗位增加与旧岗位调整并不同步">新岗位增加与旧岗位调整并不同步</h2>
+<p>技术变革可能创造新的职业，也会改变现有职业的任务内容。国际劳工组织2025年的一项研究认为，全球约四分之一的工作岗位在不同程度上受到生成式人工智能影响，影响更可能表现为岗位内容变化，而不是全部岗位直接消失。工作受影响并不等于岗位必然取消。</p>
+<p>世界经济论坛2025年对全球经济和技术趋势的预测估计，到2030年可能新增约1.7亿个岗位，同时替代约9200万个岗位。这个预测涉及多种趋势，不是人工智能单独带来的岗位增减，也不是对某一国家劳动力市场的直接预测。新增岗位与被替代岗位未必属于同一地区、同一技能层级或同一批劳动者。</p>
+<p>宏观就业总量因此不能充分描述个人经历。对一个劳动者而言，失去当前收入来源会立即带来压力，即便其他行业同时新增岗位。衡量转型结果还应考察岗位质量、地域分布、工资水平和劳动者进入新职业的实际条件。</p>
+<figure class="post-figure"><img src="/images/posts/ai-productivity-gains-and-labor/05-chapter-05.svg" alt="用工成本下降能改善企业经营，劳动收入下降也可能削弱家庭消费和市场需求。" loading="lazy"><figcaption>用工成本下降能改善企业经营，劳动收入下降也可能削弱家庭消费和市场需求。</figcaption></figure>
+<h2 id="劳动收入也是消费需求的重要来源">劳动收入也是消费需求的重要来源</h2>
+<p>企业降低用工成本能够改善单家公司的经营状况，但工资同时构成家庭收入和消费市场的基础。如果劳动者收入变得不稳定，家庭可能推迟购车、装修、旅游和日常消费。企业降本与市场需求之间由此形成反馈：一家企业节省成本，整个市场却可能因收入和消费放缓而承压。</p>
+<p>这也是评价人工智能应用时需要区分的两种结果。一种是技术提高产出，并让劳动者获得更合理的工时、工资或休息时间；另一种是企业用更少员工完成更多工作，而收益主要留在资本和技术供应方。如果缺少收益分享和风险保障，效率提高可能与劳动者的不安全感同时出现。</p>
+<p>算法还可能用于工作跟踪、速度评估和绩效管理。管理工具可以提升协调能力，也可能收窄员工解释工作差异的空间。使用人工智能时，工作时长、隐私、考核标准与申诉机制会影响技术最终改善还是恶化劳动环境。</p>
+<figure class="post-figure"><img src="/images/posts/ai-productivity-gains-and-labor/06-chapter-06.svg" alt="个人学习有助适应任务变化，缓冲期、培训、收入支持与社会保障共同分担转型成本。" loading="lazy"><figcaption>个人学习有助适应任务变化，缓冲期、培训、收入支持与社会保障共同分担转型成本。</figcaption></figure>
+<h2 id="转型支持需要覆盖学习成本与职业风险">转型支持需要覆盖学习成本与职业风险</h2>
+<p>个人学习新工具、提升问题判断与沟通能力，可能帮助劳动者适应任务变化，也能拓展工作机会。但个人投入只能解决部分问题：如果行业或地区缺少岗位，仅靠培训无法创造足够的就业需求。把就业压力完全归为个人技能不足，也无法解释企业招聘和产业结构的变化。</p>
+<p>失业缓冲安排、有效的转岗培训、收入支持和社会保障，可以分担技术转型的短期成本。其效果需要具体制度支撑：缓冲期多长、企业是否提供有用的培训、收入下降但未正式失业的人能否获得帮助、小微企业如何承受改造成本，都关系到措施能否覆盖不同劳动者。</p>
+<p>技术发展不必停下来保护每一种旧职业，但技术收益和转型风险也不应只由劳动者承担。评估人工智能带来的发展成果，可以同时跟踪生产率、利润、工资、工时、就业稳定性和保障覆盖情况。机器能够完成更多任务之后，省下的时间与创造的财富如何分配，仍取决于企业选择和社会制度。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/income-growth-and-household-experience/">下一篇<br>高收入指标与家庭体感之间的经济落差</a><a class="older-posts" href="/2026/why-people-see-crisis-and-stay-silent/">上一篇<br>为什么很多人看见危机却保持沉默</a></nav>
+    </article>
+</div>
+</div>
+</div>
+<div class="side-container" id="sideContainer">
+<button aria-expanded="true" aria-label="收起左侧边栏" class="sidebar-collapse-toggle" data-sidebar-collapse-toggle="" title="收起左侧边栏" type="button">
+<span aria-hidden="true" class="material-icons sidebar-collapse-icon">chevron_left</span>
+</button>
+<a class="a-block nav-head false" href="/">
+<img alt="zcxGGmu" class="site-avatar" loading="lazy" src="/images/avatar.png"/>
+<div class="nav-title">zcxGGmu's Blog</div>
+<div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+</a>
+<div class="theme-switcher theme-switcher-desktop"><button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-desktop" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button></div>
+<div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+<div class="nav-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<div class="extra-container" id="extraContainer"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#就业政策开始关注技术应用的冲击">就业政策开始关注技术应用的冲击</a><a class="toc-link toc-level-2" href="#效率收益不会自动转化为劳动者收入">效率收益不会自动转化为劳动者收入</a><a class="toc-link toc-level-2" href="#入门岗位减少会影响人才培养链条">入门岗位减少会影响人才培养链条</a><a class="toc-link toc-level-2" href="#新岗位增加与旧岗位调整并不同步">新岗位增加与旧岗位调整并不同步</a><a class="toc-link toc-level-2" href="#劳动收入也是消费需求的重要来源">劳动收入也是消费需求的重要来源</a><a class="toc-link toc-level-2" href="#转型支持需要覆盖学习成本与职业风险">转型支持需要覆盖学习成本与职业风险</a></nav></div></div><div class="pagination"><a class="pagination-action animated-visibility invisible" href="#top" id="globalBackToTop"><span aria-hidden="true" class="pagination-action-icon">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<script src="/js/journal.js"></script>
+<script src="/js/code-enhance.js"></script>
+<script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+<script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+<script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+<script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>

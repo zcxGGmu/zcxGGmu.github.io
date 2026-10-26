@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="Custom static archive" name="generator"/>
+<title>看懂钢材库存与消费变化，看清钢铁供需脉搏 - zcxGGmu's Blog</title>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" name="description"/>
+<meta content="zcxGGmu" name="author"/>
+<meta content="#f8fafc" name="theme-color"/>
+<meta content="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" property="og:url"/>
+<meta content="zcxGGmu's Blog" property="og:site_name"/>
+<meta content="人工智能基础设施：从瓶颈狂热到廉价普及" property="og:title"/>
+<meta content="铁路、电力、互联网的历史显示，基础设施在狂热建设后会走向过剩和廉价，并由此孕育真正改变社会的应用。人工智能目前仍处于算力基础设施扩张阶段，瓶颈、融资、技术替代与应用生态将共同决定下一阶段。" property="og:description"/>
+<meta content="zh_cn" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://zcxggmu.github.io/2026/ai-infrastructure-from-bottlenecks-to-cheap-abundance/" rel="canonical"/>
+<link href="/images/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/images/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<script>
+(function(){
+  var key="blog-theme";
+  var sidebarKey="blog-sidebar-collapsed";
+  var theme="";
+  try{theme=localStorage.getItem(key)||""}catch(_){}
+  if(theme!=="light"&&theme!=="dark"){
+    theme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  document.documentElement.dataset.theme=theme;
+  document.documentElement.style.colorScheme=theme;
+  try{
+    if(localStorage.getItem(sidebarKey)==="1") document.documentElement.classList.add("sidebar-collapsed");
+  }catch(_){}
+})();</script>
+<link href="/scss/journal.min.css" media="screen" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap" rel="stylesheet"/>
+<link href="/scss/modern.min.css?v=20260607-sidebar-collapse" media="screen" rel="stylesheet"/>
+<meta content="light dark" name="color-scheme"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<div id="app">
+<div class="single-column-drawer-container" id="drawer">
+<div class="drawer-content"><div class="drawer-profile"><img alt="zcxGGmu" class="drawer-avatar" loading="lazy" src="/images/avatar.png"/><div class="drawer-title">zcxGGmu's Blog</div></div><div class="drawer-menu"><a class="a-block drawer-menu-item active" href="/blog/">文章📖</a><a class="a-block drawer-menu-item false" href="/categories/">分类📌</a><a class="a-block drawer-menu-item false" href="/tags/">标签🏷️</a><a class="a-block drawer-menu-item false" href="/series/">系列📚</a><a class="a-block drawer-menu-item false" href="/archive/">归档📃</a><a class="a-block drawer-menu-item false" href="/about/">关于👋</a><a class="a-block drawer-menu-item false" href="/friends/">友链🔗</a><a class="a-block drawer-menu-item false" href="/index.xml">RSS📢</a></div></div>
+</div>
+<div aria-label="关闭菜单" class="single-column-drawer-overlay" id="drawer-overlay" onclick="toggleDrawer()" onkeydown='(event.key==="Enter"||event.key===" "||event.key==="Escape")&amp;&amp;(event.preventDefault(),toggleDrawer())' role="button" style="display:none" tabindex="0"></div>
+<nav class="navbar sticky-top navbar-light single-column-nav-container" id="navBar">
+<div class="nav-background" id="navBackground"></div>
+<div class="container container-narrow nav-content">
+<button aria-expanded="false" aria-label="打开菜单" class="nav-dropdown-toggle" id="nav_dropdown_btn" onclick="toggleDrawer()" type="button"><span aria-hidden="true" class="nav-menu-symbol">☰</span></button>
+<a class="navbar-brand" href="/" id="navTitle">zcxGGmu's Blog</a>
+<button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-mobile" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button>
+</div>
+</nav>
+<div class="single-column-header-container" id="pageHead">
+<a href="/"><img alt="zcxGGmu" class="mobile-site-avatar" loading="lazy" src="/images/avatar.png"/><div class="single-column-header-title">zcxGGmu's Blog</div><div class="single-column-header-subtitle">心无挂碍，无挂碍故，无有恐怖</div></a>
+</div>
+<div id="content">
+<div class="stream-container" id="streamContainer" role="main">
+<div id="main-content"></div>
+<div class="post-list-container post-list-container-shadow">
+<article class="post"><div class="post-head-wrapper" style="background-image:url('/images/posts/china-steel-demand-production-inventory/cover.svg')"><div class="post-title">看懂钢材库存与消费变化，看清钢铁供需脉搏<div class="post-subtitle">一组钢材高频数据同时呈现消费和生产放缓。周度表观消费量为820万吨，较前一周下降4.5%；年初至今累计约3.529亿吨，同比下降3.3%。同期周度产量为790万吨，环比下降0.3%、同比下降8.5%；年初至今累计产量…</div><div class="post-meta"><time itemprop="datePublished">2026-10-26</time>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">▣</span> <a href="/categories/%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6/">行业研究</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◇</span> <a href="/tags/%E9%92%A2%E9%93%81/">钢铁</a>&nbsp;<a href="/tags/%E9%92%A2%E6%9D%90/">钢材</a>&nbsp;<a href="/tags/%E5%BA%93%E5%AD%98/">库存</a>&nbsp;<a href="/tags/%E4%BE%9B%E9%9C%80/">供需</a>&nbsp;<a href="/tags/%E9%AB%98%E9%A2%91%E6%95%B0%E6%8D%AE/">高频数据</a>&nbsp;&nbsp;<span class="meta-icon" aria-hidden="true">◷</span> 13 min</div></div></div><div class="post-body-wrapper"><div class="post-body" v-pre><figure class="post-figure"><img src="/images/posts/china-steel-demand-production-inventory/01-chapter-01.svg" alt="周度表观消费量与产量均回落，累计表观消费同比下降，累计产量总量另列。" loading="lazy"><figcaption>周度表观消费量与产量均回落，累计表观消费同比下降，累计产量总量另列。</figcaption></figure>
+<h2 id="周度需求与供给数据仍偏弱">周度需求与供给数据仍偏弱</h2>
+<p>一组钢材高频数据同时呈现消费和生产放缓。周度表观消费量为820万吨，较前一周下降4.5%；年初至今累计约3.529亿吨，同比下降3.3%。同期周度产量为790万吨，环比下降0.3%、同比下降8.5%；年初至今累计产量约3.548亿吨。最近一周的数据也显示消费和生产均低于各自前期水平。</p>
+<p>表观消费量是根据产量、进出口和库存变化推算的名义需求指标，不等于终端实际消耗量。全国有大量建筑工地和工厂，统计者无法逐一丈量实际加工和使用量，因此采用供给、贸易和库存数据估算。钢材从生产端进入贸易渠道后，即使还没有用于建筑或制造，也可能计入流通环节的需求变化。因此，表观消费下行既可能反映终端使用减少，也可能体现渠道提货减慢。它更接近对货物流转的统计估算，不能直接回答钢材最终是否已被使用。</p>
+<p>当周表观消费量比产量高约30万吨，该差额可能反映库存变化或其他供给来源，仍应结合进出口、统计覆盖范围和时点理解，不能单独作为终端需求回升的证据。</p>
+<figure class="post-figure"><img src="/images/posts/china-steel-demand-production-inventory/02-chapter-02.svg" alt="总库存缩小的同时，约七成库存由贸易商持有，压力分布仍集中在渠道。" loading="lazy"><figcaption>总库存缩小的同时，约七成库存由贸易商持有，压力分布仍集中在渠道。</figcaption></figure>
+<h2 id="总库存下降-但库存更多留在流通环节">总库存下降，但库存更多留在流通环节</h2>
+<p>周度钢材总库存约1450万吨，环比下降2.2%、同比下降6.9%。其中钢厂库存约390万吨，贸易商库存约1060万吨，约占总量的73%。总库存减少说明库存盘子收缩，但大量货物仍由渠道持有，库存压力并未只留在生产端。</p>
+<p>贸易商持有库存意味着资金占用和价格波动风险集中在流通环节。年度采购协议、渠道评级、返利安排及银行融资都可能影响贸易商的提货节奏；单靠库存总量，无法确认不同企业实际承担的合同义务或偿债能力。若终端销售跟不上，而库存消化速度转慢，渠道可能需要通过降价加快回款，进而影响现货价格和钢厂利润。</p>
+<p>钢铁生产调整也受设备运行方式影响。高炉停产和重新点火可能带来较高成本，停炉可能损伤内部耐火材料，重新点火也需投入时间和费用，生产端因此不一定能像调节一般设备那样与需求同步快速变化。需求走弱时，钢厂需要在减产造成的成本与继续生产形成的库存之间权衡。供给、渠道库存和终端订单需要放在同一条链条中观察，才能判断压力正由哪一环节承担。</p>
+<p>贸易商处于钢厂和终端客户之间，承担批量采购、储存和分销。年度长协的提货要求、渠道评级和年终返利可能影响采购安排；当市场价格走弱时，贸易商既要考虑合同关系，也要承担资金占用和库存跌价风险。若贷款到期而销售回款不足，企业可能选择降价出售来回笼资金，现货价格也可能因此承压。这是库存集中于渠道时需要关注的风险路径，并不表示每家贸易商都会采取相同应对。</p>
+<figure class="post-figure"><img src="/images/posts/china-steel-demand-production-inventory/03-chapter-03.svg" alt="螺纹钢与冷轧卷板的库存方向不同，单一总量或品种数据都不足以解释需求。" loading="lazy"><figcaption>螺纹钢与冷轧卷板的库存方向不同，单一总量或品种数据都不足以解释需求。</figcaption></figure>
+<h2 id="建筑钢与制造业钢材库存走势分化">建筑钢与制造业钢材库存走势分化</h2>
+<p>不同钢材品种的库存变化方向并不一致。螺纹钢库存同比下降16.1%，冷轧卷板库存同比上升14.9%。螺纹钢主要用于建筑，热轧和冷轧卷板则更多用于工业与制造业；这些品种面对的需求来源不同，不能用单一的总量趋势概括。</p>
+<p>库存变化本身无法区分供给收缩与终端需求变化。螺纹钢库存下降可能与钢厂减产有关，并不必然代表建筑需求转强；冷轧库存上升可能来自排产、渠道补库或下游消化速度变化，也不能单凭库存推断汽车和家电订单走弱。对这些解释的判断还需要品种产量、钢厂排产、终端订单和渠道销售等数据支持。</p>
+<p>这组分化提示，分析钢材供需时应同时看库存所在环节与具体品类。总库存减少可以与部分品类累库并存，单个品种的同比变化也不能直接替代全行业的需求判断。尤其在建筑用钢和制造业用钢呈现不同方向时，应继续核查各品种的产量、钢厂排产、渠道库存和下游订单，避免从单一库存数据推导未经验证的原因。</p>
+<figure class="post-figure"><img src="/images/posts/china-steel-demand-production-inventory/04-chapter-04.svg" alt="同一周的两种日期匹配方式得出相反方向，差异约19.8个百分点。" loading="lazy"><figcaption>同一周的两种日期匹配方式得出相反方向，差异约19.8个百分点。</figcaption></figure>
+<h2 id="公历与农历同比背离限制需求判断">公历与农历同比背离限制需求判断</h2>
+<p>同一周钢材表观消费量的同比增幅出现明显背离：按公历口径下降7.7%，按农历口径上升12.1%，两者相差约19.8个百分点。如此大的差距说明短期同比结果对日期匹配方式较敏感。</p>
+<p>节假日安排、工作日分布和去年同期所处的生产状态都可能影响周度比较。若今年统计周包含更多正常生产日，而去年对应周受到假期停工影响，公历同比就可能放大差异。农历对齐可以提供另一种比较方法，但仍需要说明对齐规则及其调整效果。</p>
+<p>现有数据没有解释两种口径差异的来源，也未量化其中有多少来自基数和日历因素、有多少对应新增需求。周度同比若将正常开工周与去年假期停工周相比较，结果可能受到错位影响；即使采用农历匹配，也需要披露匹配方法和调整过程。若没有这类说明，读者无法判断两种数字中的日历效应与新增订单各占多少。因此，这一周的表观消费同比不足以单独证明需求正在反弹；在后续数据回到相近方向前，应把它视为存在较大噪声的指标。</p>
+<figure class="post-figure"><img src="/images/posts/china-steel-demand-production-inventory/05-chapter-05.svg" alt="连续观察产量、贸易商库存消化和两种同比方向，检验供需变化是否延续。" loading="lazy"><figcaption>连续观察产量、贸易商库存消化和两种同比方向，检验供需变化是否延续。</figcaption></figure>
+<h2 id="后续观察聚焦产量-渠道库存与口径收敛">后续观察聚焦产量、渠道库存与口径收敛</h2>
+<p>后续几周可围绕三个可复核的方向观察。第一，跟踪周度产量相对当前约790万吨的水平如何变化。若需求偏弱时产量重新上升，供给调整可能减慢，库存下降也可能难以延续；790万吨是近期数据的参照值，不应视作脱离其他条件的固定警戒线。</p>
+<p>第二，持续跟踪约1060万吨的贸易商库存及其消化斜率。库存继续下降说明渠道仍在出货；降幅持续收窄或转为环比增加，则需要核对终端订单、贸易商销售和钢厂发货情况，判断流通环节是否出现积压。</p>
+<p>第三，观察公历与农历同比是否重新指向相近方向。如果两种口径继续明显分裂，应先查明日期匹配和工作日差异，再使用表观消费量判断需求趋势。若产量在需求疲弱时重新上升，需检查供给约束是否减弱；若贸易商库存降幅收窄或转升，需结合销售和融资情况核对渠道是否积压；若同比口径继续相反，则该指标在短期内的解释力有限。多个连续周度数据与品种指标相互印证，比孤立的一周涨跌更能说明基本面变化。</p>
+<figure class="post-figure"><img src="/images/posts/china-steel-demand-production-inventory/06-chapter-06.svg" alt="周度指标适合观察边际变化，仍需结合库存迁移、终端需求和连续数据解释。" loading="lazy"><figcaption>周度指标适合观察边际变化，仍需结合库存迁移、终端需求和连续数据解释。</figcaption></figure>
+<h2 id="高频数据需要与长期基本面结合">高频数据需要与长期基本面结合</h2>
+<p>周度产量、表观消费和库存可以及时呈现产业链的边际变化，也容易受到统计范围、日期选择和渠道迁移影响。对一周的库存下降，应同时核对是终端消费增加、生产减少，还是货物从一个统计环节转移到另一个环节；对库存上升，也需要区分季节性备货与销售受阻。</p>
+<p>当前数据共同呈现出周度表观消费回落、产量同比下降、总库存减少但贸易渠道持有较多库存、品种库存走势分化等特征。它们提供了观察供需的切面，尚不足以消除日历口径冲突或解释各品种变化原因。高频数据能够及时反映局部变化，也更容易受到统计时点和样本范围影响；在宏观预期缺乏确定性时，一周的超预期波动可能被放大解读。将生产、库存分布、渠道流量和终端需求连续跟踪，才能逐步判断库存下降是否伴随真实需求改善，并避免短期噪声遮蔽较长期的行业变化。</p>
+</div></div><nav class="post-pagination"><a class="newer-posts" href="/2026/why-people-see-crisis-and-stay-silent/">下一篇<br>为什么很多人看见危机却保持沉默</a><a class="older-posts" href="/2026/china-jushi-electronic-fabric-ai-upgrade/">上一篇<br>中国巨石十五五目标：电子布产量超20亿米，推进高端升级</a></nav>
+    </article>
+</div>
+</div>
+</div>
+<div class="side-container" id="sideContainer">
+<button aria-expanded="true" aria-label="收起左侧边栏" class="sidebar-collapse-toggle" data-sidebar-collapse-toggle="" title="收起左侧边栏" type="button">
+<span aria-hidden="true" class="material-icons sidebar-collapse-icon">chevron_left</span>
+</button>
+<a class="a-block nav-head false" href="/">
+<img alt="zcxGGmu" class="site-avatar" loading="lazy" src="/images/avatar.png"/>
+<div class="nav-title">zcxGGmu's Blog</div>
+<div class="nav-subtitle">心无挂碍，无挂碍故，无有恐怖</div>
+</a>
+<div class="theme-switcher theme-switcher-desktop"><button aria-label="切换深色模式" aria-pressed="false" class="theme-toggle theme-toggle-desktop" data-theme-toggle="" title="切换深色模式" type="button"><span aria-hidden="true" class="material-icons theme-toggle-icon">dark_mode</span></button></div>
+<div class="nav-link-list"><a class="a-block nav-link-item active" href="/blog/">文章📖</a><a class="a-block nav-link-item false" href="/categories/">分类📌</a><a class="a-block nav-link-item false" href="/tags/">标签🏷️</a><a class="a-block nav-link-item false" href="/series/">系列📚</a><a class="a-block nav-link-item false" href="/archive/">归档📃</a><a class="a-block nav-link-item false" href="/about/">关于👋</a><a class="a-block nav-link-item false" href="/friends/">友链🔗</a><a class="a-block nav-link-item false" href="/index.xml">RSS📢</a></div>
+<div class="nav-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<div class="extra-container" id="extraContainer"><div class="toc-wrapper"><div class="toc"><div class="toc-title">目录</div><nav><a class="toc-link toc-level-2" href="#周度需求与供给数据仍偏弱">周度需求与供给数据仍偏弱</a><a class="toc-link toc-level-2" href="#总库存下降-但库存更多留在流通环节">总库存下降，但库存更多留在流通环节</a><a class="toc-link toc-level-2" href="#建筑钢与制造业钢材库存走势分化">建筑钢与制造业钢材库存走势分化</a><a class="toc-link toc-level-2" href="#公历与农历同比背离限制需求判断">公历与农历同比背离限制需求判断</a><a class="toc-link toc-level-2" href="#后续观察聚焦产量-渠道库存与口径收敛">后续观察聚焦产量、渠道库存与口径收敛</a><a class="toc-link toc-level-2" href="#高频数据需要与长期基本面结合">高频数据需要与长期基本面结合</a></nav></div></div><div class="pagination"><a class="pagination-action animated-visibility invisible" href="#top" id="globalBackToTop"><span aria-hidden="true" class="pagination-action-icon">↑</span></a></div></div>
+<div id="single-column-footer"><a href="https://github.com/zcxGGmu" rel="noopener noreferrer" target="_blank">GitHub</a><br/><a href="mailto:placeholder@example.com" rel="noopener noreferrer" target="_blank">Email</a><br/><a href="/index.xml" rel="noopener noreferrer" target="_blank">RSS</a><br/><hr/>魔改自 <a href="https://github.com/AmazingRise/hugo-theme-diary" rel="noopener noreferrer" target="_blank">Diary</a> by <a href="/">zcxGGmu</a><br/>© 2026 zcxGGmu's Blog<br/><span>备案信息占位</span></div>
+</div>
+<script src="/js/journal.js"></script>
+<script src="/js/code-enhance.js"></script>
+<script>
+(function(){
+  var key="blog-theme";
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function systemTheme(){
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+  }
+  function storedTheme(){
+    try{return localStorage.getItem(key)||""}catch(_){return ""}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(key,theme)}catch(_){}
+  }
+  function setLegacyCookie(theme){
+    document.cookie="night="+(theme==="dark"?"1":"0")+";path=/;max-age=31536000";
+  }
+  function applyTheme(theme,persist){
+    theme=theme==="dark"?"dark":"light";
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+    if(meta) meta.setAttribute("content",theme==="dark"?"#0f172a":"#f8fafc");
+    if(persist!==false){
+      setStoredTheme(theme);
+      setLegacyCookie(theme);
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      var dark=theme==="dark";
+      var icon=button.querySelector(".theme-toggle-icon");
+      if(icon) icon.textContent=dark?"light_mode":"dark_mode";
+      button.setAttribute("aria-label",dark?"切换浅色模式":"切换深色模式");
+      button.setAttribute("aria-pressed",dark?"true":"false");
+      button.title=dark?"切换浅色模式":"切换深色模式";
+    });
+  }
+  window.setColorTheme=function(theme){applyTheme(theme,true)};
+  window.toggleColorTheme=function(){
+    applyTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true);
+  };
+  window.toggleDarkMode=window.toggleColorTheme;
+  document.addEventListener("DOMContentLoaded",function(){
+    applyTheme(document.documentElement.dataset.theme||storedTheme()||systemTheme(),false);
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(button){
+      button.addEventListener("click",function(){window.toggleColorTheme()});
+    });
+  });
+  if(window.matchMedia){
+    var query=window.matchMedia("(prefers-color-scheme: dark)");
+    var onChange=function(){if(!storedTheme()) applyTheme(systemTheme(),false)};
+    if(query.addEventListener) query.addEventListener("change",onChange);
+    else if(query.addListener) query.addListener(onChange);
+  }
+})();</script>
+<script>
+(function(){
+  var key="blog-sidebar-collapsed";
+  function storedCollapsed(){
+    try{return localStorage.getItem(key)==="1"}catch(_){return false}
+  }
+  function storeCollapsed(collapsed){
+    try{localStorage.setItem(key,collapsed?"1":"0")}catch(_){}
+  }
+  function applySidebarState(collapsed,persist){
+    document.documentElement.classList.toggle("sidebar-collapsed",collapsed);
+    if(persist!==false) storeCollapsed(collapsed);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      var icon=button.querySelector(".sidebar-collapse-icon");
+      if(icon) icon.textContent=collapsed?"chevron_right":"chevron_left";
+      button.setAttribute("aria-label",collapsed?"展开左侧边栏":"收起左侧边栏");
+      button.setAttribute("aria-expanded",collapsed?"false":"true");
+      button.title=collapsed?"展开左侧边栏":"收起左侧边栏";
+    });
+  }
+  window.toggleSidebarCollapsed=function(){
+    applySidebarState(!document.documentElement.classList.contains("sidebar-collapsed"),true);
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    applySidebarState(document.documentElement.classList.contains("sidebar-collapsed")||storedCollapsed(),false);
+    document.querySelectorAll("[data-sidebar-collapse-toggle]").forEach(function(button){
+      button.addEventListener("click",window.toggleSidebarCollapsed);
+    });
+  });
+})();</script>
+<script>
+(function(){
+  function byId(id){return document.getElementById(id)}
+  function ensureChrome(){
+    if(!byId("reading-progress")){
+      var progress=document.createElement("div");
+      progress.id="reading-progress";
+      progress.setAttribute("aria-hidden","true");
+      document.body.appendChild(progress);
+    }
+    if(!byId("backToTop")){
+      var button=document.createElement("button");
+      button.id="backToTop";
+      button.type="button";
+      button.title="返回顶部";
+      button.setAttribute("aria-label","返回顶部");
+      button.innerHTML='<span class="pagination-action-icon" aria-hidden="true">↑</span>';
+      button.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+      document.body.appendChild(button);
+    }
+  }
+  function update(){
+    var root=document.documentElement;
+    var total=root.scrollHeight-root.clientHeight;
+    var percent=total>0?(root.scrollTop||document.body.scrollTop)/total*100:0;
+    var progress=byId("reading-progress");
+    var top=byId("backToTop");
+    var global=byId("globalBackToTop");
+    if(progress) progress.style.width=percent+"%";
+    var show=(window.scrollY||root.scrollTop)>360;
+    if(top) top.classList.toggle("show",show);
+    if(global) global.classList.toggle("invisible",!show);
+  }
+  window.toggleDrawer=function(){
+    var drawer=byId("drawer");
+    var overlay=byId("drawer-overlay");
+    var open=!drawer.classList.contains("single-column-drawer-container-active");
+    drawer.classList.toggle("single-column-drawer-container-active",open);
+    document.documentElement.style.overflow=open?"hidden":"";
+    if(overlay) overlay.style.display=open?"block":"none";
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    ensureChrome();
+    update();
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update,{passive:true});
+  });
+})();</script>
+<script>
+(function(){
+  function ready(fn){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fn,{once:true}):fn()}
+  ready(function(){
+    var images=document.querySelectorAll('.post-body img:not([data-lightbox="disabled"])');
+    if(!images.length) return;
+    var box=document.createElement("div");
+    box.className="image-lightbox";
+    box.setAttribute("role","dialog");
+    box.setAttribute("aria-modal","true");
+    box.innerHTML='<div class="image-lightbox__inner"><button class="image-lightbox__close" type="button" aria-label="关闭图片预览">×</button><img class="image-lightbox__img" alt=""></div>';
+    document.body.appendChild(box);
+    var preview=box.querySelector("img");
+    var close=box.querySelector("button");
+    function hide(){box.classList.remove("is-visible");document.body.classList.remove("lightbox-open");preview.removeAttribute("src")}
+    images.forEach(function(img){
+      img.tabIndex=0;
+      img.addEventListener("click",function(){
+        preview.src=img.currentSrc||img.src;
+        preview.alt=img.alt||"";
+        box.classList.add("is-visible");
+        document.body.classList.add("lightbox-open");
+      });
+    });
+    close.addEventListener("click",hide);
+    box.addEventListener("click",function(event){if(event.target===box) hide()});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape") hide()});
+  });
+})();</script>
+</body>
+</html>
